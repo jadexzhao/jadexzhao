@@ -1,16 +1,44 @@
-## Hi there 👋
+# jade zhao
 
-<!--
-**jadexzhao/jadexzhao** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  <img src="jade-portrait-alt.jpg" alt="a little girl in a traditional red dress looking off to the side" width="100%" />
+</p>
 
-Here are some ideas to get you started:
+an asian american woman in stem, learning how to turn big seasons into something gentle and good.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+from indianapolis. studied in bloomington. recently, madrid.
+
+summer looks quieter, but i'm still building.
+
+someone people trust for thoughtful work, care, and calm.
+
+this page is a little treasure chest of becoming — i hope it feels like a warm corner.
+
+---
+
+**what's in here**
+
+- `2023-2027/` — coursework by semester, honest record including the hard ones
+- `projects/` — civic platforms, nonprofit redesigns, research tools
+- `consulting/` — matcha green consulting, small business digital work
+- `research/` — health informatics, madrid field research, independent study
+- `design/` — wcag audits, figma exports, accessibility resources
+- `writing/` — essays, manifestos, things i needed to say somewhere
+- `personal/` — values, reflections, goals, the stuff underneath the résumé
+- `now.md` — where i am right now
+- `pb-sandwich-manifesto.md` — the throughline for everything i build
+
+---
+
+**works**
+
+- [matchaxmoxie](https://github.com/matchaxmoxie)
+- [jadewowgreen](https://github.com/jadewowgreen)
+- [linkedin](https://www.linkedin.com/in/jadexzhao)
+- [portfolio](https://lnkd.in/eiKYqBAe)
+
+---
+
+*ratio. logos. ordo. praxis.*
+
+thank u sm for checking my little story.
