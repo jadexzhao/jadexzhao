@@ -12,21 +12,27 @@ summer looks quieter, but i'm still building.
 
 someone people trust for thoughtful work, care, and calm.
 
-this page is a little treasure chest of becoming ... i hope it feels like a warm corner.
+this is a small archive of the work, writing, and reflections that make up my world.
 
 ---
 
-**what's in here**
+**pages**
 
-- `2023-2027/` ... coursework by semester, honest record including the hard ones
-- `projects/` ... civic platforms, nonprofit redesigns, research tools
-- `consulting/` ... matcha green consulting, small business digital work
-- `research/` ... health informatics, madrid field research, independent study
-- `design/` ... wcag audits, figma exports, accessibility resources
-- `writing/` ... essays, manifestos, things i needed to say somewhere
-- `personal/` ... values, reflections, goals, the stuff underneath the résumé
-- `now.md` ... where i am right now
-- `pb-sandwich-manifesto.md` ... the throughline for everything i build
+- [now](pages/now.md) ... where i am right now
+- [pb sandwich manifesto](pages/pb-sandwich-manifesto.md) ... the throughline for everything i build
+- [project brief](pages/project-brief.md) ... a consulting scoping template
+- [discovery questionnaire](pages/discovery-questionnaire.md) ... intake prompts for new work
+- [fall 2026 intentions](pages/fa26-intentions.md) ... what i want the next season to hold
+- [figma links](pages/figma-links.md) ... design references and exports
+- [madrid](pages/madrid.md) ... notes from the madrid chapter
+- [notes for mentees](pages/notes-for-mentees.md) ... advice and care for students after me
+- [people who shaped me](pages/people-who-shaped-me.md) ... a record of influence and gratitude
+- [post grad](pages/post-grad.md) ... the page for what's next
+- [reading list](pages/reading-list.md) ... books, articles, and things worth returning to
+- [tools i use](pages/tools-i-use.md) ... the stack behind my work
+- [values](pages/values.md) ... what i keep coming back to
+- [wcag accessibility checklist](pages/wcag-checklist.md) ... a practical accessibility guide
+- [year by year](pages/year-by-year.md) ... a timeline of seasons and milestones
 
 ---
 
@@ -40,5 +46,3 @@ this page is a little treasure chest of becoming ... i hope it feels like a warm
 ---
 
 *ratio. logos. ordo. praxis.*
-
-thank u sm for checking my little story.
