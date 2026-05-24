@@ -6,7 +6,7 @@ things i wish someone had said to me earlier. some of them i had to learn sidewa
 
 **you're not behind.**
 
-whatever timeline you're measuring yourself against, it's probably someone else's. first-gen students especially — we enter rooms that weren't built for us and then wonder why the doors feel heavy. that's not a you problem.
+whatever timeline you're measuring yourself against, it's probably someone else's. first-gen students especially ... we enter rooms that weren't built for us and then wonder why the doors feel heavy. that's not a you problem.
 
 ---
 
