@@ -59,6 +59,8 @@ Python · SQL · PostgreSQL · Real-time Processing
 
 **Impact**  
 - 30% reduction in data entry errors  
+[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/clinical-data-pipeline)
+
 - 25% reduction in clinical administrative workload
 
 ---
@@ -74,6 +76,8 @@ TypeScript · React · Node.js · REST APIs · WCAG 2.1 AA
 - RESTful backend services  
 - WCAG 2.1 AA accessibility compliance  
 - Human-reviewed AI workflow integration  
+[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/full-stack-web-features)
+
 
 **Standards**  
 WCAG 2.1 AA accessibility · Human-AI collaboration best practices
@@ -83,6 +87,8 @@ WCAG 2.1 AA accessibility · Human-AI collaboration best practices
 ### Online Ordering System
 **Family Chinese Restaurant** (2020)  
 First real-world project. Still the reason I build.
+
+[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/online-ordering-system)
 
 **Tech Stack**  
 Full-stack web application
