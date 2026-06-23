@@ -122,4 +122,4 @@ English · Mandarin · Fuzhounese · Spanish (improving)
 
 ## local workspace layout
 
-On disk under `Documents/jadexzhao/`, the six project folders also appear in **`Projects/`** as symlinks pointing here. That keeps this git repo intact while Finder shows all shipped work in one place. Edit via either path; commit in this repo.
+On disk under `Documents/jadexzhao/`, the six project folders live **only here** in `Work/jadexzhao/`. Standalone shipped repos (pstickers24, matchaxmoxie) are in `Projects/`; portfolio demos are not duplicated there. Commit in this repo.
