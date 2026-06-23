@@ -20,7 +20,7 @@ React · TypeScript · TanStack Table · Recharts · Tailwind CSS · Vite
 - Research project categorization and tagging  
 - Export capabilities for analysis  
 
-[View Live Demo](#) · [View Source](./scoping-review-dashboard/)
+[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/scoping-review-dashboard)
 
 ---
 
@@ -39,6 +39,8 @@ Machine Learning · Recommendation Engine · Full-stack
 
 **Impact**  
 45% increase in student engagement across deployed partner organizations
+
+[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/adaptive-learning-platform)
 
 ---
 
