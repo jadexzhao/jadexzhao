@@ -28,8 +28,8 @@ first thing i ever built that mattered — that's why i do this
 ## right now
 
 ```
-studying @ Universidad Complutense de Madrid
-research: how cultural context shapes technology adoption
+back @ Indiana University Bloomington
+summer before senior year · building in public · open to fall 2025 roles
 ```
 
 ---
