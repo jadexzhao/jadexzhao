@@ -30,13 +30,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+      - name: Prepare briefcase site
+        run: |
+          # Ensure briefcase exists and copy its contents into _site for Pages
+          if [ -d ./briefcase ]; then
+            mkdir -p _site
+            cp -r briefcase/* _site/
+          else
+            echo "briefcase folder not found" && exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   # Deployment job
   deploy:
