@@ -5,29 +5,90 @@
 **Bloomington, IN → open to relocation**  
 **Seeking Fall 2025 Software Engineering / Full-Stack / Data Engineering roles**
 
-### shipped
+## shipped
 
-**Interactive Scoping Review Dashboard**  
-Current project - Health/Athlete-focused research projects  
-React + TypeScript + TanStack Table + Recharts - advanced filtering, search, and visualizations  
-[View Live Demo](#) · [GitHub Repo](#)
+### Interactive Scoping Review Dashboard
+**Current project** · Health/Athlete-focused research projects  
+Systematic literature review management tool with advanced research filtering and visualization.
 
-**Adaptive Learning Platform** - IU ServeIT Clinic  
-ML-powered recommendations for ELL students and learners with learning disabilities  
-Deployed to live nonprofit partners - +45% student engagement
+**Tech Stack**  
+React · TypeScript · TanStack Table · Recharts · Tailwind CSS · Vite
 
-**Clinical Data Pipeline** - IU Proactive Health Informatics Lab  
-Python + SQL - real-time anomaly detection - HIPAA-compliant ETL pipelines  
+**Features**  
+- Advanced multi-field filtering and full-text search  
+- Interactive data visualizations and statistics  
+- Research project categorization and tagging  
+- Export capabilities for analysis  
+
+[View Live Demo](#) · [View Source](./scoping-review-dashboard/)
+
+---
+
+### Adaptive Learning Platform
+**IU ServeIT Clinic** · ML-powered recommendations for ELL students and learners with learning disabilities  
+Deployed to live nonprofit partners — **+45% student engagement**
+
+**Tech Stack**  
+Machine Learning · Recommendation Engine · Full-stack
+
+**Features**  
+- Personalized learning recommendations based on student profiles  
+- Support for English Language Learners (ELL)  
+- Accessible interface design  
+- Real-time engagement tracking  
+
+**Impact**  
+45% increase in student engagement across deployed partner organizations
+
+---
+
+### Clinical Data Pipeline
+**IU Proactive Health Informatics Lab** · Real-time anomaly detection with HIPAA-compliant ETL  
 Reduced data entry errors by ~30% and clinical workload by ~25%
 
-**Full-Stack Web Features** - Matcha Green Consulting  
-TypeScript - React - Node.js - REST APIs - WCAG 2.1 AA accessibility  
-Human-reviewed AI workflows
+**Tech Stack**  
+Python · SQL · PostgreSQL · Real-time Processing
 
-**Online Ordering System** - Family Chinese Restaurant (2020)  
+**Features**  
+- HIPAA-compliant ETL pipelines for healthcare data  
+- Real-time anomaly detection algorithms  
+- Automated data validation and error detection  
+- Clinical workload optimization  
+
+**Impact**  
+- 30% reduction in data entry errors  
+- 25% reduction in clinical administrative workload
+
+---
+
+### Full-Stack Web Features
+**Matcha Green Consulting** · Accessible web applications with human-in-the-loop AI
+
+**Tech Stack**  
+TypeScript · React · Node.js · REST APIs · WCAG 2.1 AA
+
+**Features**  
+- Modern responsive web interfaces  
+- RESTful backend services  
+- WCAG 2.1 AA accessibility compliance  
+- Human-reviewed AI workflow integration  
+
+**Standards**  
+WCAG 2.1 AA accessibility · Human-AI collaboration best practices
+
+---
+
+### Online Ordering System
+**Family Chinese Restaurant** (2020)  
 First real-world project. Still the reason I build.
 
-### stack
+**Tech Stack**  
+Full-stack web application
+
+**Description**  
+My first production software project that led to real customer impact. Built end-to-end ordering system for a family restaurant.
+
+## stack
 
 **Languages & Frameworks**  
 TypeScript · React · Node.js · Python · SQL
@@ -39,10 +100,10 @@ PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
 HIPAA-compliant pipelines · ETL processes · Data visualization · Accessibility (WCAG)  
 Bias detection · Audit trails · Human-AI collaboration
 
-### languages
+## languages
 English · Mandarin · Fuzhounese · Spanish (improving)
 
-### connect
+## connect
 [LinkedIn](https://linkedin.com/in/jadezhao) · jlzhao@iu.edu
 
 ---

@@ -1,0 +1,10 @@
+{
+  "name": "adaptive-learning-platform-backend",
+  "version": "1.0.0",
+  "description": "ML backend for adaptive learning platform",
+  "main": "main.py",
+  "scripts": {
+    "dev": "python -m uvicorn main:app --reload",
+    "build": "pip install -r requirements.txt"
+  }
+}

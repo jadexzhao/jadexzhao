@@ -1,0 +1,8 @@
+{
+  "name": "clinical-data-pipeline",
+  "version": "1.0.0",
+  "description": "HIPAA-compliant clinical data ETL pipeline",
+  "scripts": {
+    "dev": "python src/main.py"
+  }
+}
