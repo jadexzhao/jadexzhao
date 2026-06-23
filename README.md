@@ -17,7 +17,7 @@
 
 ## selected products
 
-**adaptive learning platform** · ServeIT Clinic, IU Luddy  
+**adaptive learning platform**  
 ML support for ELL students + students with learning disabilities → deployed to live nonprofit clients → **+45% engagement**
 
 **clinical data pipeline** · Proactive Health Informatics Lab  
@@ -28,6 +28,24 @@ TypeScript + React + Node.js + REST APIs + WCAG 2.1 AA → shipped client-ready 
 
 **online ordering system** · family restaurant, pandemic 2020  
 first product i built for people i love; that is still why i build
+
+---
+
+## serve it at iu (official + why it matters)
+
+It's a pretty cool program. Here's the rundown:
+
+**Officially:** the Laurie Burns McRobbie Serve IT Clinic, run out of IU Luddy in partnership with Kelley and O'Neill.
+
+The core idea is that small nonprofits often cannot afford IT help, so Serve IT bridges that gap - connecting IU students with in-demand tech skills to nonprofits that need them. Students get placed on teams matched with a nonprofit org and build websites, databases, provide graphic design, and computer hardware support. They also go to afterschool clubs to teach local kids basic CS.
+
+Students earn course credit (INFO I389, 3 credits) and can return semester after semester, building a portfolio that shows both technical skill and civic engagement. There is also a capstone path through it.
+
+**Why it matters for Jade's profile specifically:**
+
+Alumni have gone on to Google, Apple, Amazon, Target, Ernst & Young, Eli Lilly, and Salesforce. Since 2011, 1,280 students have served 132 clients through 324 projects. So it is not just a volunteer thing - recruiters at those companies clearly recognize it.
+
+The key thing my advisor kept saying is that my Serve IT work was too static and not publicly visible enough. The work is real and substantial - it just needs to be on GitHub with actual code, not just described on a resume. That is the gap this README is trying to close.
 
 ---
 
