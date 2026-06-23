@@ -1,10 +1,14 @@
 # Full-Stack Web Features
 
-Modern web applications with human-in-the-loop AI integration. WCAG 2.1 AA accessible REST APIs and responsive interfaces for Matcha Green Consulting.
+Problem: Teams need production-ready, accessible web features that integrate AI responsibly into workflows.
 
-## Overview
+What I built: Reusable full-stack feature set (React + TypeScript + Node) focused on accessibility and human-AI workflows. Ready for production integration.
 
-Production-ready full-stack web features built with TypeScript, React, and Node.js. Emphasizes accessibility (WCAG 2.1 AA), performance, and seamless human-AI collaboration workflows.
+Status: Prototype/Production-ready modules
+
+![screenshot](./screenshot.png)
+
+Full details: see `README.full.md`
 
 ## Features
 

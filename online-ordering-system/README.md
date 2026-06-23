@@ -1,10 +1,14 @@
 # Online Ordering System
 
-First real-world software project built for Family Chinese Restaurant (2020). A complete full-stack ordering platform that transformed restaurant operations.
+Problem: Small restaurants need reliable online ordering without costly vendor lock-in.
 
-## Overview
+What I built: End-to-end ordering platform for a family restaurant (menu, orders, payments) — production-tested since 2020.
 
-My first production application that started my career in software engineering. Built an end-to-end online ordering system for a family restaurant, handling menu management, order processing, and customer interactions.
+Status: Legacy / Maintained
+
+![screenshot](./screenshot.png)
+
+Full details: see `README.full.md`
 
 ## Features
 

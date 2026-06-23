@@ -1,10 +1,14 @@
 # Clinical Data Pipeline
 
-HIPAA-compliant ETL pipeline with real-time anomaly detection for healthcare data processing. **Reduced data entry errors by ~30% and clinical workload by ~25%**.
+Problem: Clinical systems need reliable, compliant ETL that preserves privacy while detecting data issues in real time.
 
-## Overview
+What I built: HIPAA-aligned ETL pipeline with anomaly detection and monitoring (result: ~30% drop in data entry errors, ~25% reduced clinical workload).
 
-Enterprise-grade data pipeline for clinical environments. Handles patient data ingestion, validation, transformation, and analysis while maintaining strict HIPAA compliance and audit trails. Real-time anomaly detection catches data quality issues before they affect clinical operations.
+Status: Production-ready / Enterprise
+
+![screenshot](./screenshot.png)
+
+Full details: see `README.full.md`
 
 ## Features
 

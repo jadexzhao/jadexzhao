@@ -1,10 +1,14 @@
 # Adaptive Learning Platform
 
-ML-powered personalized learning recommendations for English Language Learners (ELL) and students with learning disabilities. Deployed to live nonprofit partners with **+45% student engagement** improvement.
+Problem: Students need personalized, accessible learning pathways that adapt to language and learning differences.
 
-## Overview
+What I built: A full-stack ML-powered platform delivering personalized recommendations and teacher dashboards — deployed with partner nonprofits (result: +45% student engagement).
 
-An intelligent tutoring system that adapts to individual student profiles and learning styles. Combines machine learning for recommendation generation with accessible, responsive frontend design for end users.
+Status: Complete
+
+![screenshot](./screenshot.png)
+
+Full details: see `README.full.md`
 
 ## Features
 
