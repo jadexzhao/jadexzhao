@@ -7,57 +7,27 @@
 
 ---
 
-## featured projects
+## what i can build for you (2-4 weeks)
 
-**adaptive learning platform**
-
-Problem: ELL students and students with learning disabilities needed personalized support in real classrooms.
-
-Stack: Python, ML, accessibility-first product design, nonprofit deployment.
-
-Outcome: deployed to live nonprofit clients and increased user engagement by **45%**.
-
-Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
-
-**clinical data pipeline**
-
-Problem: healthcare teams needed cleaner patient data and faster anomaly detection under compliance constraints.
-
-Stack: Python, SQL, ETL, real-time anomaly detection, HIPAA-aware workflow design.
-
-Outcome: **30% fewer data entry errors** and about **25% less clinical workload**.
-
-Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
-
-**full-stack consulting delivery**
-
-Problem: clients needed production-grade apps with accessibility and maintainability from day one.
-
-Stack: TypeScript, React, Node.js, REST APIs, WCAG 2.1 AA, modular architecture.
-
-Outcome: shipped client-ready features with AI-assisted development and human review on every deliverable.
-
-Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
+- interactive research dashboard (filters, tags, outcomes, export)
+- production-ready web app feature with analytics + tests
+- data pipeline + anomaly alerts + audit-friendly reporting
 
 ---
 
-## shipped
+## selected products
 
-**adaptive learning platform** · [ServeIT Clinic, IU Luddy]
+**adaptive learning platform** · ServeIT Clinic, IU Luddy  
+ML support for ELL students + students with learning disabilities → deployed to live nonprofit clients → **+45% engagement**
 
-ML-driven tool for ELL students + students with learning disabilities → deployed to live nonprofit clients → **+45% user engagement**
+**clinical data pipeline** · Proactive Health Informatics Lab  
+Python/SQL ETL + real-time anomaly detection + HIPAA-aware workflows → **30% fewer data entry errors** and **~25% lower clinical workload**
 
-**clinical data pipeline** · [Proactive Health Informatics Lab]
+**full-stack consulting delivery** · Matcha Green Consulting  
+TypeScript + React + Node.js + REST APIs + WCAG 2.1 AA → shipped client-ready features with human-reviewed AI workflows
 
-Python/SQL ETL for patient data, real-time anomaly detection, HIPAA-compliant → **30% fewer data entry errors**, **~25% less clinical workload**
-
-**full-stack consulting work** · [Matcha Green Consulting]
-
-TypeScript + React + Node.js · RESTful APIs · WCAG 2.1 AA · modular architecture · AI-assisted with human review on every deliverable
-
-**online ordering system** · [family restaurant, pandemic 2020]
-
-first thing i ever built that mattered — that's why i do this
+**online ordering system** · family restaurant, pandemic 2020  
+first product i built for people i love; that is still why i build
 
 ---
 
@@ -67,6 +37,28 @@ first thing i ever built that mattered — that's why i do this
 back @ Indiana University Bloomington
 summer before senior year · building in public · open to fall 2025 roles
 ```
+
+---
+
+## about me (multilingual)
+
+### 简体中文
+
+我家里经营中餐馆，从小帮忙让我明白：技术要贴近生活，才有价值。疫情时我帮家里做线上点餐，也因此确定了方向。现在我在印第安那大学布鲁明顿分校学习信息学（全额奖学金），做模型与市场策略研究，也为公益组织优化网站、支持学生学业与职业发展。闲暇时，我一直想将来开一个养鸭场，实用又有意思。
+
+**翻译由 AI 辅助完成，并经福州本地母语人士审核校对。**
+
+### Español
+
+Mi familia tiene un restaurante chino, y crecí ayudando ahí. Eso me enseñó algo clave: la tecnología solo vale si conecta con la vida real. Durante la pandemia, ayudé a lanzar pedidos en línea y desde entonces mi meta es usar la tecnología para ayudar a la gente común. Hoy estudio Informática en Indiana University Bloomington con beca completa, hago modelos e investigación en estrategia de mercado, optimizo sitios para organizaciones sin fines de lucro y apoyo a estudiantes en lo académico y profesional. Algún día me gustaría tener una granja de patos.
+
+**Traducción asistida por IA y revisada por hablantes nativos de Madrid, España.**
+
+### English
+
+My family runs a Chinese restaurant, and growing up helping there taught me this: technology matters only when it serves real life. During the pandemic, I helped launch online ordering, and that shaped my goal to build technology for everyday people. I now study Informatics at Indiana University Bloomington on a full scholarship. I build models, run market strategy research, optimize websites for nonprofits, and support students academically and professionally. In my free time, I keep thinking about opening a duck farm someday.
+
+**AI was used in translation and reviewed by native speakers from Fuzhou, China and Madrid, Spain.**
 
 ---
 
