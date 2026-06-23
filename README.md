@@ -3,6 +3,42 @@
 > **here's what i can do for you:**
 > ship full-stack features · build HIPAA-compliant data pipelines · make ML systems that actually get used · design for accessibility from the start
 
+**open to fall 2025 software + ml roles** · internships, new grad, and contract builds
+
+---
+
+## featured projects
+
+**adaptive learning platform**
+
+Problem: ELL students and students with learning disabilities needed personalized support in real classrooms.
+
+Stack: Python, ML, accessibility-first product design, nonprofit deployment.
+
+Outcome: deployed to live nonprofit clients and increased user engagement by **45%**.
+
+Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
+
+**clinical data pipeline**
+
+Problem: healthcare teams needed cleaner patient data and faster anomaly detection under compliance constraints.
+
+Stack: Python, SQL, ETL, real-time anomaly detection, HIPAA-aware workflow design.
+
+Outcome: **30% fewer data entry errors** and about **25% less clinical workload**.
+
+Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
+
+**full-stack consulting delivery**
+
+Problem: clients needed production-grade apps with accessibility and maintainability from day one.
+
+Stack: TypeScript, React, Node.js, REST APIs, WCAG 2.1 AA, modular architecture.
+
+Outcome: shipped client-ready features with AI-assisted development and human review on every deliverable.
+
+Link: [portfolio case study](https://matchaxmoxie.github.io/matchaxmoxie)
+
 ---
 
 ## shipped
