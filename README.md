@@ -1,119 +1,85 @@
 # hi, i'm jade
 
-**Building technology that connects to real life** - full-stack features, data pipelines, and accessible ML applications.
+i build and ship software. full-stack tools, data pipelines, and ML applications that real people actually use. i care about how a system fits together and what changes for the person on the other end of it.
 
-**Bloomington, IN → open to relocation**  
-**Seeking Fall 2025 Software Engineering / Full-Stack / Data Engineering roles**
+**Bloomington, IN → open to relocation**
+**open to software engineering, GTM engineering, and solutions engineering roles. anything LLM-shaped, too.**
 
-One-liner: I build shippable tools that connect product, engineering, and go-to-market — GTM engineer.
+---
 
 ## shipped
 
 ### Interactive Scoping Review Dashboard
-**Current project** · Health/Athlete-focused research projects  
-Systematic literature review management tool with advanced research filtering and visualization.
 
-**Tech Stack**  
-React · TypeScript · TanStack Table · Recharts · Tailwind CSS · Vite
+*a reusable tool for running systematic literature reviews, built for live health and athlete research*
 
-**Features**  
-- Advanced multi-field filtering and full-text search  
-- Interactive data visualizations and statistics  
-- Research project categorization and tagging  
-- Export capabilities for analysis  
+Most scoping reviews live in a spreadsheet nobody wants to open. This turns one into something you can actually explore: filter the corpus by condition, population, or study length, search full-text, and pull the exact cut you need. Built to support a live CHI 2027 study, and designed so other research teams can drop in their own data and get the same interface.
 
-[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/scoping-review-dashboard)
+**stack** React · TypeScript · TanStack Table · Recharts · Tailwind · Vite
 
----
+- filter by field: every study with an athlete, everything tagged heart, anything running over a year
+- full-text search and interactive stats for screening decisions
+- tagging, categorization, and export for downstream analysis
 
-### Adaptive Learning Platform
-**IU ServeIT Clinic** · ML-powered recommendations for ELL students and learners with learning disabilities  
-Deployed to live nonprofit partners — **+45% student engagement**
-
-**Tech Stack**  
-Machine Learning · Recommendation Engine · Full-stack
-
-**Features**  
-- Personalized learning recommendations based on student profiles  
-- Support for English Language Learners (ELL)  
-- Accessible interface design  
-- Real-time engagement tracking  
-
-**Impact**  
-45% increase in student engagement across deployed partner organizations
-
-[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/adaptive-learning-platform)
+[code](https://github.com/jadexzhao/jadexzhao/tree/main/scoping-review-dashboard) · [demo](https://jadexzhao.github.io/jadexzhao/)
 
 ---
 
 ### Clinical Data Pipeline
-**IU Proactive Health Informatics Lab** · Real-time anomaly detection with HIPAA-compliant ETL  
-Reduced data entry errors by ~30% and clinical workload by ~25%
 
-**Tech Stack**  
-Python · SQL · PostgreSQL · Real-time Processing
+*IU Proactive Health Informatics Lab · HIPAA-compliant ETL with real-time anomaly detection*
 
-**Features**  
-- HIPAA-compliant ETL pipelines for healthcare data  
-- Real-time anomaly detection algorithms  
-- Automated data validation and error detection  
-- Clinical workload optimization  
+**~30% fewer data-entry errors. ~25% less clinical admin workload.**
 
-**Impact**  
-- 30% reduction in data entry errors  
-[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/clinical-data-pipeline)
+**stack** Python · SQL · PostgreSQL · real-time processing
 
-- 25% reduction in clinical administrative workload
+- HIPAA-compliant ETL for healthcare data
+- real-time anomaly detection on incoming records
+- automated validation that catches errors before they reach clinicians
+
+[code](https://github.com/jadexzhao/jadexzhao/tree/main/clinical-data-pipeline)
 
 ---
 
-### Full-Stack Web Features
-**Matcha Green Consulting** · Accessible web applications with human-in-the-loop AI
+### ServeIT Client Websites
 
-**Tech Stack**  
-TypeScript · React · Node.js · REST APIs · WCAG 2.1 AA
+*IU ServeIT · website team lead*
 
-**Features**  
-- Modern responsive web interfaces  
-- RESTful backend services  
-- WCAG 2.1 AA accessibility compliance  
-- Human-reviewed AI workflow integration  
-[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/full-stack-web-features)
+as web team lead i scope, build, and ship production websites for real Bloomington organizations, owning client intake, delivery, and accessibility across the team.
 
+clients:
 
-**Standards**  
-WCAG 2.1 AA accessibility · Human-AI collaboration best practices
+- City of Bloomington
+- Middle Way House
+- Indiana Phenology Lab
+- Bloomington Chamber of Commerce
+
+**stack** full-stack web · responsive design · WCAG 2.1 AA accessibility
 
 ---
 
 ### Online Ordering System
-**Family Chinese Restaurant** (2020)  
-First real-world project. Still the reason I build.
 
-[View Live Demo](https://github.com/jadexzhao/jadexzhao#) · [View Source](https://github.com/jadexzhao/jadexzhao/blob/main/online-ordering-system)
+*Potstickers, my family's restaurant in New Palestine, IN (2020)*
 
-**Tech Stack**  
-Full-stack web application
+my first production project. an end-to-end ordering system real customers used. still the reason i build.
 
-**Description**  
-My first production software project that led to real customer impact. Built end-to-end ordering system for a family restaurant.
+[code](https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system)
+
+---
 
 ## stack
 
-**Languages & Frameworks**  
-TypeScript · React · Node.js · Python · SQL
-
-**Tools & Libraries**  
-PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
-
-**Focus Areas**  
-HIPAA-compliant pipelines · ETL processes · Data visualization · Accessibility (WCAG)  
-Bias detection · Audit trails · Human-AI collaboration
+**languages & frameworks** TypeScript · React · Node.js · Python · SQL
+**tools & libraries** PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
+**focus** HIPAA-compliant pipelines · ETL · data viz · accessibility (WCAG) · bias detection · audit trails · human-AI collaboration
 
 ## languages
+
 English · Mandarin · Fuzhounese · Spanish (improving)
 
 ## connect
+
 [LinkedIn](https://linkedin.com/in/jadezhao) · jlzhao@iu.edu
 
 ---
