@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jade zhao · the briefcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#212B23;
+    --ink-soft:#4C594B;
+    --paper:#FBFAF5;
+    --matcha:#5F7D4F;
+    --matcha-deep:#34472C;
+    --matcha-soft:#8AA77B;
+    --mist:#EDF1E6;
+    --line:#D8DCC9;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 24px 56px;
+  }
+
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  .mono{font-family:"IBM Plex Mono",monospace}
+
+  /* ---- masthead ---- */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--matcha);
+    margin-bottom:14px;
+  }
+
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:clamp(42px,8vw,60px);
+    line-height:.96;
+    letter-spacing:-.02em;
+    color:var(--matcha-deep);
+  }
+
+  .standfirst{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(17px,2.4vw,20px);
+    line-height:1.45;
+    color:var(--ink);
+    margin-top:18px;
+    max-width:60ch;
+  }
+
+  .meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    margin-top:20px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .meta a{color:var(--matcha);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .meta a:hover{border-color:var(--matcha)}
+  .meta .sep{color:var(--matcha-soft)}
+
+  .open{
+    margin-top:14px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .open b{color:var(--matcha-deep);font-weight:600}
+
+  .rule{
+    height:1px;
+    background:var(--line);
+    border:0;
+    margin:34px 0 26px;
+  }
+
+  /* ---- work ---- */
+  .section-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    margin-bottom:22px;
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:8px 28px;
+    padding:18px 0;
+    border-top:1px solid var(--line);
+  }
+  .entry:first-of-type{border-top:0;padding-top:0}
+
+  .rail{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    line-height:1.45;
+    color:var(--ink-soft);
+  }
+  .rail .who{color:var(--matcha-deep);font-weight:500}
+  .rail .yr{color:var(--matcha-soft)}
+
+  .body h2{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:23px;
+    line-height:1.1;
+    letter-spacing:-.01em;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .did{font-size:14px;color:var(--ink-soft);max-width:58ch}
+
+  .outcome{
+    display:inline-block;
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:600;
+    font-size:13px;
+    color:var(--matcha-deep);
+    background:var(--mist);
+    padding:3px 9px;
+    border-radius:2px;
+    margin-top:11px;
+  }
+
+  .foot-row{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:6px 14px;
+    margin-top:11px;
+  }
+  .tags{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11.5px;
+    color:var(--matcha-soft);
+  }
+  .src{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .src:hover{border-color:var(--matcha)}
+  .src::before{content:"→ "}
+
+  /* ---- footer ---- */
+  .closer{
+    margin-top:34px;
+    padding-top:22px;
+    border-top:2px solid var(--matcha-deep);
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:14px 28px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .closer .k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    display:block;
+    margin-bottom:4px;
+  }
+  .closer .human{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--ink)}
+
+  a:focus-visible{outline:2px solid var(--matcha);outline-offset:3px;border-radius:1px}
+
+  /* ---- entrance ---- */
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(8px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
+    .reveal:nth-child(2){animation-delay:.05s}
+    .reveal:nth-child(3){animation-delay:.1s}
+    .reveal:nth-child(4){animation-delay:.15s}
+    .reveal:nth-child(5){animation-delay:.2s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  /* ---- print: clean one-page handout ---- */
+  @media print{
+    @page{size:Letter;margin:0.55in}
+    body{padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .sheet{max-width:none}
+    .reveal{opacity:1!important;transform:none!important;animation:none!important}
+    .rule{margin:22px 0 18px}
+    .entry{padding:14px 0;break-inside:avoid}
+    h1{font-size:48px}
+  }
+
+  @media (max-width:560px){
+    body{padding:32px 18px 40px}
+    .entry{grid-template-columns:1fr;gap:6px}
+    .rail{order:-1}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header>
+    <p class="eyebrow reveal">go-to-market (gtm) engineer</p>
+    <h1 class="reveal">jade zhao</h1>
+    <p class="standfirst reveal">i build the software, understand the people using it, and care whether it actually gets adopted. informatics at indiana university, working through my practice, jade&#127795;.</p>
+    <div class="meta reveal">
+      <a href="https://github.com/jadexzhao">github.com/jadexzhao</a>
+      <span class="sep">·</span>
+      <a href="https://linkedin.com/in/jadezhao">linkedin.com/in/jadezhao</a>
+      <span class="sep">·</span>
+      <span>jlzhao@iu.edu</span>
+      <span class="sep">·</span>
+      <span>bloomington, in</span>
+    </div>
+    <p class="open reveal">open to <b>gtm engineering</b> · <b>solutions engineering</b> · <b>developer relations</b> · <b>ai product</b></p>
+  </header>
+
+  <hr class="rule">
+
+  <p class="section-label">the work · groups i've shipped for, and what came out</p>
+
+  <article class="entry reveal">
+    <div class="rail"><span class="who">health-equity research lab</span><br><span class="yr">2025 — now</span></div>
+    <div class="body">
+      <h2>interactive scoping review dashboard</h2>
+      <p class="did">turned a static literature review into a tool a team can query. filter a body of studies by population, outcome, or duration, with full-text search and live charts.</p>
+      <span class="outcome">a research review you can actually search, not scroll</span>
+      <div class="foot-row">
+        <span class="tags">react · typescript · tanstack table · recharts</span>
+        <a class="src" href="https://github.com/jadexzhao/jadexzhao/tree/main/scoping-review-dashboard">code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry reveal">
+    <div class="rail"><span class="who">iu serveit clinic</span><br><span class="yr">nonprofit partners</span></div>
+    <div class="body">
+      <h2>adaptive learning platform</h2>
+      <p class="did">machine learning (ml) recommendations for english language learners (ell) and students with learning disabilities. shipped to live nonprofit partners, not a class demo.</p>
+      <span class="outcome">+45% student engagement across partners</span>
+      <div class="foot-row">
+        <span class="tags">react · typescript · recommendation engine</span>
+        <a class="src" href="https://github.com/jadexzhao/jadexzhao/tree/main/adaptive-learning-platform">code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry reveal">
+    <div class="rail"><span class="who">iu proactive health informatics lab</span></div>
+    <div class="body">
+      <h2>clinical data pipeline</h2>
+      <p class="did">a health insurance portability and accountability act (hipaa) compliant extract, transform, load (etl) pipeline with real-time anomaly detection and automated validation.</p>
+      <span class="outcome">~30% fewer data-entry errors · ~25% less admin workload</span>
+      <div class="foot-row">
+        <span class="tags">python · sql · postgresql</span>
+        <a class="src" href="https://github.com/jadexzhao/jadexzhao/tree/main/clinical-data-pipeline">code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry reveal">
+    <div class="rail"><span class="who">potstickers</span><br><span class="yr">family restaurant · since 2020</span></div>
+    <div class="body">
+      <h2>a real business, built and grown end to end</h2>
+      <p class="did">started with online ordering during the pandemic. now i run the full go-to-market: a self-contained site, a wired contact form, and a live seasonal content calendar. build plus growth, for a business that actually depends on it.</p>
+      <span class="outcome">software i ship and market, with customers on the other end</span>
+      <div class="foot-row">
+        <span class="tags">html · formspree · content · social</span>
+        <a class="src" href="https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system">code</a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="closer reveal">
+    <div>
+      <span class="k">stack</span>
+      typescript · react · node · python · sql · etl · data viz
+    </div>
+    <div>
+      <span class="k">reach</span>
+      content reaching 150,000+ students
+    </div>
+    <div>
+      <span class="k">languages</span>
+      english · mandarin · fuzhounese · spanish
+    </div>
+    <div>
+      <span class="human">first-generation, raised in my family's chinese restaurant. someday: a duck farm &#129414;</span>
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
+
