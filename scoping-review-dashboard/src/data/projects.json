@@ -1,8 +1,8 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "title": "Adaptive Learning Platform for ELL and Students with Learning Disabilities",
-    "authors": "Jade Zhao et al. (IU ServeIT Clinic)",
+    "authors": ["Jade Zhao", "et al. (IU ServeIT Clinic)"],
     "year": 2024,
     "domain": ["education", "accessibility"],
     "duration_months": 12,
@@ -12,9 +12,9 @@
     "url": ""
   },
   {
-    "id": 2,
+    "id": "2",
     "title": "Example Heart Health Intervention for Athletes",
-    "authors": "Smith J, Johnson A, et al.",
+    "authors": ["Smith J", "Johnson A", "et al."],
     "year": 2023,
     "domain": ["heart", "athlete"],
     "duration_months": 24,
@@ -24,9 +24,9 @@
     "url": "https://example.com"
   },
   {
-    "id": 3,
+    "id": "3",
     "title": "Long-term Monitoring of Cardiovascular Risk in Young Athletes",
-    "authors": "Lee K, Patel R",
+    "authors": ["Lee K", "Patel R"],
     "year": 2024,
     "domain": ["heart", "athlete"],
     "duration_months": 36,
@@ -36,9 +36,9 @@
     "url": ""
   },
   {
-    "id": 4,
+    "id": "4",
     "title": "Family Restaurant Online Ordering System",
-    "authors": "Jade Zhao",
+    "authors": ["Jade Zhao"],
     "year": 2020,
     "domain": ["business", "accessibility"],
     "duration_months": 2,
@@ -48,9 +48,9 @@
     "url": ""
   },
   {
-    "id": 5,
+    "id": "5",
     "title": "Clinical Data Pipeline Optimization",
-    "authors": "Proactive Health Informatics Lab",
+    "authors": ["Proactive Health Informatics Lab"],
     "year": 2024,
     "domain": ["health"],
     "duration_months": 8,

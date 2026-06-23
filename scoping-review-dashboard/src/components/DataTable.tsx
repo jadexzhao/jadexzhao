@@ -6,9 +6,9 @@ import {
 } from '@tanstack/react-table';
 
 type Project = {
-  id: number;
+  id: string;
   title: string;
-  authors: string;
+  authors: string[];
   year: number;
   domain: string[];
   duration_months: number;
@@ -22,7 +22,10 @@ const columnHelper = createColumnHelper<Project>();
 
 const columns = [
   columnHelper.accessor('title', { header: 'Title' }),
-  columnHelper.accessor('authors', { header: 'Authors' }),
+  columnHelper.accessor('authors', {
+    header: 'Authors',
+    cell: (info) => info.getValue().join(', '),
+  }),
   columnHelper.accessor('year', { header: 'Year' }),
   columnHelper.accessor('domain', {
     header: 'Domain',

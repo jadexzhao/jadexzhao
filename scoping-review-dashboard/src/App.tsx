@@ -7,7 +7,7 @@ import projectsData from './data/projects.json';
 type Project = {
   id: number;
   title: string;
-  authors: string;
+  authors: string[];
   year: number;
   domain: string[];
   duration_months: number;
@@ -28,7 +28,7 @@ function App() {
       const query = searchTerm.toLowerCase();
       const matchesSearch =
         project.title.toLowerCase().includes(query) ||
-        project.authors.toLowerCase().includes(query) ||
+        project.authors.join(' ').toLowerCase().includes(query) ||
         project.key_findings.toLowerCase().includes(query);
 
       const matchesDomain =

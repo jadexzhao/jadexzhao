@@ -11,9 +11,9 @@ import {
 } from 'recharts';
 
 type Project = {
-  id: number;
+  id: string;
   title: string;
-  authors: string;
+  authors: string[];
   year: number;
   domain: string[];
   duration_months: number;
