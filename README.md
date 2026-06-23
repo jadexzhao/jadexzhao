@@ -5,6 +5,8 @@
 **Bloomington, IN → open to relocation**  
 **Seeking Fall 2025 Software Engineering / Full-Stack / Data Engineering roles**
 
+One-liner: I build shippable tools that connect product, engineering, and go-to-market — GTM engineer.
+
 ## shipped
 
 ### Interactive Scoping Review Dashboard

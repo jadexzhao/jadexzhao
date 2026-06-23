@@ -1,6 +1,6 @@
 # Interactive Scoping Review Dashboard
 
-Live demo: https://jadexzhao.github.io/jadexzhao/  (deploys on push to `main`)
+Planned demo: https://jadexzhao.github.io/  (publishes via GitHub Actions; may take a few minutes)
 
 A modern, accessible dashboard for analyzing and visualizing health and athlete-focused research projects. Built with React, TypeScript, and TanStack Table for advanced data management.
 
