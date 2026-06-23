@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Adaptive Learning Platform for ELL and Students with Learning Disabilities",
+    "authors": "Jade Zhao et al. (IU ServeIT Clinic)",
+    "year": 2024,
+    "domain": ["education", "accessibility"],
+    "duration_months": 12,
+    "methodology": "Deployment + User Study",
+    "key_findings": "ML-powered recommendations significantly improved engagement for ELL students and learners with disabilities",
+    "participants": 180,
+    "url": ""
+  },
+  {
+    "id": 2,
+    "title": "Example Heart Health Intervention for Athletes",
+    "authors": "Smith J, Johnson A, et al.",
+    "year": 2023,
+    "domain": ["heart", "athlete"],
+    "duration_months": 24,
+    "methodology": "RCT",
+    "key_findings": "Significant improvement in cardiac recovery metrics and VO2 max",
+    "participants": 156,
+    "url": "https://example.com"
+  },
+  {
+    "id": 3,
+    "title": "Long-term Monitoring of Cardiovascular Risk in Young Athletes",
+    "authors": "Lee K, Patel R",
+    "year": 2024,
+    "domain": ["heart", "athlete"],
+    "duration_months": 36,
+    "methodology": "Cohort",
+    "key_findings": "Early detection protocol reduced adverse cardiac events by 40%",
+    "participants": 420,
+    "url": ""
+  },
+  {
+    "id": 4,
+    "title": "Family Restaurant Online Ordering System",
+    "authors": "Jade Zhao",
+    "year": 2020,
+    "domain": ["business", "accessibility"],
+    "duration_months": 2,
+    "methodology": "Full-Stack Development",
+    "key_findings": "First real-world project that helped family business during pandemic",
+    "participants": 0,
+    "url": ""
+  },
+  {
+    "id": 5,
+    "title": "Clinical Data Pipeline Optimization",
+    "authors": "Proactive Health Informatics Lab",
+    "year": 2024,
+    "domain": ["health"],
+    "duration_months": 8,
+    "methodology": "ETL Pipeline",
+    "key_findings": "HIPAA-compliant pipeline reduced data entry errors by ~30%",
+    "participants": 0,
+    "url": ""
+  }
+]
