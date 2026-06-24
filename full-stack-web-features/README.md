@@ -6,10 +6,6 @@ What I built: Reusable full-stack feature set (React + TypeScript + Node) focuse
 
 Status: Prototype/Production-ready modules
 
-![screenshot](./screenshot.png)
-
-Full details: see `README.full.md`
-
 ## Features
 
 ♿ **Accessibility**
@@ -198,11 +194,3 @@ npm run test:e2e
 - ✅ ESLint + Prettier
 - ✅ Unit test coverage >80%
 - ✅ API documentation
-
-## Contributing
-
-This is a portfolio project showcasing modern full-stack development with emphasis on accessibility and human-AI collaboration.
-
-## License
-
-Personal portfolio project - 2024

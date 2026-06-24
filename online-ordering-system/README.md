@@ -6,10 +6,6 @@ What I built: End-to-end ordering platform for a family restaurant (menu, orders
 
 Status: Legacy / Maintained
 
-![screenshot](./screenshot.png)
-
-Full details: see `README.full.md`
-
 ## Features
 
 🍜 **Menu Management**
@@ -172,7 +168,3 @@ It demonstrated real business value and led to continued partnerships and opport
 ## Legacy
 
 This project remains in production use and continues to process orders for the restaurant, validating the importance of building reliable systems that serve real business needs.
-
-## License
-
-Personal portfolio project - 2020

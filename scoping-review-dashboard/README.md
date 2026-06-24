@@ -8,8 +8,6 @@ A modern, accessible dashboard for analyzing and visualizing health and athlete-
 
 ![Dashboard screenshot](./screenshot.svg)
 
-_Replace `screenshot.svg` with an actual dashboard image to show a visual demo._
-
 ## Features
 
 ✨ **Advanced Filtering & Search**
@@ -137,11 +135,3 @@ The dashboard expects research project data in the following structure:
 - Firefox: Latest 2 versions
 - Safari: Latest 2 versions
 - Mobile browsers: iOS Safari 12+, Chrome Mobile
-
-## Contributing
-
-This is a portfolio project showcasing full-stack development practices including data visualization, accessibility, and modern web performance optimization.
-
-## License
-
-Personal portfolio project - 2024

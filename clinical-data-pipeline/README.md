@@ -6,10 +6,6 @@ What I built: HIPAA-aligned ETL pipeline with anomaly detection and monitoring (
 
 Status: Production-ready / Enterprise
 
-![screenshot](./screenshot.png)
-
-Full details: see `README.full.md`
-
 ## Features
 
 🔐 **HIPAA Compliance**
@@ -168,11 +164,3 @@ Access Airflow web UI at `http://localhost:8080`
 - Monitor DAG runs
 - Check task status
 - View logs and metrics
-
-## Contributing
-
-This is a portfolio project showcasing enterprise data pipeline architecture with focus on healthcare compliance and data quality.
-
-## License
-
-Personal portfolio project - 2024

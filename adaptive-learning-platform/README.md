@@ -6,10 +6,6 @@ What I built: A full-stack ML-powered platform delivering personalized recommend
 
 Status: Complete
 
-![screenshot](./screenshot.png)
-
-Full details: see `README.full.md`
-
 ## Features
 
 🧠 **Intelligent Recommendations**
@@ -127,11 +123,3 @@ Currently deployed to partner nonprofit organizations serving:
 - Improved learning outcomes for ELL students
 - Accessibility compliance across all features
 - Positive feedback from educators and learners
-
-## Contributing
-
-This is a portfolio project showcasing full-stack ML application development with focus on accessibility and educational equity.
-
-## License
-
-Personal portfolio project - 2024
