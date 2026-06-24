@@ -49,10 +49,10 @@ as web team lead i scope, build, and ship production websites for real Bloomingt
 
 clients:
 
-- City of Bloomington
-- Middle Way House
-- Indiana Phenology Lab
-- Bloomington Chamber of Commerce
+- [City of Bloomington](https://bloomington.in.gov)
+- [Middle Way House](https://middlewayhouse.org)
+- [Indiana Phenology Lab](https://www.inwonderment.org)
+- [Bloomington Chamber of Commerce](https://www.bloomingtonareachamber.com)
 
 **stack** full-stack web · responsive design · WCAG 2.1 AA accessibility
 
