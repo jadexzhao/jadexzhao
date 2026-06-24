@@ -1,6 +1,6 @@
 # hi, i'm jade
 
-i build and ship software. full-stack tools, data pipelines, and ML applications that real people actually use. i care about how a system fits together and what changes for the person on the other end of it.
+i build and ship software that real people use. full-stack tools, data pipelines, ML applications. every project funds something real: money, ideas, long-term stuff that compounds. eventually: a duck farm.
 
 **Bloomington, IN → open to relocation**
 **open to software engineering, GTM engineering, and solutions engineering roles. anything LLM-shaped, too.**
@@ -84,4 +84,6 @@ English · Mandarin · Fuzhounese · Spanish (improving)
 
 ---
 
-**someday:** open a duck farm
+## someday
+
+a real duck farm. until then: [visit the virtual one](./duck-farm). every skill on this page is a brick toward the real thing. build enough of them and someday stops being someday.
