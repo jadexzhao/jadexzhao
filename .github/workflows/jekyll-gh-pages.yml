@@ -28,17 +28,40 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Build duck farm
+        run: |
+          cd duck-farm
+          npm ci
+          npm run build
+          cd ..
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Prepare briefcase site
+      
+      - name: Prepare briefcase and duck farm site
         run: |
-          # Ensure briefcase exists and copy its contents into _site for Pages
+          # Create _site with briefcase at root
           if [ -d ./briefcase ]; then
             mkdir -p _site
             cp -r briefcase/* _site/
           else
             echo "briefcase folder not found" && exit 1
           fi
+          
+          # Copy duck farm dist to _site/duck-farm/
+          if [ -d ./duck-farm/dist ]; then
+            mkdir -p _site/duck-farm
+            cp -r duck-farm/dist/* _site/duck-farm/
+          else
+            echo "duck-farm/dist folder not found" && exit 1
+          fi
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
