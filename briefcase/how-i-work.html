@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Jade Zhao uses Cursor, Copilot, and agentic assistants - with full disclosure. Because not saying would be a form of unclear instruction.">
+<title>jade zhao · how i work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#212B23;
+    --ink-soft:#4C594B;
+    --paper:#FBFAF5;
+    --matcha:#5F7D4F;
+    --matcha-deep:#34472C;
+    --matcha-soft:#8AA77B;
+    --mist:#EDF1E6;
+    --line:#D8DCC9;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:48px 24px 56px;
+  }
+
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  .mono{font-family:"IBM Plex Mono",monospace}
+
+  /* ---- masthead ---- */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--matcha);
+    margin-bottom:14px;
+  }
+
+  .back{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    padding-bottom:1px;
+  }
+  .back:hover{border-color:var(--matcha)}
+  .back::before{content:"← "}
+
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:clamp(38px,7vw,54px);
+    line-height:.98;
+    letter-spacing:-.02em;
+    color:var(--matcha-deep);
+    margin-top:20px;
+  }
+
+  .standfirst{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(17px,2.4vw,20px);
+    line-height:1.45;
+    color:var(--ink);
+    margin-top:18px;
+    max-width:60ch;
+  }
+
+  .lede{
+    margin-top:16px;
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+  .lede p{margin-top:10px}
+  .lede b{color:var(--matcha-deep);font-weight:600}
+
+  .toc{
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 16px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .toc a{color:var(--matcha);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .toc a:hover{border-color:var(--matcha)}
+  .toc .sep{color:var(--matcha-soft)}
+
+  .rule{
+    height:1px;
+    background:var(--line);
+    border:0;
+    margin:34px 0 26px;
+  }
+
+  /* ---- sections ---- */
+  section{scroll-margin-top:24px}
+
+  .section-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    margin-bottom:12px;
+  }
+
+  h2{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:27px;
+    line-height:1.08;
+    letter-spacing:-.01em;
+    color:var(--matcha-deep);
+    margin-bottom:14px;
+  }
+
+  h3{
+    font-family:"IBM Plex Sans",sans-serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--ink);
+    margin:18px 0 6px;
+  }
+
+  p{font-size:15px;color:var(--ink-soft);max-width:62ch;margin-bottom:12px}
+  p b{color:var(--matcha-deep);font-weight:600}
+
+  ol,ul{margin:0 0 12px 1.2em;max-width:62ch}
+  li{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
+
+  .note{
+    background:var(--mist);
+    border-radius:3px;
+    padding:14px 16px;
+    margin:16px 0;
+  }
+  .note p:last-child{margin-bottom:0}
+
+  /* ---- footer ---- */
+  .closer{
+    margin-top:40px;
+    padding-top:22px;
+    border-top:2px solid var(--matcha-deep);
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .closer .human{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--ink)}
+  .closer a{color:var(--matcha-deep);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+
+  a:focus-visible{outline:2px solid var(--matcha);outline-offset:3px;border-radius:1px}
+
+  @media (max-width:560px){
+    body{padding:32px 18px 40px}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header>
+    <a class="back" href="index.html">the briefcase</a>
+    <p class="eyebrow" style="margin-top:16px">ai transparency · cursor, copilot, agentic assistants</p>
+    <h1>how i work</h1>
+    <p class="standfirst">i use AI tools and i'm telling you, because not telling you would be a form of unclear instruction - and that's the one thing this whole memo is arguing against.</p>
+    <div class="lede">
+      <p>i use AI tools - <b>Cursor</b>, <b>Copilot</b>, agentic assistants. they increase how fast i can iterate. they do not replace how i think, what i decide, or what i sign off on.</p>
+      <p>the drafts are assisted. the thinking, the architecture, the final calls - those are mine. <b>draft generation is AI-assisted. accountability is not.</b></p>
+    </div>
+    <nav class="toc" aria-label="memo sections">
+      <a href="#how-i-work">#how-i-work</a>
+      <span class="sep">·</span>
+      <a href="#cursor-and-agents">#cursor-and-agents</a>
+      <span class="sep">·</span>
+      <a href="#business-tech-law">#business-tech-law</a>
+    </nav>
+  </header>
+
+  <hr class="rule">
+
+  <section id="how-i-work">
+    <p class="section-label">the memo</p>
+    <h2>how i work</h2>
+    <p>i use Cursor, Copilot, and agentic assistants. they increase how fast i can iterate. they do not replace how i think, what i decide, or what i sign off on. the distinction matters. that's why i'm writing it down.</p>
+
+    <h3>the runbook - five steps</h3>
+    <ol>
+      <li>prompts include constraints and expected outputs. vague inputs produce unstable outputs. that's the sandwich.</li>
+      <li>AI proposes. i evaluate. not the other way around.</li>
+      <li>every output gets checked for logic, fit, and edge cases before it moves.</li>
+      <li>major decisions get documented so i can explain them later.</li>
+      <li>nothing ships without a human reading it and saying yes.</li>
+    </ol>
+
+    <h3>when it goes wrong</h3>
+    <p>AI gets it wrong more than people expect. it sounds confident when it's guessing. it fills gaps with plausible-sounding things that aren't true. it optimizes for fluency, not accuracy.</p>
+    <p>when i catch it, and i do catch it, i don't just fix the output. i go back to the prompt. something in the instruction created room for the wrong answer. that's the sandwich again. the error is a missing step. find the step. fix the instruction. run it again.</p>
+
+    <div class="note">
+      <p>transparency isn't a policy here. it's an instruction with no missing steps. if you can't see how the work was made, you can't fully trust what it does. that's the whole argument. &#127799;</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="cursor-and-agents">
+    <p class="section-label">tooling</p>
+    <h2>cursor vs. agents</h2>
+    <p>two different tools, two different amounts of leash, and i name which one i'm holding.</p>
+    <p><b>Cursor</b> is an editor with repo context and a <span class="mono">.cursorrules</span> file - it reads the code i'm already in and proposes edits inline. i stay in the diff the whole time.</p>
+    <p><b>Supervised agents</b> are multi-step tool use with human diff review: the agent chains actions toward a goal, and i read every diff before anything lands. supervised means i am the one who says yes.</p>
+    <p>across both, the rule is the same one from the runbook: AI proposes, i evaluate, and i still read the diffs and own what ships.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="business-tech-law">
+    <p class="section-label">governance</p>
+    <h2>business - technology - law</h2>
+    <p>i frame this as a product and governance memo with a <b>business-technology-law</b> lens: vendor and data-handling awareness, institutional policy, HIPAA- and WCAG-adjacent norms, and EU digital rulemaking as scan input - risk-aware disclosure in the vocabulary of strategy and compliance-adjacent coursework.</p>
+    <p>the product-shaped habits underneath it are the same ones i use in clinic and civic work:</p>
+    <ul>
+      <li>name <b>stakeholders</b> early.</li>
+      <li>treat ethics and access as <b>non-functional requirements</b>, not a late QA scramble.</li>
+      <li>read <b>vendor and institutional constraints</b> alongside user stories.</li>
+      <li>document assumptions for <b>traceability</b> so someone else can trace decisions later.</li>
+      <li>ship in <b>small increments</b> with human sign-off when the stakes are high.</li>
+    </ul>
+    <p>environmental scan (PEST plus legal/regulatory) and SWOT-style thinking are honest labels for one question: what could break this roadmap or create liability? treating it as a living risk register is how i keep "innovation" from meaning "no one is accountable."</p>
+  </section>
+
+  <footer class="closer">
+    <p class="human">ratio. logos. ordo. praxis. &#127799; the reasoning, the logic, the order, the practice - the four things that make instruction real. back to <a href="index.html">the briefcase</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>
