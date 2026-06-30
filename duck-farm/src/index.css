@@ -157,3 +157,18 @@ button:active {
 .info strong {
   color: #667eea;
 }
+
+.farm-links {
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+.farm-links a {
+  color: #667eea;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.35);
+}
+
+.farm-links a:hover {
+  border-bottom-color: #667eea;
+}

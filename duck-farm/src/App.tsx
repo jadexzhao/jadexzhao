@@ -161,6 +161,14 @@ export default function App() {
         <br />
         watch them waddle around. this is the placeholder version of the real thing.
       </div>
+
+      <p className="farm-links">
+        <a href="https://jadexzhao.github.io/jadexzhao/">← portfolio</a>
+        {' · '}
+        <a href="https://github.com/jadexzhao">github</a>
+        {' · '}
+        <a href="https://github.com/matchaxmoxie">@matchaxmoxie</a>
+      </p>
     </div>
   )
 }

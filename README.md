@@ -12,6 +12,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jadezhao-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jadezhao)
 [![Portfolio](https://img.shields.io/badge/Portfolio-jadexzhao.github.io-34472C?style=for-the-badge&logo=githubpages&logoColor=white)](https://jadexzhao.github.io/jadexzhao/)
 [![GitHub](https://img.shields.io/badge/GitHub-jadexzhao-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jadexzhao)
+[![Consulting site](https://img.shields.io/badge/Site-matchaxmoxie-F2C4CE?style=for-the-badge&logo=html5&logoColor=3D2B2B)](https://matchaxmoxie.github.io/matchaxmoxie/)
+[![Persona](https://img.shields.io/badge/Persona-@matchaxmoxie-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://github.com/matchaxmoxie)
 [![Email](https://img.shields.io/badge/Email-jlzhao%40iu.edu-5F7D4F?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jlzhao@iu.edu)
 
 ---
@@ -102,6 +104,18 @@ My first production project: an end-to-end ordering system real customers used. 
 [![Code](https://img.shields.io/badge/Code-online--ordering--system-34472C?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system)
 [![Site repo](https://img.shields.io/badge/Site-pstickers24-24292f?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/pstickers24)
 [![Order online](https://img.shields.io/badge/Order-potstickers24.cloveronline.com-E34F26?style=flat-square&logo=shoppingcart&logoColor=white)](https://potstickers24.cloveronline.com/)
+
+---
+
+### Pin these on my profile
+
+| Repo | Why |
+|------|-----|
+| [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio — dashboard, pipelines, duck farm |
+| [`jadexzhao/pstickers24`](https://github.com/jadexzhao/pstickers24) | Family restaurant site — first production ship |
+| [`matchaxmoxie/matchaxmoxie`](https://github.com/matchaxmoxie/matchaxmoxie) | Consulting site + FASE MAP coordinator tooling |
+
+Also on GitHub as [**@matchaxmoxie**](https://github.com/matchaxmoxie) (persona lane — Instagram [@matchaxmoxie](https://instagram.com/matchaxmoxie)).
 
 ---
 

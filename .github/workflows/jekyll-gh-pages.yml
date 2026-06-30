@@ -53,6 +53,21 @@ jobs:
           else
             echo "briefcase folder not found" && exit 1
           fi
+
+          # Legacy /briefcase/ bookmarks → root portfolio
+          mkdir -p _site/briefcase
+          cat > _site/briefcase/index.html <<'REDIRECT'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="refresh" content="0; url=../" />
+            <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/" />
+            <title>Redirecting…</title>
+          </head>
+          <body><p><a href="../">jade zhao · the briefcase</a></p></body>
+          </html>
+          REDIRECT
           
           # Copy duck farm dist to _site/duck-farm/
           if [ -d ./duck-farm/dist ]; then
