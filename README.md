@@ -1,13 +1,6 @@
-# Jade Zhao & Co.
+# Jade Zhao
 
-**jadexzhao × matchaxmoxie** · Informatics @ IU Luddy '27 · Bloomington, IN
-
-**Co-founded:** one (1) human, two (2) GitHub accounts. here r ur cofounders hahahaha
-
-| | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
-| --- | --- | --- |
-| **role** | CTO-ish — code, portfolio, research tools | CEO-ish — FASE MAP, consulting, duck energy, Instagram |
-| **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (she handles brand, FASE, and emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (he actually writes the code) |
+**Informatics @ IU Luddy '27** · Bloomington, IN
 
 I build human-sized tools — full-stack, data pipelines, and research interfaces people actually use.
 
@@ -125,7 +118,7 @@ My first production project: an end-to-end ordering system real customers used. 
 | [`matchaxmoxie/matchaxmoxie`](https://github.com/matchaxmoxie/matchaxmoxie) | Consulting site + FASE MAP coordinator tooling |
 | [`jadexzhao/matchaxmoxie`](https://github.com/jadexzhao/matchaxmoxie) | Coordinator checklists & site mirror (private — pin if visible) |
 
-Same co-founder, two GitHub accounts — engineering portfolio here; [**@matchaxmoxie**](https://github.com/matchaxmoxie) runs the brand/ops side ([matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/)).
+Same person, two doors — professional portfolio here; [**@matchaxmoxie**](https://github.com/matchaxmoxie) is the FASE MAP coordinator / consulting side entrance ([matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/)).
 
 ---
 
