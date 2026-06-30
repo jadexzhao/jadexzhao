@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/duck-farm/',
+  base: '/jadexzhao/duck-farm/',
 })
