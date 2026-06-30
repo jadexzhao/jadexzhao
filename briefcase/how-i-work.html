@@ -30,8 +30,19 @@
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
-    padding:48px 24px 56px;
+    padding:76px 24px 56px;
   }
+
+  .twin-banner{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:block;text-align:center;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.04em;
+    padding:6px 12px;
+    background:var(--mist);color:var(--ink-soft);
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
+  .twin-banner:hover{color:var(--matcha-deep)}
 
   .sheet{
     max-width:760px;
@@ -174,6 +185,7 @@
 </style>
 </head>
 <body>
+<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">Also me: matchaxmoxie.github.io</a>
 <main class="sheet">
 
   <header>

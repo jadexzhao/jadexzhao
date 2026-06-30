@@ -1,27 +1,29 @@
 # Jade Zhao
 
-**I build and ship software** — full-stack tools, data pipelines, and interfaces that real people actually use. I care about how a system fits together and what changes for the person on the other end of it.
+**Informatics @ IU Luddy '27** · Bloomington, IN
 
-**Informatics @ IU Luddy '27** · Bloomington, IN · open to relocation  
+I build human-sized tools — full-stack, data pipelines, and research interfaces people actually use.
+
 **Open to** software engineering · GTM engineering · solutions engineering · LLM-shaped roles
 
 ---
 
 ### Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-jadezhao-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jadezhao)
 [![Portfolio](https://img.shields.io/badge/Portfolio-jadexzhao.github.io-34472C?style=for-the-badge&logo=githubpages&logoColor=white)](https://jadexzhao.github.io/jadexzhao/)
-[![GitHub](https://img.shields.io/badge/GitHub-jadexzhao-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jadexzhao)
-[![Consulting site](https://img.shields.io/badge/Site-matchaxmoxie-F2C4CE?style=for-the-badge&logo=html5&logoColor=3D2B2B)](https://matchaxmoxie.github.io/matchaxmoxie/)
-[![Persona](https://img.shields.io/badge/Persona-@matchaxmoxie-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://github.com/matchaxmoxie)
+[![Consulting / FASE](https://img.shields.io/badge/Consulting_/_FASE-matchaxmoxie-F2C4CE?style=for-the-badge&logo=html5&logoColor=3D2B2B)](https://matchaxmoxie.github.io/matchaxmoxie/)
+[![GitHub @jadexzhao](https://img.shields.io/badge/GitHub-@jadexzhao-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jadexzhao)
+[![GitHub @matchaxmoxie](https://img.shields.io/badge/GitHub-@matchaxmoxie-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matchaxmoxie)
+[![Instagram @matchaxmoxie](https://img.shields.io/badge/Instagram-@matchaxmoxie-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/matchaxmoxie)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jadezhao-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jadezhao)
 [![Email](https://img.shields.io/badge/Email-jlzhao%40iu.edu-5F7D4F?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jlzhao@iu.edu)
 
 ---
 
 ### At a glance
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=jadexzhao&show_icons=true&hide_border=true&include_all_commits=true&bg_color=FBFAF5&title_color=34472C&text_color=4C594B&icon_color=5F7D4F&border_color=D8DCC9)
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jadexzhao&layout=compact&hide_border=true&bg_color=FBFAF5&title_color=34472C&text_color=4C594B&icon_color=5F7D4F&border_color=D8DCC9)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=jadexzhao&show_icons=true&theme=rose&hide_border=true&include_all_commits=true)
+![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=jadexzhao&layout=compact&theme=rose&hide_border=true)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -114,8 +116,9 @@ My first production project: an end-to-end ordering system real customers used. 
 | [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio — dashboard, pipelines, duck farm |
 | [`jadexzhao/pstickers24`](https://github.com/jadexzhao/pstickers24) | Family restaurant site — first production ship |
 | [`matchaxmoxie/matchaxmoxie`](https://github.com/matchaxmoxie/matchaxmoxie) | Consulting site + FASE MAP coordinator tooling |
+| [`jadexzhao/matchaxmoxie`](https://github.com/jadexzhao/matchaxmoxie) | Coordinator checklists & site mirror (private — pin if visible) |
 
-Also on GitHub as [**@matchaxmoxie**](https://github.com/matchaxmoxie) (persona lane — Instagram [@matchaxmoxie](https://instagram.com/matchaxmoxie)).
+Same person, two doors — professional portfolio here; [**@matchaxmoxie**](https://github.com/matchaxmoxie) is the FASE MAP coordinator / consulting side entrance ([matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/)).
 
 ---
 
