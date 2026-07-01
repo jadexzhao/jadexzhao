@@ -21,5 +21,5 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           # Exclude LinkedIn (often blocks automated checks) and allow failures to avoid blocking deploys
-          args: --no-progress --verbose README.md --exclude "https://linkedin.com/*" 
+          args: --no-progress --verbose README.md --exclude "https://www.linkedin.com/*" 
           fail: false

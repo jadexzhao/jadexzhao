@@ -23,7 +23,7 @@ I build human-sized tools — full-stack, data pipelines, and research interface
 [![GitHub @matchaxmoxie](https://img.shields.io/badge/GitHub-@matchaxmoxie-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matchaxmoxie)
 [![Instagram @matchaxmoxie](https://img.shields.io/badge/Instagram-@matchaxmoxie-00a86b?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/matchaxmoxie)
 [![Instagram @zhao.langxi](https://img.shields.io/badge/Instagram-@zhao.langxi-00a86b?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/zhao.langxi)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-jadezhao-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/jadezhao)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jadexzhao-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jadexzhao/)
 [![Email](https://img.shields.io/badge/Email-jlzhao%40iu.edu-5F7D4F?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jlzhao@iu.edu)
 
 *IG @matchaxmoxie · @zhao.langxi → code [@jadexzhao](https://github.com/jadexzhao)*
