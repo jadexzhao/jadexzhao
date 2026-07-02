@@ -2,16 +2,16 @@
 
 **jadexzhao × matchaxmoxie** · Informatics @ IU Luddy · May 2027 · Bloomington, IN
 
-**Co-founded:** one (1) human, two (2) GitHub accounts. here r ur cofounders hahahaha
+**Co-founded:** one human, two GitHub accounts.
 
 **Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/): bookmark-style GTM engineer page (serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
-| **role** | CTO-ish - code, serveit web lead, portfolio | CEO-ish - FASE MAP coordinator, UTA, consulting, Instagram |
-| **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (she handles brand, FASE, and emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (he actually writes the code) |
+| **role** | code, serveit web lead, portfolio | fase map coordinator, uta, consulting, instagram |
+| **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (brand, fase, emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (writes the code) |
 
-informatics @ iu luddy, may 2027. serveit website team lead on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql.
+informatics @ iu luddy, may 2027. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql.
 
 **Open to** software engineering · GTM engineering · solutions engineering · open to relocation
 
@@ -49,18 +49,19 @@ informatics @ iu luddy, may 2027. serveit website team lead on wcag nonprofit bu
 
 ### Currently working on
 
-- **ServeIT website team lead** (Jan 2024): wcag 2.1 nonprofit builds, ml engagement (+25%), python/postgresql etl on partner org data
+- **ServeIT website team lead** (Jan 2024): wcag 2.1 nonprofit builds, ml engagement (~+25%), python/postgresql etl on partner org data
 - **FASE MAP coordinator & UTA** (Aug 2023): mentor apprenticeship program, canvas ops, 50+ students, study resources
-- **Potstickers**: family restaurant site with clover online ordering; informatics portfolio at jadexzhao.github.io
+- **Potstickers**: family restaurant site with clover online ordering; portfolio at jadexzhao.github.io
+
 ---
 
 ## Shipped
 
 ### ServeIT Client Websites
 
-*IU ServeIT · website team lead*
+*IU ServeIT nonprofit tech clinic · website team lead*
 
-As web team lead I scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs staff can maintain. ML engagement work (+25%) and Python/PostgreSQL ETL on partner org data.
+As web team lead I scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs staff can maintain. ML engagement work (~+25%) and Python/PostgreSQL ETL on partner org data.
 
 **Clients:** City of Bloomington · Middle Way House · Indiana Phenology Lab · Bloomington Chamber of Commerce
 
@@ -106,7 +107,7 @@ Same co-founder, two GitHub accounts: engineering portfolio here; [**@matchaxmox
 
 **Tools & libraries** PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
 
-**Focus** ETL · data viz · accessibility (WCAG) · bias detection · audit trails · human-AI collaboration
+**Focus** ETL · data viz · accessibility (WCAG) · audit trails · human-AI collaboration
 
 </details>
 
