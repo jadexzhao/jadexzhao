@@ -60,7 +60,7 @@ informatics @ iu luddy, may 2027. serveit website team lead on wcag nonprofit bu
 
 *IU ServeIT · website team lead*
 
-As web team lead I scope, build, and ship production websites for real Bloomington organizations, owning client intake, delivery, and accessibility across the team.
+As web team lead I scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs staff can maintain. ML engagement work (+25%) and Python/PostgreSQL ETL on partner org data.
 
 **Clients:** City of Bloomington · Middle Way House · Indiana Phenology Lab · Bloomington Chamber of Commerce
 
