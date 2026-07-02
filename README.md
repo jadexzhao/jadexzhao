@@ -1,6 +1,6 @@
 # Jade Zhao & Co.
 
-**jadexzhao × matchaxmoxie** · Informatics @ IU Luddy '27 · Bloomington, IN
+**jadexzhao × matchaxmoxie** · Informatics @ IU Luddy · May 2027 · Bloomington, IN
 
 **Co-founded:** one (1) human, two (2) GitHub accounts. here r ur cofounders hahahaha
 
@@ -8,12 +8,12 @@
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
-| **role** | CTO-ish — code, portfolio, shipped tools | CEO-ish — FASE MAP, consulting, duck energy, Instagram |
+| **role** | CTO-ish — code, serveit web lead, portfolio | CEO-ish — FASE MAP coordinator, UTA, consulting, Instagram |
 | **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (she handles brand, FASE, and emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (he actually writes the code) |
 
-i build software, understand the people using it, and care whether it actually gets adopted.
+informatics @ iu luddy, may 2027. serveit website team lead on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql.
 
-**Open to** software engineering · GTM engineering · solutions engineering · LLM-shaped roles
+**Open to** software engineering · GTM engineering · solutions engineering · open to relocation
 
 ---
 
@@ -49,9 +49,9 @@ i build software, understand the people using it, and care whether it actually g
 
 ### Currently working on
 
-- **ServeIT web team lead** — nonprofit sites for Bloomington orgs, WCAG-first handoffs, production delivery
-- **MAP / FASE coordination** — mentor apprenticeship program, Canvas ops, first-year student support
-- **Potstickers GTM** — site, ordering flow, and seasonal content for the family restaurant in New Palestine, IN
+- **ServeIT website team lead** (Jan 2024): wcag 2.1 nonprofit builds, ml engagement (+25%), python/postgresql etl on partner org data
+- **FASE MAP coordinator & UTA** (Aug 2023): mentor apprenticeship program, canvas ops, 50+ students, study resources
+- **Potstickers**: family restaurant site with clover online ordering; informatics portfolio at jadexzhao.github.io
 ---
 
 ## Shipped
