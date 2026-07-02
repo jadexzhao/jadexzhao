@@ -68,6 +68,23 @@ jobs:
           <body><p><a href="../">jade zhao · the briefcase</a></p></body>
           </html>
           REDIRECT
+
+          # Legacy demo deploys → briefcase (scoping dashboard removed Jul 2026)
+          for legacy_path in scoping-review-dashboard clinical-data-pipeline; do
+            mkdir -p "_site/${legacy_path}"
+            cat > "_site/${legacy_path}/index.html" <<REDIRECT
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="refresh" content="0; url=../" />
+            <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/" />
+            <title>Redirecting…</title>
+          </head>
+          <body><p><a href="../">jade zhao · the briefcase</a></p></body>
+          </html>
+          REDIRECT
+          done
           
           # Copy duck farm dist to _site/duck-farm/
           if [ -d ./duck-farm/dist ]; then
