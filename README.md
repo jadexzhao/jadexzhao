@@ -4,11 +4,11 @@
 
 **Co-founded:** one (1) human, two (2) GitHub accounts. here r ur cofounders hahahaha
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style GTM engineer page (serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/): bookmark-style GTM engineer page (serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
-| **role** | CTO-ish — code, serveit web lead, portfolio | CEO-ish — FASE MAP coordinator, UTA, consulting, Instagram |
+| **role** | CTO-ish - code, serveit web lead, portfolio | CEO-ish - FASE MAP coordinator, UTA, consulting, Instagram |
 | **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (she handles brand, FASE, and emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (he actually writes the code) |
 
 informatics @ iu luddy, may 2027. serveit website team lead on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql.
@@ -72,9 +72,9 @@ As web team lead I scope, build, and ship WCAG 2.1 nonprofit websites for Bloomi
 
 ### Online Ordering System
 
-*Potstickers — my family's restaurant in New Palestine, IN (since 2020)*
+*Potstickers, my family's restaurant in New Palestine, IN (since 2020)*
 
-My first production project: an end-to-end ordering system real customers used. Still the reason I build — now expanded into full GTM for the business (site, contact flow, seasonal content, social).
+My first production project: an end-to-end ordering system real customers used. Still the reason I build. Now expanded into full GTM for the business (site, contact flow, seasonal content, social).
 
 **Stack** HTML · Formspree · content ops · Clover ordering
 
@@ -88,12 +88,12 @@ My first production project: an end-to-end ordering system real customers used. 
 
 | Repo | Why |
 |------|-----|
-| [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio — ServeIT builds, duck farm |
-| [`jadexzhao/pstickers24`](https://github.com/jadexzhao/pstickers24) | Family restaurant site — first production ship |
+| [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio: ServeIT builds, duck farm |
+| [`jadexzhao/pstickers24`](https://github.com/jadexzhao/pstickers24) | Family restaurant site, first production ship |
 | [`matchaxmoxie/matchaxmoxie`](https://github.com/matchaxmoxie/matchaxmoxie) | Consulting site + FASE MAP coordinator tooling |
-| [`jadexzhao/matchaxmoxie`](https://github.com/jadexzhao/matchaxmoxie) | Coordinator checklists & site mirror (private — pin if visible) |
+| [`jadexzhao/matchaxmoxie`](https://github.com/jadexzhao/matchaxmoxie) | Coordinator checklists & site mirror (private; pin if visible) |
 
-Same co-founder, two GitHub accounts — engineering portfolio here; [**@matchaxmoxie**](https://github.com/matchaxmoxie) runs the brand/ops side ([matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/)).
+Same co-founder, two GitHub accounts: engineering portfolio here; [**@matchaxmoxie**](https://github.com/matchaxmoxie) runs the brand/ops side ([matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/)).
 
 ---
 

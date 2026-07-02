@@ -2,7 +2,7 @@
 
 Problem: Small restaurants need reliable online ordering without costly vendor lock-in.
 
-What I built: End-to-end ordering platform for a family restaurant (menu, orders, payments) — production-tested since 2020.
+What I built: End-to-end ordering platform for a family restaurant (menu, orders, payments), production-tested since 2020.
 
 Status: Legacy / Maintained
 
