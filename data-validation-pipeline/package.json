@@ -1,0 +1,8 @@
+{
+  "name": "data-validation-pipeline",
+  "version": "1.0.0",
+  "description": "ETL validation pipeline demo with anomaly checks",
+  "scripts": {
+    "dev": "python src/main.py"
+  }
+}

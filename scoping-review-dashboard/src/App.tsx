@@ -49,7 +49,7 @@ function App() {
         <div className="mx-auto max-w-7xl px-6 py-6">
           <h1 className="text-3xl font-semibold tracking-tight">Scoping Review Dashboard</h1>
           <p className="mt-1 text-gray-600">
-            Interactive exploration of health, athlete, and heart-related research projects.
+            Interactive exploration of structured research and project metadata.
           </p>
         </div>
       </header>

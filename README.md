@@ -4,12 +4,14 @@
 
 **Co-founded:** one (1) human, two (2) GitHub accounts. here r ur cofounders hahahaha
 
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style GTM engineer page (serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
+
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
-| **role** | CTO-ish — code, portfolio, research tools | CEO-ish — FASE MAP, consulting, duck energy, Instagram |
+| **role** | CTO-ish — code, portfolio, shipped tools | CEO-ish — FASE MAP, consulting, duck energy, Instagram |
 | **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (she handles brand, FASE, and emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (he actually writes the code) |
 
-I build human-sized tools — full-stack, data pipelines, and research interfaces people actually use.
+i build software, understand the people using it, and care whether it actually gets adopted.
 
 **Open to** software engineering · GTM engineering · solutions engineering · LLM-shaped roles
 
@@ -17,7 +19,7 @@ I build human-sized tools — full-stack, data pipelines, and research interface
 
 ### Connect
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-jadexzhao.github.io-34472C?style=for-the-badge&logo=githubpages&logoColor=white)](https://jadexzhao.github.io/jadexzhao/)
+[![The briefcase](https://img.shields.io/badge/The_briefcase-jadexzhao.github.io-34472C?style=for-the-badge&logo=githubpages&logoColor=white)](https://jadexzhao.github.io/jadexzhao/)
 [![Consulting / FASE](https://img.shields.io/badge/Consulting_/_FASE-matchaxmoxie-F2C4CE?style=for-the-badge&logo=html5&logoColor=3D2B2B)](https://matchaxmoxie.github.io/matchaxmoxie/)
 [![GitHub @jadexzhao](https://img.shields.io/badge/GitHub-@jadexzhao-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jadexzhao)
 [![GitHub @matchaxmoxie](https://img.shields.io/badge/GitHub-@matchaxmoxie-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matchaxmoxie)
@@ -47,49 +49,12 @@ I build human-sized tools — full-stack, data pipelines, and research interface
 
 ### Currently working on
 
-- **Women's sports / health informatics research** — interactive scoping review dashboard and cohort tooling for a live CHI 2027 study
 - **ServeIT web team lead** — nonprofit sites for Bloomington orgs, WCAG-first handoffs, production delivery
+- **MAP / FASE coordination** — mentor apprenticeship program, Canvas ops, first-year student support
 - **Potstickers GTM** — site, ordering flow, and seasonal content for the family restaurant in New Palestine, IN
-- **Human-AI collaboration & ethical data work** — HIPAA-aware pipelines, accessibility, audit trails
-
 ---
 
 ## Shipped
-
-### Interactive Scoping Review Dashboard
-
-*a reusable tool for running systematic literature reviews, built for live health and athlete research*
-
-Most scoping reviews live in a spreadsheet nobody wants to open. This turns one into something you can actually explore: filter the corpus by condition, population, or study length, search full-text, and pull the exact cut you need. Built to support a live CHI 2027 study, and designed so other research teams can drop in their own data and get the same interface.
-
-![Scoping review dashboard preview](./scoping-review-dashboard/screenshot.svg)
-
-**Stack** React · TypeScript · TanStack Table · Recharts · Tailwind · Vite
-
-- Filter by field: every study with an athlete, everything tagged heart, anything running over a year
-- Full-text search and interactive stats for screening decisions
-- Tagging, categorization, and export for downstream analysis
-
-[![Code](https://img.shields.io/badge/Code-scoping--review--dashboard-34472C?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/jadexzhao/tree/main/scoping-review-dashboard)
-[![Portfolio](https://img.shields.io/badge/Portfolio-writeup-5F7D4F?style=flat-square&logo=readthedocs&logoColor=white)](https://jadexzhao.github.io/jadexzhao/)
-
----
-
-### Clinical Data Pipeline
-
-*IU Proactive Health Informatics Lab · HIPAA-compliant ETL with real-time anomaly detection*
-
-**~30% fewer data-entry errors. ~25% less clinical admin workload.**
-
-**Stack** Python · SQL · PostgreSQL · real-time processing
-
-- HIPAA-compliant ETL for healthcare data
-- Real-time anomaly detection on incoming records
-- Automated validation that catches errors before they reach clinicians
-
-[![Code](https://img.shields.io/badge/Code-clinical--data--pipeline-34472C?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/jadexzhao/tree/main/clinical-data-pipeline)
-
----
 
 ### ServeIT Client Websites
 
@@ -123,7 +88,7 @@ My first production project: an end-to-end ordering system real customers used. 
 
 | Repo | Why |
 |------|-----|
-| [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio — dashboard, pipelines, duck farm |
+| [`jadexzhao/jadexzhao`](https://github.com/jadexzhao/jadexzhao) | Shipped portfolio — ServeIT builds, duck farm |
 | [`jadexzhao/pstickers24`](https://github.com/jadexzhao/pstickers24) | Family restaurant site — first production ship |
 | [`matchaxmoxie/matchaxmoxie`](https://github.com/matchaxmoxie/matchaxmoxie) | Consulting site + FASE MAP coordinator tooling |
 | [`jadexzhao/matchaxmoxie`](https://github.com/jadexzhao/matchaxmoxie) | Coordinator checklists & site mirror (private — pin if visible) |
@@ -141,7 +106,7 @@ Same co-founder, two GitHub accounts — engineering portfolio here; [**@matchax
 
 **Tools & libraries** PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
 
-**Focus** HIPAA-compliant pipelines · ETL · data viz · accessibility (WCAG) · bias detection · audit trails · human-AI collaboration
+**Focus** ETL · data viz · accessibility (WCAG) · bias detection · audit trails · human-AI collaboration
 
 </details>
 

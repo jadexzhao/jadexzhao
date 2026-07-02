@@ -13,26 +13,26 @@
   },
   {
     "id": "2",
-    "title": "Example Heart Health Intervention for Athletes",
-    "authors": ["Smith J", "Johnson A", "et al."],
+    "title": "Community Engagement Platform for Local Nonprofits",
+    "authors": ["Chen L", "Martinez S", "et al."],
     "year": 2023,
-    "domain": ["heart", "athlete"],
-    "duration_months": 24,
-    "methodology": "RCT",
-    "key_findings": "Significant improvement in cardiac recovery metrics and VO2 max",
-    "participants": 156,
-    "url": "https://example.com"
+    "domain": ["nonprofit", "engagement"],
+    "duration_months": 18,
+    "methodology": "Mixed Methods",
+    "key_findings": "Participation increased when onboarding matched staff workflows instead of generic dashboards",
+    "participants": 240,
+    "url": ""
   },
   {
     "id": "3",
-    "title": "Long-term Monitoring of Cardiovascular Risk in Young Athletes",
-    "authors": ["Lee K", "Patel R"],
+    "title": "Longitudinal Study of Digital Literacy in First-Year Students",
+    "authors": ["Park J", "Williams T"],
     "year": 2024,
-    "domain": ["heart", "athlete"],
-    "duration_months": 36,
+    "domain": ["education", "digital-literacy"],
+    "duration_months": 24,
     "methodology": "Cohort",
-    "key_findings": "Early detection protocol reduced adverse cardiac events by 40%",
-    "participants": 420,
+    "key_findings": "Peer mentor touchpoints improved retention of platform skills more than one-time training",
+    "participants": 320,
     "url": ""
   },
   {
@@ -49,13 +49,13 @@
   },
   {
     "id": "5",
-    "title": "Clinical Data Pipeline Optimization",
-    "authors": ["Proactive Health Informatics Lab"],
+    "title": "Nonprofit Partner Data Validation Pipeline",
+    "authors": ["IU ServeIT Clinic"],
     "year": 2024,
-    "domain": ["health"],
+    "domain": ["nonprofit", "data-quality"],
     "duration_months": 8,
     "methodology": "ETL Pipeline",
-    "key_findings": "HIPAA-compliant pipeline reduced data entry errors by ~30%",
+    "key_findings": "Validation rules and anomaly checks reduced bad rows before downstream reporting",
     "participants": 0,
     "url": ""
   }
