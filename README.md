@@ -1,19 +1,20 @@
 # Jade Zhao & Co.
 
-**jadexzhao × matchaxmoxie** · Actor & Entrepreneur · Informatics @ IU Luddy · May 2027 · Bloomington, IN / NYC
+**actor & entrepreneur who ships.**
+
+Informatics @ IU Luddy (May 2027) · Bloomington, IN / NYC.
+Grew up in a Chinese restaurant learning what actually works and what's just talk. That wiring stuck.
 
 **Co-founded:** one human, two GitHub accounts.
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/): bookmark-style page (gtm @ stealth yc, serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style page covering my work in GTM, tech clinics, and online ordering.
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
-| **role** | code, serveit web lead, portfolio | fase map coordinator, uta, consulting |
-| **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (brand, fase, emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (writes the code) |
+| **role** | gtm eng, serveit web lead, code | fase map coordinator, uta, consulting |
+| **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (brand, operations, emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (writes the code) |
 
-restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, may 2027. gtm engineering at a stealth yc startup in nyc: architecting demo envs, poc sandboxes, and integration prototypes. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql. school ig: [@zhao.langxi](https://instagram.com/zhao.langxi).
-
-**Open to** software engineering · GTM engineering · solutions engineering · open to relocation
+**Open to:** Software Engineering · GTM Engineering · Solutions Engineering (open to relocation)
 
 ---
 
@@ -28,6 +29,18 @@ restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, m
 [![Email](https://img.shields.io/badge/Email-jlzhao%40iu.edu-5F7D4F?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jlzhao@iu.edu)
 
 *IG [@zhao.langxi](https://instagram.com/zhao.langxi) → code [@jadexzhao](https://github.com/jadexzhao)*
+
+---
+
+### Currently shipping
+
+- **GTM Engineer Intern:** stealth yc startup, nyc. architecting demo envs, poc sandboxes, integration prototypes, and python automation to accelerate sales into deployments.
+- **ServeIT website team lead:** iu's nonprofit tech clinic. scoping and shipping wcag 2.1 compliant builds for local orgs. driving ml engagement metrics (~+25%) and building python/postgresql etl pipelines for community partner data.
+- **FASE MAP coordinator & UTA:** clearing the path for whoever comes next. managing canvas ops, running mentor training, and supporting 50+ students.
+- **Actor & Entrepreneur:** campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi). loud on purpose, but always grounded in real work.
+- **Potstickers:** my family's restaurant in indiana. shipped their online ordering system with clover.
+
+**鸭年 2026** · invented year of the duck - [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).
 
 ---
 
@@ -46,42 +59,29 @@ restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, m
 
 ---
 
-### Currently working on
+### Shipped
 
-- **GTM Engineer Intern** (Jun 2026): stealth yc startup, nyc: demo envs, poc sandboxes, integration prototypes, python automation
-- **ServeIT website team lead** (Jan 2024): wcag 2.1 nonprofit builds, ml engagement (~+25%), python/postgresql etl on partner org data
-- **FASE MAP coordinator & UTA** (Aug 2023): mentor apprenticeship program, canvas ops, 50+ students, study resources
-- **Actor & Entrepreneur** (Aug 2023): campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi)
-- **Potstickers**: family restaurant site with clover online ordering; portfolio at jadexzhao.github.io
-- **Coming soon (learning in public)**: wechat mini-program notes · china ai/cybersec watchlist · fujian ↔ midwest dev diary
-
-**鸭年 2026** · invented year of the duck - [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)
-
----
-
-## Shipped
-
-### ServeIT Client Websites
+#### ServeIT Client Websites
 
 *IU ServeIT nonprofit tech clinic · website team lead*
 
-As web team lead I scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs staff can maintain. ML engagement work (~+25%) and Python/PostgreSQL ETL on partner org data.
+Scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs that staff can maintain entirely independently without a dev on call. ML engagement work (~+25%) and Python/PostgreSQL ETL pipelines on partner org data.
 
 **Clients:** City of Bloomington · Middle Way House · Indiana Phenology Lab · Bloomington Chamber of Commerce
 
-**Stack** full-stack web · responsive design · WCAG 2.1 AA accessibility
+**Stack:** full-stack web · responsive design · WCAG 2.1 AA accessibility
 
 [![Live site](https://img.shields.io/badge/Live-City_of_Bloomington-0066CC?style=flat-square&logo=googlechrome&logoColor=white)](https://bloomington.in.gov)
 
 ---
 
-### Online Ordering System
+#### Online Ordering System
 
 *Potstickers, my family's restaurant in New Palestine, IN (since 2020)*
 
 My first production project: an end-to-end ordering system real customers used. Still the reason I build. Now expanded into full GTM for the business (site, contact flow, seasonal content, social).
 
-**Stack** HTML · Formspree · content ops · Clover ordering
+**Stack:** HTML · Formspree · content ops · Clover ordering
 
 [![Code](https://img.shields.io/badge/Code-online--ordering--system-34472C?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system)
 [![Site repo](https://img.shields.io/badge/Site-pstickers24-24292f?style=flat-square&logo=github&logoColor=white)](https://github.com/jadexzhao/pstickers24)
@@ -107,11 +107,11 @@ Same co-founder, two GitHub accounts: engineering portfolio here; [**@matchaxmox
 
 <br>
 
-**Languages & frameworks** TypeScript · React · Node.js · Python · SQL
+**Languages & frameworks:** TypeScript · React · Node.js · Python · SQL
 
-**Tools & libraries** PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
+**Tools & libraries:** PostgreSQL · D3.js / Recharts · TanStack Table · Git · REST APIs
 
-**Focus** ETL · data viz · accessibility (WCAG) · audit trails · human-AI collaboration
+**Focus:** ETL · data viz · accessibility (WCAG) · audit trails · human-AI collaboration
 
 </details>
 

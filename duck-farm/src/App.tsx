@@ -8,24 +8,85 @@ interface Duck {
   angle: number
   vx: number
   vy: number
+  accessory?: string
 }
+
+const ACCESSORIES = ['💼', '🍵', '👷‍♀️'];
+const getRandomAccessory = () => Math.random() > 0.7 ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)] : undefined;
 
 export default function App() {
   const [ducks, setDucks] = useState<Duck[]>([
-    { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0 },
-    { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0 },
+    { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0, accessory: getRandomAccessory() },
+    { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0, accessory: getRandomAccessory() },
   ])
   const [nextId, setNextId] = useState(3)
   const canvasRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number>()
+  const [isDay, setIsDay] = useState(true)
+
+  useEffect(() => {
+    const checkTime = () => {
+      const hours = new Date().getHours()
+      setIsDay(hours >= 6 && hours < 18)
+    }
+    checkTime()
+    const interval = setInterval(checkTime, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const konamiCode = [
+      'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+      'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+      'b', 'a'
+    ]
+    let konamiIndex = 0
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++
+        if (konamiIndex === konamiCode.length) {
+          setNextId(prevId => {
+            setDucks(prevDucks => {
+              const newDucks: Duck[] = []
+              for (let i = 0; i < 50; i++) {
+                newDucks.push({
+                  id: prevId + i,
+                  x: Math.random() * 80 + 10,
+                  y: 65 + Math.random() * 15,
+                  angle: Math.random() > 0.5 ? 0 : 180,
+                  vx: (Math.random() - 0.5) * 4,
+                  vy: -Math.random() * 2,
+                  accessory: getRandomAccessory()
+                })
+              }
+              return [...prevDucks, ...newDucks]
+            })
+            return prevId + 50
+          })
+          konamiIndex = 0
+        }
+      } else {
+        konamiIndex = 0
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
   // Animate ducks moving
   useEffect(() => {
     const animate = () => {
       setDucks(prevDucks =>
         prevDucks.map(duck => {
+          let newVy = duck.vy
+          if (duck.y < 65) {
+            newVy += 0.05 // gravity
+          }
+
           let newX = duck.x + duck.vx
-          let newY = duck.y + duck.vy + (Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
+          let newY = duck.y + newVy + (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
           let newAngle = duck.angle
 
           // Bounce off walls
@@ -34,8 +95,11 @@ export default function App() {
             newX = newX < 0 ? 0 : 90
           }
 
-          // Keep in lower half (grass area)
-          if (newY > 65) newY = 65
+          // Keep in lower half (grass/pond area)
+          if (newY >= 65) {
+            newY = 65
+            newVy = 0
+          }
 
           return {
             ...duck,
@@ -43,6 +107,7 @@ export default function App() {
             y: newY,
             angle: newAngle,
             vx: duck.vx * (newAngle === 180 ? -1 : 1),
+            vy: newVy,
           }
         })
       )
@@ -60,7 +125,7 @@ export default function App() {
     const x = ((e.clientX - rect.left) / rect.width) * 100
     const y = ((e.clientY - rect.top) / rect.height) * 100
 
-    // Only place ducks in the grass area (bottom 40%)
+    // Only place ducks in the grass/pond area (bottom 40%)
     if (y > 60) {
       const newDuck: Duck = {
         id: nextId,
@@ -69,6 +134,7 @@ export default function App() {
         angle: Math.random() > 0.5 ? 0 : 180,
         vx: (Math.random() - 0.5) * 2,
         vy: 0,
+        accessory: getRandomAccessory()
       }
       setDucks([...ducks, newDuck])
       setNextId(nextId + 1)
@@ -97,8 +163,8 @@ export default function App() {
 
   const resetFarm = () => {
     setDucks([
-      { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0 },
-      { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0 },
+      { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0, accessory: getRandomAccessory() },
+      { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0, accessory: getRandomAccessory() },
     ])
     setNextId(3)
   }
@@ -113,6 +179,7 @@ export default function App() {
         angle: Math.random() > 0.5 ? 0 : 180,
         vx: (Math.random() - 0.5) * 2,
         vy: 0,
+        accessory: getRandomAccessory()
       })
     }
     setDucks([...ducks, ...newDucks])
@@ -126,10 +193,12 @@ export default function App() {
 
       <div
         ref={canvasRef}
-        className="farm-canvas"
+        className={`farm-canvas ${isDay ? 'day' : 'night'}`}
         onClick={handleCanvasClick}
       >
+        {!isDay && <div className="stars" />}
         <div className="grass" />
+        <div className="pond" />
         {ducks.map(duck => (
           <div
             key={duck.id}
@@ -137,11 +206,12 @@ export default function App() {
             style={{
               left: `${duck.x}%`,
               top: `${duck.y}%`,
-              transform: `${duck.angle === 180 ? 'scaleX(-1)' : ''} translateY(${Math.sin(Date.now() * 0.003) * 2}px)`,
+              transform: `${duck.angle === 180 ? 'scaleX(-1)' : ''} ${duck.x > 50 ? '' : `translateY(${Math.sin(Date.now() * 0.003) * 2}px)`}`,
             }}
             onClick={(e) => handleDuckClick(e, duck.id)}
           >
             🦆
+            {duck.accessory && <span className="accessory">{duck.accessory}</span>}
           </div>
         ))}
       </div>
