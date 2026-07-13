@@ -38,6 +38,8 @@
     --gold-soft:#E8D5A3;
     --jade:#3A6B5C;
     --jade-soft:#6B9E8F;
+    --iu-crimson:#990000;
+    --iu-cream:#F7F5F0;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -204,6 +206,70 @@
   }
   .entry:first-of-type{border-top:0;padding-top:0}
 
+  a.entry-link{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:8px 28px;
+    padding:18px 0;
+    border-top:1px solid var(--line);
+    text-decoration:none;
+    color:inherit;
+    border-radius:4px;
+    margin:0 -8px;
+    padding-left:8px;
+    padding-right:8px;
+    transition:background .15s ease, box-shadow .15s ease;
+  }
+  a.entry-link:first-of-type{border-top:0}
+  a.entry-link:hover{
+    background:var(--iu-cream);
+    box-shadow:inset 3px 0 0 var(--iu-crimson);
+  }
+  a.entry-link:focus-visible{
+    outline:2px solid var(--iu-crimson);
+    outline-offset:2px;
+  }
+  a.entry-link h2{color:var(--ink)}
+  a.entry-link:hover h2{color:var(--iu-crimson)}
+
+  a.entry-link .src-foot{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--matcha);
+    font-weight:500;
+  }
+  a.entry-link:hover .src-foot{color:var(--iu-crimson)}
+
+  .link-hub{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+    margin-top:8px;
+  }
+  .link-hub a{
+    display:block;
+    padding:14px 16px;
+    background:var(--iu-cream);
+    border:1px solid var(--line);
+    border-left:3px solid var(--iu-crimson);
+    border-radius:2px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:14px;
+    line-height:1.45;
+    transition:background .15s ease;
+  }
+  .link-hub a:hover{background:var(--mist)}
+  .link-hub .hub-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--iu-crimson);
+    display:block;
+    margin-bottom:4px;
+  }
+
   .entry.soon .rail .who{color:var(--cinnabar-soft)}
   .entry.soon h2::after{
     content:" · 即将";
@@ -342,7 +408,7 @@
 
   @media (max-width:560px){
     body{padding:32px 18px 40px}
-    .entry{grid-template-columns:1fr;gap:6px}
+    .entry,.entry-link{grid-template-columns:1fr;gap:6px}
     .rail{order:-1}
   }
 </style>
@@ -431,6 +497,7 @@
   <p class="section-label reveal"><span class="bilingual">玩</span> the playground</p>
 
   <article class="entry reveal">
+    <a class="entry-link" href="https://jadexzhao.github.io/jadexzhao/duck-farm/">
     <div class="rail"><span class="who">personal</span><br><span class="yr">interactive · 鸭年</span></div>
     <div class="body">
       <h2>virtual duck farm</h2>
@@ -438,9 +505,10 @@
       <span class="outcome">personality + react skills · 抓 duck 的方法</span>
       <div class="foot-row">
         <span class="tags">react · typescript · animation · vite</span>
-        <a class="src" href="https://jadexzhao.github.io/jadexzhao/duck-farm/">play</a>
+        <span class="src-foot">play →</span>
       </div>
     </div>
+    </a>
   </article>
 
   <hr class="rule">
@@ -460,6 +528,7 @@
   </article>
 
   <article class="entry reveal">
+    <a class="entry-link" href="https://instagram.com/zhao.langxi">
     <div class="rail"><span class="who">iu · campus</span><br><span class="yr">actor &amp; entrepreneur · aug 2023</span></div>
     <div class="body">
       <h2>actor &amp; entrepreneur</h2>
@@ -467,12 +536,14 @@
       <span class="outcome">campus presence · @zhao.langxi</span>
       <div class="foot-row">
         <span class="tags">creative · brand · iu</span>
-        <a class="src" href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+        <span class="src-foot">@zhao.langxi →</span>
       </div>
     </div>
+    </a>
   </article>
 
   <article class="entry reveal">
+    <a class="entry-link" href="https://serveit.luddy.indiana.edu/serve-ai/index.html">
     <div class="rail"><span class="who">iu serveit clinic</span><br><span class="yr">website team lead · jan 2024</span></div>
     <div class="body">
       <h2>nonprofit tech clinic builds</h2>
@@ -480,12 +551,14 @@
       <span class="outcome">wcag 2.1 · maintainable handoffs · +25% engagement</span>
       <div class="foot-row">
         <span class="tags">python · typescript · react · postgresql · wcag</span>
-        <a class="src" href="https://serveit.luddy.indiana.edu/serve-ai/index.html">serveit clinic</a>
+        <span class="src-foot">serveit clinic →</span>
       </div>
     </div>
+    </a>
   </article>
 
   <article class="entry reveal">
+    <a class="entry-link" href="https://matchaxmoxie.github.io/matchaxmoxie/fase-map.html">
     <div class="rail"><span class="who">iu office of student life</span><br><span class="yr">map coordinator · uta · aug 2023</span></div>
     <div class="body">
       <h2>fase mentor apprenticeship program</h2>
@@ -493,12 +566,14 @@
       <span class="outcome">50+ students · canvas ops · first-year clarity</span>
       <div class="foot-row">
         <span class="tags">mentoring · canvas · teaching</span>
-        <a class="src" href="https://matchaxmoxie.github.io/matchaxmoxie/fase-map.html">fase map</a>
+        <span class="src-foot">fase map →</span>
       </div>
     </div>
+    </a>
   </article>
 
   <article class="entry reveal">
+    <a class="entry-link" href="https://potstickers24.cloveronline.com/">
     <div class="rail"><span class="who">potstickers</span><br><span class="yr">family restaurant · since 2020</span></div>
     <div class="body">
       <h2>a real business, built and grown end to end</h2>
@@ -506,12 +581,25 @@
       <span class="outcome">software i ship and market, with customers on the other end</span>
       <div class="foot-row">
         <span class="tags">html · formspree · content · social</span>
-        <a class="src" href="https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system">code</a>
-        <a class="src" href="https://github.com/jadexzhao/pstickers24">site repo</a>
-        <a class="src" href="https://potstickers24.cloveronline.com/">order online</a>
+        <span class="src-foot">order online →</span>
       </div>
     </div>
+    </a>
   </article>
+
+  <hr class="rule">
+
+  <p class="section-label reveal"><span class="bilingual">网</span> iu web stack · wcms fluency</p>
+
+  <div class="prose-block reveal">
+    <p>i build and maintain content in iu's cascade wcms: chunks, page parts, accessible handoffs, and rivet-aligned markup. reference docs i actually use on the job.</p>
+    <div class="link-hub">
+      <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · layouts, components, utilities</a>
+      <a href="https://framework.iu.edu/index.html"><span class="hub-k">web framework</span>Cascade WCMS · page types, publishing, sitekube</a>
+      <a href="https://framework.iu.edu/creating-content/chunks/index.html"><span class="hub-k">chunks</span>text, callout, CTA, panels, stats, tables</a>
+      <a href="https://bloomington.in.gov"><span class="hub-k">shipped</span>city of bloomington · serveit client site</a>
+    </div>
+  </div>
 
   <footer class="closer reveal">
     <div>
