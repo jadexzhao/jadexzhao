@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jade Zhao · i18n ∩ WCAG 2.1 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
+<title>jade zhao · i18n ∩ WCAG · architectural note</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#212B23;
+    --ink-soft:#3D4A3C;
+    --paper:#FBFAF5;
+    --matcha:#4A633C;
+    --matcha-deep:#2A3B24;
+    --matcha-soft:#6A855B;
+    --mist:#EDF1E6;
+    --line:#D8DCC9;
+    --iu-crimson:#990000;
+    --iu-cream:#F7F5F0;
+    --banner-h:28px;
+    --jump-h:48px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(153,0,0,.04), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,107,92,.05), transparent 50%);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:
+      calc(var(--banner-h) + var(--jump-h) + 28px + env(safe-area-inset-top,0px))
+      max(24px, env(safe-area-inset-right,0px))
+      max(56px, calc(40px + env(safe-area-inset-bottom,0px)))
+      max(24px, env(safe-area-inset-left,0px));
+  }
+  .twin-banner{
+    position:fixed;top:0;left:0;right:0;z-index:110;
+    display:flex;align-items:center;justify-content:center;
+    min-height:48px;text-align:center;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.04em;
+    padding:calc(6px + env(safe-area-inset-top,0px)) 12px 6px;
+    background:var(--mist);color:var(--ink-soft);
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
+  .twin-banner:hover{color:var(--matcha-deep);background:#e6ece0}
+  .jump-nav{
+    position:fixed;
+    top:calc(var(--banner-h) + env(safe-area-inset-top,0px));
+    left:0;right:0;z-index:105;
+    display:flex;flex-wrap:nowrap;justify-content:center;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    background:rgba(251,250,245,.92);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);padding:0 8px;
+  }
+  .jump-nav::-webkit-scrollbar{display:none}
+  .jump-nav a{
+    flex:0 0 auto;
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:48px;padding:0 14px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    color:var(--ink-soft);text-decoration:none;white-space:nowrap;
+    border-bottom:2px solid transparent;
+  }
+  .jump-nav a:hover{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream)}
+  .jump-nav a:focus-visible{outline:2px solid var(--iu-crimson);outline-offset:-2px}
+  .sheet{max-width:760px;margin:0 auto}
+  .back{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;
+    color:var(--matcha);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
+    min-height:48px;display:inline-flex;align-items:center;
+  }
+  .back:hover{border-color:var(--matcha)}
+  .back::before{content:"← "}
+  .memo-kicker{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--matcha);margin-top:16px;margin-bottom:10px;
+  }
+  h1{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:clamp(1.75rem,4vw,2.4rem);
+    font-weight:600;line-height:1.15;color:var(--ink);margin-bottom:12px;
+  }
+  h1 .sub{
+    display:block;margin-top:8px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);
+  }
+  .standfirst{font-size:16.5px;line-height:1.65;color:var(--ink-soft);margin-bottom:18px;max-width:62ch}
+  .sc{font-family:"Noto Serif SC","Fraunces",serif;font-weight:500}
+  .rule{border:0;border-top:1px solid var(--line);margin:28px 0}
+  h2{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:1.35rem;font-weight:600;margin:0 0 10px;color:var(--ink);
+  }
+  h3{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--matcha);margin:18px 0 8px;
+  }
+  p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px;max-width:62ch}
+  .note{
+    background:var(--mist);border-left:3px solid var(--matcha);
+    padding:14px 16px;margin:16px 0;
+  }
+  .note p{margin:0 0 8px}
+  .note p:last-child{margin:0}
+  ul.insight{margin:0 0 14px;padding:0;list-style:none}
+  ul.insight li{
+    position:relative;padding-left:1rem;margin-bottom:.55rem;
+    font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:62ch;
+  }
+  ul.insight li::before{content:"·";position:absolute;left:0;color:var(--matcha);font-weight:600}
+  .link-hub{display:grid;gap:8px;margin-top:14px}
+  .link-hub a{
+    display:block;padding:12px 14px;background:var(--mist);
+    border:1px solid var(--line);text-decoration:none;color:var(--ink);
+    font-size:14px;line-height:1.4;min-height:48px;
+  }
+  .link-hub a:hover{border-color:var(--matcha);background:#e6ece0}
+  .hub-k{
+    display:block;font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--matcha);margin-bottom:4px;
+  }
+  .closer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}
+  .closer a{color:var(--matcha-deep)}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.9em;background:var(--mist);padding:1px 5px;border-radius:3px}
+  @media (max-width:560px){
+    .jump-nav a{padding:0 12px;font-size:10.5px}
+  }
+</style>
+</head>
+<body>
+<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie brand &amp; ops → matchaxmoxie.github.io</a>
+<nav class="jump-nav" aria-label="quick links">
+  <a href="index.html">briefcase</a>
+  <a href="how-i-work.html">how i work</a>
+  <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
+  <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+  <a href="https://github.com/jadexzhao">github</a>
+</nav>
+<main class="sheet">
+
+  <header>
+    <a class="back" href="index.html">the briefcase</a>
+    <p class="memo-kicker">jade zhao · architectural note</p>
+    <h1>i18n ∩ WCAG 2.1 AA<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
+    <p class="standfirst">short and rigorous. not a DEIB pamphlet. the same accessibility problems show up when a nonprofit page mixes english with partner languages, when a restaurant ticket switches mid-line, and when a household toggles <span class="sc">福州话</span> / <span class="sc">普通话</span> / english without ceremony.</p>
+  </header>
+
+  <hr class="rule">
+
+  <section aria-labelledby="dom-heading">
+    <h2 id="dom-heading">1 · mixed-language DOM</h2>
+    <p>screen readers enunciate from language context. if chinese sits inside an english page without a language boundary, the voice engine often guesses wrong: tones flatten, names get anglicized, meaning degrades.</p>
+    <h3>what i actually check</h3>
+    <ul class="insight">
+      <li>set <code>lang</code> on the document root for the primary language of the page.</li>
+      <li>wrap inlined phrases in their own language with <code>lang="zh-Hans"</code>, <code>lang="zh-CN"</code>, or the closest accurate BCP 47 tag. same idea for spanish study-abroad notes.</li>
+      <li>do not rely on visual bilingualism alone. a human sees two scripts; assistive tech needs the attribute.</li>
+      <li>test the critical path with a screen reader, not only contrast checkers. serveit / rivet builds still fail here when chunks paste clean-looking text without language spans.</li>
+    </ul>
+    <div class="note">
+      <p>in cascade / rivet workflows, treat language markup as part of the chunk composition, not a late copy pass. if the chunk map cannot carry <code>lang</code>, document the workaround in the handoff.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="density-heading">
+    <h2 id="density-heading">2 · character density and layout</h2>
+    <p>english and chinese do not share the same horizontal budget. a label that fits in 12 latin characters can explode or truncates awkwardly in han characters. buttons, nav, and table cells designed for short english verbs break when zh copy lands.</p>
+    <ul class="insight">
+      <li>containers need growth room: prefer wrapping over hard truncation for bilingual UI chrome.</li>
+      <li>line-height and tracking that feel "tight and editorial" in english can crush CJK glyphs. verify both scripts at the same breakpoint.</li>
+      <li>truncation with ellipsis is a product decision. if you must truncate, make the full string available to assistive tech (title, expandable row, or visually hidden full text).</li>
+      <li>reflow: when zh expands a card, neighbors must not overlap. fluid grids beat fixed-width paste from a brand deck.</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="roots-heading">
+    <h2 id="roots-heading">3 · where the instinct comes from</h2>
+    <p>fuzhou roots, midwest restaurant floor. patrons, family, and staff already switch languages mid-conversation. the UI should not pretend monolingual default is neutral. immigrant household multilingualism is operational context: tickets, menu notes, and volunteer-facing pages fail loudly when language and layout ignore density.</p>
+    <p>that is the bridge-building thread on <a href="https://matchaxmoxie.github.io/matchaxmoxie/#coming-soon">@matchaxmoxie</a>: restaurant uptime habits applied to accessible systems. no clinical framing. community orgs on the serveit roster (including partners like <a href="https://middlewayhouse.org">middle way house</a>) need pages staff can maintain and visitors can hear correctly.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="links-heading">
+    <h2 id="links-heading">related</h2>
+    <div class="link-hub">
+      <a href="how-i-work.html"><span class="hub-k">how i work</span>product governance · sandwich runbook · cascade matrix</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html"><span class="hub-k">serveit</span>IU nonprofit tech clinic · WCAG client builds</a>
+      <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · component constraints</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/demo-engineering.html"><span class="hub-k">demo engineering</span>sandbox rigor on the ops loop</a>
+      <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/"><span class="hub-k">duck farm</span>interactive sandbox proof</a>
+    </div>
+  </section>
+
+  <footer class="closer">
+    <p>architectural insight, not a certificate. back to <a href="index.html">the briefcase</a> · ops twin on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>.</p>
+  </footer>
+
+</main>
+</body>
+</html>
