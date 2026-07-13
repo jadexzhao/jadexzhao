@@ -10,7 +10,7 @@ Inspired by [Build Your Own X - search engine](https://github.com/codecrafters-i
 2. Tokenizes and indexes them with **Okapi BM25**
 3. Ranks documents by keyword relevance and prints a short snippet
 
-Useful for grepping project notes, protocol drafts, and team docs without opening every file.
+Useful for grepping project notes, meeting docs, and team markdown without opening every file.
 
 ## Run
 

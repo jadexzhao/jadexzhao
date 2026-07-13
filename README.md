@@ -1,17 +1,17 @@
 # Jade Zhao & Co.
 
-**jadexzhao × matchaxmoxie** · Informatics @ IU Luddy · May 2027 · Bloomington, IN
+**jadexzhao × matchaxmoxie** · Actor & Entrepreneur · Informatics @ IU Luddy · May 2027 · Bloomington, IN / NYC
 
 **Co-founded:** one human, two GitHub accounts.
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/): bookmark-style GTM engineer page (serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/): bookmark-style page (gtm @ stealth yc, serveit, potstickers, duck farm). GitHub Pages serves `briefcase/` at the repo root.
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
 | **role** | code, serveit web lead, portfolio | fase map coordinator, uta, consulting |
 | **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (brand, fase, emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (writes the code) |
 
-informatics @ iu luddy, may 2027. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql.
+restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, may 2027. gtm engineering at a stealth yc startup in nyc. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql. school ig: [@zhao.langxi](https://instagram.com/zhao.langxi).
 
 **Open to** software engineering · GTM engineering · solutions engineering · open to relocation
 
@@ -48,12 +48,14 @@ informatics @ iu luddy, may 2027. serveit clinic is iu's nonprofit tech clinic; 
 
 ### Currently working on
 
+- **GTM Engineer Intern** (Jun 2026): stealth yc startup, nyc: demo envs, poc sandboxes, integration prototypes, python automation
 - **ServeIT website team lead** (Jan 2024): wcag 2.1 nonprofit builds, ml engagement (~+25%), python/postgresql etl on partner org data
 - **FASE MAP coordinator & UTA** (Aug 2023): mentor apprenticeship program, canvas ops, 50+ students, study resources
+- **Actor & Entrepreneur** (Aug 2023): campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi)
 - **Potstickers**: family restaurant site with clover online ordering; portfolio at jadexzhao.github.io
-- **Coming soon (learning in public)**: wechat mini-program notes · china ai/cybersec watchlist · fujian ↔ midwest dev diary · [@zhao.langxi](https://instagram.com/zhao.langxi)
+- **Coming soon (learning in public)**: wechat mini-program notes · china ai/cybersec watchlist · fujian ↔ midwest dev diary
 
-**鸭年 2026** · invented year of the duck — [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)
+**鸭年 2026** · invented year of the duck - [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)
 
 ---
 
@@ -124,4 +126,4 @@ English · Mandarin · Fuzhounese · Spanish (improving)
 
 ---
 
-*First-generation, raised in my family's Chinese restaurant. Fujian roots · 福建. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**
+*Actor & entrepreneur who ships. First-generation, 福州 · Fujian roots. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**

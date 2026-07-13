@@ -69,7 +69,7 @@ jobs:
           </html>
           REDIRECT
 
-          # Legacy demo deploys → briefcase (scoping dashboard removed Jul 2026)
+          # Legacy demo deploys → briefcase (old demo folders removed Jul 2026)
           for legacy_path in scoping-review-dashboard clinical-data-pipeline; do
             mkdir -p "_site/${legacy_path}"
             cat > "_site/${legacy_path}/index.html" <<REDIRECT
