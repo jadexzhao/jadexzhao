@@ -17,7 +17,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="jade zhao · actor & entrepreneur · gtm eng @ stealth yc (nyc) · informatics @ iu luddy · serveit · fase map · duck year 2026">
+<meta name="description" content="jade zhao · technical gtm & solutions · actor & entrepreneur · stealth startup (nyc) · informatics @ iu luddy · serveit · fase map · duck year 2026">
 <title>jade zhao · the briefcase · 鸭年</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -447,31 +447,98 @@
   }
   .duck-badge .sc{font-family:"Noto Serif SC",serif;text-transform:none;letter-spacing:.04em;color:var(--jade)}
 
-  /* ---- manifesto / dual stack ---- */
-  .manifesto{
+  /* ---- about me / what i do ---- */
+  .about-me{
     margin:28px 0 8px;
-    padding:18px 18px 18px 20px;
+    padding:4px 0 0;
+  }
+  .about-me .about-lede{
+    font-size:15px;
+    line-height:1.68;
+    color:var(--ink);
+    max-width:62ch;
+    margin:0 0 14px;
+  }
+  .about-me .about-lede a{
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .about-me .about-lede a:hover{border-color:var(--matcha)}
+  .about-quote{
+    margin:0 0 20px;
+    padding:14px 18px;
     background:linear-gradient(180deg, var(--mist) 0%, transparent 100%);
     border-left:3px solid var(--jade);
     border-radius:0 3px 3px 0;
+    max-width:56ch;
   }
-  .manifesto .man-k{
+  .about-quote p{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-size:clamp(16px,2.2vw,18px);
+    line-height:1.45;
+    color:var(--matcha-deep);
+    margin:0;
+  }
+  .what-i-do{
+    list-style:none;
+    margin:0 0 22px;
+    padding:0;
+    max-width:62ch;
+  }
+  .what-i-do li{
+    padding:12px 0 12px 0;
+    border-top:1px solid var(--line);
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+  .what-i-do li:first-child{border-top:0;padding-top:0}
+  .what-i-do .do-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.04em;
+    color:var(--matcha-deep);
+    display:block;
+    margin-bottom:4px;
+  }
+  .what-i-do a{
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .what-i-do a:hover{border-color:var(--matcha);color:var(--iu-crimson)}
+  .coords{
+    margin:0;
+  }
+  .coords .coords-k{
     font-family:"IBM Plex Mono",monospace;
     font-size:11px;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--jade);
+    color:var(--matcha-soft);
     display:block;
     margin-bottom:10px;
   }
-  .manifesto p{
-    font-size:14.5px;
-    line-height:1.65;
-    color:var(--ink-soft);
-    max-width:60ch;
-    margin:0 0 12px;
+  .coords-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 16px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
   }
-  .manifesto p:last-child{margin-bottom:0}
+  .coords-links a{
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    padding-bottom:1px;
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+  }
+  .coords-links a:hover{border-color:var(--matcha);color:var(--iu-crimson)}
 
   .stack-matrix{
     display:grid;
@@ -842,9 +909,9 @@
     <p class="eyebrow reveal"><span class="sc-label">赵</span> actor &amp; entrepreneur · gtm eng · 鸭年 2026</p>
     <h1 class="reveal">jade zhao <span class="name-sc">赵</span></h1>
     <div class="standfirst reveal">
-      <p>restaurant kid turned software builder. at <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">serveit</a> i ship wcag builds and etl that drove a ~25% engagement lift. at a stealth yc, i turn sales pitches into live poc sandboxes.</p>
-      <p>zero fluff, strict accessibility, clean components. open to relocation for gtm and solutions engineering in may 2027.</p>
-      <p>co-founder of two github accounts: @jadexzhao writes the code, @matchaxmoxie runs the brand &amp; ops. loud on purpose, always anchored by the work. (spoiler: this eats.)</p>
+      <p>restaurant kid turned software builder. i translate operational urgency into technical go-to-market and accessible web systems.</p>
+      <p>at <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">serveit</a>: wcag ships and etl with a ~25% engagement lift. at a stealth startup: pitch → live poc sandboxes. open to relocation for solutions and technical gtm roles, may 2027.</p>
+      <p>two github accounts on purpose: @jadexzhao writes the code, @matchaxmoxie runs brand &amp; ops. loud on purpose, always anchored by the work.</p>
     </div>
     <p class="heritage reveal"><span class="sc">福建</span> fujian · <span class="dot">·</span> <span class="sc">福州</span> fuzhou · <span class="dot">·</span> <span class="sc">福州话</span> fuzhounese at home · <span class="dot">·</span> <span class="sc">普通话</span> mandarin · english · spanish</p>
     <div class="meta reveal">
@@ -866,13 +933,38 @@
     <p class="duck-badge reveal" aria-label="Year of the Duck 2026"><span class="sc">鸭年</span> year of the duck · 2026</p>
   </header>
 
-  <aside class="manifesto reveal" aria-label="execution manifesto">
-    <span class="man-k">the code has to land hot</span>
-    <p>growing up in our family restaurant, nobody cared about the theory of cooking. they cared if the potstickers hit the table hot, fast, and exactly how the customer ordered them.</p>
-    <p>software is the exact same thing. standard tech portfolios are packed with clean, static slide decks and hypothetical projects that never see real traffic. i don't build for hypothetical users.</p>
-    <p>between optimizing web structures at serveit, automating backend workflows for a stealth yc startup, and tracking frame-rates on an interactive duck loop, my metric is execution.</p>
-    <p>if it doesn't ship, if it isn't accessible, and if a real person can't handle it independently without a developer on call. the work isn't done yet.</p>
-  </aside>
+  <section class="about-me reveal" aria-labelledby="about-heading">
+    <p class="section-label" id="about-heading"><span class="bilingual">关于</span> about me</p>
+    <p class="about-lede">i grew up in a busy family restaurant, where high-pressure logistics and human behavior hit the line at the same time. that wiring stuck. today i sit at the intersection of deep code implementation and strategic product communication: architecting component lifecycles, shipping maintainable handoffs, and presenting live system infrastructure so stakeholders see working flows next to the deck.</p>
+    <blockquote class="about-quote">
+      <p>i build systems that work under pressure. this eats.</p>
+    </blockquote>
+    <p class="section-label"><span class="bilingual">作</span> what i do</p>
+    <ul class="what-i-do">
+      <li>
+        <span class="do-k">frontend architecture</span>
+        scalable ui with React, TypeScript, and enterprise content systems (IU Rivet, Cascade WCMS). clean components stakeholders actually keep using.
+      </li>
+      <li>
+        <span class="do-k">wcag 2.1 aa accessibility</span>
+        scoped nonprofit builds with handoffs so partners maintain day-to-day without a developer on call. engagement tools that delivered a ~25% lift at serveit.
+      </li>
+      <li>
+        <span class="do-k">technical gtm &amp; discovery</span>
+        scope what a pilot needs to ship. build poc sandboxes and integration prototypes; python automation for onboarding and outreach. public framing: <a href="https://matchaxmoxie.github.io/matchaxmoxie/demo-engineering.html">demo engineering</a>.
+      </li>
+    </ul>
+    <div class="coords">
+      <span class="coords-k">active coordinates</span>
+      <div class="coords-links">
+        <a href="https://jadexzhao.github.io/jadexzhao/">the briefcase</a>
+        <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
+        <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>
+        <a href="https://github.com/jadexzhao">github @jadexzhao</a>
+        <a href="how-i-work.html">how i work</a>
+      </div>
+    </div>
+  </section>
 
   <hr class="rule">
 
@@ -1028,7 +1120,7 @@
     <div class="rail"><span class="who">iu · campus</span><br><span class="yr">actor &amp; entrepreneur · aug 2023</span></div>
     <div class="body">
       <h2>actor &amp; entrepreneur</h2>
-      <p class="did">campus creative and student ambassador at indiana university. i build a highly engaged personal brand and ship side projects on top of full-time informatics coursework. creating a campus presence that actually converts. loud on purpose, but always grounded in real work.</p>
+      <p class="did">campus creative and founder. independent brand strategy, digital media layout, and local outreach. loud on purpose, always anchored by real operational work. balancing production timelines with strict technical execution across campus groups and local ventures.</p>
       <span class="outcome">campus presence · @zhao.langxi</span>
       <div class="foot-row">
         <span class="tags">creative · brand · iu</span>
@@ -1036,6 +1128,20 @@
       </div>
     </div>
     </a>
+  </article>
+
+  <article class="entry reveal">
+    <div class="rail"><span class="who">ovpue · iu</span><br><span class="yr">aug 2023 to present</span></div>
+    <div class="body">
+      <h2>student ambassador · ovpue</h2>
+      <p class="ship-obj"><b>objective:</b> serve as institutional brand representative for the office of the vice provost for undergraduate education.</p>
+      <p class="ship-point"><b>discovery ·</b> command large-group presentations and live campus technical discovery paths. translate institutional resources and student-success matrices into high-signal narratives for prospective students, executive visitors, and cross-functional stakeholders.</p>
+      <p class="ship-point"><b>alignment ·</b> partner with directors, advisors, and admin teams on visit program scheduling and workflow alignment. real-time requirements analysis on program fit and admissions logistics.</p>
+      <span class="outcome">brand representation · stakeholder discovery</span>
+      <div class="foot-row">
+        <span class="tags">public-speaking · stakeholder-alignment · discovery · client-relations</span>
+      </div>
+    </div>
   </article>
 
   <article class="entry reveal">
