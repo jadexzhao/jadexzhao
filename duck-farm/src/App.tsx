@@ -42,9 +42,9 @@ export default function App() {
   const canvasRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number>()
   const toastTimerRef = useRef<number>()
-  const hudTickRef = useRef(0)
   const fpsFramesRef = useRef(0)
   const fpsLastRef = useRef(performance.now())
+  const fpsElRef = useRef<HTMLSpanElement | null>(null)
   const overrideDayRef = useRef(false)
 
   const [duckList, setDuckList] = useState<Duck[]>(() => [...ducksRef.current])
@@ -55,7 +55,6 @@ export default function App() {
   })
   const [toast, setToast] = useState<string | null>(null)
   const [showDev, setShowDev] = useState(false)
-  const [fps, setFps] = useState(0)
 
   const syncDuckList = useCallback(() => {
     setDuckList(ducksRef.current.map((d) => ({ ...d })))
@@ -163,18 +162,14 @@ export default function App() {
         }
       }
 
-      // Sparse HUD: FPS ~1Hz; counter only when length changes (handled on spawn)
+      // Sparse HUD: FPS ~1Hz via DOM text only. Never React setState in this tick.
       fpsFramesRef.current += 1
       const now = performance.now()
       if (now - fpsLastRef.current >= 1000) {
         const nextFps = fpsFramesRef.current
         fpsFramesRef.current = 0
         fpsLastRef.current = now
-        hudTickRef.current += 1
-        if (hudTickRef.current % 1 === 0) {
-          // Intentionally outside the "every frame" path: at most ~1 setState/sec for FPS
-          setFps(nextFps)
-        }
+        if (fpsElRef.current) fpsElRef.current.textContent = `${nextFps} fps`
       }
 
       animationRef.current = requestAnimationFrame(animate)
@@ -338,7 +333,7 @@ export default function App() {
 
         {showDev && (
           <div className="dev-hud" aria-live="polite">
-            <span>{fps} fps</span>
+            <span ref={fpsElRef}>0 fps</span>
             <span aria-hidden="true"> · </span>
             <span>{duckCount} ducks</span>
             <span aria-hidden="true"> · </span>
@@ -350,7 +345,7 @@ export default function App() {
           <strong>click on the grass</strong> to place ducks.{' '}
           <strong>click a duck</strong> to make it jump.
           <br />
-          restaurant-kid wiring: what works vs talk. this is the placeholder. spoiler: this eats.
+          restaurant-kid wiring: what works vs talk. this is the placeholder.
           <br />
           <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
         </div>

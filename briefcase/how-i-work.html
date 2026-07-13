@@ -158,6 +158,19 @@
   }
   .note p:last-child{margin-bottom:0}
 
+  .sandwich-sandbox{
+    border-left:3px solid var(--matcha);
+    background:var(--mist);
+  }
+  .sandwich-sandbox b{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--matcha-deep);
+    font-weight:600;
+  }
+
   .comp-map{
     margin:16px 0 8px;
     border:1px solid var(--line);
@@ -311,6 +324,11 @@
     <p><b>Inline editing</b> reads the repo i'm already in and proposes edits in the diff. i stay in the diff the whole time.</p>
     <p><b>Supervised agents</b> are multi-step tool use with human diff review: the assistant chains actions toward a goal, and i read every diff before anything lands. supervised means i am the one who says yes.</p>
     <p>across both, the rule is the same one from the runbook: AI proposes, i evaluate, and i still read the diffs and own what ships.</p>
+    <div class="note sandwich-sandbox">
+      <p><b>what the sandwich taught me</b></p>
+      <p>my cs professor's peanut-butter-sandwich drill is the foundation of how i approach frontend architecture and gtm engineering. computers do exactly what you write, never what you meant.</p>
+      <p>when i build wcag 2.1 compliant components for bloomington nonprofits, or document backend automation scripts in nyc, i look for the unspoken gaps. i write documentation and code loops under the strict assumption that if a system edge-case can fail, it will. designing inside heavy institutional parameters like iu rivet or cascade chunks isn't an obstacle. it is a lesson in precision. you outline the assumptions, you test the margins, and you ship the truth.</p>
+    </div>
   </section>
 
   <hr class="rule">
@@ -337,7 +355,7 @@
     <p>when building a partner page in cascade, i pick chunks in this order so the viewport stays one job at a time:</p>
     <ol class="chunk-list">
       <li><b>text block</b> · open with the core narrative. no layout chrome.</li>
-      <li><b>stat panel</b> · 1–3 metrics above the fold for scanning eyes.</li>
+      <li><b>stat panel</b> · 1-3 metrics above the fold for scanning eyes.</li>
       <li><b>callout</b> · one warning or action item, never decoration.</li>
       <li><b>cta unit</b> · exactly one primary action per section.</li>
       <li><b>accordion</b> · secondary specs and long docs below the fold.</li>

@@ -447,6 +447,84 @@
   }
   .duck-badge .sc{font-family:"Noto Serif SC",serif;text-transform:none;letter-spacing:.04em;color:var(--jade)}
 
+  /* ---- manifesto / dual stack ---- */
+  .manifesto{
+    margin:28px 0 8px;
+    padding:18px 18px 18px 20px;
+    background:linear-gradient(180deg, var(--mist) 0%, transparent 100%);
+    border-left:3px solid var(--jade);
+    border-radius:0 3px 3px 0;
+  }
+  .manifesto .man-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--jade);
+    display:block;
+    margin-bottom:10px;
+  }
+  .manifesto p{
+    font-size:14.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin:0 0 12px;
+  }
+  .manifesto p:last-child{margin-bottom:0}
+
+  .stack-matrix{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:8px 0 4px;
+  }
+  .stack-col{
+    padding:16px;
+    background:var(--iu-cream);
+    border:1px solid var(--line);
+    border-top:3px solid var(--matcha-deep);
+    border-radius:2px;
+  }
+  .stack-col.ops{border-top-color:var(--iu-crimson)}
+  .stack-col .stack-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    display:block;
+    margin-bottom:6px;
+  }
+  .stack-col h3{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:18px;
+    line-height:1.2;
+    margin:0 0 10px;
+    color:var(--matcha-deep);
+  }
+  .stack-col h3 a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .stack-col h3 a:hover{border-color:var(--matcha);color:var(--iu-crimson)}
+  .stack-col .stack-role{font-weight:400;font-size:.85em;color:var(--matcha-soft)}
+  .stack-col p{
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    margin:0 0 10px;
+  }
+  .stack-col .obj{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--matcha-deep);
+    margin:0;
+  }
+  .stack-col .obj em{font-style:normal;color:var(--matcha-soft)}
+
   /* ---- footer ---- */
   .closer{
     margin-top:34px;
@@ -559,6 +637,7 @@
     .rule{margin:32px 0 22px}
     .standfirst p{font-size:16px}
     .prose-block p{font-size:14.5px;line-height:1.7}
+    .stack-matrix{grid-template-columns:1fr}
     .meta a,.open{min-height:48px;display:inline-flex;align-items:center}
     @media (prefers-reduced-motion:no-preference){
       .reveal{animation-duration:.36s}
@@ -607,6 +686,32 @@
     <p class="open reveal">open to <b>gtm engineering</b> · <b>solutions engineering</b> · <b>developer relations</b> · <b>ai product</b></p>
     <p class="duck-badge reveal" aria-label="Year of the Duck 2026"><span class="sc">鸭年</span> year of the duck · 2026</p>
   </header>
+
+  <aside class="manifesto reveal" aria-label="execution manifesto">
+    <span class="man-k">the code has to land hot</span>
+    <p>growing up in our family restaurant, nobody cared about the theory of cooking. they cared if the potstickers hit the table hot, fast, and exactly how the customer ordered them.</p>
+    <p>software is the exact same thing. standard tech portfolios are packed with clean, static slide decks and hypothetical projects that never see real traffic. i don't build for hypothetical users.</p>
+    <p>between optimizing web structures at serveit, automating backend workflows for a stealth yc startup, and tracking frame-rates on an interactive duck loop, my metric is execution.</p>
+    <p>if it doesn't ship, if it isn't accessible, and if a real person can't handle it independently without a developer on call. the work isn't done yet.</p>
+  </aside>
+
+  <hr class="rule">
+
+  <p class="section-label reveal"><span class="bilingual">双</span> two accounts · one stack</p>
+  <div class="stack-matrix reveal">
+    <div class="stack-col">
+      <span class="stack-k">context / data layer</span>
+      <h3><a href="https://github.com/jadexzhao">@jadexzhao</a> <span class="stack-role">(the compiler)</span></h3>
+      <p>writing the core infrastructure. python etl pipelines processing community data with strict validation parameters, postgresql tables, and clean react state controls.</p>
+      <p class="obj"><em>the objective:</em> logic that does exactly what you tell it to do.</p>
+    </div>
+    <div class="stack-col ops">
+      <span class="stack-k">brand / front-facing layer</span>
+      <h3><a href="https://github.com/matchaxmoxie">@matchaxmoxie</a> <span class="stack-role">(the operational loop)</span></h3>
+      <p>handling the system architecture and go-to-market. managing canvas operations, design system consistency, and framing technical specs into accessible language.</p>
+      <p class="obj"><em>the objective:</em> interfaces that clear the path for the person coming next.</p>
+    </div>
+  </div>
 
   <hr class="rule">
 
