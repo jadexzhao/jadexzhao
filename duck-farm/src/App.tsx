@@ -259,19 +259,21 @@ export default function App() {
   return (
     <div className={`farm-container${isDay ? '' : ' night-mode'}`}>
       <header className="farm-header">
-        <p className="farm-eyebrow">鸭年 2026 · Interactive Front-End Sandbox</p>
+        <p className="farm-eyebrow">鸭年 2026 · live sandbox</p>
         <h1 className="farm-title">virtual duck farm</h1>
         <nav className="farm-nav" aria-label="portfolio links">
           <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">how i work</a>
           <span aria-hidden="true">·</span>
           <a href="https://github.com/jadexzhao">github</a>
           <span aria-hidden="true">·</span>
           <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
         </nav>
         <p className="farm-lede">
-          Restaurant-kid wiring: ship what works, not what sounds good in a pitch.
-          This canvas is the live sandbox. Click the grass, tap a duck, then stress-test
-          with Konami (<em>↑↑↓↓←→←→BA</em>).
+          restaurant-kid wiring: ship what works, not what sounds good in a pitch.
+          this canvas is the live sandbox. click the grass, tap a duck, then stress-test
+          with konami (<em>↑↑↓↓←→←→BA</em>).
         </p>
       </header>
 
@@ -375,7 +377,12 @@ export default function App() {
               <strong>state management.</strong> Duck positions live in a{' '}
               <code>useRef</code> mutated inside <code>requestAnimationFrame</code>.
               React state only syncs when ducks are added, cleared, or reset. No{' '}
-              <code>setState</code> per frame.
+              <code>setState</code> per frame. Local coords stay local; day/night is the
+              small global theme toggle. Same fence as the{' '}
+              <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html#state-isolation">
+                state isolation protocol
+              </a>
+              .
             </li>
             <li>
               <strong>event listeners.</strong> A window <code>keydown</code> listener

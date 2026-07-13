@@ -351,6 +351,35 @@
   .habit-list li{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
   .habit-list b{color:var(--matcha-deep);font-weight:600}
 
+  /* global vs local state isolation cards */
+  .state-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:16px 0 10px;
+  }
+  .state-card{
+    padding:16px 16px 18px;
+    background:var(--mist);
+    border:1px solid var(--line);
+    border-radius:2px;
+  }
+  .state-card.global{border-top:3px solid var(--iu-crimson)}
+  .state-card.local{border-top:3px solid var(--matcha)}
+  .state-card .layer-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    font-weight:600;margin-bottom:8px;display:block;
+  }
+  .state-card.global .layer-k{color:var(--iu-crimson)}
+  .state-card.local .layer-k{color:var(--matcha-deep)}
+  .state-card ul{
+    margin:0;padding-left:1.1em;
+    font-size:13.5px;color:var(--ink-soft);line-height:1.45;
+  }
+  .state-card li{margin-bottom:6px}
+  .state-card li:last-child{margin-bottom:0}
+
   .closer{
     margin-top:40px;padding-top:22px;border-top:2px solid var(--matcha-deep);
   }
@@ -392,6 +421,7 @@
     .runbook li{grid-template-columns:40px 1fr}
     .runbook .step-body{padding:12px 12px 14px 0}
     .status-pill{font-size:10.5px;padding:7px 10px}
+    .state-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -401,6 +431,7 @@
   <a href="index.html">briefcase</a>
   <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
   <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+  <a href="i18n-wcag.html">i18n ∩ wcag</a>
   <a href="https://github.com/jadexzhao">github</a>
 </nav>
 <main class="sheet">
@@ -425,6 +456,10 @@
       <a href="#part-2">#02 cascade matrix</a>
       <span class="sep">·</span>
       <a href="#part-3">#03 governance</a>
+      <span class="sep">·</span>
+      <a href="#state-isolation">#04 state isolation</a>
+      <span class="sep">·</span>
+      <a href="i18n-wcag.html">i18n ∩ wcag</a>
     </nav>
   </header>
 
@@ -589,6 +624,7 @@
       <a href="https://framework.iu.edu/index.html"><span class="hub-k">web framework</span>Cascade WCMS · page types, publishing, sitekube</a>
       <a href="https://framework.iu.edu/creating-content/chunks/index.html"><span class="hub-k">chunks</span>text, callout, CTA, panels, stats, tables</a>
       <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html"><span class="hub-k">serveit</span>IU nonprofit tech clinic · shipped builds</a>
+      <a href="i18n-wcag.html"><span class="hub-k">i18n ∩ wcag</span>mixed-language DOM · density · household multilingual framing</a>
     </div>
   </section>
 
@@ -638,9 +674,73 @@
     </ul>
   </section>
 
+  <hr class="rule">
+
+  <section id="state-isolation">
+    <p class="part-label">part 4</p>
+    <h2>state isolation protocol</h2>
+    <p>frontend systems fail the same way restaurants do when the floor and the kitchen share one clipboard: conflicting writes, silent overwrites, nobody knows who owns the ticket. i keep a hard <b>global vs local</b> divide so siblings can move without dragging the whole stack.</p>
+
+    <h3>structural divide</h3>
+    <div class="state-grid" role="list">
+      <article class="state-card global" role="listitem">
+        <span class="layer-k">global layer</span>
+        <ul>
+          <li>shared env and config that every surface inherits</li>
+          <li>wcag 2.1 aa constants and focus/tap baselines</li>
+          <li>institutional systems: canvas publish shape, clover <b>online ordering</b> (not a fake clover api), rivet design tokens</li>
+          <li>react context and dark mode / theme tokens when the whole app must sync</li>
+        </ul>
+      </article>
+      <article class="state-card local" role="listitem">
+        <span class="layer-k">local layer</span>
+        <ul>
+          <li>duck farm coordinates and frame-by-frame refs (raf mutates refs; react only on structure change)</li>
+          <li>map module draft status and publish checklist state</li>
+          <li>etl buffers and validation scratch space</li>
+          <li>isolated listeners (konami, toast timers) that die with the module</li>
+        </ul>
+      </article>
+    </div>
+
+    <h3>three runbook rules</h3>
+    <ol class="runbook" aria-label="state isolation runbook">
+      <li>
+        <span class="step-n" aria-hidden="true">01</span>
+        <div class="step-body">
+          <p class="step-title">encapsulation mandate</p>
+          <p>keep state as low as possible. do not lift to global unless siblings actually need to sync. if one button needs a flag, that flag lives next to the button.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">02</span>
+        <div class="step-body">
+          <p class="step-title">one-way data flow</p>
+          <p>props down, events up. local modules do not reach into global stores and mutate them side-door style. if theme or auth must change, raise an event the owner understands.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">03</span>
+        <div class="step-body">
+          <p class="step-title">boundary idempotency</p>
+          <p>a local module should run from its props alone. bloomington today, madrid tomorrow: same component quality if the contract is clear. that is transfer quality, not vibes.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="note">
+      <p>the dual-account shape mirrors this without forcing a metaphor. <b>@jadexzhao</b> is the compiler: global architecture, shared tokens, public sandboxes. <b>@matchaxmoxie</b> is the operational loop: local playbooks, canvas checklists, brand floors. same fence line. different jobs inside it.</p>
+      <p>live example: the <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a> keeps duck coords in local refs during raf; day/night is a small global theme toggle. no setState per frame. honesty check: it is react + typescript + vite. not a d3 canvas demo.</p>
+    </div>
+
+    <blockquote class="pull-quote">
+      <p>global rules define the fence line. local modules run free inside it. if the fence moves every sprint, nothing ships hot.</p>
+    </blockquote>
+  </section>
+
   <footer class="closer">
-    <p class="duck">the duck is patient, loud when it matters, and impossible to catch unless you already know where the pond is. 福州 roots. 鸭年 2026.</p>
-    <p class="human">ratio. logos. ordo. praxis. back to <a href="index.html">the briefcase</a> · short version on <a href="https://matchaxmoxie.github.io/matchaxmoxie/ai-transparency.html">matchaxmoxie ai transparency</a>.</p>
+    <p class="duck">global rules define the fence line. local modules run free inside it. the duck stays loud, and the pond stays findable. 福州 roots. 鸭年 2026.</p>
+    <p class="human">ratio. logos. ordo. praxis. back to <a href="index.html">the briefcase</a> · short version on <a href="https://matchaxmoxie.github.io/matchaxmoxie/ai-transparency.html">matchaxmoxie ai transparency</a> · demo loop on <a href="https://matchaxmoxie.github.io/matchaxmoxie/demo-engineering.html">demo engineering</a> · <a href="i18n-wcag.html">i18n ∩ wcag note</a>.</p>
   </footer>
 
 </main>
