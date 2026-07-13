@@ -259,49 +259,66 @@ export default function App() {
   return (
     <div className={`farm-container${isDay ? '' : ' night-mode'}`}>
       <header className="farm-header">
-        <h1 className="farm-title">
-          <a href="https://jadexzhao.github.io/jadexzhao/">virtual duck farm</a>
-        </h1>
-        <p className="farm-subtitle">鸭年 2026 · building toward something real</p>
+        <p className="farm-eyebrow">鸭年 2026 · Interactive Front-End Sandbox</p>
+        <h1 className="farm-title">virtual duck farm</h1>
+        <nav className="farm-nav" aria-label="portfolio links">
+          <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/jadexzhao">github</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+        </nav>
+        <p className="farm-lede">
+          Restaurant-kid wiring: ship what works, not what sounds good in a pitch.
+          This canvas is the live sandbox. Click the grass, tap a duck, then stress-test
+          with Konami (<em>↑↑↓↓←→←→BA</em>).
+        </p>
       </header>
 
-      <div
-        ref={canvasRef}
-        className={`farm-canvas ${isDay ? 'day' : 'night'}`}
-        onClick={handleCanvasClick}
-      >
-        {!isDay && <div className="stars" />}
-        <div className="cloud cloud-a" aria-hidden="true" />
-        <div className="cloud cloud-b" aria-hidden="true" />
-        <div className="cloud cloud-c" aria-hidden="true" />
-        <div className="grass" />
-        <div className="pond" />
-        {duckList.map((duck) => (
-          <div
-            key={duck.id}
-            ref={(node) => setDuckEl(duck.id, node)}
-            className="duck"
-            style={{
-              left: `${duck.x}%`,
-              top: `${duck.y}%`,
-              transform: duckTransform(duck),
-            }}
-            onClick={(e) => handleDuckClick(e, duck.id)}
-            role="button"
-            tabIndex={0}
-            aria-label="duck"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                handleDuckClick(e as unknown as React.MouseEvent, duck.id)
-              }
-            }}
-          >
-            🦆
-            {duck.accessory && <span className="accessory">{duck.accessory}</span>}
-          </div>
-        ))}
-      </div>
+      <section className="farm-hero" aria-labelledby="sandbox-heading">
+        <h2 id="sandbox-heading" className="visually-hidden">
+          the live sandbox
+        </h2>
+        <div
+          ref={canvasRef}
+          className={`farm-canvas ${isDay ? 'day' : 'night'}`}
+          onClick={handleCanvasClick}
+          role="application"
+          aria-label="Interactive duck farm. Click the grass to place ducks."
+        >
+          {!isDay && <div className="stars" />}
+          <div className="cloud cloud-a" aria-hidden="true" />
+          <div className="cloud cloud-b" aria-hidden="true" />
+          <div className="cloud cloud-c" aria-hidden="true" />
+          <div className="grass" />
+          <div className="pond" />
+          {duckList.map((duck) => (
+            <div
+              key={duck.id}
+              ref={(node) => setDuckEl(duck.id, node)}
+              className="duck"
+              style={{
+                left: `${duck.x}%`,
+                top: `${duck.y}%`,
+                transform: duckTransform(duck),
+              }}
+              onClick={(e) => handleDuckClick(e, duck.id)}
+              role="button"
+              tabIndex={0}
+              aria-label="duck"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleDuckClick(e as unknown as React.MouseEvent, duck.id)
+                }
+              }}
+            >
+              🦆
+              {duck.accessory && <span className="accessory">{duck.accessory}</span>}
+            </div>
+          ))}
+        </div>
+      </section>
 
       <div className="farm-hud">
         <div className="counter">
@@ -345,21 +362,90 @@ export default function App() {
           <strong>click on the grass</strong> to place ducks.{' '}
           <strong>click a duck</strong> to make it jump.
           <br />
-          restaurant-kid wiring: what works vs talk. this is the placeholder.
-          <br />
-          <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
+          stack: React + TypeScript + Vite. no D3, no Tailwind. raf animates DOM refs
+          directly so React never re-renders per frame.
         </div>
-
-        <p className="farm-links">
-          <a href="https://jadexzhao.github.io/jadexzhao/">← the briefcase</a>
-          {' · '}
-          <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>
-          {' · '}
-          <a href="https://github.com/jadexzhao">github</a>
-          {' · '}
-          <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
-        </p>
       </div>
+
+      <details className="farm-architecture">
+        <summary>architecture under the grass</summary>
+        <div className="arch-body">
+          <ul className="arch-list">
+            <li>
+              <strong>state management.</strong> Duck positions live in a{' '}
+              <code>useRef</code> mutated inside <code>requestAnimationFrame</code>.
+              React state only syncs when ducks are added, cleared, or reset. No{' '}
+              <code>setState</code> per frame.
+            </li>
+            <li>
+              <strong>event listeners.</strong> A window <code>keydown</code> listener
+              tracks the Konami sequence and stamps fifty ducks when complete. Day/night
+              follows the clock unless you toggle manually.
+            </li>
+            <li>
+              <strong>accessibility.</strong> Ducks are keyboard-focusable buttons (Enter /
+              Space). Controls and ducks meet a 48px minimum tap target. Toast uses{' '}
+              <code>aria-live="polite"</code>. Skip the stampede if motion is a problem;
+              reduced-motion preferences quiet title animation where supported.
+            </li>
+          </ul>
+
+          <h3 className="arch-table-title">state engine blueprint</h3>
+          <div className="table-wrap">
+            <table className="arch-table">
+              <caption className="visually-hidden">
+                State engine blueprint for farm interactions
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">interaction</th>
+                  <th scope="col">trigger</th>
+                  <th scope="col">mutates</th>
+                  <th scope="col">React re-render?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Grid Click</th>
+                  <td>click grass (y &gt; 60%)</td>
+                  <td>append duck to ref + list</td>
+                  <td>yes (structure change)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Entity Click</th>
+                  <td>click / Enter on a duck</td>
+                  <td>vx flip, slight jump (vy)</td>
+                  <td>no (DOM via raf)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Stampede</th>
+                  <td>Konami ↑↑↓↓←→←→BA</td>
+                  <td>+50 ducks + toast</td>
+                  <td>yes (batch append)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mode Toggle</th>
+                  <td>day / night button</td>
+                  <td>
+                    <code>isDay</code> + body class
+                  </td>
+                  <td>yes (theme)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <p className="farm-links">
+        <a href="https://jadexzhao.github.io/jadexzhao/">← the briefcase</a>
+        {' · '}
+        <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>
+        {' · '}
+        <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
+        {' · '}
+        <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
+      </p>
 
       <div
         className={`farm-toast${toast ? ' visible' : ''}`}
