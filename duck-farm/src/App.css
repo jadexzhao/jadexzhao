@@ -1,26 +1,24 @@
-/* Decorative sun, pond shimmer, and canvas atmosphere */
+/* Outdoor atmosphere: sun, clouds, pond shimmer, bank edge */
 
 .farm-canvas.day::before {
   content: '';
   position: absolute;
-  top: 12%;
-  right: 18%;
-  width: 72px;
-  height: 72px;
+  top: 10%;
+  right: 14%;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    #fff9c4 0%,
-    #ffd54f 25%,
-    #ffb300 50%,
-    rgba(255, 179, 0, 0.4) 70%,
-    transparent 75%
+    #fffef0 0%,
+    var(--sun) 42%,
+    rgba(255, 214, 80, 0.35) 68%,
+    transparent 72%
   );
   box-shadow:
-    0 0 40px rgba(255, 213, 79, 0.8),
-    0 0 80px rgba(255, 159, 67, 0.5),
-    0 0 120px rgba(255, 107, 107, 0.25);
-  animation: sun-pulse 4s ease-in-out infinite alternate;
+    0 0 28px var(--sun-soft),
+    0 0 56px rgba(255, 214, 80, 0.28);
+  animation: sun-pulse 5s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 1;
 }
@@ -31,12 +29,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 55%;
+  height: 50%;
   background: radial-gradient(
-    ellipse 80% 60% at 75% 20%,
-    rgba(255, 213, 79, 0.35) 0%,
-    rgba(255, 183, 77, 0.15) 40%,
-    transparent 70%
+    ellipse 70% 55% at 78% 18%,
+    rgba(255, 229, 102, 0.28) 0%,
+    transparent 65%
   );
   pointer-events: none;
   z-index: 0;
@@ -46,78 +43,176 @@
   0% {
     transform: scale(1);
     box-shadow:
-      0 0 40px rgba(255, 213, 79, 0.8),
-      0 0 80px rgba(255, 159, 67, 0.5),
-      0 0 120px rgba(255, 107, 107, 0.25);
+      0 0 28px var(--sun-soft),
+      0 0 56px rgba(255, 214, 80, 0.28);
   }
   100% {
-    transform: scale(1.06);
+    transform: scale(1.08);
     box-shadow:
-      0 0 50px rgba(255, 213, 79, 0.95),
-      0 0 100px rgba(255, 159, 67, 0.6),
-      0 0 140px rgba(255, 107, 107, 0.35);
+      0 0 36px rgba(255, 214, 80, 0.65),
+      0 0 72px rgba(255, 214, 80, 0.35);
   }
 }
 
 .farm-canvas.night::before {
+  /* Soft moon — teal night, not purple glow */
   content: '';
   position: absolute;
-  bottom: 38%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 30%;
-  background: radial-gradient(
-    ellipse 50% 100% at 50% 100%,
-    rgba(255, 159, 67, 0.5) 0%,
-    rgba(255, 107, 107, 0.3) 30%,
-    rgba(196, 69, 105, 0.15) 55%,
-    transparent 75%
-  );
+  top: 12%;
+  left: 16%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f0f4e8 0%, #d8e0c8 55%, transparent 72%);
+  box-shadow: 0 0 24px rgba(232, 240, 216, 0.45);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .farm-canvas.night::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 38%;
   left: 0;
   width: 100%;
-  height: 45%;
+  height: 28%;
   background: radial-gradient(
-    ellipse 60% 80% at 30% 10%,
-    rgba(108, 92, 231, 0.25) 0%,
-    rgba(45, 27, 105, 0.1) 50%,
-    transparent 75%
+    ellipse 60% 100% at 50% 100%,
+    rgba(201, 160, 74, 0.22) 0%,
+    transparent 70%
   );
   pointer-events: none;
   z-index: 0;
+}
+
+/* Drifting clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(0.2px);
+  animation: cloud-drift linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud-a {
+  width: 72px;
+  height: 22px;
+  top: 14%;
+  left: -10%;
+  opacity: 0.85;
+  animation-duration: 48s;
+}
+
+.cloud-a::before {
+  width: 34px;
+  height: 34px;
+  top: -18px;
+  left: 12px;
+}
+
+.cloud-a::after {
+  width: 28px;
+  height: 28px;
+  top: -12px;
+  left: 36px;
+}
+
+.cloud-b {
+  width: 96px;
+  height: 26px;
+  top: 24%;
+  left: -15%;
+  opacity: 0.65;
+  animation-duration: 62s;
+  animation-delay: -18s;
+}
+
+.cloud-b::before {
+  width: 42px;
+  height: 42px;
+  top: -22px;
+  left: 18px;
+}
+
+.cloud-b::after {
+  width: 32px;
+  height: 32px;
+  top: -14px;
+  left: 48px;
+}
+
+.cloud-c {
+  width: 56px;
+  height: 18px;
+  top: 18%;
+  left: -8%;
+  opacity: 0.55;
+  animation-duration: 55s;
+  animation-delay: -30s;
+}
+
+.cloud-c::before {
+  width: 26px;
+  height: 26px;
+  top: -14px;
+  left: 10px;
+}
+
+.cloud-c::after {
+  width: 22px;
+  height: 22px;
+  top: -10px;
+  left: 28px;
+}
+
+.farm-canvas.night .cloud {
+  background: rgba(180, 200, 210, 0.22);
+  opacity: 0.5;
+}
+
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1200px);
+  }
 }
 
 .pond::before {
   content: '';
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   background: linear-gradient(
     105deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.25) 45%,
-    transparent 55%
+    transparent 28%,
+    rgba(255, 255, 255, 0.32) 48%,
+    transparent 58%
   );
-  background-size: 200% 100%;
-  animation: pond-shimmer 5s ease-in-out infinite;
+  background-size: 220% 100%;
+  animation: pond-shimmer 6s ease-in-out infinite;
   pointer-events: none;
 }
 
 .farm-canvas.night .pond::before {
   background: linear-gradient(
     105deg,
-    transparent 30%,
-    rgba(255, 213, 79, 0.12) 45%,
-    transparent 55%
+    transparent 28%,
+    rgba(201, 160, 74, 0.14) 48%,
+    transparent 58%
   );
-  background-size: 200% 100%;
+  background-size: 220% 100%;
 }
 
 @keyframes pond-shimmer {
@@ -129,24 +224,30 @@
   }
 }
 
+/* Soft shore line between grass and pond */
 .grass::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
+  right: -6%;
+  width: 14%;
+  height: 100%;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(210, 180, 120, 0.35) 40%,
     transparent
   );
   pointer-events: none;
 }
 
-.farm-canvas {
-  isolation: isolate;
+.farm-canvas.night .grass::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(80, 90, 70, 0.4) 40%,
+    transparent
+  );
 }
 
 .grass,

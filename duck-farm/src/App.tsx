@@ -188,8 +188,10 @@ export default function App() {
 
   return (
     <div className="farm-container">
-      <h1 className="farm-title">virtual duck farm</h1>
-      <p className="farm-subtitle">鸭年 2026 · building toward something real</p>
+      <header className="farm-header">
+        <h1 className="farm-title">virtual duck farm</h1>
+        <p className="farm-subtitle">鸭年 2026 · building toward something real</p>
+      </header>
 
       <div
         ref={canvasRef}
@@ -197,6 +199,9 @@ export default function App() {
         onClick={handleCanvasClick}
       >
         {!isDay && <div className="stars" />}
+        <div className="cloud cloud-a" aria-hidden="true" />
+        <div className="cloud cloud-b" aria-hidden="true" />
+        <div className="cloud cloud-c" aria-hidden="true" />
         <div className="grass" />
         <div className="pond" />
         {ducks.map(duck => (
@@ -216,31 +221,33 @@ export default function App() {
         ))}
       </div>
 
-      <div className="counter">
-        <span>{ducks.length}</span> duck{ducks.length !== 1 ? 's' : ''} on the farm
-      </div>
+      <div className="farm-hud">
+        <div className="counter">
+          <span>{ducks.length}</span> duck{ducks.length !== 1 ? 's' : ''} on the farm
+        </div>
 
-      <div className="controls">
-        <button onClick={populateFarm}>spawn 8 ducks</button>
-        <button onClick={resetFarm}>reset</button>
-        <button onClick={clearFarm}>clear all</button>
-      </div>
+        <div className="controls">
+          <button onClick={populateFarm}>spawn 8 ducks</button>
+          <button onClick={resetFarm}>reset</button>
+          <button onClick={clearFarm}>clear all</button>
+        </div>
 
-      <div className="info">
-        <strong>click on the grass</strong> to place ducks. <strong>click a duck</strong> to make it jump.
-        <br />
-        restaurant-kid wiring: what works vs talk. this is the placeholder — spoiler: this eats.
-        <br />
-        <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
-      </div>
+        <div className="info">
+          <strong>click on the grass</strong> to place ducks. <strong>click a duck</strong> to make it jump.
+          <br />
+          restaurant-kid wiring: what works vs talk. this is the placeholder — spoiler: this eats.
+          <br />
+          <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
+        </div>
 
-      <p className="farm-links">
-        <a href="https://jadexzhao.github.io/jadexzhao/">← portfolio</a>
-        {' · '}
-        <a href="https://github.com/jadexzhao">github</a>
-        {' · '}
-        <a href="https://github.com/matchaxmoxie">@matchaxmoxie</a>
-      </p>
+        <p className="farm-links">
+          <a href="https://jadexzhao.github.io/jadexzhao/">← portfolio</a>
+          {' · '}
+          <a href="https://github.com/jadexzhao">github</a>
+          {' · '}
+          <a href="https://github.com/matchaxmoxie">@matchaxmoxie</a>
+        </p>
+      </div>
     </div>
   )
 }
