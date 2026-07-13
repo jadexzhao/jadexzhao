@@ -3,153 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How Jade Zhao uses AI-assisted editing, with full disclosure. Because not saying would be a form of unclear instruction.">
+<meta name="description" content="How Jade Zhao works: AI transparency, ServeIT Cascade/Rivet component strategy, and verified IU framework links.">
 <title>jade zhao · how i work</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#212B23;
-    --ink-soft:#4C594B;
+    --ink-soft:#3D4A3C;
     --paper:#FBFAF5;
-    --matcha:#5F7D4F;
-    --matcha-deep:#34472C;
-    --matcha-soft:#8AA77B;
+    --matcha:#4A633C;
+    --matcha-deep:#2A3B24;
+    --matcha-soft:#6A855B;
     --mist:#EDF1E6;
     --line:#D8DCC9;
+    --iu-crimson:#990000;
+    --iu-cream:#F7F5F0;
+    --banner-h:28px;
+    --jump-h:48px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden}
 
   body{
     background:var(--paper);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(153,0,0,.04), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,107,92,.05), transparent 50%);
     color:var(--ink);
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
-    padding:76px 24px 56px;
+    padding:
+      calc(var(--banner-h) + var(--jump-h) + 28px + env(safe-area-inset-top,0px))
+      max(24px, env(safe-area-inset-right,0px))
+      max(56px, calc(40px + env(safe-area-inset-bottom,0px)))
+      max(24px, env(safe-area-inset-left,0px));
   }
 
   .twin-banner{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:block;text-align:center;
+    position:fixed;top:0;left:0;right:0;z-index:110;
+    display:flex;align-items:center;justify-content:center;
+    min-height:48px;
+    text-align:center;
     font-family:"IBM Plex Mono",monospace;
     font-size:11px;letter-spacing:.04em;
-    padding:6px 12px;
+    padding:calc(6px + env(safe-area-inset-top,0px)) 12px 6px;
     background:var(--mist);color:var(--ink-soft);
     text-decoration:none;border-bottom:1px solid var(--line);
   }
-  .twin-banner:hover{color:var(--matcha-deep)}
+  .twin-banner:hover{color:var(--matcha-deep);background:#e6ece0}
 
-  .sheet{
-    max-width:760px;
-    margin:0 auto;
+  .jump-nav{
+    position:fixed;
+    top:calc(var(--banner-h) + env(safe-area-inset-top,0px));
+    left:0;right:0;z-index:105;
+    display:flex;flex-wrap:nowrap;justify-content:center;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    background:rgba(251,250,245,.92);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding:0 8px;
   }
+  .jump-nav::-webkit-scrollbar{display:none}
+  .jump-nav a{
+    flex:0 0 auto;
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:48px;padding:0 14px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    color:var(--ink-soft);text-decoration:none;white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .jump-nav a:hover{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream)}
+  .jump-nav a:focus-visible{outline:2px solid var(--iu-crimson);outline-offset:-2px}
 
-  .mono{font-family:"IBM Plex Mono",monospace}
+  .sheet{max-width:760px;margin:0 auto}
 
-  /* ---- masthead ---- */
   .eyebrow{
     font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--matcha);
-    margin-bottom:14px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--matcha);margin-bottom:14px;
   }
 
   .back{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;
-    color:var(--matcha);
-    text-decoration:none;
-    border-bottom:1px solid var(--line);
-    padding-bottom:1px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;
+    color:var(--matcha);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
+    min-height:48px;display:inline-flex;align-items:center;
   }
   .back:hover{border-color:var(--matcha)}
   .back::before{content:"← "}
 
   h1{
     font-family:"Fraunces",serif;
-    font-weight:500;
+    font-weight:700;
     font-size:clamp(38px,7vw,54px);
-    line-height:.98;
-    letter-spacing:-.02em;
-    color:var(--matcha-deep);
-    margin-top:20px;
+    line-height:.98;letter-spacing:-.02em;
+    color:var(--matcha-deep);margin-top:20px;
   }
 
   .standfirst{
-    font-family:"Fraunces",serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:clamp(17px,2.4vw,20px);
-    line-height:1.45;
-    color:var(--ink);
-    margin-top:18px;
-    max-width:60ch;
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:clamp(17px,2.4vw,20px);line-height:1.45;
+    color:var(--ink);margin-top:18px;max-width:60ch;
   }
 
-  .lede{
-    margin-top:16px;
-    font-size:15px;
-    color:var(--ink-soft);
-    max-width:62ch;
-  }
+  .lede{margin-top:16px;font-size:15px;color:var(--ink-soft);max-width:62ch}
   .lede p{margin-top:10px}
   .lede b{color:var(--matcha-deep);font-weight:600}
 
   .toc{
-    margin-top:20px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px 16px;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;
-    color:var(--ink-soft);
+    margin-top:20px;display:flex;flex-wrap:wrap;gap:6px 16px;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);
   }
-  .toc a{color:var(--matcha);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .toc a{
+    color:var(--matcha);text-decoration:none;border-bottom:1px solid var(--line);
+    padding-bottom:1px;min-height:44px;display:inline-flex;align-items:center;
+  }
   .toc a:hover{border-color:var(--matcha)}
   .toc .sep{color:var(--matcha-soft)}
 
-  .rule{
-    height:1px;
-    background:var(--line);
-    border:0;
-    margin:34px 0 26px;
-  }
+  .rule{height:1px;background:var(--line);border:0;margin:34px 0 26px}
 
-  /* ---- sections ---- */
-  section{scroll-margin-top:24px}
+  section{scroll-margin-top:calc(var(--banner-h) + var(--jump-h) + 16px)}
 
   .section-label{
     font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--matcha-soft);
-    margin-bottom:12px;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--matcha-soft);margin-bottom:12px;
   }
 
   h2{
-    font-family:"Fraunces",serif;
-    font-weight:500;
-    font-size:27px;
-    line-height:1.08;
-    letter-spacing:-.01em;
-    color:var(--matcha-deep);
-    margin-bottom:14px;
+    font-family:"Fraunces",serif;font-weight:600;
+    font-size:27px;line-height:1.08;letter-spacing:-.01em;
+    color:var(--matcha-deep);margin-bottom:14px;
   }
 
   h3{
-    font-family:"IBM Plex Sans",sans-serif;
-    font-weight:600;
-    font-size:15px;
-    color:var(--ink);
-    margin:18px 0 6px;
+    font-family:"IBM Plex Sans",sans-serif;font-weight:600;
+    font-size:15px;color:var(--ink);margin:18px 0 6px;
   }
 
   p{font-size:15px;color:var(--ink-soft);max-width:62ch;margin-bottom:12px}
@@ -159,48 +154,124 @@
   li{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
 
   .note{
-    background:var(--mist);
-    border-radius:3px;
-    padding:14px 16px;
-    margin:16px 0;
+    background:var(--mist);border-radius:3px;padding:14px 16px;margin:16px 0;
   }
   .note p:last-child{margin-bottom:0}
 
-  /* ---- footer ---- */
-  .closer{
-    margin-top:40px;
-    padding-top:22px;
-    border-top:2px solid var(--matcha-deep);
-    font-size:12.5px;
+  .comp-map{
+    margin:16px 0 8px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .comp-map dt,
+  .comp-map dd{padding:12px 14px;font-size:14px;line-height:1.5}
+  .comp-map dt{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--iu-crimson);background:var(--iu-cream);
+    border-top:1px solid var(--line);
+  }
+  .comp-map dt:first-child{border-top:0}
+  .comp-map dd{color:var(--ink-soft);border-top:1px solid var(--line);margin:0}
+
+  .chunk-list{
+    margin:8px 0 18px 1.2em;
+    max-width:62ch;
+  }
+  .chunk-list li{
+    font-size:14.5px;
     color:var(--ink-soft);
+    margin-bottom:10px;
+    line-height:1.5;
+  }
+  .chunk-list b{color:var(--matcha-deep);font-weight:600}
+
+  .link-hub{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;margin-top:14px;
+  }
+  .link-hub a{
+    display:flex;flex-direction:column;justify-content:center;
+    min-height:64px;padding:14px 16px;
+    background:var(--iu-cream);
+    border:1px solid var(--line);border-left:3px solid var(--iu-crimson);
+    border-radius:2px;text-decoration:none;color:var(--ink);
+    font-size:14px;line-height:1.45;
+    transition:background .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .link-hub a:hover{
+    background:#fff;transform:translateX(4px);
+    box-shadow:0 6px 16px rgba(33,43,35,.08);
+  }
+  .link-hub a:focus-visible{outline:2px solid var(--iu-crimson);outline-offset:2px}
+  .hub-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--iu-crimson);display:block;margin-bottom:4px;
+  }
+
+  .closer{
+    margin-top:40px;padding-top:22px;border-top:2px solid var(--matcha-deep);
+    font-size:12.5px;color:var(--ink-soft);
   }
   .closer .human{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--ink)}
   .closer a{color:var(--matcha-deep);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
 
   a:focus-visible{outline:2px solid var(--matcha);outline-offset:3px;border-radius:1px}
 
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(6px);animation:rise .42s cubic-bezier(.2,.7,.2,1) forwards}
+    .reveal:nth-child(2){animation-delay:.04s}
+    .reveal:nth-child(3){animation-delay:.08s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+
+  @media print{
+    .twin-banner,.jump-nav{display:none!important}
+    body{padding:0}
+  }
+
   @media (max-width:560px){
-    body{padding:32px 18px 40px}
+    :root{--banner-h:26px}
+    body{
+      padding:
+        calc(var(--banner-h) + var(--jump-h) + 18px + env(safe-area-inset-top,0px))
+        max(16px, env(safe-area-inset-right,0px))
+        max(40px, calc(28px + env(safe-area-inset-bottom,0px)))
+        max(16px, env(safe-area-inset-left,0px));
+    }
+    .twin-banner{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .jump-nav a{padding:0 12px;font-size:10.5px}
   }
 </style>
 </head>
 <body>
-<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">Co-founded with @matchaxmoxie → matchaxmoxie.github.io</a>
+<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie brand &amp; ops → matchaxmoxie.github.io</a>
+<nav class="jump-nav" aria-label="quick links">
+  <a href="index.html">briefcase</a>
+  <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
+  <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+  <a href="https://github.com/jadexzhao">github</a>
+</nav>
 <main class="sheet">
 
   <header>
-    <a class="back" href="index.html">the briefcase</a>
-    <p class="eyebrow" style="margin-top:16px">ai transparency · assisted editing</p>
-    <h1>how i work</h1>
-    <p class="standfirst">i use AI tools and i'm telling you, because not telling you would be a form of unclear instruction. and that's the one thing this whole memo is arguing against. if you know, you know.</p>
-    <div class="lede">
+    <a class="back reveal" href="index.html">the briefcase</a>
+    <p class="eyebrow reveal" style="margin-top:16px">ai transparency · serveit component strategy</p>
+    <h1 class="reveal">how i work</h1>
+    <p class="standfirst reveal">i use AI tools and i'm telling you, because not telling you would be a form of unclear instruction. and that's the one thing this whole memo is arguing against. if you know, you know.</p>
+    <div class="lede reveal">
       <p>i use <b>AI-assisted editing</b> sometimes: inline suggestions in the editor, and supervised multi-step assistants when a task needs more steps. they increase how fast i can iterate. they do not replace how i think, what i decide, or what i sign off on.</p>
       <p>the drafts are assisted. the thinking, the architecture, the final calls: those are mine. <b>draft generation is AI-assisted. accountability is not.</b></p>
     </div>
-    <nav class="toc" aria-label="memo sections">
+    <nav class="toc reveal" aria-label="memo sections">
       <a href="#how-i-work">#how-i-work</a>
       <span class="sep">·</span>
       <a href="#editing-and-agents">#editing-and-agents</a>
+      <span class="sep">·</span>
+      <a href="#component-matrix">#component-matrix</a>
       <span class="sep">·</span>
       <a href="#business-tech-law">#business-tech-law</a>
     </nav>
@@ -227,7 +298,7 @@
     <p>when i catch it, and i do catch it, i don't just fix the output. i go back to the prompt. something in the instruction created room for the wrong answer. that's the sandwich again. the error is a missing step. find the step. fix the instruction. run it again.</p>
 
     <div class="note">
-      <p>transparency isn't a policy here. it's an instruction with no missing steps. if you can't see how the work was made, you can't fully trust what it does. that's the whole argument. &#127799;</p>
+      <p>transparency isn't a policy here. it's an instruction with no missing steps. if you can't see how the work was made, you can't fully trust what it does. that's the whole argument.</p>
     </div>
   </section>
 
@@ -240,6 +311,44 @@
     <p><b>Inline editing</b> reads the repo i'm already in and proposes edits in the diff. i stay in the diff the whole time.</p>
     <p><b>Supervised agents</b> are multi-step tool use with human diff review: the assistant chains actions toward a goal, and i read every diff before anything lands. supervised means i am the one who says yes.</p>
     <p>across both, the rule is the same one from the runbook: AI proposes, i evaluate, and i still read the diffs and own what ships.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="component-matrix">
+    <p class="section-label">serveit · cascade · rivet</p>
+    <h2>enterprise component matrix</h2>
+    <p>at serveit i approach cascade wcms and rivet as an enterprise component matrix, not a page builder. reverse-engineer the page into modular chunks (accordion, stat panels, callouts). keep brand fidelity and accessibility. layout is composition of chunks, not hard-coded glue.</p>
+    <p>system components &amp; deployment strategy:</p>
+    <dl class="comp-map">
+      <dt>text blocks</dt>
+      <dd>used to anchor core narratives without layout noise.</dd>
+      <dt>callout panels</dt>
+      <dd>flag warnings, mission-critical shifts, or action items readers must not miss.</dd>
+      <dt>cta units</dt>
+      <dd>one primary action per view. no twin competing CTAs fighting for the same click.</dd>
+      <dt>stat modules</dt>
+      <dd>metrics for scanning eyes. place high so recruiters and stakeholders get numbers fast.</dd>
+      <dt>accordions</dt>
+      <dd>secondary specs compressed. keep the first viewport clean; tuck deep docs behind expand.</dd>
+    </dl>
+
+    <h3>cascade chunk map · paste order</h3>
+    <p>when building a partner page in cascade, i pick chunks in this order so the viewport stays one job at a time:</p>
+    <ol class="chunk-list">
+      <li><b>text block</b> · open with the core narrative. no layout chrome.</li>
+      <li><b>stat panel</b> · 1–3 metrics above the fold for scanning eyes.</li>
+      <li><b>callout</b> · one warning or action item, never decoration.</li>
+      <li><b>cta unit</b> · exactly one primary action per section.</li>
+      <li><b>accordion</b> · secondary specs and long docs below the fold.</li>
+    </ol>
+
+    <div class="link-hub">
+      <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · layouts, components, utilities</a>
+      <a href="https://framework.iu.edu/index.html"><span class="hub-k">web framework</span>Cascade WCMS · page types, publishing, sitekube</a>
+      <a href="https://framework.iu.edu/creating-content/chunks/index.html"><span class="hub-k">chunks</span>text, callout, CTA, panels, stats, tables</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html"><span class="hub-k">serveit</span>IU nonprofit tech clinic · shipped builds</a>
+    </div>
   </section>
 
   <hr class="rule">
@@ -260,7 +369,7 @@
   </section>
 
   <footer class="closer">
-    <p class="human">ratio. logos. ordo. praxis. &#127799; the reasoning, the logic, the order, the practice. the four things that make instruction real. back to <a href="index.html">the briefcase</a>.</p>
+    <p class="human">ratio. logos. ordo. praxis. the reasoning, the logic, the order, the practice. the four things that make instruction real. back to <a href="index.html">the briefcase</a>.</p>
   </footer>
 
 </main>

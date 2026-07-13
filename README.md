@@ -2,12 +2,13 @@
 
 **actor & entrepreneur who ships.**
 
+restaurant kid turned software builder. balancing systems engineering at serveit with custom interactive front-ends. handling the dual stack across product architecture and design frameworks. zero fluff, strict accessibility compliance, and clean component execution. open to relocation for gtm and solutions engineering opportunities in may 2027.
+
 Informatics @ IU Luddy (May 2027) · Bloomington, IN / NYC.
-Grew up in a Chinese restaurant learning what actually works and what's just talk. That wiring stuck. I build systems that actually ship, not just slide decks that look good.
 
 **Co-founded:** one human, two GitHub accounts.
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/). Bookmark-style page covering my work in GTM, tech clinics, and online ordering. (Spoiler: this eats.)
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/). Bookmark-style page covering GTM, tech clinics, and online ordering.
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |

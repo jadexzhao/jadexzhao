@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import './App.css'
 
 interface Duck {
@@ -11,23 +11,60 @@ interface Duck {
   accessory?: string
 }
 
-const ACCESSORIES = ['💼', '🍵', '👷‍♀️'];
-const getRandomAccessory = () => Math.random() > 0.7 ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)] : undefined;
+const ACCESSORIES = ['💼', '🍵', '👷‍♀️']
+const getRandomAccessory = () =>
+  Math.random() > 0.7
+    ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)]
+    : undefined
+
+function makeDuck(id: number, x: number, y: number, angle: number, vx: number): Duck {
+  return { id, x, y, angle, vx, vy: 0, accessory: getRandomAccessory() }
+}
+
+function initialDucks(): Duck[] {
+  return [
+    makeDuck(1, 20, 60, 0, 1),
+    makeDuck(2, 70, 70, 180, -0.8),
+  ]
+}
+
+function duckTransform(duck: Duck): string {
+  const flip = duck.angle === 180 ? 'scaleX(-1)' : ''
+  const bob =
+    duck.x > 50 ? '' : `translateY(${Math.sin(Date.now() * 0.003 + duck.id) * 2}px)`
+  return `${flip} ${bob}`.trim()
+}
 
 export default function App() {
-  const [ducks, setDucks] = useState<Duck[]>([
-    { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0, accessory: getRandomAccessory() },
-    { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0, accessory: getRandomAccessory() },
-  ])
-  const [nextId, setNextId] = useState(3)
+  const ducksRef = useRef<Duck[]>(initialDucks())
+  const nextIdRef = useRef(3)
+  const duckElsRef = useRef<Map<number, HTMLDivElement>>(new Map())
   const canvasRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number>()
   const toastTimerRef = useRef<number>()
-  const [isDay, setIsDay] = useState(true)
+  const hudTickRef = useRef(0)
+  const fpsFramesRef = useRef(0)
+  const fpsLastRef = useRef(performance.now())
+  const overrideDayRef = useRef(false)
+
+  const [duckList, setDuckList] = useState<Duck[]>(() => [...ducksRef.current])
+  const [duckCount, setDuckCount] = useState(2)
+  const [isDay, setIsDay] = useState(() => {
+    const h = new Date().getHours()
+    return h >= 6 && h < 18
+  })
   const [toast, setToast] = useState<string | null>(null)
+  const [showDev, setShowDev] = useState(false)
+  const [fps, setFps] = useState(0)
+
+  const syncDuckList = useCallback(() => {
+    setDuckList(ducksRef.current.map((d) => ({ ...d })))
+    setDuckCount(ducksRef.current.length)
+  }, [])
 
   useEffect(() => {
     const checkTime = () => {
+      if (overrideDayRef.current) return
       const hours = new Date().getHours()
       setIsDay(hours >= 6 && hours < 18)
     }
@@ -37,10 +74,15 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    document.body.classList.toggle('night-farm', !isDay)
+    return () => document.body.classList.remove('night-farm')
+  }, [isDay])
+
+  useEffect(() => {
     const konamiCode = [
       'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
       'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-      'b', 'a'
+      'b', 'a',
     ]
     let konamiIndex = 0
 
@@ -48,24 +90,22 @@ export default function App() {
       if (e.key === konamiCode[konamiIndex]) {
         konamiIndex++
         if (konamiIndex === konamiCode.length) {
-          setNextId(prevId => {
-            setDucks(prevDucks => {
-              const newDucks: Duck[] = []
-              for (let i = 0; i < 50; i++) {
-                newDucks.push({
-                  id: prevId + i,
-                  x: Math.random() * 80 + 10,
-                  y: 65 + Math.random() * 15,
-                  angle: Math.random() > 0.5 ? 0 : 180,
-                  vx: (Math.random() - 0.5) * 4,
-                  vy: -Math.random() * 2,
-                  accessory: getRandomAccessory()
-                })
-              }
-              return [...prevDucks, ...newDucks]
+          const startId = nextIdRef.current
+          const newDucks: Duck[] = []
+          for (let i = 0; i < 50; i++) {
+            newDucks.push({
+              id: startId + i,
+              x: Math.random() * 80 + 10,
+              y: 65 + Math.random() * 15,
+              angle: Math.random() > 0.5 ? 0 : 180,
+              vx: (Math.random() - 0.5) * 4,
+              vy: -Math.random() * 2,
+              accessory: getRandomAccessory(),
             })
-            return prevId + 50
-          })
+          }
+          nextIdRef.current = startId + 50
+          ducksRef.current = [...ducksRef.current, ...newDucks]
+          syncDuckList()
           setToast('50 ducks. you earned this.')
           if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
           toastTimerRef.current = window.setTimeout(() => setToast(null), 2400)
@@ -81,123 +121,152 @@ export default function App() {
       window.removeEventListener('keydown', handleKeyDown)
       if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
     }
-  }, [])
+  }, [syncDuckList])
 
-  // Animate ducks moving
+  // Animation: mutate refs + DOM only. No React setState in the rAF tick.
   useEffect(() => {
     const animate = () => {
-      setDucks(prevDucks =>
-        prevDucks.map(duck => {
-          let newVy = duck.vy
-          if (duck.y < 65) {
-            newVy += 0.05 // gravity
-          }
+      const ducks = ducksRef.current
+      for (let i = 0; i < ducks.length; i++) {
+        const duck = ducks[i]
+        let newVy = duck.vy
+        if (duck.y < 65) newVy += 0.05
 
-          let newX = duck.x + duck.vx
-          let newY = duck.y + newVy + (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
-          let newAngle = duck.angle
+        let newX = duck.x + duck.vx
+        let newY =
+          duck.y +
+          newVy +
+          (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
+        let newAngle = duck.angle
 
-          // Bounce off walls
-          if (newX < 0 || newX > 90) {
-            newAngle = newAngle === 0 ? 180 : 0
-            newX = newX < 0 ? 0 : 90
-          }
+        if (newX < 0 || newX > 90) {
+          newAngle = newAngle === 0 ? 180 : 0
+          newX = newX < 0 ? 0 : 90
+          duck.vx = Math.abs(duck.vx) * (newAngle === 180 ? -1 : 1)
+        }
 
-          // Keep in lower half (grass/pond area)
-          if (newY >= 65) {
-            newY = 65
-            newVy = 0
-          }
+        if (newY >= 65) {
+          newY = 65
+          newVy = 0
+        }
 
-          return {
-            ...duck,
-            x: newX,
-            y: newY,
-            angle: newAngle,
-            vx: duck.vx * (newAngle === 180 ? -1 : 1),
-            vy: newVy,
-          }
-        })
-      )
+        duck.x = newX
+        duck.y = newY
+        duck.angle = newAngle
+        duck.vy = newVy
+
+        const el = duckElsRef.current.get(duck.id)
+        if (el) {
+          el.style.left = `${duck.x}%`
+          el.style.top = `${duck.y}%`
+          el.style.transform = duckTransform(duck)
+        }
+      }
+
+      // Sparse HUD: FPS ~1Hz; counter only when length changes (handled on spawn)
+      fpsFramesRef.current += 1
+      const now = performance.now()
+      if (now - fpsLastRef.current >= 1000) {
+        const nextFps = fpsFramesRef.current
+        fpsFramesRef.current = 0
+        fpsLastRef.current = now
+        hudTickRef.current += 1
+        if (hudTickRef.current % 1 === 0) {
+          // Intentionally outside the "every frame" path: at most ~1 setState/sec for FPS
+          setFps(nextFps)
+        }
+      }
+
       animationRef.current = requestAnimationFrame(animate)
     }
 
     animationRef.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationRef.current!)
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+    }
+  }, [])
+
+  const setDuckEl = useCallback((id: number, node: HTMLDivElement | null) => {
+    if (node) duckElsRef.current.set(id, node)
+    else duckElsRef.current.delete(id)
   }, [])
 
   const handleCanvasClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!canvasRef.current) return
-
     const rect = canvasRef.current.getBoundingClientRect()
     const x = ((e.clientX - rect.left) / rect.width) * 100
     const y = ((e.clientY - rect.top) / rect.height) * 100
+    if (y <= 60) return
 
-    // Only place ducks in the grass/pond area (bottom 40%)
-    if (y > 60) {
-      const newDuck: Duck = {
-        id: nextId,
-        x,
-        y,
-        angle: Math.random() > 0.5 ? 0 : 180,
-        vx: (Math.random() - 0.5) * 2,
-        vy: 0,
-        accessory: getRandomAccessory()
-      }
-      setDucks([...ducks, newDuck])
-      setNextId(nextId + 1)
+    const id = nextIdRef.current++
+    const duck: Duck = {
+      id,
+      x,
+      y,
+      angle: Math.random() > 0.5 ? 0 : 180,
+      vx: (Math.random() - 0.5) * 2,
+      vy: 0,
+      accessory: getRandomAccessory(),
     }
+    ducksRef.current = [...ducksRef.current, duck]
+    syncDuckList()
   }
 
   const handleDuckClick = (e: React.MouseEvent, id: number) => {
     e.stopPropagation()
-    
-    // Make the duck quack
-    const audio = new Audio('data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==')
-    audio.play().catch(() => {}) // Quack sound attempt
-
-    // Add a temporary visual effect
-    setDucks(prevDucks =>
-      prevDucks.map(d =>
-        d.id === id ? { ...d, vx: d.vx * -1, vy: -0.5 } : d
-      )
+    const audio = new Audio(
+      'data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==',
     )
+    audio.play().catch(() => {})
+
+    const duck = ducksRef.current.find((d) => d.id === id)
+    if (!duck) return
+    duck.vx *= -1
+    duck.vy = -0.5
   }
 
   const clearFarm = () => {
-    setDucks([])
-    setNextId(1)
+    ducksRef.current = []
+    nextIdRef.current = 1
+    syncDuckList()
   }
 
   const resetFarm = () => {
-    setDucks([
-      { id: 1, x: 20, y: 60, angle: 0, vx: 1, vy: 0, accessory: getRandomAccessory() },
-      { id: 2, x: 70, y: 70, angle: 180, vx: -0.8, vy: 0, accessory: getRandomAccessory() },
-    ])
-    setNextId(3)
+    ducksRef.current = initialDucks()
+    nextIdRef.current = 3
+    syncDuckList()
   }
 
   const populateFarm = () => {
+    const startId = nextIdRef.current
     const newDucks: Duck[] = []
     for (let i = 0; i < 8; i++) {
       newDucks.push({
-        id: nextId + i,
+        id: startId + i,
         x: Math.random() * 80 + 10,
         y: 65 + Math.random() * 15,
         angle: Math.random() > 0.5 ? 0 : 180,
         vx: (Math.random() - 0.5) * 2,
         vy: 0,
-        accessory: getRandomAccessory()
+        accessory: getRandomAccessory(),
       })
     }
-    setDucks([...ducks, ...newDucks])
-    setNextId(nextId + 8)
+    nextIdRef.current = startId + 8
+    ducksRef.current = [...ducksRef.current, ...newDucks]
+    syncDuckList()
+  }
+
+  const toggleDayNight = () => {
+    overrideDayRef.current = true
+    setIsDay((d) => !d)
   }
 
   return (
-    <div className="farm-container">
+    <div className={`farm-container${isDay ? '' : ' night-mode'}`}>
       <header className="farm-header">
-        <h1 className="farm-title">virtual duck farm</h1>
+        <h1 className="farm-title">
+          <a href="https://jadexzhao.github.io/jadexzhao/">virtual duck farm</a>
+        </h1>
         <p className="farm-subtitle">鸭年 2026 · building toward something real</p>
       </header>
 
@@ -212,16 +281,26 @@ export default function App() {
         <div className="cloud cloud-c" aria-hidden="true" />
         <div className="grass" />
         <div className="pond" />
-        {ducks.map(duck => (
+        {duckList.map((duck) => (
           <div
             key={duck.id}
+            ref={(node) => setDuckEl(duck.id, node)}
             className="duck"
             style={{
               left: `${duck.x}%`,
               top: `${duck.y}%`,
-              transform: `${duck.angle === 180 ? 'scaleX(-1)' : ''} ${duck.x > 50 ? '' : `translateY(${Math.sin(Date.now() * 0.003) * 2}px)`}`,
+              transform: duckTransform(duck),
             }}
             onClick={(e) => handleDuckClick(e, duck.id)}
+            role="button"
+            tabIndex={0}
+            aria-label="duck"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                handleDuckClick(e as unknown as React.MouseEvent, duck.id)
+              }
+            }}
           >
             🦆
             {duck.accessory && <span className="accessory">{duck.accessory}</span>}
@@ -231,17 +310,45 @@ export default function App() {
 
       <div className="farm-hud">
         <div className="counter">
-          <span>{ducks.length}</span> duck{ducks.length !== 1 ? 's' : ''} on the farm
+          <span>{duckCount}</span> duck{duckCount !== 1 ? 's' : ''} on the farm
         </div>
 
         <div className="controls">
-          <button onClick={populateFarm}>spawn 8 ducks</button>
-          <button onClick={resetFarm}>reset</button>
-          <button onClick={clearFarm}>clear all</button>
+          <button type="button" className="btn-primary" onClick={populateFarm}>
+            spawn 8 ducks
+          </button>
+          <button type="button" className="btn-secondary" onClick={toggleDayNight}>
+            {isDay ? 'night mode' : 'day mode'}
+          </button>
+          <button type="button" className="btn-secondary" onClick={resetFarm}>
+            reset
+          </button>
+          <button type="button" className="btn-secondary" onClick={clearFarm}>
+            clear all
+          </button>
+          <button
+            type="button"
+            className="btn-ghost"
+            onClick={() => setShowDev((v) => !v)}
+            aria-pressed={showDev}
+          >
+            {showDev ? 'hide FPS' : 'dev HUD'}
+          </button>
         </div>
 
+        {showDev && (
+          <div className="dev-hud" aria-live="polite">
+            <span>{fps} fps</span>
+            <span aria-hidden="true"> · </span>
+            <span>{duckCount} ducks</span>
+            <span aria-hidden="true"> · </span>
+            <span>{isDay ? 'day' : 'night'}</span>
+          </div>
+        )}
+
         <div className="info">
-          <strong>click on the grass</strong> to place ducks. <strong>click a duck</strong> to make it jump.
+          <strong>click on the grass</strong> to place ducks.{' '}
+          <strong>click a duck</strong> to make it jump.
           <br />
           restaurant-kid wiring: what works vs talk. this is the placeholder. spoiler: this eats.
           <br />
@@ -249,11 +356,13 @@ export default function App() {
         </div>
 
         <p className="farm-links">
-          <a href="https://jadexzhao.github.io/jadexzhao/">← portfolio</a>
+          <a href="https://jadexzhao.github.io/jadexzhao/">← the briefcase</a>
+          {' · '}
+          <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>
           {' · '}
           <a href="https://github.com/jadexzhao">github</a>
           {' · '}
-          <a href="https://github.com/matchaxmoxie">@matchaxmoxie</a>
+          <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
         </p>
       </div>
 

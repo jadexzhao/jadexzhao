@@ -21,30 +21,32 @@
 <title>jade zhao · the briefcase · 鸭年</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#212B23;
-    --ink-soft:#4C594B;
+    --ink-soft:#3D4A3C;
     --paper:#FBFAF5;
-    --matcha:#5F7D4F;
-    --matcha-deep:#34472C;
-    --matcha-soft:#8AA77B;
+    --matcha:#4A633C;
+    --matcha-deep:#2A3B24;
+    --matcha-soft:#6A855B;
     --mist:#EDF1E6;
     --line:#D8DCC9;
     --cinnabar:#B83232;
     --cinnabar-soft:#D4564A;
-    --gold:#C4A035;
+    --gold:#A38120;
     --gold-soft:#E8D5A3;
-    --jade:#3A6B5C;
-    --jade-soft:#6B9E8F;
+    --jade:#2E5448;
+    --jade-soft:#537F72;
     --iu-crimson:#990000;
     --iu-cream:#F7F5F0;
+    --banner-h:28px;
+    --jump-h:48px;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
 
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;overflow-x:hidden}
 
   body{
     background:var(--paper);
@@ -55,19 +57,71 @@
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
-    padding:76px 24px 56px;
+    padding:
+      calc(var(--banner-h) + var(--jump-h) + 28px + env(safe-area-inset-top,0px))
+      max(24px, env(safe-area-inset-right,0px))
+      max(56px, calc(40px + env(safe-area-inset-bottom,0px)))
+      max(24px, env(safe-area-inset-left,0px));
   }
 
   .twin-banner{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:block;text-align:center;
+    position:fixed;top:0;left:0;right:0;z-index:110;
+    display:flex;align-items:center;justify-content:center;
+    min-height:48px;
+    text-align:center;
     font-family:"IBM Plex Mono",monospace;
-    font-size:11px;letter-spacing:.04em;
-    padding:6px 12px;
+    font-size:10.5px;letter-spacing:.04em;
+    line-height:1.3;
+    padding:calc(6px + env(safe-area-inset-top,0px)) 12px 6px;
     background:var(--mist);color:var(--ink-soft);
     text-decoration:none;border-bottom:1px solid var(--line);
+    max-height:none;
   }
-  .twin-banner:hover{color:var(--matcha-deep)}
+  .twin-banner:hover{color:var(--matcha-deep);background:#e6ece0}
+
+  .jump-nav{
+    position:fixed;
+    top:calc(var(--banner-h) + env(safe-area-inset-top,0px));
+    left:0;right:0;z-index:105;
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    gap:0;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    background:rgba(251,250,245,.92);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    padding:0 max(8px, env(safe-area-inset-right,0px)) 0 max(8px, env(safe-area-inset-left,0px));
+  }
+  .jump-nav::-webkit-scrollbar{display:none}
+  .jump-nav a{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 14px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .jump-nav a:hover{
+    color:var(--iu-crimson);
+    border-bottom-color:var(--iu-crimson);
+    background:var(--iu-cream);
+  }
+  .jump-nav a:focus-visible{
+    outline:2px solid var(--iu-crimson);
+    outline-offset:-2px;
+  }
 
   .sheet{
     max-width:760px;
@@ -96,7 +150,7 @@
 
   h1{
     font-family:"Fraunces",serif;
-    font-weight:500;
+    font-weight:700;
     font-size:clamp(42px,8vw,60px);
     line-height:.96;
     letter-spacing:-.02em;
@@ -111,14 +165,20 @@
   }
 
   .standfirst{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:18px;
+    max-width:60ch;
+  }
+  .standfirst p{
     font-family:"Fraunces",serif;
     font-style:italic;
     font-weight:400;
     font-size:clamp(17px,2.4vw,20px);
     line-height:1.45;
     color:var(--ink);
-    margin-top:18px;
-    max-width:60ch;
+    margin:0;
   }
 
   .heritage{
@@ -160,22 +220,23 @@
   .rule{
     height:1px;
     background:linear-gradient(90deg, var(--line) 0%, var(--gold-soft) 45%, var(--line) 100%);
+    background-size:200% 100%;
     border:0;
-    margin:34px 0 26px;
+    margin:40px 0 28px;
   }
 
   /* ---- prose blocks ---- */
   .prose-block{
-    padding:22px 0 8px;
+    padding:20px 0 12px;
     border-top:1px solid var(--line);
   }
   .prose-block:first-of-type{border-top:0;padding-top:0}
   .prose-block p{
     font-size:15px;
-    line-height:1.62;
+    line-height:1.68;
     color:var(--ink);
     max-width:62ch;
-    margin-bottom:12px;
+    margin-bottom:14px;
   }
   .prose-block p:last-child{margin-bottom:0}
   .prose-block .sc-inline{font-family:"Noto Serif SC",serif;color:var(--jade);font-weight:500}
@@ -187,7 +248,7 @@
     letter-spacing:.18em;
     text-transform:uppercase;
     color:var(--matcha-soft);
-    margin-bottom:22px;
+    margin-bottom:18px;
   }
   .section-label .bilingual{
     font-family:"Noto Serif SC",serif;
@@ -210,44 +271,62 @@
     display:grid;
     grid-template-columns:150px 1fr;
     gap:8px 28px;
-    padding:18px 0;
+    min-height:48px;
+    padding:20px 16px;
     border-top:1px solid var(--line);
     text-decoration:none;
     color:inherit;
-    border-radius:4px;
-    margin:0 -8px;
-    padding-left:8px;
-    padding-right:8px;
-    transition:background .15s ease, box-shadow .15s ease;
+    border-radius:3px;
+    margin:0 -16px;
+    box-shadow:inset 0 0 0 transparent;
+    transition:
+      background .18s ease,
+      box-shadow .18s ease,
+      transform .18s ease;
   }
-  a.entry-link:first-of-type{border-top:0}
-  a.entry-link:hover{
+  article.entry:has(> a.entry-link){
+    display:block;
+    padding:0;
+    border-top:0;
+  }
+  article.entry:has(> a.entry-link) + article.entry:has(> a.entry-link) a.entry-link,
+  article.entry:has(> a.entry-link) + article.entry a.entry-link{
+    border-top:1px solid var(--line);
+  }
+  a.entry-link:hover,
+  a.entry-link:active{
     background:var(--iu-cream);
     box-shadow:inset 3px 0 0 var(--iu-crimson);
   }
+  a.entry-link:hover{transform:translateY(-1px)}
+  a.entry-link:active{transform:none}
   a.entry-link:focus-visible{
     outline:2px solid var(--iu-crimson);
     outline-offset:2px;
   }
-  a.entry-link h2{color:var(--ink)}
-  a.entry-link:hover h2{color:var(--iu-crimson)}
+  a.entry-link h2{color:var(--ink);transition:color .18s ease}
+  a.entry-link:hover h2{color:var(--matcha-deep)}
 
   a.entry-link .src-foot{
     font-family:"IBM Plex Mono",monospace;
     font-size:12px;
     color:var(--matcha);
     font-weight:500;
+    transition:color .18s ease, letter-spacing .18s ease;
   }
-  a.entry-link:hover .src-foot{color:var(--iu-crimson)}
+  a.entry-link:hover .src-foot{color:var(--iu-crimson);letter-spacing:.02em}
 
   .link-hub{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:12px;
-    margin-top:8px;
+    margin-top:14px;
   }
   .link-hub a{
-    display:block;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:64px;
     padding:14px 16px;
     background:var(--iu-cream);
     border:1px solid var(--line);
@@ -257,9 +336,20 @@
     color:var(--ink);
     font-size:14px;
     line-height:1.45;
-    transition:background .15s ease;
+    transition:
+      background .18s ease,
+      transform .18s ease,
+      box-shadow .18s ease;
   }
-  .link-hub a:hover{background:var(--mist)}
+  .link-hub a:hover{
+    background:#fff;
+    transform:translateX(4px);
+    box-shadow:0 6px 16px rgba(33,43,35,.08);
+  }
+  .link-hub a:focus-visible{
+    outline:2px solid var(--iu-crimson);
+    outline-offset:2px;
+  }
   .link-hub .hub-k{
     font-family:"IBM Plex Mono",monospace;
     font-size:10px;
@@ -383,16 +473,24 @@
 
   a:focus-visible{outline:2px solid var(--matcha);outline-offset:3px;border-radius:1px}
 
-  /* ---- entrance ---- */
+  /* ---- entrance + subtle motion ---- */
   @media (prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(8px);animation:rise .6s cubic-bezier(.2,.7,.2,1) forwards}
-    .reveal:nth-child(2){animation-delay:.05s}
-    .reveal:nth-child(3){animation-delay:.1s}
-    .reveal:nth-child(4){animation-delay:.15s}
-    .reveal:nth-child(5){animation-delay:.2s}
-    .reveal:nth-child(6){animation-delay:.25s}
-    .reveal:nth-child(7){animation-delay:.3s}
+    .reveal{opacity:0;transform:translateY(6px);animation:rise .48s cubic-bezier(.2,.7,.2,1) forwards}
+    .reveal:nth-child(2){animation-delay:.04s}
+    .reveal:nth-child(3){animation-delay:.07s}
+    .reveal:nth-child(4){animation-delay:.1s}
+    .reveal:nth-child(5){animation-delay:.13s}
+    .reveal:nth-child(6){animation-delay:.16s}
+    .reveal:nth-child(7){animation-delay:.19s}
     @keyframes rise{to{opacity:1;transform:none}}
+
+    .rule{
+      animation:rule-shimmer 8s ease-in-out infinite;
+    }
+    @keyframes rule-shimmer{
+      0%,100%{background-position:0% 0}
+      50%{background-position:100% 0}
+    }
   }
 
   /* ---- print: clean one-page handout ---- */
@@ -400,27 +498,96 @@
     @page{size:Letter;margin:0.55in}
     body{padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .sheet{max-width:none}
+    .twin-banner,.jump-nav{display:none!important}
     .reveal{opacity:1!important;transform:none!important;animation:none!important}
-    .rule{margin:22px 0 18px}
+    .rule{margin:22px 0 18px;animation:none!important;background:var(--line)}
     .entry{padding:14px 0;break-inside:avoid}
+    .link-hub a{transform:none!important;box-shadow:none!important}
     h1{font-size:48px}
   }
 
-  @media (max-width:560px){
-    body{padding:32px 18px 40px}
-    .entry,.entry-link{grid-template-columns:1fr;gap:6px}
-    .rail{order:-1}
+  @media (max-width:640px){
+    :root{--banner-h:26px;--jump-h:48px}
+    body{
+      padding:
+        calc(var(--banner-h) + var(--jump-h) + 20px + env(safe-area-inset-top,0px))
+        max(16px, env(safe-area-inset-right,0px))
+        max(40px, calc(28px + env(safe-area-inset-bottom,0px)))
+        max(16px, env(safe-area-inset-left,0px));
+    }
+    .twin-banner{
+      font-size:10px;
+      padding:calc(4px + env(safe-area-inset-top,0px)) 10px 4px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .jump-nav a{padding:0 12px;font-size:10.5px}
+    .entry,
+    a.entry-link{
+      grid-template-columns:1fr;
+      gap:8px;
+    }
+    a.entry-link{
+      padding:16px 14px;
+      margin:0 -14px;
+      box-shadow:inset 0 0 0 transparent;
+    }
+    a.entry-link:hover,
+    a.entry-link:active{
+      background:var(--iu-cream);
+      box-shadow:inset 3px 0 0 var(--iu-crimson);
+      transform:none;
+    }
+    a.entry-link:hover h2{color:var(--matcha-deep)}
+    .rail{
+      order:-1;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:baseline;
+      gap:6px 10px;
+      font-size:10.5px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding-bottom:2px;
+      border-bottom:1px dashed var(--line);
+    }
+    .rail .who,
+    .rail .yr{display:inline}
+    .rail br{display:none}
+    .rail .who::after{content:" ·";font-weight:400;color:var(--matcha-soft)}
+    .rule{margin:32px 0 22px}
+    .standfirst p{font-size:16px}
+    .prose-block p{font-size:14.5px;line-height:1.7}
+    .meta a,.open{min-height:48px;display:inline-flex;align-items:center}
+    @media (prefers-reduced-motion:no-preference){
+      .reveal{animation-duration:.36s}
+      .reveal:nth-child(n){animation-delay:0s}
+      .reveal:nth-child(2){animation-delay:.03s}
+      .reveal:nth-child(3){animation-delay:.05s}
+      .reveal:nth-child(4){animation-delay:.07s}
+    }
   }
 </style>
 </head>
 <body>
-<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">Co-founded with @matchaxmoxie → matchaxmoxie.github.io</a>
+<a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie brand &amp; ops → matchaxmoxie.github.io</a>
+<nav class="jump-nav" aria-label="quick links">
+  <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
+  <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+  <a href="how-i-work.html">how i work</a>
+  <a href="https://github.com/jadexzhao">github</a>
+</nav>
 <main class="sheet">
 
   <header>
     <p class="eyebrow reveal"><span class="sc-label">赵</span> actor &amp; entrepreneur · gtm eng · 鸭年 2026</p>
     <h1 class="reveal">jade zhao <span class="name-sc">赵</span></h1>
-    <p class="standfirst reveal">grew up in a chinese restaurant where the only metric that mattered was whether the food hit the table hot. i learned early what actually works and what's just talk. that wiring stuck. i build systems that ship, not slide decks that look good. now i build gtm engines, ship full-stack product, and run a campus creator lane at iu. co-founder of two github accounts: @jadexzhao writes the code, @matchaxmoxie runs the brand &amp; ops. loud on purpose, but always anchored by the work. informatics @ iu luddy, may 2027. right now: gtm engineering at a stealth yc startup in nyc. serveit website team lead (wcag nonprofit builds), fase map coordinator, uta for 50+. first-gen, hudson &amp; holland scholar. spring 2026 at complutense madrid. 福州出身 · open to relocation. (spoiler: this eats.)</p>
+    <div class="standfirst reveal">
+      <p>restaurant kid turned software builder. balancing systems engineering at serveit with custom interactive front-ends. handling the dual stack across product architecture and design frameworks.</p>
+      <p>zero fluff, strict accessibility compliance, and clean component execution. open to relocation for gtm and solutions engineering opportunities in may 2027.</p>
+      <p>co-founder of two github accounts: @jadexzhao writes the code, @matchaxmoxie runs the brand &amp; ops. loud on purpose, always anchored by the work. (spoiler: this eats.)</p>
+    </div>
     <p class="heritage reveal"><span class="sc">福建</span> fujian · <span class="dot">·</span> <span class="sc">福州</span> fuzhou · <span class="dot">·</span> <span class="sc">福州话</span> fuzhounese at home · <span class="dot">·</span> <span class="sc">普通话</span> mandarin · english · spanish</p>
     <div class="meta reveal">
       <a href="https://github.com/jadexzhao">github.com/jadexzhao</a>

@@ -19,9 +19,14 @@
   --text: #143528;
   --text-soft: #3d5c4a;
   --panel: rgba(255, 255, 255, 0.72);
-  --night-sky: #0c1a28;
-  --night-mid: #1a3344;
-  --night-horizon: #3d5a6a;
+  /* Night tokens · WCAG-ish text/HUD (~#f8f9fa on deep sky) */
+  --night-sky: #0d1b2a;
+  --night-mid: #1a2f40;
+  --night-horizon: #415a77;
+  --night-grass: #1b4332;
+  --night-pond: #415a77;
+  --night-hud: #f8f9fa;
+  --night-hud-soft: #cfd8dc;
   --night-amber: #c9a04a;
 }
 
@@ -61,8 +66,8 @@ body.night-farm {
       180deg,
       var(--night-sky) 0%,
       var(--night-mid) 38%,
-      #1a2e28 58%,
-      #0f1a14 100%
+      var(--night-grass) 62%,
+      #0a1620 100%
     );
 }
 
@@ -118,6 +123,24 @@ body.night-farm {
   background: none;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .farm-title {
+    animation: title-breathe 4.5s ease-in-out infinite;
+  }
+}
+
+@keyframes title-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.012);
+    opacity: 0.94;
+  }
+}
+
 .farm-title a {
   color: inherit;
   text-decoration: none;
@@ -129,46 +152,67 @@ body.night-farm {
 }
 
 .farm-container.night-mode .farm-title {
-  color: #e8f4ec;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  color: var(--night-hud);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .farm-container.night-mode .farm-subtitle {
-  color: #a8c4b4;
+  color: var(--night-hud-soft);
 }
 
-.farm-container.night-mode .counter {
-  background: rgba(12, 26, 40, 0.75);
-  border-color: rgba(168, 196, 180, 0.25);
-  color: #c8ddd2;
+.farm-container.night-mode .counter,
+.farm-container.night-mode .dev-hud {
+  background: rgba(13, 27, 42, 0.82);
+  border-color: rgba(248, 249, 250, 0.22);
+  color: var(--night-hud);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .farm-container.night-mode .counter span {
-  color: #7ed4a8;
+  color: #8fd4a8;
 }
 
-.farm-container.night-mode button {
-  background: rgba(12, 26, 40, 0.82);
-  color: #e8f4ec;
-  border-color: rgba(168, 196, 180, 0.3);
-}
-
-.farm-container.night-mode button:hover {
+.farm-container.night-mode .btn-primary {
   background: var(--jade);
-  color: #f2faf4;
+  color: var(--night-hud);
+  border-color: #2d8a5c;
+}
+
+.farm-container.night-mode .btn-primary:hover {
+  background: #238a5a;
+  color: #fff;
+}
+
+.farm-container.night-mode .btn-secondary,
+.farm-container.night-mode .btn-ghost {
+  background: rgba(13, 27, 42, 0.88);
+  color: var(--night-hud);
+  border-color: rgba(248, 249, 250, 0.28);
+}
+
+.farm-container.night-mode .btn-secondary:hover,
+.farm-container.night-mode .btn-ghost:hover {
+  background: var(--jade);
+  color: var(--night-hud);
+  border-color: var(--jade);
 }
 
 .farm-container.night-mode .info,
 .farm-container.night-mode .farm-links {
-  color: #a8c4b4;
+  color: var(--night-hud-soft);
+}
+
+.farm-container.night-mode .info strong {
+  color: #8fd4a8;
 }
 
 .farm-container.night-mode .farm-links a {
-  color: #7ed4a8;
+  color: #8fd4a8;
 }
 
 .farm-container.night-mode .farm-links a:hover {
-  color: #e8f4ec;
+  color: var(--night-hud);
 }
 
 .farm-canvas.night .duck {
@@ -237,11 +281,11 @@ body.night-farm {
     var(--night-sky) 0%,
     var(--night-mid) 28%,
     var(--night-horizon) 52%,
-    #4a6a5a 62%,
+    var(--night-grass) 62%,
     transparent 62%
   );
   box-shadow:
-    0 0 0 3px rgba(12, 26, 40, 0.5),
+    0 0 0 3px rgba(13, 27, 42, 0.55),
     0 18px 40px rgba(8, 16, 28, 0.55),
     inset 0 -20px 50px rgba(201, 160, 74, 0.08);
 }
@@ -308,9 +352,9 @@ body.night-farm {
 .farm-canvas.night .grass {
   background: linear-gradient(
     180deg,
-    #3a5c3a 0%,
-    #243d28 45%,
-    #142018 100%
+    #245c3e 0%,
+    var(--night-grass) 45%,
+    #102820 100%
   );
   box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.35);
 }
@@ -344,10 +388,10 @@ body.night-farm {
 .farm-canvas.night .pond {
   background: linear-gradient(
     185deg,
-    #3a6a78 0%,
-    #1e4554 45%,
-    #0f2834 85%,
-    #0a1a22 100%
+    #5a738f 0%,
+    var(--night-pond) 45%,
+    #2a4058 85%,
+    #1a2a38 100%
   );
 }
 
@@ -357,12 +401,17 @@ body.night-farm {
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: filter 0.2s ease;
   filter: drop-shadow(0 3px 5px rgba(15, 61, 46, 0.28));
   z-index: 2;
-  /* Invisible padding expands mobile tap target without changing duck size */
-  padding: 18px;
-  margin: -18px;
+  /* 48×48 minimum hit area */
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin: -12px;
   line-height: 1;
   touch-action: manipulation;
 }
@@ -452,9 +501,32 @@ body.night-farm {
   font-weight: 500;
   padding: 10px 20px;
   background: var(--panel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
   border: 1.5px solid rgba(45, 107, 58, 0.2);
   box-shadow: 0 4px 16px rgba(15, 61, 46, 0.1);
+}
+
+.dev-hud {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 auto 12px;
+  padding: 8px 14px;
+  min-height: 40px;
+  font-family: 'Outfit', monospace, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1.5px solid rgba(45, 107, 58, 0.2);
 }
 
 .counter span {
@@ -475,7 +547,9 @@ body.night-farm {
 }
 
 button {
-  padding: 11px 22px;
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 20px;
   border: 1.5px solid rgba(45, 107, 58, 0.28);
   border-radius: 12px;
   font-family: 'Outfit', sans-serif;
@@ -488,6 +562,33 @@ button {
   color: var(--jade-ink);
   box-shadow: 0 3px 12px rgba(15, 61, 46, 0.1);
   text-transform: lowercase;
+  touch-action: manipulation;
+}
+
+.btn-primary {
+  background: var(--jade);
+  color: #f2faf4;
+  border-color: var(--jade);
+  box-shadow: 0 4px 16px rgba(26, 107, 74, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--jade-ink);
+  border-color: var(--jade-ink);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 107, 74, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-style: dashed;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 button:hover {
@@ -501,6 +602,11 @@ button:hover {
 button:active {
   transform: translateY(0);
   box-shadow: 0 3px 10px rgba(15, 61, 46, 0.15);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 3px;
 }
 
 .info {
