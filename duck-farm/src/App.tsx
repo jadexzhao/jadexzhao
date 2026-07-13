@@ -189,7 +189,7 @@ export default function App() {
   return (
     <div className="farm-container">
       <h1 className="farm-title">virtual duck farm</h1>
-      <p className="farm-subtitle">building toward something real</p>
+      <p className="farm-subtitle">鸭年 2026 · building toward something real</p>
 
       <div
         ref={canvasRef}
@@ -229,7 +229,9 @@ export default function App() {
       <div className="info">
         <strong>click on the grass</strong> to place ducks. <strong>click a duck</strong> to make it jump.
         <br />
-        watch them waddle around. this is the placeholder version of the real thing.
+        restaurant-kid wiring: what works vs talk. this is the placeholder — spoiler: this eats.
+        <br />
+        <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
       </div>
 
       <p className="farm-links">

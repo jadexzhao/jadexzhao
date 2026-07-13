@@ -3,11 +3,11 @@
 **actor & entrepreneur who ships.**
 
 Informatics @ IU Luddy (May 2027) · Bloomington, IN / NYC.
-Grew up in a Chinese restaurant learning what actually works and what's just talk. That wiring stuck.
+Grew up in a Chinese restaurant learning what actually works and what's just talk. That wiring stuck. I build systems that actually ship, not just slide decks that look good.
 
 **Co-founded:** one human, two GitHub accounts.
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style page covering my work in GTM, tech clinics, and online ordering.
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style page covering my work in GTM, tech clinics, and online ordering. (Spoiler: this eats.)
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
@@ -34,13 +34,13 @@ Grew up in a Chinese restaurant learning what actually works and what's just tal
 
 ### Currently shipping
 
-- **GTM Engineer Intern:** stealth yc startup, nyc. architecting demo envs, poc sandboxes, integration prototypes, and python automation to accelerate sales into deployments.
-- **ServeIT website team lead:** iu's nonprofit tech clinic. scoping and shipping wcag 2.1 compliant builds for local orgs. driving ml engagement metrics (~+25%) and building python/postgresql etl pipelines for community partner data.
+- **GTM Engineer Intern:** stealth yc startup, nyc. architecting demo envs, poc sandboxes, and python automation that turns a sales pitch into a deployed pilot. 
+- **ServeIT website team lead:** iu's nonprofit tech clinic. shipping wcag 2.1 compliant builds that local orgs can actually maintain without keeping a dev on call. engineered ml engagement tools (~+25% lift) and python/postgresql etl pipelines for community partner data.
 - **FASE MAP coordinator & UTA:** clearing the path for whoever comes next. managing canvas ops, running mentor training, and supporting 50+ students.
-- **Actor & Entrepreneur:** campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi). loud on purpose, but always grounded in real work.
-- **Potstickers:** my family's restaurant in indiana. shipped their online ordering system with clover.
+- **Actor & Entrepreneur:** campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi). loud on purpose, but always anchored by real work.
+- **Potstickers:** my family's restaurant in indiana. shipped their online ordering system with clover. still the reason i build.
 
-**鸭年 2026** · invented year of the duck - [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).
+**鸭年 2026** · the duck never got a seat at the zodiac table, so we made one. if you know, you know — [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).
 
 ---
 
@@ -126,4 +126,4 @@ English · Mandarin · Fuzhounese · Spanish (improving)
 
 ---
 
-*Actor & entrepreneur who ships. First-generation, 福州 · Fujian roots. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**
+*Actor & entrepreneur who ships. First-generation, 福州 · Fujian roots. The duck is patient, loud when it matters, and impossible to catch unless you already know where the pond is. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**

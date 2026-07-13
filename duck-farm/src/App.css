@@ -1,1 +1,159 @@
-/* App component specific styles can go here if needed */
+/* Decorative sun, pond shimmer, and canvas atmosphere */
+
+.farm-canvas.day::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  right: 18%;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff9c4 0%,
+    #ffd54f 25%,
+    #ffb300 50%,
+    rgba(255, 179, 0, 0.4) 70%,
+    transparent 75%
+  );
+  box-shadow:
+    0 0 40px rgba(255, 213, 79, 0.8),
+    0 0 80px rgba(255, 159, 67, 0.5),
+    0 0 120px rgba(255, 107, 107, 0.25);
+  animation: sun-pulse 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.farm-canvas.day::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55%;
+  background: radial-gradient(
+    ellipse 80% 60% at 75% 20%,
+    rgba(255, 213, 79, 0.35) 0%,
+    rgba(255, 183, 77, 0.15) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes sun-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 0 40px rgba(255, 213, 79, 0.8),
+      0 0 80px rgba(255, 159, 67, 0.5),
+      0 0 120px rgba(255, 107, 107, 0.25);
+  }
+  100% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 50px rgba(255, 213, 79, 0.95),
+      0 0 100px rgba(255, 159, 67, 0.6),
+      0 0 140px rgba(255, 107, 107, 0.35);
+  }
+}
+
+.farm-canvas.night::before {
+  content: '';
+  position: absolute;
+  bottom: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 30%;
+  background: radial-gradient(
+    ellipse 50% 100% at 50% 100%,
+    rgba(255, 159, 67, 0.5) 0%,
+    rgba(255, 107, 107, 0.3) 30%,
+    rgba(196, 69, 105, 0.15) 55%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.farm-canvas.night::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: radial-gradient(
+    ellipse 60% 80% at 30% 10%,
+    rgba(108, 92, 231, 0.25) 0%,
+    rgba(45, 27, 105, 0.1) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pond::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 45%,
+    transparent 55%
+  );
+  background-size: 200% 100%;
+  animation: pond-shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.farm-canvas.night .pond::before {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 213, 79, 0.12) 45%,
+    transparent 55%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes pond-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.grass::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.farm-canvas {
+  isolation: isolate;
+}
+
+.grass,
+.pond {
+  z-index: 0;
+}
+
+.stars {
+  z-index: 0;
+}
