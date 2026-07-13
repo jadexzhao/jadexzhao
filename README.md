@@ -11,7 +11,7 @@
 | **role** | code, serveit web lead, portfolio | fase map coordinator, uta, consulting |
 | **intro** | meet my co-founder [@matchaxmoxie](https://github.com/matchaxmoxie) (brand, fase, emotional support ducks) | meet my co-founder [@jadexzhao](https://github.com/jadexzhao) (writes the code) |
 
-restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, may 2027. gtm engineering at a stealth yc startup in nyc. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql. school ig: [@zhao.langxi](https://instagram.com/zhao.langxi).
+restaurant kid wiring, actor & entrepreneur who ships. informatics @ iu luddy, may 2027. gtm engineering at a stealth yc startup in nyc: architecting demo envs, poc sandboxes, and integration prototypes. serveit clinic is iu's nonprofit tech clinic; i lead the website team on wcag nonprofit builds. fase map coordinator and uta for 50+. first-gen, hudson & holland scholar. spring 2026 at complutense madrid. python, typescript, react, postgresql. school ig: [@zhao.langxi](https://instagram.com/zhao.langxi).
 
 **Open to** software engineering · GTM engineering · solutions engineering · open to relocation
 
