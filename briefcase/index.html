@@ -525,6 +525,177 @@
   }
   .stack-col .obj em{font-style:normal;color:var(--matcha-soft)}
 
+  /* ---- execution record (作 · the work) ---- */
+  .work-lede{
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-size:clamp(15px,2.2vw,17px);
+    line-height:1.5;
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin:0 0 22px;
+  }
+
+  .exec-split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:0 0 28px;
+  }
+  .exec-card{
+    padding:16px 16px 14px;
+    background:var(--iu-cream);
+    border:1px solid var(--line);
+    border-top:3px solid var(--matcha-deep);
+    border-radius:2px;
+  }
+  .exec-card.serveit{border-top-color:var(--iu-crimson)}
+  .exec-card .exec-k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    display:block;
+    margin-bottom:6px;
+  }
+  .exec-card h3{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:18px;
+    line-height:1.2;
+    margin:0 0 10px;
+    color:var(--matcha-deep);
+  }
+  .exec-card h3 a{
+    color:inherit;
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .exec-card h3 a:hover{border-color:var(--matcha);color:var(--iu-crimson)}
+  .exec-card ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .exec-card li{
+    font-size:13.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    padding:4px 0 4px 14px;
+    position:relative;
+  }
+  .exec-card li::before{
+    content:"";
+    position:absolute;
+    left:0;top:.72em;
+    width:6px;height:6px;
+    border-radius:1px;
+    background:var(--matcha);
+  }
+  .exec-card.serveit li::before{background:var(--iu-crimson)}
+
+  .ships-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    margin:8px 0 14px;
+  }
+  .ships-label .sc{
+    font-family:"Noto Serif SC",serif;
+    text-transform:none;
+    letter-spacing:.04em;
+    color:var(--jade-soft);
+    margin-right:.4em;
+  }
+
+  .ship-obj{
+    font-size:14px;
+    color:var(--ink);
+    max-width:58ch;
+    margin:0 0 8px;
+  }
+  .ship-obj b{font-weight:600;color:var(--matcha-deep)}
+  .ship-point{
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin:0 0 6px;
+  }
+  .ship-point b{
+    font-family:"IBM Plex Mono",monospace;
+    font-weight:500;
+    font-size:12px;
+    color:var(--matcha-deep);
+  }
+
+  .metrics-wrap{margin:28px 0 8px}
+  .metrics-lede{
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin:0 0 14px;
+  }
+  .metrics-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+    line-height:1.45;
+  }
+  .metrics-table th,
+  .metrics-table td{
+    text-align:left;
+    vertical-align:top;
+    padding:10px 12px;
+    border-top:1px solid var(--line);
+  }
+  .metrics-table th{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--matcha-soft);
+    font-weight:500;
+    border-top:0;
+    padding-top:0;
+  }
+  .metrics-table td:first-child{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    font-weight:500;
+    color:var(--matcha-deep);
+    white-space:nowrap;
+  }
+  .metrics-table a{
+    color:var(--matcha);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .metrics-table a:hover{border-color:var(--matcha);color:var(--iu-crimson)}
+  .metrics-table .metric-result{color:var(--ink-soft)}
+
+  .duck-line{
+    margin:22px 0 4px;
+    padding:14px 16px;
+    border-left:3px solid var(--gold);
+    background:linear-gradient(90deg, rgba(196,160,53,.08), transparent 70%);
+    font-family:"Fraunces",serif;
+    font-style:italic;
+    font-size:15px;
+    line-height:1.5;
+    color:var(--ink);
+    max-width:54ch;
+  }
+  .duck-line .sc{
+    font-style:normal;
+    color:var(--jade);
+    font-size:.95em;
+  }
+
   /* ---- footer ---- */
   .closer{
     margin-top:34px;
@@ -580,6 +751,7 @@
     .reveal{opacity:1!important;transform:none!important;animation:none!important}
     .rule{margin:22px 0 18px;animation:none!important;background:var(--line)}
     .entry{padding:14px 0;break-inside:avoid}
+    .exec-split,.exec-card,.metrics-wrap,.duck-line{break-inside:avoid}
     .link-hub a{transform:none!important;box-shadow:none!important}
     h1{font-size:48px}
   }
@@ -638,6 +810,11 @@
     .standfirst p{font-size:16px}
     .prose-block p{font-size:14.5px;line-height:1.7}
     .stack-matrix{grid-template-columns:1fr}
+    .exec-split{grid-template-columns:1fr}
+    .metrics-table{font-size:12.5px}
+    .metrics-table th,
+    .metrics-table td{padding:8px 10px}
+    .metrics-table td:first-child{white-space:normal}
     .meta a,.open{min-height:48px;display:inline-flex;align-items:center}
     @media (prefers-reduced-motion:no-preference){
       .reveal{animation-duration:.36s}
@@ -728,37 +905,39 @@
   <p class="section-label reveal"><span class="bilingual">将来</span> coming soon · learning in public</p>
 
   <article class="entry soon reveal">
-    <div class="rail"><span class="who">wechat-adjacent</span><br><span class="yr">exploring · 2026</span></div>
+    <div class="rail"><span class="who">01 · wechat tooling</span><br><span class="yr">exploring · 观察中</span></div>
     <div class="body">
-      <h2>mini-program tooling notes</h2>
-      <p class="did">documenting what i'm learning about china's super-app ecosystem: wechat mini-programs, subscription messaging patterns, and how western dev tooling maps (or doesn't) to 小程序 workflows. honest field notes, not a shipped product yet.</p>
-      <span class="outcome soon-tag">learning in public · 在学</span>
+      <h2>mini-program tooling notes <span class="sc-inline">小程序</span></h2>
+      <p class="did">mapping china's super-app ecosystem: subscription messaging patterns and how a western react mindset translates to wechat workflows. honest field notes, not a shipped product yet.</p>
+      <span class="outcome soon-tag">exploring · 观察中</span>
       <div class="foot-row">
-        <span class="tags">wechat · 小程序 · developer docs · ux patterns</span>
+        <span class="tags">wechat · 小程序 · developer-docs · ux-patterns</span>
+        <a class="src" href="https://matchaxmoxie.github.io/matchaxmoxie/#coming-soon">ops roadmap</a>
       </div>
     </div>
   </article>
 
   <article class="entry soon reveal">
-    <div class="rail"><span class="who">china tech watch</span><br><span class="yr">curating · 2026</span></div>
+    <div class="rail"><span class="who">02 · china tech watch</span><br><span class="yr">curating · 在读</span></div>
     <div class="body">
       <h2>ai + cybersecurity reading list</h2>
-      <p class="did">a living watchlist of mainstream chinese ai releases, model governance discourse, and cybersec trends worth understanding from the outside. deepseek-era open weights, domestic cloud stacks, and what "ai safety" means in different regulatory contexts. i read, annotate, share what holds up.</p>
-      <span class="outcome soon-tag">watchlist · 观察中</span>
+      <p class="did">a living watchlist of domestic ai breakthroughs, infrastructure shifts, and cybersec governance models observed from outside the firewall. deepseek-era open weights, domestic cloud stacks, zero reactive commentary.</p>
+      <span class="outcome soon-tag">curating · 在读</span>
       <div class="foot-row">
-        <span class="tags">ai governance · cybersec · bilingual sources · no hot takes</span>
+        <span class="tags">ai-governance · cybersec · bilingual-sources · no-hot-takes</span>
+        <a class="src" href="https://matchaxmoxie.github.io/matchaxmoxie/#coming-soon">ops roadmap</a>
       </div>
     </div>
   </article>
 
   <article class="entry soon reveal">
-    <div class="rail"><span class="who">bridge building</span><br><span class="yr">sketching · 2026</span></div>
+    <div class="rail"><span class="who">03 · bridge building</span><br><span class="yr">sketching · 随笔</span></div>
     <div class="body">
       <h2>fuzhou, fujian ↔ midwest dev diary</h2>
-      <p class="did">occasional essays on building software across cultures: what restaurant ops taught me about uptime, why wcag matters in multilingual households, and how <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a> became the soft-public side of the same person who ships serveit builds.</p>
-      <span class="outcome soon-tag">essays · 随笔</span>
+      <p class="did">essays on building across distinct environments: restaurant uptime mechanics, multilingual wcag, and why <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a> keeps delivery sharp beside strict code on <a href="https://github.com/jadexzhao">@jadexzhao</a>.</p>
+      <span class="outcome soon-tag">sketching · 随笔</span>
       <div class="foot-row">
-        <span class="tags">culture · accessibility · @zhao.langxi · lowercase voice</span>
+        <span class="tags">culture · accessibility · @zhao.langxi · lowercase-voice</span>
         <a class="src" href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
       </div>
     </div>
@@ -785,18 +964,61 @@
 
   <hr class="rule">
 
-  <p class="section-label reveal"><span class="bilingual">作</span> the work · groups i've shipped for, and what came out</p>
+  <p class="section-label reveal"><span class="bilingual">作</span> the work · execution record</p>
+  <p class="work-lede reveal">a record of shipped pilots, live production environments, and technical infrastructure built for fast-moving startups and enterprise tech clinics.</p>
+
+  <div class="exec-split reveal" aria-label="the execution record">
+    <div class="exec-card">
+      <span class="exec-k">stealth yc · nyc</span>
+      <h3>gtm engineering intern</h3>
+      <ul>
+        <li>pitch-to-pilot sandboxes</li>
+        <li>poc demos next to the deck</li>
+        <li>revenue-driving python automation</li>
+      </ul>
+    </div>
+    <div class="exec-card serveit">
+      <span class="exec-k">iu serveit clinic</span>
+      <h3><a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">website team lead</a></h3>
+      <ul>
+        <li>wcag 2.1 aa client builds</li>
+        <li>maintainable partner handoffs</li>
+        <li>etl pipelines &amp; ml engagement</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="ships-label reveal"><span class="sc">成</span> professional ships</p>
 
   <article class="entry reveal">
-    <div class="rail"><span class="who">stealth startup</span><br><span class="yr">gtm eng intern · jun 2026</span></div>
+    <div class="rail"><span class="who">stealth yc</span><br><span class="yr">jun 2026 to present</span></div>
     <div class="body">
-      <h2>gtm engineering · stealth yc (nyc)</h2>
-      <p class="did">architect demo envs, poc sandboxes, and integration prototypes so prospects see live, working flows next to the deck. i engineer the python automation and technical docs that accelerate a sales pitch into a deployed, revenue-generating pilot.</p>
+      <h2>gtm engineering intern · stealth yc (nyc)</h2>
+      <p class="ship-obj"><b>objective:</b> accelerate enterprise sales velocity by converting high-value pitches into deployed, revenue-generating pilot software.</p>
+      <p class="ship-point"><b>execution ·</b> architecting live demo environments, rapid poc sandboxes, and custom integration prototypes so prospects interact with functioning workflows right next to the sales deck.</p>
+      <p class="ship-point"><b>automation ·</b> engineering python automation and technical deployment docs that cut the time between initial pitch and active client pilot.</p>
       <span class="outcome">pitch → working pilot · hybrid nyc</span>
       <div class="foot-row">
-        <span class="tags">gtm · python · demos · b2b pilots</span>
+        <span class="tags">gtm-engineering · python · sandbox architectures · b2b velocity</span>
       </div>
     </div>
+  </article>
+
+  <article class="entry reveal">
+    <a class="entry-link" href="https://serveit.luddy.indiana.edu/serve-ai/index.html">
+    <div class="rail"><span class="who">iu serveit</span><br><span class="yr">jan 2024 to present</span></div>
+    <div class="body">
+      <h2>website team lead · serveit clinic</h2>
+      <p class="ship-obj"><b>objective:</b> scope, build, and deploy production web ecosystems for bloomington orgs with handoff protocols that stick.</p>
+      <p class="ship-point"><b>execution ·</b> lead wcag 2.1 aa builds for partners including the city of bloomington, middle way house, and chamber of commerce. ship handoff frameworks so non-technical staff maintain systems without a developer on call.</p>
+      <p class="ship-point"><b>data pipelines ·</b> python/postgresql etl on community partner data, plus ml-driven engagement adjustments that delivered a ~25% lift in user interaction.</p>
+      <span class="outcome">wcag 2.1 · maintainable handoffs · ~25% engagement lift</span>
+      <div class="foot-row">
+        <span class="tags">full-stack · postgresql · etl · wcag · python · typescript · react</span>
+        <span class="src-foot">serveit clinic →</span>
+      </div>
+    </div>
+    </a>
   </article>
 
   <article class="entry reveal">
@@ -804,26 +1026,11 @@
     <div class="rail"><span class="who">iu · campus</span><br><span class="yr">actor &amp; entrepreneur · aug 2023</span></div>
     <div class="body">
       <h2>actor &amp; entrepreneur</h2>
-      <p class="did">campus creative and student ambassador at indiana university. i build a highly engaged personal brand and ship side projects on top of full-time informatics coursework... creating a campus presence that actually converts. loud on purpose, but always grounded in real work.</p>
+      <p class="did">campus creative and student ambassador at indiana university. i build a highly engaged personal brand and ship side projects on top of full-time informatics coursework. creating a campus presence that actually converts. loud on purpose, but always grounded in real work.</p>
       <span class="outcome">campus presence · @zhao.langxi</span>
       <div class="foot-row">
         <span class="tags">creative · brand · iu</span>
         <span class="src-foot">@zhao.langxi →</span>
-      </div>
-    </div>
-    </a>
-  </article>
-
-  <article class="entry reveal">
-    <a class="entry-link" href="https://serveit.luddy.indiana.edu/serve-ai/index.html">
-    <div class="rail"><span class="who">iu serveit clinic</span><br><span class="yr">website team lead · jan 2024</span></div>
-    <div class="body">
-      <h2>nonprofit tech clinic builds</h2>
-      <p class="did">lead wcag 2.1 compliant web builds for bloomington nonprofits. i scope requirements and ship accessible sites they maintain entirely independently without a dev on call. engineered ml tools (driving a ~25% lift in participation) and architected python/postgresql etl pipelines.</p>
-      <span class="outcome">wcag 2.1 · maintainable handoffs · +25% engagement</span>
-      <div class="foot-row">
-        <span class="tags">python · typescript · react · postgresql · wcag</span>
-        <span class="src-foot">serveit clinic →</span>
       </div>
     </div>
     </a>
@@ -844,20 +1051,38 @@
     </a>
   </article>
 
-  <article class="entry reveal">
-    <a class="entry-link" href="https://potstickers24.cloveronline.com/">
-    <div class="rail"><span class="who">potstickers</span><br><span class="yr">family restaurant · since 2020</span></div>
-    <div class="body">
-      <h2>a real business, built and grown end to end</h2>
-      <p class="did">started with online ordering during the pandemic. now i run the full go-to-market: a self-contained site, a wired contact form, and a live seasonal content calendar. build plus growth, for a business that actually depends on it.</p>
-      <span class="outcome">software i ship and market, with customers on the other end</span>
-      <div class="foot-row">
-        <span class="tags">html · formspree · content · social</span>
-        <span class="src-foot">order online →</span>
-      </div>
-    </div>
-    </a>
-  </article>
+  <div class="metrics-wrap reveal">
+    <p class="ships-label"><span class="sc">量</span> the delivery metrics</p>
+    <p class="metrics-lede">i evaluate a ship by operational resilience and business utility. code that doesn't advance a product goal or stabilize a business metric isn't finished yet.</p>
+    <table class="metrics-table">
+      <thead>
+        <tr>
+          <th scope="col">environment</th>
+          <th scope="col">core metric</th>
+          <th scope="col">production result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>stealth yc (nyc)</td>
+          <td>pitch-to-pilot velocity</td>
+          <td class="metric-result">live sandboxes that cut pitch friction and deploy functioning automated workflows in context</td>
+        </tr>
+        <tr>
+          <td><a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">iu serveit clinic</a></td>
+          <td>retention &amp; accessibility</td>
+          <td class="metric-result">wcag 2.1 ships plus etl engines with a ~25% engagement lift. partners include <a href="https://bloomington.in.gov">bloomington.in.gov</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://potstickers24.cloveronline.com/">potstickers</a></td>
+          <td>restaurant efficacy</td>
+          <td class="metric-result">family restaurant gtm: site, formspree contact flow, seasonal content, and live <a href="https://potstickers24.cloveronline.com/">clover online ordering</a> with customers on the other end</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="duck-line reveal">the food has to hit the table hot. no matter the stack, that is the baseline metric. <span class="sc">鸭年</span> 2026.</p>
 
   <hr class="rule">
 
