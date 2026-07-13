@@ -55,7 +55,7 @@
 }
 
 .farm-canvas.night::before {
-  /* Soft moon — teal night, not purple glow */
+  /* Soft moon. teal night, not purple glow */
   content: '';
   position: absolute;
   top: 12%;

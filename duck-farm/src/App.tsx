@@ -22,7 +22,9 @@ export default function App() {
   const [nextId, setNextId] = useState(3)
   const canvasRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<number>()
+  const toastTimerRef = useRef<number>()
   const [isDay, setIsDay] = useState(true)
+  const [toast, setToast] = useState<string | null>(null)
 
   useEffect(() => {
     const checkTime = () => {
@@ -64,6 +66,9 @@ export default function App() {
             })
             return prevId + 50
           })
+          setToast('50 ducks. you earned this.')
+          if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
+          toastTimerRef.current = window.setTimeout(() => setToast(null), 2400)
           konamiIndex = 0
         }
       } else {
@@ -72,7 +77,10 @@ export default function App() {
     }
 
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
+    }
   }, [])
 
   // Animate ducks moving
@@ -247,6 +255,14 @@ export default function App() {
           {' · '}
           <a href="https://github.com/matchaxmoxie">@matchaxmoxie</a>
         </p>
+      </div>
+
+      <div
+        className={`farm-toast${toast ? ' visible' : ''}`}
+        role="status"
+        aria-live="polite"
+      >
+        {toast}
       </div>
     </div>
   )

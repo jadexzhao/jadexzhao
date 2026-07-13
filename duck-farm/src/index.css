@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Outdoor pond — jade / sky / sparingly sun */
+  /* Outdoor pond. jade / sky / sparingly sun */
   --sky-high: #6eb8d8;
   --sky-low: #b8daf0;
   --grass-lit: #7cbc6a;
@@ -35,7 +35,7 @@ body {
   font-family: 'Outfit', 'Fredoka', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Meadow surrounds the farm — not a peach SaaS wash */
+  /* Meadow surrounds the farm. not a peach SaaS wash */
   background:
     linear-gradient(
       180deg,
@@ -291,6 +291,51 @@ body {
   transition: transform 0.2s ease, filter 0.2s ease;
   filter: drop-shadow(0 3px 5px rgba(15, 61, 46, 0.28));
   z-index: 2;
+  /* Invisible padding expands mobile tap target without changing duck size */
+  padding: 18px;
+  margin: -18px;
+  line-height: 1;
+  touch-action: manipulation;
+}
+
+@media (max-width: 640px) {
+  .farm-canvas {
+    min-height: 60vh;
+    height: 60vh;
+  }
+
+  .controls {
+    gap: 8px;
+  }
+
+  button {
+    flex: 1 1 auto;
+    min-width: 9.5rem;
+  }
+}
+
+.farm-toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%) translateY(12px);
+  z-index: 40;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: rgba(15, 61, 46, 0.92);
+  color: #f2faf4;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 8px 24px rgba(15, 61, 46, 0.28);
+}
+
+.farm-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .accessory {

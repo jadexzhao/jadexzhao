@@ -127,4 +127,4 @@ English · Mandarin · Fuzhounese · Spanish (improving)
 
 ---
 
-*Actor & entrepreneur who ships. First-generation, 福州 · Fujian roots. The duck is patient, loud when it matters, and impossible to catch unless you already know where the pond is. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**
+*First-generation, 福州 · Fujian roots. The duck is patient, loud when it matters, and impossible to catch unless you already know where the pond is. Someday: [a duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).* 🦆 **鸭年 2026**
