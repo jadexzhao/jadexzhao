@@ -235,7 +235,7 @@ export default function App() {
         <div className="info">
           <strong>click on the grass</strong> to place ducks. <strong>click a duck</strong> to make it jump.
           <br />
-          restaurant-kid wiring: what works vs talk. this is the placeholder — spoiler: this eats.
+          restaurant-kid wiring: what works vs talk. this is the placeholder. spoiler: this eats.
           <br />
           <em>↑↑↓↓←→←→ba</em> for a stampede. if you know, you know.
         </div>

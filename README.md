@@ -7,7 +7,7 @@ Grew up in a Chinese restaurant learning what actually works and what's just tal
 
 **Co-founded:** one human, two GitHub accounts.
 
-**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/) — bookmark-style page covering my work in GTM, tech clinics, and online ordering. (Spoiler: this eats.)
+**Public portfolio:** [**the briefcase**](https://jadexzhao.github.io/jadexzhao/). Bookmark-style page covering my work in GTM, tech clinics, and online ordering. (Spoiler: this eats.)
 
 | | **[@jadexzhao](https://github.com/jadexzhao)** · ships | **[@matchaxmoxie](https://github.com/matchaxmoxie)** · brand & ops |
 | --- | --- | --- |
@@ -38,9 +38,9 @@ Grew up in a Chinese restaurant learning what actually works and what's just tal
 - **ServeIT website team lead:** iu's nonprofit tech clinic. shipping wcag 2.1 compliant builds that local orgs can actually maintain without keeping a dev on call. engineered ml engagement tools (~+25% lift) and python/postgresql etl pipelines for community partner data.
 - **FASE MAP coordinator & UTA:** clearing the path for whoever comes next. managing canvas ops, running mentor training, and supporting 50+ students.
 - **Actor & Entrepreneur:** campus creative + school ig [@zhao.langxi](https://instagram.com/zhao.langxi). loud on purpose, but always anchored by real work.
-- **Potstickers:** my family's restaurant in indiana. shipped their online ordering system with clover. still the reason i build.
+- **Potstickers:** my family's restaurant in indiana. shipped their online ordering system with [Clover](https://potstickers24.cloveronline.com/). still the reason i build. site repo: [`pstickers24`](https://github.com/jadexzhao/pstickers24).
 
-**鸭年 2026** · the duck never got a seat at the zodiac table, so we made one. if you know, you know — [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).
+**鸭年 2026** · the duck never got a seat at the zodiac table, so we made one. if you know, you know. [catch one on the virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/).
 
 ---
 
@@ -63,15 +63,16 @@ Grew up in a Chinese restaurant learning what actually works and what's just tal
 
 #### ServeIT Client Websites
 
-*IU ServeIT nonprofit tech clinic · website team lead*
+*[IU ServeIT](https://serveit.luddy.indiana.edu/serve-ai/index.html) nonprofit tech clinic · website team lead*
 
 Scope, build, and ship WCAG 2.1 nonprofit websites for Bloomington organizations, with handoffs that staff can maintain entirely independently without a dev on call. ML engagement work (~+25%) and Python/PostgreSQL ETL pipelines on partner org data.
 
-**Clients:** City of Bloomington · Middle Way House · Indiana Phenology Lab · Bloomington Chamber of Commerce
+**Clients:** [City of Bloomington](https://bloomington.in.gov) · [Middle Way House](https://middlewayhouse.org) · [Indiana Phenology Lab](https://www.indianaphenology.org/) · Bloomington Chamber of Commerce
 
 **Stack:** full-stack web · responsive design · WCAG 2.1 AA accessibility
 
 [![Live site](https://img.shields.io/badge/Live-City_of_Bloomington-0066CC?style=flat-square&logo=googlechrome&logoColor=white)](https://bloomington.in.gov)
+[![ServeIT clinic](https://img.shields.io/badge/Clinic-ServeIT-5F7D4F?style=flat-square&logo=googlechrome&logoColor=white)](https://serveit.luddy.indiana.edu/serve-ai/index.html)
 
 ---
 
