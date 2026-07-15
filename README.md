@@ -1,8 +1,10 @@
-# jade zhao · 赵
+# jade zhao · 赵 · sunrise
 
-*actor & entrepreneur who ships. restaurant kid, builder-from-scratch.*
+*actor & entrepreneur who ships. restaurant kid, builder-from-scratch. morning light, first commits.*
 
 📍 bloomington, in · may 2027 · open to relocation
+
+[matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) is sunset. this is sunrise.
 
 the lilies open slow. i make things people can touch: demos, accessible sites, a pond full of ducks.
 
@@ -14,7 +16,7 @@ the lilies open slow. i make things people can touch: demos, accessible sites, a
 
 | project | what it is |
 | --- | --- |
-| [the briefcase](https://jadexzhao.github.io/jadexzhao/) | this portfolio: poetic, floral, scratch-energy |
+| [the briefcase](https://jadexzhao.github.io/jadexzhao/) | this portfolio: floral sunrise · scratch energy · twin of matchaxmoxie sunset |
 | [virtual duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | interactive pond · 鸭年 2026 totem |
 | [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first real ship |
 | [serveit clinic](https://serveit.luddy.indiana.edu/serve-ai/index.html) | wcag nonprofit builds · ~25% engagement lift |
@@ -33,12 +35,13 @@ the lilies open slow. i make things people can touch: demos, accessible sites, a
 
 ---
 
-## two accounts · one human
+## two accounts · sunrise & sunset
 
-| | [@jadexzhao](https://github.com/jadexzhao) · ships | [@matchaxmoxie](https://github.com/matchaxmoxie) · brand & ops |
+| | [@jadexzhao](https://github.com/jadexzhao) · sunrise · ships | [@matchaxmoxie](https://github.com/matchaxmoxie) · sunset · brand & ops |
 | --- | --- | --- |
 | **site** | [the briefcase](https://jadexzhao.github.io/jadexzhao/) | [matchaxmoxie.github.io](https://matchaxmoxie.github.io/matchaxmoxie/) |
+| **energy** | morning · beginning · builder-from-scratch | teacher · archive · classroom |
 
 ---
 
-*surround yourself with people who want to see you grow.* 🌸 · [catch a duck](https://jadexzhao.github.io/jadexzhao/duck-farm/) · **鸭年 2026**
+*surround yourself with people who want to see you grow toward the light.* 🌸 · [catch a duck](https://jadexzhao.github.io/jadexzhao/duck-farm/) · **鸭年 2026**

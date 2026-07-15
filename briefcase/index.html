@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <!--
-  jade zhao · the briefcase · scratch-energy portfolio
+  jade zhao · the briefcase · sunrise twin of matchaxmoxie sunset
   赵 · fuzhou roots · bloomington branches · 鸭年 2026
 
   flower image: briefcase/assets/hero-flowers.jpg
-  (pink lilies, baby's breath, growth theme)
+  (pink lilies, baby's breath, growth toward the light)
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="jade zhao · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio">
-<title>jade zhao · the briefcase</title>
+<meta name="description" content="jade zhao · sunrise · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio">
+<title>jade zhao · the briefcase · sunrise</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -19,16 +19,16 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#00a86b">
+<meta name="theme-color" content="#d4a84b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="jade zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
-<meta property="og:title" content="jade zhao · the briefcase">
-<meta property="og:description" content="jade zhao · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio">
+<meta property="og:title" content="jade zhao · the briefcase · sunrise">
+<meta property="og:description" content="jade zhao · sunrise · actor & entrepreneur who ships · matchaxmoxie is sunset · this is sunrise">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="jade zhao · the briefcase">
-<meta name="twitter:description" content="jade zhao · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio">
+<meta name="twitter:title" content="jade zhao · the briefcase · sunrise">
+<meta name="twitter:description" content="jade zhao · sunrise · actor & entrepreneur who ships · matchaxmoxie is sunset · this is sunrise">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +48,11 @@
     --jade:#00a86b;
     --jade-dark:#007a52;
     --jade-deep:#005c3d;
+    --dawn-gold:#d4a84b;
+    --dawn-gold-soft:#f0d9a0;
+    --dawn-pink:#f2c4c8;
+    --sky:#a8c8e0;
+    --sky-soft:#d6e8f4;
     --line:#e8ddd6;
     --card-shadow:0 4px 20px rgba(44,40,36,.08);
     --nav-h:52px;
@@ -58,7 +63,9 @@
   body{
     background:var(--cream);
     background-image:
-      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(232,180,200,.18), transparent 55%),
+      radial-gradient(ellipse 55% 40% at 15% -5%, rgba(240,217,160,.45), transparent 55%),
+      radial-gradient(ellipse 50% 35% at 85% 5%, rgba(168,200,224,.28), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(232,180,200,.16), transparent 55%),
       radial-gradient(ellipse 60% 45% at 0% 100%, rgba(0,168,107,.06), transparent 50%);
     color:var(--ink);
     font-family:"IBM Plex Sans",system-ui,sans-serif;
@@ -153,6 +160,16 @@
     margin-bottom:10px;
   }
   .hero-text h1 .sc{color:var(--jade-dark);font-size:.88em;font-weight:500}
+  .sunrise-badge{
+    display:inline-block;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--jade-deep);
+    background:linear-gradient(90deg,var(--dawn-gold-soft),var(--sky-soft),var(--lily-soft));
+    padding:5px 10px;border-radius:6px;
+    margin-bottom:12px;
+  }
   .hero-tag{
     font-family:"Fraunces",serif;
     font-style:italic;
@@ -174,7 +191,7 @@
   .poem{
     margin:32px 0 40px;
     padding:24px 28px;
-    background:linear-gradient(135deg,var(--peony) 0%,var(--cream-deep) 50%,rgba(0,168,107,.06) 100%);
+    background:linear-gradient(135deg,var(--dawn-gold-soft) 0%,var(--peony) 35%,var(--sky-soft) 70%,rgba(0,168,107,.07) 100%);
     border-radius:12px;
     border-left:4px solid var(--jade);
     position:relative;
@@ -350,11 +367,14 @@
   .twin-note{
     text-align:center;
     font-family:"IBM Plex Mono",monospace;
-    font-size:10.5px;color:var(--ink-soft);
-    margin-bottom:28px;padding:8px 12px;
-    background:var(--cream-deep);border-radius:6px;
+    font-size:11px;color:var(--ink-soft);
+    margin-bottom:28px;padding:10px 14px;
+    background:linear-gradient(90deg,rgba(240,217,160,.35),rgba(214,232,244,.4),rgba(244,212,226,.3));
+    border-radius:8px;
+    border:1px solid rgba(212,168,75,.25);
   }
-  .twin-note a{border-color:var(--line)}
+  .twin-note a{border-color:rgba(0,122,82,.3);color:var(--jade-dark);font-weight:500}
+  .twin-note a:hover{color:var(--jade)}
 
   /* ---- motion ---- */
   @media (prefers-reduced-motion:no-preference){
@@ -398,7 +418,7 @@
 
 <main class="wrap">
 
-  <p class="twin-note reveal">code lives here · brand &amp; ops at <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>: two accounts on purpose</p>
+  <p class="twin-note reveal"><a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> is sunset. this is sunrise.</p>
 
   <header class="hero reveal">
     <figure class="hero-photo">
@@ -415,8 +435,9 @@
       >
     </figure>
     <div class="hero-text">
+      <p class="sunrise-badge">sunrise · building from scratch</p>
       <h1>jade zhao <span class="sc">赵</span></h1>
-      <p class="hero-tag">actor &amp; entrepreneur who ships. restaurant kid turned builder. i make things people can touch: demos, accessible sites, a pond full of ducks.</p>
+      <p class="hero-tag">actor &amp; entrepreneur who ships. restaurant kid turned builder. morning light, first commits, watching things grow toward the light. i make things people can touch: demos, accessible sites, a pond full of ducks.</p>
       <div class="hero-meta">
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
         <span>·</span>
@@ -433,9 +454,9 @@
 
   <blockquote class="poem reveal">
     <p>the lilies open slow. the hibiscus burns coral at noon. the peony waits until it is sure.<br>
-    surround yourself with people who want to see you and watch you grow.<br>
+    surround yourself with people who want to see you and watch you grow toward the light.<br>
     i learned that in a busy kitchen first: food has to hit the table hot, and someone has to believe you're worth feeding.</p>
-    <cite>for the ones who stayed</cite>
+    <cite>for the ones who stayed · morning still counts as beginning</cite>
   </blockquote>
 
   <section id="my-stuff" class="reveal" aria-labelledby="stuff-heading">
@@ -514,8 +535,8 @@
       <span class="sc-label">关于</span>
       <h2 id="about-heading">about me</h2>
     </div>
-    <p>i grew up in a family restaurant: high heat, tight timing, reading people fast. that's still how i ship software: operational urgency translated into accessible systems and demos that work when the room is watching.</p>
-    <p>informatics at <strong>iu luddy</strong>. actor on campus (<a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>). fase map coordinator for 50+ first-years. student ambassador when the institution needs a human face. two github accounts because engineering and brand ops are different ponds. <a href="https://github.com/jadexzhao">@jadexzhao</a> writes code, <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a> runs the loop.</p>
+    <p>i grew up in a family restaurant: high heat, tight timing, reading people fast. that's still how i ship software: operational urgency translated into accessible systems and demos that work when the room is watching. sunrise energy for me means beginning again: first light, first commit, building from scratch until something leans toward the light.</p>
+    <p>informatics at <strong>iu luddy</strong>. actor on campus (<a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>). fase map coordinator for 50+ first-years. student ambassador when the institution needs a human face. two github accounts because engineering and brand ops are different ponds. <a href="https://github.com/jadexzhao">@jadexzhao</a> is sunrise: code, ships, the briefcase. <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a> is sunset: teacher archive, classroom, the loop.</p>
     <p>my first coding community was girls who code: a room where dumb questions were the whole point. later, a professor's peanut-butter-sandwich lesson: computers do what you say, not what you meant. i build accessible systems because i watched my parents fight software that wasn't built for people like us.</p>
     <p class="roots"><span class="sc">福建</span> fujian · <span class="sc">福州</span> fuzhou · <span class="sc">福州话</span> at home · mandarin · english · spanish · open to relocation · may 2027</p>
   </section>
@@ -532,7 +553,7 @@
       <a href="https://github.com/jadexzhao/pstickers24">pstickers24</a>
     </div>
     <div>
-      <span class="human">first-gen. 福州 roots. someday a real duck farm. <span class="sc">鸭年快乐</span> 🦆</span>
+      <span class="human">first-gen. 福州 roots. sunrise twin of matchaxmoxie. someday a real duck farm. <span class="sc">鸭年快乐</span> 🦆</span>
     </div>
   </footer>
 

@@ -1,11 +1,11 @@
 {
-  "name": "jade zhao · the briefcase",
+  "name": "jade zhao · the briefcase · sunrise",
   "short_name": "briefcase",
-  "description": "actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio",
+  "description": "sunrise · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fff8f3",
-  "theme_color": "#00a86b",
+  "theme_color": "#d4a84b",
   "icons": [
     {
       "src": "favicon-32x32.png",
