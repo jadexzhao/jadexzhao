@@ -10,7 +10,7 @@ I ship code. Restaurant kid. IU Luddy, May 2027.
 
 | | |
 | --- | --- |
-| [ServeIT](https://serveit.luddy.indiana.edu/serve-ai/index.html) | WCAG builds · website team lead (Jan 2024–) |
+| [ServeIT](https://serveit.luddy.indiana.edu/serve-ai/index.html) | WCAG builds · website team lead (Jan 2024 to present) |
 | [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first ship |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
@@ -23,6 +23,6 @@ GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT.
 
 | [@jadexzhao](https://github.com/jadexzhao) sunrise | [@matchaxmoxie](https://github.com/matchaxmoxie) sunset |
 | --- | --- |
-| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · GWC archive |
+| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · GWC archive |
 
 福州 roots · TypeScript · React · Python · PostgreSQL · WCAG
