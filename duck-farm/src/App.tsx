@@ -28,11 +28,15 @@ function initialDucks(): Duck[] {
   ]
 }
 
-function duckTransform(duck: Duck): string {
-  const flip = duck.angle === 180 ? 'scaleX(-1)' : ''
+function duckCssTransform(duck: Duck, canvasW: number, canvasH: number): string {
+  // Percent coords → px once per write. Percentages in translate() are relative
+  // to the element itself, so compositor motion needs canvas-space pixels.
+  const x = (duck.x / 100) * canvasW
+  const y = (duck.y / 100) * canvasH
   const bob =
-    duck.x > 50 ? '' : `translateY(${Math.sin(Date.now() * 0.003 + duck.id) * 2}px)`
-  return `${flip} ${bob}`.trim()
+    duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 2
+  const flip = duck.angle === 180 ? ' scaleX(-1)' : ''
+  return `translate3d(${x}px, ${y + bob}px, 0)${flip}`
 }
 
 export default function App() {
@@ -40,6 +44,7 @@ export default function App() {
   const nextIdRef = useRef(3)
   const duckElsRef = useRef<Map<number, HTMLDivElement>>(new Map())
   const canvasRef = useRef<HTMLDivElement>(null)
+  const canvasSizeRef = useRef({ w: 0, h: 0 })
   const animationRef = useRef<number>()
   const toastTimerRef = useRef<number>()
   const fpsFramesRef = useRef(0)
@@ -61,6 +66,12 @@ export default function App() {
     setDuckCount(ducksRef.current.length)
   }, [])
 
+  const measureCanvas = useCallback(() => {
+    const el = canvasRef.current
+    if (!el) return
+    canvasSizeRef.current = { w: el.clientWidth, h: el.clientHeight }
+  }, [])
+
   useEffect(() => {
     const checkTime = () => {
       if (overrideDayRef.current) return
@@ -76,6 +87,18 @@ export default function App() {
     document.body.classList.toggle('night-farm', !isDay)
     return () => document.body.classList.remove('night-farm')
   }, [isDay])
+
+  // Measure once outside rAF. ResizeObserver updates cache. No layout reads in the tick.
+  useEffect(() => {
+    const el = canvasRef.current
+    if (!el) return
+    measureCanvas()
+    const ro = new ResizeObserver(() => {
+      measureCanvas()
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [measureCanvas])
 
   useEffect(() => {
     const konamiCode = [
@@ -122,10 +145,11 @@ export default function App() {
     }
   }, [syncDuckList])
 
-  // Animation: mutate refs + DOM only. No React setState in the rAF tick.
+  // Animation: mutate refs + compositor transform only. No React setState in the tick.
   useEffect(() => {
     const animate = () => {
       const ducks = ducksRef.current
+      const { w: canvasW, h: canvasH } = canvasSizeRef.current
       for (let i = 0; i < ducks.length; i++) {
         const duck = ducks[i]
         let newVy = duck.vy
@@ -155,10 +179,9 @@ export default function App() {
         duck.vy = newVy
 
         const el = duckElsRef.current.get(duck.id)
-        if (el) {
-          el.style.left = `${duck.x}%`
-          el.style.top = `${duck.y}%`
-          el.style.transform = duckTransform(duck)
+        if (el && canvasW > 0 && canvasH > 0) {
+          // Compositor props only. Never left/top/width/height in the hot path.
+          el.style.transform = duckCssTransform(duck, canvasW, canvasH)
         }
       }
 
@@ -294,15 +317,18 @@ export default function App() {
           <div className="cloud cloud-c" aria-hidden="true" />
           <div className="grass" />
           <div className="pond" />
-          {duckList.map((duck) => (
+          {duckList.map((duck) => {
+            const { w, h } = canvasSizeRef.current
+            const hasSize = w > 0 && h > 0
+            return (
             <div
               key={duck.id}
               ref={(node) => setDuckEl(duck.id, node)}
               className="duck"
               style={{
-                left: `${duck.x}%`,
-                top: `${duck.y}%`,
-                transform: duckTransform(duck),
+                transform: hasSize
+                  ? duckCssTransform(duck, w, h)
+                  : 'translate3d(0,0,0)',
               }}
               onClick={(e) => handleDuckClick(e, duck.id)}
               role="button"
@@ -315,10 +341,13 @@ export default function App() {
                 }
               }}
             >
-              🦆
+              <span className="duck-sprite" aria-hidden="true">
+                🦆
+              </span>
               {duck.accessory && <span className="accessory">{duck.accessory}</span>}
             </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
@@ -337,9 +366,6 @@ export default function App() {
           <button type="button" className="btn-secondary" onClick={resetFarm}>
             reset
           </button>
-          <button type="button" className="btn-secondary" onClick={clearFarm}>
-            clear all
-          </button>
           <button
             type="button"
             className="btn-ghost"
@@ -347,6 +373,9 @@ export default function App() {
             aria-pressed={showDev}
           >
             {showDev ? 'hide FPS' : 'dev HUD'}
+          </button>
+          <button type="button" className="btn-danger" onClick={clearFarm}>
+            clear all
           </button>
         </div>
 
@@ -377,8 +406,9 @@ export default function App() {
               <strong>state management.</strong> Duck positions live in a{' '}
               <code>useRef</code> mutated inside <code>requestAnimationFrame</code>.
               React state only syncs when ducks are added, cleared, or reset. No{' '}
-              <code>setState</code> per frame. Local coords stay local; day/night is the
-              small global theme toggle. Same fence as the{' '}
+              <code>setState</code> per frame. Canvas size is cached via{' '}
+              <code>ResizeObserver</code> so the tick never reflows. Local coords stay
+              local; day/night is the small global theme toggle. Same fence as the{' '}
               <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html#state-isolation">
                 state isolation protocol
               </a>
@@ -390,8 +420,11 @@ export default function App() {
               follows the clock unless you toggle manually.
             </li>
             <li>
-              <strong>accessibility.</strong> Ducks are keyboard-focusable buttons (Enter /
-              Space). Controls and ducks meet a 48px minimum tap target. Toast uses{' '}
+              <strong>accessibility + mobile render.</strong> Ducks are keyboard-focusable
+              buttons (Enter / Space). Controls and ducks meet a 48px minimum tap target.
+              Per-frame motion uses compositor <code>translate3d</code> only (no{' '}
+              <code>left</code>/<code>top</code> thrash). Immersive pond sizes with{' '}
+              <code>lvh</code>. Clear-all sits apart from the primary spawn CTA. Toast uses{' '}
               <code>aria-live="polite"</code>. Skip the stampede if motion is a problem;
               reduced-motion preferences quiet title animation where supported.
             </li>

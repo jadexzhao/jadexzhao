@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Jade Zhao · Product Governance & AI Transparency Memo. The sandwich runbook, ServeIT Cascade/Rivet component matrix, and business-technology-law governance.">
 <title>jade zhao · how i work · product governance memo</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#00a86b">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="jade zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
+<meta property="og:title" content="jade zhao · how i work · product governance memo">
+<meta property="og:description" content="Jade Zhao · Product Governance &amp; AI Transparency Memo. The sandwich runbook, ServeIT Cascade/Rivet component matrix, and business-technology-law governance.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -62,6 +77,7 @@
     left:0;right:0;z-index:105;
     display:flex;flex-wrap:nowrap;justify-content:center;
     overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    overscroll-behavior:contain;
     background:rgba(251,250,245,.92);
     backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
@@ -75,6 +91,7 @@
     font-family:"IBM Plex Mono",monospace;font-size:11px;
     color:var(--ink-soft);text-decoration:none;white-space:nowrap;
     border-bottom:2px solid transparent;
+    touch-action:manipulation;
     transition:color .18s ease, border-color .18s ease, background .18s ease;
   }
   .jump-nav a:hover{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream)}
@@ -147,7 +164,7 @@
   }
   .toc a{
     color:var(--matcha);text-decoration:none;border-bottom:1px solid var(--line);
-    padding-bottom:1px;min-height:44px;display:inline-flex;align-items:center;
+    padding-bottom:1px;min-height:48px;display:inline-flex;align-items:center;
   }
   .toc a:hover{border-color:var(--matcha)}
   .toc .sep{color:var(--matcha-soft);align-self:center}
@@ -411,13 +428,24 @@
     :root{--banner-h:26px}
     body{
       padding:
-        calc(var(--banner-h) + var(--jump-h) + 18px + env(safe-area-inset-top,0px))
+        calc(var(--banner-h) + 18px + env(safe-area-inset-top,0px))
         max(16px, env(safe-area-inset-right,0px))
-        max(40px, calc(28px + env(safe-area-inset-bottom,0px)))
+        calc(var(--jump-h) + 28px + env(safe-area-inset-bottom,0px))
         max(16px, env(safe-area-inset-left,0px));
     }
     .twin-banner{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .jump-nav a{padding:0 12px;font-size:10.5px}
+    .jump-nav{
+      top:auto;bottom:0;
+      border-bottom:none;border-top:1px solid var(--line);
+      padding-bottom:env(safe-area-inset-bottom,0px);
+    }
+    .jump-nav a{
+      padding:0 12px;font-size:10.5px;
+      border-bottom:none;border-top:2px solid transparent;
+    }
+    .jump-nav a:hover{
+      border-bottom-color:transparent;border-top-color:var(--iu-crimson);
+    }
     .runbook li{grid-template-columns:40px 1fr}
     .runbook .step-body{padding:12px 12px 14px 0}
     .status-pill{font-size:10.5px;padding:7px 10px}
@@ -458,6 +486,10 @@
       <a href="#part-3">#03 governance</a>
       <span class="sep">·</span>
       <a href="#state-isolation">#04 state isolation</a>
+      <span class="sep">·</span>
+      <a href="#mobile-gtm">#05 mobile gtm</a>
+      <span class="sep">·</span>
+      <a href="#pages-deploy">#06 pages deploy</a>
       <span class="sep">·</span>
       <a href="i18n-wcag.html">i18n ∩ wcag</a>
     </nav>
@@ -736,6 +768,108 @@
     <blockquote class="pull-quote">
       <p>global rules define the fence line. local modules run free inside it. if the fence moves every sprint, nothing ships hot.</p>
     </blockquote>
+  </section>
+
+  <hr class="rule">
+
+  <section id="mobile-gtm">
+    <p class="part-label">part 5</p>
+    <h2>mobile gtm / demo sandboxes</h2>
+    <p>pitch rooms and subway thumbs share one constraint: if the control is hard to hit or the CTA is clipped by chrome, the demo failed the shift. same sandwich rule as cascade chunks. one job per viewport, explicit margins, no silent assumptions.</p>
+
+    <div class="chunk-grid" role="list">
+      <article class="chunk-card" role="listitem">
+        <h4>fat-thumb · 48×48</h4>
+        <p>interactive hits stay ≥48 CSS px. pad the hit box; do not bloat the glyph. primary CTAs live in the bottom ~30% when the layout allows. destructives (clear / wipe) sit out of the casual sweep.</p>
+      </article>
+      <article class="chunk-card" role="listitem">
+        <h4>viewport · unit by job</h4>
+        <p><b>svh</b> for bottom-anchor CTAs and structural nav that must remain reachable with the URL bar expanded. <b>lvh</b> for immersive full-bleed media that should not jitter. <b>dvh</b> for modals, popups, and absolute shells that track live UI chrome.</p>
+      </article>
+      <article class="chunk-card" role="listitem">
+        <h4>asset containment</h4>
+        <p>do not ship a desktop hero to a mobile circular crop. prefer <b>picture</b>/<b>srcset</b>, lazy non-LCP media, and capped font requests. demos stay light enough to open on shaky wifi.</p>
+      </article>
+    </div>
+
+    <h3>advanced mobile rendering for gtm sandboxes</h3>
+    <p>soft 101 ends where the AE opens the sandbox on cellular. this is the bluesheet for pitch-critical motion surfaces.</p>
+
+    <ol class="runbook" aria-label="advanced mobile rendering bluesheet">
+      <li>
+        <span class="step-n" aria-hidden="true">01</span>
+        <div class="step-body">
+          <p class="step-title">compositor motion only</p>
+          <p>rAF writes <b>transform</b> / <b>translate3d</b> / <b>scale</b> / <b>rotate</b> / <b>opacity</b>. never per-frame <b>top</b>, <b>left</b>, <b>width</b>, or <b>height</b>. those force layout. cache container size outside the tick (<b>ResizeObserver</b>), then compute px once per write.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">02</span>
+        <div class="step-body">
+          <p class="step-title">react off the hot path</p>
+          <p>no <b>setState</b> inside rAF or high-frequency touch handlers. keep motion state in <b>useRef</b>, mutate the DOM node directly, sync React only on structure changes (spawn, clear, reset). FPS HUD is textContent, not a counter state.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">03</span>
+        <div class="step-body">
+          <p class="step-title">reserve media geometry</p>
+          <p>chart and sandbox stages declare <b>aspect-ratio</b> so the first paint does not shift the CTA row. immersive stages size with <b>lvh</b>; bottom action strips respect <b>svh</b> + safe-area.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">04</span>
+        <div class="step-body">
+          <p class="step-title">kill touch latency + scroll chaining</p>
+          <p><b>touch-action: manipulation</b> on sandbox triggers, toggles, tabs, and close controls removes double-tap zoom delay. <b>overscroll-behavior: contain</b> on drawers, modals, and scrollable sandbox panels stops elastic scroll from yanking the pitch deck underneath.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p>live proof: the <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a> keeps spawn in the thumb zone, parks clear-all away from the primary CTA, runs compositor <code>translate3d</code> ducks, and sizes the pond with <code>lvh</code> + <code>aspect-ratio</code>. honesty check still holds: react + typescript + vite. not d3.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="pages-deploy">
+    <p class="part-label">part 6</p>
+    <h2>github pages · dual footprint deploy</h2>
+    <p>two public surfaces, two publish shapes. match the workflow to the architecture. do not paste a generic spa playbook onto a static ops site, or a static copy job onto a nested vite demo.</p>
+
+    <ol class="runbook" aria-label="pages deploy runbook">
+      <li>
+        <span class="step-n" aria-hidden="true">01</span>
+        <div class="step-body">
+          <p class="step-title">@jadexzhao · composite artifact</p>
+          <p>Actions builds one <code>_site</code>: briefcase HTML at the project root, Vite duck farm nested at <code>/jadexzhao/duck-farm/</code>. that nest is intentional so the pond never clobbers the memo. <code>vite.config</code> <b>base</b> must stay <code>/jadexzhao/duck-farm/</code> or assets 404 on refresh.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">02</span>
+        <div class="step-body">
+          <p class="step-title">no spa 404 trap here</p>
+          <p>duck farm is a single canvas route. no <code>BrowserRouter</code>, no client path tree. a friendly static <code>404.html</code> is enough for missing portfolio URLs. the sessionStorage restore rewrite is for apps with real client routes under project Pages. skipping it is correct, not incomplete.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">03</span>
+        <div class="step-body">
+          <p class="step-title">@matchaxmoxie · static <code>site/</code></p>
+          <p>brand and ops publish the checked-in <code>site/</code> folder as the Pages artifact. not a Vite app. do not invent <code>base: '/matchaxmoxie/'</code> for that footprint. its <code>404.html</code> is a branded miss page, not an spa router shim.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">04</span>
+        <div class="step-body">
+          <p class="step-title">cname isolation</p>
+          <p>neither footprint ships a <code>CNAME</code> today (default <code>*.github.io</code> hosts). if a custom domain lands later, keep experiments and sandboxes off the primary hostname so ops and code stay separable. do not point a throwaway demo at the same custom domain as the portfolio without a deliberate split.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="note">
+      <p>live urls: <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a> · <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a> · <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie ops</a>. deploy lore that belongs on the ops loop also lives beside the <a href="https://matchaxmoxie.github.io/matchaxmoxie/demo-engineering.html">demo engineering</a> taxonomy.</p>
+    </div>
   </section>
 
   <footer class="closer">

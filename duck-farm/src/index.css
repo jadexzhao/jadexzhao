@@ -36,6 +36,7 @@
   box-sizing: border-box;
 }
 
+/* Page shell tracks live chrome (dvh). Immersive pond uses lvh separately. */
 body {
   font-family: 'Outfit', 'Fredoka', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,7 +51,7 @@ body {
       var(--grass-mid) 78%,
       var(--grass-deep) 100%
     );
-  min-height: 100vh;
+  min-height: 100vh; /* fallback */
   min-height: 100dvh;
   display: flex;
   align-items: stretch;
@@ -76,7 +77,7 @@ body.night-farm {
   max-width: none;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* fallback */
   min-height: 100dvh;
 }
 
@@ -149,6 +150,10 @@ body.night-farm {
   text-decoration: none;
   border-bottom: 1.5px solid rgba(26, 107, 74, 0.28);
   transition: border-color 0.2s ease, color 0.2s ease;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
 }
 
 .farm-nav a:hover {
@@ -269,14 +274,16 @@ body.night-farm {
 }
 
 .farm-container.night-mode .btn-secondary,
-.farm-container.night-mode .btn-ghost {
+.farm-container.night-mode .btn-ghost,
+.farm-container.night-mode .btn-danger {
   background: rgba(13, 27, 42, 0.88);
   color: var(--night-hud);
   border-color: rgba(248, 249, 250, 0.28);
 }
 
 .farm-container.night-mode .btn-secondary:hover,
-.farm-container.night-mode .btn-ghost:hover {
+.farm-container.night-mode .btn-ghost:hover,
+.farm-container.night-mode .btn-danger:hover {
   background: var(--jade);
   color: var(--night-hud);
   border-color: var(--jade);
@@ -324,6 +331,7 @@ body.night-farm {
   border-radius: 14px;
   padding: 4px 16px 12px;
   box-shadow: 0 4px 16px rgba(15, 61, 46, 0.08);
+  overscroll-behavior: contain;
 }
 
 .farm-architecture summary {
@@ -390,6 +398,7 @@ body.night-farm {
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .arch-table {
@@ -462,11 +471,17 @@ body.night-farm {
   position: relative;
   flex: 1;
   width: 100%;
-  min-height: min(62vh, 520px);
-  height: min(62vh, 520px);
-  margin: 0;
+  /* Immersive stage: aspect-ratio reserves geometry; lvh caps height without URL-bar jitter */
+  aspect-ratio: 16 / 10;
+  height: auto;
+  max-height: min(62vh, 520px); /* fallback */
+  max-height: min(62lvh, 520px);
+  max-width: min(100%, calc(min(62lvh, 520px) * 16 / 10));
+  margin: 0 auto;
   border-radius: 18px 18px 28px 28px;
   overflow: hidden;
+  overscroll-behavior: contain;
+  touch-action: manipulation;
   cursor: crosshair;
   border: none;
   box-shadow:
@@ -483,8 +498,9 @@ body.night-farm {
   }
 
   .farm-canvas {
-    min-height: min(68vh, 560px);
-    height: min(68vh, 560px);
+    max-height: min(68vh, 560px);
+    max-height: min(68lvh, 560px);
+    max-width: min(100%, calc(min(68lvh, 560px) * 16 / 10));
     border-radius: 22px 22px 36px 36px;
   }
 }
@@ -626,6 +642,8 @@ body.night-farm {
 
 .duck {
   position: absolute;
+  left: 0;
+  top: 0;
   font-size: 48px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -643,12 +661,22 @@ body.night-farm {
   margin: -12px;
   line-height: 1;
   touch-action: manipulation;
+  /* Position via translate3d only. never left/top in the rAF path. */
+  will-change: transform;
+  transform-origin: center center;
+  contain: layout style;
 }
 
 @media (max-width: 640px) {
+  .farm-container {
+    padding-bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Shorter pond so spawn/HUD stay in the first thumb-reachable viewport */
   .farm-canvas {
-    min-height: 60vh;
-    height: 60vh;
+    max-height: min(48vh, 420px);
+    max-height: min(48lvh, 420px);
+    max-width: min(100%, calc(min(48lvh, 420px) * 16 / 10));
   }
 
   .controls {
@@ -658,6 +686,11 @@ body.night-farm {
   button {
     flex: 1 1 auto;
     min-width: 9.5rem;
+  }
+
+  .btn-danger {
+    flex: 1 1 100%;
+    order: 5;
   }
 }
 
@@ -693,13 +726,24 @@ body.night-farm {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
+/* Hover/quack scale lives on .duck-sprite so rAF can keep owning .duck transform. */
 .duck:hover {
-  transform: scale(1.15);
   filter: drop-shadow(0 4px 14px rgba(26, 107, 74, 0.45));
 }
 
-.duck.clicked {
+.duck:hover .duck-sprite {
+  transform: scale(1.15);
+}
+
+.duck.clicked .duck-sprite {
   animation: quack 0.6s ease-out;
+}
+
+.duck-sprite {
+  display: block;
+  line-height: 1;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
 }
 
 @keyframes quack {
@@ -818,6 +862,21 @@ button {
   border-style: dashed;
   font-weight: 500;
   opacity: 0.9;
+}
+
+/* Destructive: quieter + visually separated from primary spawn */
+.btn-danger {
+  background: rgba(255, 255, 255, 0.55);
+  color: #5a3a32;
+  border-color: rgba(120, 70, 55, 0.35);
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+.btn-danger:hover {
+  background: rgba(120, 70, 55, 0.9);
+  border-color: rgba(90, 50, 40, 0.95);
+  color: #faf6f4;
 }
 
 button:hover {

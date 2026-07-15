@@ -1,58 +1,65 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+# Composite GitHub Pages deploy for @jadexzhao
+# briefcase HTML at site root + Vite duck-farm at /jadexzhao/duck-farm/
+# Source in GitHub Settings: GitHub Actions (not branch/folder publish).
+name: Deploy GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    paths:
+      - "briefcase/**"
+      - "duck-farm/**"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-      
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: duck-farm/package-lock.json
+
       - name: Build duck farm
         run: |
           cd duck-farm
           npm ci
           npm run build
-          cd ..
-      
+          # Guard: Vite base must keep project-Pages subpath assets resolvable
+          if ! grep -q '/jadexzhao/duck-farm/' dist/index.html; then
+            echo "duck-farm dist missing base path /jadexzhao/duck-farm/" >&2
+            exit 1
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
+
       - name: Prepare briefcase and duck farm site
         run: |
-          # Create _site with briefcase at root
           if [ -d ./briefcase ]; then
             mkdir -p _site
             cp -r briefcase/* _site/
           else
             echo "briefcase folder not found" && exit 1
           fi
+
+          # Actions artifact is served as-is; .nojekyll keeps branch-fallback safe
+          touch _site/.nojekyll
 
           # Legacy /briefcase/ bookmarks → root portfolio
           mkdir -p _site/briefcase
@@ -85,21 +92,20 @@ jobs:
           </html>
           REDIRECT
           done
-          
-          # Copy duck farm dist to _site/duck-farm/
+
+          # Nested Vite app under duck-farm/ (does not clobber briefcase root)
           if [ -d ./duck-farm/dist ]; then
             mkdir -p _site/duck-farm
             cp -r duck-farm/dist/* _site/duck-farm/
           else
             echo "duck-farm/dist folder not found" && exit 1
           fi
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
