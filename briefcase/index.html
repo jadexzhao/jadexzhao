@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <!--
-  jade zhao · the briefcase · sunrise twin of matchaxmoxie sunset
-  赵 · fuzhou roots · bloomington branches · 鸭年 2026
-
-  flower image: briefcase/assets/hero-flowers.jpg
-  (pink lilies, baby's breath, growth toward the light)
+  jade zhao · the briefcase · sunrise
+  twin of matchaxmoxie sunset
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="jade zhao · sunrise · actor & entrepreneur who ships · gtm · serveit · iu luddy · builder-from-scratch portfolio">
+<meta name="description" content="jade zhao · sunrise · actor & entrepreneur who ships · gtm · serveit · iu luddy">
 <title>jade zhao · the briefcase · sunrise</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -24,11 +21,11 @@
 <meta property="og:site_name" content="jade zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
 <meta property="og:title" content="jade zhao · the briefcase · sunrise">
-<meta property="og:description" content="jade zhao · sunrise · actor & entrepreneur who ships · matchaxmoxie is sunset · this is sunrise">
+<meta property="og:description" content="jade zhao · sunrise · ships code · matchaxmoxie is sunset">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="jade zhao · the briefcase · sunrise">
-<meta name="twitter:description" content="jade zhao · sunrise · actor & entrepreneur who ships · matchaxmoxie is sunset · this is sunrise">
+<meta name="twitter:description" content="jade zhao · sunrise · ships code · matchaxmoxie is sunset">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,17 +41,13 @@
     --hibiscus:#d4656a;
     --hibiscus-soft:#e8928a;
     --peony:#f0d4dc;
-    --leaf:#6b9e78;
     --jade:#00a86b;
     --jade-dark:#007a52;
     --jade-deep:#005c3d;
     --dawn-gold:#d4a84b;
     --dawn-gold-soft:#f0d9a0;
-    --dawn-pink:#f2c4c8;
-    --sky:#a8c8e0;
     --sky-soft:#d6e8f4;
     --line:#e8ddd6;
-    --card-shadow:0 4px 20px rgba(44,40,36,.08);
     --nav-h:52px;
   }
 
@@ -63,10 +56,8 @@
   body{
     background:var(--cream);
     background-image:
-      radial-gradient(ellipse 55% 40% at 15% -5%, rgba(240,217,160,.45), transparent 55%),
-      radial-gradient(ellipse 50% 35% at 85% 5%, rgba(168,200,224,.28), transparent 50%),
-      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(232,180,200,.16), transparent 55%),
-      radial-gradient(ellipse 60% 45% at 0% 100%, rgba(0,168,107,.06), transparent 50%);
+      radial-gradient(ellipse 55% 40% at 15% -5%, rgba(240,217,160,.4), transparent 55%),
+      radial-gradient(ellipse 50% 35% at 85% 5%, rgba(168,200,224,.22), transparent 50%);
     color:var(--ink);
     font-family:"IBM Plex Sans",system-ui,sans-serif;
     line-height:1.55;
@@ -85,7 +76,6 @@
   .mono{font-family:"IBM Plex Mono",monospace}
   .sc{font-family:"Noto Serif SC",serif;font-weight:500}
 
-  /* ---- scratch-style nav ---- */
   .site-nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:stretch;justify-content:center;flex-wrap:wrap;
@@ -104,7 +94,6 @@
     font-size:12px;letter-spacing:.03em;
     color:var(--ink-soft);text-decoration:none;border:0;
     border-bottom:3px solid transparent;
-    transition:color .15s,border-color .15s,background .15s;
   }
   .site-nav a:hover{color:var(--jade-deep);background:var(--peony);border-bottom-color:var(--jade)}
   .site-nav a.nav-home{font-weight:600;color:var(--jade-deep)}
@@ -112,51 +101,39 @@
     width:1px;background:var(--line);margin:10px 4px;align-self:stretch;
   }
 
-  .wrap{max-width:920px;margin:0 auto}
+  .wrap{max-width:720px;margin:0 auto}
 
-  /* ---- hero ---- */
+  .twin-note{
+    text-align:center;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:28px;
+  }
+
   .hero{
     display:grid;
-    grid-template-columns:minmax(200px,280px) 1fr;
-    gap:28px 36px;
+    grid-template-columns:minmax(160px,220px) 1fr;
+    gap:24px 32px;
     align-items:center;
-    margin-bottom:36px;
+    margin-bottom:40px;
   }
   .hero-photo{
     position:relative;
-    border-radius:16px;
     overflow:hidden;
-    border:3px solid var(--lily-soft);
-    box-shadow:var(--card-shadow),0 0 0 1px rgba(232,180,200,.4);
-    transform:rotate(-1.5deg);
-    transition:transform .25s ease;
+    border:2px solid var(--lily);
   }
-  .hero-photo:hover{transform:rotate(0deg) scale(1.01)}
   .hero-photo img{
     display:block;width:100%;height:auto;aspect-ratio:1;
     object-fit:cover;
   }
-  .hero-photo::after{
-    content:"";
-    position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 60%,rgba(44,40,36,.12));
-    pointer-events:none;
-  }
-  .petal{
-    position:absolute;width:14px;height:14px;border-radius:50% 0 50% 50%;
-    opacity:.7;pointer-events:none;
-  }
-  .petal-1{top:-6px;right:12%;background:var(--lily);transform:rotate(25deg)}
-  .petal-2{bottom:8%;left:-8px;background:var(--hibiscus-soft);transform:rotate(-40deg)}
-  .petal-3{top:20%;right:-10px;background:var(--peony);transform:rotate(70deg)}
 
   .hero-text h1{
     font-family:"Fraunces",serif;
     font-weight:700;
-    font-size:clamp(36px,7vw,52px);
-    line-height:1.02;
+    font-size:clamp(32px,6vw,46px);
+    line-height:1.05;
     letter-spacing:-.02em;
-    color:var(--ink);
     margin-bottom:10px;
   }
   .hero-text h1 .sc{color:var(--jade-dark);font-size:.88em;font-weight:500}
@@ -166,241 +143,122 @@
     font-size:10.5px;letter-spacing:.08em;
     text-transform:uppercase;
     color:var(--jade-deep);
-    background:linear-gradient(90deg,var(--dawn-gold-soft),var(--sky-soft),var(--lily-soft));
-    padding:5px 10px;border-radius:6px;
+    background:var(--dawn-gold-soft);
+    padding:4px 8px;
     margin-bottom:12px;
   }
   .hero-tag{
-    font-family:"Fraunces",serif;
-    font-style:italic;
-    font-size:clamp(17px,2.5vw,20px);
+    font-size:clamp(15px,2.2vw,17px);
     color:var(--ink-soft);
-    max-width:42ch;
-    margin-bottom:16px;
+    max-width:40ch;
+    margin-bottom:14px;
   }
   .hero-meta{
-    display:flex;flex-wrap:wrap;gap:6px 14px;
+    display:flex;flex-wrap:wrap;gap:6px 12px;
     font-family:"IBM Plex Mono",monospace;
     font-size:11.5px;color:var(--ink-soft);
   }
   .hero-meta a{border-bottom-color:var(--line)}
   .hero-meta .ig{color:var(--jade)}
-  .hero-meta .ig:hover{color:var(--jade-deep)}
 
-  /* ---- poem ---- */
-  .poem{
-    margin:32px 0 40px;
-    padding:24px 28px;
-    background:linear-gradient(135deg,var(--dawn-gold-soft) 0%,var(--peony) 35%,var(--sky-soft) 70%,rgba(0,168,107,.07) 100%);
-    border-radius:12px;
-    border-left:4px solid var(--jade);
-    position:relative;
-  }
-  .poem::before{
-    content:"✿";
-    position:absolute;top:12px;right:18px;
-    font-size:22px;color:var(--lily);opacity:.6;
-  }
-  .poem p{
-    font-family:"Fraunces",serif;
-    font-style:italic;
-    font-size:clamp(16px,2.3vw,18px);
-    line-height:1.65;
-    color:var(--ink);
-    max-width:58ch;
-  }
-  .poem cite{
-    display:block;margin-top:14px;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;font-style:normal;
-    letter-spacing:.06em;
-    color:var(--jade-dark);
-  }
-
-  /* ---- section headers (scratch studio vibe) ---- */
   .section-head{
     display:flex;align-items:baseline;gap:12px;
-    margin-bottom:20px;
+    margin:36px 0 12px;
   }
   .section-head h2{
     font-family:"Fraunces",serif;
+    font-size:clamp(22px,3vw,28px);
     font-weight:600;
-    font-size:clamp(22px,4vw,28px);
-    color:var(--ink);
   }
   .section-head .sc-label{
     font-family:"Noto Serif SC",serif;
-    font-size:14px;color:var(--jade-dark);
-  }
-  .section-lede{
-    font-size:14.5px;color:var(--ink-soft);
-    max-width:52ch;margin:-8px 0 20px;
+    font-size:13px;color:var(--jade-dark);
   }
 
-  /* ---- project cards (scratch grid) ---- */
-  .project-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:16px;
-    margin-bottom:44px;
-  }
-  .project-card{
-    display:flex;flex-direction:column;
-    min-height:180px;
-    padding:18px 18px 16px;
-    border-radius:12px;
-    border:2px solid var(--line);
-    text-decoration:none;color:inherit;
-    background:#fff;
-    box-shadow:var(--card-shadow);
-    transition:transform .18s ease,box-shadow .18s ease,border-color .18s;
-    position:relative;overflow:hidden;
-  }
-  .project-card::before{
-    content:"";
-    position:absolute;top:0;left:0;right:0;height:5px;
-  }
-  .project-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 28px rgba(44,40,36,.12);
-    border-color:var(--lily);
-  }
-  .project-card:focus-visible{outline:2px solid var(--jade);outline-offset:3px}
-  .project-card.lily::before{background:linear-gradient(90deg,var(--lily),var(--peony))}
-  .project-card.hibiscus::before{background:linear-gradient(90deg,var(--hibiscus),var(--hibiscus-soft))}
-  .project-card.jade::before{background:linear-gradient(90deg,var(--jade),var(--leaf))}
-  .project-card.duck::before{background:linear-gradient(90deg,#c4a035,var(--jade))}
-  .project-card.cream::before{background:linear-gradient(90deg,var(--cream-deep),var(--lily-soft))}
-
-  .card-emoji{font-size:28px;line-height:1;margin-bottom:10px}
-  .card-title{
-    font-family:"Fraunces",serif;
-    font-weight:600;font-size:18px;
-    color:var(--ink);margin-bottom:6px;
-  }
-  .card-desc{
-    font-size:13.5px;line-height:1.5;
-    color:var(--ink-soft);flex:1;
-  }
-  .card-tags{
-    margin-top:12px;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:10.5px;letter-spacing:.04em;
-    color:var(--jade-dark);
-  }
-  .card-arrow{
-    position:absolute;bottom:14px;right:16px;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;color:var(--jade);
-    opacity:0;transform:translateX(-4px);
-    transition:opacity .15s,transform .15s;
-  }
-  .project-card:hover .card-arrow{opacity:1;transform:none}
-
-  /* ---- about ---- */
-  .about{
-    margin-bottom:40px;
-    padding:24px 0;
+  .ship-list{list-style:none;margin:0 0 28px;padding:0}
+  .ship-list li{
+    padding:14px 0;
     border-top:1px solid var(--line);
   }
-  .about p{
-    font-size:15px;line-height:1.68;
-    color:var(--ink);max-width:62ch;
-    margin-bottom:14px;
+  .ship-list li:last-child{border-bottom:1px solid var(--line)}
+  .ship-list a{
+    font-family:"Fraunces",serif;
+    font-size:18px;font-weight:600;
+    border:0;color:var(--ink);
   }
-  .about p:last-child{margin-bottom:0}
-  .about .roots{
+  .ship-list a:hover{color:var(--jade-deep)}
+  .ship-list p{
+    margin-top:4px;
+    font-size:14px;color:var(--ink-soft);
+    max-width:48ch;
+  }
+  .ship-list .tags{
+    display:block;margin-top:6px;
     font-family:"IBM Plex Mono",monospace;
-    font-size:11.5px;color:var(--ink-soft);
-    margin-top:16px;
+    font-size:11px;color:var(--ink-soft);
   }
-  .about .roots .sc{color:var(--jade-dark)}
 
-  /* ---- now strip ---- */
   .now-strip{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-bottom:40px;
+    gap:16px;
+    margin:28px 0;
   }
   .now-card{
-    padding:18px;
-    border-radius:10px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-top:3px solid var(--jade);
+    padding:16px 18px;
+    background:var(--cream-deep);
+    border-left:3px solid var(--dawn-gold);
   }
-  .now-card.serveit{border-top-color:var(--hibiscus)}
+  .now-card.serveit{border-left-color:var(--jade)}
   .now-k{
+    display:block;
     font-family:"IBM Plex Mono",monospace;
-    font-size:10px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--ink-soft);
+    font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
     margin-bottom:6px;
   }
   .now-card h3{
     font-family:"Fraunces",serif;
     font-size:17px;font-weight:600;
-    margin-bottom:8px;color:var(--ink);
+    margin-bottom:6px;
   }
-  .now-card h3 a{color:inherit;border:0}
-  .now-card h3 a:hover{color:var(--jade-dark)}
-  .now-card p{font-size:13px;line-height:1.55;color:var(--ink-soft)}
+  .now-card h3 a{border:0;color:inherit}
+  .now-card h3 a:hover{color:var(--jade-deep)}
+  .now-card p{font-size:13.5px;color:var(--ink-soft)}
 
-  /* ---- footer ---- */
+  .about p{
+    margin-bottom:12px;
+    font-size:15px;
+    max-width:52ch;
+  }
+  .about .roots{
+    margin-top:16px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;color:var(--ink-soft);
+  }
+
   .footer{
-    padding-top:24px;
-    border-top:2px solid var(--jade);
-    display:flex;flex-wrap:wrap;
-    justify-content:space-between;gap:16px 28px;
-    font-size:12.5px;color:var(--ink-soft);
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    display:grid;gap:12px;
+    font-size:13px;color:var(--ink-soft);
   }
   .footer .k{
+    display:block;
     font-family:"IBM Plex Mono",monospace;
-    font-size:10px;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--jade-dark);
-    display:block;margin-bottom:4px;
+    font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;
+    margin-bottom:4px;
   }
-  .footer .human{
-    font-family:"Fraunces",serif;font-style:italic;
-    font-size:14px;color:var(--ink);max-width:36ch;
-  }
-  .twin-note{
-    text-align:center;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;color:var(--ink-soft);
-    margin-bottom:28px;padding:10px 14px;
-    background:linear-gradient(90deg,rgba(240,217,160,.35),rgba(214,232,244,.4),rgba(244,212,226,.3));
-    border-radius:8px;
-    border:1px solid rgba(212,168,75,.25);
-  }
-  .twin-note a{border-color:rgba(0,122,82,.3);color:var(--jade-dark);font-weight:500}
-  .twin-note a:hover{color:var(--jade)}
+  .footer .human{font-size:13px}
 
-  /* ---- motion ---- */
-  @media (prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(8px);animation:rise .5s ease forwards}
-    .reveal:nth-child(2){animation-delay:.05s}
-    .reveal:nth-child(3){animation-delay:.1s}
-    .reveal:nth-child(4){animation-delay:.15s}
-    @keyframes rise{to{opacity:1;transform:none}}
-  }
-
-  @media (max-width:680px){
-    .hero{grid-template-columns:1fr;text-align:center}
-    .hero-photo{max-width:240px;margin:0 auto;transform:none}
-    .hero-photo:hover{transform:none}
-    .hero-tag{margin-left:auto;margin-right:auto}
-    .hero-meta{justify-content:center}
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr;gap:20px}
+    .hero-photo{max-width:220px}
     .now-strip{grid-template-columns:1fr}
-    .project-grid{grid-template-columns:1fr}
-    .site-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
     .site-nav .nav-sep{display:none}
-  }
-
-  @media print{
-    .site-nav{display:none}
-    body{padding:0}
-    .hero-photo{transform:none}
   }
 </style>
 </head>
@@ -409,7 +267,7 @@
 <nav class="site-nav" aria-label="site">
   <a class="nav-home" href="#">jade zhao</a>
   <span class="nav-sep" aria-hidden="true"></span>
-  <a href="#my-stuff">my stuff</a>
+  <a href="#ships">ships</a>
   <a href="#about">about</a>
   <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">duck farm</a>
   <a href="how-i-work.html">how i work</a>
@@ -418,16 +276,13 @@
 
 <main class="wrap">
 
-  <p class="twin-note reveal"><a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> is sunset. this is sunrise.</p>
+  <p class="twin-note"><a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> is sunset. this is sunrise.</p>
 
-  <header class="hero reveal">
+  <header class="hero">
     <figure class="hero-photo">
-      <span class="petal petal-1" aria-hidden="true"></span>
-      <span class="petal petal-2" aria-hidden="true"></span>
-      <span class="petal petal-3" aria-hidden="true"></span>
       <img
         src="assets/hero-flowers.jpg"
-        alt="jade zhao holding pink lilies and white baby's breath by a sunlit window. surround yourself with people who want to see you grow"
+        alt="jade zhao holding pink lilies and white baby's breath by a sunlit window"
         width="1400"
         height="1400"
         loading="eager"
@@ -435,9 +290,9 @@
       >
     </figure>
     <div class="hero-text">
-      <p class="sunrise-badge">sunrise · building from scratch</p>
+      <p class="sunrise-badge">sunrise · ships from scratch</p>
       <h1>jade zhao <span class="sc">赵</span></h1>
-      <p class="hero-tag">actor &amp; entrepreneur who ships. restaurant kid turned builder. morning light, first commits, watching things grow toward the light. i make things people can touch: demos, accessible sites, a pond full of ducks.</p>
+      <p class="hero-tag">Actor &amp; entrepreneur who ships. Restaurant kid turned builder. Demos, accessible sites, a pond of ducks.</p>
       <div class="hero-meta">
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
         <span>·</span>
@@ -452,108 +307,72 @@
     </div>
   </header>
 
-  <blockquote class="poem reveal">
-    <p>the lilies open slow. the hibiscus burns coral at noon. the peony waits until it is sure.<br>
-    surround yourself with people who want to see you and watch you grow toward the light.<br>
-    i learned that in a busy kitchen first: food has to hit the table hot, and someone has to believe you're worth feeding.</p>
-    <cite>for the ones who stayed · morning still counts as beginning</cite>
-  </blockquote>
-
-  <section id="my-stuff" class="reveal" aria-labelledby="stuff-heading">
+  <section id="ships" aria-labelledby="ships-heading">
     <div class="section-head">
       <span class="sc-label">作品</span>
-      <h2 id="stuff-heading">my stuff</h2>
+      <h2 id="ships-heading">ships</h2>
     </div>
-    <p class="section-lede">things i've made, fixed, or let loose into the world. click to explore: scratch energy, real ships.</p>
-
-    <div class="project-grid">
-      <a class="project-card duck" href="https://jadexzhao.github.io/jadexzhao/duck-farm/">
-        <span class="card-emoji" aria-hidden="true">🦆</span>
-        <h3 class="card-title">virtual duck farm</h3>
-        <p class="card-desc">spawn ducks. click grass. watch them waddle. official totem of 鸭年 2026: patient, loud when it matters.</p>
-        <span class="card-tags">react · typescript · vite</span>
-        <span class="card-arrow">play →</span>
-      </a>
-
-      <a class="project-card hibiscus" href="https://potstickers24.cloveronline.com/">
-        <span class="card-emoji" aria-hidden="true">🥟</span>
-        <h3 class="card-title">potstickers</h3>
-        <p class="card-desc">my family's restaurant in new palestine, in. first real ship: site, ordering, seasonal menus. still why i build.</p>
-        <span class="card-tags">clover · formspree · content ops</span>
-        <span class="card-arrow">order →</span>
-      </a>
-
-      <a class="project-card jade" href="https://serveit.luddy.indiana.edu/serve-ai/index.html">
-        <span class="card-emoji" aria-hidden="true">🌿</span>
-        <h3 class="card-title">serveit clinic</h3>
-        <p class="card-desc">wcag 2.1 aa builds for bloomington nonprofits. handoffs that stick. ~25% engagement lift on ml tools.</p>
-        <span class="card-tags">react · python · postgresql · wcag</span>
-        <span class="card-arrow">clinic →</span>
-      </a>
-
-      <a class="project-card lily" href="https://matchaxmoxie.github.io/matchaxmoxie/demo-engineering.html">
-        <span class="card-emoji" aria-hidden="true">⚡</span>
-        <h3 class="card-title">demo engineering</h3>
-        <p class="card-desc">pitch → pilot sandboxes. poc environments next to the deck. how i think about technical gtm (public framing only).</p>
-        <span class="card-tags">gtm · python · sandboxes</span>
-        <span class="card-arrow">read →</span>
-      </a>
-
-      <a class="project-card cream" href="i18n-wcag.html">
-        <span class="card-emoji" aria-hidden="true">🌐</span>
-        <h3 class="card-title">i18n ∩ wcag</h3>
-        <p class="card-desc">multilingual accessibility notes from real nonprofit builds. fuzhou ↔ midwest thinking on who the web is for.</p>
-        <span class="card-tags">accessibility · i18n · serveit</span>
-        <span class="card-arrow">note →</span>
-      </a>
-
-      <a class="project-card jade" href="how-i-work.html">
-        <span class="card-emoji" aria-hidden="true">📓</span>
-        <h3 class="card-title">how i work</h3>
-        <p class="card-desc">transparency memo: how i use tools, what i sign my name to, and why the work has to be mine at the end.</p>
-        <span class="card-tags">process · accountability</span>
-        <span class="card-arrow">memo →</span>
-      </a>
-    </div>
+    <ul class="ship-list">
+      <li>
+        <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a>
+        <p>Spawn ducks. Click grass. Watch them waddle. 鸭年 2026 totem.</p>
+        <span class="tags">react · typescript · vite</span>
+      </li>
+      <li>
+        <a href="https://potstickers24.cloveronline.com/">potstickers</a>
+        <p>Family restaurant in New Palestine, IN. First real ship: site, ordering, menus.</p>
+        <span class="tags">clover · formspree</span>
+      </li>
+      <li>
+        <a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">serveit clinic</a>
+        <p>Website team lead. WCAG 2.1 AA builds for Bloomington nonprofits. ~25% engagement lift on ML tools.</p>
+        <span class="tags">react · python · postgresql · wcag</span>
+      </li>
+      <li>
+        <a href="how-i-work.html">how i work</a>
+        <p>What I sign my name to. Tools stay tools. The work stays mine.</p>
+        <span class="tags">process</span>
+      </li>
+    </ul>
   </section>
 
-  <section class="now-strip reveal" aria-label="currently">
+  <section class="now-strip" aria-label="currently">
     <div class="now-card">
       <span class="now-k">building · nyc</span>
       <h3>gtm engineering</h3>
-      <p>at a stealth startup: live demo sandboxes, integration prototypes, python automation between pitch and pilot. unnamed on purpose.</p>
+      <p>Stealth YC startup. Demo sandboxes, integration prototypes, Python between pitch and pilot.</p>
     </div>
     <div class="now-card serveit">
       <span class="now-k">leading · bloomington</span>
       <h3><a href="https://serveit.luddy.indiana.edu/serve-ai/index.html">serveit website team</a></h3>
-      <p>wcag ships for city partners, middle way house, indiana phenology. etl pipelines and engagement tools that actually move numbers.</p>
+      <p>Accessible nonprofit ships. Jan 2024 to present.</p>
     </div>
   </section>
 
-  <section id="about" class="about reveal" aria-labelledby="about-heading">
+  <section id="about" class="about" aria-labelledby="about-heading">
     <div class="section-head">
       <span class="sc-label">关于</span>
-      <h2 id="about-heading">about me</h2>
+      <h2 id="about-heading">about</h2>
     </div>
-    <p>i grew up in a family restaurant: high heat, tight timing, reading people fast. that's still how i ship software: operational urgency translated into accessible systems and demos that work when the room is watching. sunrise energy for me means beginning again: first light, first commit, building from scratch until something leans toward the light.</p>
-    <p>informatics at <strong>iu luddy</strong>. actor on campus (<a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>). fase map coordinator for 50+ first-years. student ambassador when the institution needs a human face. two github accounts because engineering and brand ops are different ponds. <a href="https://github.com/jadexzhao">@jadexzhao</a> is sunrise: code, ships, the briefcase. <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a> is sunset: teacher archive, classroom, the loop.</p>
-    <p>my first coding community was girls who code: a room where dumb questions were the whole point. later, a professor's peanut-butter-sandwich lesson: computers do what you say, not what you meant. i build accessible systems because i watched my parents fight software that wasn't built for people like us.</p>
-    <p class="roots"><span class="sc">福建</span> fujian · <span class="sc">福州</span> fuzhou · <span class="sc">福州话</span> at home · mandarin · english · spanish · open to relocation · may 2027</p>
+    <p>Grew up in a family restaurant: high heat, tight timing, reading people fast. Still how I ship. Informatics at IU Luddy. Actor on campus (<a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>). FASE MAP coordinator. UTA for 50+ students. Student ambassador when campus needs a human face.</p>
+    <p><a href="https://github.com/jadexzhao">@jadexzhao</a> is sunrise: code and ships. <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a> is sunset: Miss Zhao's Girls Who Code archive. Same human. Two desks.</p>
+    <p class="roots"><span class="sc">福建</span> fujian · <span class="sc">福州</span> fuzhou · open to relocation · may 2027</p>
   </section>
 
-  <footer class="footer reveal">
+  <footer class="footer">
     <div>
       <span class="k">stack</span>
-      typescript · react · python · postgresql · wcag · etl
+      typescript · react · python · postgresql · wcag
     </div>
     <div>
       <span class="k">elsewhere</span>
       <a href="https://github.com/jadexzhao">github</a> ·
       <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> ·
-      <a href="https://github.com/jadexzhao/pstickers24">pstickers24</a>
+      <a href="https://github.com/jadexzhao/pstickers24">pstickers24</a> ·
+      <a href="i18n-wcag.html">i18n ∩ wcag</a>
     </div>
     <div>
-      <span class="human">first-gen. 福州 roots. sunrise twin of matchaxmoxie. someday a real duck farm. <span class="sc">鸭年快乐</span> 🦆</span>
+      <span class="human">first-gen. 福州 roots. sunrise twin of matchaxmoxie. <span class="sc">鸭年快乐</span> 🦆</span>
     </div>
   </footer>
 
