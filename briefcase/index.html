@@ -25,10 +25,12 @@
 <meta property="og:title" content="Jade Zhao · Indiana University Luddy · the briefcase">
 <meta property="og:description" content="Restaurant kid who ships. Informatics @ IU Luddy, May 2027. ServeIT website lead. Builder portfolio (sunrise). Classroom archive is matchaxmoxie (sunset).">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
+<meta property="og:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jade Zhao · Indiana University Luddy · the briefcase">
 <meta name="twitter:description" content="Restaurant kid who ships. Informatics @ IU Luddy, May 2027. ServeIT · Madrid · technical go-to-market. Builder portfolio (sunrise).">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
+<meta name="twitter:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
@@ -45,7 +47,7 @@
     --focus: #2a2622;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
   body {
     background: linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 28%, var(--paper) 100%);
     color: var(--ink);
@@ -54,6 +56,7 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+    overflow-x: clip;
     padding:
       max(32px, env(safe-area-inset-top, 0px))
       max(24px, env(safe-area-inset-right, 0px))
@@ -65,6 +68,7 @@
     background: var(--ink); color: var(--paper);
     padding: 0.6rem 1rem; z-index: 200; font-weight: 600;
     text-decoration: underline; text-underline-offset: 3px;
+    min-height: 44px; display: inline-flex; align-items: center;
   }
   .skip-link:focus, .skip-link:focus-visible {
     top: 0; outline: 3px solid var(--jade-ink); outline-offset: 2px;
@@ -72,7 +76,8 @@
   a { color: var(--jade-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
   a:hover { color: var(--ink); }
   a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  .wrap { max-width: 640px; margin: 0 auto; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 640px; margin: 0 auto; width: 100%; }
   .twin { font-size: 14px; color: var(--mute); margin-bottom: 28px; letter-spacing: 0.02em; line-height: 1.55; max-width: 48ch; }
   .hero {
     display: grid;
@@ -91,7 +96,7 @@
   h1 {
     font-family: "Instrument Serif", Georgia, serif;
     font-weight: 400;
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
   }
@@ -103,8 +108,15 @@
     color: var(--mute);
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 0;
+    align-items: center;
+    gap: 4px 0;
+  }
+  .meta a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+    touch-action: manipulation;
   }
   .meta > * { white-space: nowrap; }
   .meta .dot { margin: 0 0.4em; color: var(--mute); user-select: none; }
@@ -112,14 +124,45 @@
   .links { list-style: none; border-top: 1px solid var(--line); padding-top: 8px; margin-bottom: 40px; }
   .links li { border-bottom: 1px solid var(--line); }
   .links a {
-    display: flex; justify-content: space-between; gap: 16px;
-    padding: 14px 0; color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
+    display: flex; justify-content: space-between; gap: 16px; align-items: center;
+    min-height: 44px;
+    padding: 14px 0;
+    color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
+    touch-action: manipulation;
   }
   .links a:hover { color: var(--jade-ink); }
-  .links .what { color: var(--mute); font-size: 14px; text-align: right; }
+  .links .what { color: var(--mute); font-size: 14px; text-align: right; flex: 1 1 auto; min-width: 0; }
   .note { font-size: 15px; color: var(--mute); max-width: 46ch; margin-bottom: 28px; }
   footer { font-size: 14px; color: var(--mute); border-top: 1px solid var(--line); padding-top: 16px; }
   footer .sc { font-family: "Noto Serif SC", serif; color: var(--ink); }
+  footer a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 4px 0;
+    touch-action: manipulation;
+  }
+  /* phone · lily photo stacks above bio (default grid) */
+  @media (max-width: 559px) {
+    body {
+      padding:
+        max(24px, env(safe-area-inset-top, 0px))
+        max(16px, env(safe-area-inset-right, 0px))
+        max(40px, env(safe-area-inset-bottom, 0px))
+        max(16px, env(safe-area-inset-left, 0px));
+    }
+    .photo { width: min(220px, 72vw); margin: 0 auto; }
+    .hero { text-align: center; justify-items: center; }
+    .hero-copy { text-align: center; }
+    .line { margin-left: auto; margin-right: auto; }
+    .meta { justify-content: center; }
+    .links a {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      padding: 16px 0;
+      min-height: 48px;
+    }
+    .links .what { text-align: left; }
+  }
+  /* tablet · side-by-side hero */
   @media (min-width: 560px) {
     .hero {
       grid-template-columns: 160px minmax(0, 1fr);
@@ -127,6 +170,17 @@
       align-items: start;
     }
     .photo { width: 100%; }
+  }
+  @media (min-width: 768px) {
+    .wrap { max-width: 700px; }
+    body { font-size: 17.5px; }
+  }
+  /* wide / custom */
+  @media (min-width: 1200px) {
+    .wrap { max-width: 760px; }
+    body { font-size: 18px; }
+    .line { max-width: 42ch; }
+    .note { max-width: 52ch; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .fade { animation: up 0.45s ease both; }
