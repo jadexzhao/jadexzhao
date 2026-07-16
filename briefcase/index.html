@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · restaurant kid who ships · Informatics @ IU Luddy, May 2027 · ServeIT website lead · Madrid spring 2026 · technical go-to-market · Bloomington IN">
+<meta name="description" content="Jade Zhao · Informatics @ IU Luddy, May 2027 · ServeIT website lead · technical GTM as technical consulting · stealth NYC · Madrid · Bloomington IN">
 <title>Jade Zhao · Indiana University Luddy · the briefcase</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
 <meta property="og:title" content="Jade Zhao · Indiana University Luddy · the briefcase">
-<meta property="og:description" content="Restaurant kid who ships. Informatics @ IU Luddy, May 2027. ServeIT website lead. Builder portfolio (sunrise). Classroom archive is matchaxmoxie (sunset).">
+<meta property="og:description" content="Informatics @ IU Luddy, May 2027. ServeIT website lead. Technical GTM as technical consulting, not just marketing. Builder portfolio (sunrise).">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta property="og:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jade Zhao · Indiana University Luddy · the briefcase">
-<meta name="twitter:description" content="Restaurant kid who ships. Informatics @ IU Luddy, May 2027. ServeIT · Madrid · technical go-to-market. Builder portfolio (sunrise).">
+<meta name="twitter:description" content="May 2027 · ServeIT · technical consulting GTM · Madrid. Builder portfolio (sunrise).">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta name="twitter:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,6 +179,15 @@
     line-height: 1.5;
   }
   .path-tip strong { color: var(--ink); font-weight: 600; }
+  .scan-list {
+    margin: 10px 0 0;
+    padding-left: 1.15rem;
+    font-size: 15px;
+    color: var(--mute);
+    line-height: 1.55;
+  }
+  .scan-list li { margin-bottom: 4px; }
+  .scan-list strong { color: var(--ink); font-weight: 600; }
   .quick-row {
     display: flex;
     flex-wrap: wrap;
@@ -192,6 +201,59 @@
     min-height: 44px;
     padding: 4px 0;
     touch-action: manipulation;
+  }
+  .gtm-block {
+    margin-bottom: 28px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--jade-ink);
+    background: #fff;
+    max-width: 52ch;
+  }
+  .gtm-block h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .gtm-block p { font-size: 15px; color: var(--mute); line-height: 1.55; margin-bottom: 8px; }
+  .gtm-block p:last-child { margin-bottom: 0; }
+  .gtm-block .eli5 {
+    font-size: 14px;
+    padding: 10px 12px;
+    background: var(--gold-wash);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    line-height: 1.5;
+    margin: 10px 0 12px;
+  }
+  .gtm-research {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .gtm-research li { border-bottom: 1px solid var(--line); }
+  .gtm-research a {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    min-height: 44px;
+    padding: 12px 0;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    touch-action: manipulation;
+  }
+  .gtm-research a:hover { color: var(--jade-ink); }
+  .gtm-research .what {
+    color: var(--mute);
+    font-size: 13px;
+    text-align: right;
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .links { list-style: none; border-top: 1px solid var(--line); padding-top: 8px; margin-bottom: 40px; }
   .links li { border-bottom: 1px solid var(--line); }
@@ -224,15 +286,17 @@
     .hero-copy { text-align: center; }
     .line { margin-left: auto; margin-right: auto; }
     .meta { justify-content: center; }
-    .tldr, .doors { max-width: none; }
-    .links a {
+    .tldr, .doors, .gtm-block { max-width: none; }
+    .links a,
+    .gtm-research a {
       flex-direction: column;
       align-items: flex-start;
       gap: 4px;
       padding: 16px 0;
       min-height: 48px;
     }
-    .links .what { text-align: left; }
+    .links .what,
+    .gtm-research .what { text-align: left; }
   }
   @media (min-width: 560px) {
     .hero {
@@ -250,7 +314,7 @@
     .wrap { max-width: 760px; }
     body { font-size: 18px; }
     .line { max-width: 42ch; }
-    .tldr { max-width: 52ch; }
+    .tldr, .gtm-block { max-width: 52ch; }
   }
   .madrid-note {
     margin: 1.25rem 0 0.5rem;
@@ -308,9 +372,10 @@
     <div class="hero-copy">
       <h1>jade zhao <span class="sc">赵</span></h1>
       <p class="line">
-        Restaurant kid who ships. Informatics @ IU Luddy (May 2027).
-        ServeIT website lead (IU nonprofit tech clinic). Madrid spring 2026.
-        Technical GTM (go-to-market) on the side.
+        Restaurant kid who ships. Informatics @ IU Luddy, May 2027.
+        ServeIT website lead (IU nonprofit tech clinic).
+        Technical GTM as technical consulting, not just marketing.
+        Madrid spring 2026. Actor and entrepreneur on the side.
       </p>
       <p class="meta">
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a><span class="dot" aria-hidden="true">·</span>
@@ -327,7 +392,7 @@
   <nav class="doors fade" aria-label="Audience">
     <a class="door door--primary" href="#recruiter-path">
       <span class="door-who">If you&rsquo;re a recruiter</span>
-      <span class="door-what">ServeIT · technical GTM · Madrid · LinkedIn · stay on this page</span>
+      <span class="door-what">May 2027 · ServeIT · technical consulting GTM · Madrid · LinkedIn · stay on this page</span>
     </a>
     <a class="door door--secondary" href="https://matchaxmoxie.github.io/matchaxmoxie/">
       <span class="door-who">If you&rsquo;re a student</span>
@@ -338,11 +403,17 @@
   <section id="recruiter-path" class="tldr fade" aria-labelledby="recruiter-tldr">
     <h2 id="recruiter-tldr">If you&rsquo;re a recruiter</h2>
     <p>
-      I lead the website team at ServeIT (IU&rsquo;s nonprofit tech clinic): sites partners can keep,
-      plus Python/PostgreSQL data work. ServeAI is the clinic&rsquo;s public-interest AI track on the same roster.
-      Technical GTM (go-to-market) intern, stealth NYC, Jun 2026.
-      Spring 2026: Complutense, Madrid. Stack: TypeScript, React, Python, PostgreSQL, WCAG (web accessibility).
+      One scan path. Open roles I care about: Solutions Engineering, Solutions Architecture,
+      and Technical GTM (technical consulting energy, not pure marketing).
     </p>
+    <ul class="scan-list">
+      <li><strong>School:</strong> Informatics @ Indiana University Luddy · graduating May 2027 · open to relocation</li>
+      <li><strong>Ship:</strong> Website team lead at ServeIT (IU nonprofit tech clinic). ServeAI is the clinic&rsquo;s public-interest AI track on the same roster. Accessible partner sites plus Python/PostgreSQL data work.</li>
+      <li><strong>GTM:</strong> Technical GTM intern at a stealth startup (NYC, unnamed), Jun 2026. Discovery, demos/POCs, integrations, sales ↔ eng translation, pilot handoffs.</li>
+      <li><strong>Abroad:</strong> Spring 2026 · Complutense, Madrid (IU Overseas Study)</li>
+      <li><strong>Also:</strong> Actor and entrepreneur (campus creative / ops), light touch</li>
+      <li><strong>Stack:</strong> TypeScript · React · Python · PostgreSQL · WCAG (web accessibility)</li>
+    </ul>
     <p class="path-tip">
       Tip: LinkedIn + the work links below are the resume scan.
       Twin classroom site is teaching archive only, not ships.
@@ -364,10 +435,51 @@
     </figure>
     <p class="quick-row">
       <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="#gtm-consulting">GTM / technical consulting</a>
       <a href="https://serveit.luddy.indiana.edu/serve-ai/">ServeIT · ServeAI</a>
       <a href="how-i-work.html">how i work</a>
       <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
     </p>
+  </section>
+
+  <section id="gtm-consulting" class="gtm-block fade" aria-labelledby="gtm-heading">
+    <h2 id="gtm-heading">GTM / technical consulting</h2>
+    <p class="eli5">
+      <strong>ELI5:</strong> GTM (go-to-market) means getting a product in front of buyers and helping them evaluate it.
+      My lane is <strong>technical consulting</strong>, not campaign marketing: sit on discovery calls, stand up demos and POC sandboxes,
+      prototype integrations, translate what sales needs into what eng can ship, and leave clean pilot-to-production handoffs.
+    </p>
+    <p>
+      Same muscle as Solutions Engineering / Sales Engineering primers below: technical credibility next to the commercial conversation.
+      Stealth NYC internship (unnamed) is where I practice that motion.
+    </p>
+    <p><strong>Primers I use to explain the role</strong> (public, not my employer):</p>
+    <ul class="gtm-research" aria-label="GTM and solutions engineering primers">
+      <li>
+        <a href="https://www.salesforce.com/blog/what-is-a-sales-engineer/" rel="noopener noreferrer">
+          <span>Salesforce · What is a Sales Engineer</span>
+          <span class="what">SE as technical bridge, not pure marketing</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.salesforce.com/blog/sales-team-success-ae-se-partnership/" rel="noopener noreferrer">
+          <span>Salesforce · AE &amp; SE partnership</span>
+          <span class="what">commercial lane vs technical lane</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.guideflow.com/blog/what-is-a-sales-engineer" rel="noopener noreferrer">
+          <span>Guideflow · Sales Engineer guide</span>
+          <span class="what">SE vs AE · demos · POCs</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://saleo.io/what-is-an-solutions-engineer/" rel="noopener noreferrer">
+          <span>Saleo · What is a Solutions Engineer</span>
+          <span class="what">discovery · demos · POC ownership</span>
+        </a>
+      </li>
+    </ul>
   </section>
 
   <!-- 日出站轻提日落教室 · KISS (keep it simple) · 孩子页不写 stupid -->
@@ -385,6 +497,12 @@
 
   <ul class="links fade" aria-label="work">
     <li>
+      <a href="#gtm-consulting">
+        <span>GTM / technical consulting</span>
+        <span class="what">ELI5 · primers · not just marketing</span>
+      </a>
+    </li>
+    <li>
       <!-- ServeIT clinic; ServeAI = public-interest AI track -->
       <a href="https://serveit.luddy.indiana.edu/serve-ai/">
         <span>ServeIT · ServeAI</span>
@@ -394,7 +512,7 @@
     <li>
       <a href="how-i-work.html">
         <span>how i work</span>
-        <span class="what">governance · handoff</span>
+        <span class="what">governance · handoff · demo sandboxes</span>
       </a>
     </li>
     <li>

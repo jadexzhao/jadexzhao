@@ -18,7 +18,7 @@
 
 ## now
 
-Website team lead at ServeIT (ServeAI = public-interest AI track). Technical GTM (go-to-market) intern at a stealth startup (NYC). Informatics @ IU Luddy. Madrid semester at Complutense (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset site).
+Website team lead at ServeIT (ServeAI = public-interest AI track). Technical GTM intern at a stealth startup (NYC, unnamed): technical consulting energy (discovery, demos/POCs, integrations, sales ↔ eng), not just marketing. Informatics @ IU Luddy, May 2027. Madrid semester at Complutense (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset site).
 
 ## two sites
 
