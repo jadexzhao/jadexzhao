@@ -28,15 +28,27 @@ function initialDucks(): Duck[] {
   ]
 }
 
-function duckCssTransform(duck: Duck, canvasW: number, canvasH: number): string {
-  // Percent coords → px once per write. Percentages in translate() are relative
-  // to the element itself, so compositor motion needs canvas-space pixels.
+function duckCssTransform(
+  duck: Duck,
+  canvasW: number,
+  canvasH: number,
+  reduceMotion = false,
+): string {
   const x = (duck.x / 100) * canvasW
   const y = (duck.y / 100) * canvasH
   const bob =
-    duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 2
+    reduceMotion || duck.x > 50
+      ? 0
+      : Math.sin(Date.now() * 0.003 + duck.id) * 2
   const flip = duck.angle === 180 ? ' scaleX(-1)' : ''
   return `translate3d(${x}px, ${y + bob}px, 0)${flip}`
+}
+
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
 }
 
 export default function App() {
@@ -51,6 +63,7 @@ export default function App() {
   const fpsLastRef = useRef(performance.now())
   const fpsElRef = useRef<HTMLSpanElement | null>(null)
   const overrideDayRef = useRef(false)
+  const reduceMotionRef = useRef(prefersReducedMotion())
 
   const [duckList, setDuckList] = useState<Duck[]>(() => [...ducksRef.current])
   const [duckCount, setDuckCount] = useState(2)
@@ -73,6 +86,16 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => {
+      reduceMotionRef.current = mq.matches
+    }
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
     const checkTime = () => {
       if (overrideDayRef.current) return
       const hours = new Date().getHours()
@@ -88,7 +111,6 @@ export default function App() {
     return () => document.body.classList.remove('night-farm')
   }, [isDay])
 
-  // Measure once outside rAF. ResizeObserver updates cache. No layout reads in the tick.
   useEffect(() => {
     const el = canvasRef.current
     if (!el) return
@@ -145,47 +167,48 @@ export default function App() {
     }
   }, [syncDuckList])
 
-  // Animation: mutate refs + compositor transform only. No React setState in the tick.
   useEffect(() => {
     const animate = () => {
       const ducks = ducksRef.current
       const { w: canvasW, h: canvasH } = canvasSizeRef.current
+      const reduce = reduceMotionRef.current
+
       for (let i = 0; i < ducks.length; i++) {
         const duck = ducks[i]
-        let newVy = duck.vy
-        if (duck.y < 65) newVy += 0.05
+        if (!reduce) {
+          let newVy = duck.vy
+          if (duck.y < 65) newVy += 0.05
 
-        let newX = duck.x + duck.vx
-        let newY =
-          duck.y +
-          newVy +
-          (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
-        let newAngle = duck.angle
+          let newX = duck.x + duck.vx
+          let newY =
+            duck.y +
+            newVy +
+            (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
+          let newAngle = duck.angle
 
-        if (newX < 0 || newX > 90) {
-          newAngle = newAngle === 0 ? 180 : 0
-          newX = newX < 0 ? 0 : 90
-          duck.vx = Math.abs(duck.vx) * (newAngle === 180 ? -1 : 1)
+          if (newX < 0 || newX > 90) {
+            newAngle = newAngle === 0 ? 180 : 0
+            newX = newX < 0 ? 0 : 90
+            duck.vx = Math.abs(duck.vx) * (newAngle === 180 ? -1 : 1)
+          }
+
+          if (newY >= 65) {
+            newY = 65
+            newVy = 0
+          }
+
+          duck.x = newX
+          duck.y = newY
+          duck.angle = newAngle
+          duck.vy = newVy
         }
-
-        if (newY >= 65) {
-          newY = 65
-          newVy = 0
-        }
-
-        duck.x = newX
-        duck.y = newY
-        duck.angle = newAngle
-        duck.vy = newVy
 
         const el = duckElsRef.current.get(duck.id)
         if (el && canvasW > 0 && canvasH > 0) {
-          // Compositor props only. Never left/top/width/height in the hot path.
-          el.style.transform = duckCssTransform(duck, canvasW, canvasH)
+          el.style.transform = duckCssTransform(duck, canvasW, canvasH, reduce)
         }
       }
 
-      // Sparse HUD: FPS ~1Hz via DOM text only. Never React setState in this tick.
       fpsFramesRef.current += 1
       const now = performance.now()
       if (now - fpsLastRef.current >= 1000) {
@@ -208,6 +231,19 @@ export default function App() {
     if (node) duckElsRef.current.set(id, node)
     else duckElsRef.current.delete(id)
   }, [])
+
+  const bounceDuck = (id: number) => {
+    const duck = ducksRef.current.find((d) => d.id === id)
+    if (!duck) return
+    duck.vx *= -1
+    duck.vy = -0.5
+    const el = duckElsRef.current.get(id)
+    if (el) {
+      el.classList.remove('clicked')
+      void el.offsetWidth
+      el.classList.add('clicked')
+    }
+  }
 
   const handleCanvasClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!canvasRef.current) return
@@ -236,11 +272,15 @@ export default function App() {
       'data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==',
     )
     audio.play().catch(() => {})
+    bounceDuck(id)
+  }
 
-    const duck = ducksRef.current.find((d) => d.id === id)
-    if (!duck) return
-    duck.vx *= -1
-    duck.vy = -0.5
+  const handleDuckKeyDown = (e: React.KeyboardEvent, id: number) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      e.stopPropagation()
+      bounceDuck(id)
+    }
   }
 
   const clearFarm = () => {
@@ -281,211 +321,221 @@ export default function App() {
 
   return (
     <div className={`farm-container${isDay ? '' : ' night-mode'}`}>
-      <header className="farm-header">
-        <p className="farm-eyebrow">鸭年 2026 · live sandbox</p>
-        <h1 className="farm-title">virtual duck farm</h1>
-        <nav className="farm-nav" aria-label="portfolio links">
-          <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
-          <span aria-hidden="true">·</span>
+      <a href="#farm-main" className="skip-link">
+        skip to duck farm
+      </a>
+
+      <div className="topbar topbar--paper">
+        <nav className="site-nav site-nav--on-paper" aria-label="Briefcase">
+          <a href="https://jadexzhao.github.io/jadexzhao/">home</a>
           <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">how i work</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://github.com/jadexzhao">github</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+          <a href="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">accessibility</a>
+          <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/" aria-current="page">
+            duck farm
+          </a>
         </nav>
+      </div>
+
+      <header className="farm-header">
+        <p className="farm-eyebrow">
+          <span lang="zh-Hans">鸭年</span> 2026 · live sandbox
+        </p>
+        <h1 className="farm-title">virtual duck farm</h1>
         <p className="farm-lede">
-          restaurant-kid wiring: ship what works, not what sounds good in a pitch.
-          this canvas is the live sandbox. click the grass, tap a duck, then stress-test
-          with konami (<em>↑↑↓↓←→←→BA</em>).
+          Restaurant-kid wiring: ship what works. Click the grass to place a duck, tap a duck
+          to bounce it, then stress-test with Konami (<em>↑↑↓↓←→←→BA</em>).
         </p>
       </header>
 
-      <section className="farm-hero" aria-labelledby="sandbox-heading">
-        <h2 id="sandbox-heading" className="visually-hidden">
-          the live sandbox
-        </h2>
-        <div
-          ref={canvasRef}
-          className={`farm-canvas ${isDay ? 'day' : 'night'}`}
-          onClick={handleCanvasClick}
-          role="application"
-          aria-label="Interactive duck farm. Click the grass to place ducks."
-        >
-          {!isDay && <div className="stars" />}
-          <div className="cloud cloud-a" aria-hidden="true" />
-          <div className="cloud cloud-b" aria-hidden="true" />
-          <div className="cloud cloud-c" aria-hidden="true" />
-          <div className="grass" />
-          <div className="pond" />
-          {duckList.map((duck) => {
-            const { w, h } = canvasSizeRef.current
-            const hasSize = w > 0 && h > 0
-            return (
-            <div
-              key={duck.id}
-              ref={(node) => setDuckEl(duck.id, node)}
-              className="duck"
-              style={{
-                transform: hasSize
-                  ? duckCssTransform(duck, w, h)
-                  : 'translate3d(0,0,0)',
-              }}
-              onClick={(e) => handleDuckClick(e, duck.id)}
-              role="button"
-              tabIndex={0}
-              aria-label="duck"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  handleDuckClick(e as unknown as React.MouseEvent, duck.id)
-                }
-              }}
-            >
-              <span className="duck-sprite" aria-hidden="true">
-                🦆
-              </span>
-              {duck.accessory && <span className="accessory">{duck.accessory}</span>}
-            </div>
-            )
-          })}
-        </div>
-      </section>
-
-      <div className="farm-hud">
-        <div className="counter">
-          <span>{duckCount}</span> duck{duckCount !== 1 ? 's' : ''} on the farm
-        </div>
-
-        <div className="controls">
-          <button type="button" className="btn-primary" onClick={populateFarm}>
-            spawn 8 ducks
-          </button>
-          <button type="button" className="btn-secondary" onClick={toggleDayNight}>
-            {isDay ? 'night mode' : 'day mode'}
-          </button>
-          <button type="button" className="btn-secondary" onClick={resetFarm}>
-            reset
-          </button>
-          <button
-            type="button"
-            className="btn-ghost"
-            onClick={() => setShowDev((v) => !v)}
-            aria-pressed={showDev}
+      <main id="farm-main">
+        <section className="farm-hero" aria-labelledby="sandbox-heading">
+          <h2 id="sandbox-heading" className="visually-hidden">
+            the live sandbox
+          </h2>
+          <div
+            ref={canvasRef}
+            className={`farm-canvas ${isDay ? 'day' : 'night'}`}
+            onClick={handleCanvasClick}
+            role="application"
+            aria-label="Interactive duck farm. Click the grass to place ducks."
           >
-            {showDev ? 'hide FPS' : 'dev HUD'}
-          </button>
-          <button type="button" className="btn-danger" onClick={clearFarm}>
-            clear all
-          </button>
-        </div>
-
-        {showDev && (
-          <div className="dev-hud" aria-live="polite">
-            <span ref={fpsElRef}>0 fps</span>
-            <span aria-hidden="true"> · </span>
-            <span>{duckCount} ducks</span>
-            <span aria-hidden="true"> · </span>
-            <span>{isDay ? 'day' : 'night'}</span>
+            {!isDay && <div className="stars" aria-hidden="true" />}
+            <div className="cloud cloud-a" aria-hidden="true" />
+            <div className="cloud cloud-b" aria-hidden="true" />
+            <div className="cloud cloud-c" aria-hidden="true" />
+            <div className="grass" aria-hidden="true" />
+            <div className="pond" aria-hidden="true" />
+            {duckList.map((duck) => {
+              const { w, h } = canvasSizeRef.current
+              const hasSize = w > 0 && h > 0
+              return (
+                <div
+                  key={duck.id}
+                  ref={(node) => setDuckEl(duck.id, node)}
+                  className="duck"
+                  style={{
+                    transform: hasSize
+                      ? duckCssTransform(duck, w, h)
+                      : 'translate3d(0,0,0)',
+                  }}
+                  onClick={(e) => handleDuckClick(e, duck.id)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Duck ${duck.id}. Activate to bounce.`}
+                  onKeyDown={(e) => handleDuckKeyDown(e, duck.id)}
+                >
+                  <span className="duck-sprite" aria-hidden="true">
+                    🦆
+                  </span>
+                  {duck.accessory && (
+                    <span className="accessory" aria-hidden="true">
+                      {duck.accessory}
+                    </span>
+                  )}
+                </div>
+              )
+            })}
           </div>
-        )}
+        </section>
 
-        <div className="info">
-          <strong>click on the grass</strong> to place ducks.{' '}
-          <strong>click a duck</strong> to make it jump.
-          <br />
-          stack: React + TypeScript + Vite. no D3, no Tailwind. raf animates DOM refs
-          directly so React never re-renders per frame.
-        </div>
-      </div>
-
-      <details className="farm-architecture">
-        <summary>architecture under the grass</summary>
-        <div className="arch-body">
-          <ul className="arch-list">
-            <li>
-              <strong>state management.</strong> Duck positions live in a{' '}
-              <code>useRef</code> mutated inside <code>requestAnimationFrame</code>.
-              React state only syncs when ducks are added, cleared, or reset. No{' '}
-              <code>setState</code> per frame. Canvas size is cached via{' '}
-              <code>ResizeObserver</code> so the tick never reflows. Local coords stay
-              local; day/night is the small global theme toggle. Same fence as the{' '}
-              <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html#state-isolation">
-                state isolation protocol
-              </a>
-              .
-            </li>
-            <li>
-              <strong>event listeners.</strong> A window <code>keydown</code> listener
-              tracks the Konami sequence and stamps fifty ducks when complete. Day/night
-              follows the clock unless you toggle manually.
-            </li>
-            <li>
-              <strong>accessibility + mobile render.</strong> Ducks are keyboard-focusable
-              buttons (Enter / Space). Controls and ducks meet a 48px minimum tap target.
-              Per-frame motion uses compositor <code>translate3d</code> only (no{' '}
-              <code>left</code>/<code>top</code> thrash). Immersive pond sizes with{' '}
-              <code>lvh</code>. Clear-all sits apart from the primary spawn CTA. Toast uses{' '}
-              <code>aria-live="polite"</code>. Skip the stampede if motion is a problem;
-              reduced-motion preferences quiet title animation where supported.
-            </li>
-          </ul>
-
-          <h3 className="arch-table-title">state engine blueprint</h3>
-          <div className="table-wrap">
-            <table className="arch-table">
-              <caption className="visually-hidden">
-                State engine blueprint for farm interactions
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">interaction</th>
-                  <th scope="col">trigger</th>
-                  <th scope="col">mutates</th>
-                  <th scope="col">React re-render?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Grid Click</th>
-                  <td>click grass (y &gt; 60%)</td>
-                  <td>append duck to ref + list</td>
-                  <td>yes (structure change)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Entity Click</th>
-                  <td>click / Enter on a duck</td>
-                  <td>vx flip, slight jump (vy)</td>
-                  <td>no (DOM via raf)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Stampede</th>
-                  <td>Konami ↑↑↓↓←→←→BA</td>
-                  <td>+50 ducks + toast</td>
-                  <td>yes (batch append)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Mode Toggle</th>
-                  <td>day / night button</td>
-                  <td>
-                    <code>isDay</code> + body class
-                  </td>
-                  <td>yes (theme)</td>
-                </tr>
-              </tbody>
-            </table>
+        <div className="farm-hud">
+          <div className="counter" aria-live="polite">
+            <span>{duckCount}</span> duck{duckCount !== 1 ? 's' : ''} on the farm
           </div>
-        </div>
-      </details>
 
-      <p className="farm-links">
-        <a href="https://jadexzhao.github.io/jadexzhao/">← the briefcase</a>
+          <div className="controls">
+            <button type="button" className="btn-primary" onClick={populateFarm}>
+              spawn 8 ducks
+            </button>
+            <button type="button" className="btn-secondary" onClick={toggleDayNight}>
+              {isDay ? 'night mode' : 'day mode'}
+            </button>
+            <button type="button" className="btn-secondary" onClick={resetFarm}>
+              reset
+            </button>
+            <button
+              type="button"
+              className="btn-ghost"
+              onClick={() => setShowDev((v) => !v)}
+              aria-pressed={showDev}
+            >
+              {showDev ? 'hide FPS' : 'dev HUD'}
+            </button>
+            <button type="button" className="btn-danger" onClick={clearFarm}>
+              clear all
+            </button>
+          </div>
+
+          {showDev && (
+            <div className="dev-hud" aria-live="polite">
+              <span ref={fpsElRef}>0 fps</span>
+              <span aria-hidden="true"> · </span>
+              <span>{duckCount} ducks</span>
+              <span aria-hidden="true"> · </span>
+              <span>{isDay ? 'day' : 'night'}</span>
+            </div>
+          )}
+
+          <p className="info">
+            <strong>Click the grass</strong> to place ducks.{' '}
+            <strong>Click a duck</strong> to make it jump.
+            <br />
+            Stack: React + TypeScript + Vite. Positions live in a ref;{' '}
+            <code>requestAnimationFrame</code> writes compositor transforms so React never
+            re-renders per frame.
+          </p>
+        </div>
+
+        <details className="farm-architecture">
+          <summary>architecture under the grass</summary>
+          <div className="arch-body">
+            <ul className="arch-list">
+              <li>
+                <strong>State.</strong> Duck positions live in a <code>useRef</code> mutated
+                inside <code>requestAnimationFrame</code>. React state only syncs when ducks
+                are added, cleared, or reset. Canvas size is cached via{' '}
+                <code>ResizeObserver</code>. Same fence as the{' '}
+                <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
+                  how i work
+                </a>{' '}
+                memo.
+              </li>
+              <li>
+                <strong>Events.</strong> A window <code>keydown</code> listener tracks the
+                Konami sequence and stamps fifty ducks when complete. Day/night follows the
+                clock unless you toggle manually.
+              </li>
+              <li>
+                <strong>Access.</strong> Ducks are keyboard-focusable (Enter / Space). Controls
+                meet a 48px minimum tap target. Reduced-motion preferences pause waddle
+                animation. Toast uses <code>aria-live=&quot;polite&quot;</code>.
+              </li>
+            </ul>
+
+            <h3 className="arch-table-title">state engine blueprint</h3>
+            <div className="table-wrap">
+              <table className="arch-table">
+                <caption className="visually-hidden">
+                  State engine blueprint for farm interactions
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">interaction</th>
+                    <th scope="col">trigger</th>
+                    <th scope="col">mutates</th>
+                    <th scope="col">React re-render?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Grid click</th>
+                    <td>click grass (y &gt; 60%)</td>
+                    <td>append duck to ref + list</td>
+                    <td>yes (structure change)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Entity click</th>
+                    <td>click / Enter on a duck</td>
+                    <td>vx flip, slight jump (vy)</td>
+                    <td>no (DOM via raf)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Stampede</th>
+                    <td>Konami ↑↑↓↓←→←→BA</td>
+                    <td>+50 ducks + toast</td>
+                    <td>yes (batch append)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Mode toggle</th>
+                    <td>day / night button</td>
+                    <td>
+                      <code>isDay</code> + body class
+                    </td>
+                    <td>yes (theme)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <footer className="site-footer farm-footer">
+        <span className="sc" lang="zh-Hans">
+          福州
+        </span>{' '}
+        roots · TypeScript · React · Vite · WCAG
         {' · '}
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>
+        <a href="https://jadexzhao.github.io/jadexzhao/">the briefcase</a>
+        {' · '}
+        <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+        {' · '}
+        <a href="https://github.com/jadexzhao">GitHub</a>
         {' · '}
         <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
         {' · '}
-        <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
-      </p>
+        IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+      </footer>
 
       <div
         className={`farm-toast${toast ? ' visible' : ''}`}

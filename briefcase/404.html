@@ -12,9 +12,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#00a86b">
+<meta name="theme-color" content="#006644">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="jade zhao">
+<meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
 <meta property="og:title" content="404 · jade zhao · the briefcase">
 <meta property="og:description" content="404 · jade zhao · the briefcase. Page not found.">
@@ -23,99 +23,94 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-  :root{
-    --ink:#212B23;
-    --ink-soft:#3D4A3C;
-    --paper:#FBFAF5;
-    --matcha:#4A633C;
-    --matcha-deep:#2A3B24;
-    --mist:#EDF1E6;
-    --line:#D8DCC9;
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+      linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%;overflow-x:clip}
-  body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    overflow-x:clip;
-    padding:max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-    background:var(--paper);
-    background-image:
-      radial-gradient(ellipse 80% 50% at 100% 0%, rgba(153,0,0,.04), transparent 55%),
-      radial-gradient(ellipse 60% 40% at 0% 100%, rgba(58,107,92,.05), transparent 50%);
-    color:var(--ink);
-    font-family:"IBM Plex Sans",system-ui,sans-serif;
-    line-height:1.5;
-    text-align:center;
+  .sheet {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:
+      40px
+      max(16px, env(safe-area-inset-right, 0px))
+      max(48px, env(safe-area-inset-bottom, 0px))
+      max(16px, env(safe-area-inset-left, 0px));
   }
-  .kicker{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:11px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:12px;
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 12px;
+    font-weight: 600;
   }
-  h1{
-    font-family:Fraunces,Georgia,serif;
-    font-size:clamp(2.5rem, 8vw, 3.5rem);
-    font-weight:600;
-    color:var(--matcha-deep);
-    margin-bottom:8px;
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
   }
-  p{
-    max-width:28rem;
-    color:var(--ink-soft);
-    margin:0 auto 1.25rem;
+  p {
+    max-width: 28rem;
+    color: var(--mute);
+    margin: 0 auto 1.25rem;
   }
-  a{
-    color:var(--matcha-deep);
-    font-weight:500;
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
   }
-  .links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px 20px;
-    justify-content:center;
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 2px;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: var(--mute);
+    touch-action: manipulation;
   }
-  .links a{
-    display:inline-flex;align-items:center;min-height:44px;padding:4px 2px;
-    touch-action:manipulation;
+  .links a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
   }
-  .links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
-  .links a:hover{border-color:var(--matcha)}
-  .skip-link{
-    position:absolute;left:1rem;top:-100%;
-    background:var(--ink);color:var(--paper);
-    padding:0.6rem 1rem;z-index:200;font-weight:600;
-    text-decoration:underline;text-underline-offset:3px;
-    min-height:44px;display:inline-flex;align-items:center;
-  }
-  .skip-link:focus,.skip-link:focus-visible{
-    top:0;outline:3px solid var(--matcha-deep);outline-offset:2px;
-  }
-  a:focus-visible{outline:3px solid var(--matcha-deep);outline-offset:3px}
 </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">skip to main content</a>
-  <main id="main-content">
-  <p class="kicker">jade zhao · the briefcase</p>
-  <h1>404</h1>
-  <p>This path is not on the portfolio. Head back home or read how i work.</p>
-  <nav class="links" aria-label="where to go">
-    <a href="./">home</a>
-    <a href="how-i-work.html">how i work</a>
-    <a href="i18n-wcag.html">accessibility</a>
-    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie classroom archive</a>
-  </nav>
+  <div class="topbar topbar--paper">
+    <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
+      <a href="./">home</a>
+      <a href="how-i-work.html">how i work</a>
+      <a href="i18n-wcag.html">accessibility</a>
+      <a href="duck-farm/">duck farm</a>
+    </nav>
+  </div>
+  <main id="main-content" class="sheet">
+    <p class="kicker">jade zhao · the briefcase</p>
+    <h1>404</h1>
+    <p>This path is not on the portfolio. Head back home, read how i work, or visit the duck farm.</p>
+    <nav class="links" aria-label="where to go">
+      <a href="./">home</a>
+      <a href="how-i-work.html">how i work</a>
+      <a href="i18n-wcag.html">accessibility</a>
+      <a href="duck-farm/">duck farm</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+    </nav>
   </main>
 </body>
 </html>
