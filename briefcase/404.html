@@ -90,16 +90,30 @@
   }
   .links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
   .links a:hover{border-color:var(--matcha)}
+  .skip-link{
+    position:absolute;left:1rem;top:-100%;
+    background:var(--ink);color:var(--paper);
+    padding:0.6rem 1rem;z-index:200;font-weight:600;
+    text-decoration:underline;text-underline-offset:3px;
+    min-height:44px;display:inline-flex;align-items:center;
+  }
+  .skip-link:focus,.skip-link:focus-visible{
+    top:0;outline:3px solid var(--matcha-deep);outline-offset:2px;
+  }
+  a:focus-visible{outline:3px solid var(--matcha-deep);outline-offset:3px}
 </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">skip to main content</a>
+  <main id="main-content">
   <p class="kicker">jade zhao · the briefcase</p>
   <h1>404</h1>
-  <p>this path is not on the portfolio. head back to the briefcase or the governance memo.</p>
+  <p>This path is not on the portfolio. Head back to the briefcase or the governance memo.</p>
   <nav class="links" aria-label="where to go">
     <a href="./">briefcase home</a>
     <a href="how-i-work.html">how i work</a>
-    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie classroom archive</a>
   </nav>
+  </main>
 </body>
 </html>

@@ -19,6 +19,7 @@
 <meta property="og:title" content="jade zhao · i18n ∩ WCAG · architectural note">
 <meta property="og:description" content="Jade Zhao · i18n ∩ WCAG 2.1 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
+<meta property="og:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,6 +41,19 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%;overflow-x:hidden}
+
+  .skip-link{
+    position:absolute;left:1rem;top:-100%;
+    background:var(--ink);color:var(--paper);
+    padding:0.6rem 1rem;z-index:200;font-weight:600;
+    text-decoration:underline;text-underline-offset:3px;
+    min-height:44px;display:inline-flex;align-items:center;
+  }
+  .skip-link:focus,.skip-link:focus-visible{
+    top:calc(var(--banner-h) + var(--jump-h) + env(safe-area-inset-top,0px) + 4px);
+    outline:3px solid var(--iu-crimson);outline-offset:2px;
+  }
+
   body{
     background:var(--paper);
     background-image:
@@ -190,6 +204,7 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">skip to main content</a>
 <a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">classroom archive / sunset → matchaxmoxie · this site = sunrise</a>
 <nav class="jump-nav" aria-label="quick links">
   <a href="index.html">briefcase</a>
@@ -198,7 +213,7 @@
   <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
   <a href="https://github.com/jadexzhao">github</a>
 </nav>
-<main class="sheet">
+<main id="main-content" class="sheet">
 
   <header>
     <a class="back" href="index.html">the briefcase</a>
