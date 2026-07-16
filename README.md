@@ -10,14 +10,14 @@ I ship code. Restaurant kid. IU Luddy, May 2027.
 
 | | |
 | --- | --- |
-| [ServeIT](https://serveit.luddy.indiana.edu/serve-ai/index.html) | WCAG builds · website team lead (Jan 2024 to present) |
+| [ServeIT · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/index.html) | WCAG builds · website team lead (Jan 2024–present) · PIT-UN public-interest AI track |
 | [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first ship |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
 
 ## now
 
-GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT. Informatics @ IU Luddy.
+GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = clinic public-interest AI track). Informatics @ IU Luddy.
 
 ## twins
 
