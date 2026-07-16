@@ -36,7 +36,7 @@
     --line:#D8DCC9;
     --iu-crimson:#990000;
     --iu-cream:#F7F5F0;
-    --banner-h:28px;
+    --banner-h:48px;
     --jump-h:48px;
   }
 
@@ -96,6 +96,7 @@
     transition:color .18s ease, border-color .18s ease, background .18s ease;
   }
   .jump-nav a:hover{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream)}
+  .jump-nav a[aria-current="page"]{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream);font-weight:600}
   .jump-nav a:focus-visible{outline:2px solid var(--iu-crimson);outline-offset:-2px}
 
   .skip-link{
@@ -441,7 +442,6 @@
   .status-pill{min-height:44px}
   /* phone */
   @media (max-width:560px){
-    :root{--banner-h:26px}
     body{
       padding:
         calc(var(--banner-h) + 18px + env(safe-area-inset-top,0px))
@@ -454,7 +454,7 @@
       top:auto;bottom:0;
       border-bottom:none;border-top:1px solid var(--line);
       padding-bottom:env(safe-area-inset-bottom,0px);
-      flex-wrap:wrap;justify-content:center;overflow-x:visible;
+      flex-wrap:nowrap;justify-content:center;overflow-x:auto;
     }
     .jump-nav a{
       padding:0 12px;font-size:10.5px;min-height:44px;
@@ -486,10 +486,8 @@
 <a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">classroom archive / sunset → matchaxmoxie · this site = sunrise</a>
 <nav class="jump-nav" aria-label="quick links">
   <a href="index.html">briefcase</a>
-  <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
-  <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
-  <a href="i18n-wcag.html">i18n ∩ wcag</a>
-  <a href="https://github.com/jadexzhao">github</a>
+  <a href="how-i-work.html" aria-current="page">how i work</a>
+  <a href="i18n-wcag.html">accessibility</a>
 </nav>
 <main id="main-content" class="sheet">
 
@@ -500,7 +498,7 @@
 
     <div class="status-row reveal" role="group" aria-label="memo status">
       <span class="status-pill"><span class="dot" aria-hidden="true"></span> system status <strong>active / human-signed-off</strong></span>
-      <span class="status-pill">framework <strong>wcag 2.1 aa</strong></span>
+      <span class="status-pill">framework <strong>wcag 2.2 aa</strong></span>
     </div>
 
     <p class="standfirst reveal"><strong>TLDR:</strong> how I ship with AI-assisted drafts · sandwich rule · ServeIT (IU nonprofit tech clinic) Cascade/Rivet map · business-technology-law governance. This memo is my operating system: how I build, how I scale drafts, and how I keep governance real.</p>
@@ -563,7 +561,7 @@
         <span class="step-n" aria-hidden="true">04</span>
         <div class="step-body">
           <p class="step-title">system boundaries validation</p>
-          <p>check logic, fit, and edge cases against wcag 2.1 and systemic boundaries before anything moves. if an edge case can fail, assume it will.</p>
+          <p>check logic, fit, and edge cases against wcag 2.2 and systemic boundaries before anything moves. if an edge case can fail, assume it will.</p>
         </div>
       </li>
       <li>
@@ -596,7 +594,7 @@
 
     <div class="note sandwich-sandbox">
       <span class="sandbox-k">what the sandwich taught me</span>
-      <p>when i build wcag 2.1 compliant components for bloomington nonprofits, or document backend automation scripts in nyc, i look for the unspoken gaps. designing inside heavy institutional parameters like iu rivet or cascade chunks isn't an obstacle. it is a lesson in precision. you outline the assumptions, you test the margins, and you ship the truth.</p>
+      <p>when i build wcag 2.2 compliant components for bloomington nonprofits, or document backend automation scripts in nyc, i look for the unspoken gaps. designing inside heavy institutional parameters like iu rivet or cascade chunks isn't an obstacle. it is a lesson in precision. you outline the assumptions, you test the margins, and you ship the truth.</p>
     </div>
 
     <div class="note">
@@ -749,7 +747,7 @@
         <span class="layer-k">global layer</span>
         <ul>
           <li>shared env and config that every surface inherits</li>
-          <li>wcag 2.1 aa constants and focus/tap baselines</li>
+          <li>wcag 2.2 aa constants and focus/tap baselines</li>
           <li>institutional systems: canvas publish shape, clover <b>online ordering</b> (not a fake clover api), rivet design tokens</li>
           <li>react context and dark mode / theme tokens when the whole app must sync</li>
         </ul>

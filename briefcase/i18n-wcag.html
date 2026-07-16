@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · i18n ∩ WCAG 2.1 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
+<meta name="description" content="Jade Zhao · i18n ∩ WCAG 2.2 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
 <title>jade zhao · i18n ∩ WCAG · architectural note</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="jade zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
 <meta property="og:title" content="jade zhao · i18n ∩ WCAG · architectural note">
-<meta property="og:description" content="Jade Zhao · i18n ∩ WCAG 2.1 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
+<meta property="og:description" content="Jade Zhao · i18n ∩ WCAG 2.2 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta property="og:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
     --line:#D8DCC9;
     --iu-crimson:#990000;
     --iu-cream:#F7F5F0;
-    --banner-h:28px;
+    --banner-h:48px;
     --jump-h:48px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -102,7 +102,9 @@
     touch-action:manipulation;
   }
   .jump-nav a:hover{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream)}
+  .jump-nav a[aria-current="page"]{color:var(--iu-crimson);border-bottom-color:var(--iu-crimson);background:var(--iu-cream);font-weight:600}
   .jump-nav a:focus-visible{outline:2px solid var(--iu-crimson);outline-offset:-2px}
+  a:focus-visible{outline:3px solid var(--matcha-deep);outline-offset:3px;border-radius:1px}
   .sheet{max-width:760px;margin:0 auto}
   .back{
     font-family:"IBM Plex Mono",monospace;font-size:12px;
@@ -181,7 +183,7 @@
       top:auto;bottom:0;
       border-bottom:none;border-top:1px solid var(--line);
       padding-bottom:env(safe-area-inset-bottom,0px);
-      flex-wrap:wrap;justify-content:center;overflow-x:visible;
+      flex-wrap:nowrap;justify-content:center;overflow-x:auto;
     }
     .jump-nav a{
       padding:0 12px;font-size:10.5px;min-height:44px;
@@ -209,16 +211,14 @@
 <nav class="jump-nav" aria-label="quick links">
   <a href="index.html">briefcase</a>
   <a href="how-i-work.html">how i work</a>
-  <a href="https://www.linkedin.com/in/jadexzhao/">linkedin</a>
-  <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
-  <a href="https://github.com/jadexzhao">github</a>
+  <a href="i18n-wcag.html" aria-current="page">accessibility</a>
 </nav>
 <main id="main-content" class="sheet">
 
   <header>
     <a class="back" href="index.html">the briefcase</a>
     <p class="memo-kicker">jade zhao · architectural note</p>
-    <h1>i18n (internationalization) ∩ WCAG 2.1 AA (web accessibility guidelines)<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
+    <h1>i18n (internationalization) ∩ WCAG 2.2 AA (web accessibility guidelines)<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
     <p class="standfirst"><strong>ELI5:</strong> mark the language so screen readers don't guess wrong, and leave room when Chinese is wider than English. short and rigorous. not a DEIB pamphlet. the same accessibility problems show up when a nonprofit page mixes english with partner languages, when a restaurant ticket switches mid-line, and when a household toggles <span class="sc">福州话</span> / <span class="sc">普通话</span> / english without ceremony.</p>
   </header>
 

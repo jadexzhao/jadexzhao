@@ -2,7 +2,7 @@
 <!--
   jade zhao · 公文包 / 日出站
   双站：matchaxmoxie = 日落（课堂）。IG 永远 @zhao.langxi（不是 GitHub 句柄）
-  公开边界：不写 IRB / 临床现场数据；不写 FASE 协调员运营
+  公开边界已核对；只保留公开作品与经历
   受众：招聘优先留本页；学生门链到日落教室
 -->
 <html lang="en">
@@ -77,6 +77,28 @@
   a { color: var(--jade-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
   a:hover { color: var(--ink); }
   a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--ink);
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    touch-action: manipulation;
+  }
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    color: var(--jade-ink);
+    border-bottom-color: var(--jade-ink);
+  }
   img { max-width: 100%; height: auto; display: block; }
   .wrap { max-width: 640px; margin: 0 auto; width: 100%; }
   .twin { font-size: 14px; color: var(--mute); margin-bottom: 28px; letter-spacing: 0.02em; line-height: 1.55; max-width: 48ch; }
@@ -347,6 +369,11 @@
 </head>
 <body>
 <a href="#main-content" class="skip-link">skip to main content</a>
+<nav class="site-nav wrap" aria-label="Briefcase">
+  <a href="index.html" aria-current="page">home</a>
+  <a href="how-i-work.html">how i work</a>
+  <a href="i18n-wcag.html">accessibility</a>
+</nav>
 <main id="main-content" class="wrap">
   <p class="twin fade">
     Two sites, same me.
