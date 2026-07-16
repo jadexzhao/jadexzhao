@@ -2,7 +2,7 @@
 
 **Jade Zhao** at **Indiana University Luddy** (Informatics, Class of 2027). I ship code. Restaurant kid. May 2027 graduate.
 
-[matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) is sunset (old classroom handle · IG now [@zhao.langxi](https://instagram.com/zhao.langxi)). this is sunrise.
+[matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) is sunset. this is sunrise.
 
 📧 [email](mailto:jlzhao@iu.edu) · 💼 [the briefcase](https://jadexzhao.github.io/jadexzhao/) · 🦆 [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) · 🥟 [potstickers](https://potstickers24.cloveronline.com/) · 📸 [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
 
