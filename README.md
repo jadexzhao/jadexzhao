@@ -1,30 +1,29 @@
 # jade zhao · 赵 · sunrise
 
-**Jade Zhao** at **Indiana University Luddy** (School of Informatics, Computing, and Engineering · Informatics, Class of 2027). I ship code. Restaurant kid. Actor and entrepreneur. May 2027 graduate.
+**TLDR:** two sites, same person. this repo = sunrise (morning · I build and ship code). [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) = sunset (evening · Miss Zhao classroom archive · IG now [@zhao.langxi](https://instagram.com/zhao.langxi)).
 
-[matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) is sunset (old classroom handle · IG now [@zhao.langxi](https://instagram.com/zhao.langxi)). this is sunrise.
+**ELI5:** not mystical. morning vs evening jobs.
+- **jadexzhao = sunrise** = builder portfolio / career / shipping code
+- **matchaxmoxie = sunset** = teaching archive winding down for senior year
 
 [email](mailto:jlzhao@iu.edu) · [the briefcase](https://jadexzhao.github.io/jadexzhao/) · [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) · [potstickers](https://potstickers24.cloveronline.com/) · [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
 
-## ships
+## live
 
-| | |
-| --- | --- |
-| [ServeIT](https://serveit.luddy.indiana.edu/) (IU nonprofit tech clinic) · [ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) (public-interest AI track) | sites for nonprofits · website team lead (Jan 2024 to present) |
-| [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first ship |
+| link | what |
+|------|------|
+| [the briefcase](https://jadexzhao.github.io/jadexzhao/) | portfolio home |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
 
 ## now
 
-GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = public-interest AI track). Informatics @ IU Luddy. Madrid semester at Complutense (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset twin).
+GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = public-interest AI track). Informatics @ IU Luddy. Madrid semester at Complutense (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset site).
 
-## twins
+## two sites
 
 | [@jadexzhao](https://github.com/jadexzhao) sunrise | [@matchaxmoxie](https://github.com/matchaxmoxie) sunset |
-| --- | --- |
+|---|---|
 | [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · GWC (Girls Who Code) · [4-year IU path](https://matchaxmoxie.github.io/matchaxmoxie/freshman.html) · [Madrid](https://matchaxmoxie.github.io/matchaxmoxie/junior.html) |
 
-Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (never @jadexzhao for IG). matchaxmoxie was the old classroom handle  ·  school IG renamed into the open as @zhao.langxi.
-
-福州 roots · TypeScript · React · Python · PostgreSQL · WCAG (accessibility)
+Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (never @jadexzhao for IG). matchaxmoxie was the old classroom handle · school IG renamed into the open as @zhao.langxi.
