@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <!--
   jade zhao · the briefcase · sunrise
-  Indiana University Luddy · Informatics Class of 2027 · May 2027
-  twin: matchaxmoxie = sunset（教室归档）；this = sunrise（作品集）。IG @zhao.langxi
-  photo: assets/hero-flowers.jpg · jade #00a86b / #006644
+  Twin: matchaxmoxie = sunset (classroom). IG: @zhao.langxi
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · restaurant kid who ships · Informatics @ IU Luddy, May 2027 · ServeIT website lead · Madrid spring 2026 · technical go-to-market · actor and entrepreneur · Bloomington IN">
+<meta name="description" content="Jade Zhao · restaurant kid who ships · Informatics @ IU Luddy, May 2027 · ServeIT website lead · Madrid spring 2026 · technical go-to-market · Bloomington IN">
 <title>Jade Zhao · Indiana University Luddy · the briefcase</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -47,8 +45,9 @@
     --focus: #2a2622;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
+    color-scheme: light only;
     background: linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 28%, var(--paper) 100%);
     color: var(--ink);
     font-family: "Source Sans 3", Georgia, sans-serif;
@@ -56,7 +55,6 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
-    overflow-x: clip;
     padding:
       max(32px, env(safe-area-inset-top, 0px))
       max(24px, env(safe-area-inset-right, 0px))
@@ -68,7 +66,6 @@
     background: var(--ink); color: var(--paper);
     padding: 0.6rem 1rem; z-index: 200; font-weight: 600;
     text-decoration: underline; text-underline-offset: 3px;
-    min-height: 44px; display: inline-flex; align-items: center;
   }
   .skip-link:focus, .skip-link:focus-visible {
     top: 0; outline: 3px solid var(--jade-ink); outline-offset: 2px;
@@ -76,8 +73,7 @@
   a { color: var(--jade-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
   a:hover { color: var(--ink); }
   a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  img { max-width: 100%; height: auto; display: block; }
-  .wrap { max-width: 640px; margin: 0 auto; width: 100%; }
+  .wrap { max-width: 640px; margin: 0 auto; }
   .twin { font-size: 14px; color: var(--mute); margin-bottom: 28px; letter-spacing: 0.02em; line-height: 1.55; max-width: 48ch; }
   .hero {
     display: grid;
@@ -96,73 +92,49 @@
   h1 {
     font-family: "Instrument Serif", Georgia, serif;
     font-weight: 400;
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
   }
   h1 .sc { font-family: "Noto Serif SC", serif; font-size: 0.78em; color: var(--jade); font-weight: 500; }
-  .line { margin-top: 10px; font-size: 1.05rem; color: var(--mute); max-width: 36ch; }
+  .line { margin-top: 10px; font-size: 1.05rem; color: var(--mute); max-width: 38ch; }
   .meta {
     margin-top: 14px;
     font-size: 15px;
     color: var(--mute);
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 4px 0;
-  }
-  .meta a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 4px 0;
-    touch-action: manipulation;
+    align-items: baseline;
+    gap: 6px 0;
   }
   .meta > * { white-space: nowrap; }
   .meta .dot { margin: 0 0.4em; color: var(--mute); user-select: none; }
   .meta a { color: var(--jade-ink); }
+  .tldr {
+    margin-bottom: 28px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    background: #fff;
+    max-width: 48ch;
+  }
+  .tldr h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .tldr p { font-size: 15px; color: var(--mute); line-height: 1.55; }
   .links { list-style: none; border-top: 1px solid var(--line); padding-top: 8px; margin-bottom: 40px; }
   .links li { border-bottom: 1px solid var(--line); }
   .links a {
-    display: flex; justify-content: space-between; gap: 16px; align-items: center;
-    min-height: 44px;
-    padding: 14px 0;
-    color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
-    touch-action: manipulation;
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 14px 0; color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
   }
   .links a:hover { color: var(--jade-ink); }
-  .links .what { color: var(--mute); font-size: 14px; text-align: right; flex: 1 1 auto; min-width: 0; }
-  .note { font-size: 15px; color: var(--mute); max-width: 46ch; margin-bottom: 28px; }
+  .links .what { color: var(--mute); font-size: 14px; text-align: right; }
   footer { font-size: 14px; color: var(--mute); border-top: 1px solid var(--line); padding-top: 16px; }
   footer .sc { font-family: "Noto Serif SC", serif; color: var(--ink); }
-  footer a {
-    display: inline-flex; align-items: center; min-height: 44px; padding: 4px 0;
-    touch-action: manipulation;
-  }
-  /* phone · lily photo stacks above bio (default grid) */
-  @media (max-width: 559px) {
-    body {
-      padding:
-        max(24px, env(safe-area-inset-top, 0px))
-        max(16px, env(safe-area-inset-right, 0px))
-        max(40px, env(safe-area-inset-bottom, 0px))
-        max(16px, env(safe-area-inset-left, 0px));
-    }
-    .photo { width: min(220px, 72vw); margin: 0 auto; }
-    .hero { text-align: center; justify-items: center; }
-    .hero-copy { text-align: center; }
-    .line { margin-left: auto; margin-right: auto; }
-    .meta { justify-content: center; }
-    .links a {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
-      padding: 16px 0;
-      min-height: 48px;
-    }
-    .links .what { text-align: left; }
-  }
-  /* tablet · side-by-side hero */
   @media (min-width: 560px) {
     .hero {
       grid-template-columns: 160px minmax(0, 1fr);
@@ -171,16 +143,10 @@
     }
     .photo { width: 100%; }
   }
-  @media (min-width: 768px) {
-    .wrap { max-width: 700px; }
-    body { font-size: 17.5px; }
-  }
-  /* wide / custom */
-  @media (min-width: 1200px) {
-    .wrap { max-width: 760px; }
-    body { font-size: 18px; }
-    .line { max-width: 42ch; }
-    .note { max-width: 52ch; }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .links a { flex-direction: column; gap: 4px; padding: 12px 0; }
+    .links .what { text-align: left; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .fade { animation: up 0.45s ease both; }
@@ -197,14 +163,15 @@
 <body>
 <a href="#main-content" class="skip-link">skip to main content</a>
 <main id="main-content" class="wrap">
-  <!-- 双生：日落=教室归档；日出=作品集。不是神秘隐喻 -->
   <p class="twin fade">
-    <strong>Quick version:</strong> two sites, same me.
-    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> = sunset
-    (classroom archive · Miss Zhao · IG now
-    <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>).
-    this site = sunrise (builder site · morning · I ship code).
+    Two sites, same me.
+    This page = sunrise (builder · code · career).
+    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> = sunset (classroom archive · Miss Zhao).
+    IG used to hide behind the old classroom handle; now it is
+    <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+    under my real name (Zhao / <span class="sc">赵朗曦</span>).
   </p>
+
   <header class="hero fade">
     <figure class="photo">
       <img
@@ -219,9 +186,8 @@
     <div class="hero-copy">
       <h1>jade zhao <span class="sc">赵</span></h1>
       <p class="line">
-        restaurant kid who ships. Informatics @ Indiana University Luddy (May 2027).
-        Madrid spring 2026. ServeIT (IU nonprofit tech clinic) website lead. technical GTM
-        (go-to-market · the eng side of getting product to buyers). actor and entrepreneur on the side.
+        Restaurant kid who ships. Informatics @ IU Luddy (May 2027).
+        ServeIT website lead. Madrid spring 2026. Technical GTM on the side.
       </p>
       <p class="meta">
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a><span class="dot" aria-hidden="true">·</span>
@@ -232,18 +198,35 @@
       </p>
     </div>
   </header>
+
+  <section class="tldr fade" aria-labelledby="recruiter-tldr">
+    <h2 id="recruiter-tldr">For recruiters</h2>
+    <p>
+      I lead the website team at ServeIT (IU&rsquo;s nonprofit tech clinic): sites partners can keep,
+      plus Python/PostgreSQL data work. Technical GTM intern (stealth, NYC, Jun 2026).
+      Spring 2026: Complutense, Madrid. Stack: TypeScript, React, Python, PostgreSQL, WCAG.
+    </p>
+  </section>
+
+  <section class="tldr fade" aria-labelledby="kids-tldr">
+    <h2 id="kids-tldr">For kids / students</h2>
+    <p>
+      Scratch how-tos, IU path pages, and Miss Zhao teaching notes live on the sunset site:
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>.
+    </p>
+  </section>
+
   <ul class="links fade" aria-label="work">
     <li>
-      <!-- ServeIT 诊所主线；ServeAI = PIT-UN 公益 AI 轨道（同页） -->
       <a href="https://serveit.luddy.indiana.edu/serve-ai/">
         <span>ServeIT · ServeAI</span>
-        <span class="what">IU nonprofit tech clinic · sites partners can keep · public-interest AI track</span>
+        <span class="what">nonprofit tech clinic · public-interest AI</span>
       </a>
     </li>
     <li>
       <a href="how-i-work.html">
         <span>how i work</span>
-        <span class="what">governance memo · handoff</span>
+        <span class="what">governance · handoff</span>
       </a>
     </li>
     <li>
@@ -255,7 +238,7 @@
     <li>
       <a href="https://matchaxmoxie.github.io/matchaxmoxie/">
         <span>matchaxmoxie</span>
-        <span class="what">Miss Zhao · Girls Who Code · 4-year IU path</span>
+        <span class="what">Miss Zhao · Scratch · IU path</span>
       </a>
     </li>
     <li>
@@ -265,25 +248,10 @@
       </a>
     </li>
   </ul>
-  <p class="note fade">
-    <strong>Quick version:</strong> restaurant kid → Informatics @ IU Luddy → May 2027.
-    I lead the website team at ServeIT (IU Luddy&rsquo;s nonprofit tech clinic): sites partners can keep, plus ML engagement tools and Python/PostgreSQL data work.
-    ServeAI is the clinic&rsquo;s public-interest AI track on the same roster.
-    Technical GTM (go-to-market) intern at a stealth startup (NYC, Jun 2026).
-    Spring 2026: real semester at Complutense in Madrid.
-    Actor and entrepreneur on the side.
-  </p>
-  <p class="note fade">
-    <strong>Two sites in plain words:</strong> this page is <strong>sunrise</strong> (builder site: code + career).
-    <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> is <strong>sunset</strong>
-    (classroom archive: Miss Zhao, Girls Who Code, Scratch, the
-    <a href="https://matchaxmoxie.github.io/matchaxmoxie/freshman.html">four-year IU path</a>,
-    on hiatus for senior year). Same person. School IG is
-    <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
-  </p>
+
   <footer class="fade">
-    <span class="sc">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG (web accessibility)
-    · archive: <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (sunset · Miss Zhao)
+    <span class="sc">福州</span> roots
+    · archive: <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (sunset)
     · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
   </footer>
 </main>
