@@ -121,6 +121,42 @@
   .meta > * { white-space: nowrap; }
   .meta .dot { margin: 0 0.4em; color: var(--mute); user-select: none; }
   .meta a { color: var(--jade-ink); }
+  /* 受众分叉 · 招聘 / 学生两扇门 */
+  .start-here {
+    font-size: 14px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+  }
+  .doors {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 28px;
+    max-width: 48ch;
+  }
+  .door {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 44px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    touch-action: manipulation;
+  }
+  .door:hover { border-color: var(--jade-ink); color: var(--ink); }
+  .door:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .door-who {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+  .door-what { font-size: 14px; color: var(--mute); line-height: 1.45; }
+  .door--primary { border-left: 3px solid var(--jade-ink); }
+  .door--secondary { border-left: 3px solid var(--gold); }
   .tldr {
     margin-bottom: 28px;
     padding: 16px 18px;
@@ -136,6 +172,27 @@
     margin-bottom: 6px;
   }
   .tldr p { font-size: 15px; color: var(--mute); line-height: 1.55; }
+  .path-tip {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--mute);
+    line-height: 1.5;
+  }
+  .path-tip strong { color: var(--ink); font-weight: 600; }
+  .quick-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  .quick-row a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+    touch-action: manipulation;
+  }
   .links { list-style: none; border-top: 1px solid var(--line); padding-top: 8px; margin-bottom: 40px; }
   .links li { border-bottom: 1px solid var(--line); }
   .links a {
@@ -169,6 +226,7 @@
     .line { margin-left: auto; margin-right: auto; }
     .meta { justify-content: center; }
     .tldr { max-width: none; }
+    .doors { max-width: none; }
     .links a {
       flex-direction: column;
       align-items: flex-start;
@@ -251,22 +309,48 @@
     </div>
   </header>
 
-  <section class="tldr fade" aria-labelledby="recruiter-tldr">
-    <h2 id="recruiter-tldr">For recruiters</h2>
+  <!-- 受众两扇门 · 招聘优先留本页；学生去日落教室 -->
+  <p class="start-here fade">Start here · pick a door.</p>
+  <nav class="doors fade" aria-label="Audience">
+    <a class="door door--primary" href="#recruiter-path">
+      <span class="door-who">If you&rsquo;re a recruiter</span>
+      <span class="door-what">ServeIT · technical GTM · Madrid · LinkedIn · stay on this page</span>
+    </a>
+    <a class="door door--secondary" href="https://matchaxmoxie.github.io/matchaxmoxie/">
+      <span class="door-who">If you&rsquo;re a student</span>
+      <span class="door-what">Scratch · IU path · Miss Zhao classroom → matchaxmoxie (sunset)</span>
+    </a>
+  </nav>
+
+  <section id="recruiter-path" class="tldr fade" aria-labelledby="recruiter-tldr">
+    <h2 id="recruiter-tldr">If you&rsquo;re a recruiter</h2>
     <p>
       I lead the website team at ServeIT (IU&rsquo;s nonprofit tech clinic): sites partners can keep,
       plus Python/PostgreSQL data work. ServeAI is the clinic&rsquo;s public-interest AI track on the same roster.
-      Technical GTM (go-to-market) intern (stealth, NYC, Jun 2026).
+      Technical GTM (go-to-market · the eng side of getting product to buyers) intern, stealth NYC, Jun 2026.
       Spring 2026: Complutense, Madrid. Stack: TypeScript, React, Python, PostgreSQL, WCAG (web accessibility).
+    </p>
+    <p class="path-tip">
+      Tip: LinkedIn + the work links below are the resume scan.
+      Twin classroom site is teaching archive only — not ships.
+    </p>
+    <p class="quick-row">
+      <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/">ServeIT · ServeAI</a>
+      <a href="how-i-work.html">how i work</a>
+      <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
     </p>
   </section>
 
-  <!-- 日出站轻提日落教室口头禅 · KISS 首次展开 -->
+  <!-- 日出站轻提日落教室 · KISS 首次展开 -->
   <section class="tldr fade" aria-labelledby="kids-tldr">
-    <h2 id="kids-tldr">For kids / students</h2>
+    <h2 id="kids-tldr">If you&rsquo;re a student</h2>
     <p>
-      Scratch how-tos, IU path pages, and Miss Zhao teaching notes live on the sunset site:
-      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>.
+      Scratch how-tos, IU path pages (course names + terms only — no grades), and Miss Zhao notes live on
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (sunset classroom).
+    </p>
+    <p class="path-tip">
+      Tip: start with Scratch studio or the IU Informatics guide.
       Classroom phrase there:
       <strong>KISS</strong> (keep it simple, stupid · we just mean keep it simple).
     </p>
