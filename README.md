@@ -10,14 +10,14 @@
 
 | | |
 | --- | --- |
-| [ServeIT](https://serveit.luddy.indiana.edu/) (IU nonprofit tech clinic) · [ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) (public-interest AI track) | WCAG (web accessibility guidelines) builds · website team lead (Jan 2024 to present) · PIT-UN (Public Interest Technology University Network) |
+| [ServeIT](https://serveit.luddy.indiana.edu/) (IU nonprofit tech clinic) · [ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) (public-interest AI track) | sites for nonprofits · website team lead (Jan 2024 to present) |
 | [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first ship |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
 
 ## now
 
-GTM (go-to-market) engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = public-interest AI track). Informatics @ IU (Indiana University) Luddy. Study abroad: Universidad Complutense de Madrid (Spring 2026). Miss Zhao (classroom teacher nickname) teaching archive on hiatus for senior year (sunset twin).
+GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = public-interest AI track). Informatics @ IU Luddy. Madrid semester at Complutense (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset twin).
 
 ## twins
 
