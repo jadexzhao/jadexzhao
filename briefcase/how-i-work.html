@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · Product Governance & AI Transparency Memo. The sandwich runbook, ServeIT Cascade/Rivet component matrix, and business-technology-law governance.">
-<title>jade zhao · how i work · product governance memo</title>
+<meta name="description" content="How Jade Zhao ships: technical GTM consulting, ServeIT accessible builds, sandwich runbook, Cascade/Rivet chunk matrix. Process memo for recruiters.">
+<title>jade zhao · how i work</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -16,11 +16,15 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="jade zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
-<meta property="og:title" content="jade zhao · how i work · product governance memo">
-<meta property="og:description" content="Jade Zhao · Product Governance &amp; AI Transparency Memo. The sandwich runbook, ServeIT Cascade/Rivet component matrix, and business-technology-law governance.">
+<meta property="og:title" content="jade zhao · how i work">
+<meta property="og:description" content="Technical GTM consulting motion, ServeIT accessible builds, sandwich runbook, Cascade/Rivet chunk matrix. How Jade Zhao ships.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
 <meta property="og:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="jade zhao · how i work">
+<meta name="twitter:description" content="Technical GTM consulting, ServeIT accessible builds, sandwich runbook. How Jade Zhao ships.">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-flowers.jpg">
+<meta name="twitter:image:alt" content="Jade Zhao by a sunlit window holding pink lilies and baby's breath">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -288,6 +292,7 @@
     color:var(--matcha-deep);margin-bottom:6px;font-weight:600;
   }
   .chunk-card p{font-size:13.5px;margin:0;max-width:none;color:var(--ink-soft)}
+  .chunk-card a{color:var(--matcha-deep);font-weight:500}
 
   /* golden paste order timeline */
   .timeline{
@@ -433,6 +438,10 @@
     @keyframes rise{to{opacity:1;transform:none}}
   }
 
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;animation:none}
+  }
+
   @media print{
     .twin-banner,.jump-nav{display:none!important}
     body{padding:0}
@@ -485,7 +494,7 @@
 <a href="#main-content" class="skip-link">skip to main content</a>
 <a class="twin-banner" href="https://matchaxmoxie.github.io/matchaxmoxie/">classroom archive / sunset → matchaxmoxie · this site = sunrise</a>
 <nav class="jump-nav" aria-label="quick links">
-  <a href="index.html">briefcase</a>
+  <a href="index.html">home</a>
   <a href="how-i-work.html" aria-current="page">how i work</a>
   <a href="i18n-wcag.html">accessibility</a>
 </nav>
@@ -494,31 +503,27 @@
   <header>
     <a class="back reveal" href="index.html">the briefcase</a>
     <p class="memo-kicker reveal">jade zhao · the briefcase</p>
-    <h1 class="reveal">product governance &amp; ai transparency memo<span class="sub">how i work · governance · handoff</span></h1>
+    <h1 class="reveal">how i work<span class="sub">process · serveit · handoffs</span></h1>
 
-    <div class="status-row reveal" role="group" aria-label="memo status">
-      <span class="status-pill"><span class="dot" aria-hidden="true"></span> system status <strong>active / human-signed-off</strong></span>
-      <span class="status-pill">framework <strong>wcag 2.2 aa</strong></span>
+    <div class="status-row reveal" role="group" aria-label="baseline">
+      <span class="status-pill"><span class="dot" aria-hidden="true"></span> baseline <strong>wcag 2.2 aa</strong></span>
+      <span class="status-pill">lane <strong>technical consulting gtm</strong></span>
     </div>
 
-    <p class="standfirst reveal"><strong>TLDR:</strong> how I ship with AI-assisted drafts · sandwich rule · ServeIT (IU nonprofit tech clinic) Cascade/Rivet map · business-technology-law governance. This memo is my operating system: how I build, how I scale drafts, and how I keep governance real.</p>
+    <p class="standfirst reveal">Restaurant-floor logic applied to code and go-to-market. I sit on discovery calls, ship accessible nonprofit sites at ServeIT, and stand up demo sandboxes so buyers see working flows next to the deck. This is my operating rhythm, not a tools list.</p>
     <div class="lede reveal">
-      <p>i use AI-assisted editing sometimes. they increase how fast i can iterate. they do not replace how i think, what i decide, or what i sign off on. <b>drafts are AI-assisted. accountability is entirely mine.</b></p>
+      <p>I use AI-assisted editing sometimes. It speeds iteration. It does not replace what I decide or what I sign off on. <b>Drafts may be AI-assisted. Accountability is entirely mine.</b></p>
     </div>
     <nav class="toc reveal" aria-label="memo sections">
-      <a href="#part-1">#01 runbook</a>
+      <a href="#part-1">#01 sandwich runbook</a>
       <span class="sep">·</span>
-      <a href="#part-2">#02 cascade matrix</a>
+      <a href="#part-2">#02 serveit chunks</a>
       <span class="sep">·</span>
       <a href="#part-3">#03 governance</a>
       <span class="sep">·</span>
-      <a href="#state-isolation">#04 state isolation</a>
+      <a href="#part-4">#04 in practice</a>
       <span class="sep">·</span>
-      <a href="#mobile-gtm">#05 mobile gtm</a>
-      <span class="sep">·</span>
-      <a href="#pages-deploy">#06 pages deploy</a>
-      <span class="sep">·</span>
-      <a href="i18n-wcag.html">i18n ∩ wcag</a>
+      <a href="i18n-wcag.html">accessibility note</a>
     </nav>
   </header>
 
@@ -526,21 +531,21 @@
 
   <section id="part-1">
     <p class="part-label">part 1</p>
-    <h2>ai runtime &amp; the runbook</h2>
+    <h2>the sandwich runbook</h2>
 
     <blockquote class="pull-quote">
       <p>computers do exactly what you write, never what you meant.</p>
     </blockquote>
 
-    <p>my cs professor's peanut-butter-sandwich drill is the foundation of how i approach frontend architecture and gtm engineering. vague inputs produce unstable outputs. that's the sandwich. below is the operational runbook for AI-assisted development.</p>
+    <p>my cs professor's peanut-butter-sandwich drill is the foundation. vague inputs produce unstable outputs. that lesson carries into frontend architecture, GTM demos, and any AI-assisted draft. below is the runbook i actually follow.</p>
 
-    <h3>the runbook: five steps</h3>
-    <ol class="runbook" aria-label="AI-assisted runbook">
+    <h3>five steps</h3>
+    <ol class="runbook" aria-label="sandwich runbook">
       <li>
         <span class="step-n" aria-hidden="true">01</span>
         <div class="step-body">
-          <p class="step-title">constraint formulation</p>
-          <p>write prompts with explicit bounds, edge cases, and expected outputs. if the instruction has gaps, the system will fail into those gaps. that's the sandwich.</p>
+          <p class="step-title">write the constraints</p>
+          <p>explicit bounds, edge cases, expected outputs. if the instruction has gaps, the system fails into those gaps.</p>
         </div>
       </li>
       <li>
@@ -553,52 +558,34 @@
       <li>
         <span class="step-n" aria-hidden="true">03</span>
         <div class="step-body">
-          <p class="step-title">diff review</p>
-          <p>whether inline editing or supervised multi-step agents, every diff gets read and validated before it is accepted. i stay in the diff the whole time.</p>
+          <p class="step-title">read every diff</p>
+          <p>inline edits or multi-step agent runs: i stay in the diff and validate before anything lands.</p>
         </div>
       </li>
       <li>
         <span class="step-n" aria-hidden="true">04</span>
         <div class="step-body">
-          <p class="step-title">system boundaries validation</p>
-          <p>check logic, fit, and edge cases against wcag 2.2 and systemic boundaries before anything moves. if an edge case can fail, assume it will.</p>
+          <p class="step-title">check boundaries</p>
+          <p>logic, fit, edge cases, WCAG 2.2. if an edge case can fail, assume it will.</p>
         </div>
       </li>
       <li>
         <span class="step-n" aria-hidden="true">05</span>
         <div class="step-body">
           <p class="step-title">human sign-off</p>
-          <p>nothing ships without a human reading it and saying yes. major decisions get documented so i can explain them later. <b>drafts are AI-assisted; accountability is entirely mine.</b></p>
+          <p>nothing ships without a human reading it and saying yes. major decisions get documented.</p>
         </div>
       </li>
     </ol>
 
-    <h3>tooling modes</h3>
-    <div class="chunk-grid" role="list">
-      <article class="chunk-card" role="listitem">
-        <h4>inline editing</h4>
-        <p>reads the repo i'm already in and proposes edits in the diff. i stay in the diff the whole time.</p>
-      </article>
-      <article class="chunk-card" role="listitem">
-        <h4>supervised agents</h4>
-        <p>multi-step tool use with human diff review. the assistant chains actions toward a goal. i read every diff before anything lands. supervised means i am the one who says yes.</p>
-      </article>
-    </div>
-    <p>across both, the rule is the same: AI proposes, i evaluate, and i still own what ships.</p>
-
     <h3>when it goes wrong</h3>
     <div class="note">
-      <p>AI gets it wrong more than people expect. it sounds confident when it's guessing. it fills gaps with plausible-sounding things that aren't true. it optimizes for fluency, not accuracy.</p>
-      <p>when i catch it, and i do catch it, i don't just fix the output. i go back to the prompt. something in the instruction created room for the wrong answer. that's the sandwich again. the error is a missing step. find the step. fix the instruction. run it again.</p>
+      <p>AI sounds confident when it is guessing. when i catch a bad output, i do not just patch the result. i go back to the prompt. the error is usually a missing step in the instruction. fix the instruction, run it again.</p>
     </div>
 
     <div class="note sandwich-sandbox">
       <span class="sandbox-k">what the sandwich taught me</span>
-      <p>when i build wcag 2.2 compliant components for bloomington nonprofits, or document backend automation scripts in nyc, i look for the unspoken gaps. designing inside heavy institutional parameters like iu rivet or cascade chunks isn't an obstacle. it is a lesson in precision. you outline the assumptions, you test the margins, and you ship the truth.</p>
-    </div>
-
-    <div class="note">
-      <p>transparency isn't a policy here. it's an instruction with no missing steps. if you can't see how the work was made, you can't fully trust what it does. that's the whole argument.</p>
+      <p>building WCAG-compliant pages for bloomington nonprofits, or documenting automation scripts for a NYC GTM internship, means hunting unspoken gaps. IU Rivet and Cascade chunks are not obstacles. they are a lesson in precision: outline assumptions, test margins, ship what you can defend.</p>
     </div>
   </section>
 
@@ -606,8 +593,8 @@
 
   <section id="part-2">
     <p class="part-label">part 2</p>
-    <h2>serveit enterprise component matrix</h2>
-    <p>at serveit i approach cascade wcms and rivet as an <b>enterprise component matrix</b>, not a page builder. reverse-engineer the page into modular chunks. keep brand fidelity and accessibility. layout is composition of chunks, not hard-coded glue.</p>
+    <h2>serveit · cascade chunk matrix</h2>
+    <p>at ServeIT (IU nonprofit tech clinic) i treat Cascade WCMS and Rivet as an <b>enterprise component matrix</b>, not a page builder. reverse-engineer the page into modular chunks. keep brand fidelity and accessibility. layout is composition, not hard-coded glue.</p>
 
     <h3>the chunks</h3>
     <div class="chunk-grid" role="list">
@@ -682,9 +669,8 @@
       <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · layouts, components, utilities</a>
       <a href="https://framework.iu.edu/index.html"><span class="hub-k">web framework</span>Cascade WCMS · page types, publishing, sitekube</a>
       <a href="https://framework.iu.edu/creating-content/chunks/index.html"><span class="hub-k">chunks</span>text, callout, CTA, panels, stats, tables</a>
-      <!-- ServeIT 诊所；ServeAI = PIT-UN 公益生成式 AI 轨道 -->
-      <a href="https://serveit.luddy.indiana.edu/serve-ai/"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (web accessibility guidelines) ships · public-interest AI</a>
-      <a href="i18n-wcag.html"><span class="hub-k">i18n ∩ wcag</span>i18n (internationalization) ∩ WCAG · mixed-language DOM · density · household multilingual framing</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · accessible client builds · public-interest AI</a>
+      <a href="i18n-wcag.html"><span class="hub-k">accessibility note</span>mixed-language DOM · density · multilingual household framing</a>
     </div>
   </section>
 
@@ -693,7 +679,7 @@
   <section id="part-3">
     <p class="part-label">part 3</p>
     <h2>governance · business · technology · law</h2>
-    <p>i frame this as a product and governance memo with a <b>business-technology-law</b> lens: vendor and data-handling awareness, institutional policy, WCAG-adjacent (web accessibility) norms, and EU digital rulemaking as scan input. risk-aware disclosure in the vocabulary of strategy and compliance-adjacent coursework. ethics and access are <b>non-functional requirements</b>, not a late QA scramble.</p>
+    <p>i read vendor constraints, institutional policy, and accessibility norms alongside user stories. ethics and access are <b>non-functional requirements</b>, not a late QA scramble.</p>
 
     <div class="gov-wrap">
       <table class="gov-table">
@@ -718,191 +704,59 @@
           <tr>
             <td>law</td>
             <td>risk &amp; compliance</td>
-            <td>scan vendor constraints, institutional policy (iu rivet / cascade), and global frameworks such as EU digital rulemaking. keep a living risk register so "innovation" never means "no one is accountable."</td>
+            <td>scan vendor constraints, institutional policy (IU Rivet / Cascade), and compliance coursework. keep a living risk register so innovation never means no one is accountable.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p>the product-shaped habits underneath it are the same ones i use in serveit and campus work:</p>
+    <p>the habits underneath:</p>
     <ul class="habit-list">
       <li>name <b>stakeholders</b> early.</li>
       <li>treat ethics and access as <b>non-functional requirements</b>.</li>
       <li>read <b>vendor and institutional constraints</b> alongside user stories.</li>
       <li>document assumptions for <b>traceability</b>.</li>
-      <li>ship in <b>small increments</b> with human sign-off when the stakes are high.</li>
+      <li>ship in <b>small increments</b> with human sign-off when stakes are high.</li>
     </ul>
   </section>
 
   <hr class="rule">
 
-  <section id="state-isolation">
+  <section id="part-4">
     <p class="part-label">part 4</p>
-    <h2>state isolation protocol</h2>
-    <p>frontend systems fail the same way restaurants do when the floor and the kitchen share one clipboard: conflicting writes, silent overwrites, nobody knows who owns the ticket. i keep a hard <b>global vs local</b> divide so siblings can move without dragging the whole stack.</p>
-
-    <h3>structural divide</h3>
-    <div class="state-grid" role="list">
-      <article class="state-card global" role="listitem">
-        <span class="layer-k">global layer</span>
-        <ul>
-          <li>shared env and config that every surface inherits</li>
-          <li>wcag 2.2 aa constants and focus/tap baselines</li>
-          <li>institutional systems: canvas publish shape, clover <b>online ordering</b> (not a fake clover api), rivet design tokens</li>
-          <li>react context and dark mode / theme tokens when the whole app must sync</li>
-        </ul>
-      </article>
-      <article class="state-card local" role="listitem">
-        <span class="layer-k">local layer</span>
-        <ul>
-          <li>duck farm coordinates and frame-by-frame refs (raf mutates refs; react only on structure change)</li>
-          <li>map module draft status and publish checklist state</li>
-          <li>etl buffers and validation scratch space</li>
-          <li>isolated listeners (konami, toast timers) that die with the module</li>
-        </ul>
-      </article>
-    </div>
-
-    <h3>three runbook rules</h3>
-    <ol class="runbook" aria-label="state isolation runbook">
-      <li>
-        <span class="step-n" aria-hidden="true">01</span>
-        <div class="step-body">
-          <p class="step-title">encapsulation mandate</p>
-          <p>keep state as low as possible. do not lift to global unless siblings actually need to sync. if one button needs a flag, that flag lives next to the button.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">02</span>
-        <div class="step-body">
-          <p class="step-title">one-way data flow</p>
-          <p>props down, events up. local modules do not reach into global stores and mutate them side-door style. if theme or auth must change, raise an event the owner understands.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">03</span>
-        <div class="step-body">
-          <p class="step-title">boundary idempotency</p>
-          <p>a local module should run from its props alone. bloomington today, madrid tomorrow: same component quality if the contract is clear. that is transfer quality, not vibes.</p>
-        </div>
-      </li>
-    </ol>
-
-    <div class="note">
-      <p>the dual-account shape mirrors this without forcing a metaphor. <b>@jadexzhao</b> is the compiler: global architecture, shared tokens, public sandboxes. <b>@matchaxmoxie</b> is the operational loop: local playbooks, canvas checklists, brand floors. same fence line. different jobs inside it.</p>
-      <p>live example: the <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a> keeps duck coords in local refs during raf; day/night is a small global theme toggle. no setState per frame. honesty check: it is react + typescript + vite. not a d3 canvas demo.</p>
-    </div>
-
-    <blockquote class="pull-quote">
-      <p>global rules define the fence line. local modules run free inside it. if the fence moves every sprint, nothing ships hot.</p>
-    </blockquote>
-  </section>
-
-  <hr class="rule">
-
-  <section id="mobile-gtm">
-    <p class="part-label">part 5</p>
-    <h2>mobile gtm / demo sandboxes</h2>
-    <p>pitch rooms and subway thumbs share one constraint: if the control is hard to hit or the CTA is clipped by chrome, the demo failed the shift. same sandwich rule as cascade chunks. one job per viewport, explicit margins, no silent assumptions.</p>
+    <h2>what that looks like in practice</h2>
+    <p><b>Technical GTM (consulting, not campaign marketing):</b> discovery on commercial calls, demo environments and POC sandboxes, integration prototypes, sales-to-eng translation, clean pilot-to-production handoffs. Same muscle as Solutions Engineering: technical credibility next to the commercial conversation.</p>
 
     <div class="chunk-grid" role="list">
       <article class="chunk-card" role="listitem">
-        <h4>fat-thumb · 48×48</h4>
-        <p>interactive hits stay ≥48 CSS px. pad the hit box; do not bloat the glyph. primary CTAs live in the bottom ~30% when the layout allows. destructives (clear / wipe) sit out of the casual sweep.</p>
+        <h4>accessible builds</h4>
+        <p>partner sites on the ServeIT roster: Rivet components, Cascade chunks, WCAG 2.2 AA baselines. staff-maintainable, visitor-hearable. see the <a href="i18n-wcag.html">accessibility note</a> for mixed-language DOM work.</p>
       </article>
       <article class="chunk-card" role="listitem">
-        <h4>viewport · unit by job</h4>
-        <p><b>svh</b> for bottom-anchor CTAs and structural nav that must remain reachable with the URL bar expanded. <b>lvh</b> for immersive full-bleed media that should not jitter. <b>dvh</b> for modals, popups, and absolute shells that track live UI chrome.</p>
+        <h4>demo sandboxes</h4>
+        <p>one job per viewport, 48px touch targets, primary CTA reachable on a phone. pitch rooms and subway thumbs use the same sandwich rule as Cascade chunks.</p>
       </article>
       <article class="chunk-card" role="listitem">
-        <h4>asset containment</h4>
-        <p>do not ship a desktop hero to a mobile circular crop. prefer <b>picture</b>/<b>srcset</b>, lazy non-LCP media, and capped font requests. demos stay light enough to open on shaky wifi.</p>
+        <h4>live proof</h4>
+        <p>the <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a> is a React + TypeScript + Vite sandbox: compositor motion, thumb-zone controls, honest about what it is (not a D3 canvas demo).</p>
       </article>
     </div>
 
-    <h3>advanced mobile rendering for gtm sandboxes</h3>
-    <p>soft 101 ends where the AE opens the sandbox on cellular. this is the bluesheet for pitch-critical motion surfaces.</p>
-
-    <ol class="runbook" aria-label="advanced mobile rendering bluesheet">
-      <li>
-        <span class="step-n" aria-hidden="true">01</span>
-        <div class="step-body">
-          <p class="step-title">compositor motion only</p>
-          <p>rAF writes <b>transform</b> / <b>translate3d</b> / <b>scale</b> / <b>rotate</b> / <b>opacity</b>. never per-frame <b>top</b>, <b>left</b>, <b>width</b>, or <b>height</b>. those force layout. cache container size outside the tick (<b>ResizeObserver</b>), then compute px once per write.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">02</span>
-        <div class="step-body">
-          <p class="step-title">react off the hot path</p>
-          <p>no <b>setState</b> inside rAF or high-frequency touch handlers. keep motion state in <b>useRef</b>, mutate the DOM node directly, sync React only on structure changes (spawn, clear, reset). FPS HUD is textContent, not a counter state.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">03</span>
-        <div class="step-body">
-          <p class="step-title">reserve media geometry</p>
-          <p>chart and sandbox stages declare <b>aspect-ratio</b> so the first paint does not shift the CTA row. immersive stages size with <b>lvh</b>; bottom action strips respect <b>svh</b> + safe-area.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">04</span>
-        <div class="step-body">
-          <p class="step-title">kill touch latency + scroll chaining</p>
-          <p><b>touch-action: manipulation</b> on sandbox triggers, toggles, tabs, and close controls removes double-tap zoom delay. <b>overscroll-behavior: contain</b> on drawers, modals, and scrollable sandbox panels stops elastic scroll from yanking the pitch deck underneath.</p>
-        </div>
-      </li>
-    </ol>
-
-    <p>live proof: the <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/">virtual duck farm</a> keeps spawn in the thumb zone, parks clear-all away from the primary CTA, runs compositor <code>translate3d</code> ducks, and sizes the pond with <code>lvh</code> + <code>aspect-ratio</code>. honesty check still holds: react + typescript + vite. not d3.</p>
-  </section>
-
-  <hr class="rule">
-
-  <section id="pages-deploy">
-    <p class="part-label">part 6</p>
-    <h2>github pages · dual footprint deploy</h2>
-    <p>two public surfaces, two publish shapes. match the workflow to the architecture. do not paste a generic spa playbook onto a static ops site, or a static copy job onto a nested vite demo.</p>
-
-    <ol class="runbook" aria-label="pages deploy runbook">
-      <li>
-        <span class="step-n" aria-hidden="true">01</span>
-        <div class="step-body">
-          <p class="step-title">@jadexzhao · composite artifact</p>
-          <p>Actions builds one <code>_site</code>: briefcase HTML at the project root, Vite duck farm nested at <code>/jadexzhao/duck-farm/</code>. that nest is intentional so the pond never clobbers the memo. <code>vite.config</code> <b>base</b> must stay <code>/jadexzhao/duck-farm/</code> or assets 404 on refresh.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">02</span>
-        <div class="step-body">
-          <p class="step-title">no spa 404 trap here</p>
-          <p>duck farm is a single canvas route. no <code>BrowserRouter</code>, no client path tree. a friendly static <code>404.html</code> is enough for missing portfolio URLs. the sessionStorage restore rewrite is for apps with real client routes under project Pages. skipping it is correct, not incomplete.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">03</span>
-        <div class="step-body">
-          <p class="step-title">@matchaxmoxie · static <code>site/</code></p>
-          <p>brand and ops publish the checked-in <code>site/</code> folder as the Pages artifact. not a Vite app. do not invent <code>base: '/matchaxmoxie/'</code> for that footprint. its <code>404.html</code> is a branded miss page, not an spa router shim.</p>
-        </div>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">04</span>
-        <div class="step-body">
-          <p class="step-title">cname isolation</p>
-          <p>neither footprint ships a <code>CNAME</code> today (default <code>*.github.io</code> hosts). if a custom domain lands later, keep experiments and sandboxes off the primary hostname so ops and code stay separable. do not point a throwaway demo at the same custom domain as the portfolio without a deliberate split.</p>
-        </div>
-      </li>
-    </ol>
-
-    <div class="note">
-      <p>live urls: <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a> · <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (sunset classroom archive).</p>
-    </div>
+    <blockquote class="pull-quote">
+      <p>global rules define the fence line. local modules run free inside it.</p>
+    </blockquote>
   </section>
 
   <footer class="closer">
-    <p class="duck">global rules define the fence line. local modules run free inside it. 福州 roots.</p>
-    <p class="human">Back to <a href="index.html">the briefcase</a> · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> · <a href="i18n-wcag.html">i18n ∩ wcag note</a>.</p>
+    <p class="duck">福州 roots · TypeScript · React · Python · PostgreSQL · WCAG</p>
+    <p class="human">
+      <a href="index.html">the briefcase</a>
+      · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      · <a href="https://github.com/jadexzhao">GitHub</a>
+      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+      · <a href="i18n-wcag.html">accessibility note</a>
+    </p>
   </footer>
 
 </main>
