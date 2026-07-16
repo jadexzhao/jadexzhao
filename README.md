@@ -10,7 +10,7 @@
 
 | | |
 | --- | --- |
-| [ServeIT · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/index.html) | WCAG builds · website team lead (Jan 2024 to present) · PIT-UN public-interest AI track |
+| [ServeIT](https://serveit.luddy.indiana.edu/) · [ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) | WCAG builds · website team lead (Jan 2024 to present) · PIT-UN public-interest AI track |
 | [potstickers](https://potstickers24.cloveronline.com/) | family restaurant · first ship |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
