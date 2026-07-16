@@ -424,6 +424,9 @@
     body{padding:0}
   }
 
+  img{max-width:100%;height:auto}
+  .status-pill{min-height:44px}
+  /* phone */
   @media (max-width:560px){
     :root{--banner-h:26px}
     body{
@@ -438,9 +441,10 @@
       top:auto;bottom:0;
       border-bottom:none;border-top:1px solid var(--line);
       padding-bottom:env(safe-area-inset-bottom,0px);
+      flex-wrap:wrap;justify-content:center;overflow-x:visible;
     }
     .jump-nav a{
-      padding:0 12px;font-size:10.5px;
+      padding:0 12px;font-size:10.5px;min-height:44px;
       border-bottom:none;border-top:2px solid transparent;
     }
     .jump-nav a:hover{
@@ -450,6 +454,17 @@
     .runbook .step-body{padding:12px 12px 14px 0}
     .status-pill{font-size:10.5px;padding:7px 10px}
     .state-grid{grid-template-columns:1fr}
+    .sheet{max-width:100%}
+  }
+  /* tablet */
+  @media (min-width:768px){
+    .sheet{max-width:820px}
+    .jump-nav{flex-wrap:wrap;overflow-x:visible}
+  }
+  /* wide / custom */
+  @media (min-width:1200px){
+    .sheet{max-width:900px}
+    body{font-size:16.5px}
   }
 </style>
 </head>

@@ -4,8 +4,8 @@
   "description": "sunrise · actor & entrepreneur who ships · gtm · serveit · serveai · iu luddy · builder-from-scratch portfolio",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#fff8f3",
-  "theme_color": "#d4a84b",
+  "background_color": "#faf6f0",
+  "theme_color": "#006644",
   "icons": [
     {
       "src": "favicon-32x32.png",
