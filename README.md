@@ -8,4 +8,4 @@
 
 ServeIT website lead · technical GTM intern (stealth, NYC) · Informatics @ IU Luddy · Madrid Spring 2026 · Miss Zhao archive on hiatus (sunset site).
 
-Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) — never a GitHub handle for IG.
+Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (Zhao / 赵朗曦 · open daytime face, not a secret brand account). Never a GitHub handle for IG.
