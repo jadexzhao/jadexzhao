@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--
-  jade zhao · the briefcase · sunrise
-  Twin: matchaxmoxie = sunset (classroom). IG: @zhao.langxi
+  jade zhao · 公文包 / 日出站
+  双站：matchaxmoxie = 日落（课堂）。IG 永远 @zhao.langxi（不是 GitHub 句柄）
+  公开边界：不写 IRB / 临床现场数据；不写 FASE 协调员运营
 -->
 <html lang="en">
 <head>
@@ -45,7 +46,7 @@
     --focus: #2a2622;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
   body {
     color-scheme: light only;
     background: linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 28%, var(--paper) 100%);
@@ -55,6 +56,7 @@
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
+    overflow-x: clip;
     padding:
       max(32px, env(safe-area-inset-top, 0px))
       max(24px, env(safe-area-inset-right, 0px))
@@ -66,6 +68,7 @@
     background: var(--ink); color: var(--paper);
     padding: 0.6rem 1rem; z-index: 200; font-weight: 600;
     text-decoration: underline; text-underline-offset: 3px;
+    min-height: 44px; display: inline-flex; align-items: center;
   }
   .skip-link:focus, .skip-link:focus-visible {
     top: 0; outline: 3px solid var(--jade-ink); outline-offset: 2px;
@@ -73,7 +76,8 @@
   a { color: var(--jade-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
   a:hover { color: var(--ink); }
   a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  .wrap { max-width: 640px; margin: 0 auto; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 640px; margin: 0 auto; width: 100%; }
   .twin { font-size: 14px; color: var(--mute); margin-bottom: 28px; letter-spacing: 0.02em; line-height: 1.55; max-width: 48ch; }
   .hero {
     display: grid;
@@ -92,7 +96,7 @@
   h1 {
     font-family: "Instrument Serif", Georgia, serif;
     font-weight: 400;
-    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
   }
@@ -104,8 +108,15 @@
     color: var(--mute);
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 0;
+    align-items: center;
+    gap: 4px 0;
+  }
+  .meta a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 4px 0;
+    touch-action: manipulation;
   }
   .meta > * { white-space: nowrap; }
   .meta .dot { margin: 0 0.4em; color: var(--mute); user-select: none; }
@@ -128,13 +139,46 @@
   .links { list-style: none; border-top: 1px solid var(--line); padding-top: 8px; margin-bottom: 40px; }
   .links li { border-bottom: 1px solid var(--line); }
   .links a {
-    display: flex; justify-content: space-between; gap: 16px;
-    padding: 14px 0; color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
+    display: flex; justify-content: space-between; gap: 16px; align-items: center;
+    min-height: 44px;
+    padding: 14px 0;
+    color: var(--ink); text-decoration: underline; text-underline-offset: 4px;
+    touch-action: manipulation;
   }
   .links a:hover { color: var(--jade-ink); }
-  .links .what { color: var(--mute); font-size: 14px; text-align: right; }
+  .links .what { color: var(--mute); font-size: 14px; text-align: right; flex: 1 1 auto; min-width: 0; }
   footer { font-size: 14px; color: var(--mute); border-top: 1px solid var(--line); padding-top: 16px; }
   footer .sc { font-family: "Noto Serif SC", serif; color: var(--ink); }
+  footer a {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 4px 0;
+    touch-action: manipulation;
+  }
+  /* phone */
+  @media (max-width: 559px) {
+    body {
+      padding:
+        max(24px, env(safe-area-inset-top, 0px))
+        max(16px, env(safe-area-inset-right, 0px))
+        max(40px, env(safe-area-inset-bottom, 0px))
+        max(16px, env(safe-area-inset-left, 0px));
+      font-size: 16px;
+    }
+    .photo { width: min(220px, 72vw); margin: 0 auto; }
+    .hero { text-align: center; justify-items: center; }
+    .hero-copy { text-align: center; }
+    .line { margin-left: auto; margin-right: auto; }
+    .meta { justify-content: center; }
+    .tldr { max-width: none; }
+    .links a {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      padding: 16px 0;
+      min-height: 48px;
+    }
+    .links .what { text-align: left; }
+  }
+  /* tablet · side-by-side hero */
   @media (min-width: 560px) {
     .hero {
       grid-template-columns: 160px minmax(0, 1fr);
@@ -143,10 +187,16 @@
     }
     .photo { width: 100%; }
   }
-  @media (max-width: 480px) {
-    body { font-size: 16px; }
-    .links a { flex-direction: column; gap: 4px; padding: 12px 0; }
-    .links .what { text-align: left; }
+  @media (min-width: 768px) {
+    .wrap { max-width: 700px; }
+    body { font-size: 17.5px; }
+  }
+  /* wide / custom */
+  @media (min-width: 1200px) {
+    .wrap { max-width: 760px; }
+    body { font-size: 18px; }
+    .line { max-width: 42ch; }
+    .tldr { max-width: 52ch; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .fade { animation: up 0.45s ease both; }
@@ -185,7 +235,8 @@
       <h1>jade zhao <span class="sc">赵</span></h1>
       <p class="line">
         Restaurant kid who ships. Informatics @ IU Luddy (May 2027).
-        ServeIT website lead. Madrid spring 2026. Technical GTM on the side.
+        ServeIT website lead. Madrid spring 2026. Technical GTM
+        (go-to-market · the eng side of getting product to buyers) on the side.
       </p>
       <p class="meta">
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a><span class="dot" aria-hidden="true">·</span>
@@ -201,8 +252,9 @@
     <h2 id="recruiter-tldr">For recruiters</h2>
     <p>
       I lead the website team at ServeIT (IU&rsquo;s nonprofit tech clinic): sites partners can keep,
-      plus Python/PostgreSQL data work. Technical GTM intern (stealth, NYC, Jun 2026).
-      Spring 2026: Complutense, Madrid. Stack: TypeScript, React, Python, PostgreSQL, WCAG.
+      plus Python/PostgreSQL data work. ServeAI is the clinic&rsquo;s public-interest AI track on the same roster.
+      Technical GTM (go-to-market) intern (stealth, NYC, Jun 2026).
+      Spring 2026: Complutense, Madrid. Stack: TypeScript, React, Python, PostgreSQL, WCAG (web accessibility).
     </p>
   </section>
 
@@ -216,6 +268,7 @@
 
   <ul class="links fade" aria-label="work">
     <li>
+      <!-- ServeIT clinic; ServeAI = public-interest AI track -->
       <a href="https://serveit.luddy.indiana.edu/serve-ai/">
         <span>ServeIT · ServeAI</span>
         <span class="what">nonprofit tech clinic · public-interest AI</span>
@@ -248,7 +301,7 @@
   </ul>
 
   <footer class="fade">
-    <span class="sc">福州</span> roots
+    <span class="sc">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
     · archive: <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (sunset)
     · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
   </footer>
