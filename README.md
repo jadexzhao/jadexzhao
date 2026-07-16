@@ -17,14 +17,14 @@
 
 ## now
 
-GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT. Informatics @ IU Luddy. Miss Zhao teaching archive on hiatus for senior year (sunset twin).
+GTM engineering intern at a stealth startup (NYC). Website team lead at ServeIT (ServeAI = PIT-UN public-interest AI track). Informatics @ IU Luddy. Study abroad: Universidad Complutense de Madrid (Spring 2026). Miss Zhao teaching archive on hiatus for senior year (sunset twin).
 
 ## twins
 
 | [@jadexzhao](https://github.com/jadexzhao) sunrise | [@matchaxmoxie](https://github.com/matchaxmoxie) sunset |
 | --- | --- |
-| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · GWC · IU guide |
+| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · GWC · [4-year IU path](https://matchaxmoxie.github.io/matchaxmoxie/freshman.html) · [Madrid](https://matchaxmoxie.github.io/matchaxmoxie/junior.html) |
 
-Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (never @jadexzhao for IG).
+Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (never @jadexzhao for IG). matchaxmoxie was the old classroom handle  ·  school IG renamed into the open as @zhao.langxi.
 
 福州 roots · TypeScript · React · Python · PostgreSQL · WCAG
