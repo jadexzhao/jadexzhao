@@ -95,9 +95,9 @@
   }
   .line {
     margin-top: 12px;
-    font-size: clamp(1rem, 2.2vw, 1.15rem);
-    color: rgba(250, 246, 240, 0.88);
-    max-width: 36ch;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: rgba(250, 246, 240, 0.9);
+    max-width: 34ch;
     line-height: 1.45;
   }
   .cta {
@@ -110,9 +110,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 10px 18px;
-    font-size: 15px;
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 17px;
     font-weight: 600;
     text-decoration: none;
     touch-action: manipulation;
@@ -150,37 +150,48 @@
     width: 100%;
   }
   .twin {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--mute);
-    margin-bottom: 32px;
+    margin: 28px 0 0;
     letter-spacing: 0.01em;
     line-height: 1.55;
     max-width: 58ch;
   }
-  .start-here {
-    font-size: 13px;
+  .fork-panel {
+    margin-bottom: 8px;
+  }
+  .choose-one {
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 4vw, 2rem);
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0 0 8px;
+    line-height: 1.15;
+  }
+  .choose-lede {
+    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
     color: var(--mute);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    line-height: 1.5;
+    max-width: 40ch;
+    margin: 0 0 18px;
   }
   .doors {
     display: grid;
-    gap: 12px;
-    margin-bottom: 40px;
+    gap: 14px;
+    margin-bottom: 12px;
   }
   @media (min-width: 700px) {
-    .doors { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .doors { grid-template-columns: 1fr 1fr; gap: 18px; }
   }
   .door {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     min-height: 44px;
-    padding: 18px 20px;
+    padding: 22px 22px;
     border: 1px solid var(--line);
-    border-left-width: 3px;
-    background: transparent;
+    border-left-width: 4px;
+    background: rgba(255, 255, 255, 0.55);
     color: var(--ink);
     text-decoration: none;
     touch-action: manipulation;
@@ -189,12 +200,36 @@
   .door:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
   .door--primary { border-left-color: var(--jade-ink); }
   .door--secondary { border-left-color: var(--gold); }
+  .door[aria-current="true"] {
+    border-color: var(--jade-ink);
+    background: #fff;
+    box-shadow: 0 0 0 1px var(--jade-ink);
+  }
   .door-who {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: clamp(1.35rem, 3.2vw, 1.65rem);
     line-height: 1.2;
   }
-  .door-what { font-size: 14px; color: var(--mute); line-height: 1.45; }
+  .door-what {
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    color: var(--mute);
+    line-height: 1.45;
+  }
+  .hire-path[hidden] {
+    display: none !important;
+  }
+  .hire-path {
+    margin-top: 28px;
+  }
+  .change-door {
+    margin: 0 0 20px;
+    font-size: 16px;
+  }
+  .change-door a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 
   .block {
     margin-bottom: 40px;
@@ -397,41 +432,40 @@
 <header class="hero" aria-labelledby="brand-title">
   <div class="hero-inner fade">
     <p class="brand" id="brand-title">Jade the Goat</p>
-    <p class="who">jade zhao <span class="sc">赵</span></p>
+    <p class="who">jade zhao <span class="sc">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
     <p class="line">
       Restaurant kid who builds websites and tools people actually use.
-      Studying Informatics (tech + design) at IU Luddy, graduating May 2027.
+      Pick one door below for the page that fits you.
     </p>
     <p class="cta">
-      <a class="cta-primary" href="#recruiter-path">See the work</a>
-      <a class="cta-ghost" href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-      <a class="cta-ghost" href="mailto:jlzhao@iu.edu">Email</a>
+      <a class="cta-primary" href="#path-fork">Choose your path</a>
     </p>
   </div>
 </header>
 
 <main id="main-content" class="page">
   <div class="wrap">
-    <p class="start-here fade fade-d1">Start here · one reason each</p>
-    <nav class="doors fade fade-d1" aria-label="Audience">
-      <a class="door door--primary" href="#recruiter-path">
-        <span class="door-who">Here to hire or work with me</span>
-        <span class="door-what">Built work, jobs, and how to reach me — stay on this page.</span>
-      </a>
-      <a class="door door--secondary" href="https://matchaxmoxie.github.io/matchaxmoxie/">
-        <span class="door-who">A student or high schooler</span>
-        <span class="door-what">Picking a college or major? One tap on my teaching site gets you a 3-step plan → Miss Zhao classroom</span>
-      </a>
-    </nav>
+    <section id="path-fork" class="fork-panel fade fade-d1" aria-labelledby="choose-heading">
+      <h2 id="choose-heading" class="choose-one">Choose one</h2>
+      <p class="choose-lede">
+        One door. Then the info that matches you.
+      </p>
+      <nav class="doors" aria-label="Audience">
+        <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire">
+          <span class="door-who">Here to hire or work with me</span>
+          <span class="door-what">Built work, jobs, and how to reach me. Stay on this site (<span class="sc" lang="zh-Hans">龙</span> · dragon).</span>
+        </a>
+        <a class="door door--secondary" id="door-student" href="https://matchaxmoxie.github.io/matchaxmoxie/" data-door="student">
+          <span class="door-who">A student or high schooler</span>
+          <span class="door-what">Picking IU or a major? Pick your situation on my teaching site for a 3-step plan (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix).</span>
+        </a>
+      </nav>
+    </section>
 
-    <p class="twin fade fade-d1">
-      Two sites, same me (after you pick a door):
-      <span class="sc" lang="zh-Hans">龙</span> · dragon (this work site) and
-      <span class="sc" lang="zh-Hans">凤凰</span> · phoenix
-      (<a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>, Miss Zhao for students).
-      Instagram: <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
+    <div id="hire-path" class="hire-path" hidden>
+    <p class="change-door">
+      <a href="#path-fork" id="change-door-link">← Choose a different door</a>
     </p>
-
     <section id="recruiter-path" class="block fade fade-d2" aria-labelledby="recruiter-tldr">
       <h2 id="recruiter-tldr">Here to hire or work with me</h2>
       <p>
@@ -521,20 +555,6 @@
       </ul>
     </section>
 
-    <section class="block fade fade-d3" aria-labelledby="kids-tldr">
-      <h2 id="kids-tldr">If you&rsquo;re a student</h2>
-      <p>
-        Scratch how-tos, IU path pages, and Miss Zhao notes live on
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix classroom).
-        Quick map of where I&rsquo;ve been:
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/footprint.html">footprint trail</a>.
-      </p>
-      <p class="path-tip">
-        Tip: start with the footprint, Scratch studio, or the IU Informatics guide.
-        Classroom phrase there: <strong>KISS</strong> (keep it simple).
-      </p>
-    </section>
-
     <ul class="links fade fade-d3" aria-label="work">
       <li>
         <a href="#gtm-consulting">
@@ -585,6 +605,15 @@
         </a>
       </li>
     </ul>
+    </div>
+
+    <p class="twin fade fade-d3">
+      Two sites, same me (after you pick a door):
+      <span class="sc" lang="zh-Hans">龙</span> · dragon (this work site) and
+      <span class="sc" lang="zh-Hans">凤凰</span> · phoenix
+      (<a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>, Miss Zhao for students).
+      Instagram: <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
+    </p>
 
     <footer class="site-footer fade fade-d3">
       <span class="sc">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
@@ -595,5 +624,79 @@
     </footer>
   </div>
 </main>
+<script>
+(function () {
+  "use strict";
+  var hirePath = document.getElementById("hire-path");
+  var doorHire = document.getElementById("door-hire");
+  var changeLink = document.getElementById("change-door-link");
+  var HIRE_HASHES = {
+    "#recruiter-path": true,
+    "#gtm-consulting": true,
+  };
+
+  function showHire(scrollToHash) {
+    if (!hirePath) return;
+    hirePath.hidden = false;
+    if (doorHire) doorHire.setAttribute("aria-current", "true");
+    try {
+      sessionStorage.setItem("jadex-door", "hire");
+    } catch (_e) {}
+    if (scrollToHash) {
+      var target = document.querySelector(scrollToHash);
+      if (target) {
+        target.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        });
+      }
+    }
+  }
+
+  function hideHire() {
+    if (!hirePath) return;
+    hirePath.hidden = true;
+    if (doorHire) doorHire.removeAttribute("aria-current");
+    try {
+      sessionStorage.removeItem("jadex-door");
+    } catch (_e) {}
+  }
+
+  if (doorHire) {
+    doorHire.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (history.replaceState) {
+        history.replaceState(null, "", "#recruiter-path");
+      } else {
+        location.hash = "recruiter-path";
+      }
+      showHire("#recruiter-path");
+    });
+  }
+
+  if (changeLink) {
+    changeLink.addEventListener("click", function () {
+      hideHire();
+      if (history.replaceState) {
+        history.replaceState(null, "", "#path-fork");
+      }
+    });
+  }
+
+  var hash = location.hash || "";
+  var saved = null;
+  try {
+    saved = sessionStorage.getItem("jadex-door");
+  } catch (_e) {}
+
+  if (HIRE_HASHES[hash]) {
+    showHire(hash);
+  } else if (saved === "hire" && hash !== "#path-fork") {
+    showHire(null);
+  }
+})();
+</script>
 </body>
 </html>
