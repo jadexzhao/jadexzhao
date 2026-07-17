@@ -21,6 +21,8 @@
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
 <meta property="og:image:alt" content="Portrait of Jade Zhao">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta name="twitter:image:alt" content="Portrait of Jade Zhao">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
@@ -52,7 +54,6 @@
     align-items: center;
   }
   .back:hover { border-color: var(--jade-ink); color: var(--ink); }
-  .back::before { content: "← "; }
   .memo-kicker {
     font-size: 12px;
     letter-spacing: 0.08em;
@@ -129,11 +130,14 @@
     max-width: 62ch;
   }
   ul.insight li::before {
-    content: "·";
+    content: "";
     position: absolute;
     left: 0;
-    color: var(--jade-ink);
-    font-weight: 600;
+    top: 0.55em;
+    width: 0.35em;
+    height: 0.35em;
+    border-radius: 50%;
+    background: var(--jade-ink);
   }
   .link-hub { display: grid; gap: 8px; margin-top: 14px; }
   .link-hub a {
@@ -191,7 +195,7 @@
 <main id="main-content" class="sheet">
 
   <header>
-    <a class="back" href="index.html">the briefcase</a>
+    <a class="back" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
     <p class="memo-kicker">jade zhao · architectural note</p>
     <h1>i18n (internationalization) ∩ WCAG 2.2 AA (web accessibility guidelines)<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
     <p class="standfirst"><strong>In plain English:</strong> a screen reader is software that reads a web page aloud for people who can&rsquo;t see it well. If a page mixes languages (say English and Chinese) without telling the software which is which, it reads them wrong. So I label the languages, and I leave extra room because Chinese characters take up more space than English letters. This is a short, practical note, not a lecture. The same problem shows up when a nonprofit page mixes English with partner languages, when a restaurant ticket switches mid-line, and when a household flips between <span class="sc" lang="zh-Hans">福州话</span> / <span class="sc" lang="zh-Hans">普通话</span> / English without thinking about it.</p>

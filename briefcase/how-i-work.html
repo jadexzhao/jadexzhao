@@ -58,7 +58,6 @@
     align-items: center;
   }
   .back:hover { border-color: var(--jade-ink); color: var(--ink); }
-  .back::before { content: "← "; }
 
   .memo-kicker {
     font-size: 12px;
@@ -491,7 +490,7 @@
 <main id="main-content" class="sheet">
 
   <header>
-    <a class="back reveal" href="index.html">the briefcase</a>
+    <a class="back reveal" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
     <p class="memo-kicker reveal">jade zhao · <span class="sc" lang="zh-Hans">赵</span> · the briefcase</p>
     <h1 class="reveal">how i work<span class="sub">process · serveit · handoffs</span></h1>
 
@@ -508,13 +507,13 @@
     </div>
     <nav class="toc reveal" aria-label="memo sections">
       <a href="#part-1">#01 sandwich runbook</a>
-      <span class="sep">·</span>
+      <span class="sep" aria-hidden="true">·</span>
       <a href="#part-2">#02 serveit chunks</a>
-      <span class="sep">·</span>
+      <span class="sep" aria-hidden="true">·</span>
       <a href="#part-3">#03 governance</a>
-      <span class="sep">·</span>
+      <span class="sep" aria-hidden="true">·</span>
       <a href="#part-4">#04 in practice</a>
-      <span class="sep">·</span>
+      <span class="sep" aria-hidden="true">·</span>
       <a href="i18n-wcag.html">accessibility note</a>
     </nav>
   </header>

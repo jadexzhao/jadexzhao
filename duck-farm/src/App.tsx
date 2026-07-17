@@ -15,10 +15,23 @@ interface Duck {
 
 const ACCESSORIES: Accessory[] = ['briefcase', 'tea', 'hardhat']
 
+const ACCESSORY_LABEL: Record<Accessory, string> = {
+  briefcase: 'a briefcase',
+  tea: 'tea',
+  hardhat: 'a hard hat',
+}
+
 const getRandomAccessory = (): Accessory | undefined =>
   Math.random() > 0.7
     ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)]
     : undefined
+
+function duckAccessibleName(duck: Duck): string {
+  const gear = duck.accessory
+    ? ` wearing ${ACCESSORY_LABEL[duck.accessory]}`
+    : ''
+  return `Duck ${duck.id}${gear}. Activate to bounce.`
+}
 
 function makeDuck(id: number, x: number, y: number, angle: number, vx: number): Duck {
   return { id, x, y, angle, vx, vy: 0, accessory: getRandomAccessory() }
@@ -399,7 +412,7 @@ export default function App() {
                   onClick={(e) => handleDuckClick(e, duck.id)}
                   role="button"
                   tabIndex={0}
-                  aria-label={`Duck ${duck.id}. Activate to bounce.`}
+                  aria-label={duckAccessibleName(duck)}
                   onKeyDown={(e) => handleDuckKeyDown(e, duck.id)}
                 >
                   <DuckSprite accessory={duck.accessory} />
@@ -415,10 +428,20 @@ export default function App() {
           </p>
 
           <div className="controls" role="group" aria-label="Farm controls">
-            <button type="button" className="btn-primary" onClick={populateFarm}>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={populateFarm}
+              aria-label="Spawn 8 ducks"
+            >
               spawn 8
             </button>
-            <button type="button" className="btn-secondary" onClick={toggleDayNight}>
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={toggleDayNight}
+              aria-label={isDay ? 'Switch to night mode' : 'Switch to day mode'}
+            >
               {isDay ? 'night' : 'day'}
             </button>
             <button type="button" className="btn-secondary" onClick={resetFarm}>
@@ -433,6 +456,7 @@ export default function App() {
               onClick={() => setShowDev((v) => !v)}
               aria-pressed={showDev}
               aria-controls="farm-dev-hud"
+              aria-label={showDev ? 'Hide frames per second' : 'Show frames per second'}
             >
               {showDev ? 'hide fps' : 'fps'}
             </button>
@@ -454,7 +478,10 @@ export default function App() {
         </div>
 
         <details className="farm-architecture">
-          <summary>how the pond runs</summary>
+          <summary>
+            <span className="arch-toggle" aria-hidden="true" />
+            how the pond runs
+          </summary>
           <div className="arch-body">
             <ul className="arch-list">
               <li>
