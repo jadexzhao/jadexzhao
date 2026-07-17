@@ -1,6 +1,6 @@
 # virtual duck farm
 
-Interactive React + TypeScript + Vite sandbox on the [jadexzhao](https://jadexzhao.github.io/jadexzhao/) sunrise portfolio. Click the grass to place ducks, click a duck to bounce it, Konami for a stampede.
+Interactive React + TypeScript + Vite sandbox on the [jadexzhao](https://jadexzhao.github.io/jadexzhao/) 龙 · dragon portfolio. Click the grass to place ducks, click a duck to bounce it, Konami for a stampede.
 
 ## development
 
