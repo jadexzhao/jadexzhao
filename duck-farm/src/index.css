@@ -26,8 +26,11 @@
   --pond-lit: #5ec4d4;
   --pond-mid: #2a9bb0;
   --pond-deep: #176a7a;
-  --sun: #ffe566;
-  --sun-soft: rgba(255, 214, 80, 0.55);
+  --sun: #f2d35a;
+  --duck-body: #f0c84a;
+  --duck-wing: #e4b53a;
+  --duck-beak: #d97828;
+  --duck-eye: #2a2622;
 
   /* Night stage */
   --night-sky: #0d1b2a;
@@ -213,7 +216,7 @@ body.night-farm {
   font-size: 0.98rem;
   line-height: 1.65;
   color: var(--mute);
-  max-width: 38rem;
+  max-width: 34rem;
   margin: 0 auto 12px;
 }
 
@@ -244,7 +247,6 @@ body.night-farm {
 
 .farm-container.night-mode .farm-title {
   color: var(--night-hud);
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .farm-container.night-mode .farm-eyebrow,
@@ -328,15 +330,9 @@ body.night-farm {
     radial-gradient(1.5px 1.5px at 110px 55px, #e8f0d8, transparent);
   background-repeat: repeat;
   background-size: 200px 200px;
-  opacity: 0.85;
-  animation: twinkle 4s ease-in-out infinite alternate;
+  opacity: 0.72;
   pointer-events: none;
   z-index: 0;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0.55; }
-  100% { opacity: 0.95; }
 }
 
 .grass {
@@ -352,7 +348,6 @@ body.night-farm {
     var(--grass-deep) 100%
   );
   clip-path: polygon(0 8%, 8% 4%, 18% 10%, 28% 3%, 40% 9%, 52% 2%, 65% 8%, 78% 1%, 90% 7%, 100% 0, 100% 100%, 0 100%);
-  box-shadow: inset 0 10px 28px rgba(255, 255, 255, 0.12);
   z-index: 0;
 }
 
@@ -362,7 +357,6 @@ body.night-farm {
 
 .farm-canvas.night .grass {
   background: linear-gradient(180deg, #245c3e 0%, var(--night-grass) 45%, #102820 100%);
-  box-shadow: inset 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .pond {
@@ -393,12 +387,9 @@ body.night-farm {
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 48px;
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
-  transition: filter 0.2s ease;
-  filter: drop-shadow(0 3px 5px rgba(42, 38, 34, 0.28));
   z-index: 2;
   min-width: 48px;
   min-height: 48px;
@@ -420,8 +411,116 @@ body.night-farm {
   border-radius: 4px;
 }
 
-.farm-canvas.night .duck {
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.55)) brightness(1.08);
+.duck-sprite {
+  position: relative;
+  display: block;
+  line-height: 0;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 2px rgba(42, 38, 34, 0.22));
+}
+
+.duck-svg {
+  display: block;
+  overflow: visible;
+}
+
+.duck-body {
+  fill: var(--duck-body);
+}
+
+.duck-wing {
+  fill: var(--duck-wing);
+}
+
+.duck-head {
+  fill: var(--duck-body);
+}
+
+.duck-beak {
+  fill: var(--duck-beak);
+}
+
+.duck-eye {
+  fill: var(--duck-eye);
+}
+
+.farm-canvas.night .duck-sprite {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4)) brightness(1.05);
+}
+
+.duck:hover .duck-sprite {
+  transform: scale(1.08);
+}
+
+.duck.clicked .duck-sprite {
+  animation: quack 0.55s ease-out;
+}
+
+@keyframes quack {
+  0% { transform: scale(1) rotate(0deg); }
+  45% { transform: scale(1.08) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.accessory {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.accessory--briefcase {
+  width: 11px;
+  height: 9px;
+  background: var(--jade-ink);
+  border-radius: 1px;
+  top: 0;
+  right: 0;
+}
+
+.accessory--briefcase::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 2px;
+  width: 7px;
+  height: 3px;
+  border: 1.5px solid var(--jade-ink);
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+}
+
+.accessory--tea {
+  width: 10px;
+  height: 9px;
+  background: #c45c3a;
+  border-radius: 1px 1px 3px 3px;
+  top: 1px;
+  right: 1px;
+}
+
+.accessory--tea::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 2px;
+  width: 4px;
+  height: 4px;
+  border: 1.5px solid #c45c3a;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.accessory--hardhat {
+  width: 14px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 7px 7px 1px 1px;
+  top: -1px;
+  right: -1px;
 }
 
 @media (max-width: 640px) {
@@ -443,7 +542,6 @@ body.night-farm {
     flex: 1 1 auto;
     min-width: 9.5rem;
   }
-
 }
 
 .farm-toast {
@@ -453,7 +551,7 @@ body.night-farm {
   transform: translateX(-50%) translateY(12px);
   z-index: 40;
   padding: 10px 16px;
-  border-radius: 4px;
+  border-radius: 2px;
   background: var(--ink);
   color: var(--paper);
   font-size: 0.875rem;
@@ -462,45 +560,11 @@ body.night-farm {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
-  box-shadow: 0 8px 24px rgba(42, 38, 34, 0.28);
 }
 
 .farm-toast.visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-}
-
-.accessory {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 24px;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-}
-
-.duck:hover {
-  filter: drop-shadow(0 4px 14px rgba(0, 102, 68, 0.35));
-}
-
-.duck:hover .duck-sprite {
-  transform: scale(1.12);
-}
-
-.duck.clicked .duck-sprite {
-  animation: quack 0.6s ease-out;
-}
-
-.duck-sprite {
-  display: block;
-  line-height: 1;
-  transform-origin: center center;
-  transition: transform 0.2s ease;
-}
-
-@keyframes quack {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(5deg); }
-  100% { transform: scale(1) rotate(0deg); }
 }
 
 .farm-hud {
@@ -597,10 +661,6 @@ button {
   color: var(--jade-ink);
 }
 
-button:active {
-  transform: translateY(0);
-}
-
 button:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -614,11 +674,6 @@ button:focus-visible {
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.info strong {
-  color: var(--jade-ink);
-  font-weight: 600;
 }
 
 .info code {
@@ -752,6 +807,19 @@ button:focus-visible {
   line-height: 1.6;
 }
 
+.footer-credit {
+  margin: 0 0 6px;
+}
+
+.footer-credit strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.footer-links {
+  margin: 0;
+}
+
 .site-footer .sc {
   font-family: var(--font-sc);
   color: var(--ink);
@@ -832,7 +900,7 @@ button:focus-visible {
   color: var(--night-hud-soft);
 }
 
-.farm-container.night-mode .info strong,
+.farm-container.night-mode .footer-credit strong,
 .farm-container.night-mode .farm-architecture summary,
 .farm-container.night-mode .arch-table tbody th,
 .farm-container.night-mode .arch-table thead th,
@@ -866,10 +934,8 @@ button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stars,
   .cloud,
-  .pond::before,
-  .farm-canvas.day::before {
+  .pond::before {
     animation: none !important;
   }
 
