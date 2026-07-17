@@ -162,6 +162,12 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+/* Chinese display · shared */
+.sc {
+  font-family: var(--font-sc);
+  font-weight: 500;
+}
+
 /* —— shared footer —— */
 .site-footer {
   font-size: 14px;
@@ -173,7 +179,6 @@ a:focus-visible {
 }
 
 .site-footer .sc {
-  font-family: var(--font-sc);
   color: var(--ink);
 }
 

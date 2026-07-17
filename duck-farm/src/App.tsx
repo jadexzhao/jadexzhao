@@ -338,12 +338,12 @@ export default function App() {
 
       <header className="farm-header">
         <p className="farm-eyebrow">
-          <span lang="zh-Hans">鸭年</span> 2026 · live sandbox
+          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026
         </p>
         <h1 className="farm-title">virtual duck farm</h1>
         <p className="farm-lede">
-          Restaurant-kid wiring: ship what works. Click the grass to place a duck, tap a duck
-          to bounce it, then stress-test with Konami (<em>↑↑↓↓←→←→BA</em>).
+          A small React pond under the briefcase brand. Click the grass to place a duck.
+          Tap a duck to bounce it. Konami (<em>↑↑↓↓←→←→BA</em>) for a stampede.
         </p>
       </header>
 
@@ -356,8 +356,8 @@ export default function App() {
             ref={canvasRef}
             className={`farm-canvas ${isDay ? 'day' : 'night'}`}
             onClick={handleCanvasClick}
-            role="application"
-            aria-label="Interactive duck farm. Click the grass to place ducks."
+            role="region"
+            aria-label="Interactive duck farm pond. Click the grass to place ducks, or use the controls below."
           >
             {!isDay && <div className="stars" aria-hidden="true" />}
             <div className="cloud cloud-a" aria-hidden="true" />
@@ -399,119 +399,102 @@ export default function App() {
         </section>
 
         <div className="farm-hud">
-          <div className="counter" aria-live="polite">
+          <p className="counter" aria-live="polite">
             <span>{duckCount}</span> duck{duckCount !== 1 ? 's' : ''} on the farm
-          </div>
+          </p>
 
-          <div className="controls">
+          <div className="controls" role="group" aria-label="Farm controls">
             <button type="button" className="btn-primary" onClick={populateFarm}>
-              spawn 8 ducks
+              spawn 8
             </button>
             <button type="button" className="btn-secondary" onClick={toggleDayNight}>
-              {isDay ? 'night mode' : 'day mode'}
+              {isDay ? 'night' : 'day'}
             </button>
             <button type="button" className="btn-secondary" onClick={resetFarm}>
               reset
+            </button>
+            <button type="button" className="btn-ghost" onClick={clearFarm}>
+              clear
             </button>
             <button
               type="button"
               className="btn-ghost"
               onClick={() => setShowDev((v) => !v)}
               aria-pressed={showDev}
+              aria-controls="farm-dev-hud"
             >
-              {showDev ? 'hide FPS' : 'dev HUD'}
-            </button>
-            <button type="button" className="btn-danger" onClick={clearFarm}>
-              clear all
+              {showDev ? 'hide fps' : 'fps'}
             </button>
           </div>
 
           {showDev && (
-            <div className="dev-hud" aria-live="polite">
+            <p id="farm-dev-hud" className="dev-hud" aria-live="polite">
               <span ref={fpsElRef}>0 fps</span>
               <span aria-hidden="true"> · </span>
-              <span>{duckCount} ducks</span>
-              <span aria-hidden="true"> · </span>
               <span>{isDay ? 'day' : 'night'}</span>
-            </div>
+            </p>
           )}
 
           <p className="info">
-            <strong>Click the grass</strong> to place ducks.{' '}
-            <strong>Click a duck</strong> to make it jump.
-            <br />
-            Stack: React + TypeScript + Vite. Positions live in a ref;{' '}
-            <code>requestAnimationFrame</code> writes compositor transforms so React never
-            re-renders per frame.
+            React + TypeScript + Vite. Positions live in a <code>useRef</code>;{' '}
+            <code>requestAnimationFrame</code> writes transforms so React does not
+            re-render every frame.
           </p>
         </div>
 
         <details className="farm-architecture">
-          <summary>architecture under the grass</summary>
+          <summary>how the pond runs</summary>
           <div className="arch-body">
             <ul className="arch-list">
               <li>
-                <strong>State.</strong> Duck positions live in a <code>useRef</code> mutated
-                inside <code>requestAnimationFrame</code>. React state only syncs when ducks
-                are added, cleared, or reset. Canvas size is cached via{' '}
-                <code>ResizeObserver</code>. Same fence as the{' '}
+                <strong>State.</strong> Duck positions mutate inside{' '}
+                <code>requestAnimationFrame</code>. React state only syncs when ducks
+                are added, cleared, or reset. Same fence as{' '}
                 <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
                   how i work
-                </a>{' '}
-                memo.
+                </a>
+                .
               </li>
               <li>
-                <strong>Events.</strong> A window <code>keydown</code> listener tracks the
-                Konami sequence and stamps fifty ducks when complete. Day/night follows the
-                clock unless you toggle manually.
-              </li>
-              <li>
-                <strong>Access.</strong> Ducks are keyboard-focusable (Enter / Space). Controls
-                meet a 48px minimum tap target. Reduced-motion preferences pause waddle
-                animation. Toast uses <code>aria-live=&quot;polite&quot;</code>.
+                <strong>Access.</strong> Ducks take keyboard focus (Enter / Space).
+                Controls stay at 48px tap targets. Reduced motion pauses the waddle.
               </li>
             </ul>
 
-            <h3 className="arch-table-title">state engine blueprint</h3>
             <div className="table-wrap">
               <table className="arch-table">
                 <caption className="visually-hidden">
-                  State engine blueprint for farm interactions
+                  What each farm interaction updates
                 </caption>
                 <thead>
                   <tr>
-                    <th scope="col">interaction</th>
-                    <th scope="col">trigger</th>
-                    <th scope="col">mutates</th>
+                    <th scope="col">action</th>
+                    <th scope="col">updates</th>
                     <th scope="col">React re-render?</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">Grid click</th>
-                    <td>click grass (y &gt; 60%)</td>
-                    <td>append duck to ref + list</td>
-                    <td>yes (structure change)</td>
+                    <th scope="row">Click grass</th>
+                    <td>append duck</td>
+                    <td>yes</td>
                   </tr>
                   <tr>
-                    <th scope="row">Entity click</th>
-                    <td>click / Enter on a duck</td>
-                    <td>vx flip, slight jump (vy)</td>
+                    <th scope="row">Tap duck</th>
+                    <td>vx flip, small jump</td>
                     <td>no (DOM via raf)</td>
                   </tr>
                   <tr>
-                    <th scope="row">Stampede</th>
-                    <td>Konami ↑↑↓↓←→←→BA</td>
+                    <th scope="row">Konami</th>
                     <td>+50 ducks + toast</td>
-                    <td>yes (batch append)</td>
+                    <td>yes</td>
                   </tr>
                   <tr>
-                    <th scope="row">Mode toggle</th>
-                    <td>day / night button</td>
+                    <th scope="row">Day / night</th>
                     <td>
                       <code>isDay</code> + body class
                     </td>
-                    <td>yes (theme)</td>
+                    <td>yes</td>
                   </tr>
                 </tbody>
               </table>

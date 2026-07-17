@@ -336,6 +336,38 @@
   }
   .madrid-note a { color: var(--jade-ink); font-weight: 600; }
 
+  /* —— interests strip (not a card grid) —— */
+  .interest-strip {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    max-width: 62ch;
+  }
+  .interest-strip li {
+    font-size: 15px;
+    color: var(--mute);
+    line-height: 1.55;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .interest-strip li:first-child { padding-top: 4px; }
+  .interest-strip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .pd-zh {
+    font-family: var(--font-sc);
+    font-weight: 500;
+    color: var(--jade-ink);
+  }
+  .block .pd-line {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--mute);
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
   .links {
     list-style: none;
     border-top: 1px solid var(--line);
@@ -505,10 +537,35 @@
       </figure>
       <p class="quick-row">
         <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+        <a href="#prof-dev">专业发展 · where I&rsquo;m headed</a>
         <a href="#gtm-consulting">How I help with software</a>
+        <a href="#outside-work">Outside the laptop</a>
         <a href="https://serveit.luddy.indiana.edu/serve-ai/">ServeIT · ServeAI</a>
         <a href="how-i-work.html">how i work</a>
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
+      </p>
+    </section>
+
+    <section id="prof-dev" class="block fade fade-d2" aria-labelledby="pd-heading">
+      <h2 id="pd-heading">
+        <span class="pd-zh" lang="zh-Hans">专业发展</span>
+        · where I&rsquo;m headed
+      </h2>
+      <p>
+        I&rsquo;m Jade Zhao (<span class="sc" lang="zh-Hans">赵</span>), with
+        <span class="sc" lang="zh-Hans">福州</span> roots and a bilingual edge:
+        English for the room, Chinese when the conversation needs it. Culture first,
+        not a claim about any research lab.
+      </p>
+      <p class="pd-line">
+        By May 2027 I want roles where I sit between product and people:
+        <strong>Solutions Engineering</strong> or <strong>technical go-to-market</strong>.
+        Until then I&rsquo;m shipping accessible nonprofit sites (WCAG) at ServeIT,
+        practicing discovery and demos in a stealth NYC internship, and keeping the
+        handoffs clean enough that non-engineers can keep the work running.
+      </p>
+      <p class="pd-line" lang="zh-Hans">
+        招聘方一眼能看懂：技术够硬，也能把产品讲清楚。
       </p>
     </section>
 
@@ -555,7 +612,35 @@
       </ul>
     </section>
 
+    <section id="outside-work" class="block fade fade-d2" aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Outside the laptop</h2>
+      <p>
+        When I&rsquo;m not shipping pages or sitting in a demo, this is the quieter side
+        of the week. Same person recruiters meet on LinkedIn.
+      </p>
+      <ul class="interest-strip">
+        <li>
+          <strong>Gardening.</strong> Jade plants and small pots on the sill.
+          Slow care, noticing light, keeping something alive on purpose.
+        </li>
+        <li>
+          <strong>Film photography.</strong> Slower frames than a phone roll.
+          I like the wait between click and print.
+        </li>
+        <li>
+          <strong>Reading.</strong> Fiction and essays between classes.
+          Good for resetting after a long build day.
+        </li>
+      </ul>
+    </section>
+
     <ul class="links fade fade-d3" aria-label="work">
+      <li>
+        <a href="#prof-dev">
+          <span>专业发展 · where I&rsquo;m headed</span>
+          <span class="what">Solutions Eng · May 2027 · bilingual</span>
+        </a>
+      </li>
       <li>
         <a href="#gtm-consulting">
           <span>How I help with software</span>
@@ -577,7 +662,7 @@
       <li>
         <a href="duck-farm/">
           <span>virtual duck farm</span>
-          <span class="what">React sandbox · 鸭年</span>
+          <span class="what">龙 playground · 鸭年</span>
         </a>
       </li>
       <li>
@@ -632,7 +717,9 @@
   var changeLink = document.getElementById("change-door-link");
   var HIRE_HASHES = {
     "#recruiter-path": true,
+    "#prof-dev": true,
     "#gtm-consulting": true,
+    "#outside-work": true,
   };
 
   function showHire(scrollToHash) {
