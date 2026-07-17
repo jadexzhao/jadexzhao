@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import './App.css'
 
+type Accessory = 'briefcase' | 'tea' | 'hardhat'
+
 interface Duck {
   id: number
   x: number
@@ -8,11 +10,12 @@ interface Duck {
   angle: number
   vx: number
   vy: number
-  accessory?: string
+  accessory?: Accessory
 }
 
-const ACCESSORIES = ['💼', '🍵', '👷‍♀️']
-const getRandomAccessory = () =>
+const ACCESSORIES: Accessory[] = ['briefcase', 'tea', 'hardhat']
+
+const getRandomAccessory = (): Accessory | undefined =>
   Math.random() > 0.7
     ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)]
     : undefined
@@ -48,6 +51,21 @@ function prefersReducedMotion(): boolean {
   return (
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+}
+
+function DuckSprite({ accessory }: { accessory?: Accessory }) {
+  return (
+    <span className="duck-sprite" aria-hidden="true">
+      <svg className="duck-svg" viewBox="0 0 48 40" width="44" height="36" focusable="false">
+        <ellipse className="duck-body" cx="22" cy="26" rx="16" ry="10" />
+        <circle className="duck-head" cx="34" cy="16" r="9" />
+        <ellipse className="duck-wing" cx="18" cy="25" rx="8" ry="5" />
+        <path className="duck-beak" d="M42 16 L50 18 L42 21 Z" />
+        <circle className="duck-eye" cx="37" cy="14" r="1.6" />
+      </svg>
+      {accessory && <span className={`accessory accessory--${accessory}`} />}
+    </span>
   )
 }
 
@@ -338,12 +356,12 @@ export default function App() {
 
       <header className="farm-header">
         <p className="farm-eyebrow">
-          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026 · you are in the window
+          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026
         </p>
-        <h1 className="farm-title">virtual duck farm</h1>
+        <h1 className="farm-title">duck farm</h1>
         <p className="farm-lede">
-          This tab is the playground. Click the grass to place a duck. Tap a duck to bounce it.
-          Konami (<em>↑↑↓↓←→←→BA</em>) for a stampede. Architecture notes sit under the pond if you want them.
+          Click the grass to place a duck. Tap a duck to bounce it. Konami (
+          <em>↑↑↓↓←→←→BA</em>) for a stampede.
         </p>
       </header>
 
@@ -384,14 +402,7 @@ export default function App() {
                   aria-label={`Duck ${duck.id}. Activate to bounce.`}
                   onKeyDown={(e) => handleDuckKeyDown(e, duck.id)}
                 >
-                  <span className="duck-sprite" aria-hidden="true">
-                    🦆
-                  </span>
-                  {duck.accessory && (
-                    <span className="accessory" aria-hidden="true">
-                      {duck.accessory}
-                    </span>
-                  )}
+                  <DuckSprite accessory={duck.accessory} />
                 </div>
               )
             })}
@@ -504,20 +515,25 @@ export default function App() {
       </main>
 
       <footer className="site-footer farm-footer">
-        <span className="sc" lang="zh-Hans">
-          福州
-        </span>{' '}
-        roots · TypeScript · React · Vite · WCAG
-        {' · '}
-        <a href="https://jadexzhao.github.io/jadexzhao/">the briefcase</a>
-        {' · '}
-        <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-        {' · '}
-        <a href="https://github.com/jadexzhao">GitHub</a>
-        {' · '}
-        <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
-        {' · '}
-        IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+        <p className="footer-credit">
+          <strong>Jade Zhao</strong>
+          {' · '}
+          <span className="sc" lang="zh-Hans">
+            福州
+          </span>{' '}
+          roots · TypeScript · React · Vite · WCAG
+        </p>
+        <p className="footer-links">
+          <a href="https://jadexzhao.github.io/jadexzhao/">the briefcase</a>
+          {' · '}
+          <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+          {' · '}
+          <a href="https://github.com/jadexzhao">GitHub</a>
+          {' · '}
+          <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
+          {' · '}
+          IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+        </p>
       </footer>
 
       <div

@@ -3,22 +3,13 @@
 .farm-canvas.day::before {
   content: '';
   position: absolute;
-  top: 10%;
-  right: 14%;
-  width: 64px;
-  height: 64px;
+  top: 12%;
+  right: 16%;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #fffef0 0%,
-    var(--sun) 42%,
-    rgba(255, 214, 80, 0.35) 68%,
-    transparent 72%
-  );
-  box-shadow:
-    0 0 28px var(--sun-soft),
-    0 0 56px rgba(255, 214, 80, 0.28);
-  animation: sun-pulse 5s ease-in-out infinite alternate;
+  background: var(--sun);
+  opacity: 0.92;
   pointer-events: none;
   z-index: 1;
 }
@@ -29,42 +20,26 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 48%;
   background: radial-gradient(
-    ellipse 70% 55% at 78% 18%,
-    rgba(255, 229, 102, 0.28) 0%,
-    transparent 65%
+    ellipse 55% 45% at 80% 16%,
+    rgba(255, 229, 102, 0.18) 0%,
+    transparent 70%
   );
   pointer-events: none;
   z-index: 0;
 }
 
-@keyframes sun-pulse {
-  0% {
-    transform: scale(1);
-    box-shadow:
-      0 0 28px var(--sun-soft),
-      0 0 56px rgba(255, 214, 80, 0.28);
-  }
-  100% {
-    transform: scale(1.08);
-    box-shadow:
-      0 0 36px rgba(255, 214, 80, 0.65),
-      0 0 72px rgba(255, 214, 80, 0.35);
-  }
-}
-
 .farm-canvas.night::before {
-  /* Soft moon. teal night, not purple glow */
   content: '';
   position: absolute;
-  top: 12%;
-  left: 16%;
-  width: 42px;
-  height: 42px;
+  top: 14%;
+  left: 18%;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f0f4e8 0%, #d8e0c8 55%, transparent 72%);
-  box-shadow: 0 0 24px rgba(232, 240, 216, 0.45);
+  background: #e8edd8;
+  opacity: 0.9;
   pointer-events: none;
   z-index: 1;
 }
@@ -77,9 +52,9 @@
   width: 100%;
   height: 28%;
   background: radial-gradient(
-    ellipse 60% 100% at 50% 100%,
-    rgba(201, 160, 74, 0.22) 0%,
-    transparent 70%
+    ellipse 55% 90% at 50% 100%,
+    rgba(201, 160, 74, 0.16) 0%,
+    transparent 72%
   );
   pointer-events: none;
   z-index: 0;
@@ -88,11 +63,10 @@
 /* Drifting clouds */
 .cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.78);
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 40% 50% 45% 55% / 60% 50% 55% 45%;
   pointer-events: none;
   z-index: 1;
-  filter: blur(0.2px);
   animation: cloud-drift linear infinite;
 }
 
@@ -105,79 +79,79 @@
 }
 
 .cloud-a {
-  width: 72px;
-  height: 22px;
+  width: 68px;
+  height: 20px;
   top: 14%;
   left: -10%;
-  opacity: 0.85;
+  opacity: 0.8;
   animation-duration: 48s;
 }
 
 .cloud-a::before {
-  width: 34px;
-  height: 34px;
-  top: -18px;
+  width: 32px;
+  height: 32px;
+  top: -16px;
   left: 12px;
 }
 
 .cloud-a::after {
-  width: 28px;
-  height: 28px;
-  top: -12px;
-  left: 36px;
+  width: 26px;
+  height: 26px;
+  top: -11px;
+  left: 34px;
 }
 
 .cloud-b {
-  width: 96px;
-  height: 26px;
+  width: 90px;
+  height: 24px;
   top: 24%;
   left: -15%;
-  opacity: 0.65;
+  opacity: 0.58;
   animation-duration: 62s;
   animation-delay: -18s;
 }
 
 .cloud-b::before {
-  width: 42px;
-  height: 42px;
-  top: -22px;
-  left: 18px;
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 16px;
 }
 
 .cloud-b::after {
-  width: 32px;
-  height: 32px;
-  top: -14px;
-  left: 48px;
+  width: 30px;
+  height: 30px;
+  top: -12px;
+  left: 46px;
 }
 
 .cloud-c {
-  width: 56px;
-  height: 18px;
+  width: 52px;
+  height: 16px;
   top: 18%;
   left: -8%;
-  opacity: 0.55;
+  opacity: 0.5;
   animation-duration: 55s;
   animation-delay: -30s;
 }
 
 .cloud-c::before {
-  width: 26px;
-  height: 26px;
-  top: -14px;
+  width: 24px;
+  height: 24px;
+  top: -12px;
   left: 10px;
 }
 
 .cloud-c::after {
-  width: 22px;
-  height: 22px;
-  top: -10px;
-  left: 28px;
+  width: 20px;
+  height: 20px;
+  top: -9px;
+  left: 26px;
 }
 
 .farm-canvas.night .cloud {
-  background: rgba(180, 200, 210, 0.22);
-  opacity: 0.5;
+  background: rgba(180, 200, 210, 0.2);
+  opacity: 0.45;
 }
 
 @keyframes cloud-drift {
@@ -196,20 +170,20 @@
   border-radius: inherit;
   background: linear-gradient(
     105deg,
-    transparent 28%,
-    rgba(255, 255, 255, 0.32) 48%,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 48%,
     transparent 58%
   );
   background-size: 220% 100%;
-  animation: pond-shimmer 6s ease-in-out infinite;
+  animation: pond-shimmer 7s ease-in-out infinite;
   pointer-events: none;
 }
 
 .farm-canvas.night .pond::before {
   background: linear-gradient(
     105deg,
-    transparent 28%,
-    rgba(201, 160, 74, 0.14) 48%,
+    transparent 30%,
+    rgba(201, 160, 74, 0.12) 48%,
     transparent 58%
   );
   background-size: 220% 100%;
@@ -235,7 +209,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(210, 180, 120, 0.35) 40%,
+    rgba(210, 180, 120, 0.28) 40%,
     transparent
   );
   pointer-events: none;
@@ -245,7 +219,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(80, 90, 70, 0.4) 40%,
+    rgba(80, 90, 70, 0.35) 40%,
     transparent
   );
 }
