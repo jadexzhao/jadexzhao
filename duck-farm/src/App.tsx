@@ -338,12 +338,12 @@ export default function App() {
 
       <header className="farm-header">
         <p className="farm-eyebrow">
-          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026
+          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026 · you are in the window
         </p>
         <h1 className="farm-title">virtual duck farm</h1>
         <p className="farm-lede">
-          A small React pond under the briefcase brand. Click the grass to place a duck.
-          Tap a duck to bounce it. Konami (<em>↑↑↓↓←→←→BA</em>) for a stampede.
+          This tab is the playground. Click the grass to place a duck. Tap a duck to bounce it.
+          Konami (<em>↑↑↓↓←→←→BA</em>) for a stampede. Architecture notes sit under the pond if you want them.
         </p>
       </header>
 
