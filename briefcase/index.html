@@ -19,7 +19,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#006644">
+<meta name="theme-color" content="#004d33">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
@@ -139,11 +139,13 @@
     touch-action: manipulation;
   }
   .cta-primary {
-    background: var(--jade);
+    background: var(--jade-ink);
     color: #fff;
     border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
   }
-  .cta-primary:hover { background: #fff; color: var(--jade-ink); }
+  .cta-primary:hover { background: #fff; color: var(--jade-ink); transform: translateY(-1px); }
   .cta-ghost {
     background: transparent;
     color: #faf6f0;
@@ -170,71 +172,8 @@
     margin: 0 auto;
     width: 100%;
   }
-  .twin {
-    font-size: 16px;
-    color: var(--mute);
-    margin: 28px 0 0;
-    letter-spacing: 0.01em;
-    line-height: 1.55;
-    max-width: 58ch;
-  }
   .fork-panel {
     margin-bottom: 8px;
-  }
-  .choose-one {
-    font-family: var(--font-display);
-    font-size: clamp(1.55rem, 4vw, 2rem);
-    font-weight: 400;
-    color: var(--ink);
-    margin: 0 0 8px;
-    line-height: 1.15;
-  }
-  .choose-lede {
-    font-size: clamp(1.05rem, 2.4vw, 1.2rem);
-    color: var(--mute);
-    line-height: 1.5;
-    max-width: 40ch;
-    margin: 0 0 18px;
-  }
-  .doors {
-    display: grid;
-    gap: 14px;
-    margin-bottom: 12px;
-  }
-  @media (min-width: 700px) {
-    .doors { grid-template-columns: 1fr 1fr; gap: 18px; }
-  }
-  .door {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 44px;
-    padding: 22px 22px;
-    border: 1px solid var(--line);
-    border-left-width: 4px;
-    background: rgba(255, 255, 255, 0.55);
-    color: var(--ink);
-    text-decoration: none;
-    touch-action: manipulation;
-  }
-  .door:hover { border-color: var(--jade-ink); color: var(--ink); }
-  .door:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  .door--primary { border-left-color: var(--jade-ink); }
-  .door--secondary { border-left-color: var(--gold); }
-  .door[aria-current="true"] {
-    border-color: var(--jade-ink);
-    background: #fff;
-    box-shadow: 0 0 0 1px var(--jade-ink);
-  }
-  .door-who {
-    font-family: var(--font-display);
-    font-size: clamp(1.35rem, 3.2vw, 1.65rem);
-    line-height: 1.2;
-  }
-  .door-what {
-    font-size: clamp(1rem, 2.2vw, 1.1rem);
-    color: var(--mute);
-    line-height: 1.45;
   }
   .hire-path[hidden] {
     display: none !important;
@@ -252,24 +191,6 @@
     align-items: center;
   }
 
-  .block {
-    margin-bottom: 40px;
-    padding-top: 8px;
-    border-top: 1px solid var(--line);
-  }
-  .block h2 {
-    font-family: var(--font-display);
-    font-size: clamp(1.35rem, 3vw, 1.65rem);
-    font-weight: 400;
-    color: var(--ink);
-    margin: 16px 0 10px;
-  }
-  .block > p {
-    font-size: 16px;
-    color: var(--mute);
-    line-height: 1.55;
-    max-width: 62ch;
-  }
   .block .lead-gap { margin-top: 12px; }
   .scan-list {
     margin: 14px 0 0;
@@ -289,55 +210,17 @@
     max-width: 62ch;
   }
   .path-tip strong { color: var(--ink); font-weight: 600; }
-  .quick-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 18px;
-    margin-top: 16px;
-    font-size: 15px;
-  }
-  .quick-row a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 4px 0;
-    touch-action: manipulation;
-  }
 
   .eli5 {
     font-size: 15px;
-    padding: 12px 0;
+    padding: 16px 18px;
     color: var(--ink);
     line-height: 1.55;
     max-width: 62ch;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 12px;
-  }
-  .gtm-research {
-    list-style: none;
-    margin: 8px 0 0;
-    padding: 0;
-  }
-  .gtm-research li { border-bottom: 1px solid var(--line); }
-  .gtm-research a {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: baseline;
-    min-height: 44px;
-    padding: 14px 0;
-    color: var(--ink);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    touch-action: manipulation;
-  }
-  .gtm-research a:hover { color: var(--jade-ink); }
-  .gtm-research .what {
-    color: var(--mute);
-    font-size: 13px;
-    text-align: right;
-    flex: 1 1 auto;
-    min-width: 0;
+    background: var(--jade-glow);
+    border: 1px solid rgba(0, 77, 51, 0.15);
+    border-radius: var(--radius-md);
+    margin-bottom: 14px;
   }
 
   .madrid-note {
@@ -348,6 +231,7 @@
     width: 100%;
     height: auto;
     border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
   }
   .madrid-note figcaption {
     margin-top: 0.55rem;
@@ -357,24 +241,32 @@
   }
   .madrid-note a { color: var(--jade-ink); font-weight: 600; }
 
-  /* —— interests strip (not a card grid) —— */
+  /* —— interests strip —— */
   .interest-strip {
     margin: 12px 0 0;
     padding: 0;
     list-style: none;
     max-width: 62ch;
+    display: grid;
+    gap: 10px;
+  }
+  @media (min-width: 560px) {
+    .interest-strip { grid-template-columns: repeat(3, 1fr); }
   }
   .interest-strip li {
     font-size: 15px;
     color: var(--mute);
     line-height: 1.55;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
   }
-  .interest-strip li:first-child { padding-top: 4px; }
   .interest-strip strong {
+    display: block;
     color: var(--ink);
     font-weight: 600;
+    margin-bottom: 4px;
   }
   .pd-zh {
     font-family: var(--font-sc);
@@ -389,32 +281,13 @@
     max-width: 62ch;
   }
 
-  .links {
-    list-style: none;
-    border-top: 1px solid var(--line);
-    padding-top: 4px;
-    margin-bottom: 40px;
-  }
-  .links li { border-bottom: 1px solid var(--line); }
-  .links a {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    align-items: center;
-    min-height: 44px;
-    padding: 16px 0;
-    color: var(--ink);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    touch-action: manipulation;
-  }
-  .links a:hover { color: var(--jade-ink); }
-  .links .what {
+  .twin {
+    font-size: 16px;
     color: var(--mute);
-    font-size: 14px;
-    text-align: right;
-    flex: 1 1 auto;
-    min-width: 0;
+    margin: 28px 0 0;
+    letter-spacing: 0.01em;
+    line-height: 1.55;
+    max-width: 58ch;
   }
 
   @media (max-width: 639px) {
@@ -430,16 +303,16 @@
       padding-left: max(16px, env(safe-area-inset-left, 0px));
       padding-right: max(16px, env(safe-area-inset-right, 0px));
     }
-    .links a,
-    .gtm-research a {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
-      padding: 16px 0;
-      min-height: 48px;
+    .fork-panel {
+      padding: 22px 18px 18px;
     }
-    .links .what,
-    .gtm-research .what { text-align: left; }
+    .action-bar {
+      flex-direction: column;
+    }
+    .action-bar a {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   @media (min-width: 900px) {
@@ -524,11 +397,16 @@
     <section id="recruiter-path" class="block fade fade-d2" aria-labelledby="recruiter-tldr">
       <h2 id="recruiter-tldr">Here to hire or work with me</h2>
       <p>
-        In plain terms: I build websites and software, and I also help explain that software to
-        the people deciding whether to use it. The jobs I&rsquo;m after are the ones where someone
-        technical sits with customers to plan and set up a product (often called Solutions
-        Engineering or technical go-to-market, more on that below). Here&rsquo;s the short version.
+        I build websites and software, and I help explain that software to the people deciding
+        whether to use it. The roles I&rsquo;m after sit between product and customers — often called
+        Solutions Engineering or technical go-to-market (more below).
       </p>
+      <nav class="action-bar" aria-label="Contact and résumé">
+        <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
+        <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+        <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU page</a>
+        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
+      </nav>
       <ul class="scan-list">
         <li><strong>School:</strong> Studying Informatics (tech + design) at Indiana University Luddy · graduating May 2027 · happy to relocate</li>
         <li><strong>Build:</strong> I lead the website team at ServeIT, a student-run tech clinic at IU that makes free websites and tools for nonprofits. I build easy-to-use sites and organize their data. (ServeAI is the clinic&rsquo;s public-interest AI group on the same roster.)</li>
@@ -597,18 +475,13 @@
     <section id="gtm-consulting" class="block fade fade-d2" aria-labelledby="gtm-heading">
       <h2 id="gtm-heading">Helping people choose and set up software</h2>
       <p class="eli5">
-        <strong>In plain English:</strong> when a company is deciding whether to buy a piece of software, someone
-        technical needs to sit with them, answer real questions, and show that it works. That&rsquo;s my lane.
-        I join those conversations, build a working demo so people can see the thing in action, connect it to
-        their other tools, help the sales and engineering sides understand each other, and make sure the
-        handoff is clean when a trial turns into the real thing. The industry name for this is
-        <strong>go-to-market (GTM)</strong> or Solutions Engineering.
+        <strong>In plain English:</strong> when a company is deciding whether to buy software, someone
+        technical sits with them — answering real questions, building a demo, connecting tools, and
+        keeping the handoff clean when a trial becomes a deal. That&rsquo;s
+        <strong>go-to-market (GTM)</strong> or Solutions Engineering. My NYC startup internship
+        (not yet public) is where I practice it now.
       </p>
-      <p>
-        It&rsquo;s the same skill set the guides below describe: being technical enough to be trusted, while sitting
-        next to the business conversation. My NYC startup internship (not yet public) is where I practice it.
-      </p>
-      <p class="lead-gap"><strong>Short explainers I use to describe this kind of role</strong> (public articles, not from my employer):</p>
+      <p class="lead-gap"><strong>Public explainers I point people to</strong> (not from my employer):</p>
       <ul class="gtm-research" aria-label="GTM and solutions engineering primers">
         <li>
           <a href="https://www.salesforce.com/blog/what-is-a-sales-engineer/" rel="noopener noreferrer">
@@ -659,70 +532,52 @@
       </ul>
     </section>
 
-    <ul class="links fade fade-d3" aria-label="work">
-      <li>
-        <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">
-          <span>Resume (PDF)</span>
-          <span class="what">one-page résumé · jlzhao.pages.iu.edu</span>
-        </a>
-      </li>
+    <ul class="link-grid fade fade-d3" aria-label="Work and projects">
       <li>
         <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
-          <span>Potstickers (family restaurant)</span>
+          <span class="link-title">Potstickers (family restaurant)</span>
           <span class="what">New Palestine, IN · site I built</span>
         </a>
       </li>
       <li>
-        <a href="#prof-dev">
-          <span>专业发展 · where I&rsquo;m headed</span>
-          <span class="what">Solutions Eng · May 2027 · bilingual</span>
-        </a>
-      </li>
-      <li>
-        <a href="#gtm-consulting">
-          <span>How I help with software</span>
-          <span class="what">plain-English explainer · what the role is</span>
-        </a>
-      </li>
-      <li>
         <a href="https://serveit.luddy.indiana.edu/serve-ai/">
-          <span>ServeIT · ServeAI</span>
-          <span class="what">student tech clinic for nonprofits · AI for good</span>
+          <span class="link-title">ServeIT · ServeAI</span>
+          <span class="what">student tech clinic · AI for good</span>
         </a>
       </li>
       <li>
         <a href="how-i-work.html">
-          <span>how i work</span>
-          <span class="what">how I think through and build a project</span>
+          <span class="link-title">how i work</span>
+          <span class="what">process memo · how I ship</span>
         </a>
       </li>
       <li>
         <a href="duck-farm/" target="_blank" rel="noopener noreferrer">
-          <span>Open duck farm (playground)</span>
-          <span class="what">龙 mini-site · 鸭年 · new tab</span>
+          <span class="link-title">Open duck farm</span>
+          <span class="what"><span class="sc" lang="zh-Hans">龙</span> mini-site · 鸭年 · playground</span>
         </a>
       </li>
       <li>
         <a href="https://matchaxmoxie.github.io/matchaxmoxie/junior.html">
-          <span>Madrid · Complutense</span>
+          <span class="link-title">Madrid · Complutense</span>
           <span class="what">semester abroad · Spring 2026</span>
         </a>
       </li>
       <li>
         <a href="https://matchaxmoxie.github.io/matchaxmoxie/footprint.html">
-          <span>footprint trail</span>
-          <span class="what">where I&rsquo;ve been · twin sites · IU path</span>
+          <span class="link-title">footprint trail</span>
+          <span class="what">where I&rsquo;ve been · twin sites</span>
         </a>
       </li>
       <li>
         <a href="https://matchaxmoxie.github.io/matchaxmoxie/">
-          <span>matchaxmoxie</span>
-          <span class="what">Miss Zhao · Scratch · IU path</span>
+          <span class="link-title">matchaxmoxie</span>
+          <span class="what">Miss Zhao · <span class="sc" lang="zh-Hans">凤凰</span> · student side</span>
         </a>
       </li>
       <li>
         <a href="https://github.com/jadexzhao">
-          <span>GitHub</span>
+          <span class="link-title">GitHub</span>
           <span class="what">@jadexzhao</span>
         </a>
       </li>
