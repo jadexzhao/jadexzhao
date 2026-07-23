@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#006644">
+<meta name="theme-color" content="#004d33">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
@@ -26,96 +26,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background:
-      linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
-  }
-  .sheet {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding:
-      40px
-      max(16px, env(safe-area-inset-right, 0px))
-      max(48px, env(safe-area-inset-bottom, 0px))
-      max(16px, env(safe-area-inset-left, 0px));
-  }
-  .kicker {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mute);
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 8px;
-  }
-  p {
-    max-width: 28rem;
-    color: var(--mute);
-    margin: 0 auto 1.25rem;
-  }
-  .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 20px;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .links a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 4px 2px;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    color: var(--mute);
-    touch-action: manipulation;
-  }
-  .links a:hover {
-    color: var(--ink);
-    border-bottom-color: var(--gold);
-  }
-  .sheet .site-footer {
-    margin-top: 32px;
-    text-align: center;
-    max-width: 40rem;
-  }
-</style>
+<link rel="stylesheet" href="site.css?v=20260723b">
 </head>
-<body>
+<body class="page-404">
   <a href="#main-content" class="skip-link">skip to main content</a>
   <div class="topbar topbar--paper">
     <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
       <a href="./">home</a>
+      <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">resume</a>
       <a href="how-i-work.html">how i work</a>
       <a href="i18n-wcag.html">accessibility</a>
       <a href="duck-farm/" target="_blank" rel="noopener noreferrer">duck farm</a>
     </nav>
   </div>
   <main id="main-content" class="sheet">
-    <p class="kicker">jade zhao · the briefcase</p>
+    <p class="kicker">jade zhao · <span class="sc" lang="zh-Hans">龙</span> · the briefcase</p>
     <h1>404</h1>
-    <p>This path is not on the portfolio. Head back home, read how i work, or open the duck farm playground.</p>
-    <nav class="links" aria-label="where to go">
+    <p class="lede">This path is not on the portfolio. Head back home, read how i work, or open the duck farm playground.</p>
+    <nav class="action-bar" aria-label="where to go">
       <a href="./">home</a>
       <a href="how-i-work.html">how i work</a>
       <a href="i18n-wcag.html">accessibility</a>
-      <a href="duck-farm/" target="_blank" rel="noopener noreferrer">Open duck farm (playground)</a>
+      <a href="duck-farm/" target="_blank" rel="noopener noreferrer">duck farm</a>
       <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
     </nav>
     <footer class="site-footer">

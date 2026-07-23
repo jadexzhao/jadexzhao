@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#006644">
+<meta name="theme-color" content="#004d33">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
@@ -26,166 +26,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-  body {
-    background:
-      linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 14%, var(--paper) 100%);
-    padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
-  }
-  .sheet {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding:
-      28px
-      max(24px, env(safe-area-inset-right, 0px))
-      24px
-      max(24px, env(safe-area-inset-left, 0px));
-  }
-  .back {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--jade-ink);
-    text-decoration: none;
-    border-bottom: 1.5px solid var(--line);
-    padding-bottom: 1px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .back:hover { border-color: var(--jade-ink); color: var(--ink); }
-  .memo-kicker {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mute);
-    margin-top: 16px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 2.4rem);
-    font-weight: 400;
-    line-height: 1.15;
-    color: var(--ink);
-    margin-bottom: 12px;
-  }
-  h1 .sub {
-    display: block;
-    margin-top: 8px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--mute);
-  }
-  .standfirst {
-    font-size: 16.5px;
-    line-height: 1.65;
-    color: var(--mute);
-    margin-bottom: 18px;
-    max-width: 62ch;
-  }
-  .sc { font-family: var(--font-sc); font-weight: 500; color: var(--ink); }
-  .rule { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
-  h2 {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 400;
-    margin: 0 0 10px;
-    color: var(--ink);
-  }
-  h3 {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-    margin: 18px 0 8px;
-    font-weight: 600;
-  }
-  p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--mute);
-    margin: 0 0 12px;
-    max-width: 62ch;
-  }
-  .note {
-    background: var(--mist);
-    border-left: 3px solid var(--jade);
-    padding: 14px 16px;
-    margin: 16px 0;
-  }
-  .note p { margin: 0 0 8px; }
-  .note p:last-child { margin: 0; }
-  ul.insight { margin: 0 0 14px; padding: 0; list-style: none; }
-  ul.insight li {
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 0.55rem;
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: var(--mute);
-    max-width: 62ch;
-  }
-  ul.insight li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.55em;
-    width: 0.35em;
-    height: 0.35em;
-    border-radius: 50%;
-    background: var(--jade-ink);
-  }
-  .link-hub { display: grid; gap: 8px; margin-top: 14px; }
-  .link-hub a {
-    display: block;
-    padding: 12px 14px;
-    background: var(--mist);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--jade-ink);
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 14px;
-    line-height: 1.4;
-    min-height: 48px;
-  }
-  .link-hub a:hover { border-color: var(--jade-ink); background: var(--paper); }
-  .hub-k {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-  code {
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 0.9em;
-    background: var(--mist);
-    padding: 1px 5px;
-    border-radius: 3px;
-  }
-  @media (max-width: 560px) {
-    .sheet {
-      padding-left: max(16px, env(safe-area-inset-left, 0px));
-      padding-right: max(16px, env(safe-area-inset-right, 0px));
-    }
-  }
-  @media (min-width: 1200px) {
-    .sheet { max-width: 980px; }
-  }
-</style>
+<link rel="stylesheet" href="site.css?v=20260723b">
 </head>
-<body>
+<body class="interior">
 <a href="#main-content" class="skip-link">skip to main content</a>
 
 <div class="topbar topbar--paper">
   <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
     <a href="index.html">home</a>
+    <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">resume</a>
     <a href="how-i-work.html">how i work</a>
     <a href="i18n-wcag.html" aria-current="page">accessibility</a>
     <a href="duck-farm/" target="_blank" rel="noopener noreferrer">duck farm</a>
@@ -194,15 +43,21 @@
 
 <main id="main-content" class="sheet">
 
-  <header>
+  <header class="interior-header">
     <a class="back" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
     <p class="memo-kicker">jade zhao · architectural note</p>
     <h1>i18n (internationalization) ∩ WCAG 2.2 AA (web accessibility guidelines)<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
     <p class="standfirst"><strong>In plain English:</strong> a screen reader is software that reads a web page aloud for people who can&rsquo;t see it well. If a page mixes languages (say English and Chinese) without telling the software which is which, it reads them wrong. So I label the languages, and I leave extra room because Chinese characters take up more space than English letters. This is a short, practical note, not a lecture. The same problem shows up when a nonprofit page mixes English with partner languages, when a restaurant ticket switches mid-line, and when a household flips between <span class="sc" lang="zh-Hans">福州话</span> / <span class="sc" lang="zh-Hans">普通话</span> / English without thinking about it.</p>
+    <nav class="action-bar" aria-label="Quick links">
+      <a href="how-i-work.html">how i work</a>
+      <a href="index.html">the briefcase</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · ServeAI</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+    </nav>
   </header>
 
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section aria-labelledby="dom-heading">
     <h2 id="dom-heading">1 · mixed-language DOM</h2>
@@ -219,7 +74,7 @@
     </div>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section aria-labelledby="density-heading">
     <h2 id="density-heading">2 · character density and layout</h2>
@@ -232,7 +87,7 @@
     </ul>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section aria-labelledby="roots-heading">
     <h2 id="roots-heading">3 · where the instinct comes from</h2>
@@ -240,13 +95,12 @@
     <p>that is the bridge-building thread on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>: restaurant uptime habits applied to accessible systems. community orgs on the serveit roster (including partners like <a href="https://middlewayhouse.org">middle way house</a>) need pages staff can maintain and visitors can hear correctly.</p>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section aria-labelledby="links-heading">
     <h2 id="links-heading">related</h2>
     <div class="link-hub">
       <a href="how-i-work.html"><span class="hub-k">how i work</span>sandwich runbook · serveit chunks · GTM handoffs</a>
-      <!-- ServeIT / ServeAI tong zhen suo gong kai ye -->
       <a href="https://serveit.luddy.indiana.edu/serve-ai/"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (accessibility) client builds</a>
       <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · component constraints</a>
       <a href="https://matchaxmoxie.github.io/matchaxmoxie/"><span class="hub-k">matchaxmoxie</span>Jade Zhao · Miss Zhao · GWC · IU guide · 凤凰 · phoenix archive</a>
@@ -261,7 +115,7 @@
       · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
       · <a href="https://github.com/jadexzhao">GitHub</a>
       · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
-      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix)
     </p>
   </footer>
 

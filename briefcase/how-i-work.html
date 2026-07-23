@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#006644">
+<meta name="theme-color" content="#004d33">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
@@ -28,459 +28,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
-<style>
-  body {
-    background:
-      linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 14%, var(--paper) 100%);
-    padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
-  }
-
-  .sheet {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding:
-      28px
-      max(24px, env(safe-area-inset-right, 0px))
-      24px
-      max(24px, env(safe-area-inset-left, 0px));
-  }
-
-  .back {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--jade-ink);
-    text-decoration: none;
-    border-bottom: 1.5px solid var(--line);
-    padding-bottom: 1px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .back:hover { border-color: var(--jade-ink); color: var(--ink); }
-
-  .memo-kicker {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mute);
-    margin-top: 16px;
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  h1 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  h1 .sub {
-    display: block;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: clamp(1rem, 2.4vw, 1.15rem);
-    letter-spacing: 0;
-    margin-top: 8px;
-    color: var(--mute);
-  }
-
-  .status-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-  }
-  .status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    padding: 8px 12px;
-    min-height: 44px;
-    background: var(--mist);
-    border: 1px solid var(--line);
-    color: var(--mute);
-  }
-  .status-pill strong { color: var(--ink); font-weight: 600; }
-  .status-pill .dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--jade); flex-shrink: 0;
-  }
-
-  .standfirst {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.1rem, 2.4vw, 1.35rem);
-    line-height: 1.45;
-    color: var(--ink);
-    margin-top: 20px;
-    max-width: 58ch;
-  }
-
-  .lede { margin-top: 14px; font-size: 15px; color: var(--mute); max-width: 62ch; }
-  .lede p { margin-top: 10px; }
-  .lede b { color: var(--ink); font-weight: 600; }
-
-  .toc {
-    margin-top: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    font-size: 14px;
-    color: var(--mute);
-  }
-  .toc a {
-    color: var(--jade-ink);
-    text-decoration: none;
-    border-bottom: 1.5px solid var(--line);
-    padding-bottom: 1px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
-  }
-  .toc a:hover { border-color: var(--jade-ink); color: var(--ink); }
-  .toc .sep { color: var(--line); align-self: center; }
-
-  .rule { height: 1px; background: var(--line); border: 0; margin: 34px 0 26px; }
-
-  section { scroll-margin-top: 72px; }
-
-  .part-label {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-    font-weight: 600;
-  }
-
-  h2 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(1.5rem, 3.5vw, 1.85rem);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 14px;
-  }
-
-  h3 {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--ink);
-    margin: 20px 0 10px;
-  }
-
-  p { font-size: 15px; color: var(--mute); max-width: 62ch; margin-bottom: 12px; }
-  p b { color: var(--ink); font-weight: 600; }
-
-  .pull-quote {
-    margin: 18px 0;
-    padding: 16px 18px;
-    background: var(--mist);
-    border-left: 3px solid var(--jade-ink);
-  }
-  .pull-quote p {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-    line-height: 1.4;
-    color: var(--ink);
-    margin: 0;
-    max-width: none;
-  }
-
-  .runbook {
-    list-style: none;
-    margin: 16px 0 8px;
-    padding: 0;
-    border: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .runbook li {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 0 14px;
-    border-top: 1px solid var(--line);
-    background: var(--paper);
-  }
-  .runbook li:first-child { border-top: 0; }
-  .runbook .step-n {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 16px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--jade-ink);
-    background: var(--mist);
-    border-right: 1px solid var(--line);
-  }
-  .runbook .step-body { padding: 14px 16px 16px 0; }
-  .runbook .step-title {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-  .runbook .step-body p { margin: 0; font-size: 14.5px; max-width: none; }
-
-  .note {
-    background: var(--mist);
-    padding: 14px 16px;
-    margin: 16px 0;
-  }
-  .note p:last-child { margin-bottom: 0; }
-
-  .sandwich-sandbox { border-left: 3px solid var(--jade); }
-  .sandwich-sandbox .sandbox-k {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .chunk-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    margin: 14px 0 8px;
-  }
-  .chunk-card {
-    padding: 14px 14px 16px;
-    background: var(--mist);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--jade);
-  }
-  .chunk-card h4 {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
-  .chunk-card p { font-size: 13.5px; margin: 0; max-width: none; color: var(--mute); }
-  .chunk-card a { color: var(--jade-ink); font-weight: 600; }
-
-  .timeline {
-    list-style: none;
-    margin: 16px 0 8px;
-    padding: 0;
-    position: relative;
-  }
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 15px;
-    top: 8px;
-    bottom: 8px;
-    width: 2px;
-    background: var(--line);
-  }
-  .timeline li {
-    position: relative;
-    display: grid;
-    grid-template-columns: 32px 1fr;
-    gap: 12px;
-    margin-bottom: 14px;
-  }
-  .timeline .tl-n {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--jade-ink);
-    background: var(--mist);
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
-  }
-  .timeline .tl-body { padding: 4px 0 2px; }
-  .timeline .tl-zone {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2px;
-    font-weight: 600;
-  }
-  .timeline .tl-title {
-    font-weight: 600;
-    font-size: 14.5px;
-    color: var(--ink);
-    margin-bottom: 2px;
-  }
-  .timeline .tl-body p { font-size: 13.5px; margin: 0; max-width: none; }
-
-  .link-hub {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 16px;
-  }
-  .link-hub a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 64px;
-    padding: 14px 16px;
-    background: var(--mist);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--jade-ink);
-    text-decoration: none;
-    color: var(--ink);
-    font-size: 14px;
-    line-height: 1.45;
-  }
-  .link-hub a:hover {
-    border-color: var(--jade-ink);
-    background: var(--paper);
-  }
-  .hub-k {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-    display: block;
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-
-  .gov-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 16px 0; }
-  .gov-table {
-    width: 100%;
-    min-width: 520px;
-    border-collapse: collapse;
-    font-size: 14px;
-  }
-  .gov-table th,
-  .gov-table td {
-    text-align: left;
-    vertical-align: top;
-    padding: 12px 14px;
-    border: 1px solid var(--line);
-  }
-  .gov-table th {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-    background: var(--mist);
-    font-weight: 600;
-  }
-  .gov-table td { color: var(--mute); background: var(--paper); }
-  .gov-table td:first-child {
-    font-weight: 600;
-    color: var(--ink);
-    white-space: nowrap;
-    background: var(--mist);
-  }
-
-  .habit-list { margin: 8px 0 12px 1.2em; max-width: 62ch; }
-  .habit-list li { font-size: 15px; color: var(--mute); margin-bottom: 8px; }
-  .habit-list b { color: var(--ink); font-weight: 600; }
-
-  .state-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 16px 0 10px;
-  }
-  .state-card {
-    padding: 16px 16px 18px;
-    background: var(--mist);
-    border: 1px solid var(--line);
-  }
-  .state-card.global { border-top: 3px solid var(--gold); }
-  .state-card.local { border-top: 3px solid var(--jade); }
-  .state-card .layer-k {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: block;
-  }
-  .state-card.global .layer-k { color: var(--gold); }
-  .state-card.local .layer-k { color: var(--jade-ink); }
-  .state-card ul {
-    margin: 0;
-    padding-left: 1.1em;
-    font-size: 13.5px;
-    color: var(--mute);
-    line-height: 1.45;
-  }
-  .state-card li { margin-bottom: 6px; }
-  .state-card li:last-child { margin-bottom: 0; }
-
-  .closer .duck {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--ink);
-    max-width: 58ch;
-  }
-  .closer .human {
-    margin-top: 14px;
-    font-size: 14px;
-    color: var(--mute);
-    max-width: 62ch;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      opacity: 0;
-      transform: translateY(6px);
-      animation: rise 0.42s ease forwards;
-    }
-    .reveal:nth-child(2) { animation-delay: 0.04s; }
-    .reveal:nth-child(3) { animation-delay: 0.08s; }
-    .reveal:nth-child(4) { animation-delay: 0.12s; }
-    @keyframes rise {
-      to { opacity: 1; transform: none; }
-    }
-  }
-
-  @media (max-width: 560px) {
-    .sheet {
-      padding-left: max(16px, env(safe-area-inset-left, 0px));
-      padding-right: max(16px, env(safe-area-inset-right, 0px));
-    }
-    .runbook li { grid-template-columns: 40px 1fr; }
-    .runbook .step-body { padding: 12px 12px 14px 0; }
-    .state-grid { grid-template-columns: 1fr; }
-  }
-
-  @media (min-width: 1200px) {
-    .sheet { max-width: 980px; }
-  }
-</style>
+<link rel="stylesheet" href="site.css?v=20260723b">
 </head>
-<body>
+<body class="interior">
 <a href="#main-content" class="skip-link">skip to main content</a>
 
 <div class="topbar topbar--paper">
   <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
     <a href="index.html">home</a>
+    <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">resume</a>
     <a href="how-i-work.html" aria-current="page">how i work</a>
     <a href="i18n-wcag.html">accessibility</a>
     <a href="duck-farm/" target="_blank" rel="noopener noreferrer">duck farm</a>
@@ -489,7 +45,7 @@
 
 <main id="main-content" class="sheet">
 
-  <header>
+  <header class="interior-header">
     <a class="back reveal" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
     <p class="memo-kicker reveal">jade zhao · <span class="sc" lang="zh-Hans">赵</span> · the briefcase</p>
     <h1 class="reveal">how i work<span class="sub">process · serveit · handoffs</span></h1>
@@ -505,6 +61,12 @@
       <p><b>Plain-English version first:</b> I build websites and tools, mostly for nonprofits, and I make sure they&rsquo;re easy for everyone to use. I also sit in on meetings where a company is deciding whether to use a piece of software and show them how it works. The rest of this page is the detailed, behind-the-scenes version of how I actually do that. If you&rsquo;re not technical, you can read the intros of each part and skip the code-level bits.</p>
       <p>I use AI-assisted editing sometimes. It speeds up the work. It does not replace what I decide or what I sign off on. <b>Drafts may be AI-assisted. Accountability is entirely mine.</b></p>
     </div>
+    <nav class="action-bar reveal" aria-label="Quick links">
+      <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
+      <a href="i18n-wcag.html">accessibility note</a>
+      <a href="index.html">the briefcase</a>
+      <a href="duck-farm/" target="_blank" rel="noopener noreferrer">duck farm</a>
+    </nav>
     <nav class="toc reveal" aria-label="memo sections">
       <a href="#part-1">#01 sandwich runbook</a>
       <span class="sep" aria-hidden="true">·</span>
@@ -513,13 +75,11 @@
       <a href="#part-3">#03 governance</a>
       <span class="sep" aria-hidden="true">·</span>
       <a href="#part-4">#04 in practice</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="i18n-wcag.html">accessibility note</a>
     </nav>
   </header>
 
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section id="part-1">
     <p class="part-label">part 1</p>
@@ -581,7 +141,7 @@
     </div>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section id="part-2">
     <p class="part-label">part 2</p>
@@ -667,7 +227,7 @@
     </div>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section id="part-3">
     <p class="part-label">part 3</p>
@@ -714,7 +274,7 @@
     </ul>
   </section>
 
-  <hr class="rule">
+  <hr class="memo-rule">
 
   <section id="part-4">
     <p class="part-label">part 4</p>
@@ -749,7 +309,7 @@
       · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
       · <a href="https://github.com/jadexzhao">GitHub</a>
       · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
-      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix)
       · <a href="i18n-wcag.html">accessibility note</a>
     </p>
   </footer>
