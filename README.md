@@ -6,14 +6,14 @@
 - **jadexzhao = 龙 · dragon** = builder portfolio / career / shipping code
 - **matchaxmoxie = 凤凰 · phoenix** = teaching archive winding down for senior year
 
-[email](mailto:jlzhao@iu.edu) · [the briefcase](https://jadexzhao.github.io/jadexzhao/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) · [IU page](https://jlzhao.pages.iu.edu/) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) · [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
+[email](mailto:jlzhao@iu.edu) · [the briefcase](https://jadexzhao.github.io/jadexzhao/) · [resume (PDF)](https://jadexzhao.github.io/jadexzhao/resume.pdf) · [IU page](https://jlzhao.pages.iu.edu/) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) · [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
 
 ## live
 
 | link | what |
 |------|------|
 | [the briefcase](https://jadexzhao.github.io/jadexzhao/) | portfolio home |
-| [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) | one-page résumé · IU Pages |
+| [resume (PDF)](https://jadexzhao.github.io/jadexzhao/resume.pdf) | one-page résumé · GitHub Pages |
 | [IU page](https://jlzhao.pages.iu.edu/) | minimal résumé embed |
 | [LinkedIn](https://www.linkedin.com/in/jadexzhao/) | career profile |
 | [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
