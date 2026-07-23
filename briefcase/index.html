@@ -20,6 +20,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#004d33">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101915">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
@@ -56,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260723b">
+<link rel="stylesheet" href="site.css?v=20260723c">
 <style>
   :root {
     --hero-shade: linear-gradient(
@@ -76,15 +77,20 @@
     align-items: end;
     color: #faf6f0;
     background-color: #3a322c;
-    /* Portrait 2263×2263; readability via gradient scrim only — no blur filter */
+    /* Portrait 2263×2263; readability via layered gradient mesh + scrim — no blur filter */
     background-image:
+      radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
+      radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
       var(--hero-shade),
       url("assets/hero-portrait.jpg?v=20260717");
     background-size: cover;
     background-position: 50% 22%;
     background-repeat: no-repeat;
+    overflow: hidden;
   }
   .hero-inner {
+    position: relative;
+    z-index: 1;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -97,11 +103,21 @@
   .brand {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(2.75rem, 8vw, 4.75rem);
+    font-size: clamp(2.9rem, 9vw, 5.4rem);
     line-height: 0.98;
     letter-spacing: -0.03em;
     text-wrap: balance;
     max-width: 14ch;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  }
+  .brand::after {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 4px;
+    margin-top: 18px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
   }
   .who {
     margin-top: 14px;
@@ -139,26 +155,34 @@
     touch-action: manipulation;
   }
   .cta-primary {
-    background: var(--jade-ink);
+    background: var(--accent-solid);
     color: #fff;
     border: 1px solid transparent;
     border-radius: var(--radius-sm);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
     transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
   }
-  .cta-primary:hover { background: #fff; color: var(--jade-ink); transform: translateY(-1px); }
+  .cta-primary:hover { background: #faf6f0; color: #004d33; transform: translateY(-1px); }
+  .cta-primary:active { transform: translateY(1px); }
   .cta-ghost {
-    background: transparent;
+    background: rgba(42, 38, 34, 0.25);
     color: #faf6f0;
     border: 1px solid rgba(250, 246, 240, 0.55);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
   }
   .cta-ghost:hover {
-    background: rgba(250, 246, 240, 0.12);
+    background: rgba(250, 246, 240, 0.16);
     color: #fff;
     border-color: #fff;
+    transform: translateY(-1px);
   }
+  .cta-ghost:active { transform: translateY(1px); }
 
   /* —— body content —— */
   .page {
+    position: relative;
+    overflow: hidden;
     background:
       linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
     padding:
@@ -167,7 +191,25 @@
       max(48px, env(safe-area-inset-bottom, 0px))
       max(24px, env(safe-area-inset-left, 0px));
   }
+  /* faint 龙 watermark on the paper · pure texture */
+  .page::before {
+    content: "龙";
+    content: "龙" / "";
+    position: absolute;
+    top: -0.08em;
+    right: -0.06em;
+    z-index: 0;
+    font-family: var(--font-sc);
+    font-weight: 500;
+    font-size: clamp(13rem, 30vw, 21rem);
+    line-height: 1;
+    color: var(--watermark);
+    pointer-events: none;
+    user-select: none;
+  }
   .wrap {
+    position: relative;
+    z-index: 1;
     max-width: 920px;
     margin: 0 auto;
     width: 100%;
@@ -258,9 +300,10 @@
     color: var(--mute);
     line-height: 1.55;
     padding: 14px 16px;
-    background: #fff;
+    background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
   }
   .interest-strip strong {
     display: block;
@@ -333,8 +376,6 @@
   @media (prefers-reduced-motion: no-preference) {
     .fade { animation: up 0.5s ease both; }
     .fade-d1 { animation-delay: 0.05s; }
-    .fade-d2 { animation-delay: 0.1s; }
-    .fade-d3 { animation-delay: 0.16s; }
     @keyframes up {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: none; }
@@ -367,6 +408,7 @@
     </p>
     <p class="cta">
       <a class="cta-primary" href="#path-fork">Choose your path</a>
+      <a class="cta-ghost" href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
     </p>
   </div>
 </header>
@@ -394,7 +436,7 @@
     <p class="change-door">
       <a href="#path-fork" id="change-door-link">← Choose a different door</a>
     </p>
-    <section id="recruiter-path" class="block fade fade-d2" aria-labelledby="recruiter-tldr">
+    <section id="recruiter-path" class="block rv" aria-labelledby="recruiter-tldr">
       <h2 id="recruiter-tldr">Here to hire or work with me</h2>
       <p>
         I build websites and software, and I help explain that software to the people deciding
@@ -449,7 +491,7 @@
       </p>
     </section>
 
-    <section id="prof-dev" class="block fade fade-d2" aria-labelledby="pd-heading">
+    <section id="prof-dev" class="block rv" aria-labelledby="pd-heading">
       <h2 id="pd-heading">
         <span class="pd-zh" lang="zh-Hans">专业发展</span>
         · where I&rsquo;m headed
@@ -472,7 +514,7 @@
       </p>
     </section>
 
-    <section id="gtm-consulting" class="block fade fade-d2" aria-labelledby="gtm-heading">
+    <section id="gtm-consulting" class="block rv" aria-labelledby="gtm-heading">
       <h2 id="gtm-heading">Helping people choose and set up software</h2>
       <p class="eli5">
         <strong>In plain English:</strong> when a company is deciding whether to buy software, someone
@@ -510,7 +552,7 @@
       </ul>
     </section>
 
-    <section id="outside-work" class="block fade fade-d2" aria-labelledby="interests-heading">
+    <section id="outside-work" class="block rv" aria-labelledby="interests-heading">
       <h2 id="interests-heading">Outside the laptop</h2>
       <p>
         When I&rsquo;m not shipping pages or sitting in a demo, this is the quieter side
@@ -532,7 +574,7 @@
       </ul>
     </section>
 
-    <ul class="link-grid fade fade-d3" aria-label="Work and projects">
+    <ul class="link-grid rv" aria-label="Work and projects">
       <li>
         <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
           <span class="link-title">Potstickers (family restaurant)</span>
@@ -584,7 +626,7 @@
     </ul>
     </div>
 
-    <p class="twin fade fade-d3">
+    <p class="twin rv">
       Two sites, same me (after you pick a door):
       <span class="sc" lang="zh-Hans">龙</span> · dragon (this work site) and
       <span class="sc" lang="zh-Hans">凤凰</span> · phoenix
@@ -592,7 +634,7 @@
       Instagram: <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
     </p>
 
-    <footer class="site-footer fade fade-d3">
+    <footer class="site-footer rv">
       Jade Zhao · <span class="sc">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU page</a>
@@ -676,6 +718,28 @@
     showHire(hash);
   } else if (saved === "hire" && hash !== "#path-fork") {
     showHire(null);
+  }
+
+  /* —— scroll reveals · gated on IO support + motion preference —— */
+  if (
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    document.documentElement.classList.add("js-reveal");
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+    );
+    document.querySelectorAll(".rv").forEach(function (el) {
+      io.observe(el);
+    });
   }
 })();
 </script>

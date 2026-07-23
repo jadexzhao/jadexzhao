@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#004d33">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101915">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
@@ -26,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260723b">
+<link rel="stylesheet" href="site.css?v=20260723c">
 </head>
 <body class="interior">
 <a href="#main-content" class="skip-link">skip to main content</a>
@@ -59,7 +60,7 @@
 
   <hr class="memo-rule">
 
-  <section aria-labelledby="dom-heading">
+  <section class="rv" aria-labelledby="dom-heading">
     <h2 id="dom-heading">1 · mixed-language DOM</h2>
     <p>screen readers enunciate from language context. if chinese sits inside an english page without a language boundary, the voice engine often guesses wrong: tones flatten, names get anglicized, meaning degrades.</p>
     <h3>what i actually check</h3>
@@ -76,7 +77,7 @@
 
   <hr class="memo-rule">
 
-  <section aria-labelledby="density-heading">
+  <section class="rv" aria-labelledby="density-heading">
     <h2 id="density-heading">2 · character density and layout</h2>
     <p>english and chinese do not share the same horizontal budget. a label that fits in 12 latin characters can explode or truncates awkwardly in han characters. buttons, nav, and table cells designed for short english verbs break when zh copy lands.</p>
     <ul class="insight">
@@ -89,7 +90,7 @@
 
   <hr class="memo-rule">
 
-  <section aria-labelledby="roots-heading">
+  <section class="rv" aria-labelledby="roots-heading">
     <h2 id="roots-heading">3 · where the instinct comes from</h2>
     <p>fuzhou roots, midwest restaurant floor. patrons, family, and staff already switch languages mid-conversation. the UI should not pretend monolingual default is neutral. immigrant household multilingualism is operational context: tickets, menu notes, and volunteer-facing pages fail loudly when language and layout ignore density.</p>
     <p>that is the bridge-building thread on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>: restaurant uptime habits applied to accessible systems. community orgs on the serveit roster (including partners like <a href="https://middlewayhouse.org">middle way house</a>) need pages staff can maintain and visitors can hear correctly.</p>
@@ -97,7 +98,7 @@
 
   <hr class="memo-rule">
 
-  <section aria-labelledby="links-heading">
+  <section class="rv" aria-labelledby="links-heading">
     <h2 id="links-heading">related</h2>
     <div class="link-hub">
       <a href="how-i-work.html"><span class="hub-k">how i work</span>sandwich runbook · serveit chunks · GTM handoffs</a>
@@ -107,7 +108,7 @@
     </div>
   </section>
 
-  <footer class="site-footer closer">
+  <footer class="site-footer closer rv">
     <p>Jade Zhao · architectural insight, not a certificate.</p>
     <p>
       <a href="index.html">the briefcase</a>
@@ -121,5 +122,29 @@
 
 
 </main>
+<script>
+(function () {
+  "use strict";
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
+  document.documentElement.classList.add("js-reveal");
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+  );
+  document.querySelectorAll(".rv").forEach(function (el) {
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>

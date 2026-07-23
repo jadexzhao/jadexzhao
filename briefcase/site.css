@@ -6,16 +6,22 @@
   --ink: #2a2622;
   --mute: #524a42;
   --paper: #faf6f0;
+  --card: #ffffff;
   --gold: #c9a227;
+  --gold-hi: #a07f16;
   --gold-wash: #f3e6c0;
   --jade: #008f5a;
   --jade-ink: #004d33;
   --jade-deep: #003d29;
   --jade-glow: rgba(0, 143, 90, 0.14);
+  --accent-solid: #004d33;
+  --accent-solid-hover: #003d29;
   --line: #e4d9cc;
   --focus: #2a2622;
   --mist: #f3ebe0;
   --panel: rgba(250, 246, 240, 0.88);
+  --nav-veil: rgba(250, 246, 240, 0.94);
+  --watermark: rgba(0, 143, 90, 0.07);
   --font-display: "Instrument Serif", Georgia, serif;
   --font-body: "Source Sans 3", Georgia, sans-serif;
   --font-sc: "Noto Serif SC", serif;
@@ -23,10 +29,47 @@
   --max-wide: 1100px;
   --radius-sm: 6px;
   --radius-md: 10px;
-  --shadow-sm: 0 2px 8px rgba(42, 38, 34, 0.06);
-  --shadow-md: 0 6px 24px rgba(42, 38, 34, 0.1);
+  --shadow-sm:
+    0 1px 2px rgba(42, 38, 34, 0.05),
+    0 2px 8px rgba(42, 38, 34, 0.06);
+  --shadow-md:
+    0 2px 4px rgba(42, 38, 34, 0.05),
+    0 6px 16px rgba(42, 38, 34, 0.07),
+    0 14px 32px rgba(42, 38, 34, 0.08);
   --space-section: 2.75rem;
   --transition-base: 0.22s ease;
+}
+
+/* —— dark scheme · jade glows on deep charcoal —— */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ece7dd;
+    --mute: #b9b0a3;
+    --paper: #101915;
+    --card: #18241e;
+    --gold: #d9b545;
+    --gold-hi: #d9b545;
+    --gold-wash: #15211b;
+    --jade: #2fbd85;
+    --jade-ink: #63d6a8;
+    --jade-deep: #8ae4c0;
+    --jade-glow: rgba(47, 189, 133, 0.13);
+    --accent-solid: #0d6b48;
+    --accent-solid-hover: #0f7f56;
+    --line: #2b3a32;
+    --focus: #ece7dd;
+    --mist: #1d2c24;
+    --panel: rgba(24, 36, 30, 0.88);
+    --nav-veil: rgba(16, 25, 21, 0.92);
+    --watermark: rgba(99, 214, 168, 0.06);
+    --shadow-sm:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 2px 8px rgba(0, 0, 0, 0.28);
+    --shadow-md:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 6px 16px rgba(0, 0, 0, 0.32),
+      0 14px 32px rgba(0, 0, 0, 0.34);
+  }
 }
 
 *,
@@ -45,7 +88,7 @@ html {
 
 body {
   margin: 0;
-  color-scheme: light only;
+  color-scheme: light dark;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -116,7 +159,7 @@ a:focus-visible {
 
 .topbar--paper {
   position: sticky;
-  background: rgba(250, 246, 240, 0.94);
+  background: var(--nav-veil);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
@@ -214,7 +257,7 @@ a:focus-visible {
 .fork-panel {
   margin-bottom: 12px;
   padding: 28px 24px 24px;
-  background: linear-gradient(165deg, #fff 0%, var(--mist) 100%);
+  background: linear-gradient(165deg, var(--card) 0%, var(--mist) 100%);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -260,7 +303,7 @@ a:focus-visible {
   border: 1px solid var(--line);
   border-left-width: 5px;
   border-radius: var(--radius-md);
-  background: #fff;
+  background: var(--card);
   color: var(--ink);
   text-decoration: none;
   touch-action: manipulation;
@@ -289,7 +332,7 @@ a:focus-visible {
 }
 
 .door--primary:hover {
-  background: linear-gradient(135deg, #fff 0%, var(--jade-glow) 100%);
+  background: linear-gradient(135deg, var(--card) 0%, var(--jade-glow) 100%);
 }
 
 .door--secondary {
@@ -297,12 +340,12 @@ a:focus-visible {
 }
 
 .door--secondary:hover {
-  background: linear-gradient(135deg, #fff 0%, rgba(201, 162, 39, 0.1) 100%);
+  background: linear-gradient(135deg, var(--card) 0%, rgba(201, 162, 39, 0.1) 100%);
 }
 
 .door[aria-current="true"] {
   border-color: var(--jade-ink);
-  background: linear-gradient(135deg, #fff 0%, var(--jade-glow) 100%);
+  background: linear-gradient(135deg, var(--card) 0%, var(--jade-glow) 100%);
   box-shadow: 0 0 0 2px var(--jade-ink), var(--shadow-md);
 }
 
@@ -350,19 +393,19 @@ a:focus-visible {
 }
 
 .action-bar a:first-child {
-  background: var(--jade-ink);
+  background: var(--accent-solid);
   color: #fff;
-  border: 1px solid var(--jade-ink);
+  border: 1px solid var(--accent-solid);
 }
 
 .action-bar a:first-child:hover {
-  background: var(--jade-deep);
-  border-color: var(--jade-deep);
+  background: var(--accent-solid-hover);
+  border-color: var(--accent-solid-hover);
   color: #fff;
 }
 
 .action-bar a:not(:first-child) {
-  background: #fff;
+  background: var(--card);
   color: var(--jade-ink);
   border: 1px solid rgba(0, 77, 51, 0.25);
 }
@@ -403,7 +446,7 @@ a:focus-visible {
   padding: 16px 18px;
   color: var(--ink);
   text-decoration: none;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -525,7 +568,7 @@ a:focus-visible {
   padding: 14px 16px;
   color: var(--ink);
   text-decoration: none;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -657,7 +700,7 @@ body.interior {
   letter-spacing: 0.02em;
   padding: 8px 12px;
   min-height: 44px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   color: var(--mute);
@@ -750,7 +793,7 @@ body.interior {
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-hi);
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -820,7 +863,7 @@ body.interior {
   grid-template-columns: 48px 1fr;
   gap: 0 14px;
   border-top: 1px solid var(--line);
-  background: #fff;
+  background: var(--card);
   transition:
     background-color var(--transition-base),
     box-shadow var(--transition-base),
@@ -832,7 +875,7 @@ body.interior {
 }
 
 .runbook li:hover {
-  background: linear-gradient(135deg, #fff 0%, var(--jade-glow) 100%);
+  background: linear-gradient(135deg, var(--card) 0%, var(--jade-glow) 100%);
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
@@ -905,7 +948,7 @@ body.interior {
 
 .chunk-card {
   padding: 14px 14px 16px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--jade);
   border-radius: var(--radius-md);
@@ -992,7 +1035,7 @@ body.interior {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-hi);
   margin-bottom: 2px;
   font-weight: 600;
 }
@@ -1023,7 +1066,7 @@ body.interior {
   justify-content: center;
   min-height: 72px;
   padding: 14px 16px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--jade-ink);
   border-radius: var(--radius-md);
@@ -1042,7 +1085,7 @@ body.interior {
 
 .link-hub a:hover {
   border-color: var(--jade-ink);
-  background: linear-gradient(135deg, #fff 0%, var(--jade-glow) 100%);
+  background: linear-gradient(135deg, var(--card) 0%, var(--jade-glow) 100%);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
   color: var(--jade-ink);
@@ -1128,7 +1171,7 @@ body.interior {
 
 .state-card {
   padding: 16px 16px 18px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -1152,7 +1195,7 @@ body.interior {
 }
 
 .state-card.global .layer-k {
-  color: var(--gold);
+  color: var(--gold-hi);
 }
 
 .state-card.local .layer-k {
@@ -1189,7 +1232,7 @@ ul.insight li {
   line-height: 1.6;
   color: var(--mute);
   max-width: 62ch;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--jade);
   border-radius: var(--radius-md);
@@ -1341,5 +1384,231 @@ body.page-404 {
 @media (min-width: 1200px) {
   .sheet {
     max-width: 980px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   showcase layer · 2026-07-23 · 龙 polish
+   selection · scrollbar · heading accents · motif dividers ·
+   scroll reveals · press states · print
+   ════════════════════════════════════════════════════════ */
+
+/* —— selection · jade brand moment —— */
+::selection {
+  background: var(--jade-ink);
+  color: var(--paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::selection {
+    background: var(--jade-ink);
+    color: #101915;
+  }
+}
+
+/* —— scrollbar · quiet jade, non-breaking —— */
+html {
+  scrollbar-color: rgba(0, 143, 90, 0.55) transparent;
+  scrollbar-width: thin;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    scrollbar-color: rgba(99, 214, 168, 0.45) transparent;
+  }
+}
+
+/* —— heading accents · gold-to-jade tick —— */
+.block h2::after,
+.sheet h2::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+}
+
+.page-404 h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+}
+
+/* —— memo rule · 龙 ornament divider —— */
+.memo-rule {
+  position: relative;
+  overflow: visible;
+  background: linear-gradient(90deg, transparent 0%, var(--line) 12%, var(--line) 88%, transparent 100%);
+}
+
+.memo-rule::after {
+  content: "龙";
+  content: "龙" / "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 14px;
+  font-family: var(--font-sc);
+  font-size: 15px;
+  line-height: 1;
+  color: var(--gold-hi);
+  background: var(--paper);
+}
+
+/* —— card top-glint on hover —— */
+.link-grid a,
+.gtm-research a,
+.link-hub a,
+.chunk-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.link-grid a::before,
+.gtm-research a::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.link-grid a:hover::before,
+.link-grid a:focus-visible::before,
+.gtm-research a:hover::before,
+.gtm-research a:focus-visible::before {
+  opacity: 1;
+}
+
+/* —— press states · buttons settle under the thumb —— */
+.action-bar a:active,
+.quick-row a:active,
+.door:active,
+.link-grid a:active,
+.gtm-research a:active,
+.link-hub a:active,
+.toc a:active,
+.back:active {
+  transform: translateY(1px);
+  transition-duration: 0.06s;
+}
+
+/* —— scroll reveals · JS adds .js-reveal to <html>; no JS = fully visible —— */
+@media (prefers-reduced-motion: no-preference) {
+  html.js-reveal .rv {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.js-reveal .rv.in-view {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* —— print · how i work reads like the memo it is —— */
+@media print {
+  html {
+    scrollbar-color: auto;
+  }
+
+  body,
+  body.interior {
+    background: #fff !important;
+    color: #000;
+    font-size: 11.5pt;
+  }
+
+  .topbar,
+  .skip-link,
+  .action-bar,
+  .toc,
+  .back {
+    display: none !important;
+  }
+
+  .sheet {
+    max-width: none;
+    padding: 0;
+  }
+
+  .sheet h1,
+  .sheet h2,
+  .sheet h3,
+  .sheet p,
+  .standfirst,
+  .lede,
+  .pull-quote p,
+  .part-label {
+    color: #000 !important;
+  }
+
+  .sheet p,
+  .habit-list li,
+  .chunk-card p,
+  .runbook .step-body p,
+  .timeline .tl-body p {
+    color: #1a1a1a !important;
+  }
+
+  .block h2::after,
+  .sheet h2::after {
+    background: #000;
+  }
+
+  .runbook,
+  .chunk-card,
+  .note,
+  .pull-quote,
+  .gov-wrap,
+  .state-card,
+  ul.insight li {
+    box-shadow: none !important;
+    border-color: #999 !important;
+    background: #fff !important;
+    break-inside: avoid;
+  }
+
+  .runbook li,
+  .runbook .step-n {
+    background: #fff !important;
+  }
+
+  section {
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .sheet a[href^="https://"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #444;
+    word-break: break-all;
+  }
+
+  .site-footer {
+    border-top-color: #999;
+    color: #333;
+  }
+
+  .rv {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

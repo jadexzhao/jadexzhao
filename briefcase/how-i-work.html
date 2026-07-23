@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#004d33">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101915">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
@@ -28,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260723b">
+<link rel="stylesheet" href="site.css?v=20260723c">
 </head>
 <body class="interior">
 <a href="#main-content" class="skip-link">skip to main content</a>
@@ -81,7 +82,7 @@
 
   <hr class="memo-rule">
 
-  <section id="part-1">
+  <section id="part-1" class="rv">
     <p class="part-label">part 1</p>
     <h2>the sandwich runbook</h2>
 
@@ -143,7 +144,7 @@
 
   <hr class="memo-rule">
 
-  <section id="part-2">
+  <section id="part-2" class="rv">
     <p class="part-label">part 2</p>
     <h2>building nonprofit pages, piece by piece</h2>
     <p><b>Plain version:</b> ServeIT is a student-run tech clinic at IU that builds free websites for nonprofits. IU gives us a set of ready-made building blocks (the tools are called Cascade and Rivet). Instead of hand-coding each page, I treat those blocks like LEGO: figure out what each part of the page needs to do, then snap the right blocks together so the page stays on-brand and easy to use.</p>
@@ -229,7 +230,7 @@
 
   <hr class="memo-rule">
 
-  <section id="part-3">
+  <section id="part-3" class="rv">
     <p class="part-label">part 3</p>
     <h2>doing it responsibly · business, technology, law</h2>
     <p><b>Plain version:</b> before I build, I check the boring-but-important stuff: the rules of the tools we use, the school&rsquo;s policies, the law, and whether the result will actually be usable for everyone. I treat fairness and access as requirements from the start, not something to fix at the last minute.</p>
@@ -276,7 +277,7 @@
 
   <hr class="memo-rule">
 
-  <section id="part-4">
+  <section id="part-4" class="rv">
     <p class="part-label">part 4</p>
     <h2>what that looks like in practice</h2>
     <p><b>Helping people choose software (the technical side of sales, not advertising):</b> I join customer calls to understand what they need, build a working demo so they can see it in action, wire it up to their other tools, help the sales and engineering teams understand each other, and keep the handoff clean when a trial becomes the real thing. The industry calls this technical go-to-market or Solutions Engineering: being technical enough to be trusted, right next to the business conversation.</p>
@@ -301,7 +302,7 @@
     </blockquote>
   </section>
 
-  <footer class="site-footer closer">
+  <footer class="site-footer closer rv">
     <p class="duck">Jade Zhao · 福州 roots · TypeScript · React · Python · PostgreSQL · WCAG</p>
     <p class="human">
       <a href="index.html">the briefcase</a>
@@ -316,5 +317,29 @@
 
 
 </main>
+<script>
+(function () {
+  "use strict";
+  if (
+    !("IntersectionObserver" in window) ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
+  document.documentElement.classList.add("js-reveal");
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
+  );
+  document.querySelectorAll(".rv").forEach(function (el) {
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
