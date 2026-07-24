@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How Jade Zhao ships: technical GTM consulting, ServeIT accessible builds, sandwich runbook, Cascade/Rivet chunk matrix. Process memo for recruiters.">
+<meta name="description" content="How Jade Zhao ships: ELI5 your code, learn what you don’t know, slow progress that holds up. ServeIT, sandwich runbook, Cascade/Rivet.">
 <title>jade zhao · how i work</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -18,18 +18,18 @@
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
 <meta property="og:title" content="jade zhao · how i work">
-<meta property="og:description" content="Technical GTM consulting motion, ServeIT accessible builds, sandwich runbook, Cascade/Rivet chunk matrix. How Jade Zhao ships.">
+<meta property="og:description" content="ELI5 · learn it · ship steady. ServeIT accessible builds, sandwich runbook, Cascade/Rivet. How Jade Zhao ships.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
 <meta property="og:image:alt" content="Portrait of Jade Zhao">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="jade zhao · how i work">
-<meta name="twitter:description" content="Technical GTM consulting, ServeIT accessible builds, sandwich runbook. How Jade Zhao ships.">
+<meta name="twitter:description" content="ELI5 · learn it · ship steady. How Jade Zhao ships.">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
 <meta name="twitter:image:alt" content="Portrait of Jade Zhao">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260723c">
+<link rel="stylesheet" href="site.css?v=20260724a">
 </head>
 <body class="interior">
 <a href="#main-content" class="skip-link">skip to main content</a>
@@ -49,17 +49,26 @@
   <header class="interior-header">
     <a class="back reveal" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
     <p class="memo-kicker reveal">jade zhao · <span class="sc" lang="zh-Hans">赵</span> · the briefcase</p>
-    <h1 class="reveal">how i work<span class="sub">process · serveit · handoffs</span></h1>
+    <h1 class="reveal">how i work<span class="sub">eli5 · learn it · ship steady</span></h1>
 
     <div class="status-row reveal" role="group" aria-label="baseline">
       <span class="status-pill"><span class="dot" aria-hidden="true"></span> built to be usable by everyone <strong>WCAG 2.2 AA accessibility</strong></span>
       <span class="status-pill">focus <strong>helping people choose and set up software</strong></span>
-      <span class="status-pill"><span class="sc" lang="zh-Hans">专业发展</span> · <strong>Solutions Eng / technical GTM · May 2027</strong></span>
+      <span class="status-pill"><span class="sc" lang="zh-Hans">专业发展</span> · <strong>SWE SoCal · Solutions Eng / GTM · May 2027</strong></span>
     </div>
 
-    <p class="standfirst reveal">Same discipline I learned working a restaurant floor, now applied to building software and helping people use it. <span class="sc" lang="zh-Hans">福州</span> roots stay in the culture, not in any lab claim. For the short recruiter version, see <a href="index.html#prof-dev">专业发展 · where I&rsquo;m headed</a> on the home page.</p>
+    <p class="standfirst reveal">
+      Three rules before the process memo:
+      if you can&rsquo;t ELI5 the codebase, you&rsquo;re not done yet;
+      if you don&rsquo;t understand it, learn it;
+      slow progress is the best progress.
+      Same discipline I learned on a restaurant floor — now applied to shipping software people can actually follow.
+      <span class="sc" lang="zh-Hans">福州</span> roots stay in the culture, not in any lab claim.
+      Short recruiter version:
+      <a href="index.html#prof-dev">专业发展 · where I&rsquo;m headed</a>.
+    </p>
     <div class="lede reveal">
-      <p><b>Plain-English version first:</b> I build websites and tools, mostly for nonprofits, and I make sure they&rsquo;re easy for everyone to use. I also sit in on meetings where a company is deciding whether to use a piece of software and show them how it works. The rest of this page is the detailed, behind-the-scenes version of how I actually do that. If you&rsquo;re not technical, you can read the intros of each part and skip the code-level bits.</p>
+      <p><b>Plain-English version first:</b> I build websites and tools, mostly for nonprofits, and I make sure they&rsquo;re easy for everyone to use. I also sit in on meetings where a company is deciding whether to use a piece of software and show them how it works. The rest of this page is the detailed, behind-the-scenes version. If you&rsquo;re not technical, read the intros of each part and skip the code-level bits — that&rsquo;s the ELI5 test in action.</p>
       <p>I use AI-assisted editing sometimes. It speeds up the work. It does not replace what I decide or what I sign off on. <b>Drafts may be AI-assisted. Accountability is entirely mine.</b></p>
     </div>
     <nav class="action-bar reveal" aria-label="Quick links">
@@ -87,10 +96,10 @@
     <h2>the sandwich runbook</h2>
 
     <blockquote class="pull-quote">
-      <p>computers do exactly what you write, never what you meant.</p>
+      <p>computers do exactly what you write, never what you meant. if you can&rsquo;t eli5 the instruction, the sandwich fails.</p>
     </blockquote>
 
-    <p>my cs professor's peanut-butter-sandwich drill is the foundation. vague inputs produce unstable outputs. that lesson carries into frontend architecture, GTM demos, and any AI-assisted draft. below is the runbook i actually follow.</p>
+    <p>my cs professor's peanut-butter-sandwich drill is the foundation. vague inputs produce unstable outputs. that lesson carries into frontend architecture, GTM demos, and any AI-assisted draft. below is the runbook i actually follow — explain it, learn the gaps, ship in small steps.</p>
 
     <h3>five steps</h3>
     <ol class="runbook" aria-label="sandwich runbook">
@@ -270,8 +279,8 @@
       <li>name <b>stakeholders</b> early.</li>
       <li>treat ethics and access as <b>non-functional requirements</b>.</li>
       <li>read <b>vendor and institutional constraints</b> alongside user stories.</li>
-      <li>document assumptions for <b>traceability</b>.</li>
-      <li>ship in <b>small increments</b> with human sign-off when stakes are high.</li>
+      <li>document assumptions for <b>traceability</b> — if you can&rsquo;t ELI5 the decision, rewrite it.</li>
+      <li>ship in <b>small increments</b> with human sign-off when stakes are high. slow progress that holds up.</li>
     </ul>
   </section>
 

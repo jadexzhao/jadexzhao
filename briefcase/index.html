@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · Jade the Goat · Informatics @ IU Luddy, May 2027. Builds nonprofit websites and helps buyers try software (technical consulting). Madrid · Bloomington IN.">
+<meta name="description" content="Jade Zhao · Jade the Goat · Informatics @ IU Luddy, May 2027. ELI5 your code, learn what you don’t know, ship steady. Open to SWE in Southern California.">
 <title>Jade the Goat · Jade Zhao · Indiana University Luddy</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -25,12 +25,12 @@
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
 <meta property="og:title" content="Jade the Goat · Jade Zhao · Indiana University Luddy">
-<meta property="og:description" content="Informatics @ IU Luddy, May 2027. ServeIT website lead. Builds sites for nonprofits and helps buyers evaluate software. Builder portfolio (龙 · dragon).">
+<meta property="og:description" content="ELI5 · learn it · ship steady. Informatics @ IU Luddy, May 2027. ServeIT lead. Open to SWE in Southern California. Builder portfolio (龙 · dragon).">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
 <meta property="og:image:alt" content="Portrait of Jade Zhao">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jade the Goat · Jade Zhao · Indiana University Luddy">
-<meta name="twitter:description" content="May 2027 · nonprofit websites · technical consulting · Madrid. Builder portfolio (龙 · dragon).">
+<meta name="twitter:description" content="ELI5 your code. Learn what you don’t know. Slow progress that ships. Open to SWE in SoCal.">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
 <meta name="twitter:image:alt" content="Portrait of Jade Zhao">
 <script type="application/ld+json">
@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260723c">
+<link rel="stylesheet" href="site.css?v=20260724a">
 <style>
   :root {
     --hero-shade: linear-gradient(
@@ -130,11 +130,22 @@
     font-weight: 500;
     color: #b8f0d4;
   }
+  .headline {
+    margin-top: 16px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    text-wrap: balance;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.3);
+  }
   .line {
     margin-top: 12px;
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-size: clamp(1.05rem, 2.3vw, 1.2rem);
     color: rgba(250, 246, 240, 0.9);
-    max-width: 34ch;
+    max-width: 36ch;
     line-height: 1.45;
   }
   .cta {
@@ -263,6 +274,48 @@
     border: 1px solid rgba(0, 77, 51, 0.15);
     border-radius: var(--radius-md);
     margin-bottom: 14px;
+  }
+
+  /* —— credo: three rules, not cards —— */
+  .credo {
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+    max-width: 62ch;
+    display: grid;
+    gap: 14px;
+  }
+  .credo li {
+    position: relative;
+    padding: 0 0 0 18px;
+    font-size: 15px;
+    color: var(--mute);
+    line-height: 1.55;
+  }
+  .credo li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    bottom: 0.35em;
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--jade) 100%);
+  }
+  .credo strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 16px;
+  }
+  .credo-kicker {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--jade-ink);
   }
 
   .madrid-note {
@@ -402,9 +455,10 @@
   <div class="hero-inner fade">
     <p class="brand" id="brand-title">Jade the Goat</p>
     <p class="who">jade zhao <span class="sc">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
+    <p class="headline">ELI5 it. Learn it. Ship it slow.</p>
     <p class="line">
-      Restaurant kid who builds websites and tools people actually use.
-      Pick one door below for the page that fits you.
+      Restaurant kid who builds websites people can actually explain —
+      and keeps shipping when the hype dies down.
     </p>
     <p class="cta">
       <a class="cta-primary" href="#path-fork">Choose your path</a>
@@ -419,11 +473,12 @@
       <h2 id="choose-heading" class="choose-one">Choose one</h2>
       <p class="choose-lede">
         One door. Then the info that matches you.
+        Same three rules either way: explain it, learn it, ship steady.
       </p>
       <nav class="doors" aria-label="Audience">
         <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire">
           <span class="door-who">Here to hire or work with me</span>
-          <span class="door-what">Built work, jobs, and how to reach me. Stay on this site (<span class="sc" lang="zh-Hans">龙</span> · dragon).</span>
+          <span class="door-what">Built work, SoCal SWE interest, and how to reach me. Stay on this site (<span class="sc" lang="zh-Hans">龙</span> · dragon).</span>
         </a>
         <a class="door door--secondary" id="door-student" href="https://matchaxmoxie.github.io/matchaxmoxie/" data-door="student">
           <span class="door-who">A student or high schooler</span>
@@ -438,10 +493,26 @@
     </p>
     <section id="recruiter-path" class="block rv" aria-labelledby="recruiter-tldr">
       <h2 id="recruiter-tldr">Here to hire or work with me</h2>
+      <p class="credo-kicker">How I build</p>
+      <ol class="credo" aria-label="Builder credo">
+        <li>
+          <strong>If you can’t ELI5 your codebase, you’re not done yet.</strong>
+          Plain language beats gatekeeping. If a partner can’t follow the system, I rewrite until they can.
+        </li>
+        <li>
+          <strong>If you don’t understand it, learn it.</strong>
+          Curiosity over vibes. I don’t fake fluency — I dig until the stack makes sense.
+        </li>
+        <li>
+          <strong>Slow progress is the best progress.</strong>
+          Craft and steady shipping, not hustle theater. Small commits that hold up beat flashy demos that don’t.
+        </li>
+      </ol>
       <p>
         I build websites and software, and I help explain that software to the people deciding
         whether to use it. The roles I&rsquo;m after sit between product and customers — often called
-        Solutions Engineering or technical go-to-market (more below).
+        Solutions Engineering or technical go-to-market — and I&rsquo;m also
+        <strong>open to software engineering roles in Southern California</strong>.
       </p>
       <nav class="action-bar" aria-label="Contact and résumé">
         <a href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
@@ -450,7 +521,7 @@
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
       </nav>
       <ul class="scan-list">
-        <li><strong>School:</strong> Studying Informatics (tech + design) at Indiana University Luddy · graduating May 2027 · happy to relocate</li>
+        <li><strong>School:</strong> Studying Informatics (tech + design) at Indiana University Luddy · graduating May 2027 · open to SWE in Southern California</li>
         <li><strong>Build:</strong> I lead the website team at ServeIT, a student-run tech clinic at IU that makes free websites and tools for nonprofits. I build easy-to-use sites and organize their data. (ServeAI is the clinic&rsquo;s public-interest AI group on the same roster.)</li>
         <li><strong>Startup:</strong> Summer 2026, I&rsquo;m interning at an early-stage NYC startup (not yet public), sitting in on customer calls, building live demos, and helping the sales and engineering teams understand each other.</li>
         <li><strong>Abroad:</strong> Spring 2026 · a semester at Complutense University in Madrid (IU study abroad)</li>
@@ -503,14 +574,16 @@
         not a claim about any research lab.
       </p>
       <p class="pd-line">
-        By May 2027 I want roles where I sit between product and people:
-        <strong>Solutions Engineering</strong> or <strong>technical go-to-market</strong>.
+        By May 2027 I want roles where I sit between product and people —
+        <strong>Solutions Engineering</strong> or <strong>technical go-to-market</strong> —
+        and I&rsquo;m actively looking at <strong>software engineering in Southern California</strong>.
         Until then I&rsquo;m shipping accessible nonprofit sites (WCAG) at ServeIT,
         practicing discovery and demos in a stealth NYC internship, and keeping the
         handoffs clean enough that non-engineers can keep the work running.
+        Slow, explainable progress over flashy theater.
       </p>
       <p class="pd-line" lang="zh-Hans">
-        招聘方一眼能看懂：技术够硬，也能把产品讲清楚。
+        招聘方一眼能看懂：能把代码讲清楚，也会踏实学、稳稳交。
       </p>
     </section>
 
@@ -561,11 +634,11 @@
       <ul class="interest-strip">
         <li>
           <strong>Gardening.</strong> Jade plants and small pots on the sill.
-          Slow care, noticing light, keeping something alive on purpose.
+          Slow care — the same pace I want in a codebase.
         </li>
         <li>
           <strong>Film photography.</strong> Slower frames than a phone roll.
-          I like the wait between click and print.
+          Learn the exposure. Wait for the print.
         </li>
         <li>
           <strong>Reading.</strong> Fiction and essays between classes.
@@ -631,6 +704,7 @@
       <span class="sc" lang="zh-Hans">龙</span> · dragon (this work site) and
       <span class="sc" lang="zh-Hans">凤凰</span> · phoenix
       (<a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>, Miss Zhao for students).
+      Same credo on both: ELI5 · learn it · ship steady.
       Instagram: <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
     </p>
 
