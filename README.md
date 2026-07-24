@@ -16,6 +16,8 @@
 
 **Open to software engineering roles in Southern California** (and happy to talk Solutions Engineering / technical GTM paths too).
 
+ELI5 it. Learn it. Ship it slow.
+
 ## shipped
 
 | project | link |
