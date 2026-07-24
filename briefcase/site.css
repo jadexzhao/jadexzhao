@@ -40,7 +40,7 @@
   --transition-base: 0.22s ease;
 }
 
-/* —— dark scheme · jade glows on deep charcoal —— */
+/* ... dark scheme · jade glows on deep charcoal ... */
 @media (prefers-color-scheme: dark) {
   :root {
     --ink: #ece7dd;
@@ -143,7 +143,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* —— shared site nav —— */
+/* ... shared site nav ... */
 .topbar {
   position: absolute;
   top: 0;
@@ -213,13 +213,23 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+/* Hero sits on a dark photo ... keep the focus ring light and visible */
+.site-nav--on-hero a:focus-visible {
+  outline-color: #faf6f0;
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Chinese display · shared */
 .sc {
   font-family: var(--font-sc);
   font-weight: 500;
 }
 
-/* —— shared footer —— */
+/* ... shared footer ... */
 .site-footer {
   font-size: 14px;
   color: var(--mute);
@@ -253,7 +263,7 @@ a:focus-visible {
   border: 0;
 }
 
-/* —— home · fork panel & doors —— */
+/* ... home · fork panel & doors ... */
 .fork-panel {
   margin-bottom: 12px;
   padding: 28px 24px 24px;
@@ -362,7 +372,7 @@ a:focus-visible {
   line-height: 1.48;
 }
 
-/* —— action bar · prominent contact links —— */
+/* ... action bar · prominent contact links ... */
 .action-bar {
   display: flex;
   flex-wrap: wrap;
@@ -415,7 +425,7 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 
-/* —— link grid · scannable work cards —— */
+/* ... link grid · scannable work cards ... */
 .link-grid {
   display: grid;
   gap: 12px;
@@ -485,7 +495,7 @@ a:focus-visible {
   color: var(--jade-ink);
 }
 
-/* —— content blocks · shared rhythm —— */
+/* ... content blocks · shared rhythm ... */
 .block {
   margin-bottom: var(--space-section);
   padding-top: 12px;
@@ -616,7 +626,7 @@ a:focus-visible {
   }
 }
 
-/* —— interior pages · memo / accessibility / 404 —— */
+/* ... interior pages · memo / accessibility / 404 ... */
 body.interior {
   background:
     linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 14%, var(--paper) 100%);
@@ -1274,7 +1284,7 @@ ul.insight li::before {
   max-width: 62ch;
 }
 
-/* —— 404 —— */
+/* ... 404 ... */
 body.page-404 {
   min-height: 100vh;
   display: flex;
@@ -1354,9 +1364,22 @@ body.page-404 {
 }
 
 @media (max-width: 560px) {
+  body {
+    font-size: 16px;
+  }
+
   .sheet {
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  .topbar {
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
+  }
+
+  .site-nav {
+    gap: 2px 10px;
   }
 
   .runbook li {
@@ -1379,6 +1402,40 @@ body.page-404 {
     width: 100%;
     justify-content: center;
   }
+
+  .chunk-grid,
+  .link-hub {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ... tablet (~768): readable type, roomy tap rows, no squeeze ... */
+@media (min-width: 561px) and (max-width: 899px) {
+  body {
+    font-size: 17px;
+  }
+
+  .sheet {
+    padding-left: max(28px, env(safe-area-inset-left, 0px));
+    padding-right: max(28px, env(safe-area-inset-right, 0px));
+  }
+
+  .site-nav {
+    gap: 4px 16px;
+  }
+
+  .doors {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .link-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gov-wrap {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1393,7 +1450,7 @@ body.page-404 {
    scroll reveals · press states · print
    ════════════════════════════════════════════════════════ */
 
-/* —— selection · jade brand moment —— */
+/* ... selection · jade brand moment ... */
 ::selection {
   background: var(--jade-ink);
   color: var(--paper);
@@ -1406,7 +1463,7 @@ body.page-404 {
   }
 }
 
-/* —— scrollbar · quiet jade, non-breaking —— */
+/* ... scrollbar · quiet jade, non-breaking ... */
 html {
   scrollbar-color: rgba(0, 143, 90, 0.55) transparent;
   scrollbar-width: thin;
@@ -1418,7 +1475,7 @@ html {
   }
 }
 
-/* —— heading accents · gold-to-jade tick —— */
+/* ... heading accents · gold-to-jade tick ... */
 .block h2::after,
 .sheet h2::after {
   content: "";
@@ -1440,7 +1497,7 @@ html {
   background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
 }
 
-/* —— memo rule · 龙 ornament divider —— */
+/* ... memo rule · 龙 ornament divider ... */
 .memo-rule {
   position: relative;
   overflow: visible;
@@ -1462,7 +1519,7 @@ html {
   background: var(--paper);
 }
 
-/* —— card top-glint on hover —— */
+/* ... card top-glint on hover ... */
 .link-grid a,
 .gtm-research a,
 .link-hub a,
@@ -1489,7 +1546,7 @@ html {
   opacity: 1;
 }
 
-/* —— press states · buttons settle under the thumb —— */
+/* ... press states · buttons settle under the thumb ... */
 .action-bar a:active,
 .quick-row a:active,
 .door:active,
@@ -1502,7 +1559,7 @@ html {
   transition-duration: 0.06s;
 }
 
-/* —— scroll reveals · JS adds .js-reveal to <html>; no JS = fully visible —— */
+/* ... scroll reveals · JS adds .js-reveal to <html>; no JS = fully visible ... */
 @media (prefers-reduced-motion: no-preference) {
   html.js-reveal .rv {
     opacity: 0;
@@ -1518,7 +1575,7 @@ html {
   }
 }
 
-/* —— print · how i work reads like the memo it is —— */
+/* ... print · how i work reads like the memo it is ... */
 @media print {
   html {
     scrollbar-color: auto;

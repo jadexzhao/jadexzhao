@@ -3,7 +3,7 @@
 **How I build (and how I want to be hired):**
 
 1. **If you can’t ELI5 your codebase, you’re not done yet.** Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
-2. **If you don’t understand it, learn it.** Curiosity over vibes. I don’t fake fluency — I dig until the system makes sense.
+2. **If you don’t understand it, learn it.** Curiosity over vibes. I don’t fake fluency ... I dig until the system makes sense.
 3. **Slow progress is the best progress.** Craft and steady shipping, not hustle theater. Small commits that hold up beat flashy demos that don’t.
 
 **TLDR:** two sites, same person. this repo = **龙 · dragon** (work · I build and ship code). [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) = **凤凰 · phoenix** (Miss Zhao classroom archive · IG now [@zhao.langxi](https://instagram.com/zhao.langxi)).
@@ -12,7 +12,7 @@
 
 ## now
 
-**Jade Zhao** · Informatics @ IU Luddy · **May 2027**. Website team lead at **ServeIT**, IU’s nonprofit tech clinic. FASE Mentor Apprenticeship Program coordination + UTA for **50+ students** — process and site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Summer 2026 technical GTM intern at a stealth NYC startup. Madrid semester at Complutense (Spring 2026).
+**Jade Zhao** · Informatics @ IU Luddy · **May 2027**. Website team lead at **ServeIT**, IU’s nonprofit tech clinic. FASE Mentor Apprenticeship Program coordination + UTA for **50+ students** ... process and site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Summer 2026 technical GTM intern at a stealth NYC startup. Madrid semester at Complutense (Spring 2026).
 
 **Open to software engineering roles in Southern California** (and happy to talk Solutions Engineering / technical GTM paths too).
 

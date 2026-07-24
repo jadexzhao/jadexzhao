@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260724a">
+<link rel="stylesheet" href="site.css?v=20260724b">
 <style>
   :root {
     --hero-shade: linear-gradient(
@@ -69,7 +69,7 @@
     );
   }
 
-  /* —— hero: brand-first, one composition —— */
+  /* ... hero: brand-first, one composition ... */
   .hero {
     position: relative;
     min-height: min(92vh, 820px);
@@ -77,7 +77,7 @@
     align-items: end;
     color: #faf6f0;
     background-color: #3a322c;
-    /* Portrait 2263×2263; readability via layered gradient mesh + scrim — no blur filter */
+    /* Portrait 2263×2263; readability via layered gradient mesh + scrim ... no blur filter */
     background-image:
       radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
       radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
@@ -189,8 +189,12 @@
     transform: translateY(-1px);
   }
   .cta-ghost:active { transform: translateY(1px); }
+  .cta a:focus-visible {
+    outline: 3px solid #faf6f0;
+    outline-offset: 3px;
+  }
 
-  /* —— body content —— */
+  /* ... body content ... */
   .page {
     position: relative;
     overflow: hidden;
@@ -276,7 +280,7 @@
     margin-bottom: 14px;
   }
 
-  /* —— credo: three rules, not cards —— */
+  /* ... credo: three rules, not cards ... */
   .credo {
     margin: 0 0 28px;
     padding: 0;
@@ -336,7 +340,7 @@
   }
   .madrid-note a { color: var(--jade-ink); font-weight: 600; }
 
-  /* —— interests strip —— */
+  /* ... interests strip ... */
   .interest-strip {
     margin: 12px 0 0;
     padding: 0;
@@ -389,12 +393,20 @@
   @media (max-width: 639px) {
     .hero {
       min-height: min(78vh, 640px);
-      background-position: 50% 20%;
+      background-position: 50% 18%;
     }
     .hero-inner {
-      padding-bottom: 32px;
+      padding:
+        max(76px, calc(env(safe-area-inset-top, 0px) + 60px))
+        max(16px, env(safe-area-inset-right, 0px))
+        28px
+        max(16px, env(safe-area-inset-left, 0px));
     }
-    .brand { max-width: none; }
+    .brand { max-width: none; font-size: clamp(2.45rem, 11vw, 3.4rem); }
+    .headline { max-width: none; }
+    .line { max-width: none; }
+    .cta { flex-direction: column; align-items: stretch; }
+    .cta a { width: 100%; }
     .page {
       padding-left: max(16px, env(safe-area-inset-left, 0px));
       padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -409,6 +421,24 @@
       width: 100%;
       justify-content: center;
     }
+  }
+
+  /* ... tablet: portrait room + side padding without phone squeeze ... */
+  @media (min-width: 640px) and (max-width: 899px) {
+    .hero {
+      min-height: min(82vh, 720px);
+      background-position: 48% 20%;
+    }
+    .hero-inner {
+      padding-left: max(32px, env(safe-area-inset-left, 0px));
+      padding-right: max(32px, env(safe-area-inset-right, 0px));
+      padding-bottom: 44px;
+    }
+    .page {
+      padding-left: max(28px, env(safe-area-inset-left, 0px));
+      padding-right: max(28px, env(safe-area-inset-right, 0px));
+    }
+    .wrap { max-width: 820px; }
   }
 
   @media (min-width: 900px) {
@@ -435,6 +465,13 @@
     }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .cta-primary:hover,
+    .cta-ghost:hover {
+      transform: none;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -453,11 +490,11 @@
 <header class="hero" aria-labelledby="brand-title">
   <span class="visually-hidden" role="img" aria-label="Portrait of Jade Zhao"></span>
   <div class="hero-inner fade">
-    <p class="brand" id="brand-title">Jade the Goat</p>
+    <h1 class="brand" id="brand-title">Jade the Goat</h1>
     <p class="who">jade zhao <span class="sc">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
     <p class="headline">ELI5 it. Learn it. Ship it slow.</p>
     <p class="line">
-      Restaurant kid who builds websites people can actually explain —
+      Restaurant kid who builds websites people can actually explain ...
       and keeps shipping when the hype dies down.
     </p>
     <p class="cta">
@@ -501,7 +538,7 @@
         </li>
         <li>
           <strong>If you don’t understand it, learn it.</strong>
-          Curiosity over vibes. I don’t fake fluency — I dig until the stack makes sense.
+          Curiosity over vibes. I don’t fake fluency ... I dig until the stack makes sense.
         </li>
         <li>
           <strong>Slow progress is the best progress.</strong>
@@ -510,8 +547,8 @@
       </ol>
       <p>
         I build websites and software, and I help explain that software to the people deciding
-        whether to use it. The roles I&rsquo;m after sit between product and customers — often called
-        Solutions Engineering or technical go-to-market — and I&rsquo;m also
+        whether to use it. The roles I&rsquo;m after sit between product and customers ... often called
+        Solutions Engineering or technical go-to-market ... and I&rsquo;m also
         <strong>open to software engineering roles in Southern California</strong>.
       </p>
       <nav class="action-bar" aria-label="Contact and résumé">
@@ -574,8 +611,8 @@
         not a claim about any research lab.
       </p>
       <p class="pd-line">
-        By May 2027 I want roles where I sit between product and people —
-        <strong>Solutions Engineering</strong> or <strong>technical go-to-market</strong> —
+        By May 2027 I want roles where I sit between product and people ...
+        <strong>Solutions Engineering</strong> or <strong>technical go-to-market</strong> ...
         and I&rsquo;m actively looking at <strong>software engineering in Southern California</strong>.
         Until then I&rsquo;m shipping accessible nonprofit sites (WCAG) at ServeIT,
         practicing discovery and demos in a stealth NYC internship, and keeping the
@@ -591,7 +628,7 @@
       <h2 id="gtm-heading">Helping people choose and set up software</h2>
       <p class="eli5">
         <strong>In plain English:</strong> when a company is deciding whether to buy software, someone
-        technical sits with them — answering real questions, building a demo, connecting tools, and
+        technical sits with them ... answering real questions, building a demo, connecting tools, and
         keeping the handoff clean when a trial becomes a deal. That&rsquo;s
         <strong>go-to-market (GTM)</strong> or Solutions Engineering. My NYC startup internship
         (not yet public) is where I practice it now.
@@ -634,7 +671,7 @@
       <ul class="interest-strip">
         <li>
           <strong>Gardening.</strong> Jade plants and small pots on the sill.
-          Slow care — the same pace I want in a codebase.
+          Slow care ... the same pace I want in a codebase.
         </li>
         <li>
           <strong>Film photography.</strong> Slower frames than a phone roll.
@@ -794,7 +831,7 @@
     showHire(null);
   }
 
-  /* —— scroll reveals · gated on IO support + motion preference —— */
+  /* ... scroll reveals · gated on IO support + motion preference ... */
   if (
     "IntersectionObserver" in window &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches
