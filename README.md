@@ -2,7 +2,7 @@
 
 **How I build (and how I want to be hired):**
 
-1. **If you can’t ELI5 your codebase, you’re not done yet.** Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
+1. **If you can’t ELI5 your codebase, you’re not done yet.** (ELI5 = *explain like I’m five* — plain language, like explaining to a friend who’s new.) Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
 2. **If you don’t understand it, learn it.** Curiosity over vibes. I don’t fake fluency ... I dig until the system makes sense.
 3. **Slow progress is the best progress.** Craft and steady shipping, not hustle theater. Small commits that hold up beat flashy demos that don’t.
 
