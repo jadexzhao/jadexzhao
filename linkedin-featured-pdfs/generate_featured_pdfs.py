@@ -348,8 +348,8 @@ def pdf_overview():
         x,
         y,
         "MAP is mostly mentor training, Canvas ops, and emails ... plus UTA support for 50+ students. "
-        "Summer 2026 was a weird one: early-stage startup in NYC (Jun–Jul; company acquired during my internship). "
-        "I sat on customer calls, built demos, and wrote handoff docs.",
+        "Summer 2026 at Squirrel in NYC (Jun–Jul; company acquired during my internship). "
+        "I scoped work from customer calls, built demos and prototypes, and wrote handoff docs.",
         max_w,
         size=10,
         leading=13.5,
@@ -474,9 +474,9 @@ def pdf_build_ship():
         x,
         y,
         max_w,
-        "03 · early-stage startup (nyc)",
+        "03 · squirrel (nyc)",
         "b2b clients need working pilots, not just slides.",
-        "jun–jul 2026, hybrid nyc. discovery on sales calls, demo sandboxes / poc environments. "
+        "jun–jul 2026, hybrid nyc. software engineering intern at squirrel. scoped asks from customer calls, demo sandboxes / poc environments. "
         "python for onboarding automation. company acquired during internship.",
         "handoff docs + client tooling from pilot to production.",
     )

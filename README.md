@@ -12,7 +12,7 @@
 
 ## now
 
-**Jade Zhao** · Informatics @ IU Luddy · **May 2027** · Looking for SWE roles. Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP is mostly Canvas/training ops + UTA for **50+ students** ... site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Early-stage NYC startup internship Jun–Jul 2026 (company acquired during internship). Madrid semester at Complutense (Spring 2026).
+**Jade Zhao** · Informatics @ IU Luddy · **May 2027** · Looking for SWE roles. Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP is mostly Canvas/training ops + UTA for **50+ students** ... site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Squirrel software engineering internship Jun–Jul 2026 (company acquired during internship). Madrid semester at Complutense (Spring 2026).
 
 **Looking for software engineering roles**. Open to Southern California.
 
