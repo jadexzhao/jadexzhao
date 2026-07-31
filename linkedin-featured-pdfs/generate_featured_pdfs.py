@@ -302,72 +302,95 @@ def pdf_overview():
         c,
         width,
         height,
-        "swe writeup · overview",
+        "serveit · serveai · linkedin featured",
         "jade zhao",
-        "numbers first  ·  who / where / proof  ·  one-pager",
+        "nonprofit web lead · public-interest AI · May 2027",
     )
 
-    # numbers first
-    y = draw_section(c, x, y, "stock reach (stated)")
-    y = draw_metric_strip(
-        c,
-        x,
-        y,
-        max_w,
-        [
-            (STOCK[0], "account reach"),
-            (STOCK[1], "account reach"),
-            ("serveit", "engagement tools"),
-            ("50+", "uta students"),
-        ],
-    )
-    y -= 0.06 * inch
-
-    y = draw_section(c, x, y, f"30-day motion ({WINDOW})")
-    y = draw_metric_strip(
-        c,
-        x,
-        y,
-        max_w,
-        [
-            ("~191K", "views (both)"),
-            ("~9.3K", "interactions"),
-            ("1,157", "new followers"),
-            ("459", "pieces shared"),
-        ],
-    )
-    y -= 0.04 * inch
-
-    y = draw_section(c, x, y, "who")
+    y = draw_section(c, x, y, "headline")
     y = draw_para(
         c,
         x,
         y,
-        "i grew up in my family's chinese restaurant. you learn pretty fast when something "
-        "actually works and when it doesn't. that restaurant-kid wiring still shows up... "
-        "actor and entrepreneur on the side of the same person who ships product. "
-        "informatics @ iu luddy (may 2027), first-gen, hudson & holland, dean's list. "
-        "spring 2026 at complutense madrid.",
+        "Informatics @ IU Luddy · ServeIT · Looking for SWE roles · May 2027",
+        max_w,
+        size=10.5,
+        leading=14,
+    )
+    y -= 0.08 * inch
+
+    y = draw_section(c, x, y, "about (paste-ready)")
+    y = draw_para(
+        c,
+        x,
+        y,
+        "I'm proud of my ServeIT work at IU Luddy: accessible nonprofit web (WCAG 2.1), "
+        "Python/PostgreSQL data pipelines, and partner handoffs that still work after the semester ends. "
+        "ServeAI is ServeIT's public-interest AI track (PIT-UN): responsible generative AI tools and guides "
+        "so community organizations can adopt AI without breaking trust or accessibility.",
         max_w,
         size=10,
         leading=13.5,
     )
-    y -= 0.1 * inch
-
-    y = draw_section(c, x, y, "lanes (headline)")
-    y = draw_bullets(
+    y -= 0.04 * inch
+    y = draw_para(
         c,
         x,
         y,
-        [
-            "actor & entrepreneur · informatics @ iu luddy",
-            "software engineering intern @ early-stage startup (nyc) · serveit · fase map",
-            "python, typescript, react, sql, postgresql · open to relocation",
-        ],
+        "That's the work I want more of: software that helps people who didn't ask for a developer on retainer.",
         max_w,
         size=10,
+        leading=13.5,
+    )
+    y -= 0.04 * inch
+    y = draw_para(
+        c,
+        x,
+        y,
+        "MAP is mostly mentor training, Canvas ops, and emails ... plus UTA support for 50+ students. "
+        "Summer 2026 was a weird one: early-stage startup in NYC (Jun–Jul; company acquired during my internship). "
+        "I sat on customer calls, built demos, and wrote handoff docs.",
+        max_w,
+        size=10,
+        leading=13.5,
+    )
+    y -= 0.04 * inch
+    y = draw_para(
+        c,
+        x,
+        y,
+        "May 2027 · Informatics @ IU Luddy. Looking for software engineering roles. Open to Southern California.",
+        max_w,
+        size=10,
+        leading=13.5,
     )
     y -= 0.08 * inch
+
+    y = draw_section(c, x, y, "experience · serveit (lead this one)")
+    y = draw_para(
+        c,
+        x,
+        y,
+        "Website Team Lead · ServeIT Clinic · Indiana University Luddy · Jan 2024 – Present",
+        max_w,
+        size=10,
+        leading=13.5,
+        color=INK,
+    )
+    y -= 0.02 * inch
+    y = draw_para(
+        c,
+        x,
+        y,
+        "Lead nonprofit web delivery at IU Luddy's tech clinic. WCAG 2.1 builds, Python/PostgreSQL ETL, "
+        "partner scoping, and maintainable handoffs. ServeAI: public-interest AI tooling and guides "
+        "for community partners (PIT-UN track).",
+        max_w,
+        size=10,
+        leading=13.5,
+        color=MUTED,
+    )
+    y -= 0.06 * inch
 
     y = draw_section(c, x, y, "where the work lives")
     y = draw_bullets(
@@ -375,30 +398,17 @@ def pdf_overview():
         x,
         y,
         [
-            "serveit clinic: website team lead, wcag nonprofit builds staff can maintain",
-            "early-stage startup (nyc): demo sandboxes, integration prototypes, python automation, handoff docs",
-            "fase map + uta: mentor apprenticeship ops, teaching support for 50+ students",
-            "portfolio: jadexzhao.github.io · github @jadexzhao · school ig @zhao.langxi",
+            "ServeIT Clinic: serveit.luddy.indiana.edu",
+            "ServeAI (PIT-UN track): serveit.luddy.indiana.edu/serve-ai",
+            "Portfolio: jadexzhao.github.io/jadexzhao",
+            "Resume: jlzhao.pages.iu.edu/resume.pdf",
+            "IG: @zhao.langxi",
         ],
         max_w,
         size=10,
     )
-    y -= 0.06 * inch
 
-    c.setFillColor(MUTED)
-    c.setFont(FONT, 8.5)
-    for line in wrap_text(
-        c,
-        "proof layer: 250k / 150k stock + Professional dashboard motion transcribed from "
-        "IMG_4703 + IMG_4704 (own accounts). full table on the actor & entrepreneur pin.",
-        FONT,
-        8.5,
-        max_w,
-    ):
-        c.drawString(x, y, line)
-        y -= 11
-
-    draw_footer(c, width, "overview · set the standard, not a brochure")
+    draw_footer(c, width, "ServeIT-first LinkedIn Featured")
     c.save()
     return path
 
@@ -440,12 +450,11 @@ def pdf_build_ship():
         x,
         y,
         max_w,
-        "01 · software engineering intern · early-stage startup (nyc)",
-        "pilots need working software, not just slides.",
-        "jun–jul 2026, hybrid nyc. scoped technical requirements from discovery calls, "
-        "demo sandboxes / poc environments / integration prototypes. "
-        "python for onboarding automation.",
-        "handoff docs when pilots moved to production. company acquired during internship.",
+        "01 · serveit clinic · iu luddy",
+        "nonprofits need sites staff can update without a developer on call.",
+        "website team lead since jan 2024. wcag 2.1 builds. engagement tools for community partners. "
+        "python/postgresql etl. serveai (pit-un): public-interest ai guides for partners.",
+        "live nonprofit sites + maintainable handoffs.",
     )
 
     y = draw_pma_block(
@@ -453,11 +462,11 @@ def pdf_build_ship():
         x,
         y,
         max_w,
-        "02 · serveit clinic · iu luddy",
-        "bloomington nonprofits need sites staff can update without calling a developer every time.",
-        "website team lead since jan 2024 (part-time). wcag 2.1 builds. engagement tools "
-        "for community partners. python/postgresql etl with validation on community partner data.",
-        "live nonprofit sites + maintainable handoffs. clinic: serveit.luddy.indiana.edu.",
+        "02 · fase map · student life · uta",
+        "first-years and mentors need clearer day-to-day ops than a one-off workshop.",
+        "mostly mentor training, canvas ops, and emails. uta for 50+ students. "
+        "campus leadership programming with student life partners.",
+        "canvas content, mentor training materials, matchaxmoxie teaching site.",
     )
 
     y = draw_pma_block(
@@ -465,11 +474,11 @@ def pdf_build_ship():
         x,
         y,
         max_w,
-        "03 · fase map · student life · uta",
-        "first-year students and mentors need clearer day-to-day ops than a one-off workshop.",
-        "coordinate fase mentor apprenticeship: canvas, mentor training, ops. uta for 50+ students. "
-        "study resources when the lecture didn't land. leadership/career programming at iu luddy.",
-        "canvas content, mentor training materials, campus programming with student life partners.",
+        "03 · early-stage startup (nyc)",
+        "b2b clients need working pilots, not just slides.",
+        "jun–jul 2026, hybrid nyc. discovery on sales calls, demo sandboxes / poc environments. "
+        "python for onboarding automation. company acquired during internship.",
+        "handoff docs + client tooling from pilot to production.",
     )
 
     y = draw_section(c, x, y, "also shipping")
@@ -594,132 +603,8 @@ def pdf_actor_entrepreneur():
 
 
 def write_tex_mirrors():
-    """Plain .tex mirrors for local editing (Personal/ only)."""
-    common = r"""% LinkedIn Featured · software engineering writeup standard (local source)
-% PDFs in ~/Downloads built via reportlab (generate_featured_pdfs.py)
-% Proof: IMG_4703 + IMG_4704 Professional dashboard, Jul 12 2026
-\documentclass[11pt,letterpaper]{article}
-\usepackage[margin=0.7in]{geometry}
-\usepackage{xcolor}
-\usepackage{booktabs}
-\definecolor{jade}{HTML}{00A86B}
-\usepackage{times}
-\pagestyle{empty}
-\begin{document}
-"""
-    foot = r"""
-\vspace*{\fill}
-\noindent\textcolor{gray}{\footnotesize Jade Zhao · swe writeup · LinkedIn Featured · Jul 2026}
-\hfill\textcolor{jade}{\footnotesize \#00a86b}
-\end{document}
-"""
-
-    files = {
-        "linkedin-featured-jade-zhao-overview.tex": r"""
-{\color{jade}\footnotesize\bfseries SWE WRITEUP · OVERVIEW}\\[0.4em]
-{\color{jade}\LARGE\bfseries jade zhao}\\[0.25em]
-{\large\itshape numbers first · who / where / proof · one-pager}\\[0.5em]
-{\color{jade}\rule{\textwidth}{1.4pt}}
-
-\section*{stock reach (stated)}
-{\color{jade}\Large\bfseries 250k} / {\color{jade}\Large\bfseries 150k}
-\quad serveit engagement tools · 50+ uta
-
-\section*{30-day motion (Jun 12 -- Jul 11)}
-both accounts (Professional dashboard): $\sim$191K views · $\sim$9.3K interactions · 1{,}157 new followers · 459 shared
-
-\section*{who}
-i grew up in my family's chinese restaurant. that restaurant-kid wiring still shows up...
-actor and entrepreneur on the side of the same person who ships product.
-informatics @ iu luddy (may 2027), first-gen, hudson \& holland, dean's list.
-spring 2026 at complutense madrid.
-
-\section*{lanes}
-\begin{itemize}
-\item actor \& entrepreneur · informatics @ iu luddy
-\item software engineering intern @ early-stage startup (nyc) · serveit · fase map
-\item python, typescript, react, sql, postgresql · open to relocation
-\end{itemize}
-
-\section*{where the work lives}
-\begin{itemize}
-\item serveit clinic: website team lead, wcag nonprofit builds
-\item early-stage startup (nyc): demo sandboxes, integration prototypes, handoff docs
-\item fase map + uta: mentor apprenticeship, teaching support for 50+ students
-\item portfolio: jadexzhao.github.io · @zhao.langxi
-\end{itemize}
-"""
-        + foot,
-        "linkedin-featured-build-ship.tex": r"""
-{\color{jade}\footnotesize\bfseries SWE WRITEUP · BUILD \& SHIP}\\[0.4em]
-{\color{jade}\LARGE\bfseries build \& ship}\\[0.25em]
-{\large\itshape problem $\rightarrow$ motion $\rightarrow$ artifact}\\[0.5em]
-{\color{jade}\rule{\textwidth}{1.4pt}}
-
-\section*{how to read this}
-for each lane: problem in plain language, motion you actually ran, artifact someone else can open.
-numbers when you have them. no deal-room theater.
-
-\section*{01 · software engineering intern · early-stage startup (nyc)}
-\textbf{problem.} pilots need working software, not just slides.\\
-\textbf{motion.} jun--jul 2026, hybrid nyc. scoped requirements from discovery calls, demo sandboxes / poc environments / integration prototypes. python for onboarding automation.\\
-\textbf{artifact.} handoff docs when pilots moved to production. company acquired during internship.
-
-\section*{02 · serveit clinic · iu luddy}
-\textbf{problem.} nonprofits need sites staff can update without a developer on call.\\
-\textbf{motion.} website team lead since jan 2024. wcag 2.1 builds. engagement tools for community partners. python/postgresql etl.\\
-\textbf{artifact.} live nonprofit sites + maintainable handoffs.
-
-\section*{03 · fase map · student life · uta}
-\textbf{problem.} first-years and mentors need clearer day-to-day ops.\\
-\textbf{motion.} fase mentor apprenticeship ops. uta for 50+ students. campus leadership/career programming.\\
-\textbf{artifact.} canvas content, mentor training materials, campus programming.
-
-\section*{also shipping}
-family restaurant ordering site still live · portfolio at jadexzhao.github.io
-"""
-        + foot,
-        "linkedin-featured-actor-entrepreneur.tex": r"""
-{\color{jade}\footnotesize\bfseries SWE WRITEUP · CREATIVE LANE · PROOF}\\[0.4em]
-{\color{jade}\LARGE\bfseries actor \& entrepreneur}\\[0.25em]
-{\large\itshape identity, not a fake employer · stock + 30-day dashboard math}\\[0.5em]
-{\color{jade}\rule{\textwidth}{1.4pt}}
-
-\section*{identity}
-actor and entrepreneur live in the headline and about... same person who ships product.
-no invented film credits.
-
-\section*{stock reach (stated)}
-{\color{jade}\Huge\bfseries 250k} / {\color{jade}\Huge\bfseries 150k}\\[0.2em]
-already on creative / entrepreneur accounts.
-
-\section*{30-day motion · professional dashboard}
-window Jun 12 -- Jul 11. source: own screenshots IMG\_4703, IMG\_4704 (Jul 12 2026).
-
-\begin{tabular}{@{}lllll@{}}
-\toprule
-account & views & interactions & new followers & content shared \\
-\midrule
-account A & 83.7K & 1.7K & 814 & 314 \\
-account B & 107.1K & 7.6K & 343 & 145 \\
-\midrule
-both (sum) & $\sim$190.8K & $\sim$9.3K & 1{,}157 & 459 \\
-\bottomrule
-\end{tabular}
-
-\section*{handles \& brand}
-\begin{itemize}
-\item school ig @zhao.langxi (赵郎溪)
-\item jade green \#00a86b
-\item optional brand lane @matchaxmoxie
-\item family restaurant ordering site (honest entrepreneurship signal)
-\end{itemize}
-"""
-        + foot,
-    }
-
-    for name, body in files.items():
-        (SRC / name).write_text(common + body, encoding="utf-8")
+    """Skip overwriting .tex mirrors — source of truth is edited .tex files in repo."""
+    return
 
 
 if __name__ == "__main__":
