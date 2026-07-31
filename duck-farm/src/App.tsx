@@ -1,573 +1,500 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useCallback, useId } from 'react'
+import { DuckAvatar } from './components/DuckAvatar'
+import {
+  CURRENT_USER,
+  DUCK_PROFILES,
+  INITIAL_QUACKS,
+  TRENDING_TOPICS,
+  getProfile,
+  type Quack,
+  type DuckProfile,
+} from './data/mockData'
 import './App.css'
 
-type Accessory = 'briefcase' | 'tea' | 'hardhat'
+type Theme = 'light' | 'dark'
+type NavItem = 'home' | 'explore' | 'matches' | 'profile'
 
-interface Duck {
-  id: number
-  x: number
-  y: number
-  angle: number
-  vx: number
-  vy: number
-  accessory?: Accessory
+function formatCount(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}K`
+  return String(n)
 }
 
-const ACCESSORIES: Accessory[] = ['briefcase', 'tea', 'hardhat']
-
-const ACCESSORY_LABEL: Record<Accessory, string> = {
-  briefcase: 'a briefcase',
-  tea: 'tea',
-  hardhat: 'a hard hat',
-}
-
-const getRandomAccessory = (): Accessory | undefined =>
-  Math.random() > 0.7
-    ? ACCESSORIES[Math.floor(Math.random() * ACCESSORIES.length)]
-    : undefined
-
-function duckAccessibleName(duck: Duck): string {
-  const gear = duck.accessory
-    ? ` wearing ${ACCESSORY_LABEL[duck.accessory]}`
-    : ''
-  return `Duck ${duck.id}${gear}. Activate to bounce.`
-}
-
-function makeDuck(id: number, x: number, y: number, angle: number, vx: number): Duck {
-  return { id, x, y, angle, vx, vy: 0, accessory: getRandomAccessory() }
-}
-
-function initialDucks(): Duck[] {
-  return [
-    makeDuck(1, 20, 60, 0, 1),
-    makeDuck(2, 70, 70, 180, -0.8),
-  ]
-}
-
-function duckCssTransform(
-  duck: Duck,
-  canvasW: number,
-  canvasH: number,
-  reduceMotion = false,
-): string {
-  const x = (duck.x / 100) * canvasW
-  const y = (duck.y / 100) * canvasH
-  const bob =
-    reduceMotion || duck.x > 50
-      ? 0
-      : Math.sin(Date.now() * 0.003 + duck.id) * 2
-  const flip = duck.angle === 180 ? ' scaleX(-1)' : ''
-  return `translate3d(${x}px, ${y + bob}px, 0)${flip}`
-}
-
-function prefersReducedMotion(): boolean {
+function VerifiedBadge() {
   return (
-    typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    <svg className="verified-badge" viewBox="0 0 24 24" aria-label="Verified" role="img">
+      <path
+        fill="currentColor"
+        d="M10.521 3.821c.482-1.028 1.865-1.028 2.348 0l1.732 3.697a1.5 1.5 0 0 0 1.148.85l3.992.58c1.11.161 1.555 1.527.751 2.312l-2.888 2.816a1.5 1.5 0 0 0-.432 1.328l.682 3.976c.19 1.108-.972 1.953-1.963 1.407l-3.573-1.878a1.5 1.5 0 0 0-1.396 0l-3.573 1.878c-.991.546-2.153-.3-1.963-1.407l.682-3.976a1.5 1.5 0 0 0-.432-1.328L2.858 11.26c-.804-.785-.359-2.151.751-2.312l3.992-.58a1.5 1.5 0 0 0 1.148-.85l1.732-3.697z"
+      />
+    </svg>
   )
 }
 
-function DuckSprite({ accessory }: { accessory?: Accessory }) {
+function ProfileMeta({ profile }: { profile: DuckProfile }) {
   return (
-    <span className="duck-sprite" aria-hidden="true">
-      <svg className="duck-svg" viewBox="0 0 48 40" width="44" height="36" focusable="false">
-        <ellipse className="duck-body" cx="22" cy="26" rx="16" ry="10" />
-        <circle className="duck-head" cx="34" cy="16" r="9" />
-        <ellipse className="duck-wing" cx="18" cy="25" rx="8" ry="5" />
-        <path className="duck-beak" d="M42 16 L50 18 L42 21 Z" />
-        <circle className="duck-eye" cx="37" cy="14" r="1.6" />
-      </svg>
-      {accessory && <span className={`accessory accessory--${accessory}`} />}
-    </span>
+    <div className="profile-meta">
+      <span className="profile-meta__name">
+        {profile.displayName}
+        {profile.verified && <VerifiedBadge />}
+      </span>
+      <span className="profile-meta__handle">@{profile.handle}</span>
+    </div>
   )
 }
+
+interface QuackCardProps {
+  quack: Quack
+  onFlirt: (id: string) => void
+  onRequack: (id: string) => void
+}
+
+function QuackCard({ quack, onFlirt, onRequack }: QuackCardProps) {
+  const author = getProfile(quack.authorId)
+  if (!author) return null
+
+  return (
+    <article className="quack-card">
+      <DuckAvatar size="md" emoji={author.emoji} label={`${author.displayName}'s avatar`} />
+      <div className="quack-card__body">
+        <header className="quack-card__header">
+          <ProfileMeta profile={author} />
+          <span className="quack-card__time" aria-label={`Posted ${quack.timestamp} ago`}>
+            · {quack.timestamp}
+          </span>
+        </header>
+        <p className="quack-card__content">{quack.content}</p>
+        <div className="quack-card__actions" role="group" aria-label="Quack actions">
+          <button type="button" className="quack-action" aria-label={`${quack.replies} replies`}>
+            <ReplyIcon />
+            <span>{formatCount(quack.replies)}</span>
+          </button>
+          <button
+            type="button"
+            className="quack-action quack-action--requack"
+            aria-label={`${quack.requacks} requacks`}
+            onClick={() => onRequack(quack.id)}
+          >
+            <RequackIcon />
+            <span>{formatCount(quack.requacks)}</span>
+          </button>
+          <button
+            type="button"
+            className={`quack-action quack-action--heart${quack.flirted ? ' is-active' : ''}`}
+            aria-label={quack.flirted ? 'Unflirt' : 'Flirt'}
+            aria-pressed={quack.flirted}
+            onClick={() => onFlirt(quack.id)}
+          >
+            <HeartIcon filled={quack.flirted} />
+            <span>{formatCount(quack.hearts + (quack.flirted ? 1 : 0))}</span>
+          </button>
+          <button type="button" className="quack-action" aria-label="Share quack">
+            <ShareIcon />
+          </button>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+interface MatchCardProps {
+  profile: DuckProfile
+  onMatch: (id: string) => void
+  matched: boolean
+}
+
+function MatchCard({ profile, onMatch, matched }: MatchCardProps) {
+  return (
+    <div className="match-card">
+      <DuckAvatar size="sm" emoji={profile.emoji} label={`${profile.displayName}'s avatar`} />
+      <div className="match-card__info">
+        <span className="match-card__name">{profile.displayName}</span>
+        <span className="match-card__pond">{profile.pond}</span>
+        {profile.matchScore !== undefined && (
+          <span className="match-card__score">{profile.matchScore}% pond sync</span>
+        )}
+      </div>
+      <button
+        type="button"
+        className={`match-btn${matched ? ' match-btn--matched' : ''}`}
+        onClick={() => onMatch(profile.id)}
+        aria-pressed={matched}
+      >
+        {matched ? 'Matched' : 'Waddle'}
+      </button>
+    </div>
+  )
+}
+
+function ReplyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z" />
+    </svg>
+  )
+}
+
+function RequackIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z" />
+    </svg>
+  )
+}
+
+function HeartIcon({ filled }: { filled?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {filled ? (
+        <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.647 2.973.816-1.393 2.357-2.973 4.647-2.973 2.878 0 5.404 2.69 5.404 5.754 0 6.376-7.454 13.11-10.037 13.157H12z" />
+      ) : (
+        <path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.097 6.61 3.84-2.34 6.023-4.64 7.097-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z" />
+      )}
+    </svg>
+  )
+}
+
+function ShareIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.29 3.3-1.42-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z" />
+    </svg>
+  )
+}
+
+function HomeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 1.696L.622 8.807l1.06 1.696L3 9.679V19.5C3 20.881 4.119 22 5.5 22h13c1.381 0 2.5-1.119 2.5-2.5V9.679l1.318.824 1.06-1.696L12 1.696zM12 16.5c-1.933 0-3.5-1.567-3.5-3.5s1.567-3.5 3.5-3.5 3.5 1.567 3.5 3.5-1.567 3.5-3.5 3.5z" />
+    </svg>
+  )
+}
+
+function ExploreIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.747-.526 3.374-1.428 4.729l4.147 4.147a.75.75 0 1 1-1.06 1.06l-4.147-4.147A8.456 8.456 0 0 1 10.25 19.25c-4.694 0-8.5-3.806-8.5-8.5zM18.5 9.75a.75.75 0 0 0-1.5 0v3.5a.75.75 0 0 0 1.5 0v-3.5z" />
+    </svg>
+  )
+}
+
+function MatchIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+  )
+}
+
+function ProfileIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5.651 19h12.698c-.337-1.8-1.023-3.21-1.945-4.19C15.318 13.687 13.838 13 12 13s-3.317.687-4.404 1.81c-.922.98-1.608 2.39-1.945 4.19zm.543-2h11.412c-.331-1.166-.817-2.027-1.445-2.574C15.318 13.687 13.838 13 12 13s-3.317.687-4.404 1.81c-.628.547-1.114 1.408-1.445 2.574zM12 13c2.485 0 4.5-2.015 4.5-4.5S14.485 4 12 4 7.5 6.015 7.5 8.5 9.515 13 12 13zm0-2c-1.381 0-2.5-1.119-2.5-2.5S10.619 6 12 6s2.5 1.119 2.5 2.5S13.381 11 12 11z" />
+    </svg>
+  )
+}
+
+function QuackIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+    </svg>
+  )
+}
+
+const NAV_ITEMS: { id: NavItem; label: string; Icon: () => JSX.Element }[] = [
+  { id: 'home', label: 'Home', Icon: HomeIcon },
+  { id: 'explore', label: 'Explore', Icon: ExploreIcon },
+  { id: 'matches', label: 'Matches', Icon: MatchIcon },
+  { id: 'profile', label: 'Profile', Icon: ProfileIcon },
+]
 
 export default function App() {
-  const ducksRef = useRef<Duck[]>(initialDucks())
-  const nextIdRef = useRef(3)
-  const duckElsRef = useRef<Map<number, HTMLDivElement>>(new Map())
-  const canvasRef = useRef<HTMLDivElement>(null)
-  const canvasSizeRef = useRef({ w: 0, h: 0 })
-  const animationRef = useRef<number>()
-  const toastTimerRef = useRef<number>()
-  const fpsFramesRef = useRef(0)
-  const fpsLastRef = useRef(performance.now())
-  const fpsElRef = useRef<HTMLSpanElement | null>(null)
-  const overrideDayRef = useRef(false)
-  const reduceMotionRef = useRef(prefersReducedMotion())
-
-  const [duckList, setDuckList] = useState<Duck[]>(() => [...ducksRef.current])
-  const [duckCount, setDuckCount] = useState(2)
-  const [isDay, setIsDay] = useState(() => {
-    const h = new Date().getHours()
-    return h >= 6 && h < 18
+  const composeId = useId()
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('quack-theme') as Theme | null
+      if (stored === 'light' || stored === 'dark') return stored
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+    return 'light'
   })
+  const [activeNav, setActiveNav] = useState<NavItem>('home')
+  const [quacks, setQuacks] = useState<Quack[]>(INITIAL_QUACKS)
+  const [draft, setDraft] = useState('')
+  const [matches, setMatches] = useState<Set<string>>(new Set(['drake']))
   const [toast, setToast] = useState<string | null>(null)
-  const [showDev, setShowDev] = useState(false)
 
-  const syncDuckList = useCallback(() => {
-    setDuckList(ducksRef.current.map((d) => ({ ...d })))
-    setDuckCount(ducksRef.current.length)
+  const showToast = useCallback((msg: string) => {
+    setToast(msg)
+    window.setTimeout(() => setToast(null), 2400)
   }, [])
 
-  const measureCanvas = useCallback(() => {
-    const el = canvasRef.current
-    if (!el) return
-    canvasSizeRef.current = { w: el.clientWidth, h: el.clientHeight }
-  }, [])
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => {
-      reduceMotionRef.current = mq.matches
-    }
-    update()
-    mq.addEventListener('change', update)
-    return () => mq.removeEventListener('change', update)
-  }, [])
-
-  useEffect(() => {
-    const checkTime = () => {
-      if (overrideDayRef.current) return
-      const hours = new Date().getHours()
-      setIsDay(hours >= 6 && hours < 18)
-    }
-    checkTime()
-    const interval = setInterval(checkTime, 60000)
-    return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-    document.body.classList.toggle('night-farm', !isDay)
-    return () => document.body.classList.remove('night-farm')
-  }, [isDay])
-
-  useEffect(() => {
-    const el = canvasRef.current
-    if (!el) return
-    measureCanvas()
-    const ro = new ResizeObserver(() => {
-      measureCanvas()
+  const toggleTheme = () => {
+    setTheme((t) => {
+      const next = t === 'light' ? 'dark' : 'light'
+      localStorage.setItem('quack-theme', next)
+      return next
     })
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [measureCanvas])
-
-  useEffect(() => {
-    const konamiCode = [
-      'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-      'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-      'b', 'a',
-    ]
-    let konamiIndex = 0
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++
-        if (konamiIndex === konamiCode.length) {
-          const startId = nextIdRef.current
-          const newDucks: Duck[] = []
-          for (let i = 0; i < 50; i++) {
-            newDucks.push({
-              id: startId + i,
-              x: Math.random() * 80 + 10,
-              y: 65 + Math.random() * 15,
-              angle: Math.random() > 0.5 ? 0 : 180,
-              vx: (Math.random() - 0.5) * 4,
-              vy: -Math.random() * 2,
-              accessory: getRandomAccessory(),
-            })
-          }
-          nextIdRef.current = startId + 50
-          ducksRef.current = [...ducksRef.current, ...newDucks]
-          syncDuckList()
-          setToast('50 ducks. you earned this.')
-          if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
-          toastTimerRef.current = window.setTimeout(() => setToast(null), 2400)
-          konamiIndex = 0
-        }
-      } else {
-        konamiIndex = 0
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      if (toastTimerRef.current) window.clearTimeout(toastTimerRef.current)
-    }
-  }, [syncDuckList])
-
-  useEffect(() => {
-    const animate = () => {
-      const ducks = ducksRef.current
-      const { w: canvasW, h: canvasH } = canvasSizeRef.current
-      const reduce = reduceMotionRef.current
-
-      for (let i = 0; i < ducks.length; i++) {
-        const duck = ducks[i]
-        if (!reduce) {
-          let newVy = duck.vy
-          if (duck.y < 65) newVy += 0.05
-
-          let newX = duck.x + duck.vx
-          let newY =
-            duck.y +
-            newVy +
-            (duck.x > 50 ? 0 : Math.sin(Date.now() * 0.003 + duck.id) * 0.1)
-          let newAngle = duck.angle
-
-          if (newX < 0 || newX > 90) {
-            newAngle = newAngle === 0 ? 180 : 0
-            newX = newX < 0 ? 0 : 90
-            duck.vx = Math.abs(duck.vx) * (newAngle === 180 ? -1 : 1)
-          }
-
-          if (newY >= 65) {
-            newY = 65
-            newVy = 0
-          }
-
-          duck.x = newX
-          duck.y = newY
-          duck.angle = newAngle
-          duck.vy = newVy
-        }
-
-        const el = duckElsRef.current.get(duck.id)
-        if (el && canvasW > 0 && canvasH > 0) {
-          el.style.transform = duckCssTransform(duck, canvasW, canvasH, reduce)
-        }
-      }
-
-      fpsFramesRef.current += 1
-      const now = performance.now()
-      if (now - fpsLastRef.current >= 1000) {
-        const nextFps = fpsFramesRef.current
-        fpsFramesRef.current = 0
-        fpsLastRef.current = now
-        if (fpsElRef.current) fpsElRef.current.textContent = `${nextFps} fps`
-      }
-
-      animationRef.current = requestAnimationFrame(animate)
-    }
-
-    animationRef.current = requestAnimationFrame(animate)
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current)
-    }
-  }, [])
-
-  const setDuckEl = useCallback((id: number, node: HTMLDivElement | null) => {
-    if (node) duckElsRef.current.set(id, node)
-    else duckElsRef.current.delete(id)
-  }, [])
-
-  const bounceDuck = (id: number) => {
-    const duck = ducksRef.current.find((d) => d.id === id)
-    if (!duck) return
-    duck.vx *= -1
-    duck.vy = -0.5
-    const el = duckElsRef.current.get(id)
-    if (el) {
-      el.classList.remove('clicked')
-      void el.offsetWidth
-      el.classList.add('clicked')
-    }
   }
 
-  const handleCanvasClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!canvasRef.current) return
-    const rect = canvasRef.current.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width) * 100
-    const y = ((e.clientY - rect.top) / rect.height) * 100
-    if (y <= 60) return
-
-    const id = nextIdRef.current++
-    const duck: Duck = {
-      id,
-      x,
-      y,
-      angle: Math.random() > 0.5 ? 0 : 180,
-      vx: (Math.random() - 0.5) * 2,
-      vy: 0,
-      accessory: getRandomAccessory(),
-    }
-    ducksRef.current = [...ducksRef.current, duck]
-    syncDuckList()
-  }
-
-  const handleDuckClick = (e: React.MouseEvent, id: number) => {
-    e.stopPropagation()
-    const audio = new Audio(
-      'data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==',
+  const handleFlirt = (id: string) => {
+    setQuacks((prev) =>
+      prev.map((q) =>
+        q.id === id
+          ? { ...q, flirted: !q.flirted, hearts: q.hearts + (q.flirted ? -1 : 1) }
+          : q,
+      ),
     )
-    audio.play().catch(() => {})
-    bounceDuck(id)
   }
 
-  const handleDuckKeyDown = (e: React.KeyboardEvent, id: number) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      e.stopPropagation()
-      bounceDuck(id)
+  const handleRequack = (id: string) => {
+    setQuacks((prev) =>
+      prev.map((q) => (q.id === id ? { ...q, requacks: q.requacks + 1 } : q)),
+    )
+    showToast('Requacked to your followers.')
+  }
+
+  const handleMatch = (id: string) => {
+    setMatches((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) {
+        next.delete(id)
+        showToast("Unmatched. They'll find another pond.")
+      } else {
+        next.add(id)
+        const profile = getProfile(id)
+        showToast(`It's a waddle with ${profile?.displayName ?? 'a duck'}!`)
+      }
+      return next
+    })
+  }
+
+  const handlePost = () => {
+    const trimmed = draft.trim()
+    if (!trimmed) return
+    const newQuack: Quack = {
+      id: `q-${Date.now()}`,
+      authorId: CURRENT_USER.id,
+      content: trimmed,
+      timestamp: 'now',
+      replies: 0,
+      requacks: 0,
+      hearts: 0,
     }
+    setQuacks((prev) => [newQuack, ...prev])
+    setDraft('')
+    showToast('Quack posted to the pond.')
   }
 
-  const clearFarm = () => {
-    ducksRef.current = []
-    nextIdRef.current = 1
-    syncDuckList()
-  }
-
-  const resetFarm = () => {
-    ducksRef.current = initialDucks()
-    nextIdRef.current = 3
-    syncDuckList()
-  }
-
-  const populateFarm = () => {
-    const startId = nextIdRef.current
-    const newDucks: Duck[] = []
-    for (let i = 0; i < 8; i++) {
-      newDucks.push({
-        id: startId + i,
-        x: Math.random() * 80 + 10,
-        y: 65 + Math.random() * 15,
-        angle: Math.random() > 0.5 ? 0 : 180,
-        vx: (Math.random() - 0.5) * 2,
-        vy: 0,
-        accessory: getRandomAccessory(),
-      })
-    }
-    nextIdRef.current = startId + 8
-    ducksRef.current = [...ducksRef.current, ...newDucks]
-    syncDuckList()
-  }
-
-  const toggleDayNight = () => {
-    overrideDayRef.current = true
-    setIsDay((d) => !d)
-  }
+  const suggestedMatches = [...DUCK_PROFILES]
+    .filter((p) => p.mood !== 'matched' || !matches.has(p.id))
+    .sort((a, b) => (b.matchScore ?? 0) - (a.matchScore ?? 0))
+    .slice(0, 4)
 
   return (
-    <div className={`farm-container${isDay ? '' : ' night-mode'}`}>
-      <a href="#farm-main" className="skip-link">
-        skip to duck farm
+    <div className={`quack-app quack-app--${theme}`} data-theme={theme}>
+      <a href="#main-feed" className="skip-link">
+        Skip to feed
       </a>
 
-      <div className="topbar topbar--paper">
-        <nav className="site-nav site-nav--on-paper" aria-label="Briefcase">
-          <a href="https://jadexzhao.github.io/jadexzhao/">home</a>
-          <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">how i work</a>
-          <a href="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">accessibility</a>
-          <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/" aria-current="page">
-            duck farm
-          </a>
-        </nav>
-      </div>
-
-      <header className="farm-header">
-        <p className="farm-eyebrow">
-          <span lang="zh-Hans">龙</span> playground · <span lang="zh-Hans">鸭年</span> 2026
-        </p>
-        <h1 className="farm-title">duck farm</h1>
-        <p className="farm-lede">
-          Click the grass to place a duck. Tap a duck to bounce it. Konami (
-          <em>↑↑↓↓←→←→BA</em>) for a stampede.
-        </p>
-      </header>
-
-      <main id="farm-main">
-        <section className="farm-hero" aria-labelledby="sandbox-heading">
-          <h2 id="sandbox-heading" className="visually-hidden">
-            the live sandbox
-          </h2>
-          <div
-            ref={canvasRef}
-            className={`farm-canvas ${isDay ? 'day' : 'night'}`}
-            onClick={handleCanvasClick}
-            role="region"
-            aria-label="Interactive duck farm pond. Click the grass to place ducks, or use the controls below."
-          >
-            {!isDay && <div className="stars" aria-hidden="true" />}
-            <div className="cloud cloud-a" aria-hidden="true" />
-            <div className="cloud cloud-b" aria-hidden="true" />
-            <div className="cloud cloud-c" aria-hidden="true" />
-            <div className="grass" aria-hidden="true" />
-            <div className="pond" aria-hidden="true" />
-            {duckList.map((duck) => {
-              const { w, h } = canvasSizeRef.current
-              const hasSize = w > 0 && h > 0
-              return (
-                <div
-                  key={duck.id}
-                  ref={(node) => setDuckEl(duck.id, node)}
-                  className="duck"
-                  style={{
-                    transform: hasSize
-                      ? duckCssTransform(duck, w, h)
-                      : 'translate3d(0,0,0)',
-                  }}
-                  onClick={(e) => handleDuckClick(e, duck.id)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={duckAccessibleName(duck)}
-                  onKeyDown={(e) => handleDuckKeyDown(e, duck.id)}
-                >
-                  <DuckSprite accessory={duck.accessory} />
-                </div>
-              )
-            })}
-          </div>
-        </section>
-
-        <div className="farm-hud">
-          <p className="counter" aria-live="polite">
-            <span>{duckCount}</span> duck{duckCount !== 1 ? 's' : ''} on the farm
-          </p>
-
-          <div className="controls" role="group" aria-label="Farm controls">
-            <button
-              type="button"
-              className="btn-primary"
-              onClick={populateFarm}
-              aria-label="Spawn 8 ducks"
-            >
-              spawn 8
-            </button>
-            <button
-              type="button"
-              className="btn-secondary"
-              onClick={toggleDayNight}
-              aria-label={isDay ? 'Switch to night mode' : 'Switch to day mode'}
-            >
-              {isDay ? 'night' : 'day'}
-            </button>
-            <button type="button" className="btn-secondary" onClick={resetFarm}>
-              reset
-            </button>
-            <button type="button" className="btn-ghost" onClick={clearFarm}>
-              clear
-            </button>
-            <button
-              type="button"
-              className="btn-ghost"
-              onClick={() => setShowDev((v) => !v)}
-              aria-pressed={showDev}
-              aria-controls="farm-dev-hud"
-              aria-label={showDev ? 'Hide frames per second' : 'Show frames per second'}
-            >
-              {showDev ? 'hide fps' : 'fps'}
-            </button>
+      <div className="quack-shell">
+        <aside className="quack-nav" aria-label="Main navigation">
+          <div className="quack-nav__brand">
+            <DuckAvatar size="sm" emoji="🦆" label="Quackr logo" />
+            <span className="quack-nav__logo">Quackr</span>
           </div>
 
-          {showDev && (
-            <p id="farm-dev-hud" className="dev-hud" aria-live="polite">
-              <span ref={fpsElRef}>0 fps</span>
-              <span aria-hidden="true"> · </span>
-              <span>{isDay ? 'day' : 'night'}</span>
-            </p>
-          )}
+          <nav className="quack-nav__links">
+            {NAV_ITEMS.map(({ id, label, Icon }) => (
+              <button
+                key={id}
+                type="button"
+                className={`quack-nav__item${activeNav === id ? ' is-active' : ''}`}
+                aria-current={activeNav === id ? 'page' : undefined}
+                onClick={() => setActiveNav(id)}
+              >
+                <Icon />
+                <span>{label}</span>
+              </button>
+            ))}
+          </nav>
 
-          <p className="info">
-            React + TypeScript + Vite. Positions live in a <code>useRef</code>;{' '}
-            <code>requestAnimationFrame</code> writes transforms so React does not
-            re-render every frame.
-          </p>
-        </div>
+          <button type="button" className="quack-btn quack-btn--primary quack-nav__compose">
+            <QuackIcon />
+            <span>Quack</span>
+          </button>
 
-        <details className="farm-architecture">
-          <summary>
-            <span className="arch-toggle" aria-hidden="true" />
-            how the pond runs
-          </summary>
-          <div className="arch-body">
-            <ul className="arch-list">
-              <li>
-                <strong>State.</strong> Duck positions mutate inside{' '}
-                <code>requestAnimationFrame</code>. React state only syncs when ducks
-                are added, cleared, or reset. Same fence as{' '}
-                <a href="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
-                  how i work
-                </a>
-                .
-              </li>
-              <li>
-                <strong>Access.</strong> Ducks take keyboard focus (Enter / Space).
-                Controls stay at 48px tap targets. Reduced motion pauses the waddle.
-              </li>
-            </ul>
-
-            <div className="table-wrap">
-              <table className="arch-table">
-                <caption className="visually-hidden">
-                  What each farm interaction updates
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">action</th>
-                    <th scope="col">updates</th>
-                    <th scope="col">React re-render?</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">Click grass</th>
-                    <td>append duck</td>
-                    <td>yes</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Tap duck</th>
-                    <td>vx flip, small jump</td>
-                    <td>no (DOM via raf)</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Konami</th>
-                    <td>+50 ducks + toast</td>
-                    <td>yes</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Day / night</th>
-                    <td>
-                      <code>isDay</code> + body class
-                    </td>
-                    <td>yes</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div className="quack-nav__user">
+            <DuckAvatar size="sm" emoji={CURRENT_USER.emoji} label="Your profile" />
+            <div className="quack-nav__user-info">
+              <span className="quack-nav__user-name">{CURRENT_USER.displayName}</span>
+              <span className="quack-nav__user-handle">@{CURRENT_USER.handle}</span>
             </div>
           </div>
-        </details>
-      </main>
 
-      <footer className="site-footer farm-footer">
-        <p className="footer-credit">
-          <strong>Jade Zhao</strong>
-          {' · '}
-          <span className="sc" lang="zh-Hans">
-            福州
-          </span>{' '}
-          roots · TypeScript · React · Vite · WCAG
-        </p>
-        <p className="footer-links">
-          <a href="https://jadexzhao.github.io/jadexzhao/">the briefcase</a>
-          {' · '}
-          <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-          {' · '}
-          <a href="https://github.com/jadexzhao">GitHub</a>
-          {' · '}
-          <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
-          {' · '}
-          IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
-        </p>
-      </footer>
+          <button
+            type="button"
+            className="quack-nav__theme"
+            onClick={toggleTheme}
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+          >
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+        </aside>
 
-      <div
-        className={`farm-toast${toast ? ' visible' : ''}`}
-        role="status"
-        aria-live="polite"
-      >
+        <main id="main-feed" className="quack-main">
+          <header className="quack-main__header">
+            <h1>Home</h1>
+            <p className="quack-main__tagline">
+              <span lang="zh-Hans">鸭年</span> dating · portfolio playground
+            </p>
+          </header>
+
+          <section className="compose" aria-labelledby={composeId}>
+            <h2 id={composeId} className="visually-hidden">
+              Compose a quack
+            </h2>
+            <DuckAvatar size="md" emoji={CURRENT_USER.emoji} label="Your avatar" />
+            <div className="compose__body">
+              <label htmlFor="quack-draft" className="visually-hidden">
+                What's happening on the pond?
+              </label>
+              <textarea
+                id="quack-draft"
+                className="compose__input"
+                placeholder="What's happening on the pond?"
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                rows={3}
+                maxLength={280}
+              />
+              <div className="compose__footer">
+                <span className="compose__count" aria-live="polite">
+                  {280 - draft.length}
+                </span>
+                <button
+                  type="button"
+                  className="quack-btn quack-btn--primary compose__post"
+                  disabled={!draft.trim()}
+                  onClick={handlePost}
+                >
+                  Quack
+                </button>
+                <button
+                  type="button"
+                  className="quack-btn quack-btn--flirt compose__flirt"
+                  disabled={!draft.trim()}
+                  onClick={() => {
+                    handlePost()
+                    showToast('Flirty quack sent. Bold move.')
+                  }}
+                >
+                  Flirt
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section className="feed" aria-label="Quack feed">
+            {quacks.map((quack) => (
+              <QuackCard
+                key={quack.id}
+                quack={quack}
+                onFlirt={handleFlirt}
+                onRequack={handleRequack}
+              />
+            ))}
+          </section>
+        </main>
+
+        <aside className="quack-sidebar" aria-label="Discover ducks">
+          <div className="sidebar-search">
+            <label htmlFor="pond-search" className="visually-hidden">
+              Search the pond
+            </label>
+            <input
+              id="pond-search"
+              type="search"
+              placeholder="Search the pond"
+              className="sidebar-search__input"
+            />
+          </div>
+
+          <section className="sidebar-panel" aria-labelledby="matches-heading">
+            <h2 id="matches-heading">Ducks for you</h2>
+            <div className="match-list">
+              {suggestedMatches.map((profile) => (
+                <MatchCard
+                  key={profile.id}
+                  profile={profile}
+                  matched={matches.has(profile.id)}
+                  onMatch={handleMatch}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section className="sidebar-panel" aria-labelledby="trending-heading">
+            <h2 id="trending-heading">Trending on the pond</h2>
+            <ul className="trend-list">
+              {TRENDING_TOPICS.map((topic) => (
+                <li key={topic.tag}>
+                  <button type="button" className="trend-item">
+                    <span className="trend-item__tag">{topic.tag}</span>
+                    <span className="trend-item__count">{topic.posts}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="sidebar-panel sidebar-panel--profile" aria-labelledby="you-heading">
+            <h2 id="you-heading">Your nest</h2>
+            <div className="profile-card">
+              <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" />
+              <ProfileMeta profile={CURRENT_USER} />
+              <p className="profile-card__bio">{CURRENT_USER.bio}</p>
+              <p className="profile-card__pond">{CURRENT_USER.pond}</p>
+            </div>
+          </section>
+
+          <footer className="quack-sidebar__footer">
+            <p>
+              <strong>Jade Zhao</strong> · portfolio piece
+            </p>
+            <p>
+              <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
+              {' · '}
+              <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
+            </p>
+          </footer>
+        </aside>
+      </div>
+
+      <nav className="quack-mobile-nav" aria-label="Mobile navigation">
+        {NAV_ITEMS.map(({ id, label, Icon }) => (
+          <button
+            key={id}
+            type="button"
+            className={`quack-mobile-nav__item${activeNav === id ? ' is-active' : ''}`}
+            aria-current={activeNav === id ? 'page' : undefined}
+            aria-label={label}
+            onClick={() => setActiveNav(id)}
+          >
+            <Icon />
+          </button>
+        ))}
+        <button
+          type="button"
+          className="quack-mobile-nav__quack"
+          aria-label="Compose quack"
+          onClick={() => document.getElementById('quack-draft')?.focus()}
+        >
+          <QuackIcon />
+        </button>
+      </nav>
+
+      <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">
         {toast}
       </div>
     </div>
