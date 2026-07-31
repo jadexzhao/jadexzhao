@@ -12,9 +12,9 @@
 
 ## now
 
-**Jade Zhao** · Informatics @ IU Luddy · **May 2027**. Website team lead at **ServeIT**, IU’s nonprofit tech clinic. FASE Mentor Apprenticeship Program coordination + UTA for **50+ students** ... process and site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Summer 2026 technical GTM intern at a stealth NYC startup. Madrid semester at Complutense (Spring 2026).
+**Jade Zhao** · Informatics @ IU Luddy · **May 2027** · Looking for SWE roles. Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP is mostly Canvas/training ops + UTA for **50+ students** ... site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Early-stage NYC startup internship Jun–Jul 2026 (company acquired during internship). Madrid semester at Complutense (Spring 2026).
 
-**Open to software engineering roles in Southern California** (and happy to talk Solutions Engineering / technical GTM paths too).
+**Looking for software engineering roles**. Open to Southern California.
 
 ELI5 it. Learn it. Ship it slow.
 
