@@ -594,14 +594,14 @@ export default function App() {
                   <span className="compose__count" aria-live="polite">
                     {280 - draft.length}
                   </span>
-                  <RippleButton
-                    variant="primary"
+                  <button
+                    type="button"
                     className="quack-btn quack-btn--primary compose__post"
-                    disabled={!draft.trim() || isPosting}
+                    disabled={!draft.trim()}
                     onClick={handlePost}
                   >
-                    {isPosting ? 'Sending…' : 'Quack →'}
-                  </RippleButton>
+                    Quack →
+                  </button>
                 </div>
               </div>
             </section>
@@ -609,37 +609,21 @@ export default function App() {
 
           <section className="deck-stage" aria-label={`${NAV_LABELS[activeNav]} slides`}>
             {activeNav === 'home' && quacks[feedDeck.index] && (
-              <SlideDeck
-                index={feedDeck.index}
-                total={quacks.length}
-                onPrev={feedDeck.goPrev}
-                onNext={feedDeck.goNext}
-                label="Pond feed slides"
-              >
-                <QuackSlide
-                  quack={quacks[feedDeck.index]}
-                  onFlirt={handleFlirt}
-                  onRequack={handleRequack}
-                />
-              </SlideDeck>
+              <QuackSlide
+                quack={quacks[feedDeck.index]}
+                onFlirt={handleFlirt}
+                onRequack={handleRequack}
+              />
             )}
 
             {activeNav === 'explore' && filteredProfiles.length > 0 && (
               <>
                 <p className="deck-stage__hint">{filteredProfiles.length} ducks nearby</p>
-                <SlideDeck
-                  index={discoverDeck.index}
-                  total={filteredProfiles.length}
-                  onPrev={discoverDeck.goPrev}
-                  onNext={discoverDeck.goNext}
-                  label="Discover ducks"
-                >
-                  <DiscoverCard
-                    profile={filteredProfiles[discoverDeck.index]}
-                    matched={matches.has(filteredProfiles[discoverDeck.index].id)}
-                    onMatchRequest={handleMatchRequest}
-                  />
-                </SlideDeck>
+                <DiscoverCard
+                  profile={filteredProfiles[discoverDeck.index]}
+                  matched={matches.has(filteredProfiles[discoverDeck.index].id)}
+                  onMatch={handleMatch}
+                />
               </>
             )}
 
@@ -652,19 +636,11 @@ export default function App() {
             {activeNav === 'matches' && matchedProfiles.length > 0 && (
               <>
                 <p className="deck-stage__hint">{matchedProfiles.length} waddles</p>
-                <SlideDeck
-                  index={matchDeck.index}
-                  total={matchedProfiles.length}
-                  onPrev={matchDeck.goPrev}
-                  onNext={matchDeck.goNext}
-                  label="Your matches"
-                >
-                  <DiscoverCard
-                    profile={matchedProfiles[matchDeck.index]}
-                    matched
-                    onMatchRequest={handleMatchRequest}
-                  />
-                </SlideDeck>
+                <DiscoverCard
+                  profile={matchedProfiles[matchDeck.index]}
+                  matched
+                  onMatch={handleMatch}
+                />
               </>
             )}
 
@@ -680,23 +656,17 @@ export default function App() {
                 <ProfileMeta profile={CURRENT_USER} />
                 <p className="profile-slide__obsession">
                   <span aria-hidden="true">✨ </span>
-                  {obsession}
+                  {CURRENT_USER.obsession}
                 </p>
                 <p className="profile-slide__bio">{CURRENT_USER.bio}</p>
                 <p className="profile-slide__pond">{CURRENT_USER.pond}</p>
                 <div className="profile-slide__stats">
                   <div>
-                    <strong>
-                      <AnimatedCounter value={matches.size} />
-                    </strong>
+                    <strong>{matches.size}</strong>
                     <span>Matches</span>
                   </div>
                   <div>
-                    <strong>
-                      <AnimatedCounter
-                        value={quacks.filter((q) => q.authorId === CURRENT_USER.id).length}
-                      />
-                    </strong>
+                    <strong>{quacks.filter((q) => q.authorId === CURRENT_USER.id).length + 1}</strong>
                     <span>Quacks</span>
                   </div>
                 </div>
@@ -772,21 +742,6 @@ export default function App() {
       <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">
         {toast}
       </div>
-
-      <MatchModal
-        flow={matchFlow}
-        profile={flowProfile}
-        onConfirm={confirmMatchFlow}
-        onDismiss={dismissMatchFlow}
-      />
-
-      <ObsessionEditor
-        open={obsessionEditorOpen}
-        value={obsessionDraft}
-        onChange={setObsessionDraft}
-        onSave={saveObsession}
-        onClose={() => setObsessionEditorOpen(false)}
-      />
     </div>
   )
 }
