@@ -1,22 +1,5 @@
-import { useReducer, useState, useCallback, useId, useMemo, useEffect, useRef } from 'react'
+import { useState, useCallback, useId, useMemo } from 'react'
 import { DuckAvatar } from './components/DuckAvatar'
-import { SlideDeck } from './components/SlideDeck'
-import { MatchModal } from './components/MatchModal'
-import { ObsessionEditor } from './components/ObsessionEditor'
-import { AnimatedCounter } from './components/AnimatedCounter'
-import { RippleButton } from './components/RippleButton'
-import {
-  usePersistedTheme,
-  usePersistedMatches,
-  usePersistedQuacks,
-  usePersistedObsession,
-  useKeyboardNav,
-} from './hooks'
-import {
-  matchFlowReducer,
-  initialMatchFlowState,
-  isMatchModalOpen,
-} from './state/matchFlow'
 import {
   CURRENT_USER,
   DUCK_PROFILES,
@@ -29,7 +12,7 @@ import {
 } from './data/mockData'
 import './App.css'
 
-const COMPOSE_ACK_MS = 720
+type Theme = 'light' | 'dark'
 type NavItem = 'home' | 'explore' | 'matches' | 'profile'
 type MoodFilter = 'all' | DuckMood
 
@@ -68,21 +51,16 @@ function ProfileMeta({ profile }: { profile: DuckProfile }) {
   )
 }
 
-interface ObsessionBannerProps {
-  obsession: string
-  onEdit: () => void
-}
-
-function ObsessionBanner({ obsession, onEdit }: ObsessionBannerProps) {
+function ObsessionBanner({ obsession }: { obsession: string }) {
   return (
     <div className="obsession-banner">
       <div className="obsession-banner__text">
         <span className="obsession-banner__label">Your Current Obsession</span>
         <p className="obsession-banner__value">{obsession}</p>
       </div>
-      <RippleButton type="button" variant="ghost" className="obsession-banner__link" onClick={onEdit}>
+      <button type="button" className="obsession-banner__link">
         Update obsession →
-      </RippleButton>
+      </button>
     </div>
   )
 }
@@ -183,19 +161,11 @@ function QuackSlide({ quack, onFlirt, onRequack }: QuackSlideProps) {
   if (!author) return null
 
   return (
-    <article className={`slide-card quack-slide${quack.pending ? ' quack-slide--pending' : ''}`}>
+    <article className="slide-card quack-slide">
       <header className="quack-slide__header">
         <DuckAvatar size="lg" emoji={author.emoji} label={`${author.displayName}'s avatar`} />
         <ProfileMeta profile={author} />
-        <span className="quack-slide__time">
-          · {quack.timestamp}
-          {quack.pending && (
-            <span className="quack-slide__pending-badge" aria-live="polite">
-              {' '}
-              · sending…
-            </span>
-          )}
-        </span>
+        <span className="quack-slide__time">· {quack.timestamp}</span>
       </header>
       {author.obsession && (
         <p className="quack-slide__obsession">
@@ -209,27 +179,25 @@ function QuackSlide({ quack, onFlirt, onRequack }: QuackSlideProps) {
           <ReplyIcon />
           <span>{formatCount(quack.replies)}</span>
         </button>
-        <RippleButton
-          variant="ghost"
+        <button
+          type="button"
           className="slide-action slide-action--requack"
           aria-label={`${quack.requacks} requacks`}
-          disabled={quack.pending}
           onClick={() => onRequack(quack.id)}
         >
           <RequackIcon />
-          <AnimatedCounter value={quack.requacks} format={formatCount} />
-        </RippleButton>
-        <RippleButton
-          variant="ghost"
+          <span>{formatCount(quack.requacks)}</span>
+        </button>
+        <button
+          type="button"
           className={`slide-action slide-action--heart${quack.flirted ? ' is-active' : ''}`}
           aria-label={quack.flirted ? 'Unflirt' : 'Flirt'}
           aria-pressed={quack.flirted}
-          disabled={quack.pending}
           onClick={() => onFlirt(quack.id)}
         >
           <HeartIcon filled={quack.flirted} />
-          <AnimatedCounter value={quack.hearts + (quack.flirted ? 1 : 0)} format={formatCount} />
-        </RippleButton>
+          <span>{formatCount(quack.hearts + (quack.flirted ? 1 : 0))}</span>
+        </button>
         <button type="button" className="slide-action" aria-label="Share quack">
           <ShareIcon />
         </button>
@@ -240,7 +208,7 @@ function QuackSlide({ quack, onFlirt, onRequack }: QuackSlideProps) {
 
 interface DiscoverCardProps {
   profile: DuckProfile
-  onMatchRequest: (id: string) => void
+  onMatch: (id: string) => void
   matched: boolean
 }
 
@@ -255,7 +223,7 @@ function moodBadge(mood: DuckMood): { emoji: string; label: string } {
   }
 }
 
-function DiscoverCard({ profile, onMatchRequest, matched }: DiscoverCardProps) {
+function DiscoverCard({ profile, onMatch, matched }: DiscoverCardProps) {
   const badge = moodBadge(profile.mood)
 
   return (
@@ -297,14 +265,14 @@ function DiscoverCard({ profile, onMatchRequest, matched }: DiscoverCardProps) {
         <button type="button" className="discover-btn discover-btn--wave">
           Quick quack ✈️
         </button>
-        <RippleButton
-          variant="primary"
+        <button
+          type="button"
           className={`discover-btn discover-btn--connect${matched ? ' is-matched' : ''}`}
-          onClick={() => onMatchRequest(profile.id)}
+          onClick={() => onMatch(profile.id)}
           aria-pressed={matched}
         >
           {matched ? '💚 Matched' : '💚 Start waddle'}
-        </RippleButton>
+        </button>
       </div>
     </article>
   )
@@ -626,14 +594,14 @@ export default function App() {
                   <span className="compose__count" aria-live="polite">
                     {280 - draft.length}
                   </span>
-                  <button
-                    type="button"
+                  <RippleButton
+                    variant="primary"
                     className="quack-btn quack-btn--primary compose__post"
-                    disabled={!draft.trim()}
+                    disabled={!draft.trim() || isPosting}
                     onClick={handlePost}
                   >
-                    Quack →
-                  </button>
+                    {isPosting ? 'Sending…' : 'Quack →'}
+                  </RippleButton>
                 </div>
               </div>
             </section>
@@ -641,21 +609,37 @@ export default function App() {
 
           <section className="deck-stage" aria-label={`${NAV_LABELS[activeNav]} slides`}>
             {activeNav === 'home' && quacks[feedDeck.index] && (
-              <QuackSlide
-                quack={quacks[feedDeck.index]}
-                onFlirt={handleFlirt}
-                onRequack={handleRequack}
-              />
+              <SlideDeck
+                index={feedDeck.index}
+                total={quacks.length}
+                onPrev={feedDeck.goPrev}
+                onNext={feedDeck.goNext}
+                label="Pond feed slides"
+              >
+                <QuackSlide
+                  quack={quacks[feedDeck.index]}
+                  onFlirt={handleFlirt}
+                  onRequack={handleRequack}
+                />
+              </SlideDeck>
             )}
 
             {activeNav === 'explore' && filteredProfiles.length > 0 && (
               <>
                 <p className="deck-stage__hint">{filteredProfiles.length} ducks nearby</p>
-                <DiscoverCard
-                  profile={filteredProfiles[discoverDeck.index]}
-                  matched={matches.has(filteredProfiles[discoverDeck.index].id)}
-                  onMatch={handleMatch}
-                />
+                <SlideDeck
+                  index={discoverDeck.index}
+                  total={filteredProfiles.length}
+                  onPrev={discoverDeck.goPrev}
+                  onNext={discoverDeck.goNext}
+                  label="Discover ducks"
+                >
+                  <DiscoverCard
+                    profile={filteredProfiles[discoverDeck.index]}
+                    matched={matches.has(filteredProfiles[discoverDeck.index].id)}
+                    onMatchRequest={handleMatchRequest}
+                  />
+                </SlideDeck>
               </>
             )}
 
@@ -668,11 +652,19 @@ export default function App() {
             {activeNav === 'matches' && matchedProfiles.length > 0 && (
               <>
                 <p className="deck-stage__hint">{matchedProfiles.length} waddles</p>
-                <DiscoverCard
-                  profile={matchedProfiles[matchDeck.index]}
-                  matched
-                  onMatch={handleMatch}
-                />
+                <SlideDeck
+                  index={matchDeck.index}
+                  total={matchedProfiles.length}
+                  onPrev={matchDeck.goPrev}
+                  onNext={matchDeck.goNext}
+                  label="Your matches"
+                >
+                  <DiscoverCard
+                    profile={matchedProfiles[matchDeck.index]}
+                    matched
+                    onMatchRequest={handleMatchRequest}
+                  />
+                </SlideDeck>
               </>
             )}
 
@@ -688,17 +680,23 @@ export default function App() {
                 <ProfileMeta profile={CURRENT_USER} />
                 <p className="profile-slide__obsession">
                   <span aria-hidden="true">✨ </span>
-                  {CURRENT_USER.obsession}
+                  {obsession}
                 </p>
                 <p className="profile-slide__bio">{CURRENT_USER.bio}</p>
                 <p className="profile-slide__pond">{CURRENT_USER.pond}</p>
                 <div className="profile-slide__stats">
                   <div>
-                    <strong>{matches.size}</strong>
+                    <strong>
+                      <AnimatedCounter value={matches.size} />
+                    </strong>
                     <span>Matches</span>
                   </div>
                   <div>
-                    <strong>{quacks.filter((q) => q.authorId === CURRENT_USER.id).length + 1}</strong>
+                    <strong>
+                      <AnimatedCounter
+                        value={quacks.filter((q) => q.authorId === CURRENT_USER.id).length}
+                      />
+                    </strong>
                     <span>Quacks</span>
                   </div>
                 </div>
@@ -774,6 +772,21 @@ export default function App() {
       <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">
         {toast}
       </div>
+
+      <MatchModal
+        flow={matchFlow}
+        profile={flowProfile}
+        onConfirm={confirmMatchFlow}
+        onDismiss={dismissMatchFlow}
+      />
+
+      <ObsessionEditor
+        open={obsessionEditorOpen}
+        value={obsessionDraft}
+        onChange={setObsessionDraft}
+        onSave={saveObsession}
+        onClose={() => setObsessionEditorOpen(false)}
+      />
     </div>
   )
 }
