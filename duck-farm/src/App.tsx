@@ -1,4 +1,4 @@
-import { useState, useCallback, useId } from 'react'
+import { useState, useCallback, useId, useMemo } from 'react'
 import { DuckAvatar } from './components/DuckAvatar'
 import {
   CURRENT_USER,
@@ -8,11 +8,20 @@ import {
   getProfile,
   type Quack,
   type DuckProfile,
+  type DuckMood,
 } from './data/mockData'
 import './App.css'
 
 type Theme = 'light' | 'dark'
 type NavItem = 'home' | 'explore' | 'matches' | 'profile'
+type MoodFilter = 'all' | DuckMood
+
+const NAV_LABELS: Record<NavItem, string> = {
+  home: 'Pond Feed',
+  explore: 'Discover',
+  matches: 'Matches',
+  profile: 'Your Nest',
+}
 
 function formatCount(n: number): string {
   if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, '')}K`
@@ -42,86 +51,230 @@ function ProfileMeta({ profile }: { profile: DuckProfile }) {
   )
 }
 
-interface QuackCardProps {
+function ObsessionBanner({ obsession }: { obsession: string }) {
+  return (
+    <div className="obsession-banner">
+      <div className="obsession-banner__text">
+        <span className="obsession-banner__label">Your Current Obsession</span>
+        <p className="obsession-banner__value">{obsession}</p>
+      </div>
+      <button type="button" className="obsession-banner__link">
+        Update obsession →
+      </button>
+    </div>
+  )
+}
+
+interface FilterPillsProps {
+  active: MoodFilter
+  onChange: (filter: MoodFilter) => void
+}
+
+const MOOD_FILTERS: { id: MoodFilter; label: string; emoji?: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'single', label: 'Single', emoji: '🧡' },
+  { id: 'wading', label: 'Wading', emoji: '🤝' },
+  { id: 'matched', label: 'Matched', emoji: '💚' },
+]
+
+function FilterPills({ active, onChange }: FilterPillsProps) {
+  return (
+    <div className="filter-pills" role="tablist" aria-label="Filter ducks">
+      {MOOD_FILTERS.map(({ id, label, emoji }) => (
+        <button
+          key={id}
+          type="button"
+          role="tab"
+          aria-selected={active === id}
+          className={`filter-pill${active === id ? ' is-active' : ''}`}
+          onClick={() => onChange(id)}
+        >
+          {emoji && <span aria-hidden="true">{emoji} </span>}
+          {label}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+interface DeckNavProps {
+  index: number
+  total: number
+  onPrev: () => void
+  onNext: () => void
+  onGoTo: (index: number) => void
+}
+
+function DeckNav({ index, total, onPrev, onNext, onGoTo }: DeckNavProps) {
+  if (total <= 1) return null
+
+  return (
+    <div className="deck-nav" aria-label="Slide navigation">
+      <div className="deck-nav__dots" role="tablist" aria-label="Slides">
+        {Array.from({ length: total }, (_, i) => (
+          <button
+            key={i}
+            type="button"
+            role="tab"
+            aria-selected={i === index}
+            aria-label={`Slide ${i + 1} of ${total}`}
+            className={`deck-nav__dot${i === index ? ' is-active' : ''}`}
+            onClick={() => onGoTo(i)}
+          />
+        ))}
+      </div>
+      <div className="deck-nav__controls">
+        <span className="deck-nav__counter" aria-live="polite">
+          {index + 1}/{total}
+        </span>
+        <button
+          type="button"
+          className="deck-nav__arrow"
+          aria-label="Previous slide"
+          disabled={index === 0}
+          onClick={onPrev}
+        >
+          ←
+        </button>
+        <button
+          type="button"
+          className="deck-nav__arrow deck-nav__arrow--next"
+          aria-label="Next slide"
+          disabled={index >= total - 1}
+          onClick={onNext}
+        >
+          →
+        </button>
+      </div>
+    </div>
+  )
+}
+
+interface QuackSlideProps {
   quack: Quack
   onFlirt: (id: string) => void
   onRequack: (id: string) => void
 }
 
-function QuackCard({ quack, onFlirt, onRequack }: QuackCardProps) {
+function QuackSlide({ quack, onFlirt, onRequack }: QuackSlideProps) {
   const author = getProfile(quack.authorId)
   if (!author) return null
 
   return (
-    <article className="quack-card">
-      <DuckAvatar size="md" emoji={author.emoji} label={`${author.displayName}'s avatar`} />
-      <div className="quack-card__body">
-        <header className="quack-card__header">
-          <ProfileMeta profile={author} />
-          <span className="quack-card__time" aria-label={`Posted ${quack.timestamp} ago`}>
-            · {quack.timestamp}
-          </span>
-        </header>
-        <p className="quack-card__content">{quack.content}</p>
-        <div className="quack-card__actions" role="group" aria-label="Quack actions">
-          <button type="button" className="quack-action" aria-label={`${quack.replies} replies`}>
-            <ReplyIcon />
-            <span>{formatCount(quack.replies)}</span>
-          </button>
-          <button
-            type="button"
-            className="quack-action quack-action--requack"
-            aria-label={`${quack.requacks} requacks`}
-            onClick={() => onRequack(quack.id)}
-          >
-            <RequackIcon />
-            <span>{formatCount(quack.requacks)}</span>
-          </button>
-          <button
-            type="button"
-            className={`quack-action quack-action--heart${quack.flirted ? ' is-active' : ''}`}
-            aria-label={quack.flirted ? 'Unflirt' : 'Flirt'}
-            aria-pressed={quack.flirted}
-            onClick={() => onFlirt(quack.id)}
-          >
-            <HeartIcon filled={quack.flirted} />
-            <span>{formatCount(quack.hearts + (quack.flirted ? 1 : 0))}</span>
-          </button>
-          <button type="button" className="quack-action" aria-label="Share quack">
-            <ShareIcon />
-          </button>
-        </div>
+    <article className="slide-card quack-slide">
+      <header className="quack-slide__header">
+        <DuckAvatar size="lg" emoji={author.emoji} label={`${author.displayName}'s avatar`} />
+        <ProfileMeta profile={author} />
+        <span className="quack-slide__time">· {quack.timestamp}</span>
+      </header>
+      {author.obsession && (
+        <p className="quack-slide__obsession">
+          <span aria-hidden="true">✨ </span>
+          {author.obsession}
+        </p>
+      )}
+      <p className="quack-slide__content">{quack.content}</p>
+      <div className="quack-slide__actions" role="group" aria-label="Quack actions">
+        <button type="button" className="slide-action" aria-label={`${quack.replies} replies`}>
+          <ReplyIcon />
+          <span>{formatCount(quack.replies)}</span>
+        </button>
+        <button
+          type="button"
+          className="slide-action slide-action--requack"
+          aria-label={`${quack.requacks} requacks`}
+          onClick={() => onRequack(quack.id)}
+        >
+          <RequackIcon />
+          <span>{formatCount(quack.requacks)}</span>
+        </button>
+        <button
+          type="button"
+          className={`slide-action slide-action--heart${quack.flirted ? ' is-active' : ''}`}
+          aria-label={quack.flirted ? 'Unflirt' : 'Flirt'}
+          aria-pressed={quack.flirted}
+          onClick={() => onFlirt(quack.id)}
+        >
+          <HeartIcon filled={quack.flirted} />
+          <span>{formatCount(quack.hearts + (quack.flirted ? 1 : 0))}</span>
+        </button>
+        <button type="button" className="slide-action" aria-label="Share quack">
+          <ShareIcon />
+        </button>
       </div>
     </article>
   )
 }
 
-interface MatchCardProps {
+interface DiscoverCardProps {
   profile: DuckProfile
   onMatch: (id: string) => void
   matched: boolean
 }
 
-function MatchCard({ profile, onMatch, matched }: MatchCardProps) {
+function moodBadge(mood: DuckMood): { emoji: string; label: string } {
+  switch (mood) {
+    case 'single':
+      return { emoji: '🧡', label: 'Single' }
+    case 'wading':
+      return { emoji: '🤝', label: 'Wading' }
+    case 'matched':
+      return { emoji: '💚', label: 'Matched' }
+  }
+}
+
+function DiscoverCard({ profile, onMatch, matched }: DiscoverCardProps) {
+  const badge = moodBadge(profile.mood)
+
   return (
-    <div className="match-card">
-      <DuckAvatar size="sm" emoji={profile.emoji} label={`${profile.displayName}'s avatar`} />
-      <div className="match-card__info">
-        <span className="match-card__name">{profile.displayName}</span>
-        <span className="match-card__pond">{profile.pond}</span>
+    <article className="slide-card discover-card">
+      <div className="discover-card__hero">
+        <DuckAvatar size="lg" emoji={profile.emoji} label={`${profile.displayName}'s avatar`} />
+        <span className="discover-card__mood">
+          {badge.emoji} {badge.label}
+        </span>
         {profile.matchScore !== undefined && (
-          <span className="match-card__score">{profile.matchScore}% pond sync</span>
+          <span className="discover-card__score">{profile.matchScore}%</span>
         )}
       </div>
-      <button
-        type="button"
-        className={`match-btn${matched ? ' match-btn--matched' : ''}`}
-        onClick={() => onMatch(profile.id)}
-        aria-pressed={matched}
-      >
-        {matched ? 'Matched' : 'Waddle'}
-      </button>
-    </div>
+      <div className="discover-card__body">
+        <h3 className="discover-card__name">
+          {profile.displayName}
+          {profile.verified && <VerifiedBadge />}
+        </h3>
+        <p className="discover-card__pond">{profile.pond}</p>
+        {profile.obsession && (
+          <p className="discover-card__obsession">
+            <span aria-hidden="true">✨ </span>
+            {profile.obsession}
+          </p>
+        )}
+        {profile.sharedInterests && profile.sharedInterests.length > 0 && (
+          <p className="discover-card__detail">
+            <strong>Shared interests:</strong> {profile.sharedInterests.join(', ')}
+          </p>
+        )}
+        {profile.bucketList && (
+          <p className="discover-card__detail">
+            <strong>Bucket list:</strong> {profile.bucketList}
+          </p>
+        )}
+        <p className="discover-card__bio">{profile.bio}</p>
+      </div>
+      <div className="discover-card__actions">
+        <button type="button" className="discover-btn discover-btn--wave">
+          Quick quack ✈️
+        </button>
+        <button
+          type="button"
+          className={`discover-btn discover-btn--connect${matched ? ' is-matched' : ''}`}
+          onClick={() => onMatch(profile.id)}
+          aria-pressed={matched}
+        >
+          {matched ? '💚 Matched' : '💚 Start waddle'}
+        </button>
+      </div>
+    </article>
   )
 }
 
@@ -164,7 +317,7 @@ function ShareIcon() {
 function HomeIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 1.696L.622 8.807l1.06 1.696L3 9.679V19.5C3 20.881 4.119 22 5.5 22h13c1.381 0 2.5-1.119 2.5-2.5V9.679l1.318.824 1.06-1.696L12 1.696zM12 16.5c-1.933 0-3.5-1.567-3.5-3.5s1.567-3.5 3.5-3.5 3.5 1.567 3.5 3.5-1.567 3.5-3.5 3.5z" />
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
     </svg>
   )
 }
@@ -172,7 +325,7 @@ function HomeIcon() {
 function ExploreIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.747-.526 3.374-1.428 4.729l4.147 4.147a.75.75 0 1 1-1.06 1.06l-4.147-4.147A8.456 8.456 0 0 1 10.25 19.25c-4.694 0-8.5-3.806-8.5-8.5zM18.5 9.75a.75.75 0 0 0-1.5 0v3.5a.75.75 0 0 0 1.5 0v-3.5z" />
+      <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.747-.526 3.374-1.428 4.729l4.147 4.147a.75.75 0 1 1-1.06 1.06l-4.147-4.147A8.456 8.456 0 0 1 10.25 19.25c-4.694 0-8.5-3.806-8.5-8.5z" />
     </svg>
   )
 }
@@ -180,7 +333,7 @@ function ExploreIcon() {
 function MatchIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5a2.5 2.5 0 0 1 5 0v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5c0 3.31 2.69 6 6 6s6-2.69 6-6V6h-1.5z" />
     </svg>
   )
 }
@@ -202,11 +355,25 @@ function QuackIcon() {
 }
 
 const NAV_ITEMS: { id: NavItem; label: string; Icon: () => JSX.Element }[] = [
-  { id: 'home', label: 'Home', Icon: HomeIcon },
-  { id: 'explore', label: 'Explore', Icon: ExploreIcon },
+  { id: 'home', label: 'Feed', Icon: HomeIcon },
+  { id: 'explore', label: 'Discover', Icon: ExploreIcon },
   { id: 'matches', label: 'Matches', Icon: MatchIcon },
   { id: 'profile', label: 'Profile', Icon: ProfileIcon },
 ]
+
+function useDeckIndex(total: number) {
+  const [index, setIndex] = useState(0)
+
+  const clamped = Math.min(index, Math.max(0, total - 1))
+
+  return {
+    index: clamped,
+    goPrev: () => setIndex((i) => Math.max(0, i - 1)),
+    goNext: () => setIndex((i) => Math.min(total - 1, i + 1)),
+    goTo: (i: number) => setIndex(Math.max(0, Math.min(total - 1, i))),
+    reset: () => setIndex(0),
+  }
+}
 
 export default function App() {
   const composeId = useId()
@@ -219,10 +386,26 @@ export default function App() {
     return 'light'
   })
   const [activeNav, setActiveNav] = useState<NavItem>('home')
+  const [moodFilter, setMoodFilter] = useState<MoodFilter>('all')
   const [quacks, setQuacks] = useState<Quack[]>(INITIAL_QUACKS)
   const [draft, setDraft] = useState('')
   const [matches, setMatches] = useState<Set<string>>(new Set(['drake']))
   const [toast, setToast] = useState<string | null>(null)
+
+  const filteredProfiles = useMemo(() => {
+    const list = [...DUCK_PROFILES].sort((a, b) => (b.matchScore ?? 0) - (a.matchScore ?? 0))
+    if (moodFilter === 'all') return list
+    return list.filter((p) => p.mood === moodFilter)
+  }, [moodFilter])
+
+  const matchedProfiles = useMemo(
+    () => DUCK_PROFILES.filter((p) => matches.has(p.id)),
+    [matches],
+  )
+
+  const feedDeck = useDeckIndex(quacks.length)
+  const discoverDeck = useDeckIndex(filteredProfiles.length)
+  const matchDeck = useDeckIndex(matchedProfiles.length)
 
   const showToast = useCallback((msg: string) => {
     setToast(msg)
@@ -235,6 +418,13 @@ export default function App() {
       localStorage.setItem('quack-theme', next)
       return next
     })
+  }
+
+  const handleNavChange = (nav: NavItem) => {
+    setActiveNav(nav)
+    feedDeck.reset()
+    discoverDeck.reset()
+    matchDeck.reset()
   }
 
   const handleFlirt = (id: string) => {
@@ -283,13 +473,27 @@ export default function App() {
     }
     setQuacks((prev) => [newQuack, ...prev])
     setDraft('')
+    feedDeck.reset()
     showToast('Quack posted to the pond.')
   }
 
-  const suggestedMatches = [...DUCK_PROFILES]
-    .filter((p) => p.mood !== 'matched' || !matches.has(p.id))
-    .sort((a, b) => (b.matchScore ?? 0) - (a.matchScore ?? 0))
-    .slice(0, 4)
+  const activeDeck =
+    activeNav === 'home'
+      ? feedDeck
+      : activeNav === 'explore'
+        ? discoverDeck
+        : activeNav === 'matches'
+          ? matchDeck
+          : null
+
+  const deckTotal =
+    activeNav === 'home'
+      ? quacks.length
+      : activeNav === 'explore'
+        ? filteredProfiles.length
+        : activeNav === 'matches'
+          ? matchedProfiles.length
+          : 0
 
   return (
     <div className={`quack-app quack-app--${theme}`} data-theme={theme}>
@@ -300,8 +504,11 @@ export default function App() {
       <div className="quack-shell">
         <aside className="quack-nav" aria-label="Main navigation">
           <div className="quack-nav__brand">
-            <DuckAvatar size="sm" emoji="🦆" label="Quackr logo" />
+            <span className="quack-nav__icon" aria-hidden="true">
+              🦆
+            </span>
             <span className="quack-nav__logo">Quackr</span>
+            <span className="quack-nav__badge">V2</span>
           </div>
 
           <nav className="quack-nav__links">
@@ -311,7 +518,7 @@ export default function App() {
                 type="button"
                 className={`quack-nav__item${activeNav === id ? ' is-active' : ''}`}
                 aria-current={activeNav === id ? 'page' : undefined}
-                onClick={() => setActiveNav(id)}
+                onClick={() => handleNavChange(id)}
               >
                 <Icon />
                 <span>{label}</span>
@@ -344,97 +551,143 @@ export default function App() {
 
         <main id="main-feed" className="quack-main">
           <header className="quack-main__header">
-            <h1>Home</h1>
+            <div className="quack-main__title-row">
+              <h1>{NAV_LABELS[activeNav]}</h1>
+              <span className="quack-main__deck-badge">Interactive deck</span>
+            </div>
             <p className="quack-main__tagline">
-              <span lang="zh-Hans">鸭年</span> dating · portfolio playground
+              <span lang="zh-Hans">鸭年</span> dating · meaningful pond connections
             </p>
           </header>
 
-          <section className="compose" aria-labelledby={composeId}>
-            <h2 id={composeId} className="visually-hidden">
-              Compose a quack
-            </h2>
-            <DuckAvatar size="md" emoji={CURRENT_USER.emoji} label="Your avatar" />
-            <div className="compose__body">
-              <label htmlFor="quack-draft" className="visually-hidden">
-                What's happening on the pond?
-              </label>
-              <textarea
-                id="quack-draft"
-                className="compose__input"
-                placeholder="What's happening on the pond?"
-                value={draft}
-                onChange={(e) => setDraft(e.target.value)}
-                rows={3}
-                maxLength={280}
-              />
-              <div className="compose__footer">
-                <span className="compose__count" aria-live="polite">
-                  {280 - draft.length}
-                </span>
-                <button
-                  type="button"
-                  className="quack-btn quack-btn--primary compose__post"
-                  disabled={!draft.trim()}
-                  onClick={handlePost}
-                >
-                  Quack
-                </button>
-                <button
-                  type="button"
-                  className="quack-btn quack-btn--flirt compose__flirt"
-                  disabled={!draft.trim()}
-                  onClick={() => {
-                    handlePost()
-                    showToast('Flirty quack sent. Bold move.')
-                  }}
-                >
-                  Flirt
-                </button>
-              </div>
-            </div>
-          </section>
+          <ObsessionBanner obsession={CURRENT_USER.obsession ?? 'Finding your next obsession…'} />
 
-          <section className="feed" aria-label="Quack feed">
-            {quacks.map((quack) => (
-              <QuackCard
-                key={quack.id}
-                quack={quack}
+          {(activeNav === 'explore' || activeNav === 'matches') && (
+            <FilterPills
+              active={moodFilter}
+              onChange={(f) => {
+                setMoodFilter(f)
+                discoverDeck.reset()
+              }}
+            />
+          )}
+
+          {activeNav === 'home' && (
+            <section className="compose" aria-labelledby={composeId}>
+              <h2 id={composeId} className="visually-hidden">
+                Compose a quack
+              </h2>
+              <DuckAvatar size="md" emoji={CURRENT_USER.emoji} label="Your avatar" />
+              <div className="compose__body">
+                <label htmlFor="quack-draft" className="visually-hidden">
+                  What's happening on the pond?
+                </label>
+                <textarea
+                  id="quack-draft"
+                  className="compose__input"
+                  placeholder="What's your current obsession on the pond?"
+                  value={draft}
+                  onChange={(e) => setDraft(e.target.value)}
+                  rows={2}
+                  maxLength={280}
+                />
+                <div className="compose__footer">
+                  <span className="compose__count" aria-live="polite">
+                    {280 - draft.length}
+                  </span>
+                  <button
+                    type="button"
+                    className="quack-btn quack-btn--primary compose__post"
+                    disabled={!draft.trim()}
+                    onClick={handlePost}
+                  >
+                    Quack →
+                  </button>
+                </div>
+              </div>
+            </section>
+          )}
+
+          <section className="deck-stage" aria-label={`${NAV_LABELS[activeNav]} slides`}>
+            {activeNav === 'home' && quacks[feedDeck.index] && (
+              <QuackSlide
+                quack={quacks[feedDeck.index]}
                 onFlirt={handleFlirt}
                 onRequack={handleRequack}
               />
-            ))}
+            )}
+
+            {activeNav === 'explore' && filteredProfiles.length > 0 && (
+              <>
+                <p className="deck-stage__hint">{filteredProfiles.length} ducks nearby</p>
+                <DiscoverCard
+                  profile={filteredProfiles[discoverDeck.index]}
+                  matched={matches.has(filteredProfiles[discoverDeck.index].id)}
+                  onMatch={handleMatch}
+                />
+              </>
+            )}
+
+            {activeNav === 'explore' && filteredProfiles.length === 0 && (
+              <div className="slide-card slide-card--empty">
+                <p>No ducks match this filter. Try another pond mood.</p>
+              </div>
+            )}
+
+            {activeNav === 'matches' && matchedProfiles.length > 0 && (
+              <>
+                <p className="deck-stage__hint">{matchedProfiles.length} waddles</p>
+                <DiscoverCard
+                  profile={matchedProfiles[matchDeck.index]}
+                  matched
+                  onMatch={handleMatch}
+                />
+              </>
+            )}
+
+            {activeNav === 'matches' && matchedProfiles.length === 0 && (
+              <div className="slide-card slide-card--empty">
+                <p>No matches yet. Discover ducks and start a waddle!</p>
+              </div>
+            )}
+
+            {activeNav === 'profile' && (
+              <article className="slide-card profile-slide">
+                <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" />
+                <ProfileMeta profile={CURRENT_USER} />
+                <p className="profile-slide__obsession">
+                  <span aria-hidden="true">✨ </span>
+                  {CURRENT_USER.obsession}
+                </p>
+                <p className="profile-slide__bio">{CURRENT_USER.bio}</p>
+                <p className="profile-slide__pond">{CURRENT_USER.pond}</p>
+                <div className="profile-slide__stats">
+                  <div>
+                    <strong>{matches.size}</strong>
+                    <span>Matches</span>
+                  </div>
+                  <div>
+                    <strong>{quacks.filter((q) => q.authorId === CURRENT_USER.id).length + 1}</strong>
+                    <span>Quacks</span>
+                  </div>
+                </div>
+              </article>
+            )}
           </section>
+
+          {activeDeck && deckTotal > 0 && (
+            <DeckNav
+              index={activeDeck.index}
+              total={deckTotal}
+              onPrev={activeDeck.goPrev}
+              onNext={activeDeck.goNext}
+              onGoTo={activeDeck.goTo}
+            />
+          )}
         </main>
 
         <aside className="quack-sidebar" aria-label="Discover ducks">
-          <div className="sidebar-search">
-            <label htmlFor="pond-search" className="visually-hidden">
-              Search the pond
-            </label>
-            <input
-              id="pond-search"
-              type="search"
-              placeholder="Search the pond"
-              className="sidebar-search__input"
-            />
-          </div>
-
-          <section className="sidebar-panel" aria-labelledby="matches-heading">
-            <h2 id="matches-heading">Ducks for you</h2>
-            <div className="match-list">
-              {suggestedMatches.map((profile) => (
-                <MatchCard
-                  key={profile.id}
-                  profile={profile}
-                  matched={matches.has(profile.id)}
-                  onMatch={handleMatch}
-                />
-              ))}
-            </div>
-          </section>
-
-          <section className="sidebar-panel" aria-labelledby="trending-heading">
+          <section className="sidebar-panel sidebar-panel--accent" aria-labelledby="trending-heading">
             <h2 id="trending-heading">Trending on the pond</h2>
             <ul className="trend-list">
               {TRENDING_TOPICS.map((topic) => (
@@ -448,14 +701,14 @@ export default function App() {
             </ul>
           </section>
 
-          <section className="sidebar-panel sidebar-panel--profile" aria-labelledby="you-heading">
-            <h2 id="you-heading">Your nest</h2>
-            <div className="profile-card">
-              <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" />
-              <ProfileMeta profile={CURRENT_USER} />
-              <p className="profile-card__bio">{CURRENT_USER.bio}</p>
-              <p className="profile-card__pond">{CURRENT_USER.pond}</p>
-            </div>
+          <section className="sidebar-panel" aria-labelledby="features-heading">
+            <h2 id="features-heading">What makes Quackr different</h2>
+            <ul className="feature-list">
+              <li>✓ Current obsession profiles — always fresh</li>
+              <li>✓ Slide deck feed — one quack at a time</li>
+              <li>✓ Pond sync matching — no small talk</li>
+              <li>✓ Bring-a-friend waddles (coming soon)</li>
+            </ul>
           </section>
 
           <footer className="quack-sidebar__footer">
@@ -479,19 +732,12 @@ export default function App() {
             className={`quack-mobile-nav__item${activeNav === id ? ' is-active' : ''}`}
             aria-current={activeNav === id ? 'page' : undefined}
             aria-label={label}
-            onClick={() => setActiveNav(id)}
+            onClick={() => handleNavChange(id)}
           >
             <Icon />
+            <span className="quack-mobile-nav__label">{label}</span>
           </button>
         ))}
-        <button
-          type="button"
-          className="quack-mobile-nav__quack"
-          aria-label="Compose quack"
-          onClick={() => document.getElementById('quack-draft')?.focus()}
-        >
-          <QuackIcon />
-        </button>
       </nav>
 
       <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">

@@ -2,7 +2,7 @@
 
 :root {
   --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --font-sc: "Noto Serif SC", serif;
 }
 
@@ -46,7 +46,7 @@ body {
 .skip-link:focus,
 .skip-link:focus-visible {
   top: 0;
-  outline: 3px solid #00a86b;
+  outline: 3px solid #4a9d7a;
   outline-offset: 2px;
 }
 
@@ -65,6 +65,6 @@ body {
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #00a86b;
+  outline: 2px solid #4a9d7a;
   outline-offset: 2px;
 }

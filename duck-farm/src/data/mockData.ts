@@ -10,6 +10,9 @@ export interface DuckProfile {
   emoji: string
   verified?: boolean
   matchScore?: number
+  obsession?: string
+  sharedInterests?: string[]
+  bucketList?: string
 }
 
 export interface Quack {
@@ -32,6 +35,7 @@ export const CURRENT_USER: DuckProfile = {
   mood: 'wading',
   emoji: '🦆',
   verified: true,
+  obsession: 'Ship playful interfaces before the pond freezes',
 }
 
 export const DUCK_PROFILES: DuckProfile[] = [
@@ -44,6 +48,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     mood: 'single',
     emoji: '🌅',
     matchScore: 94,
+    obsession: 'Sunrise paddles & artisan bread crumbs',
+    sharedInterests: ['Morning rituals', 'Pond photography'],
+    bucketList: 'Fly south with someone who packs snacks',
   },
   {
     id: 'drake',
@@ -54,6 +61,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     mood: 'matched',
     emoji: '💻',
     matchScore: 88,
+    obsession: 'Zero-merge-conflict code reviews by the lake',
+    sharedInterests: ['TypeScript', 'CI pipelines'],
+    bucketList: 'Pair-program a duck dating feature',
   },
   {
     id: 'quinn',
@@ -64,6 +74,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     mood: 'single',
     emoji: '🍋',
     matchScore: 91,
+    obsession: 'Cucumber-mint pond cocktails (zero commitment issues)',
+    sharedInterests: ['Mixology', 'Reed-bar aesthetics'],
+    bucketList: 'Host a quacktail pop-up at sunset',
   },
   {
     id: 'pearl',
@@ -75,6 +88,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     emoji: '♿',
     verified: true,
     matchScore: 96,
+    obsession: '4.5:1 contrast in love letters AND landing pages',
+    sharedInterests: ['WCAG', 'Inclusive design'],
+    bucketList: 'Audit every nest on the pond',
   },
   {
     id: 'gander',
@@ -85,6 +101,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     mood: 'single',
     emoji: '✨',
     matchScore: 85,
+    obsession: 'Collecting pebbles that look like 福州',
+    sharedInterests: ['Geography puns', 'Mandarin wordplay'],
+    bucketList: 'Find a nest-mate who gets the joke',
   },
   {
     id: 'waddles',
@@ -95,6 +114,9 @@ export const DUCK_PROFILES: DuckProfile[] = [
     mood: 'matched',
     emoji: '🎮',
     matchScore: 79,
+    obsession: 'Konami-code easter eggs in production',
+    sharedInterests: ['Chaos gremlin energy', 'Retro games'],
+    bucketList: 'Trigger 50 ducks on a first date',
   },
 ]
 
