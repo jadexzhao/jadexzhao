@@ -2,6 +2,8 @@ interface DuckAvatarProps {
   size?: 'sm' | 'md' | 'lg'
   emoji?: string
   label?: string
+  bounce?: boolean
+  tilt?: boolean
 }
 
 const SIZE_MAP = {
@@ -10,15 +12,19 @@ const SIZE_MAP = {
   lg: 64,
 } as const
 
-export function DuckAvatar({ size = 'md', emoji, label }: DuckAvatarProps) {
+export function DuckAvatar({ size = 'md', emoji, label, bounce, tilt }: DuckAvatarProps) {
   const px = SIZE_MAP[size]
+  const classes = [
+    'duck-avatar',
+    `duck-avatar--${size}`,
+    bounce ? 'duck-avatar--bounce' : '',
+    tilt ? 'duck-avatar--tilt' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <span
-      className={`duck-avatar duck-avatar--${size}`}
-      role="img"
-      aria-label={label ?? 'Duck avatar'}
-    >
+    <span className={classes} role="img" aria-label={label ?? 'Duck avatar'}>
       <svg
         className="duck-avatar__svg"
         viewBox="0 0 48 40"

@@ -24,6 +24,7 @@ export interface Quack {
   requacks: number
   hearts: number
   flirted?: boolean
+  pending?: boolean
 }
 
 export const CURRENT_USER: DuckProfile = {

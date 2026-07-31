@@ -390,6 +390,164 @@
   gap: 10px;
 }
 
+.slide-deck__viewport {
+  will-change: transform;
+  user-select: none;
+}
+
+.slide-deck.is-dragging .slide-card {
+  box-shadow: var(--qa-shadow-lg);
+}
+
+.slide-deck--reduced .slide-deck__viewport {
+  cursor: default;
+  touch-action: auto;
+}
+
+.slide-deck__slide {
+  width: 100%;
+}
+
+.slide-deck__hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.quack-slide--pending {
+  opacity: 0.88;
+  border-style: dashed;
+}
+
+.quack-slide__pending-badge {
+  color: var(--qa-like);
+  font-weight: 600;
+}
+
+/* Match modal */
+.match-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 26, 22, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.match-modal__dialog {
+  width: min(100%, 380px);
+  padding: 28px 24px;
+  background: var(--qa-panel);
+  border-radius: var(--qa-radius-lg);
+  border: 1px solid var(--qa-border);
+  box-shadow: var(--qa-shadow-lg);
+  text-align: center;
+}
+
+.match-modal__dialog.is-celebrating {
+  animation: match-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes match-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.match-modal__hero {
+  margin-bottom: 16px;
+}
+
+.match-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  margin: 0 0 8px;
+}
+
+.match-modal__desc {
+  color: var(--qa-text-muted);
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.match-modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.match-modal__btn {
+  min-width: 120px;
+}
+
+.obsession-editor__input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--qa-border);
+  border-radius: 12px;
+  font: inherit;
+  background: var(--qa-bg-secondary);
+  color: var(--qa-text);
+}
+
+/* Ripple button */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ripple-btn--primary {
+  background: var(--qa-accent);
+  color: #fff;
+}
+
+.ripple-btn--ghost {
+  background: transparent;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  animation: ripple-out 0.55s ease-out forwards;
+}
+
+@keyframes ripple-out {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.animated-counter.is-bumping {
+  display: inline-block;
+  animation: counter-bump 0.35s ease;
+}
+
+@keyframes counter-bump {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+
 .deck-stage__hint {
   font-size: 0.8125rem;
   color: var(--qa-text-muted);
@@ -1138,8 +1296,16 @@
   .trend-item,
   .quack-nav__item,
   .deck-nav__dot,
-  .discover-btn {
+  .discover-btn,
+  .slide-deck__viewport,
+  .match-modal__dialog,
+  .animated-counter,
+  .ripple {
     animation: none;
     transition: none;
+  }
+
+  .slide-deck__viewport {
+    transform: none !important;
   }
 }
