@@ -1,4 +1,4 @@
-import { useState, useCallback, useId, useMemo, useEffect, useRef } from 'react'
+import { useState, useCallback, useId, useMemo, useEffect, useRef, lazy, Suspense } from 'react'
 import { DuckAvatar } from './components/DuckAvatar'
 import { SlideDeck } from './components/SlideDeck'
 import { SwipeableCard } from './components/SwipeableCard'
@@ -6,7 +6,12 @@ import { MatchModal } from './components/MatchModal'
 import { ObsessionEditor } from './components/ObsessionEditor'
 import { AnimatedCounter } from './components/AnimatedCounter'
 import { RippleButton } from './components/RippleButton'
-import { BreadcrumbGame } from './components/BreadcrumbGame'
+import { OnboardingHint } from './components/OnboardingHint'
+import { EmptyState } from './components/EmptyState'
+
+const BreadcrumbGame = lazy(() =>
+  import('./components/BreadcrumbGame').then((m) => ({ default: m.BreadcrumbGame })),
+)
 import { useLocalStorage, useLocalStorageSet } from './hooks/useLocalStorage'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import {
@@ -31,6 +36,8 @@ const NAV_LABELS: Record<NavItem, string> = {
   matches: 'Matches',
   profile: 'Your Nest',
 }
+
+const ONBOARD_KEY = 'quack-onboarded-v2'
 
 const COMPOSE_ACK_MS = 720
 
@@ -161,8 +168,8 @@ function DeckNav({
           →
         </RippleButton>
       </div>
-      <p className="deck-nav__kbd-hint" aria-hidden="true">
-        ← → or J / K to navigate · O for obsession
+      <p className="deck-nav__kbd-hint visually-hidden">
+        Use arrow keys to navigate slides
       </p>
     </div>
   )
@@ -432,6 +439,10 @@ export default function App() {
   const [isPosting, setIsPosting] = useState(false)
   const [obsessionOpen, setObsessionOpen] = useState(false)
   const [matchModal, setMatchModal] = useState<{ profile: DuckProfile; superQuack: boolean } | null>(null)
+  const [showOnboard, setShowOnboard] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return localStorage.getItem(ONBOARD_KEY) !== '1'
+  })
 
   useEffect(() => {
     const userOnly = quacks.filter((q) => q.authorId === CURRENT_USER.id && !q.pending)
@@ -468,6 +479,20 @@ export default function App() {
     discoverDeck.reset()
     matchDeck.reset()
   }
+
+  const dismissOnboard = useCallback(() => {
+    setShowOnboard(false)
+    try {
+      localStorage.setItem(ONBOARD_KEY, '1')
+    } catch {
+      /* private mode */
+    }
+  }, [])
+
+  const tryDiscover = useCallback(() => {
+    dismissOnboard()
+    handleNavChange('explore')
+  }, [dismissOnboard])
 
   const handleFlirt = (id: string) => {
     setQuacks((prev) =>
@@ -633,16 +658,27 @@ export default function App() {
           <header className="quack-main__header">
             <div className="quack-main__title-row">
               <h1>{NAV_LABELS[activeNav]}</h1>
-              <span className="quack-main__deck-badge">Interactive deck</span>
+              <button
+                type="button"
+                className="quack-main__theme"
+                onClick={toggleTheme}
+                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+              >
+                {theme === 'light' ? '🌙' : '☀️'}
+              </button>
             </div>
             <p className="quack-main__tagline">
-              <span lang="zh-Hans">鸭年</span> dating · meaningful pond connections
+              <span lang="zh-Hans">鸭年</span> on the pond · swipe, quack, waddle
             </p>
           </header>
 
+          {showOnboard && (
+            <OnboardingHint onDismiss={dismissOnboard} onTryDiscover={tryDiscover} />
+          )}
+
           <ObsessionBanner obsession={obsession} onEdit={() => setObsessionOpen(true)} />
 
-          {(activeNav === 'explore' || activeNav === 'matches') && (
+          {(activeNav === 'explore') && (
             <FilterPills
               active={moodFilter}
               onChange={(f) => {
@@ -730,16 +766,16 @@ export default function App() {
 
             {activeNav === 'explore' && filteredProfiles.length === 0 && (
               <div className="slide-card slide-card--empty">
-                <p>No ducks match this filter. Try another mood or reset passed ducks.</p>
-                {passed.size > 0 && (
-                  <RippleButton
-                    variant="primary"
-                    className="quack-btn quack-btn--primary"
-                    onClick={() => setPassed(new Set())}
-                  >
-                    Reset passed ducks
-                  </RippleButton>
-                )}
+                <EmptyState
+                  emoji="🦆"
+                  title="Pond's quiet right now"
+                  message="No ducks match this filter. Try another mood or give passed ducks another look."
+                  action={
+                    passed.size > 0
+                      ? { label: 'Reset passed ducks', onClick: () => setPassed(new Set()) }
+                      : { label: 'Show all ducks', onClick: () => setMoodFilter('all') }
+                  }
+                />
               </div>
             )}
 
@@ -765,7 +801,12 @@ export default function App() {
 
             {activeNav === 'matches' && matchedProfiles.length === 0 && (
               <div className="slide-card slide-card--empty">
-                <p>No matches yet. Discover ducks and start a waddle!</p>
+                <EmptyState
+                  emoji="💚"
+                  title="No waddles yet"
+                  message="Head to Discover and swipe right on a duck you vibe with. Your matches land here."
+                  action={{ label: 'Discover ducks →', onClick: () => handleNavChange('explore') }}
+                />
               </div>
             )}
 
@@ -817,8 +858,10 @@ export default function App() {
           )}
         </main>
 
-        <aside className="quack-sidebar" aria-label="Discover ducks">
-          <BreadcrumbGame />
+        <aside className="quack-sidebar" aria-label="Pond extras">
+          <Suspense fallback={null}>
+            <BreadcrumbGame />
+          </Suspense>
 
           <section className="sidebar-panel sidebar-panel--accent" aria-labelledby="trending-heading">
             <h2 id="trending-heading">Trending on the pond</h2>
@@ -835,12 +878,12 @@ export default function App() {
           </section>
 
           <section className="sidebar-panel" aria-labelledby="features-heading">
-            <h2 id="features-heading">What makes Quackr different</h2>
+            <h2 id="features-heading">Why Quackr?</h2>
             <ul className="feature-list">
-              <li>✓ Swipe to waddle — pass, match, or super-quack</li>
-              <li>✓ Drag slides · keyboard ← → / J K</li>
-              <li>✓ Obsession picker saved to your nest</li>
-              <li>✓ Catch breadcrumbs mini-game</li>
+              <li>🦆 Swipe ducks — pass, waddle, or super quack</li>
+              <li>💬 Post quacks &amp; flirt on the feed</li>
+              <li>✨ Pick an obsession that follows you</li>
+              <li>🍞 Catch crumbs mini-game (sidebar)</li>
             </ul>
           </section>
 

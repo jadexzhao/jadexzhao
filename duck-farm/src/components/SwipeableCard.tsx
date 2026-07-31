@@ -24,9 +24,12 @@ export function SwipeableCard({
   const reduced = useReducedMotion()
   const cardRef = useRef<HTMLDivElement>(null)
   const startRef = useRef<{ x: number; y: number } | null>(null)
+  const draggingRef = useRef(false)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   const [dragging, setDragging] = useState(false)
   const [exitDir, setExitDir] = useState<SwipeDirection>(null)
+
+  draggingRef.current = dragging
 
   useEffect(() => {
     setOffset({ x: 0, y: 0 })
@@ -106,7 +109,7 @@ export function SwipeableCard({
 
     const onMouseDown = (e: MouseEvent) => handleStart(e.clientX, e.clientY)
     const onMouseMove = (e: MouseEvent) => {
-      if (dragging) handleMove(e.clientX, e.clientY)
+      if (draggingRef.current) handleMove(e.clientX, e.clientY)
     }
     const onMouseUp = () => handleEnd()
 
@@ -125,7 +128,7 @@ export function SwipeableCard({
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseup', onMouseUp)
     }
-  })
+  }, [cardKey])
 
   const rotation = reduced ? 0 : offset.x * 0.06
   const opacity = exitDir ? 0 : 1

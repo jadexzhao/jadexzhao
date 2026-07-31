@@ -44,7 +44,7 @@ export function SlideDeck({ index, total, onPrev, onNext, label, children }: Sli
         </div>
       </div>
       <p className="slide-deck__hint visually-hidden" aria-live="polite">
-        Slide {index + 1} of {total}. Drag horizontally or use arrow keys / j and k.
+        Slide {index + 1} of {total}
       </p>
     </div>
   )
