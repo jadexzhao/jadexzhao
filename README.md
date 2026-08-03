@@ -10,7 +10,7 @@
 
 **TLDR:** two sites, same person. this repo = **龙 · dragon** (work · I build and ship code). [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) = **凤凰 · phoenix** (Miss Zhao classroom archive · IG now [@zhao.langxi](https://instagram.com/zhao.langxi)).
 
-[email](mailto:jlzhao@iu.edu) · [the briefcase](https://jadexzhao.github.io/jadexzhao/) · [resume (PDF)](https://jadexzhao.github.io/jadexzhao/resume.pdf) · [IU page / resume](https://jlzhao.pages.iu.edu/resume.pdf) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) · [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
+[email](mailto:jlzhao@iu.edu) · [the briefcase](https://jadexzhao.github.io/jadexzhao/) · [resume (PDF)](https://jadexzhao.github.io/jadexzhao/resume.pdf) · [IU page / resume](https://jlzhao.pages.iu.edu/resume.pdf) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [Quackr sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · [@zhao.langxi](https://instagram.com/zhao.langxi) · [@jadexzhao](https://github.com/jadexzhao)
 
 ## now
 
@@ -27,7 +27,7 @@ ELI5 it. Learn it. Ship it slow.
 | the briefcase | [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) |
 | ServeIT | [nonprofit tech clinic](https://serveit.luddy.indiana.edu/serve-ai/) · accessible client sites |
 | FASE MAP / classroom | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) |
-| duck farm | [React pond · 鸭年](https://jadexzhao.github.io/jadexzhao/duck-farm/) |
+| Quackr · duck farm | [portfolio sandbox · not a launched app](https://jadexzhao.github.io/jadexzhao/duck-farm/) |
 | Potstickers | [family restaurant site](https://sites.google.com/view/potstickers/home) · [pstickers24](https://github.com/jadexzhao/pstickers24) |
 
 ## live
@@ -38,7 +38,7 @@ ELI5 it. Learn it. Ship it slow.
 | [resume (PDF)](https://jadexzhao.github.io/jadexzhao/resume.pdf) | one-page résumé · GitHub Pages |
 | [IU page](https://jlzhao.pages.iu.edu/) | minimal résumé embed · [resume.pdf](https://jlzhao.pages.iu.edu/resume.pdf) |
 | [LinkedIn](https://www.linkedin.com/in/jadexzhao/) | career profile |
-| [duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | React pond · 鸭年 |
+| [Quackr · duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/) | portfolio sandbox · not a launched app |
 | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) | Miss Zhao classroom · 凤凰 |
 | [GitHub](https://github.com/jadexzhao) | @jadexzhao |
 

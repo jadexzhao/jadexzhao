@@ -889,7 +889,7 @@ export default function App() {
 
           <footer className="quack-sidebar__footer">
             <p>
-              <strong>Jade Zhao</strong> · portfolio piece
+              <strong>Jade Zhao</strong> · portfolio sandbox · not a launched app
             </p>
             <p>
               <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>

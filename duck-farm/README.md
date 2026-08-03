@@ -1,6 +1,8 @@
 # Quackr · virtual duck farm
 
-A mint-green duck dating playground on the [jadexzhao portfolio](https://jadexzhao.github.io/jadexzhao/). Swipe to waddle, post quacks, pick an obsession, catch breadcrumbs.
+A mint-green **portfolio sandbox** on the [jadexzhao briefcase](https://jadexzhao.github.io/jadexzhao/). Swipe to waddle, post quacks, pick an obsession, catch breadcrumbs.
+
+Honest framing: this is a React playground I ship and test myself. It is **not** a launched dating product, and it is not the same thing as any separate personal dating-app work.
 
 **Live:** [jadexzhao.github.io/jadexzhao/duck-farm/](https://jadexzhao.github.io/jadexzhao/duck-farm/)
 
