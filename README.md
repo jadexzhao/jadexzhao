@@ -1,5 +1,7 @@
 # jade zhao · 赵 · 龙 · dragon
 
+**Throughline:** Drawn to the unglamorous parts of systems everyone else skips — the handoff after the demo, the lease clause nobody reads until it matters, the profile that has to feel real, the student who needs an honest answer. One instinct, different rooms. Family restaurant origin; same wiring in lease work, ServeIT, and anything I build for myself first.
+
 **How I build (and how I want to be hired):**
 
 1. **If you can’t ELI5 your codebase, you’re not done yet.** (ELI5 = *explain like I’m five* — plain language, like explaining to a friend who’s new.) Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
