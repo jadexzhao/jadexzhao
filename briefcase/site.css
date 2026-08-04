@@ -331,8 +331,13 @@ a:focus-visible {
 .door:hover {
   border-color: var(--jade-ink);
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
   color: var(--ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .door:hover {
+    transform: translateY(-3px);
+  }
 }
 
 .door:focus-visible {
