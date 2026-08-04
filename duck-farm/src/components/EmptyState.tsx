@@ -11,7 +11,7 @@ export function EmptyState({ emoji, title, message, action }: EmptyStateProps) {
       <span className="empty-state__emoji" aria-hidden="true">
         {emoji}
       </span>
-      <h3 className="empty-state__title">{title}</h3>
+      <h2 className="empty-state__title">{title}</h2>
       <p className="empty-state__message">{message}</p>
       {action && (
         <button type="button" className="quack-btn quack-btn--primary empty-state__action" onClick={action.onClick}>

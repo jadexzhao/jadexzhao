@@ -83,7 +83,21 @@ export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEdito
                 if (inputRef.current) inputRef.current.value = preset
               }}
             >
-              {preset}
+              {/[\u4e00-\u9fff]/.test(preset) ? (
+                <>
+                  {preset.split(/([\u4e00-\u9fff]+)/).map((part, i) =>
+                    /[\u4e00-\u9fff]/.test(part) ? (
+                      <span key={i} lang="zh-Hans">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  )}
+                </>
+              ) : (
+                preset
+              )}
             </button>
           ))}
         </div>

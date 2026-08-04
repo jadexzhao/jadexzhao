@@ -1,4 +1,14 @@
-import { useState, useCallback, useId, useMemo, useEffect, useRef, lazy, Suspense } from 'react'
+import {
+  useState,
+  useCallback,
+  useId,
+  useMemo,
+  useEffect,
+  useRef,
+  lazy,
+  Suspense,
+  type ReactNode,
+} from 'react'
 import { DuckAvatar } from './components/DuckAvatar'
 import { SlideDeck } from './components/SlideDeck'
 import { SwipeableCard } from './components/SwipeableCard'
@@ -63,6 +73,21 @@ function VerifiedBadge() {
   )
 }
 
+/** Wrap CJK runs so screen readers get lang + Noto Serif SC applies. */
+function withCjkLang(text: string): ReactNode {
+  const parts = text.split(/([\u4e00-\u9fff]+)/)
+  if (parts.length === 1) return text
+  return parts.map((part, i) =>
+    /[\u4e00-\u9fff]/.test(part) ? (
+      <span key={i} lang="zh-Hans">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  )
+}
+
 function ProfileMeta({ profile }: { profile: DuckProfile }) {
   return (
     <div className="profile-meta">
@@ -104,13 +129,13 @@ function FilterPills({
   onChange: (filter: MoodFilter) => void
 }) {
   return (
-    <div className="filter-pills" role="tablist" aria-label="Filter ducks">
+    <div className="filter-pills" role="radiogroup" aria-label="Filter ducks">
       {MOOD_FILTERS.map(({ id, label, emoji }) => (
         <button
           key={id}
           type="button"
-          role="tab"
-          aria-selected={active === id}
+          role="radio"
+          aria-checked={active === id}
           className={`filter-pill${active === id ? ' is-active' : ''}`}
           onClick={() => onChange(id)}
         >
@@ -139,13 +164,12 @@ function DeckNav({
 
   return (
     <div className="deck-nav" aria-label="Slide navigation">
-      <div className="deck-nav__dots" role="tablist" aria-label="Slides">
+      <div className="deck-nav__dots" role="group" aria-label="Slides">
         {Array.from({ length: total }, (_, i) => (
           <button
             key={i}
             type="button"
-            role="tab"
-            aria-selected={i === index}
+            aria-current={i === index ? 'true' : undefined}
             aria-label={`Slide ${i + 1} of ${total}`}
             className={`deck-nav__dot${i === index ? ' is-active' : ''}`}
             onClick={() => onGoTo(i)}
@@ -210,10 +234,10 @@ function QuackSlide({
       )}
       <p className="quack-slide__content">{quack.content}</p>
       <div className="quack-slide__actions" role="group" aria-label="Quack actions">
-        <button type="button" className="slide-action" aria-label={`${quack.replies} replies`}>
+        <span className="slide-action slide-action--static" aria-label={`${quack.replies} replies`}>
           <ReplyIcon />
           <span>{formatCount(quack.replies)}</span>
-        </button>
+        </span>
         <RippleButton
           variant="ghost"
           className="slide-action slide-action--requack"
@@ -235,9 +259,9 @@ function QuackSlide({
           <HeartIcon filled={quack.flirted} />
           <AnimatedCounter value={quack.hearts + (quack.flirted ? 1 : 0)} format={formatCount} />
         </RippleButton>
-        <button type="button" className="slide-action" aria-label="Share quack">
+        <span className="slide-action slide-action--static" aria-label="Share unavailable in this demo">
           <ShareIcon />
-        </button>
+        </span>
       </div>
     </article>
   )
@@ -257,10 +281,12 @@ function moodBadge(mood: DuckMood): { emoji: string; label: string } {
 function DiscoverCard({
   profile,
   onMatch,
+  onPass,
   matched,
 }: {
   profile: DuckProfile
   onMatch: (id: string) => void
+  onPass?: (id: string) => void
   matched: boolean
 }) {
   const badge = moodBadge(profile.mood)
@@ -277,15 +303,15 @@ function DiscoverCard({
         )}
       </div>
       <div className="discover-card__body">
-        <h3 className="discover-card__name">
+        <h2 className="discover-card__name">
           {profile.displayName}
           {profile.verified && <VerifiedBadge />}
-        </h3>
-        <p className="discover-card__pond">{profile.pond}</p>
+        </h2>
+        <p className="discover-card__pond">{withCjkLang(profile.pond)}</p>
         {profile.obsession && (
           <p className="discover-card__obsession">
             <span aria-hidden="true">✨ </span>
-            {profile.obsession}
+            {withCjkLang(profile.obsession)}
           </p>
         )}
         {profile.sharedInterests && profile.sharedInterests.length > 0 && (
@@ -298,10 +324,18 @@ function DiscoverCard({
             <strong>Bucket list:</strong> {profile.bucketList}
           </p>
         )}
-        <p className="discover-card__bio">{profile.bio}</p>
+        <p className="discover-card__bio">{withCjkLang(profile.bio)}</p>
       </div>
       <div className="discover-card__actions">
-        <RippleButton className="discover-btn discover-btn--wave">Quick quack ✈️</RippleButton>
+        {onPass && (
+          <RippleButton
+            className="discover-btn discover-btn--wave"
+            onClick={() => onPass(profile.id)}
+            aria-label={`Pass on ${profile.displayName}`}
+          >
+            Pass
+          </RippleButton>
+        )}
         <RippleButton
           variant="primary"
           className={`discover-btn discover-btn--connect${matched ? ' is-matched' : ''}`}
@@ -597,7 +631,7 @@ export default function App() {
   return (
     <div className={`quack-app quack-app--${theme}`} data-theme={theme}>
       <a href="#main-feed" className="skip-link">
-        Skip to feed
+        Skip to main content
       </a>
 
       <div className="quack-shell">
@@ -654,7 +688,7 @@ export default function App() {
           </button>
         </aside>
 
-        <main id="main-feed" className="quack-main">
+        <main id="main-feed" className="quack-main" tabIndex={-1}>
           <header className="quack-main__header">
             <div className="quack-main__title-row">
               <h1>{NAV_LABELS[activeNav]}</h1>
@@ -759,6 +793,7 @@ export default function App() {
                     profile={currentDiscover}
                     matched={matches.has(currentDiscover.id)}
                     onMatch={handleMatch}
+                    onPass={handlePass}
                   />
                 </SwipeableCard>
               </>
@@ -814,12 +849,13 @@ export default function App() {
               <article className="slide-card profile-slide card-tilt">
                 <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" bounce tilt />
                 <ProfileMeta profile={{ ...CURRENT_USER, obsession }} />
+                <h2 className="visually-hidden">Your profile</h2>
                 <p className="profile-slide__obsession">
                   <span aria-hidden="true">✨ </span>
-                  {obsession}
+                  {withCjkLang(obsession)}
                 </p>
-                <p className="profile-slide__bio">{CURRENT_USER.bio}</p>
-                <p className="profile-slide__pond">{CURRENT_USER.pond}</p>
+                <p className="profile-slide__bio">{withCjkLang(CURRENT_USER.bio)}</p>
+                <p className="profile-slide__pond">{withCjkLang(CURRENT_USER.pond)}</p>
                 <div className="profile-slide__stats">
                   <div>
                     <strong>
@@ -869,7 +905,7 @@ export default function App() {
               {TRENDING_TOPICS.map((topic) => (
                 <li key={topic.tag}>
                   <RippleButton className="trend-item">
-                    <span className="trend-item__tag">{topic.tag}</span>
+                    <span className="trend-item__tag">{withCjkLang(topic.tag)}</span>
                     <span className="trend-item__count">{topic.posts}</span>
                   </RippleButton>
                 </li>

@@ -77,13 +77,13 @@ export function BreadcrumbGame() {
   return (
     <section className="breadcrumb-game" aria-label="Catch breadcrumbs mini-game">
       <div className="breadcrumb-game__header">
-        <h3>Catch crumbs!</h3>
+        <h2>Catch crumbs!</h2>
         <span className="breadcrumb-game__score">
           Score: <AnimatedCounter value={score} />
         </span>
       </div>
 
-      <div className="breadcrumb-game__pond" role="application" aria-label="Tap falling breadcrumbs">
+      <div className="breadcrumb-game__pond" role="group" aria-label="Tap falling breadcrumbs">
         {!playing && (
           <div className="breadcrumb-game__overlay">
             <p>{missed >= 5 ? '5 missed ... game over!' : 'Tap crumbs before they sink!'}</p>

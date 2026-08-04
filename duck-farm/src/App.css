@@ -7,9 +7,13 @@
   --qa-border: #e2ebe6;
   --qa-text: #1a2e24;
   --qa-text-muted: #5c7268;
+  /* Decorative mint for soft fills/borders; ink tokens hit WCAG AA 4.5:1 */
   --qa-accent: #4a9d7a;
   --qa-accent-hover: #3e8566;
   --qa-accent-dark: #1a5c42;
+  --qa-accent-ink: #1a5c42;
+  --qa-accent-fill: #1a5c42;
+  --qa-accent-fill-hover: #144a35;
   --qa-like: #f97316;
   --qa-requack: #4a9d7a;
   --qa-reply: #6366f1;
@@ -44,7 +48,10 @@
   --qa-text-muted: #8aa396;
   --qa-accent: #5cb896;
   --qa-accent-hover: #6ecda8;
-  --qa-accent-dark: #2d6a4f;
+  --qa-accent-dark: #8ad4b4;
+  --qa-accent-ink: #8ad4b4;
+  --qa-accent-fill: #1a5c42;
+  --qa-accent-fill-hover: #227a56;
   --qa-panel: #1a2822;
   --qa-hover: rgba(92, 184, 150, 0.1);
   --qa-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
@@ -149,7 +156,7 @@
 }
 
 .quack-nav__item.is-active {
-  background: var(--qa-accent);
+  background: var(--qa-accent-fill);
   color: #fff;
   font-weight: 600;
 }
@@ -407,7 +414,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 16px 20px;
-  background: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
   color: #fff;
   border-radius: var(--qa-radius);
   box-shadow: var(--qa-shadow);
@@ -472,8 +479,8 @@
 }
 
 .filter-pill.is-active {
-  background: var(--qa-accent-dark);
-  border-color: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
+  border-color: var(--qa-accent-fill);
   color: #fff;
 }
 
@@ -853,7 +860,7 @@
   font-weight: 700;
   padding: 6px 12px;
   border-radius: 9999px;
-  background: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
   color: #fff;
 }
 
@@ -934,17 +941,17 @@
 }
 
 .discover-btn--connect {
-  background: var(--qa-accent);
+  background: var(--qa-accent-fill);
   color: #fff;
   box-shadow: var(--qa-shadow);
 }
 
 .discover-btn--connect:hover {
-  background: var(--qa-accent-hover);
+  background: var(--qa-accent-fill-hover);
 }
 
 .discover-btn--connect.is-matched {
-  background: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
 }
 
 /* Profile slide */
@@ -1028,7 +1035,7 @@
 }
 
 .deck-nav__dot.is-active {
-  background: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
   transform: scale(1.25);
 }
 
@@ -1071,14 +1078,14 @@
 }
 
 .deck-nav__arrow--next {
-  background: var(--qa-accent);
-  border-color: var(--qa-accent);
+  background: var(--qa-accent-fill);
+  border-color: var(--qa-accent-fill);
   color: #fff;
 }
 
 .deck-nav__arrow--next:hover:not(:disabled) {
-  background: var(--qa-accent-hover);
-  border-color: var(--qa-accent-hover);
+  background: var(--qa-accent-fill-hover);
+  border-color: var(--qa-accent-fill-hover);
 }
 
 .deck-nav__arrow:disabled {
@@ -1200,8 +1207,9 @@
 }
 
 .quack-sidebar__footer a {
-  color: var(--qa-accent);
-  text-decoration: none;
+  color: var(--qa-accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
   font-weight: 600;
 }
 
@@ -1278,12 +1286,12 @@
 }
 
 .quack-btn--primary {
-  background: var(--qa-accent);
+  background: var(--qa-accent-fill);
   color: #fff;
 }
 
 .quack-btn--primary:hover:not(:disabled) {
-  background: var(--qa-accent-hover);
+  background: var(--qa-accent-fill-hover);
 }
 
 /* Mobile nav */
@@ -1327,12 +1335,12 @@
 }
 
 .quack-mobile-nav__label {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .quack-mobile-nav__item.is-active {
-  color: var(--qa-accent);
+  color: var(--qa-accent-ink);
   background: var(--qa-hover);
 }
 
@@ -1345,7 +1353,7 @@
   z-index: 40;
   padding: 12px 24px;
   border-radius: 9999px;
-  background: var(--qa-accent-dark);
+  background: var(--qa-accent-fill);
   color: #fff;
   font-size: 0.875rem;
   font-weight: 600;
@@ -1699,7 +1707,7 @@ dialog.obsession-picker::backdrop {
   padding: 12px 14px 8px;
 }
 
-.breadcrumb-game__header h3 {
+.breadcrumb-game__header h2 {
   font-size: 0.9375rem;
   font-weight: 700;
 }
@@ -1707,7 +1715,7 @@ dialog.obsession-picker::backdrop {
 .breadcrumb-game__score {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--qa-accent-dark);
+  color: var(--qa-accent-ink);
 }
 
 .breadcrumb-game__pond {
