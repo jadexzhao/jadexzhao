@@ -514,7 +514,7 @@
         Same three rules: ELI5 it, learn it, ship it slow.
       </p>
       <nav class="doors" aria-label="Audience">
-        <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire">
+        <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire" aria-expanded="false" aria-controls="hire-path">
           <span class="door-who">Here to hire or work with me</span>
           <span class="door-what">Throughline, built work, SoCal SWE interest, how to reach me. Stay on this site (<span class="sc" lang="zh-Hans">龙</span> · dragon).</span>
         </a>
@@ -774,7 +774,10 @@
   function showHire(scrollToHash) {
     if (!hirePath) return;
     hirePath.hidden = false;
-    if (doorHire) doorHire.setAttribute("aria-current", "true");
+    if (doorHire) {
+      doorHire.setAttribute("aria-current", "true");
+      doorHire.setAttribute("aria-expanded", "true");
+    }
     try {
       sessionStorage.setItem("jadex-door", "hire");
     } catch (_e) {}
@@ -794,7 +797,10 @@
   function hideHire() {
     if (!hirePath) return;
     hirePath.hidden = true;
-    if (doorHire) doorHire.removeAttribute("aria-current");
+    if (doorHire) {
+      doorHire.removeAttribute("aria-current");
+      doorHire.setAttribute("aria-expanded", "false");
+    }
     try {
       sessionStorage.removeItem("jadex-door");
     } catch (_e) {}

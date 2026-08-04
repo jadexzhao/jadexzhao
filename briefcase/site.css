@@ -978,6 +978,7 @@ body.interior {
   transform: translateY(-2px);
 }
 
+.chunk-card h3,
 .chunk-card h4 {
   font-size: 0.75rem;
   letter-spacing: 0.08em;
