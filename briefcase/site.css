@@ -8,7 +8,8 @@
   --paper: #faf6f0;
   --card: #ffffff;
   --gold: #c9a227;
-  --gold-hi: #a07f16;
+  /* Text labels only: darkened for WCAG AA 4.5:1 on --paper (accent gold stays decorative) */
+  --gold-hi: #7a6210;
   --gold-wash: #f3e6c0;
   --jade: #008f5a;
   --jade-ink: #004d33;
@@ -22,11 +23,12 @@
   --panel: rgba(250, 246, 240, 0.88);
   --nav-veil: rgba(250, 246, 240, 0.94);
   --watermark: rgba(0, 143, 90, 0.07);
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "Source Sans 3", Georgia, sans-serif;
-  --font-sc: "Noto Serif SC", serif;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sc: "Noto Serif SC", "Songti SC", "SimSun", serif;
   --max: 920px;
   --max-wide: 1100px;
+  --tap: 3rem; /* 48px at 16px root · WCAG 2.5.5 / checklist touch target */
   --radius-sm: 6px;
   --radius-md: 10px;
   --shadow-sm:
@@ -84,6 +86,7 @@ html {
   -webkit-text-size-adjust: 100%;
   overflow-x: clip;
   scroll-behavior: smooth;
+  font-size: 100%; /* rem root · zoom-friendly */
 }
 
 body {
@@ -92,7 +95,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 1.0625rem; /* 17px at 16px root */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -131,7 +134,7 @@ a:focus-visible {
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
-  min-height: 44px;
+  min-height: var(--tap);
   display: inline-flex;
   align-items: center;
 }
@@ -177,8 +180,8 @@ a:focus-visible {
 .site-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  font-size: 14px;
+  min-height: var(--tap);
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   border-bottom: 3px solid transparent;
@@ -231,7 +234,7 @@ a:focus-visible {
 
 /* ... shared footer ... */
 .site-footer {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--mute);
   border-top: 1px solid var(--line);
   padding-top: 18px;
@@ -246,8 +249,8 @@ a:focus-visible {
 .site-footer a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
-  padding: 4px 0;
+  min-height: var(--tap);
+  padding: 0.25rem 0;
   touch-action: manipulation;
 }
 
@@ -388,9 +391,9 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: var(--tap);
   padding: 10px 18px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: var(--radius-sm);
@@ -481,13 +484,13 @@ a:focus-visible {
 
 .link-grid .link-title {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.35;
 }
 
 .link-grid .what {
   color: var(--mute);
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.4;
 }
 
@@ -513,7 +516,7 @@ a:focus-visible {
 }
 
 .block > p {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--mute);
   line-height: 1.58;
   max-width: 62ch;
@@ -529,9 +532,9 @@ a:focus-visible {
 .quick-row a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: var(--tap);
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--jade-ink);
@@ -598,7 +601,7 @@ a:focus-visible {
 
 .gtm-research .what {
   color: var(--mute);
-  font-size: 13px;
+  font-size: 0.8125rem;
   text-align: left;
 }
 
@@ -649,13 +652,13 @@ body.interior {
 }
 
 .back {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--jade-ink);
   text-decoration: none;
   border-bottom: 1.5px solid var(--line);
   padding-bottom: 1px;
-  min-height: 44px;
+  min-height: var(--tap);
   display: inline-flex;
   align-items: center;
   touch-action: manipulation;
@@ -667,7 +670,7 @@ body.interior {
 }
 
 .memo-kicker {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mute);
@@ -706,10 +709,10 @@ body.interior {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   letter-spacing: 0.02em;
   padding: 8px 12px;
-  min-height: 44px;
+  min-height: var(--tap);
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -743,7 +746,7 @@ body.interior {
 
 .sheet .lede {
   margin-top: 14px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--mute);
   max-width: 62ch;
 }
@@ -762,7 +765,7 @@ body.interior {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 14px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--mute);
 }
 
@@ -771,7 +774,7 @@ body.interior {
   text-decoration: none;
   border-bottom: 1.5px solid var(--line);
   padding-bottom: 1px;
-  min-height: 44px;
+  min-height: var(--tap);
   display: inline-flex;
   align-items: center;
   font-weight: 600;
@@ -800,7 +803,7 @@ body.interior {
 }
 
 .part-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-hi);
@@ -821,13 +824,13 @@ body.interior {
 .sheet h3 {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--ink);
   margin: 20px 0 10px;
 }
 
 .sheet p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--mute);
   max-width: 62ch;
   margin-bottom: 12px;
@@ -895,7 +898,7 @@ body.interior {
   align-items: flex-start;
   justify-content: center;
   padding-top: 16px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--jade-ink);
@@ -908,7 +911,7 @@ body.interior {
 }
 
 .runbook .step-title {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
@@ -918,7 +921,7 @@ body.interior {
 
 .runbook .step-body p {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 0.9062rem;
   max-width: none;
 }
 
@@ -940,7 +943,7 @@ body.interior {
 }
 
 .sandwich-sandbox .sandbox-k {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--jade-ink);
@@ -976,7 +979,7 @@ body.interior {
 }
 
 .chunk-card h4 {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
@@ -985,7 +988,7 @@ body.interior {
 }
 
 .chunk-card p {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   margin: 0;
   max-width: none;
   color: var(--mute);
@@ -1027,7 +1030,7 @@ body.interior {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--jade-ink);
   background: var(--mist);
@@ -1042,7 +1045,7 @@ body.interior {
 }
 
 .timeline .tl-zone {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold-hi);
@@ -1052,13 +1055,13 @@ body.interior {
 
 .timeline .tl-title {
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 0.9062rem;
   color: var(--ink);
   margin-bottom: 2px;
 }
 
 .timeline .tl-body p {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   margin: 0;
   max-width: none;
 }
@@ -1082,7 +1085,7 @@ body.interior {
   border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.45;
   box-shadow: var(--shadow-sm);
   touch-action: manipulation;
@@ -1102,7 +1105,7 @@ body.interior {
 }
 
 .hub-k {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--jade-ink);
@@ -1124,7 +1127,7 @@ body.interior {
   width: 100%;
   min-width: 520px;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .gov-table th,
@@ -1136,7 +1139,7 @@ body.interior {
 }
 
 .gov-table th {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--jade-ink);
@@ -1162,7 +1165,7 @@ body.interior {
 }
 
 .habit-list li {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--mute);
   margin-bottom: 8px;
 }
@@ -1196,7 +1199,7 @@ body.interior {
 }
 
 .state-card .layer-k {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
@@ -1215,7 +1218,7 @@ body.interior {
 .state-card ul {
   margin: 0;
   padding-left: 1.1em;
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   color: var(--mute);
   line-height: 1.45;
 }
@@ -1238,7 +1241,7 @@ ul.insight li {
   position: relative;
   padding: 12px 14px 12px 1.4rem;
   margin-bottom: 8px;
-  font-size: 14.5px;
+  font-size: 0.9062rem;
   line-height: 1.6;
   color: var(--mute);
   max-width: 62ch;
@@ -1271,7 +1274,7 @@ ul.insight li::before {
 .closer .duck {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.45;
   color: var(--ink);
   max-width: 58ch;
@@ -1279,7 +1282,7 @@ ul.insight li::before {
 
 .closer .human {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--mute);
   max-width: 62ch;
 }
@@ -1308,7 +1311,7 @@ body.page-404 {
 }
 
 .page-404 .kicker {
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--mute);
@@ -1365,7 +1368,7 @@ body.page-404 {
 
 @media (max-width: 560px) {
   body {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .sheet {
@@ -1412,7 +1415,7 @@ body.page-404 {
 /* ... tablet (~768): readable type, roomy tap rows, no squeeze ... */
 @media (min-width: 561px) and (max-width: 899px) {
   body {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 
   .sheet {
@@ -1513,7 +1516,7 @@ html {
   transform: translate(-50%, -50%);
   padding: 0 14px;
   font-family: var(--font-sc);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1;
   color: var(--gold-hi);
   background: var(--paper);

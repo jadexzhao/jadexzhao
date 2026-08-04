@@ -57,7 +57,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260724b">
+<link rel="stylesheet" href="site.css?v=20260804a">
 <style>
   :root {
     --hero-shade: linear-gradient(
@@ -158,9 +158,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
+    min-height: var(--tap);
     padding: 12px 20px;
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 600;
     text-decoration: none;
     touch-action: manipulation;
@@ -240,10 +240,10 @@
   }
   .change-door {
     margin: 0 0 20px;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .change-door a {
-    min-height: 44px;
+    min-height: var(--tap);
     display: inline-flex;
     align-items: center;
   }
@@ -252,7 +252,7 @@
   .scan-list {
     margin: 14px 0 0;
     padding-left: 1.2rem;
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: var(--mute);
     line-height: 1.55;
     max-width: 68ch;
@@ -261,7 +261,7 @@
   .scan-list strong { color: var(--ink); font-weight: 600; }
   .path-tip {
     margin-top: 14px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--mute);
     line-height: 1.5;
     max-width: 62ch;
@@ -269,7 +269,7 @@
   .path-tip strong { color: var(--ink); font-weight: 600; }
 
   .eli5 {
-    font-size: 15px;
+    font-size: 0.9375rem;
     padding: 16px 18px;
     color: var(--ink);
     line-height: 1.55;
@@ -292,7 +292,7 @@
   .credo li {
     position: relative;
     padding: 0 0 0 18px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: var(--mute);
     line-height: 1.55;
   }
@@ -311,11 +311,11 @@
     color: var(--ink);
     font-weight: 600;
     margin-bottom: 2px;
-    font-size: 16px;
+    font-size: 1rem;
   }
   .credo-kicker {
     margin: 0 0 12px;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -353,7 +353,7 @@
     .interest-strip { grid-template-columns: repeat(3, 1fr); }
   }
   .interest-strip li {
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: var(--mute);
     line-height: 1.55;
     padding: 14px 16px;
@@ -375,14 +375,14 @@
   }
   .block .pd-line {
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: var(--mute);
     line-height: 1.55;
     max-width: 62ch;
   }
 
   .twin {
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--mute);
     margin: 28px 0 0;
     letter-spacing: 0.01em;
@@ -452,7 +452,7 @@
 
   @media (min-width: 1200px) {
     .wrap { max-width: 980px; }
-    body { font-size: 18px; }
+    body { font-size: 1.125rem; }
     .hero { min-height: min(94vh, 900px); }
   }
 
@@ -491,7 +491,7 @@
   <span class="visually-hidden" role="img" aria-label="Portrait of Jade Zhao"></span>
   <div class="hero-inner fade">
     <h1 class="brand" id="brand-title">Jade the Goat</h1>
-    <p class="who">jade zhao <span class="sc">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
+    <p class="who">jade zhao <span class="sc" lang="zh-Hans">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
     <p class="headline">ELI5 it. Learn it. Ship it slow.</p>
     <p class="line">
       Drawn to the unglamorous parts of systems everyone else skips.
@@ -747,7 +747,7 @@
     </p>
 
     <footer class="site-footer rv">
-      Jade Zhao · <span class="sc">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
+      Jade Zhao · <span class="sc" lang="zh-Hans">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="quick-adhoc.html">quick ad hoc</a>
       · <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU page</a>
