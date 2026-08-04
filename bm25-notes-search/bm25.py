@@ -1,4 +1,4 @@
-"""Minimal BM25 ranker — no external dependencies."""
+"""Minimal BM25 ranker ... no external dependencies."""
 
 from __future__ import annotations
 

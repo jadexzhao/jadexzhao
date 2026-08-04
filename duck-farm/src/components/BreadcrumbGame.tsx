@@ -86,7 +86,7 @@ export function BreadcrumbGame() {
       <div className="breadcrumb-game__pond" role="application" aria-label="Tap falling breadcrumbs">
         {!playing && (
           <div className="breadcrumb-game__overlay">
-            <p>{missed >= 5 ? '5 missed — game over!' : 'Tap crumbs before they sink!'}</p>
+            <p>{missed >= 5 ? '5 missed ... game over!' : 'Tap crumbs before they sink!'}</p>
             <button type="button" className="quack-btn quack-btn--primary" onClick={startGame}>
               {missed >= 5 || score > 0 ? 'Play again' : 'Start'}
             </button>

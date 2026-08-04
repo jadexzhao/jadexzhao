@@ -1,10 +1,10 @@
 # jade zhao · 赵 · 龙 · dragon
 
-**Throughline:** Drawn to the unglamorous parts of systems everyone else skips — the handoff after the demo, the lease clause nobody reads until it matters, the profile that has to feel real, the student who needs an honest answer. One instinct, different rooms. Family restaurant origin; same wiring in lease work, ServeIT, and anything I build for myself first.
+**Throughline:** Drawn to the unglamorous parts of systems everyone else skips ... the handoff after the demo, the lease clause nobody reads until it matters, the profile that has to feel real, the student who needs an honest answer. One instinct, different rooms. Family restaurant origin; same wiring in lease work, ServeIT, and anything I build for myself first.
 
 **How I build (and how I want to be hired):**
 
-1. **If you can’t ELI5 your codebase, you’re not done yet.** (ELI5 = *explain like I’m five* — plain language, like explaining to a friend who’s new.) Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
+1. **If you can’t ELI5 your codebase, you’re not done yet.** (ELI5 = *explain like I’m five* ... plain language, like explaining to a friend who’s new.) Plain language beats gatekeeping. If a recruiter, teammate, or nonprofit partner can’t follow it, I rewrite until they can.
 2. **If you don’t understand it, learn it.** Curiosity over vibes. I don’t fake fluency ... I dig until the system makes sense.
 3. **Slow progress is the best progress.** Craft and steady shipping, not hustle theater. Small commits that hold up beat flashy demos that don’t.
 
@@ -14,7 +14,7 @@
 
 ## now
 
-**Jade Zhao** · Informatics @ IU Luddy · **May 2027** · Looking for SWE roles. Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP is mostly Canvas/training ops + UTA for **50+ students** ... site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Early-stage startup software engineering internship Jun–Jul 2026 (company acquired during internship). Madrid semester at Complutense (Spring 2026).
+**Jade Zhao** · Informatics @ IU Luddy · **May 2027** · Looking for SWE roles. Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP is mostly Canvas/training ops + UTA for **50+ students** ... site at [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Madrid semester at Complutense (Spring 2026).
 
 **Looking for software engineering roles**. Open to Southern California.
 
@@ -48,4 +48,4 @@ ELI5 it. Learn it. Ship it slow.
 |---|---|
 | [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · GWC · [4-year IU path](https://matchaxmoxie.github.io/matchaxmoxie/freshman.html) · [Madrid](https://matchaxmoxie.github.io/matchaxmoxie/junior.html) |
 
-Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (Zhao / 赵朗曦 · open daytime face). Never a GitHub handle for IG.
+Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (Zhao / 赵郎溪 · open daytime face). Never a GitHub handle for IG.

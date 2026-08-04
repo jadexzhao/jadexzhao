@@ -2,7 +2,7 @@
 
 Problem: Students need personalized, accessible learning pathways that adapt to language and learning differences.
 
-What I built: A full-stack ML-powered platform delivering personalized recommendations and teacher dashboards, deployed with partner nonprofits — engagement tools for community partners.
+What I built: A full-stack ML-powered platform delivering personalized recommendations and teacher dashboards, deployed with partner nonprofits ... engagement tools for community partners.
 
 Status: Complete
 

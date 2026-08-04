@@ -534,7 +534,7 @@ export default function App() {
 
   const handlePass = (id: string) => {
     setPassed((prev) => new Set(prev).add(id))
-    showToast('Passed — next duck on the pond.')
+    showToast('Passed ... next duck on the pond.')
   }
 
   const handlePost = () => {
@@ -880,7 +880,7 @@ export default function App() {
           <section className="sidebar-panel" aria-labelledby="features-heading">
             <h2 id="features-heading">Why Quackr?</h2>
             <ul className="feature-list">
-              <li>🦆 Swipe ducks — pass, waddle, or super quack</li>
+              <li>🦆 Swipe ducks ... pass, waddle, or super quack</li>
               <li>💬 Post quacks &amp; flirt on the feed</li>
               <li>✨ Pick an obsession that follows you</li>
               <li>🍞 Catch crumbs mini-game (sidebar)</li>

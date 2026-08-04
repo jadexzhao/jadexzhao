@@ -25,6 +25,6 @@ Output goes in `dist/`. GitHub Actions copies it under the briefcase Pages root.
 
 ## What to try
 
-- **Discover** — swipe right to waddle, left to pass, up for super quack
-- **Pond Feed** — compose a quack, flirt and requack on slides
-- **Sidebar** — catch breadcrumbs mini-game (desktop)
+- **Discover** ... swipe right to waddle, left to pass, up for super quack
+- **Pond Feed** ... compose a quack, flirt and requack on slides
+- **Sidebar** ... catch breadcrumbs mini-game (desktop)

@@ -119,7 +119,7 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
         </h2>
         <p className="match-modal__subtitle">
           You and <strong>{profile.displayName}</strong> are synced on the pond
-          {superQuack && ' — legendary chemistry!'}
+          {superQuack && ' ... legendary chemistry!'}
         </p>
 
         <button type="button" className="quack-btn quack-btn--primary match-modal__close" onClick={onClose}>

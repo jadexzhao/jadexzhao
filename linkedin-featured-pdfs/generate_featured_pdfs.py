@@ -347,9 +347,7 @@ def pdf_overview():
         c,
         x,
         y,
-        "MAP is mostly mentor training, Canvas ops, and emails ... plus UTA support for 50+ students. "
-        "Summer 2026 software engineering intern at an early-stage startup in NYC (Jun–Jul; company acquired during my internship). "
-        "I scoped work from customer calls, built demos and prototypes, and wrote handoff docs.",
+        "MAP is mostly mentor training, Canvas ops, and emails ... plus UTA support for 50+ students. ",
         max_w,
         size=10,
         leading=13.5,
@@ -467,18 +465,6 @@ def pdf_build_ship():
         "mostly mentor training, canvas ops, and emails. uta for 50+ students. "
         "campus leadership programming with student life partners.",
         "canvas content, mentor training materials, matchaxmoxie teaching site.",
-    )
-
-    y = draw_pma_block(
-        c,
-        x,
-        y,
-        max_w,
-        "03 · early-stage startup (nyc)",
-        "b2b clients need working pilots, not just slides.",
-        "jun–jul 2026, hybrid nyc. software engineering intern at an early-stage startup. scoped asks from customer calls, demo sandboxes / poc environments. "
-        "python for onboarding automation. company acquired during internship.",
-        "handoff docs + client tooling from pilot to production.",
     )
 
     y = draw_section(c, x, y, "also shipping")
@@ -603,7 +589,7 @@ def pdf_actor_entrepreneur():
 
 
 def write_tex_mirrors():
-    """Skip overwriting .tex mirrors — source of truth is edited .tex files in repo."""
+    """Skip overwriting .tex mirrors ... source of truth is edited .tex files in repo."""
     return
 
 
