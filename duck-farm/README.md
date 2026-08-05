@@ -4,16 +4,24 @@ A mint-green **portfolio sandbox** on the [jadexzhao briefcase](https://jadexzha
 
 Honest framing: this is a React playground I ship and test myself. It is **not** a launched dating product, and it is not the same thing as any separate personal dating-app work.
 
-**Live:** [jadexzhao.github.io/jadexzhao/duck-farm/](https://jadexzhao.github.io/jadexzhao/duck-farm/)
+**Live:** [jadexzhao.github.io/jadexzhao/duck-farm/](https://jadexzhao.github.io/jadexzhao/duck-farm/)  
+**Repo:** lives inside [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) under `duck-farm/`
+
+## Stack
+
+- React + TypeScript + Vite
+- Client-only UI (no backend product claims)
+- GitHub Actions copies `dist/` into the briefcase Pages deploy at `/jadexzhao/duck-farm/`
 
 ## Development
 
 ```bash
+cd duck-farm
 npm install
 npm run dev
 ```
 
-Runs on `http://localhost:5173`. Production base path is `/jadexzhao/duck-farm/`.
+Runs on `http://localhost:5173`. Production `base` is `/jadexzhao/duck-farm/`.
 
 ## Build
 
@@ -21,7 +29,7 @@ Runs on `http://localhost:5173`. Production base path is `/jadexzhao/duck-farm/`
 npm run build
 ```
 
-Output goes in `dist/`. GitHub Actions copies it under the briefcase Pages root.
+Output goes in `dist/`. Pages deploy is handled by the parent repo workflow.
 
 ## What to try
 
