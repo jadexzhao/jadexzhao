@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<!--
-  jade zhao · gong wen bao / long zhan
-  shuang zhan：jadexzhao = long（gong zuo）；matchaxmoxie = feng huang（ke tang）
-  shou zhong：zhao pin you xian · shao wen · duo chuang · da CTA
--->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · first-gen Hudson & Holland Scholar · ServeIT nonprofit web · restaurant-floor systems instinct. SWE · IU Luddy · May 2027.">
-<title>Jade Zhao · ServeIT · SWE</title>
+<meta name="description" content="Jade Zhao · ServeIT website team lead · WCAG nonprofit sites partners can keep. SWE · IU Luddy · May 2027.">
+<title>Jade Zhao · ServeIT · software</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico?v=20260805-flowers" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260805-flowers">
@@ -22,13 +17,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
-<meta property="og:title" content="Jade Zhao · ServeIT · SWE">
-<meta property="og:description" content="First-gen Hudson & Holland · ServeIT nonprofit web · restaurant systems instinct. SWE · May 2027.">
+<meta property="og:title" content="Jade Zhao · ServeIT · software">
+<meta property="og:description" content="ServeIT website team lead · WCAG nonprofit sites partners can keep. SWE · May 2027.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jade Zhao · ServeIT · SWE">
-<meta name="twitter:description" content="First-gen Hudson & Holland · ServeIT nonprofit web. SWE · May 2027.">
+<meta name="twitter:title" content="Jade Zhao · ServeIT · software">
+<meta name="twitter:description" content="ServeIT website team lead · WCAG nonprofit sites partners can keep.">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <script type="application/ld+json">
@@ -55,637 +50,176 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260805a">
-<style>
-  :root {
-    --hero-shade: linear-gradient(
-      105deg,
-      rgba(42, 38, 34, 0.78) 0%,
-      rgba(42, 38, 34, 0.5) 40%,
-      rgba(42, 38, 34, 0.16) 70%,
-      rgba(42, 38, 34, 0.06) 100%
-    );
-  }
-
-  .scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    width: 0%;
-    z-index: 200;
-    background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
-    pointer-events: none;
-  }
-
-  .dock {
-    position: fixed;
-    z-index: 90;
-    display: flex;
-    gap: 8px;
-    padding: 8px;
-    background: rgba(16, 25, 21, 0.92);
-    border: 1px solid rgba(250, 246, 240, 0.18);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-  .dock a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--tap);
-    min-width: var(--tap);
-    padding: 0 14px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #faf6f0;
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    touch-action: manipulation;
-    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
-  }
-  .dock a:hover { background: rgba(250, 246, 240, 0.12); color: #fff; }
-  .dock a.dock-primary {
-    background: var(--accent-solid);
-    color: #fff;
-  }
-  .dock a.dock-primary:hover { background: #faf6f0; color: #004d33; }
-  .dock a:focus-visible {
-    outline: 3px solid #faf6f0;
-    outline-offset: 2px;
-  }
-
-  @media (max-width: 699px) {
-    .dock {
-      left: max(12px, env(safe-area-inset-left, 0px));
-      right: max(12px, env(safe-area-inset-right, 0px));
-      bottom: max(12px, env(safe-area-inset-bottom, 0px));
-      justify-content: stretch;
-    }
-    .dock a { flex: 1; }
-    body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
-  }
-  @media (min-width: 700px) {
-    .dock {
-      flex-direction: column;
-      right: max(16px, env(safe-area-inset-right, 0px));
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-
-  .hero {
-    position: relative;
-    min-height: min(88vh, 760px);
-    display: grid;
-    align-items: end;
-    color: #faf6f0;
-    background-color: #3a322c;
-    background-image:
-      radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
-      radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
-      var(--hero-shade),
-      url("assets/hero-portrait.jpg?v=20260805");
-    background-size: cover;
-    background-position: 50% 22%;
-    background-repeat: no-repeat;
-    overflow: hidden;
-  }
-  @supports (background-image: image-set(url("x") type("image/webp"))) {
-    .hero {
-      background-image:
-        radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
-        radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
-        var(--hero-shade),
-        image-set(
-          url("assets/hero-portrait.webp?v=20260805") type("image/webp"),
-          url("assets/hero-portrait.jpg?v=20260805") type("image/jpeg")
-        );
-    }
-  }
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding:
-      max(88px, calc(env(safe-area-inset-top, 0px) + 72px))
-      max(24px, env(safe-area-inset-right, 0px))
-      max(36px, env(safe-area-inset-bottom, 0px))
-      max(24px, env(safe-area-inset-left, 0px));
-  }
-  .brand {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(2.75rem, 9vw, 5rem);
-    line-height: 0.98;
-    letter-spacing: -0.03em;
-    text-wrap: balance;
-    max-width: 12ch;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-  }
-  .brand::after {
-    content: "";
-    display: block;
-    width: 4.5rem;
-    height: 4px;
-    margin-top: 16px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
-  }
-  .who {
-    margin-top: 12px;
-    font-size: clamp(1rem, 2.2vw, 1.15rem);
-    font-weight: 600;
-  }
-  .who .sc {
-    font-family: var(--font-sc);
-    font-weight: 500;
-    color: #b8f0d4;
-  }
-  .line {
-    margin-top: 14px;
-    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
-    color: rgba(250, 246, 240, 0.92);
-    max-width: 28ch;
-    line-height: 1.35;
-  }
-  .cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 12px;
-    margin-top: 22px;
-  }
-  .cta a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--tap);
-    padding: 14px 22px;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    text-decoration: none;
-    touch-action: manipulation;
-  }
-  .cta-primary {
-    background: var(--accent-solid);
-    color: #fff;
-    border: 1px solid transparent;
-    border-radius: var(--radius-sm);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
-    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
-  }
-  .cta-primary:hover { background: #faf6f0; color: #004d33; transform: translateY(-1px); }
-  .cta-ghost {
-    background: rgba(42, 38, 34, 0.25);
-    color: #faf6f0;
-    border: 1px solid rgba(250, 246, 240, 0.55);
-    border-radius: var(--radius-sm);
-    transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
-  }
-  .cta-ghost:hover {
-    background: rgba(250, 246, 240, 0.16);
-    border-color: #fff;
-    transform: translateY(-1px);
-  }
-  .cta a:focus-visible {
-    outline: 3px solid #faf6f0;
-    outline-offset: 3px;
-  }
-
-  .page {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
-    padding:
-      28px
-      max(24px, env(safe-area-inset-right, 0px))
-      max(48px, env(safe-area-inset-bottom, 0px))
-      max(24px, env(safe-area-inset-left, 0px));
-  }
-  .page::before {
-    content: "龙";
-    content: "龙" / "";
-    position: absolute;
-    top: -0.08em;
-    right: -0.06em;
-    z-index: 0;
-    font-family: var(--font-sc);
-    font-weight: 500;
-    font-size: clamp(13rem, 30vw, 21rem);
-    line-height: 1;
-    color: var(--watermark);
-    pointer-events: none;
-    user-select: none;
-  }
-  .wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 920px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .fork-panel { margin-bottom: 8px; padding: 22px 20px; }
-  .choose-lede { display: none; }
-  .door-what { font-size: 0.9375rem; }
-
-  .hire-path[hidden] { display: none !important; }
-  .hire-path { margin-top: 24px; }
-  .change-door { margin: 0 0 16px; font-size: 0.9375rem; }
-  .change-door a {
-    min-height: var(--tap);
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .scan-list {
-    margin: 16px 0 0;
-    padding-left: 1.15rem;
-    font-size: 0.9375rem;
-    color: var(--mute);
-    line-height: 1.45;
-    max-width: 58ch;
-  }
-  .scan-list li { margin-bottom: 8px; }
-  .scan-list strong { color: var(--ink); font-weight: 600; }
-
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 14px 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .chips li {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--jade-ink);
-    background: var(--jade-glow);
-    border: 1px solid rgba(0, 77, 51, 0.18);
-    border-radius: 999px;
-    padding: 8px 14px;
-    min-height: 2.5rem;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .case-grid {
-    display: grid;
-    gap: 12px;
-    list-style: none;
-    margin: 14px 0 0;
-    padding: 0;
-  }
-  @media (min-width: 560px) {
-    .case-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  .case-grid a {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-height: 120px;
-    padding: 18px 16px;
-    text-decoration: none;
-    color: var(--ink);
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    touch-action: manipulation;
-    transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
-  }
-  .case-grid a:hover {
-    border-color: var(--jade-ink);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-    color: var(--ink);
-  }
-  .case-grid a:focus-visible {
-    outline: 3px solid var(--focus);
-    outline-offset: 3px;
-  }
-  .case-k {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--jade-ink);
-  }
-  .case-title {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    line-height: 1.15;
-  }
-  .case-line {
-    font-size: 0.875rem;
-    color: var(--mute);
-    line-height: 1.4;
-  }
-  .case-cta {
-    margin-top: auto;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--jade-ink);
-  }
-
-  .more-story {
-    margin-top: 18px;
-    max-width: 58ch;
-  }
-  .more-story summary {
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--jade-ink);
-    min-height: var(--tap);
-    display: inline-flex;
-    align-items: center;
-    list-style: none;
-  }
-  .more-story summary::-webkit-details-marker { display: none; }
-  .more-story[open] summary { margin-bottom: 10px; }
-  .more-story p {
-    font-size: 0.9375rem;
-    color: var(--mute);
-    line-height: 1.5;
-    margin-top: 8px;
-  }
-
-  .twin {
-    font-size: 0.9375rem;
-    color: var(--mute);
-    margin: 28px 0 0;
-    line-height: 1.5;
-    max-width: 52ch;
-  }
-
-  @media (max-width: 639px) {
-    .hero {
-      min-height: min(78vh, 620px);
-      background-position: 50% 18%;
-    }
-    .hero-inner {
-      padding:
-        max(76px, calc(env(safe-area-inset-top, 0px) + 60px))
-        max(16px, env(safe-area-inset-right, 0px))
-        28px
-        max(16px, env(safe-area-inset-left, 0px));
-    }
-    .brand { max-width: none; font-size: clamp(2.4rem, 11vw, 3.2rem); }
-    .line { max-width: none; }
-    .cta { flex-direction: column; align-items: stretch; }
-    .cta a { width: 100%; min-height: 3.25rem; font-size: 1.125rem; }
-    .page {
-      padding-left: max(16px, env(safe-area-inset-left, 0px));
-      padding-right: max(16px, env(safe-area-inset-right, 0px));
-    }
-    .doors { gap: 12px; }
-    .door { min-height: 96px; padding: 20px 18px; }
-    .action-bar { flex-direction: column; }
-    .action-bar a { width: 100%; justify-content: center; min-height: 3.25rem; }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .fade { animation: up 0.45s ease both; }
-    @keyframes up {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: none; }
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .cta-primary:hover,
-    .cta-ghost:hover,
-    .case-grid a:hover,
-    .dock a:hover { transform: none; }
-    .scroll-progress { display: none; }
-  }
-</style>
+<link rel="stylesheet" href="site.css?v=20260805-serveit">
 </head>
-<body>
+<body class="home">
 <a href="#main-content" class="skip-link">skip to main content</a>
 <div class="scroll-progress" id="scroll-progress" hidden></div>
 
-<nav class="dock" aria-label="Quick contact">
-  <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">Resume</a>
-  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-  <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">Email</a>
-</nav>
+<div class="shell">
+  <aside class="rail" aria-label="Profile">
+    <div class="rail-top">
+      <picture class="rail-photo">
+        <source srcset="assets/hero-portrait.webp?v=20260805" type="image/webp">
+        <img
+          src="assets/hero-portrait.jpg?v=20260805"
+          alt="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"
+          width="160"
+          height="160"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </picture>
+      <p class="rail-kicker">jade zhao · <span class="sc" lang="zh-Hans">赵</span></p>
+      <h1 class="rail-name">Jade Zhao</h1>
+      <p class="rail-role">ServeIT website team lead</p>
+      <p class="rail-hook">
+        I ship WCAG nonprofit sites staff can keep after the student team leaves.
+        Looking for SWE · full-time after May 2027 · internships now.
+      </p>
+      <nav class="rail-nav" aria-label="On this page">
+        <a href="#work">work</a>
+        <a href="#also">also shipping</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+    <nav class="rail-contact" aria-label="Contact">
+      <a class="rail-cta" href="resume.pdf" rel="noopener noreferrer">resume</a>
+      <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+      <a href="https://github.com/jadexzhao">GitHub</a>
+    </nav>
+  </aside>
 
-<div class="topbar">
-  <nav class="site-nav site-nav--on-hero" aria-label="Briefcase">
-    <a href="index.html" aria-current="page">home</a>
-    <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-    <a href="how-i-work.html">how i work</a>
-    <a href="i18n-wcag.html">accessibility</a>
-    <a href="duck-farm/" target="_blank" rel="noopener noreferrer">Quackr</a>
-  </nav>
-</div>
+  <main id="main-content" class="stage" tabindex="-1">
+    <section id="work" class="stage-block rv" aria-labelledby="work-heading">
+      <p class="stage-kicker">featured · ServeIT</p>
+      <h2 id="work-heading" class="stage-title">nonprofit sites that survive the handoff</h2>
+      <p class="stage-lede">
+        ServeIT is IU&rsquo;s student-run tech clinic. I lead the website team:
+        scope with nonprofit staff, compose pages from IU Rivet and Cascade chunks,
+        ship WCAG 2.2 AA baselines, leave a plain-english handoff.
+      </p>
 
-<header class="hero" aria-labelledby="brand-title">
-  <span class="visually-hidden" role="img" aria-label="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"></span>
-  <div class="hero-inner fade">
-    <h1 class="brand" id="brand-title">Jade Zhao</h1>
-    <p class="who"><span class="sc" lang="zh-Hans">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
-    <p class="line">first-gen Hudson &amp; Holland · ServeIT nonprofit web · restaurant-floor systems instinct</p>
-    <p class="cta">
-      <a class="cta-primary" href="#path-fork">work with me</a>
-    </p>
-  </div>
-</header>
+      <article class="case" aria-labelledby="case-title">
+        <h3 id="case-title" class="case-name">ServeIT · website team</h3>
+        <dl class="case-beats">
+          <div>
+            <dt>problem</dt>
+            <dd>
+              partners need sites their staff can edit after we leave, and visitors
+              who use assistive tech need pages that actually work ... not a demo
+              that dies when the semester ends.
+            </dd>
+          </div>
+          <div>
+            <dt>what i built</dt>
+            <dd>
+              partner pages as a chunk composition (text, callout, CTA, accordion),
+              not custom chrome. Rivet components + Cascade WCMS. language markup
+              and touch targets treated as part of the build, not a late polish pass.
+              handoffs written so a non-developer can keep the page alive.
+            </dd>
+          </div>
+          <div>
+            <dt>outcome</dt>
+            <dd>
+              WCAG-accessible sites with no developer on call.
+              same instinct as a restaurant floor: the system either survives real
+              customers or it doesn&rsquo;t.
+            </dd>
+          </div>
+        </dl>
+        <p class="case-links">
+          <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · live</a>
+          <a href="how-i-work.html">how i work · depth</a>
+          <a href="i18n-wcag.html">accessibility note</a>
+        </p>
+      </article>
+    </section>
 
-<main id="main-content" class="page" tabindex="-1">
-  <div class="wrap">
-    <section id="path-fork" class="fork-panel fade" aria-labelledby="choose-heading">
-      <h2 id="choose-heading" class="choose-one">Choose one</h2>
-      <p class="choose-lede">Pick a door.</p>
-      <nav class="doors" aria-label="Audience">
-        <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire" aria-expanded="false" aria-controls="hire-path">
-          <span class="door-who">Hire / work with me</span>
-          <span class="door-what"><span class="sc" lang="zh-Hans">龙</span> · SWE · ServeIT · contact</span>
-        </a>
-        <a class="door door--secondary" id="door-student" href="https://matchaxmoxie.github.io/matchaxmoxie/" data-door="student">
-          <span class="door-who">Student / HS</span>
-          <span class="door-what"><span class="sc" lang="zh-Hans">凤凰</span> · phoenix classroom</span>
-        </a>
+    <section id="also" class="stage-block rv" aria-labelledby="also-heading">
+      <p class="stage-kicker">also shipping</p>
+      <h2 id="also-heading" class="stage-title">smaller proof</h2>
+      <ul class="ship-list">
+        <li>
+          <a class="ship" href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
+            <span class="ship-name">potstickers</span>
+            <span class="ship-line">family restaurant needed a real site; shipped myself instead of waiting.</span>
+            <span class="ship-out">live menu home · <span class="ship-meta">github.com/jadexzhao/pstickers24</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="ship" href="duck-farm/" target="_blank" rel="noopener noreferrer">
+            <span class="ship-name">Quackr</span>
+            <span class="ship-line">React + TypeScript sandbox I poke myself before claiming product polish.</span>
+            <span class="ship-out">live demo on this site</span>
+          </a>
+        </li>
+        <li>
+          <a class="ship" href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">
+            <span class="ship-name">FASE MAP</span>
+            <span class="ship-line">classroom / process site · supporting, not the hire spine.</span>
+            <span class="ship-out">matchaxmoxie · live</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="about" class="stage-block rv" aria-labelledby="about-heading">
+      <p class="stage-kicker">about</p>
+      <h2 id="about-heading" class="stage-title">who&rsquo;s shipping this</h2>
+      <p class="about-copy">
+        first-gen Hudson &amp; Holland Scholar · IU Luddy Informatics · Madrid Sp26.
+        grew up on a family Chinese restaurant floor. drawn to the unglamorous parts
+        of systems: the handoff after the demo, the page staff can still edit in six months.
+      </p>
+      <p class="about-copy">
+        TypeScript · React · Python · PostgreSQL · WCAG.
+        longer process memo lives on
+        <a href="how-i-work.html">how i work</a>.
+      </p>
+    </section>
+
+    <section id="contact" class="stage-block rv" aria-labelledby="contact-heading">
+      <p class="stage-kicker">next</p>
+      <h2 id="contact-heading" class="stage-title">want the ServeIT writeup?</h2>
+      <nav class="action-bar" aria-label="Contact">
+        <a href="mailto:jlzhao@iu.edu?subject=ServeIT%20%2F%20SWE%20roles%20%2F%20May%202027">email · jlzhao@iu.edu</a>
+        <a href="resume.pdf" rel="noopener noreferrer">resume</a>
+        <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
       </nav>
     </section>
 
-    <div id="hire-path" class="hire-path" hidden>
-      <p class="change-door">
-        <a href="#path-fork" id="change-door-link">← Different door</a>
-      </p>
-
-      <section id="recruiter-path" class="block rv" aria-labelledby="recruiter-tldr">
-        <h2 id="recruiter-tldr">hire path</h2>
-        <nav class="action-bar" aria-label="Contact and résumé">
-          <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-          <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-          <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email · SWE / May 2027</a>
-        </nav>
-        <ul class="scan-list">
-          <li>looking for <strong>SWE</strong> · full-time after May 2027 · internships now · SoCal open</li>
-          <li>now: ServeIT website lead · WCAG nonprofit sites partners can keep</li>
-          <li>IU Luddy Informatics · Madrid Sp26 · first-gen Hudson &amp; Holland</li>
-        </ul>
-        <ul class="chips" aria-label="Quick facts">
-          <li>ServeIT</li>
-          <li>Hudson &amp; Holland</li>
-          <li>Madrid Sp26</li>
-          <li lang="zh-Hans">福州</li>
-        </ul>
-        <details class="more-story">
-          <summary>how i scoped ServeIT</summary>
-          <p>
-            ask what staff can actually edit after i leave. then pick Rivet / Cascade chunks that match that,
-            write the handoff in plain english, ship WCAG first ... not polish last.
-          </p>
-          <p>
-            longer memo: <a href="how-i-work.html">how i work</a>.
-            grew up on a restaurant floor ... same instinct: systems either survive real customers or they don&rsquo;t.
-          </p>
-        </details>
-      </section>
-
-      <section id="proof" class="block rv" aria-labelledby="proof-heading">
-        <h2 id="proof-heading">three stories</h2>
-        <ul class="case-grid" aria-label="Work samples">
-          <li>
-            <a href="https://serveit.luddy.indiana.edu/serve-ai/">
-              <span class="case-k">ServeIT · live</span>
-              <span class="case-title">nonprofit web</span>
-              <span class="case-line">problem: partners need sites staff can keep. tradeoff: Rivet / Cascade chunks over custom chrome. outcome: WCAG handoffs with no developer on call.</span>
-              <span class="case-cta">open ServeIT →</span>
-            </a>
-          </li>
-          <li>
-            <a href="duck-farm/" target="_blank" rel="noopener noreferrer">
-              <span class="case-k">Quackr · live demo</span>
-              <span class="case-title">react sandbox</span>
-              <span class="case-line">problem: need a UI i can poke. tradeoff: ship a playground, not a product claim. outcome: React + TypeScript on this site.</span>
-              <span class="case-cta">open Quackr →</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
-              <span class="case-k">potstickers · live</span>
-              <span class="case-title">family restaurant site</span>
-              <span class="case-line">problem: restaurant needed a real site. tradeoff: ship myself over waiting. outcome: live menu home · code on github.com/jadexzhao/pstickers24</span>
-              <span class="case-cta">visit site →</span>
-            </a>
-          </li>
-        </ul>
-        <p class="twin">
-          classroom / FASE MAP live:
-          <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
-          · repo
-          <a href="https://github.com/matchaxmoxie/matchaxmoxie">github.com/matchaxmoxie/matchaxmoxie</a>
-        </p>
-      </section>
-
-      <section id="contact-end" class="block rv" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">next</h2>
-        <nav class="action-bar" aria-label="Final contact">
-          <a href="mailto:jlzhao@iu.edu?subject=want%20the%20ServeIT%20accessibility%20writeup%3F">want the ServeIT a11y writeup?</a>
-        </nav>
-        <p class="twin">resume + LinkedIn stay in the floating dock and footer.</p>
-      </section>
-    </div>
-
-    <p class="twin rv">
-      <span class="sc" lang="zh-Hans">龙</span> · this work site ·
-      <span class="sc" lang="zh-Hans">凤凰</span> ·
-      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
-      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
-    </p>
-
     <footer class="site-footer rv">
-      Jade Zhao · TypeScript · React · Python · PostgreSQL · WCAG
+      Jade Zhao · ServeIT website team lead · SWE · May 2027
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
     </footer>
-  </div>
-</main>
+  </main>
+</div>
+
+<nav class="dock" aria-label="Quick contact">
+  <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+</nav>
+
 <script>
 (function () {
   "use strict";
-  var hirePath = document.getElementById("hire-path");
-  var doorHire = document.getElementById("door-hire");
-  var changeLink = document.getElementById("change-door-link");
   var progress = document.getElementById("scroll-progress");
-  var HIRE_HASHES = {
-    "#recruiter-path": true,
-    "#proof": true,
-    "#contact-end": true,
-  };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function showHire(scrollToHash) {
-    if (!hirePath) return;
-    hirePath.hidden = false;
-    if (doorHire) {
-      doorHire.setAttribute("aria-current", "true");
-      doorHire.setAttribute("aria-expanded", "true");
-    }
-    try { sessionStorage.setItem("jadex-door", "hire"); } catch (_e) {}
-    if (scrollToHash) {
-      var target = document.querySelector(scrollToHash);
-      if (target) {
-        target.scrollIntoView({
-          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-            ? "auto"
-            : "smooth",
-          block: "start",
-        });
-      }
-    }
-  }
-
-  function hideHire() {
-    if (!hirePath) return;
-    hirePath.hidden = true;
-    if (doorHire) {
-      doorHire.removeAttribute("aria-current");
-      doorHire.setAttribute("aria-expanded", "false");
-    }
-    try { sessionStorage.removeItem("jadex-door"); } catch (_e) {}
-  }
-
-  if (doorHire) {
-    doorHire.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (history.replaceState) history.replaceState(null, "", "#recruiter-path");
-      else location.hash = "recruiter-path";
-      showHire("#recruiter-path");
-    });
-  }
-
-  if (changeLink) {
-    changeLink.addEventListener("click", function () {
-      hideHire();
-      if (history.replaceState) history.replaceState(null, "", "#path-fork");
-    });
-  }
-
-  var hash = location.hash || "";
-  var saved = null;
-  try { saved = sessionStorage.getItem("jadex-door"); } catch (_e) {}
-  if (HIRE_HASHES[hash]) showHire(hash);
-  else if (saved === "hire" && hash !== "#path-fork") showHire(null);
-
-  if (
-    progress &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) {
+  if (progress && !reduce) {
     progress.hidden = false;
     var ticking = false;
     function updateProgress() {
       var doc = document.documentElement;
       var max = doc.scrollHeight - doc.clientHeight;
-      var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
-      progress.style.width = pct + "%";
+      progress.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + "%";
       ticking = false;
     }
     window.addEventListener(
@@ -701,10 +235,7 @@
     updateProgress();
   }
 
-  if (
-    "IntersectionObserver" in window &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) {
+  if ("IntersectionObserver" in window && !reduce) {
     document.documentElement.classList.add("js-reveal");
     var io = new IntersectionObserver(
       function (entries) {
@@ -719,6 +250,32 @@
     );
     document.querySelectorAll(".rv").forEach(function (el) {
       io.observe(el);
+    });
+  }
+
+  var links = document.querySelectorAll(".rail-nav a");
+  if ("IntersectionObserver" in window && links.length) {
+    var sections = ["work", "also", "about", "contact"]
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+    var spy = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          links.forEach(function (a) {
+            var on = a.getAttribute("href") === "#" + id;
+            if (on) a.setAttribute("aria-current", "true");
+            else a.removeAttribute("aria-current");
+          });
+        });
+      },
+      { rootMargin: "-35% 0px -50% 0px", threshold: 0 }
+    );
+    sections.forEach(function (s) {
+      spy.observe(s);
     });
   }
 })();
