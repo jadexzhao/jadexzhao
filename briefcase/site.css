@@ -1720,8 +1720,9 @@ html {
 
 .site {
   background:
-    radial-gradient(48% 36% at 8% 0%, rgba(0, 143, 90, 0.08), transparent 70%),
-    radial-gradient(42% 30% at 96% 8%, rgba(201, 162, 39, 0.1), transparent 72%),
+    radial-gradient(48% 36% at 8% 0%, rgba(0, 143, 90, 0.07), transparent 70%),
+    radial-gradient(42% 30% at 96% 8%, rgba(201, 162, 39, 0.14), transparent 72%),
+    radial-gradient(36% 28% at 70% 100%, rgba(196, 148, 148, 0.08), transparent 70%),
     var(--paper);
 }
 
@@ -1749,7 +1750,7 @@ html {
   margin-bottom: 1.25rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(0, 77, 51, 0.18);
+  border: 2px solid rgba(201, 162, 39, 0.35);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1757,7 +1758,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: 48% 28%;
   display: block;
 }
 
@@ -1889,6 +1890,121 @@ html {
     max(24px, env(safe-area-inset-right, 0px))
     max(48px, calc(env(safe-area-inset-bottom, 0px) + 88px))
     max(24px, env(safe-area-inset-left, 0px));
+}
+
+.site .stage-hero {
+  position: relative;
+  margin: 0 0 2.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #2a2622;
+  box-shadow: var(--shadow-md);
+}
+
+.site .stage-hero-media {
+  position: relative;
+  min-height: min(52vw, 22rem);
+}
+
+.site .stage-hero-media img {
+  display: block;
+  width: 100%;
+  height: min(58vw, 26rem);
+  object-fit: cover;
+  object-position: 42% 38%;
+}
+
+.site .stage-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(42, 38, 34, 0.18) 0%,
+      rgba(42, 38, 34, 0.12) 38%,
+      rgba(42, 38, 34, 0.72) 100%
+    ),
+    radial-gradient(80% 70% at 50% 100%, rgba(42, 38, 34, 0.45), transparent 70%);
+}
+
+.site .stage-hero-copy {
+  position: relative;
+  z-index: 1;
+  margin-top: -7.5rem;
+  padding: 0 1.15rem 1.35rem;
+  color: #faf6f0;
+}
+
+.site .stage-hero .stage-kicker {
+  color: #f3e6c0;
+}
+
+.site .stage-hero-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 4.4vw, 2.35rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #faf6f0;
+  max-width: 18ch;
+  margin: 0 0 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.site .stage-hero-lede {
+  font-size: 1.02rem;
+  line-height: 1.45;
+  color: rgba(250, 246, 240, 0.94);
+  max-width: 42ch;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.site .stage-hero-aside {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(250, 246, 240, 0.78);
+  max-width: 48ch;
+  margin: 0 0 1rem;
+}
+
+.site .stage-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.site .stage-hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #faf6f0;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  touch-action: manipulation;
+}
+
+.site .stage-hero-actions a:hover {
+  border-bottom-color: #f3e6c0;
+  color: #fff;
+}
+
+.site .stage-hero-cta {
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  background: #c9a227;
+  color: #2a2622 !important;
+  border-bottom: 0 !important;
+}
+
+.site .stage-hero-cta:hover {
+  background: #f3e6c0;
+  color: #2a2622 !important;
 }
 
 .site .stage-block {
@@ -2124,6 +2240,37 @@ html {
 .site .case-links a:hover {
   color: var(--ink);
   border-bottom-color: var(--ink);
+}
+
+.site .about-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+}
+
+.site .about-photo {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--mist);
+  box-shadow: var(--shadow-sm);
+}
+
+.site .about-photo img {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+}
+
+.site .about-photo:first-child img {
+  object-position: 50% 18%;
+}
+
+.site .about-photo:last-child img {
+  object-position: 50% 20%;
 }
 
 .site .about-copy {
@@ -2369,6 +2516,28 @@ html {
       0;
   }
 
+  .site .stage-hero {
+    margin-bottom: 3.25rem;
+  }
+
+  .site .stage-hero-media {
+    min-height: 20rem;
+  }
+
+  .site .stage-hero-media img {
+    height: 22rem;
+    object-position: 40% 36%;
+  }
+
+  .site .stage-hero-copy {
+    margin-top: -8.5rem;
+    padding: 0 1.5rem 1.6rem;
+  }
+
+  .site .about-photo img {
+    height: 16rem;
+  }
+
   .site .stage-block {
     margin-bottom: 4.5rem;
   }
@@ -2387,7 +2556,7 @@ html {
   }
 
   .site .rail-photo {
-    border-color: rgba(99, 214, 168, 0.28);
+    border-color: rgba(217, 181, 69, 0.35);
   }
 
   .site .proj-card--featured,
