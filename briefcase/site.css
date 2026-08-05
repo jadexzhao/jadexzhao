@@ -84,7 +84,9 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  overflow-x: clip;
+  /* clip on the root is non-scrollable and locks the rail+stage page. */
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
   font-size: 100%; /* rem root · zoom-friendly */
 }
@@ -99,7 +101,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  overflow-x: clip;
+  /* No overflow on body — keeps position:sticky rail working. */
 }
 
 img {
