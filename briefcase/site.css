@@ -2134,6 +2134,32 @@ html {
   margin-bottom: 12px;
 }
 
+.site .currently-copy {
+  font-size: 0.9375rem;
+  color: var(--mute);
+  line-height: 1.5;
+  max-width: 48ch;
+  margin: 4px 0 0;
+}
+
+.site .currently-copy a {
+  color: var(--jade-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site .site-footer.closer {
+  width: 100%;
+  max-width: 52ch;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+}
+
+.site .closer .duck,
+.site .closer .human {
+  max-width: 52ch;
+}
+
 /* Interior memo pages · same shell, article rhythm in stage */
 .site .stage--article {
   max-width: 42rem;
