@@ -19,45 +19,66 @@
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/how-i-work.html">
 <meta property="og:title" content="jade zhao · how i work">
 <meta property="og:description" content="Drawn to the unglamorous parts of systems. ELI5 it. Learn it. Ship it slow. ServeIT, sandwich runbook, Cascade/Rivet.">
-<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="jade zhao · how i work">
 <meta name="twitter:description" content="ELI5 it. Learn it. Ship it slow. How Jade Zhao ships.">
-<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260805-serveit">
+<link rel="stylesheet" href="site.css?v=20260805-shell">
 </head>
-<body class="interior">
+<body class="site">
 <a href="#main-content" class="skip-link">skip to main content</a>
 
-<div class="topbar topbar--paper">
-  <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
-    <a href="index.html">home</a>
-    <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-    <a href="how-i-work.html" aria-current="page">how i work</a>
-    <a href="i18n-wcag.html">accessibility</a>
-    <a href="duck-farm/" target="_blank" rel="noopener noreferrer">Quackr</a>
-  </nav>
-</div>
+<div class="shell">
+  <aside class="rail" aria-label="Profile">
+    <div class="rail-top">
+      <picture class="rail-photo">
+        <source srcset="assets/hero-portrait.webp?v=20260805" type="image/webp">
+        <img
+          src="assets/hero-portrait.jpg?v=20260805"
+          alt="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"
+          width="160"
+          height="160"
+          decoding="async"
+        >
+      </picture>
+      <p class="rail-kicker">jade zhao · <span class="sc" lang="zh-Hans">赵</span></p>
+      <p class="rail-name">Jade Zhao</p>
+      <p class="rail-role">ServeIT website team lead</p>
+      <p class="rail-hook">Process memo · ELI5 it · learn it · ship it slow.</p>
+      <nav class="rail-nav" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="index.html#projects">projects</a>
+        <a href="resume.pdf" rel="noopener noreferrer">resume</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </div>
+    <nav class="rail-contact" aria-label="Contact">
+      <a class="rail-cta" href="resume.pdf" rel="noopener noreferrer">resume</a>
+      <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+      <a href="https://github.com/jadexzhao">GitHub</a>
+    </nav>
+  </aside>
 
-<main id="main-content" class="sheet" tabindex="-1">
+  <main id="main-content" class="stage stage--article" tabindex="-1">
 
-  <header class="interior-header">
-    <a class="back reveal" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
-    <p class="memo-kicker reveal">jade zhao · <span class="sc" lang="zh-Hans">赵</span> · the briefcase</p>
-    <h1 class="reveal">how i work<span class="sub">eli5 it · learn it · ship it slow</span></h1>
+  <header class="interior-header rv">
+    <p class="memo-kicker">how i work · depth</p>
+    <h1>how i work<span class="sub">eli5 it · learn it · ship it slow</span></h1>
 
-    <div class="status-row reveal" role="group" aria-label="baseline">
+    <div class="status-row" role="group" aria-label="baseline">
       <span class="status-pill"><span class="dot" aria-hidden="true"></span> built to be usable by everyone <strong>WCAG 2.2 AA accessibility</strong></span>
       <span class="status-pill">focus <strong>software engineering · accessible web</strong></span>
       <span class="status-pill"><span class="sc" lang="zh-Hans">专业发展</span> · <strong>SWE · Informatics @ IU Luddy · May 2027</strong></span>
     </div>
 
-    <p class="standfirst reveal">
+    <p class="standfirst">
       Throughline first: I&rsquo;m drawn to the unglamorous parts of systems everyone else skips ...
       the handoff after the demo, the clause nobody reads until it matters, the answer that has
       to be honest instead of polished. One instinct from a family restaurant floor into ServeIT,
@@ -68,19 +89,18 @@
       slow progress is the best progress.
       <span class="sc" lang="zh-Hans">福州</span> roots stay in the culture, not in any lab claim.
       Short version for hiring:
-      <a href="index.html#work">ServeIT on the homepage</a>.
+      <a href="index.html#projects">ServeIT on the homepage</a>.
     </p>
-    <div class="lede reveal">
+    <div class="lede">
       <p><b>Plain-English version first:</b> I build websites and tools, mostly for nonprofits, and I make sure they&rsquo;re easy for everyone to use. I also build demo sandboxes and integration prototypes when software needs to prove itself before production. The rest of this page is the detailed, behind-the-scenes version. If you&rsquo;re not technical, read the intros of each part and skip the code-level bits ... that&rsquo;s the ELI5 test in action.</p>
       <p>I use AI-assisted editing sometimes. It speeds up the work. It does not replace what I decide or what I sign off on. <b>Drafts may be AI-assisted. Accountability is entirely mine.</b></p>
     </div>
-    <nav class="action-bar reveal" aria-label="Quick links">
+    <nav class="action-bar" aria-label="Quick links">
       <a href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
       <a href="i18n-wcag.html">accessibility note</a>
-      <a href="index.html">the briefcase</a>
-      <a href="duck-farm/" target="_blank" rel="noopener noreferrer">Quackr sandbox</a>
+      <a href="index.html">home</a>
     </nav>
-    <nav class="toc reveal" aria-label="memo sections">
+    <nav class="toc" aria-label="memo sections">
       <a href="#part-1">#01 sandwich runbook</a>
       <span class="sep" aria-hidden="true">·</span>
       <a href="#part-2">#02 serveit chunks</a>
@@ -90,7 +110,6 @@
       <a href="#part-4">#04 in practice</a>
     </nav>
   </header>
-
 
   <hr class="memo-rule">
 
@@ -317,7 +336,7 @@
   <footer class="site-footer closer rv">
     <p class="duck">Jade Zhao · <span class="sc" lang="zh-Hans">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG</p>
     <p class="human">
-      <a href="index.html">the briefcase</a>
+      <a href="index.html">home</a>
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
       · <a href="https://github.com/jadexzhao">GitHub</a>
@@ -327,8 +346,15 @@
     </p>
   </footer>
 
+  </main>
+</div>
 
-</main>
+<nav class="dock" aria-label="Quick contact">
+  <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+</nav>
+
 <script>
 (function () {
   "use strict";

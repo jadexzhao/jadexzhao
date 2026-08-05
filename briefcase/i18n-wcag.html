@@ -19,44 +19,63 @@
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
 <meta property="og:title" content="jade zhao · i18n ∩ WCAG · architectural note">
 <meta property="og:description" content="Jade Zhao · i18n ∩ WCAG 2.2 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
-<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260804b">
+<link rel="stylesheet" href="site.css?v=20260805-shell">
 </head>
-<body class="interior">
+<body class="site">
 <a href="#main-content" class="skip-link">skip to main content</a>
 
-<div class="topbar topbar--paper">
-  <nav class="site-nav site-nav--on-paper" aria-label="Briefcase">
-    <a href="index.html">home</a>
-    <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-    <a href="how-i-work.html">how i work</a>
-    <a href="i18n-wcag.html" aria-current="page">accessibility</a>
-    <a href="duck-farm/" target="_blank" rel="noopener noreferrer">Quackr</a>
-  </nav>
-</div>
+<div class="shell">
+  <aside class="rail" aria-label="Profile">
+    <div class="rail-top">
+      <picture class="rail-photo">
+        <source srcset="assets/hero-portrait.webp?v=20260805" type="image/webp">
+        <img
+          src="assets/hero-portrait.jpg?v=20260805"
+          alt="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"
+          width="160"
+          height="160"
+          decoding="async"
+        >
+      </picture>
+      <p class="rail-kicker">jade zhao · <span class="sc" lang="zh-Hans">赵</span></p>
+      <p class="rail-name">Jade Zhao</p>
+      <p class="rail-role">ServeIT website team lead</p>
+      <p class="rail-hook">Accessibility note · mixed-language DOM · WCAG 2.2 AA.</p>
+      <nav class="rail-nav" aria-label="Primary">
+        <a href="index.html">home</a>
+        <a href="index.html#projects">projects</a>
+        <a href="resume.pdf" rel="noopener noreferrer">resume</a>
+        <a href="index.html#contact">contact</a>
+      </nav>
+    </div>
+    <nav class="rail-contact" aria-label="Contact">
+      <a class="rail-cta" href="resume.pdf" rel="noopener noreferrer">resume</a>
+      <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+      <a href="https://github.com/jadexzhao">GitHub</a>
+    </nav>
+  </aside>
 
-<main id="main-content" class="sheet" tabindex="-1">
+  <main id="main-content" class="stage stage--article" tabindex="-1">
 
-  <header class="interior-header">
-    <a class="back" href="index.html"><span aria-hidden="true">← </span>the briefcase</a>
-    <p class="memo-kicker">jade zhao · architectural note</p>
-    <h1>i18n (internationalization) ∩ WCAG 2.2 AA (web accessibility guidelines)<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
+  <header class="interior-header rv">
+    <p class="memo-kicker">architectural note</p>
+    <h1>i18n ∩ WCAG 2.2 AA<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
     <p class="standfirst"><strong>In plain English (ELI5):</strong> a screen reader is software that reads a web page aloud for people who can&rsquo;t see it well. If a page mixes languages (say English and Chinese) without telling the software which is which, it reads them wrong. So I label the languages, and I leave extra room because Chinese characters take up more space than English letters. If you don&rsquo;t understand assistive tech yet, learn it before you ship. Slow progress here beats a pretty page nobody can hear. This is a short, practical note, not a lecture. The same problem shows up when a nonprofit page mixes English with partner languages, when a restaurant ticket switches mid-line, and when a household flips between <span class="sc" lang="zh-Hans">福州话</span> / <span class="sc" lang="zh-Hans">普通话</span> / English without thinking about it.</p>
     <nav class="action-bar" aria-label="Quick links">
       <a href="how-i-work.html">how i work</a>
-      <a href="index.html">the briefcase</a>
+      <a href="index.html">home</a>
       <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · ServeAI</a>
-      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
     </nav>
   </header>
-
 
   <hr class="memo-rule">
 
@@ -111,7 +130,7 @@
   <footer class="site-footer closer rv">
     <p>Jade Zhao · architectural insight, not a certificate.</p>
     <p>
-      <a href="index.html">the briefcase</a>
+      <a href="index.html">home</a>
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
       · <a href="https://github.com/jadexzhao">GitHub</a>
@@ -120,8 +139,15 @@
     </p>
   </footer>
 
+  </main>
+</div>
 
-</main>
+<nav class="dock" aria-label="Quick contact">
+  <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
+</nav>
+
 <script>
 (function () {
   "use strict";

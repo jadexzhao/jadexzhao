@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · ServeIT website team lead · WCAG nonprofit sites partners can keep. SWE · IU Luddy · May 2027.">
-<title>Jade Zhao · ServeIT · software</title>
+<meta name="description" content="Jade Zhao · Website Team Lead, Serve IT Clinic · WCAG 2.1 nonprofit sites and Python/PostgreSQL ETL. Informatics @ IU Luddy · May 2027.">
+<title>Jade Zhao · Website Team Lead · ServeIT</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico?v=20260805-flowers" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260805-flowers">
@@ -17,13 +17,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
-<meta property="og:title" content="Jade Zhao · ServeIT · software">
-<meta property="og:description" content="ServeIT website team lead · WCAG nonprofit sites partners can keep. SWE · May 2027.">
+<meta property="og:title" content="Jade Zhao · Website Team Lead · ServeIT">
+<meta property="og:description" content="Website Team Lead at Serve IT Clinic · WCAG 2.1 sites and Python/PostgreSQL ETL for nonprofit partners. May 2027.">
 <meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jade Zhao · ServeIT · software">
-<meta name="twitter:description" content="ServeIT website team lead · WCAG nonprofit sites partners can keep.">
+<meta name="twitter:title" content="Jade Zhao · Website Team Lead · ServeIT">
+<meta name="twitter:description" content="Website Team Lead at Serve IT Clinic · WCAG 2.1 nonprofit sites · May 2027.">
 <meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <script type="application/ld+json">
@@ -50,9 +50,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260805-cards">
+<link rel="stylesheet" href="site.css?v=20260805-shell">
 </head>
-<body class="home">
+<body class="site">
 <a href="#main-content" class="skip-link">skip to main content</a>
 <div class="scroll-progress" id="scroll-progress" hidden></div>
 
@@ -71,14 +71,14 @@
         >
       </picture>
       <p class="rail-kicker">jade zhao · <span class="sc" lang="zh-Hans">赵</span></p>
-      <h1 class="rail-name" id="top">Jade Zhao</h1>
-      <p class="rail-role">ServeIT website team lead</p>
+      <h1 class="rail-name">Jade Zhao</h1>
+      <p class="rail-role">Website Team Lead · Serve IT Clinic</p>
       <p class="rail-hook">
-        WCAG nonprofit sites staff can keep after the student team leaves.
-        SWE · after May 2027 · internships now.
+        WCAG 2.1 sites and Python/PostgreSQL ETL for nonprofit partners without in-house developers.
+        Informatics @ IU Luddy · Expected May 2027.
       </p>
       <nav class="rail-nav" aria-label="Primary">
-        <a href="#top">home</a>
+        <a href="#main-content" aria-current="page">home</a>
         <a href="#projects">projects</a>
         <a href="resume.pdf" rel="noopener noreferrer">resume</a>
         <a href="#contact">contact</a>
@@ -93,153 +93,138 @@
   </aside>
 
   <main id="main-content" class="stage" tabindex="-1">
-    <section id="projects" class="stage-block" aria-labelledby="projects-heading">
+    <section id="projects" class="stage-block rv" aria-labelledby="projects-heading">
       <p class="stage-kicker">projects</p>
-      <h2 id="projects-heading" class="stage-title">proof first</h2>
+      <h2 id="projects-heading" class="stage-title">what I ship</h2>
       <p class="stage-lede">
-        three ships. ServeIT is the spine. outcomes from real builds, not invented metrics.
+        Same order as the resume. ServeIT first, then Potstickers, then FASE MAP ... each with the role line from the PDF.
       </p>
 
-      <ol class="project-list">
+      <ul class="proj-grid">
         <li>
-          <article class="project-card project-card--lead rv" aria-labelledby="p-serveit">
-            <header class="project-head">
-              <h3 id="p-serveit" class="project-title">ServeIT</h3>
-              <p class="project-role">website team lead · IU nonprofit tech clinic</p>
-              <ul class="project-stack" aria-label="Stack">
-                <li>IU Rivet</li>
-                <li>Cascade WCMS</li>
-                <li>WCAG 2.2 AA</li>
-                <li>plain-english handoffs</li>
-              </ul>
-            </header>
-            <dl class="project-beats">
-              <div>
-                <dt>problem</dt>
-                <dd>
-                  partners need sites their staff can edit after we leave, and visitors
-                  who use assistive tech need pages that work ... not a demo that dies
-                  when the semester ends.
-                </dd>
-              </div>
-              <div>
-                <dt>what i built</dt>
-                <dd>
-                  partner pages as chunk composition (text, callout, CTA, accordion),
-                  not custom chrome. Rivet components + Cascade. language markup and
-                  touch targets part of the build. handoffs a non-developer can follow.
-                </dd>
-              </div>
-              <div>
-                <dt>outcome</dt>
-                <dd>
-                  WCAG-accessible sites with no developer on call.
-                  staff keep the page alive after the clinic leaves.
-                </dd>
-              </div>
-            </dl>
-            <p class="project-links">
+          <article class="proj-card proj-card--featured">
+            <p class="proj-label">featured</p>
+            <h3 class="proj-title">Serve IT Clinic</h3>
+            <p class="proj-role">Website Team Lead · Jan 2024–present</p>
+            <p class="proj-stack">WCAG 2.1 · Python · PostgreSQL</p>
+            <p class="proj-out">Lead 5+ nonprofit web projects; WCAG 2.1 sites and ETL pipelines built for long-term maintainability. Founded ServeAI (PIT-UN).</p>
+            <p class="proj-links">
               <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · live</a>
-              <a href="how-i-work.html">how i work</a>
-              <a href="i18n-wcag.html">accessibility note</a>
+              <a href="#serveit">case writeup</a>
             </p>
           </article>
         </li>
-
         <li>
-          <article class="project-card rv" aria-labelledby="p-pstickers">
-            <header class="project-head">
-              <h3 id="p-pstickers" class="project-title">potstickers</h3>
-              <p class="project-role">builder · family restaurant site</p>
-              <ul class="project-stack" aria-label="Stack">
-                <li>Google Sites</li>
-                <li>live menu home</li>
-              </ul>
-            </header>
-            <dl class="project-beats">
-              <div>
-                <dt>problem</dt>
-                <dd>restaurant needed a real public site instead of waiting on someone else.</dd>
-              </div>
-              <div>
-                <dt>what i built</dt>
-                <dd>shipped the live menu home myself so the floor had a URL patrons could open.</dd>
-              </div>
-              <div>
-                <dt>outcome</dt>
-                <dd>live site up. source repo is private, so the public proof is the live page.</dd>
-              </div>
-            </dl>
-            <p class="project-links">
+          <article class="proj-card">
+            <h3 class="proj-title">Potstickers</h3>
+            <p class="proj-role">Marketing &amp; Web Lead · Jan 2024–present</p>
+            <p class="proj-stack">HTML · CSS · JS</p>
+            <p class="proj-out">Full website rebuild and content strategy across Facebook, Instagram, and TikTok. Also Matcha and Moxie.</p>
+            <p class="proj-links">
               <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">live site</a>
             </p>
           </article>
         </li>
-
         <li>
-          <article class="project-card rv" aria-labelledby="p-quackr">
-            <header class="project-head">
-              <h3 id="p-quackr" class="project-title">Quackr</h3>
-              <p class="project-role">builder · React sandbox on this site</p>
-              <ul class="project-stack" aria-label="Stack">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Vite</li>
-              </ul>
-            </header>
-            <dl class="project-beats">
-              <div>
-                <dt>problem</dt>
-                <dd>needed a UI I can poke myself before claiming product polish.</dd>
-              </div>
-              <div>
-                <dt>what i built</dt>
-                <dd>React + TypeScript playground hosted under this Pages deploy.</dd>
-              </div>
-              <div>
-                <dt>outcome</dt>
-                <dd>live demo on this site. honest sandbox, not a launched product claim.</dd>
-              </div>
-            </dl>
-            <p class="project-links">
-              <a href="duck-farm/" target="_blank" rel="noopener noreferrer">live demo</a>
-              <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm" rel="noopener noreferrer">repo · duck-farm</a>
+          <article class="proj-card">
+            <h3 class="proj-title">FASE MAP</h3>
+            <p class="proj-role">MAP Coordinator &amp; UTA · IU Office of Student Life</p>
+            <p class="proj-stack">Canvas · mentor training · HTML</p>
+            <p class="proj-out">Day-to-day Mentor Apprenticeship Program for 50+ first-generation and underrepresented students.</p>
+            <p class="proj-links">
+              <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">live site</a>
             </p>
           </article>
         </li>
-      </ol>
+        <li>
+          <article class="proj-card">
+            <h3 class="proj-title">Quackr</h3>
+            <p class="proj-role">Portfolio sandbox · not on the resume</p>
+            <p class="proj-stack">React · TypeScript · Vite</p>
+            <p class="proj-out">UI I poke myself before claiming product polish. Not a launched product.</p>
+            <p class="proj-links">
+              <a href="duck-farm/" target="_blank" rel="noopener noreferrer">live demo</a>
+            </p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="serveit" class="stage-block rv" aria-labelledby="serveit-heading">
+      <p class="stage-kicker">featured writeup · ServeIT</p>
+      <h2 id="serveit-heading" class="stage-title">nonprofit sites built to last</h2>
+      <p class="stage-lede">
+        Website Team Lead at Serve IT Clinic (Luddy). Lead 5+ nonprofit web projects
+        for Bloomington partners without in-house developers; ship WCAG 2.1-compliant
+        sites and Python/PostgreSQL ETL designed for long-term maintainability.
+      </p>
+
+      <article class="case" aria-labelledby="case-title">
+        <h3 id="case-title" class="case-name">Serve IT Clinic · Website Team Lead</h3>
+        <dl class="case-beats">
+          <div>
+            <dt>problem</dt>
+            <dd>
+              Bloomington nonprofit partners without in-house developers need sites
+              and data pipelines they can keep after the student team leaves.
+            </dd>
+          </div>
+          <div>
+            <dt>what i built</dt>
+            <dd>
+              WCAG 2.1-compliant sites and Python/PostgreSQL ETL pipelines designed
+              for long-term maintainability. Founded ServeAI, a public-interest AI
+              track (PIT-UN): responsible generative AI tools and plain-language
+              guides so community organizations can adopt AI without compromising
+              trust or accessibility.
+            </dd>
+          </div>
+          <div>
+            <dt>outcome</dt>
+            <dd>
+              5+ nonprofit web projects delivered with maintainability as the bar.
+              same instinct as a restaurant floor: the system either survives real
+              customers or it doesn&rsquo;t.
+            </dd>
+          </div>
+        </dl>
+        <p class="case-links">
+          <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · live</a>
+          <a href="how-i-work.html">how i work · depth</a>
+          <a href="i18n-wcag.html">accessibility note</a>
+        </p>
+      </article>
     </section>
 
     <section id="about" class="stage-block rv" aria-labelledby="about-heading">
       <p class="stage-kicker">about</p>
       <h2 id="about-heading" class="stage-title">who&rsquo;s shipping this</h2>
       <p class="about-copy">
-        first-gen Hudson &amp; Holland Scholar · IU Luddy Informatics · Madrid Sp26.
-        grew up on a family Chinese restaurant floor. drawn to the unglamorous parts
-        of systems: the handoff after the demo, the page staff can still edit in six months.
+        First-Generation College Student · Hudson and Holland Scholar (Full Merit).
+        B.S. Informatics, Business Minor · Luddy · Expected May 2027.
+        Study abroad: Universidad Complutense de Madrid, Spring 2026.
+        Grew up on a family Chinese restaurant floor. Drawn to the unglamorous parts
+        of systems: the handoff after the demo, the page staff can still keep.
       </p>
       <p class="about-copy">
-        TypeScript · React · Python · PostgreSQL · WCAG.
-        classroom / FASE MAP lives on
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a>
-        · process depth on
+        Python · TypeScript · SQL · PostgreSQL · React · WCAG 2.1 · Git · Canvas · LaTeX.
+        Longer process memo on
         <a href="how-i-work.html">how i work</a>.
       </p>
     </section>
 
     <section id="contact" class="stage-block rv" aria-labelledby="contact-heading">
       <p class="stage-kicker">contact</p>
-      <h2 id="contact-heading" class="stage-title">next</h2>
+      <h2 id="contact-heading" class="stage-title">want the ServeIT writeup?</h2>
       <nav class="action-bar" aria-label="Contact">
         <a href="mailto:jlzhao@iu.edu?subject=ServeIT%20%2F%20SWE%20roles%20%2F%20May%202027">email · jlzhao@iu.edu</a>
         <a href="resume.pdf" rel="noopener noreferrer">resume</a>
         <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-        <a href="https://github.com/jadexzhao">GitHub</a>
       </nav>
     </section>
 
     <footer class="site-footer rv">
-      Jade Zhao · ServeIT website team lead · SWE · May 2027
+      Jade Zhao · Website Team Lead · Serve IT Clinic · Expected May 2027
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
       · <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
       · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
@@ -249,7 +234,7 @@
 
 <nav class="dock" aria-label="Quick contact">
   <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
-  <a href="#projects">projects</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
   <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
 </nav>
 
@@ -299,20 +284,24 @@
     });
   }
 
-  var links = document.querySelectorAll('.rail-nav a[href^="#"]');
+  var links = document.querySelectorAll(".rail-nav a[href^='#']");
   if ("IntersectionObserver" in window && links.length) {
-    var map = {
-      top: document.getElementById("top"),
-      projects: document.getElementById("projects"),
-      contact: document.getElementById("contact"),
-    };
+    var sections = ["projects", "serveit", "about", "contact"]
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
     var spy = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
           var id = entry.target.id;
+          var map = { projects: "#projects", serveit: "#projects", about: "#projects", contact: "#contact" };
+          var target = map[id] || "#" + id;
           links.forEach(function (a) {
-            var on = a.getAttribute("href") === "#" + id;
+            var href = a.getAttribute("href");
+            if (href === "#main-content") return;
+            var on = href === target;
             if (on) a.setAttribute("aria-current", "true");
             else a.removeAttribute("aria-current");
           });
@@ -320,8 +309,8 @@
       },
       { rootMargin: "-35% 0px -50% 0px", threshold: 0 }
     );
-    Object.keys(map).forEach(function (key) {
-      if (map[key]) spy.observe(map[key]);
+    sections.forEach(function (s) {
+      spy.observe(s);
     });
   }
 })();
