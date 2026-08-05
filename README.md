@@ -14,9 +14,9 @@
 
 ## now
 
-**Jade Zhao** · first-gen Hudson & Holland Scholar · Informatics @ IU Luddy · **May 2027** · looking for **SWE** roles (internships now; full-time after graduation). Open to Southern California.
+**Jade Zhao** · First-Generation College Student · Hudson and Holland Scholar (Full Merit) · B.S. Informatics, Business Minor @ IU Luddy · **Expected May 2027** · looking for **SWE** roles (internships now; full-time after graduation). Open to Southern California.
 
-Website team lead at **ServeIT** (nonprofit tech clinic) and **ServeAI** (public-interest AI). MAP / classroom archive lives on [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) (UTA for 50+ students). Madrid semester at Complutense (Spring 2026).
+**Website Team Lead** at Serve IT Clinic: 5+ nonprofit web projects, WCAG 2.1 sites and Python/PostgreSQL ETL, founded ServeAI (PIT-UN). **Marketing & Web Lead** at Potstickers. **MAP Coordinator & UTA** for FASE (50+ students) on [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Study abroad: Universidad Complutense de Madrid, Spring 2026.
 
 ELI5 it. Learn it. Ship it slow.
 
@@ -25,10 +25,10 @@ ELI5 it. Learn it. Ship it slow.
 | project | link |
 |---------|------|
 | the briefcase | [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) |
-| ServeIT | [nonprofit tech clinic](https://serveit.luddy.indiana.edu/serve-ai/) · accessible client sites |
-| FASE MAP / classroom | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) |
-| Quackr · duck farm | [portfolio sandbox · not a launched app](https://jadexzhao.github.io/jadexzhao/duck-farm/) |
-| Potstickers | [family restaurant site](https://sites.google.com/view/potstickers/home) · [pstickers24](https://github.com/jadexzhao/pstickers24) |
+| Serve IT Clinic | [Website Team Lead · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) · WCAG 2.1 · Python/PostgreSQL |
+| Potstickers | [Marketing & Web Lead · live site](https://sites.google.com/view/potstickers/home) |
+| FASE MAP / classroom | [MAP Coordinator & UTA · matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) |
+| Quackr · duck farm | [portfolio sandbox · not on the resume](https://jadexzhao.github.io/jadexzhao/duck-farm/) |
 | B-town bars | [Kirkwood crawl cheat sheet](https://matchaxmoxie.github.io/matchaxmoxie/b-town-bars.html) · 21+ |
 
 ## live
