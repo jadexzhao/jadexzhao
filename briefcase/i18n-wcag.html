@@ -6,11 +6,11 @@
 <meta name="description" content="Jade Zhao · i18n ∩ WCAG 2.2 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
 <title>jade zhao · i18n ∩ WCAG · architectural note</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
-<link rel="icon" href="favicon.ico?v=20260805-flowers" sizes="any">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260805-flowers">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260805-flowers">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260805-flowers">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260805-flowers">
+<link rel="icon" href="favicon.ico?v=20260805b" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260805b">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260805b">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260805b">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260805b">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#004d33">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101915">
@@ -19,15 +19,15 @@
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/i18n-wcag.html">
 <meta property="og:title" content="jade zhao · i18n ∩ WCAG · architectural note">
 <meta property="og:description" content="Jade Zhao · i18n ∩ WCAG 2.2 AA architectural note. Mixed-language DOM, character density, restaurant multilingual framing. ServeIT / Rivet aware.">
-<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805b">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805b">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260805-shell">
+<link rel="stylesheet" href="site.css?v=20260805b">
 </head>
 <body class="site">
 <a href="#main-content" class="skip-link">skip to main content</a>
@@ -36,9 +36,9 @@
   <aside class="rail" aria-label="Profile">
     <div class="rail-top">
       <picture class="rail-photo">
-        <source srcset="assets/hero-portrait.webp?v=20260805" type="image/webp">
+        <source srcset="assets/hero-portrait-rail.webp?v=20260805b" type="image/webp">
         <img
-          src="assets/hero-portrait.jpg?v=20260805"
+          src="assets/hero-portrait-rail.jpg?v=20260805b"
           alt="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"
           width="160"
           height="160"
@@ -58,9 +58,9 @@
     </div>
     <nav class="rail-contact" aria-label="Contact">
       <a class="rail-cta" href="resume.pdf" rel="noopener noreferrer">resume</a>
-      <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/jadexzhao/" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
-      <a href="https://github.com/jadexzhao">GitHub</a>
+      <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
     </nav>
   </aside>
 
@@ -112,7 +112,7 @@
   <section class="rv" aria-labelledby="roots-heading">
     <h2 id="roots-heading">3 · where the instinct comes from</h2>
     <p>fuzhou roots, midwest restaurant floor. patrons, family, and staff already switch languages mid-conversation. the UI should not pretend monolingual default is neutral. immigrant household multilingualism is operational context: tickets, menu notes, and volunteer-facing pages fail loudly when language and layout ignore density.</p>
-    <p>that is the bridge-building thread on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">@matchaxmoxie</a>: restaurant uptime habits applied to accessible systems. community orgs on the serveit roster (including partners like <a href="https://middlewayhouse.org">middle way house</a>) need pages staff can maintain and visitors can hear correctly.</p>
+    <p>that is the bridge-building thread on <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">@matchaxmoxie</a>: restaurant uptime habits applied to accessible systems. community orgs on the serveit roster (including partners like <a href="https://middlewayhouse.org" rel="noopener noreferrer">middle way house</a>) need pages staff can maintain and visitors can hear correctly.</p>
   </section>
 
   <hr class="memo-rule">
@@ -121,9 +121,9 @@
     <h2 id="links-heading">related</h2>
     <div class="link-hub">
       <a href="how-i-work.html"><span class="hub-k">how i work</span>sandwich runbook · serveit chunks · prototype handoffs</a>
-      <a href="https://serveit.luddy.indiana.edu/serve-ai/"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (accessibility) client builds</a>
-      <a href="https://rivet.iu.edu/explore/"><span class="hub-k">rivet</span>IU design system · component constraints</a>
-      <a href="https://matchaxmoxie.github.io/matchaxmoxie/"><span class="hub-k">matchaxmoxie</span>Jade Zhao · Miss Zhao · GWC · IU guide · <span class="sc" lang="zh-Hans">凤凰</span> · phoenix archive</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (accessibility) client builds</a>
+      <a href="https://rivet.iu.edu/explore/" rel="noopener noreferrer"><span class="hub-k">rivet</span>IU design system · component constraints</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer"><span class="hub-k">matchaxmoxie</span>Jade Zhao · Miss Zhao · GWC · IU guide · <span class="sc" lang="zh-Hans">凤凰</span> · phoenix archive</a>
     </div>
   </section>
 
@@ -132,10 +132,10 @@
     <p>
       <a href="index.html">home</a>
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-      · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-      · <a href="https://github.com/jadexzhao">GitHub</a>
-      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
-      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix)
+      · <a href="https://www.linkedin.com/in/jadexzhao/" rel="noopener noreferrer">LinkedIn</a>
+      · <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
+      · IG <a href="https://instagram.com/zhao.langxi" rel="noopener noreferrer">@zhao.langxi</a>
+      · classroom archive on <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix)
     </p>
   </footer>
 
@@ -144,7 +144,7 @@
 
 <nav class="dock" aria-label="Quick contact">
   <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
-  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/" rel="noopener noreferrer">LinkedIn</a>
   <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
 </nav>
 

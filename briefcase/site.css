@@ -1795,6 +1795,15 @@ html {
   color: var(--jade-ink);
 }
 
+.site .rail-looking {
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--mute);
+  line-height: 1.4;
+  max-width: 34ch;
+}
+
 .site .rail-hook {
   margin-top: 12px;
   font-size: 0.98rem;
@@ -1956,6 +1965,24 @@ html {
 .site .proj-card--featured {
   border-left-color: var(--jade);
   padding: 22px 22px 18px;
+}
+
+.site .proj-card--sandbox {
+  opacity: 0.88;
+  border-style: dashed;
+  border-left-width: 3px;
+  border-left-color: var(--line);
+  box-shadow: none;
+  background: var(--mist);
+  padding: 14px 16px 12px;
+}
+
+.site .proj-card--sandbox .proj-title {
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+}
+
+.site .proj-card--sandbox .proj-label {
+  color: var(--mute);
 }
 
 .site .proj-label {
@@ -2372,8 +2399,21 @@ html {
     display: none;
   }
 
+  .site .dock a,
+  .site .rail-contact a,
+  .site .proj-card {
+    transition: none;
+  }
+
   .site .dock a:hover,
   .site .proj-card:hover {
     transform: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .site .proj-card--sandbox {
+    background: rgba(24, 36, 30, 0.55);
+    border-color: var(--line);
   }
 }
