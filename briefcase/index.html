@@ -50,7 +50,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260805-serveit">
+<link rel="stylesheet" href="site.css?v=20260805-cards">
 </head>
 <body class="home">
 <a href="#main-content" class="skip-link">skip to main content</a>
@@ -71,16 +71,16 @@
         >
       </picture>
       <p class="rail-kicker">jade zhao · <span class="sc" lang="zh-Hans">赵</span></p>
-      <h1 class="rail-name">Jade Zhao</h1>
+      <h1 class="rail-name" id="top">Jade Zhao</h1>
       <p class="rail-role">ServeIT website team lead</p>
       <p class="rail-hook">
-        I ship WCAG nonprofit sites staff can keep after the student team leaves.
-        Looking for SWE · full-time after May 2027 · internships now.
+        WCAG nonprofit sites staff can keep after the student team leaves.
+        SWE · after May 2027 · internships now.
       </p>
-      <nav class="rail-nav" aria-label="On this page">
-        <a href="#work">work</a>
-        <a href="#also">also shipping</a>
-        <a href="#about">about</a>
+      <nav class="rail-nav" aria-label="Primary">
+        <a href="#top">home</a>
+        <a href="#projects">projects</a>
+        <a href="resume.pdf" rel="noopener noreferrer">resume</a>
         <a href="#contact">contact</a>
       </nav>
     </div>
@@ -93,78 +93,121 @@
   </aside>
 
   <main id="main-content" class="stage" tabindex="-1">
-    <section id="work" class="stage-block rv" aria-labelledby="work-heading">
-      <p class="stage-kicker">featured · ServeIT</p>
-      <h2 id="work-heading" class="stage-title">nonprofit sites that survive the handoff</h2>
+    <section id="projects" class="stage-block" aria-labelledby="projects-heading">
+      <p class="stage-kicker">projects</p>
+      <h2 id="projects-heading" class="stage-title">proof first</h2>
       <p class="stage-lede">
-        ServeIT is IU&rsquo;s student-run tech clinic. I lead the website team:
-        scope with nonprofit staff, compose pages from IU Rivet and Cascade chunks,
-        ship WCAG 2.2 AA baselines, leave a plain-english handoff.
+        three ships. ServeIT is the spine. outcomes from real builds, not invented metrics.
       </p>
 
-      <article class="case" aria-labelledby="case-title">
-        <h3 id="case-title" class="case-name">ServeIT · website team</h3>
-        <dl class="case-beats">
-          <div>
-            <dt>problem</dt>
-            <dd>
-              partners need sites their staff can edit after we leave, and visitors
-              who use assistive tech need pages that actually work ... not a demo
-              that dies when the semester ends.
-            </dd>
-          </div>
-          <div>
-            <dt>what i built</dt>
-            <dd>
-              partner pages as a chunk composition (text, callout, CTA, accordion),
-              not custom chrome. Rivet components + Cascade WCMS. language markup
-              and touch targets treated as part of the build, not a late polish pass.
-              handoffs written so a non-developer can keep the page alive.
-            </dd>
-          </div>
-          <div>
-            <dt>outcome</dt>
-            <dd>
-              WCAG-accessible sites with no developer on call.
-              same instinct as a restaurant floor: the system either survives real
-              customers or it doesn&rsquo;t.
-            </dd>
-          </div>
-        </dl>
-        <p class="case-links">
-          <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · live</a>
-          <a href="how-i-work.html">how i work · depth</a>
-          <a href="i18n-wcag.html">accessibility note</a>
-        </p>
-      </article>
-    </section>
+      <ol class="project-list">
+        <li>
+          <article class="project-card project-card--lead rv" aria-labelledby="p-serveit">
+            <header class="project-head">
+              <h3 id="p-serveit" class="project-title">ServeIT</h3>
+              <p class="project-role">website team lead · IU nonprofit tech clinic</p>
+              <ul class="project-stack" aria-label="Stack">
+                <li>IU Rivet</li>
+                <li>Cascade WCMS</li>
+                <li>WCAG 2.2 AA</li>
+                <li>plain-english handoffs</li>
+              </ul>
+            </header>
+            <dl class="project-beats">
+              <div>
+                <dt>problem</dt>
+                <dd>
+                  partners need sites their staff can edit after we leave, and visitors
+                  who use assistive tech need pages that work ... not a demo that dies
+                  when the semester ends.
+                </dd>
+              </div>
+              <div>
+                <dt>what i built</dt>
+                <dd>
+                  partner pages as chunk composition (text, callout, CTA, accordion),
+                  not custom chrome. Rivet components + Cascade. language markup and
+                  touch targets part of the build. handoffs a non-developer can follow.
+                </dd>
+              </div>
+              <div>
+                <dt>outcome</dt>
+                <dd>
+                  WCAG-accessible sites with no developer on call.
+                  staff keep the page alive after the clinic leaves.
+                </dd>
+              </div>
+            </dl>
+            <p class="project-links">
+              <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">ServeIT · live</a>
+              <a href="how-i-work.html">how i work</a>
+              <a href="i18n-wcag.html">accessibility note</a>
+            </p>
+          </article>
+        </li>
 
-    <section id="also" class="stage-block rv" aria-labelledby="also-heading">
-      <p class="stage-kicker">also shipping</p>
-      <h2 id="also-heading" class="stage-title">smaller proof</h2>
-      <ul class="ship-list">
         <li>
-          <a class="ship" href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
-            <span class="ship-name">potstickers</span>
-            <span class="ship-line">family restaurant needed a real site; shipped myself instead of waiting.</span>
-            <span class="ship-out">live menu home · <span class="ship-meta">github.com/jadexzhao/pstickers24</span></span>
-          </a>
+          <article class="project-card rv" aria-labelledby="p-pstickers">
+            <header class="project-head">
+              <h3 id="p-pstickers" class="project-title">potstickers</h3>
+              <p class="project-role">builder · family restaurant site</p>
+              <ul class="project-stack" aria-label="Stack">
+                <li>Google Sites</li>
+                <li>live menu home</li>
+              </ul>
+            </header>
+            <dl class="project-beats">
+              <div>
+                <dt>problem</dt>
+                <dd>restaurant needed a real public site instead of waiting on someone else.</dd>
+              </div>
+              <div>
+                <dt>what i built</dt>
+                <dd>shipped the live menu home myself so the floor had a URL patrons could open.</dd>
+              </div>
+              <div>
+                <dt>outcome</dt>
+                <dd>live site up. source repo is private, so the public proof is the live page.</dd>
+              </div>
+            </dl>
+            <p class="project-links">
+              <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">live site</a>
+            </p>
+          </article>
         </li>
+
         <li>
-          <a class="ship" href="duck-farm/" target="_blank" rel="noopener noreferrer">
-            <span class="ship-name">Quackr</span>
-            <span class="ship-line">React + TypeScript sandbox I poke myself before claiming product polish.</span>
-            <span class="ship-out">live demo on this site</span>
-          </a>
+          <article class="project-card rv" aria-labelledby="p-quackr">
+            <header class="project-head">
+              <h3 id="p-quackr" class="project-title">Quackr</h3>
+              <p class="project-role">builder · React sandbox on this site</p>
+              <ul class="project-stack" aria-label="Stack">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Vite</li>
+              </ul>
+            </header>
+            <dl class="project-beats">
+              <div>
+                <dt>problem</dt>
+                <dd>needed a UI I can poke myself before claiming product polish.</dd>
+              </div>
+              <div>
+                <dt>what i built</dt>
+                <dd>React + TypeScript playground hosted under this Pages deploy.</dd>
+              </div>
+              <div>
+                <dt>outcome</dt>
+                <dd>live demo on this site. honest sandbox, not a launched product claim.</dd>
+              </div>
+            </dl>
+            <p class="project-links">
+              <a href="duck-farm/" target="_blank" rel="noopener noreferrer">live demo</a>
+              <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm" rel="noopener noreferrer">repo · duck-farm</a>
+            </p>
+          </article>
         </li>
-        <li>
-          <a class="ship" href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">
-            <span class="ship-name">FASE MAP</span>
-            <span class="ship-line">classroom / process site · supporting, not the hire spine.</span>
-            <span class="ship-out">matchaxmoxie · live</span>
-          </a>
-        </li>
-      </ul>
+      </ol>
     </section>
 
     <section id="about" class="stage-block rv" aria-labelledby="about-heading">
@@ -177,18 +220,21 @@
       </p>
       <p class="about-copy">
         TypeScript · React · Python · PostgreSQL · WCAG.
-        longer process memo lives on
+        classroom / FASE MAP lives on
+        <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a>
+        · process depth on
         <a href="how-i-work.html">how i work</a>.
       </p>
     </section>
 
     <section id="contact" class="stage-block rv" aria-labelledby="contact-heading">
-      <p class="stage-kicker">next</p>
-      <h2 id="contact-heading" class="stage-title">want the ServeIT writeup?</h2>
+      <p class="stage-kicker">contact</p>
+      <h2 id="contact-heading" class="stage-title">next</h2>
       <nav class="action-bar" aria-label="Contact">
         <a href="mailto:jlzhao@iu.edu?subject=ServeIT%20%2F%20SWE%20roles%20%2F%20May%202027">email · jlzhao@iu.edu</a>
         <a href="resume.pdf" rel="noopener noreferrer">resume</a>
         <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+        <a href="https://github.com/jadexzhao">GitHub</a>
       </nav>
     </section>
 
@@ -203,7 +249,7 @@
 
 <nav class="dock" aria-label="Quick contact">
   <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">resume</a>
-  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="#projects">projects</a>
   <a href="mailto:jlzhao@iu.edu?subject=SWE%20roles%20%2F%20May%202027">email</a>
 </nav>
 
@@ -253,13 +299,13 @@
     });
   }
 
-  var links = document.querySelectorAll(".rail-nav a");
+  var links = document.querySelectorAll('.rail-nav a[href^="#"]');
   if ("IntersectionObserver" in window && links.length) {
-    var sections = ["work", "also", "about", "contact"]
-      .map(function (id) {
-        return document.getElementById(id);
-      })
-      .filter(Boolean);
+    var map = {
+      top: document.getElementById("top"),
+      projects: document.getElementById("projects"),
+      contact: document.getElementById("contact"),
+    };
     var spy = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -274,8 +320,8 @@
       },
       { rootMargin: "-35% 0px -50% 0px", threshold: 0 }
     );
-    sections.forEach(function (s) {
-      spy.observe(s);
+    Object.keys(map).forEach(function (key) {
+      if (map[key]) spy.observe(map[key]);
     });
   }
 })();
