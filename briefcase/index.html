@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <!--
   jade zhao · gong wen bao / long zhan
-  shuang zhan：jadexzhao = long（gong zuo）；matchaxmoxie = feng huang（ke tang）。IG yong yuan @zhao.langxi（bu shi GitHub ju bing）
-  gong kai bian jie yi he dui；zhi bao liu gong kai zuo pin yu jing li
-  shou zhong：zhao pin you xian liu ben ye；xue sheng men lian dao feng huang jiao shi
-  pin pai：Jade the Goat zhi ding（hero-level）
+  shuang zhan：jadexzhao = long（gong zuo）；matchaxmoxie = feng huang（ke tang）
+  shou zhong：zhao pin you xian · shao wen · duo chuang · da CTA
 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Jade Zhao · Drawn to the unglamorous parts of systems. Informatics @ IU Luddy, May 2027. ELI5 it, learn it, ship it slow. Open to SWE in Southern California.">
-<title>Jade the Goat · Jade Zhao · Indiana University Luddy</title>
+<meta name="description" content="Jade Zhao · SWE · ServeIT accessible builds. Informatics @ IU Luddy, May 2027. Open to software engineering in Southern California.">
+<title>Jade Zhao · SWE · ServeIT · IU Luddy</title>
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -24,14 +22,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
-<meta property="og:title" content="Jade the Goat · Jade Zhao · Indiana University Luddy">
-<meta property="og:description" content="Drawn to the unglamorous parts of systems everyone else skips. ELI5 it. Learn it. Ship it slow. Informatics @ IU Luddy, May 2027. Open to SWE in Southern California.">
-<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta property="og:title" content="Jade Zhao · SWE · ServeIT · IU Luddy">
+<meta property="og:description" content="SWE · ServeIT accessible builds. Informatics @ IU Luddy, May 2027. Open to Southern California.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta property="og:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jade the Goat · Jade Zhao · Indiana University Luddy">
-<meta name="twitter:description" content="Drawn to the unglamorous parts of systems. ELI5 it. Learn it. Ship it slow. Open to SWE in Southern California.">
-<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260717">
+<meta name="twitter:title" content="Jade Zhao · SWE · ServeIT · IU Luddy">
+<meta name="twitter:description" content="SWE · ServeIT accessible builds. Open to Southern California.">
+<meta name="twitter:image" content="https://jadexzhao.github.io/jadexzhao/assets/hero-portrait.jpg?v=20260805">
 <meta name="twitter:image:alt" content="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window">
 <script type="application/ld+json">
 {
@@ -57,36 +55,115 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600&family=Noto+Serif+SC:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260804b">
+<link rel="stylesheet" href="site.css?v=20260805a">
 <style>
   :root {
     --hero-shade: linear-gradient(
       105deg,
-      rgba(42, 38, 34, 0.72) 0%,
-      rgba(42, 38, 34, 0.48) 42%,
-      rgba(42, 38, 34, 0.18) 68%,
-      rgba(42, 38, 34, 0.08) 100%
+      rgba(42, 38, 34, 0.78) 0%,
+      rgba(42, 38, 34, 0.5) 40%,
+      rgba(42, 38, 34, 0.16) 70%,
+      rgba(42, 38, 34, 0.06) 100%
     );
   }
 
-  /* ... hero: brand-first, one composition ... */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    z-index: 200;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+    pointer-events: none;
+  }
+
+  .dock {
+    position: fixed;
+    z-index: 90;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: rgba(16, 25, 21, 0.92);
+    border: 1px solid rgba(250, 246, 240, 0.18);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .dock a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--tap);
+    min-width: var(--tap);
+    padding: 0 14px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #faf6f0;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    touch-action: manipulation;
+    transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
+  }
+  .dock a:hover { background: rgba(250, 246, 240, 0.12); color: #fff; }
+  .dock a.dock-primary {
+    background: var(--accent-solid);
+    color: #fff;
+  }
+  .dock a.dock-primary:hover { background: #faf6f0; color: #004d33; }
+  .dock a:focus-visible {
+    outline: 3px solid #faf6f0;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 699px) {
+    .dock {
+      left: max(12px, env(safe-area-inset-left, 0px));
+      right: max(12px, env(safe-area-inset-right, 0px));
+      bottom: max(12px, env(safe-area-inset-bottom, 0px));
+      justify-content: stretch;
+    }
+    .dock a { flex: 1; }
+    body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  }
+  @media (min-width: 700px) {
+    .dock {
+      flex-direction: column;
+      right: max(16px, env(safe-area-inset-right, 0px));
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   .hero {
     position: relative;
-    min-height: min(92vh, 820px);
+    min-height: min(88vh, 760px);
     display: grid;
     align-items: end;
     color: #faf6f0;
     background-color: #3a322c;
-    /* Portrait 2263×2263; readability via layered gradient mesh + scrim ... no blur filter */
     background-image:
       radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
       radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
       var(--hero-shade),
-      url("assets/hero-portrait.jpg?v=20260717");
+      url("assets/hero-portrait.jpg?v=20260805");
     background-size: cover;
     background-position: 50% 22%;
     background-repeat: no-repeat;
     overflow: hidden;
+  }
+  @supports (background-image: image-set(url("x") type("image/webp"))) {
+    .hero {
+      background-image:
+        radial-gradient(52% 44% at 88% 10%, rgba(201, 162, 39, 0.2), transparent 72%),
+        radial-gradient(64% 52% at 6% 98%, rgba(0, 143, 90, 0.3), transparent 74%),
+        var(--hero-shade),
+        image-set(
+          url("assets/hero-portrait.webp?v=20260805") type("image/webp"),
+          url("assets/hero-portrait.jpg?v=20260805") type("image/jpeg")
+        );
+    }
   }
   .hero-inner {
     position: relative;
@@ -97,17 +174,17 @@
     padding:
       max(88px, calc(env(safe-area-inset-top, 0px) + 72px))
       max(24px, env(safe-area-inset-right, 0px))
-      max(40px, env(safe-area-inset-bottom, 0px))
+      max(36px, env(safe-area-inset-bottom, 0px))
       max(24px, env(safe-area-inset-left, 0px));
   }
   .brand {
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(2.9rem, 9vw, 5.4rem);
+    font-size: clamp(2.75rem, 9vw, 5rem);
     line-height: 0.98;
     letter-spacing: -0.03em;
     text-wrap: balance;
-    max-width: 14ch;
+    max-width: 12ch;
     text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   }
   .brand::after {
@@ -115,38 +192,26 @@
     display: block;
     width: 4.5rem;
     height: 4px;
-    margin-top: 18px;
+    margin-top: 16px;
     border-radius: 2px;
     background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
   }
   .who {
-    margin-top: 14px;
-    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    margin-top: 12px;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
     font-weight: 600;
-    letter-spacing: 0.02em;
   }
   .who .sc {
     font-family: var(--font-sc);
     font-weight: 500;
     color: #b8f0d4;
   }
-  .headline {
-    margin-top: 16px;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(1.35rem, 3.2vw, 1.85rem);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    max-width: 22ch;
-    text-wrap: balance;
-    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.3);
-  }
   .line {
-    margin-top: 12px;
-    font-size: clamp(1.05rem, 2.3vw, 1.2rem);
-    color: rgba(250, 246, 240, 0.9);
-    max-width: 36ch;
-    line-height: 1.45;
+    margin-top: 14px;
+    font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+    color: rgba(250, 246, 240, 0.92);
+    max-width: 28ch;
+    line-height: 1.35;
   }
   .cta {
     display: flex;
@@ -159,7 +224,7 @@
     align-items: center;
     justify-content: center;
     min-height: var(--tap);
-    padding: 12px 20px;
+    padding: 14px 22px;
     font-size: 1.0625rem;
     font-weight: 600;
     text-decoration: none;
@@ -174,39 +239,33 @@
     transition: background-color var(--transition-base), color var(--transition-base), transform var(--transition-base);
   }
   .cta-primary:hover { background: #faf6f0; color: #004d33; transform: translateY(-1px); }
-  .cta-primary:active { transform: translateY(1px); }
   .cta-ghost {
     background: rgba(42, 38, 34, 0.25);
     color: #faf6f0;
     border: 1px solid rgba(250, 246, 240, 0.55);
     border-radius: var(--radius-sm);
-    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+    transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
   }
   .cta-ghost:hover {
     background: rgba(250, 246, 240, 0.16);
-    color: #fff;
     border-color: #fff;
     transform: translateY(-1px);
   }
-  .cta-ghost:active { transform: translateY(1px); }
   .cta a:focus-visible {
     outline: 3px solid #faf6f0;
     outline-offset: 3px;
   }
 
-  /* ... body content ... */
   .page {
     position: relative;
     overflow: hidden;
-    background:
-      linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
+    background: linear-gradient(180deg, var(--gold-wash) 0%, var(--paper) 18%, var(--paper) 100%);
     padding:
-      36px
+      28px
       max(24px, env(safe-area-inset-right, 0px))
       max(48px, env(safe-area-inset-bottom, 0px))
       max(24px, env(safe-area-inset-left, 0px));
   }
-  /* faint 龙 watermark on the paper · pure texture */
   .page::before {
     content: "龙";
     content: "龙" / "";
@@ -229,170 +288,144 @@
     margin: 0 auto;
     width: 100%;
   }
-  .fork-panel {
-    margin-bottom: 8px;
-  }
-  .hire-path[hidden] {
-    display: none !important;
-  }
-  .hire-path {
-    margin-top: 28px;
-  }
-  .change-door {
-    margin: 0 0 20px;
-    font-size: 1rem;
-  }
+
+  .fork-panel { margin-bottom: 8px; padding: 22px 20px; }
+  .choose-lede { display: none; }
+  .door-what { font-size: 0.9375rem; }
+
+  .hire-path[hidden] { display: none !important; }
+  .hire-path { margin-top: 24px; }
+  .change-door { margin: 0 0 16px; font-size: 0.9375rem; }
   .change-door a {
     min-height: var(--tap);
     display: inline-flex;
     align-items: center;
   }
 
-  .block .lead-gap { margin-top: 12px; }
   .scan-list {
-    margin: 14px 0 0;
-    padding-left: 1.2rem;
+    margin: 16px 0 0;
+    padding-left: 1.15rem;
     font-size: 0.9375rem;
     color: var(--mute);
-    line-height: 1.55;
-    max-width: 68ch;
+    line-height: 1.45;
+    max-width: 58ch;
   }
   .scan-list li { margin-bottom: 8px; }
   .scan-list strong { color: var(--ink); font-weight: 600; }
-  .path-tip {
-    margin-top: 14px;
-    font-size: 0.875rem;
-    color: var(--mute);
-    line-height: 1.5;
-    max-width: 62ch;
-  }
-  .path-tip strong { color: var(--ink); font-weight: 600; }
 
-  .eli5 {
-    font-size: 0.9375rem;
-    padding: 16px 18px;
-    color: var(--ink);
-    line-height: 1.55;
-    max-width: 62ch;
-    background: var(--jade-glow);
-    border: 1px solid rgba(0, 77, 51, 0.15);
-    border-radius: var(--radius-md);
-    margin-bottom: 14px;
-  }
-
-  /* ... credo: three rules, not cards ... */
-  .credo {
-    margin: 0 0 28px;
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
     padding: 0;
     list-style: none;
-    max-width: 62ch;
-    display: grid;
-    gap: 14px;
   }
-  .credo li {
-    position: relative;
-    padding: 0 0 0 18px;
-    font-size: 0.9375rem;
-    color: var(--mute);
-    line-height: 1.55;
-  }
-  .credo li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.35em;
-    bottom: 0.35em;
-    width: 3px;
-    border-radius: 2px;
-    background: linear-gradient(180deg, var(--gold) 0%, var(--jade) 100%);
-  }
-  .credo strong {
-    display: block;
-    color: var(--ink);
-    font-weight: 600;
-    margin-bottom: 2px;
-    font-size: 1rem;
-  }
-  .credo-kicker {
-    margin: 0 0 12px;
+  .chips li {
     font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--jade-ink);
+    background: var(--jade-glow);
+    border: 1px solid rgba(0, 77, 51, 0.18);
+    border-radius: 999px;
+    padding: 8px 14px;
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .case-grid {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+  }
+  @media (min-width: 560px) {
+    .case-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .case-grid a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 120px;
+    padding: 18px 16px;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    touch-action: manipulation;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  }
+  .case-grid a:hover {
+    border-color: var(--jade-ink);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: var(--ink);
+  }
+  .case-grid a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .case-k {
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--jade-ink);
   }
-
-  .madrid-note {
-    margin: 1.35rem 0 0.25rem;
-    max-width: 40rem;
+  .case-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    line-height: 1.15;
   }
-  .madrid-note img {
-    width: 100%;
-    height: auto;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-sm);
-  }
-  .madrid-note figcaption {
-    margin-top: 0.55rem;
-    font-size: 0.9rem;
+  .case-line {
+    font-size: 0.875rem;
     color: var(--mute);
     line-height: 1.4;
   }
-  .madrid-note a { color: var(--jade-ink); font-weight: 600; }
-
-  /* ... interests strip ... */
-  .interest-strip {
-    margin: 12px 0 0;
-    padding: 0;
-    list-style: none;
-    max-width: 62ch;
-    display: grid;
-    gap: 10px;
-  }
-  @media (min-width: 560px) {
-    .interest-strip { grid-template-columns: repeat(3, 1fr); }
-  }
-  .interest-strip li {
-    font-size: 0.9375rem;
-    color: var(--mute);
-    line-height: 1.55;
-    padding: 14px 16px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-  }
-  .interest-strip strong {
-    display: block;
-    color: var(--ink);
+  .case-cta {
+    margin-top: auto;
+    font-size: 0.875rem;
     font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .pd-zh {
-    font-family: var(--font-sc);
-    font-weight: 500;
     color: var(--jade-ink);
   }
-  .block .pd-line {
-    margin-top: 10px;
+
+  .more-story {
+    margin-top: 18px;
+    max-width: 58ch;
+  }
+  .more-story summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--jade-ink);
+    min-height: var(--tap);
+    display: inline-flex;
+    align-items: center;
+    list-style: none;
+  }
+  .more-story summary::-webkit-details-marker { display: none; }
+  .more-story[open] summary { margin-bottom: 10px; }
+  .more-story p {
     font-size: 0.9375rem;
     color: var(--mute);
-    line-height: 1.55;
-    max-width: 62ch;
+    line-height: 1.5;
+    margin-top: 8px;
   }
 
   .twin {
-    font-size: 1rem;
+    font-size: 0.9375rem;
     color: var(--mute);
     margin: 28px 0 0;
-    letter-spacing: 0.01em;
-    line-height: 1.55;
-    max-width: 58ch;
+    line-height: 1.5;
+    max-width: 52ch;
   }
 
   @media (max-width: 639px) {
     .hero {
-      min-height: min(78vh, 640px);
+      min-height: min(78vh, 620px);
       background-position: 50% 18%;
     }
     .hero-inner {
@@ -402,80 +435,45 @@
         28px
         max(16px, env(safe-area-inset-left, 0px));
     }
-    .brand { max-width: none; font-size: clamp(2.45rem, 11vw, 3.4rem); }
-    .headline { max-width: none; }
+    .brand { max-width: none; font-size: clamp(2.4rem, 11vw, 3.2rem); }
     .line { max-width: none; }
     .cta { flex-direction: column; align-items: stretch; }
-    .cta a { width: 100%; }
+    .cta a { width: 100%; min-height: 3.25rem; font-size: 1.125rem; }
     .page {
       padding-left: max(16px, env(safe-area-inset-left, 0px));
       padding-right: max(16px, env(safe-area-inset-right, 0px));
     }
-    .fork-panel {
-      padding: 22px 18px 18px;
-    }
-    .action-bar {
-      flex-direction: column;
-    }
-    .action-bar a {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-
-  /* ... tablet: portrait room + side padding without phone squeeze ... */
-  @media (min-width: 640px) and (max-width: 899px) {
-    .hero {
-      min-height: min(82vh, 720px);
-      background-position: 48% 20%;
-    }
-    .hero-inner {
-      padding-left: max(32px, env(safe-area-inset-left, 0px));
-      padding-right: max(32px, env(safe-area-inset-right, 0px));
-      padding-bottom: 44px;
-    }
-    .page {
-      padding-left: max(28px, env(safe-area-inset-left, 0px));
-      padding-right: max(28px, env(safe-area-inset-right, 0px));
-    }
-    .wrap { max-width: 820px; }
-  }
-
-  @media (min-width: 900px) {
-    .hero {
-      background-position: 50% 20%;
-    }
-    .hero-inner {
-      padding-bottom: 56px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .wrap { max-width: 980px; }
-    body { font-size: 1.125rem; }
-    .hero { min-height: min(94vh, 900px); }
+    .doors { gap: 12px; }
+    .door { min-height: 96px; padding: 20px 18px; }
+    .action-bar { flex-direction: column; }
+    .action-bar a { width: 100%; justify-content: center; min-height: 3.25rem; }
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .fade { animation: up 0.5s ease both; }
-    .fade-d1 { animation-delay: 0.05s; }
+    .fade { animation: up 0.45s ease both; }
     @keyframes up {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: none; }
     }
   }
-
   @media (prefers-reduced-motion: reduce) {
     .cta-primary:hover,
-    .cta-ghost:hover {
-      transform: none;
-    }
+    .cta-ghost:hover,
+    .case-grid a:hover,
+    .dock a:hover { transform: none; }
+    .scroll-progress { display: none; }
   }
-
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">skip to main content</a>
+<div class="scroll-progress" id="scroll-progress" hidden></div>
+
+<nav class="dock" aria-label="Quick contact">
+  <a class="dock-primary" href="resume.pdf" rel="noopener noreferrer">Resume</a>
+  <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+  <a href="mailto:jlzhao@iu.edu?subject=Hello%20from%20your%20portfolio">Email</a>
+</nav>
 
 <div class="topbar">
   <nav class="site-nav site-nav--on-hero" aria-label="Briefcase">
@@ -490,15 +488,11 @@
 <header class="hero" aria-labelledby="brand-title">
   <span class="visually-hidden" role="img" aria-label="Jade Zhao smiling while holding a bouquet of pink and white lilies indoors by a window"></span>
   <div class="hero-inner fade">
-    <h1 class="brand" id="brand-title">Jade the Goat</h1>
-    <p class="who">jade zhao <span class="sc" lang="zh-Hans">赵</span> · <span class="sc" lang="zh-Hans">龙</span></p>
-    <p class="headline">ELI5 it. Learn it. Ship it slow.</p>
-    <p class="line">
-      Drawn to the unglamorous parts of systems everyone else skips.
-      Same instinct from a restaurant floor to handoffs that have to hold up.
-    </p>
+    <h1 class="brand" id="brand-title">Jade Zhao</h1>
+    <p class="who"><span class="sc" lang="zh-Hans">赵</span> · <span class="sc" lang="zh-Hans">龙</span> · SWE</p>
+    <p class="line">ServeIT accessible builds. Ship slow. Open to SoCal.</p>
     <p class="cta">
-      <a class="cta-primary" href="#path-fork">Choose your path</a>
+      <a class="cta-primary" href="#path-fork">Hire path</a>
       <a class="cta-ghost" href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
     </p>
   </div>
@@ -506,255 +500,129 @@
 
 <main id="main-content" class="page" tabindex="-1">
   <div class="wrap">
-    <section id="path-fork" class="fork-panel fade fade-d1" aria-labelledby="choose-heading">
+    <section id="path-fork" class="fork-panel fade" aria-labelledby="choose-heading">
       <h2 id="choose-heading" class="choose-one">Choose one</h2>
-      <p class="choose-lede">
-        One door. Then the info that matches you.
-        Same throughline either way: drawn to the unglamorous parts of systems.
-        Same three rules: ELI5 it, learn it, ship it slow.
-      </p>
+      <p class="choose-lede">Pick a door.</p>
       <nav class="doors" aria-label="Audience">
         <a class="door door--primary" id="door-hire" href="#recruiter-path" data-door="hire" aria-expanded="false" aria-controls="hire-path">
-          <span class="door-who">Here to hire or work with me</span>
-          <span class="door-what">Throughline, built work, SoCal SWE interest, how to reach me. Stay on this site (<span class="sc" lang="zh-Hans">龙</span> · dragon).</span>
+          <span class="door-who">Hire / work with me</span>
+          <span class="door-what"><span class="sc" lang="zh-Hans">龙</span> · SWE · ServeIT · contact</span>
         </a>
         <a class="door door--secondary" id="door-student" href="https://matchaxmoxie.github.io/matchaxmoxie/" data-door="student">
-          <span class="door-who">A student or high schooler</span>
-          <span class="door-what">IU path notes and a teaching archive on the phoenix site (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix).</span>
+          <span class="door-who">Student / HS</span>
+          <span class="door-what"><span class="sc" lang="zh-Hans">凤凰</span> · phoenix classroom</span>
         </a>
       </nav>
     </section>
 
     <div id="hire-path" class="hire-path" hidden>
-    <p class="change-door">
-      <a href="#path-fork" id="change-door-link">← Choose a different door</a>
-    </p>
-    <section id="recruiter-path" class="block rv" aria-labelledby="recruiter-tldr">
-      <h2 id="recruiter-tldr">Here to hire or work with me</h2>
-      <p class="credo-kicker">The throughline</p>
-      <p class="eli5">
-        I&rsquo;m drawn to the unglamorous parts of systems everyone else skips.
-        The handoff after the demo. The lease clause nobody reads until it matters.
-        The profile that has to feel real, not impressive. The student who needs an honest
-        answer instead of a polished one. One instinct, different rooms ... not five separate interests.
+      <p class="change-door">
+        <a href="#path-fork" id="change-door-link">← Different door</a>
       </p>
-      <p>
-        Grew up in a family Chinese restaurant ... a system either survives contact with a
-        real customer or it doesn&rsquo;t. Same instinct later: commercial lease work;
-        ServeIT builds partners can keep without a developer on call; personal products I
-        test on myself before anyone else&rsquo;s opinion.
-      </p>
-      <p class="credo-kicker">How I build</p>
-      <ol class="credo" aria-label="Builder credo">
-        <li>
-          <strong>If you can’t ELI5 your codebase, you’re not done yet.</strong>
-          Plain language beats gatekeeping. If a partner can’t follow the system, I rewrite until they can.
-        </li>
-        <li>
-          <strong>If you don’t understand it, learn it.</strong>
-          Curiosity over vibes. I don’t fake fluency ... I dig until the stack makes sense.
-        </li>
-        <li>
-          <strong>Slow progress is the best progress.</strong>
-          Craft and steady shipping, not hustle theater. Small commits that hold up beat flashy demos that don’t.
-        </li>
-      </ol>
-      <p>
-        Looking for <strong>software engineering roles</strong>: full-time after May 2027,
-        internships now. Open to Southern California. I ship in Python and TypeScript;
-        the scan list below is the short tour.
-      </p>
-      <nav class="action-bar" aria-label="Contact and résumé">
-        <a href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
-        <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-        <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU page</a>
-        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
-      </nav>
-      <ul class="scan-list">
-        <li><strong>School:</strong> Informatics @ IU Luddy · graduating May 2027 · software engineering track · open to SWE in Southern California</li>
-        <li><strong>Build:</strong> Website team lead at ServeIT, IU Luddy&rsquo;s nonprofit tech clinic: WCAG web builds, Python/PostgreSQL pipelines, and handoffs staff can maintain. (ServeAI is the clinic&rsquo;s public-interest AI group on the same roster.)</li>
-        <li><strong>Abroad:</strong> Spring 2026 · a semester at Complutense University in Madrid (IU study abroad)</li>
-        <li><strong>Also:</strong> Commercial lease work (precise, low-visibility); acting and campus creative / organizing on the side</li>
-        <li><strong>Tools I build with:</strong> Python, TypeScript, React, SQL, PostgreSQL, Node.js, and WCAG (accessibility standards for usable sites)</li>
-      </ul>
-      <p class="path-tip">
-        Tip: LinkedIn and the work links below are the quickest tour.
-        The teaching site is for students, not work samples.
-        Where I&rsquo;ve been, as a map:
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/footprint.html">matchaxmoxie · footprint</a>.
-      </p>
-      <figure class="madrid-note">
-        <img
-          src="assets/iu-study-abroad.jpg"
-          alt="IU Study Abroad orientation slide with program counts and national rankings for students sent abroad"
-          width="1200"
-          height="759"
-          loading="lazy"
-          decoding="async"
-        >
-        <figcaption>
-          Spring 2026 · Complutense, Madrid (IU Overseas Study).
-          Path notes on
-          <a href="https://matchaxmoxie.github.io/matchaxmoxie/junior.html">matchaxmoxie · junior</a>.
-        </figcaption>
-      </figure>
-      <p class="quick-row">
-        <a href="#prof-dev">专业发展 · where I&rsquo;m headed</a>
-        <a href="#engineering-work">Prototypes &amp; playgrounds</a>
-        <a href="#outside-work">Outside the laptop</a>
-        <a href="how-i-work.html">how i work</a>
-        <a href="https://serveit.luddy.indiana.edu/serve-ai/">ServeIT · ServeAI</a>
-      </p>
-    </section>
 
-    <section id="prof-dev" class="block rv" aria-labelledby="pd-heading">
-      <h2 id="pd-heading">
-        <span class="pd-zh" lang="zh-Hans">专业发展</span>
-        · where I&rsquo;m headed
-      </h2>
-      <p>
-        <span class="sc" lang="zh-Hans">福州</span> roots, bilingual when the room needs it.
-        Culture first ... not a claim about any research lab.
-      </p>
-      <p class="pd-line">
-        By May 2027 I want <strong>software engineering roles</strong> where the unglamorous
-        parts still get done: accessible products, clean handoffs, systems that survive
-        real users. Open to <strong>Southern California</strong>.
-        Until then: WCAG nonprofit builds at ServeIT and ServeAI, and MAP (mostly training,
-        Canvas, and emails).
-        Slow, explainable progress over flashy theater.
-      </p>
-      <p class="pd-line" lang="zh-Hans">
-        招聘方一眼能看懂：能把代码讲清楚，也会踏实学、稳稳交。
-      </p>
-    </section>
+      <section id="recruiter-path" class="block rv" aria-labelledby="recruiter-tldr">
+        <h2 id="recruiter-tldr">Hire path</h2>
+        <nav class="action-bar" aria-label="Contact and résumé">
+          <a href="resume.pdf" rel="noopener noreferrer">Resume (PDF)</a>
+          <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+          <a href="mailto:jlzhao@iu.edu?subject=Hello%20from%20your%20portfolio">jlzhao@iu.edu</a>
+        </nav>
+        <ul class="scan-list">
+          <li><strong>Role:</strong> Software engineering · full-time after May 2027 · internships now · SoCal open</li>
+          <li><strong>Now:</strong> ServeIT website team lead · WCAG nonprofit builds · Python / TypeScript</li>
+          <li><strong>School:</strong> Informatics @ IU Luddy · May 2027</li>
+          <li><strong>Abroad:</strong> Complutense, Madrid · Spring 2026</li>
+        </ul>
+        <ul class="chips" aria-label="Quick facts">
+          <li>ServeIT</li>
+          <li>MAP</li>
+          <li>Madrid Sp26</li>
+          <li lang="zh-Hans">福州</li>
+          <li>WCAG</li>
+        </ul>
+        <details class="more-story">
+          <summary>Read more · throughline</summary>
+          <p>
+            Drawn to the unglamorous parts of systems everyone else skips ...
+            handoffs, lease clauses, honest answers. Grew up in a family Chinese restaurant.
+            Same instinct later: ServeIT builds partners can keep, lease work, products I test on myself first.
+          </p>
+          <p>
+            Credo: ELI5 it. Learn it. Ship it slow.
+            Longer process memo:
+            <a href="how-i-work.html">how i work</a>.
+          </p>
+        </details>
+      </section>
 
-    <section id="engineering-work" class="block rv" aria-labelledby="eng-heading">
-      <h2 id="eng-heading">Prototypes &amp; playgrounds</h2>
-      <p class="eli5">
-        <strong>In plain English:</strong> when software needs to prove itself before production,
-        I build the working version: demo sandboxes, integration prototypes, Python automation,
-        and handoff docs. Same discipline on ServeIT partner builds.
-      </p>
-      <p class="pd-line">
-        <strong>Quackr (duck farm)</strong> on this site is a React portfolio sandbox ... a
-        playful UI I ship and test myself. It is not a launched dating product and not a claim
-        about a separate personal dating-app project.
-      </p>
-      <ul class="gtm-research" aria-label="Engineering references">
-        <li>
-          <a href="how-i-work.html#part-4" rel="noopener noreferrer">
-            <span>how i work · part 4</span>
-            <span class="what">demo sandboxes · integration prototypes · handoffs</span>
-          </a>
-        </li>
-        <li>
-          <a href="duck-farm/" rel="noopener noreferrer">
-            <span>Quackr · duck farm</span>
-            <span class="what">portfolio sandbox · React + TypeScript · not a launched app</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">
-            <span>ServeIT · ServeAI</span>
-            <span class="what">nonprofit web · public-interest AI</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+      <section id="proof" class="block rv" aria-labelledby="proof-heading">
+        <h2 id="proof-heading">Proof</h2>
+        <ul class="case-grid" aria-label="Work samples">
+          <li>
+            <a href="https://serveit.luddy.indiana.edu/serve-ai/">
+              <span class="case-k">ServeIT</span>
+              <span class="case-title">Nonprofit web</span>
+              <span class="case-line"><strong>Problem:</strong> partners need sites staff can keep.</span>
+              <span class="case-line"><strong>Approach:</strong> Rivet / Cascade · WCAG · handoffs.</span>
+              <span class="case-line"><strong>Outcome:</strong> maintainable builds, no developer on call.</span>
+              <span class="case-cta">Open ServeIT →</span>
+            </a>
+          </li>
+          <li>
+            <a href="duck-farm/" target="_blank" rel="noopener noreferrer">
+              <span class="case-k">Quackr</span>
+              <span class="case-title">React sandbox</span>
+              <span class="case-line"><strong>Problem:</strong> need a live UI I can ship and poke.</span>
+              <span class="case-line"><strong>Approach:</strong> React + TypeScript on this site.</span>
+              <span class="case-line"><strong>Outcome:</strong> portfolio playground ... not a launched app.</span>
+              <span class="case-cta">Open Quackr →</span>
+            </a>
+          </li>
+          <li>
+            <a href="how-i-work.html#part-4">
+              <span class="case-k">Process</span>
+              <span class="case-title">how i work</span>
+              <span class="case-line"><strong>Problem:</strong> demos die without handoffs.</span>
+              <span class="case-line"><strong>Approach:</strong> sandwich runbook · small commits.</span>
+              <span class="case-line"><strong>Outcome:</strong> ELI5 instructions that hold up.</span>
+              <span class="case-cta">Read memo →</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
+              <span class="case-k">Family</span>
+              <span class="case-title">Potstickers</span>
+              <span class="case-line"><strong>Problem:</strong> restaurant needs a real site.</span>
+              <span class="case-line"><strong>Approach:</strong> built and shipped it myself.</span>
+              <span class="case-line"><strong>Outcome:</strong> live menu home for New Palestine, IN.</span>
+              <span class="case-cta">Visit site →</span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-    <section id="outside-work" class="block rv" aria-labelledby="interests-heading">
-      <h2 id="interests-heading">Outside the laptop</h2>
-      <p>
-        When I&rsquo;m not shipping pages or sitting in a demo, this is the quieter side
-        of the week. Same person you meet on LinkedIn.
-      </p>
-      <ul class="interest-strip">
-        <li>
-          <strong>Gardening.</strong> Jade plants and small pots on the sill.
-          Slow care ... the same pace I want in a codebase.
-        </li>
-        <li>
-          <strong>Film photography.</strong> Slower frames than a phone roll.
-          Learn the exposure. Wait for the print.
-        </li>
-        <li>
-          <strong>Reading.</strong> Fiction and essays between classes.
-          Good for resetting after a long build day.
-        </li>
-      </ul>
-    </section>
-
-    <ul class="link-grid rv" aria-label="Work and projects">
-      <li>
-        <a href="https://sites.google.com/view/potstickers/home" rel="noopener noreferrer">
-          <span class="link-title">Potstickers (family restaurant)</span>
-          <span class="what">New Palestine, IN · site I built</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://serveit.luddy.indiana.edu/serve-ai/">
-          <span class="link-title">ServeIT · ServeAI</span>
-          <span class="what">student tech clinic · AI for good</span>
-        </a>
-      </li>
-      <li>
-        <a href="how-i-work.html">
-          <span class="link-title">how i work</span>
-          <span class="what">process memo · how I ship</span>
-        </a>
-      </li>
-      <li>
-        <a href="duck-farm/" target="_blank" rel="noopener noreferrer">
-          <span class="link-title">Quackr · duck farm</span>
-          <span class="what">portfolio sandbox · React playground · not launched</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/junior.html">
-          <span class="link-title">Madrid · Complutense</span>
-          <span class="what">semester abroad · Spring 2026</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/footprint.html">
-          <span class="link-title">footprint trail</span>
-          <span class="what">where I&rsquo;ve been · twin sites</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/">
-          <span class="link-title">matchaxmoxie</span>
-          <span class="what">Miss Zhao · <span class="sc" lang="zh-Hans">凤凰</span> · student side</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/jadexzhao">
-          <span class="link-title">GitHub</span>
-          <span class="what">@jadexzhao</span>
-        </a>
-      </li>
-    </ul>
+      <section id="contact-end" class="block rv" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Next step</h2>
+        <nav class="action-bar" aria-label="Final contact">
+          <a href="resume.pdf" rel="noopener noreferrer">Download resume</a>
+          <a href="mailto:jlzhao@iu.edu?subject=Hello%20from%20your%20portfolio">Email me</a>
+          <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
+          <a href="https://github.com/jadexzhao">GitHub</a>
+        </nav>
+      </section>
     </div>
 
     <p class="twin rv">
-      Two sites, same me (after you pick a door):
-      <span class="sc" lang="zh-Hans">龙</span> · dragon (this work site) and
-      <span class="sc" lang="zh-Hans">凤凰</span> · phoenix
-      (<a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>, Miss Zhao for students).
-      Same credo on both: ELI5 it · learn it · ship it slow.
-      Instagram: <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>.
+      <span class="sc" lang="zh-Hans">龙</span> · this work site ·
+      <span class="sc" lang="zh-Hans">凤凰</span> ·
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>
+      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
     </p>
 
     <footer class="site-footer rv">
-      Jade Zhao · <span class="sc" lang="zh-Hans">福州</span> roots · TypeScript · React · Python · PostgreSQL · WCAG
+      Jade Zhao · TypeScript · React · Python · PostgreSQL · WCAG
       · <a href="resume.pdf" rel="noopener noreferrer">resume</a>
-      · <a href="quick-adhoc.html">quick ad hoc</a>
-      · <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU page</a>
-      · <a href="https://www.linkedin.com/in/jadexzhao/">LinkedIn</a>
-      · <a href="https://github.com/jadexzhao">GitHub</a>
-      · archive: <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a> (<span class="sc" lang="zh-Hans">凤凰</span> · phoenix)
-      · IG <a href="https://instagram.com/zhao.langxi">@zhao.langxi</a>
+      · <a href="mailto:jlzhao@iu.edu?subject=Hello%20from%20your%20portfolio">email</a>
     </footer>
   </div>
 </main>
@@ -764,11 +632,11 @@
   var hirePath = document.getElementById("hire-path");
   var doorHire = document.getElementById("door-hire");
   var changeLink = document.getElementById("change-door-link");
+  var progress = document.getElementById("scroll-progress");
   var HIRE_HASHES = {
     "#recruiter-path": true,
-    "#prof-dev": true,
-    "#engineering-work": true,
-    "#outside-work": true,
+    "#proof": true,
+    "#contact-end": true,
   };
 
   function showHire(scrollToHash) {
@@ -778,9 +646,7 @@
       doorHire.setAttribute("aria-current", "true");
       doorHire.setAttribute("aria-expanded", "true");
     }
-    try {
-      sessionStorage.setItem("jadex-door", "hire");
-    } catch (_e) {}
+    try { sessionStorage.setItem("jadex-door", "hire"); } catch (_e) {}
     if (scrollToHash) {
       var target = document.querySelector(scrollToHash);
       if (target) {
@@ -801,19 +667,14 @@
       doorHire.removeAttribute("aria-current");
       doorHire.setAttribute("aria-expanded", "false");
     }
-    try {
-      sessionStorage.removeItem("jadex-door");
-    } catch (_e) {}
+    try { sessionStorage.removeItem("jadex-door"); } catch (_e) {}
   }
 
   if (doorHire) {
     doorHire.addEventListener("click", function (e) {
       e.preventDefault();
-      if (history.replaceState) {
-        history.replaceState(null, "", "#recruiter-path");
-      } else {
-        location.hash = "recruiter-path";
-      }
+      if (history.replaceState) history.replaceState(null, "", "#recruiter-path");
+      else location.hash = "recruiter-path";
       showHire("#recruiter-path");
     });
   }
@@ -821,25 +682,42 @@
   if (changeLink) {
     changeLink.addEventListener("click", function () {
       hideHire();
-      if (history.replaceState) {
-        history.replaceState(null, "", "#path-fork");
-      }
+      if (history.replaceState) history.replaceState(null, "", "#path-fork");
     });
   }
 
   var hash = location.hash || "";
   var saved = null;
-  try {
-    saved = sessionStorage.getItem("jadex-door");
-  } catch (_e) {}
+  try { saved = sessionStorage.getItem("jadex-door"); } catch (_e) {}
+  if (HIRE_HASHES[hash]) showHire(hash);
+  else if (saved === "hire" && hash !== "#path-fork") showHire(null);
 
-  if (HIRE_HASHES[hash]) {
-    showHire(hash);
-  } else if (saved === "hire" && hash !== "#path-fork") {
-    showHire(null);
+  if (
+    progress &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    progress.hidden = false;
+    var ticking = false;
+    function updateProgress() {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+      progress.style.width = pct + "%";
+      ticking = false;
+    }
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateProgress);
+        }
+      },
+      { passive: true }
+    );
+    updateProgress();
   }
 
-  /* ... scroll reveals · gated on IO support + motion preference ... */
   if (
     "IntersectionObserver" in window &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches
