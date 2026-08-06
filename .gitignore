@@ -6,6 +6,11 @@ dist/
 # Local workspace-only (separate git repos / agent rules)
 .cursor/
 pstickers24/
+lease-precision/
+local-digital/
+madrid-ai-ethics/
+serveit-accessibility/
+zhao-langxi/
 
 # Local drafts / planning (not public Pages)
 briefcase/github-planning-jade-zhao.xlsx
