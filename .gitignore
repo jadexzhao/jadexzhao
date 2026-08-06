@@ -6,3 +6,7 @@ dist/
 # Local workspace-only (separate git repos / agent rules)
 .cursor/
 pstickers24/
+
+# Local drafts / planning (not public Pages)
+briefcase/github-planning-jade-zhao.xlsx
+linkedin-featured-pdfs/
