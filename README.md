@@ -19,7 +19,8 @@ Drawn to the unglamorous parts of systems everyone else skips ... the handoff af
 | Serve IT | [Website Team Lead · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) · WCAG 2.1 · Python/PostgreSQL |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · live site |
 | FASE MAP | [MAP Coordinator & UTA · matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · 50+ students |
-| Quackr · duck farm | [portfolio sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
+| Quackr · duck farm | [social media sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
+| matchaxmoxie | [cookie classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · FASE MAP classroom UX |
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · hire path |
 
 ## two sites
