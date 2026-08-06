@@ -1,6 +1,7 @@
 # Composite GitHub Pages deploy for @jadexzhao
 # briefcase HTML at site root + Vite duck-farm at /jadexzhao/duck-farm/
 # Source in GitHub Settings: GitHub Actions (not branch/folder publish).
+# Retrigger: 2026-08-06 Pages outage recovery nudge
 name: Deploy GitHub Pages
 
 on:
