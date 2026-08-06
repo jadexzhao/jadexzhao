@@ -2,7 +2,7 @@
 
 A mint-green **portfolio sandbox** on the [jadexzhao briefcase](https://jadexzhao.github.io/jadexzhao/). Swipe to waddle, post quacks, pick an obsession, catch breadcrumbs.
 
-Honest framing: this is a React playground I ship and test myself. It is **not** a launched dating product, and it is not the same thing as any separate personal dating-app work.
+Honest framing: this is a React social media site I ship and test myself. It is **not** a launched product.
 
 **Live:** [jadexzhao.github.io/jadexzhao/duck-farm/](https://jadexzhao.github.io/jadexzhao/duck-farm/)  
 **Repo:** lives inside [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) under `duck-farm/`

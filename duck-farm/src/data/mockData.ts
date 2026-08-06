@@ -64,7 +64,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     matchScore: 88,
     obsession: 'Zero-merge-conflict code reviews by the lake',
     sharedInterests: ['TypeScript', 'CI pipelines'],
-    bucketList: 'Pair-program a duck dating feature',
+    bucketList: 'Pair-program a duck social feature',
   },
   {
     id: 'quinn',
@@ -117,7 +117,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     matchScore: 79,
     obsession: 'Konami-code easter eggs in production',
     sharedInterests: ['Chaos gremlin energy', 'Retro games'],
-    bucketList: 'Trigger 50 ducks on a first date',
+    bucketList: 'Trigger 50 ducks in one feed refresh',
   },
 ]
 
@@ -136,7 +136,7 @@ export const INITIAL_QUACKS: Quack[] = [
     id: 'q2',
     authorId: 'drake',
     content:
-      'Hot take: the best first date is a code review by the pond. No merge conflicts, only chemistry.',
+      'Hot take: the best hang is a code review by the pond. No merge conflicts, only chemistry.',
     timestamp: '4h',
     replies: 28,
     requacks: 89,
@@ -187,7 +187,7 @@ export const INITIAL_QUACKS: Quack[] = [
 export const TRENDING_TOPICS = [
   { tag: '#PondParty', posts: '2.4K quacks' },
   { tag: '#BreadOrBust', posts: '1.8K quacks' },
-  { tag: '#鸭年Dating', posts: '956 quacks' },
+  { tag: '#鸭年Social', posts: '956 quacks' },
   { tag: '#NestGoals', posts: '743 quacks' },
 ]
 

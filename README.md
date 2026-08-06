@@ -27,6 +27,6 @@ Drawn to the unglamorous parts of systems everyone else skips ... the handoff af
 
 | [@jadexzhao](https://github.com/jadexzhao) 龙 · dragon | [@matchaxmoxie](https://github.com/matchaxmoxie) 凤凰 · phoenix |
 |---|---|
-| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships · SWE hire path | [classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · Miss Zhao · FASE MAP · GWC |
+| [briefcase](https://jadexzhao.github.io/jadexzhao/) · ships · SWE hire path | [cookie classroom](https://matchaxmoxie.github.io/matchaxmoxie/) · matchaxmoxie · FASE MAP · GWC |
 
 Instagram is always [@zhao.langxi](https://instagram.com/zhao.langxi) (Zhao / 赵郎溪 · open daytime face). Never a GitHub handle for IG.
