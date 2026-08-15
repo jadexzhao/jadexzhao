@@ -12,7 +12,7 @@ Three Outlook-safe HTML emails for the UK register / IU gear matrix (business ca
 
 ## UK-facing portfolio note
 
-This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual stays slightly more indirect with light small talk before the ask. Professional leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear ... it stays in the set as a cultural-translation case: the format does not map onto UK conventions, and knowing that is part of the skill.
+This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual keeps direct headings/nav and only softer hedges in first-person captions / blurbs. Professional (IU Pages) leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear ... spelling may convert; tone stays campus. See `uk-register-iu-gear.mdc` per-site conversion matrix.
 
 ## Visual tokens (from the email HTML)
 
