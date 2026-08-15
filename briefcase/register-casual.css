@@ -1,31 +1,32 @@
 /**
  * Register: business casual · jadexzhao portfolio
- * Imports shared tokens, then maps casual paper + soft blue accent.
+ * Powder blue / garden · soft sky accent · bouquet-cream paper.
  */
 
 @import url("brand-tokens.css");
 
 :root {
-  --paper: #f4f1ea;
+  --paper: var(--bouquet-cream);
   --card: #ffffff;
-  --line: #e0d9cf;
-  --mist: #efeae2;
-  --accent: var(--blue);
-  --accent-ink: var(--blue-ink);
-  --accent-deep: #1f5a8a;
-  --gold: var(--blue);
-  --gold-hi: var(--blue-ink);
-  --gold-wash: #e8f1fa;
-  --jade: var(--blue);
-  --jade-ink: var(--blue-ink);
-  --jade-deep: var(--accent-deep);
-  --jade-glow: rgba(55, 138, 221, 0.14);
-  --accent-solid: var(--blue);
-  --accent-solid-hover: var(--blue-ink);
+  --line: #e2d8c8;
+  --mist: #eef2f4;
+  --accent: var(--sky-bright);
+  --accent-ink: var(--sky-ink);
+  --accent-deep: #245a82;
+  --gold: var(--sky-bright);
+  --gold-hi: var(--sky-ink);
+  --gold-wash: #e6eef4;
+  /* Links / chrome stay sky; captions use --garden-green directly */
+  --jade: var(--sky-bright);
+  --jade-ink: var(--sky-ink);
+  --jade-deep: #245a82;
+  --jade-glow: rgba(74, 144, 196, 0.14);
+  --accent-solid: var(--sky-bright);
+  --accent-solid-hover: var(--sky-ink);
   --focus: var(--ink);
-  --panel: rgba(244, 241, 234, 0.88);
-  --nav-veil: rgba(244, 241, 234, 0.94);
-  --watermark: rgba(55, 138, 221, 0.07);
+  --panel: rgba(246, 239, 227, 0.88);
+  --nav-veil: rgba(246, 239, 227, 0.94);
+  --watermark: rgba(74, 144, 196, 0.08);
   --mute: #555555;
   --ink: #222222;
   /* Casual email stack stays approachable; Fraunces OK for display italics */
@@ -39,37 +40,37 @@
   --space-section: 2.75rem;
   --transition-base: 0.22s ease;
   --shadow-sm:
-    0 1px 2px rgba(42, 38, 34, 0.05),
-    0 2px 8px rgba(42, 38, 34, 0.06);
+    0 1px 2px rgba(74, 144, 196, 0.08),
+    0 2px 8px rgba(74, 144, 196, 0.1);
   --shadow-md:
-    0 2px 4px rgba(42, 38, 34, 0.05),
-    0 6px 16px rgba(42, 38, 34, 0.07),
-    0 14px 32px rgba(42, 38, 34, 0.08);
+    0 2px 4px rgba(74, 144, 196, 0.08),
+    0 6px 16px rgba(74, 144, 196, 0.12),
+    0 14px 32px rgba(74, 144, 196, 0.14);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --ink: #ece7dd;
     --mute: #b9b0a3;
-    --paper: #101915;
-    --card: #18241e;
-    --gold: #5aa3e0;
-    --gold-hi: #7eb8e8;
-    --gold-wash: #15211b;
-    --jade: #5aa3e0;
-    --jade-ink: #7eb8e8;
-    --jade-deep: #9ec9ef;
-    --jade-glow: rgba(47, 189, 133, 0.13);
-    --accent: #5aa3e0;
-    --accent-ink: #7eb8e8;
-    --accent-solid: #378add;
-    --accent-solid-hover: #2a6fad;
-    --line: #2b3a32;
+    --paper: #12181c;
+    --card: #1a2228;
+    --gold: #6aa8d4;
+    --gold-hi: #8bb8d9;
+    --gold-wash: #152028;
+    --jade: #6aa8d4;
+    --jade-ink: #8bb8d9;
+    --jade-deep: #a8cce4;
+    --jade-glow: rgba(74, 144, 196, 0.16);
+    --accent: #6aa8d4;
+    --accent-ink: #8bb8d9;
+    --accent-solid: #4a90c4;
+    --accent-solid-hover: #6aa8d4;
+    --line: #2a353c;
     --focus: #ece7dd;
-    --mist: #1d2c24;
-    --panel: rgba(24, 36, 30, 0.88);
-    --nav-veil: rgba(16, 25, 21, 0.92);
-    --watermark: rgba(99, 214, 168, 0.06);
+    --mist: #1c262c;
+    --panel: rgba(26, 34, 40, 0.88);
+    --nav-veil: rgba(18, 24, 28, 0.92);
+    --watermark: rgba(74, 144, 196, 0.1);
     --shadow-sm:
       0 1px 2px rgba(0, 0, 0, 0.3),
       0 2px 8px rgba(0, 0, 0, 0.28);

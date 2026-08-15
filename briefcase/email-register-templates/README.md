@@ -18,7 +18,7 @@ This portfolio uses UK spelling and letter conventions where it matters (colour,
 
 | Register | Page / card | Type | Accent |
 |---|---|---|---|
-| Business casual | Outer `#f4f1ea`, white card, ~8px radius | Arial / Helvetica | Blue `#378ADD` (JZ chip) |
+| Business casual | Outer `#f6efe3`, white card, powder-blue border, ~8px radius | Arial / Helvetica | Sky `#4a90c4` (JZ chip); garden-green caption `#4a6b3d` |
 | Professional | White, border `#dddddd` | Georgia / Times New Roman | Navy `#0c447c` (“Correspondence”) |
 | IU gear | Outer `#f5efef`, white card | Bold Arial | Crimson `#990000` |
 

@@ -5,39 +5,48 @@
  * Other sites: vendor a copy, or link via jsDelivr:
  *   https://cdn.jsdelivr.net/gh/jadexzhao/jadexzhao@main/briefcase/brand-tokens.css
  *
- * Decorative palette from the register-translation paste (matcha / cream / clay).
- * --ink / --mute are AA-safe body/muted text on cream, white, and pink-cream papers.
+ * Powder blue / garden palette for business-casual portfolio.
+ * --ink / --mute are AA-safe body/muted text on bouquet-cream paper.
+ * --sky-bright is soft chrome / large CTAs; --sky-ink is AA body links on cream.
  * Register sheets override paper / accent / type only.
  */
 
 :root {
-  /* Shared decorative palette (paste) */
+  /* Powder blue / garden (dress · bouquet · sky) */
+  --dress-powder-blue: #c3d4de;
+  --bouquet-cream: #f6efe3;
+  --bouquet-peach: #e7a97a;
+  --garden-green: #4a6b3d;
+  --sky-bright: #4a90c4;
+  --stone-warm: #c9b89a;
+  /* Sky as body/link ink needs AA; decorative --sky-bright stays soft */
+  --sky-ink: #2f6f9c;
+
+  /* Legacy aliases (paste / cross-site) */
   --matcha-deep: #3f5b3f;
   --matcha-mid: #6f8f6a;
   --matcha-pale: #eef1e6;
-  --cream: #faf8f2;
+  --cream: var(--bouquet-cream);
   --clay: #b3714f;
-  /* Clay as body/link ink needs AA; decorative --clay stays as paste */
   --clay-ink: #8a563c;
 
   /* Register accents (locked map) */
   --navy: #0c447c;
   --crimson: #990000;
   --crimson-deep: #6d0000;
-  --blue: #378ADD;
-  /* Soft blue fails AA as body link on cream; use for solid fills / large chrome */
-  --blue-ink: #2a6fad;
+  --blue: var(--sky-bright);
+  --blue-ink: var(--sky-ink);
 
   /* AA-safe text on cream / white / pink-cream */
   --ink: #23291f;
   --mute: #4a5248;
 
-  /* Type + shape (paste) */
+  /* Type + shape */
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Source Sans 3", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-sc: "Noto Serif SC", "Songti SC", "SimSun", serif;
   --radius: 10px;
-  --rule: rgba(63, 91, 63, 0.18);
+  --rule: rgba(74, 107, 61, 0.18);
 
   /* Shared a11y chrome */
   --focus-ring: var(--crimson);
