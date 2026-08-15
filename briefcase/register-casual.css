@@ -39,13 +39,8 @@
   --tap: 3rem;
   --space-section: 2.75rem;
   --transition-base: 0.22s ease;
-  --shadow-sm:
-    0 1px 2px rgba(74, 144, 196, 0.08),
-    0 2px 8px rgba(74, 144, 196, 0.1);
-  --shadow-md:
-    0 2px 4px rgba(74, 144, 196, 0.08),
-    0 6px 16px rgba(74, 144, 196, 0.12),
-    0 14px 32px rgba(74, 144, 196, 0.14);
+  --shadow-sm: none;
+  --shadow-md: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -71,12 +66,7 @@
     --panel: rgba(26, 34, 40, 0.88);
     --nav-veil: rgba(18, 24, 28, 0.92);
     --watermark: rgba(74, 144, 196, 0.1);
-    --shadow-sm:
-      0 1px 2px rgba(0, 0, 0, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.28);
-    --shadow-md:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 6px 16px rgba(0, 0, 0, 0.32),
-      0 14px 32px rgba(0, 0, 0, 0.34);
+    --shadow-sm: none;
+    --shadow-md: none;
   }
 }

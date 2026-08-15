@@ -116,7 +116,7 @@ a:focus-visible {
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid transparent;
   touch-action: manipulation;
 }
 
@@ -169,9 +169,11 @@ a:focus-visible {
   font-size: 0.875rem;
   color: var(--mute);
   border-top: 1px solid var(--line);
-  padding-top: 18px;
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
   max-width: 62ch;
-  margin-top: 40px;
+  margin-top: 2.5rem;
+  text-align: left;
 }
 
 .site-footer .sc {
@@ -246,7 +248,7 @@ a:focus-visible {
   min-height: 120px;
   padding: 24px 22px 22px;
   border: 1px solid var(--line);
-  border-left-width: 5px;
+  border-left-width: 2px;
   border-radius: var(--radius-md);
   background: var(--card);
   color: var(--ink);
@@ -318,10 +320,10 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0 24px;
-  padding: 18px 20px;
-  background: var(--jade-glow);
-  border: 1px solid rgba(74, 144, 196, 0.22);
-  border-radius: var(--radius-md);
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .action-bar a {
@@ -784,7 +786,7 @@ body.interior {
   padding: 16px 18px;
   background: var(--jade-glow);
   border: 1px solid rgba(74, 144, 196, 0.18);
-  border-left: 4px solid var(--jade-ink);
+  border-left: 2px solid var(--jade-ink);
   border-radius: var(--radius-md);
 }
 
@@ -875,7 +877,7 @@ body.interior {
 }
 
 .sandwich-sandbox {
-  border-left: 4px solid var(--jade);
+  border-left: 2px solid var(--jade);
   background: var(--jade-glow);
 }
 
@@ -900,7 +902,7 @@ body.interior {
   padding: 14px 14px 16px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--jade);
+  border-left: 2px solid var(--jade);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   transition:
@@ -1019,7 +1021,7 @@ body.interior {
   padding: 14px 16px;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--jade-ink);
+  border-left: 2px solid var(--jade-ink);
   border-radius: var(--radius-md);
   text-decoration: none;
   color: var(--ink);
@@ -1185,7 +1187,7 @@ ul.insight li {
   max-width: 62ch;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--jade);
+  border-left: 2px solid var(--jade);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -1421,11 +1423,11 @@ html {
 .sheet h2::after {
   content: "";
   display: block;
-  width: 2.5rem;
-  height: 3px;
+  width: 1.75rem;
+  height: 1px;
   margin-top: 10px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+  border-radius: 0;
+  background: var(--line);
 }
 
 .page-404 h1::after {
@@ -1649,10 +1651,7 @@ html {
 }
 
 .site {
-  background:
-    radial-gradient(48% 36% at 8% 0%, rgba(74, 144, 196, 0.1), transparent 70%),
-    radial-gradient(42% 30% at 96% 8%, rgba(231, 169, 122, 0.12), transparent 72%),
-    var(--paper);
+  background: var(--paper);
 }
 
 .site .shell {
@@ -1679,11 +1678,8 @@ html {
   margin-bottom: 1.25rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--dress-powder-blue);
-  box-shadow:
-    0 0 0 1px rgba(74, 144, 196, 0.12),
-    0 4px 14px rgba(74, 144, 196, 0.22),
-    0 10px 28px rgba(74, 144, 196, 0.12);
+  border: 1px solid var(--dress-powder-blue);
+  box-shadow: none;
 }
 
 .site .rail-photo img {
@@ -1716,11 +1712,11 @@ html {
 .site .rail-name::after {
   content: "";
   display: block;
-  width: 3rem;
-  height: 3px;
+  width: 1.75rem;
+  height: 1px;
   margin-top: 14px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+  border-radius: 0;
+  background: var(--line);
 }
 
 .site .rail-role {
@@ -1853,11 +1849,11 @@ html {
 .site .stage-title::after {
   content: "";
   display: block;
-  width: 2.5rem;
-  height: 3px;
+  width: 1.75rem;
+  height: 1px;
   margin-top: 12px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--jade) 100%);
+  border-radius: 0;
+  background: var(--line);
 }
 
 .site .stage-lede {
@@ -1891,7 +1887,7 @@ html {
   height: 100%;
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--line);
+  border-left: 2px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   padding: 18px 18px 16px;
@@ -1995,7 +1991,7 @@ html {
 .site .case {
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--jade);
+  border-left: 2px solid var(--jade);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   padding: 22px 22px 20px;
@@ -2377,10 +2373,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   .site {
-    background:
-      radial-gradient(48% 36% at 8% 0%, rgba(74, 144, 196, 0.14), transparent 70%),
-      radial-gradient(42% 30% at 96% 8%, rgba(231, 169, 122, 0.1), transparent 72%),
-      var(--paper);
+    background: var(--paper);
   }
 
   .site .rail-photo {
