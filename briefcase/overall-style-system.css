@@ -1,0 +1,167 @@
+/* ================================================================
+   OVERALL STYLE SYSTEM — starter & reference
+   Four sites, one person, four registers.
+   Each site imports this base, then its own token
+   file (already built separately) sits on top.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. SHARED BASE — the same on every site, so nothing feels broken
+      when someone clicks between them
+   ---------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a:focus-visible, button:focus-visible, .btn:focus-visible {
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-style: solid;
+  /* outline-color set per-site below, keyed to that site's accent */
+}
+
+.wrap { margin: 0 auto; padding-inline: 24px; }
+
+/* shared spacing scale — reuse these vars in every site file
+   instead of one-off pixel values */
+:root {
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
+}
+
+/* ----------------------------------------------------------------
+   2. THE FOUR REGISTERS — token summary
+      (full stylesheets for each already live as separate files:
+      iu-pages-starter.css, jadexzhao-starter.css,
+      matchaxmoxie-starter.css, zhao-langxi-starter.css.
+      This is the map of how they relate to each other.)
+   ---------------------------------------------------------------- */
+
+/* --- IU Pages — jlzhao.pages.iu.edu — business professional ---
+   job: recruiter's first door. resume / narrative hub.
+   feel: restrained. upright serif. small type scale. near-neutral.
+   corners: 4px (sharp)   accent: used once, never decorative
+------------------------------------------------------------------- */
+.theme-iu-pages {
+  --primary:      #5a7482;  /* slate */
+  --primary-deep: #3d5561;
+  --secondary:    #8a9a7a;  /* dulled sage */
+  --bg:           #fafaf8;
+  --ink:          #2b2f2c;
+  --font-display: 'Source Serif 4', serif;
+  --font-body:    'Inter', sans-serif;
+  --radius:       4px;
+}
+
+/* --- jadexzhao — technical proof, shipped builds ---
+   job: business casual. credible, but more "you" than the CV site.
+   feel: warm matcha green. italic Fraunces. card-based.
+   corners: 10px            accent: clay, used sparingly
+------------------------------------------------------------------- */
+.theme-jadexzhao {
+  --primary:      #3f5b3f;  /* matcha deep */
+  --primary-deep: #2c412c;
+  --secondary:    #6f8f6a;  /* matcha mid */
+  --accent:       #b3714f;  /* clay */
+  --bg:           #faf8f2;  /* cream */
+  --ink:          #23291f;
+  --font-display: 'Fraunces', serif;   /* italic weights used */
+  --font-body:    'Inter', sans-serif;
+  --radius:       10px;
+}
+
+/* --- matchaxmoxie — FASE MAP process + cookie classroom ---
+   job: campus-facing, community, not a resume.
+   feel: playful. ocean blue + warm sun accent. photo-forward.
+   corners: 20px (roundest of the four)   accent: joy-warm, used often
+------------------------------------------------------------------- */
+.theme-matchaxmoxie {
+  --primary:      #3f7fa3;  /* ocean */
+  --primary-deep: #1e4a63;
+  --secondary:    #d9ecf4;  /* sky pale */
+  --accent:       #d9906a;  /* joy warm */
+  --bg:           #fffaf2;  /* cream */
+  --ink:          #23292e;
+  --font-display: 'Fraunces', serif;   /* bold weights, no italic */
+  --font-body:    'Nunito Sans', sans-serif;
+  --radius:       20px;
+}
+
+/* --- zhao-langxi — research + personal essay / BTS ---
+   job: reads as IU-institutional, not brand. deliberately the
+   odd one out — built on Rivet / Cascade / WCMS conventions.
+   feel: near-square corners, crimson used sparingly, Georgia/Arial.
+   DO NOT give this site a custom palette like the other three —
+   that's the whole point of it staying visually IU-adjacent.
+------------------------------------------------------------------- */
+.theme-zhao-langxi {
+  --primary:      #990000;  /* IU crimson — sparing use only */
+  --ink:          #1a1a1a;
+  --ink-soft:     #5c5c5c;
+  --bg:           #ffffff;
+  --panel:        #f4f4f4;
+  --rule:         #cfcfcf;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body:    Arial, Helvetica, sans-serif;
+  --radius:       2px;
+}
+
+/* ----------------------------------------------------------------
+   3. CROSS-SITE FOOTER LINK — the one shared component
+      every site should carry, so people can find the other three.
+      Style it with each theme's own tokens, structure stays same.
+   ---------------------------------------------------------------- */
+
+.site-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  padding-top: var(--space-2);
+}
+
+.site-switcher a { text-decoration: none; }
+.site-switcher a:hover { text-decoration: underline; }
+
+.site-switcher .current {
+  font-weight: 700;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ----------------------------------------------------------------
+   4. QUICK-START — how to wire a page up
+   ----------------------------------------------------------------
+   1. link this file first, then the one site-specific starter
+      (e.g. jadexzhao-starter.css) right after it.
+   2. add the matching theme-* class to <body> so cross-site
+      components (like .site-switcher) know which tokens to use.
+   3. keep all four sites' footers carrying a .site-switcher block
+      linking to the other three, so nobody dead-ends on one site.
+   ------------------------------------------------------------- */
+
+
+/* HARD RULE (all doors): navbars are solid opaque site paper.
+   Never backdrop-filter blur / glass / see-through sticky headers. */
