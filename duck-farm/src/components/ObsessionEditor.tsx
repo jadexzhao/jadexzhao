@@ -58,7 +58,9 @@ export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEdito
         <h2 id="obsession-title" className="obsession-picker__title">
           Set your current obsession
         </h2>
-        <p className="obsession-picker__hint">What's capturing your pond energy right now?</p>
+        <p className="obsession-picker__hint">
+          The line that follows you on every card. Keep it honest enough that you would keep this nest.
+        </p>
 
         <label htmlFor="obsession-input" className="visually-hidden">
           Current obsession

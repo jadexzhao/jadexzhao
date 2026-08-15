@@ -298,9 +298,9 @@ function DiscoverCard({
         <span className="discover-card__mood">
           {badge.emoji} {badge.label}
         </span>
-        {profile.matchScore !== undefined && (
-          <span className="discover-card__score">{profile.matchScore}%</span>
-        )}
+        <span className="discover-card__score" title="Sample duck in a sandbox deck">
+          sample
+        </span>
       </div>
       <div className="discover-card__body">
         <h2 className="discover-card__name">
@@ -477,6 +477,10 @@ export default function App() {
     if (typeof window === 'undefined') return false
     return localStorage.getItem(ONBOARD_KEY) !== '1'
   })
+  const [nestGate, setNestGate] = useLocalStorage<'pending' | 'kept' | 'shaping'>(
+    'quack-nest-gate',
+    'pending',
+  )
 
   useEffect(() => {
     const userOnly = quacks.filter((q) => q.authorId === CURRENT_USER.id && !q.pending)
@@ -486,7 +490,7 @@ export default function App() {
   const filteredProfiles = useMemo(() => {
     const list = [...DUCK_PROFILES]
       .filter((p) => !passed.has(p.id))
-      .sort((a, b) => (b.matchScore ?? 0) - (a.matchScore ?? 0))
+      .sort((a, b) => (a.demoOrder ?? 99) - (b.demoOrder ?? 99))
     if (moodFilter === 'all') return list
     return list.filter((p) => p.mood === moodFilter)
   }, [moodFilter, passed])
@@ -526,6 +530,12 @@ export default function App() {
   const tryDiscover = useCallback(() => {
     dismissOnboard()
     handleNavChange('explore')
+  }, [dismissOnboard])
+
+  const tryNest = useCallback(() => {
+    dismissOnboard()
+    handleNavChange('profile')
+    setObsessionOpen(true)
   }, [dismissOnboard])
 
   const handleFlirt = (id: string) => {
@@ -689,15 +699,14 @@ export default function App() {
         </aside>
 
         <main id="main-feed" className="quack-main" tabIndex={-1}>
-          <header className="quack-main__header">
-            <div className="quack-main__brand">
-              <p className="quack-main__brand-name">Quackr</p>
-              <p className="quack-main__brand-kicker">
-                duck farm · <span lang="zh-Hans">鸭年</span> · portfolio sandbox
-              </p>
-            </div>
-            <div className="quack-main__title-row">
-              <h1>{NAV_LABELS[activeNav]}</h1>
+          <header className="quack-hero">
+            <div className="quack-hero__top">
+              <div className="quack-hero__brand-block">
+                <p className="quack-hero__brand">Quackr</p>
+                <p className="quack-hero__kicker">
+                  duck farm · <span lang="zh-Hans">鸭年</span> · portfolio sandbox
+                </p>
+              </div>
               <button
                 type="button"
                 className="quack-main__theme"
@@ -707,16 +716,46 @@ export default function App() {
                 {theme === 'light' ? '🌙' : '☀️'}
               </button>
             </div>
-            <p className="quack-main__tagline">
-              Swipe, quack, waddle ... a React sandbox I ship and test myself, not a launched app.
+            <p className="quack-hero__lede">
+              Self-tested React sandbox. Fake ducks, real swipe feel ... not a launched app.
             </p>
+            <div className="quack-hero__ctas">
+              <RippleButton
+                variant="primary"
+                className="quack-btn quack-btn--primary quack-hero__cta"
+                onClick={tryDiscover}
+              >
+                Start Discover
+              </RippleButton>
+              <RippleButton className="quack-hero__cta quack-hero__cta--ghost" onClick={tryNest}>
+                Edit your nest
+              </RippleButton>
+            </div>
+            <div className="quack-hero__section-row">
+              <h1 className="quack-hero__section">{NAV_LABELS[activeNav]}</h1>
+              <span className="quack-hero__deck-note" aria-hidden={activeNav === 'profile'}>
+                {activeNav === 'explore'
+                  ? 'swipe to decide'
+                  : activeNav === 'matches'
+                    ? 'saved waddles'
+                    : activeNav === 'profile'
+                      ? '1st-person gate'
+                      : 'sample feed'}
+              </span>
+            </div>
           </header>
 
           {showOnboard && (
-            <OnboardingHint onDismiss={dismissOnboard} onTryDiscover={tryDiscover} />
+            <OnboardingHint
+              onDismiss={dismissOnboard}
+              onTryDiscover={tryDiscover}
+              onEditNest={tryNest}
+            />
           )}
 
-          <ObsessionBanner obsession={obsession} onEdit={() => setObsessionOpen(true)} />
+          {activeNav !== 'profile' && (
+            <ObsessionBanner obsession={obsession} onEdit={() => setObsessionOpen(true)} />
+          )}
 
           {(activeNav === 'explore') && (
             <FilterPills
@@ -852,22 +891,67 @@ export default function App() {
             )}
 
             {activeNav === 'profile' && (
-              <article className="slide-card profile-slide card-tilt">
-                <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" bounce tilt />
-                <ProfileMeta profile={{ ...CURRENT_USER, obsession }} />
-                <h2 className="visually-hidden">Your profile</h2>
-                <p className="profile-slide__obsession">
-                  <span aria-hidden="true">✨ </span>
-                  {withCjkLang(obsession)}
-                </p>
-                <p className="profile-slide__bio">{withCjkLang(CURRENT_USER.bio)}</p>
-                <p className="profile-slide__pond">{withCjkLang(CURRENT_USER.pond)}</p>
-                <div className="profile-slide__stats">
+              <article className="slide-card nest-gate card-tilt">
+                <p className="nest-gate__eyebrow">How your nest reads</p>
+                <div className="nest-gate__preview">
+                  <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" bounce tilt />
+                  <ProfileMeta profile={{ ...CURRENT_USER, obsession }} />
+                  <p className="nest-gate__obsession">
+                    <span aria-hidden="true">✨ </span>
+                    {withCjkLang(obsession)}
+                  </p>
+                  <p className="nest-gate__bio">{withCjkLang(CURRENT_USER.bio)}</p>
+                  <p className="nest-gate__pond">{withCjkLang(CURRENT_USER.pond)}</p>
+                </div>
+
+                <div className="nest-gate__ask" role="group" aria-labelledby="nest-gate-q">
+                  <h2 id="nest-gate-q" className="nest-gate__question">
+                    1st-person gate
+                  </h2>
+                  <p className="nest-gate__prompt">
+                    Would you keep this nest on a real dating app ... or delete the rest after seeing it?
+                  </p>
+                  <div className="nest-gate__choices">
+                    <RippleButton
+                      variant="primary"
+                      className={`quack-btn quack-btn--primary nest-gate__choice${nestGate === 'kept' ? ' is-selected' : ''}`}
+                      aria-pressed={nestGate === 'kept'}
+                      onClick={() => {
+                        setNestGate('kept')
+                        showToast('Nest marked kept ... for your eyes only.')
+                      }}
+                    >
+                      Yes, this nest feels true
+                    </RippleButton>
+                    <RippleButton
+                      className={`nest-gate__choice nest-gate__choice--ghost${nestGate === 'shaping' ? ' is-selected' : ''}`}
+                      aria-pressed={nestGate === 'shaping'}
+                      onClick={() => {
+                        setNestGate('shaping')
+                        setObsessionOpen(true)
+                      }}
+                    >
+                      Still shaping it
+                    </RippleButton>
+                  </div>
+                  {nestGate === 'kept' && (
+                    <p className="nest-gate__status" role="status">
+                      Saved locally. Self-tested only ... no users, no launch claim.
+                    </p>
+                  )}
+                  {nestGate === 'shaping' && (
+                    <p className="nest-gate__status" role="status">
+                      Honest answer. Tweak the obsession until it feels like you.
+                    </p>
+                  )}
+                </div>
+
+                <div className="nest-gate__meta">
                   <div>
                     <strong>
                       <AnimatedCounter value={matches.size} />
                     </strong>
-                    <span>Matches</span>
+                    <span>Sandbox waddles</span>
                   </div>
                   <div>
                     <strong>
@@ -875,9 +959,10 @@ export default function App() {
                         value={quacks.filter((q) => q.authorId === CURRENT_USER.id).length}
                       />
                     </strong>
-                    <span>Quacks</span>
+                    <span>Your quacks</span>
                   </div>
                 </div>
+
                 <RippleButton
                   variant="primary"
                   className="quack-btn quack-btn--primary profile-slide__edit"
@@ -906,7 +991,7 @@ export default function App() {
           </Suspense>
 
           <section className="sidebar-panel sidebar-panel--accent" aria-labelledby="trending-heading">
-            <h2 id="trending-heading">Trending on the pond</h2>
+            <h2 id="trending-heading">Sample pond tags</h2>
             <ul className="trend-list">
               {TRENDING_TOPICS.map((topic) => (
                 <li key={topic.tag}>
@@ -920,18 +1005,18 @@ export default function App() {
           </section>
 
           <section className="sidebar-panel" aria-labelledby="features-heading">
-            <h2 id="features-heading">Why Quackr?</h2>
+            <h2 id="features-heading">What this proves</h2>
             <ul className="feature-list">
-              <li>🦆 Swipe ducks ... pass, waddle, or super quack</li>
-              <li>💬 Post quacks on the feed</li>
-              <li>✨ Pick an obsession that follows you</li>
-              <li>🍞 Catch crumbs mini-game (sidebar)</li>
+              <li>🦆 Swipe craft on a fake deck (pass, waddle, super)</li>
+              <li>✨ Nest gate ... would you keep this profile?</li>
+              <li>💬 Compose a quack that stays in localStorage</li>
+              <li>🍞 Breadcrumb mini-game in the sidebar</li>
             </ul>
           </section>
 
           <footer className="quack-sidebar__footer">
             <p>
-              <strong>Jade Zhao</strong> · social media sandbox · not a launched app
+              <strong>Jade Zhao</strong> · portfolio sandbox · self-tested only
             </p>
             <p>
               <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>

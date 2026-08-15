@@ -20,14 +20,14 @@ interface Particle {
   rotation: number
 }
 
-const CONFETTI_COLORS = ['#4a9d7a', '#f97316', '#6366f1', '#f0c84a', '#d97828', '#5cb896']
+const CONFETTI_COLORS = ['#3f5b3f', '#6f8f6a', '#b3714f', '#f0c84a', '#8a563c', '#a8c49a']
 
 function createParticles(count: number): Particle[] {
   return Array.from({ length: count }, (_, i) => ({
     id: i,
     x: 50 + (Math.random() - 0.5) * 20,
     y: 40 + (Math.random() - 0.5) * 10,
-    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length] ?? '#4a9d7a',
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length] ?? '#3f5b3f',
     size: 6 + Math.random() * 8,
     vx: (Math.random() - 0.5) * 8,
     vy: -4 - Math.random() * 6,
@@ -45,7 +45,7 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
     if (!profile || !dialog) return
 
     if (!dialog.open) dialog.showModal()
-    if (!reduced) setParticles(createParticles(superQuack ? 48 : 28))
+    if (!reduced) setParticles(createParticles(superQuack ? 40 : 24))
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -118,8 +118,8 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
           {superQuack ? 'Super Quack!' : "It's a waddle!"}
         </h2>
         <p className="match-modal__subtitle">
-          You and <strong>{profile.displayName}</strong> are synced on the pond
-          {superQuack && ' ... legendary chemistry!'}
+          You and <strong>{profile.displayName}</strong> synced in this sandbox deck
+          {superQuack ? ' ... legendary demo chemistry.' : '.'} Not a real match.
         </p>
 
         <button type="button" className="quack-btn quack-btn--primary match-modal__close" onClick={onClose}>

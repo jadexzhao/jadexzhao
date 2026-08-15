@@ -9,7 +9,8 @@ export interface DuckProfile {
   mood: DuckMood
   emoji: string
   verified?: boolean
-  matchScore?: number
+  /** Sandbox ordering only ... not a real match algorithm */
+  demoOrder?: number
   obsession?: string
   sharedInterests?: string[]
   bucketList?: string
@@ -48,7 +49,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     pond: 'North Pond',
     mood: 'single',
     emoji: '🌅',
-    matchScore: 94,
+    demoOrder: 1,
     obsession: 'Sunrise paddles & artisan bread crumbs',
     sharedInterests: ['Morning rituals', 'Pond photography'],
     bucketList: 'Fly south with someone who packs snacks',
@@ -61,7 +62,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     pond: 'Dev Lake',
     mood: 'matched',
     emoji: '💻',
-    matchScore: 88,
+    demoOrder: 3,
     obsession: 'Zero-merge-conflict code reviews by the lake',
     sharedInterests: ['TypeScript', 'CI pipelines'],
     bucketList: 'Pair-program a duck social feature',
@@ -74,7 +75,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     pond: 'Reeds Bar',
     mood: 'single',
     emoji: '🍋',
-    matchScore: 91,
+    demoOrder: 2,
     obsession: 'Cucumber-mint pond cocktails (zero commitment issues)',
     sharedInterests: ['Mixology', 'Reed-bar aesthetics'],
     bucketList: 'Host a quacktail pop-up at sunset',
@@ -83,12 +84,12 @@ export const DUCK_PROFILES: DuckProfile[] = [
     id: 'pearl',
     handle: 'pearl_paddler',
     displayName: 'Pearl Paddler',
-    bio: 'WCAG advocate. If your nest isn’t accessible, we’re not nesting.',
+    bio: 'WCAG advocate. If your nest is not accessible, we are not nesting.',
     pond: 'Inclusive Bay',
     mood: 'wading',
     emoji: '♿',
     verified: true,
-    matchScore: 96,
+    demoOrder: 0,
     obsession: '4.5:1 contrast in love letters AND landing pages',
     sharedInterests: ['WCAG', 'Inclusive design'],
     bucketList: 'Audit every nest on the pond',
@@ -101,7 +102,7 @@ export const DUCK_PROFILES: DuckProfile[] = [
     pond: 'Gold Coast',
     mood: 'single',
     emoji: '✨',
-    matchScore: 85,
+    demoOrder: 4,
     obsession: 'Collecting pebbles that look like 福州',
     sharedInterests: ['Geography puns', 'Mandarin wordplay'],
     bucketList: 'Find a nest-mate who gets the joke',
@@ -114,23 +115,24 @@ export const DUCK_PROFILES: DuckProfile[] = [
     pond: 'Stampede Creek',
     mood: 'matched',
     emoji: '🎮',
-    matchScore: 79,
+    demoOrder: 5,
     obsession: 'Konami-code easter eggs in production',
     sharedInterests: ['Chaos gremlin energy', 'Retro games'],
-    bucketList: 'Trigger 50 ducks in one feed refresh',
+    bucketList: 'Trigger fifty ducks in one feed refresh',
   },
 ]
 
+/** Sample feed only ... small counts so it reads as a sandbox deck, not viral metrics. */
 export const INITIAL_QUACKS: Quack[] = [
   {
     id: 'q1',
     authorId: 'mallory',
     content:
-      'Just watched the sunrise from the east reeds. If you’re not a morning duck, at least be a morning-text duck.',
+      'Just watched the sunrise from the east reeds. If you are not a morning duck, at least be a morning-text duck.',
     timestamp: '2h',
-    replies: 12,
-    requacks: 34,
-    hearts: 128,
+    replies: 2,
+    requacks: 4,
+    hearts: 11,
   },
   {
     id: 'q2',
@@ -138,9 +140,9 @@ export const INITIAL_QUACKS: Quack[] = [
     content:
       'Hot take: the best hang is a code review by the pond. No merge conflicts, only chemistry.',
     timestamp: '4h',
-    replies: 28,
-    requacks: 89,
-    hearts: 412,
+    replies: 3,
+    requacks: 6,
+    hearts: 14,
   },
   {
     id: 'q3',
@@ -148,19 +150,19 @@ export const INITIAL_QUACKS: Quack[] = [
     content:
       'New quacktail drop: cucumber splash, hint of mint, zero commitment issues. DM for the recipe.',
     timestamp: '5h',
-    replies: 19,
-    requacks: 56,
-    hearts: 203,
+    replies: 1,
+    requacks: 3,
+    hearts: 9,
   },
   {
     id: 'q4',
     authorId: 'pearl',
     content:
-      'Reminder: contrast ratio matters in love letters too. If I can’t read your intentions at 4.5:1, swipe left.',
+      'Reminder: contrast ratio matters in love letters too. If I cannot read your intentions at 4.5:1, swipe left.',
     timestamp: '8h',
-    replies: 41,
-    requacks: 112,
-    hearts: 567,
+    replies: 5,
+    requacks: 8,
+    hearts: 17,
   },
   {
     id: 'q5',
@@ -168,27 +170,27 @@ export const INITIAL_QUACKS: Quack[] = [
     content:
       'Found a pebble that looks exactly like 福州. Keeping it. Also keeping an eye out for someone who appreciates geography.',
     timestamp: '11h',
-    replies: 8,
-    requacks: 22,
-    hearts: 94,
+    replies: 1,
+    requacks: 2,
+    hearts: 7,
   },
   {
     id: 'q6',
     authorId: 'waddles',
     content:
-      '50 ducks just appeared on my screen and honestly? Same energy I want in a relationship.',
+      'Fifty ducks just appeared on my screen and honestly? Same energy I want in a relationship.',
     timestamp: '1d',
-    replies: 67,
-    requacks: 201,
-    hearts: 891,
+    replies: 4,
+    requacks: 9,
+    hearts: 19,
   },
 ]
 
 export const TRENDING_TOPICS = [
-  { tag: '#PondParty', posts: '2.4K quacks' },
-  { tag: '#BreadOrBust', posts: '1.8K quacks' },
-  { tag: '#鸭年Social', posts: '956 quacks' },
-  { tag: '#NestGoals', posts: '743 quacks' },
+  { tag: '#PondParty', posts: 'sandbox tag' },
+  { tag: '#BreadOrBust', posts: 'sandbox tag' },
+  { tag: '#鸭年Social', posts: 'sandbox tag' },
+  { tag: '#NestGoals', posts: 'sandbox tag' },
 ]
 
 export function getProfile(id: string): DuckProfile | undefined {

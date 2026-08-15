@@ -25,6 +25,7 @@ export function SwipeableCard({
   const cardRef = useRef<HTMLDivElement>(null)
   const startRef = useRef<{ x: number; y: number } | null>(null)
   const draggingRef = useRef(false)
+  const offsetRef = useRef({ x: 0, y: 0 })
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   const [dragging, setDragging] = useState(false)
   const [exitDir, setExitDir] = useState<SwipeDirection>(null)
@@ -33,13 +34,16 @@ export function SwipeableCard({
 
   useEffect(() => {
     setOffset({ x: 0, y: 0 })
+    offsetRef.current = { x: 0, y: 0 }
     setExitDir(null)
   }, [cardKey])
 
   const reset = () => {
     setOffset({ x: 0, y: 0 })
+    offsetRef.current = { x: 0, y: 0 }
     setDragging(false)
     setExitDir(null)
+    startRef.current = null
   }
 
   const handleStart = (clientX: number, clientY: number) => {
@@ -52,7 +56,9 @@ export function SwipeableCard({
     if (!startRef.current || reduced || exitDir) return
     const dx = clientX - startRef.current.x
     const dy = clientY - startRef.current.y
-    setOffset({ x: dx, y: Math.min(0, dy) })
+    const next = { x: dx, y: Math.min(0, dy) }
+    offsetRef.current = next
+    setOffset(next)
   }
 
   const handleEnd = () => {
@@ -61,7 +67,7 @@ export function SwipeableCard({
       return
     }
 
-    const { x, y } = offset
+    const { x, y } = offsetRef.current
 
     if (y < -UP_THRESHOLD && onSwipeUp) {
       setExitDir('up')
@@ -103,7 +109,10 @@ export function SwipeableCard({
     }
     const onTouchMove = (e: TouchEvent) => {
       const t = e.touches[0]
-      if (t) handleMove(t.clientX, t.clientY)
+      if (t) {
+        e.preventDefault()
+        handleMove(t.clientX, t.clientY)
+      }
     }
     const onTouchEnd = () => handleEnd()
 
@@ -114,7 +123,7 @@ export function SwipeableCard({
     const onMouseUp = () => handleEnd()
 
     el.addEventListener('touchstart', onTouchStart, { passive: true })
-    el.addEventListener('touchmove', onTouchMove, { passive: true })
+    el.addEventListener('touchmove', onTouchMove, { passive: false })
     el.addEventListener('touchend', onTouchEnd)
     el.addEventListener('mousedown', onMouseDown)
     window.addEventListener('mousemove', onMouseMove)
@@ -128,7 +137,8 @@ export function SwipeableCard({
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseup', onMouseUp)
     }
-  }, [cardKey])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- rebind on card change only
+  }, [cardKey, reduced, exitDir])
 
   const rotation = reduced ? 0 : offset.x * 0.06
   const opacity = exitDir ? 0 : 1
@@ -139,33 +149,64 @@ export function SwipeableCard({
   if (exitDir === 'right') transform = 'translateX(120%) rotate(18deg)'
   if (exitDir === 'up') transform = 'translateY(-130%) scale(1.1)'
 
-  const swipeHint =
-    offset.x > 40 ? 'right' : offset.x < -40 ? 'left' : offset.y < -40 ? 'up' : null
+  const passStrength = Math.min(1, Math.max(0, -offset.x / SWIPE_THRESHOLD))
+  const waddleStrength = Math.min(1, Math.max(0, offset.x / SWIPE_THRESHOLD))
+  const superStrength = Math.min(1, Math.max(0, -offset.y / UP_THRESHOLD))
+
+  const stamp =
+    exitDir === 'left' || (!exitDir && passStrength > 0.35)
+      ? 'pass'
+      : exitDir === 'right' || (!exitDir && waddleStrength > 0.35)
+        ? 'waddle'
+        : exitDir === 'up' || (!exitDir && superStrength > 0.35)
+          ? 'super'
+          : null
+
+  const stampOpacity = stamp
+    ? exitDir
+      ? 1
+      : stamp === 'pass'
+        ? passStrength
+        : stamp === 'waddle'
+          ? waddleStrength
+          : superStrength
+    : 0
 
   return (
     <div className="swipeable-wrap">
       {!reduced && (
         <div className="swipe-hints" aria-hidden="true">
-          <span className={`swipe-hint swipe-hint--pass${swipeHint === 'left' ? ' is-active' : ''}`}>
+          <span className={`swipe-hint swipe-hint--pass${stamp === 'pass' ? ' is-active' : ''}`}>
             Pass ←
           </span>
-          <span className={`swipe-hint swipe-hint--super${swipeHint === 'up' ? ' is-active' : ''}`}>
+          <span className={`swipe-hint swipe-hint--super${stamp === 'super' ? ' is-active' : ''}`}>
             Super ↑
           </span>
-          <span className={`swipe-hint swipe-hint--waddle${swipeHint === 'right' ? ' is-active' : ''}`}>
+          <span className={`swipe-hint swipe-hint--waddle${stamp === 'waddle' ? ' is-active' : ''}`}>
             Waddle →
           </span>
         </div>
       )}
       <div
         ref={cardRef}
-        className={`swipeable-card${dragging ? ' is-dragging' : ''}`}
+        className={`swipeable-card${dragging ? ' is-dragging' : ''}${stamp ? ` is-stamp-${stamp}` : ''}`}
         style={{
           transform,
           opacity,
-          transition: dragging ? 'none' : 'transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.28s ease',
+          transition: dragging
+            ? 'none'
+            : 'transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.28s ease',
         }}
       >
+        {stamp && (
+          <div
+            className={`swipe-stamp swipe-stamp--${stamp}`}
+            style={{ opacity: stampOpacity }}
+            aria-hidden="true"
+          >
+            {stamp === 'pass' ? 'PASS' : stamp === 'waddle' ? 'WADDLE' : 'SUPER'}
+          </div>
+        )}
         {children}
       </div>
     </div>
