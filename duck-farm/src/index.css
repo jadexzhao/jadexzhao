@@ -1,9 +1,11 @@
-/* Quackr base ... portfolio social media sandbox */
+/* Quackr base ... briefcase matcha casual tokens */
+
+@import url("./register-casual.css");
 
 :root {
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
-  --font-sc: "Noto Serif SC", serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: Inter, "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sc: "Noto Serif SC", "Songti SC", "SimSun", serif;
 }
 
 *,
@@ -16,6 +18,8 @@
 
 body {
   font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -31,14 +35,14 @@ body {
   position: absolute;
   left: 1rem;
   top: -100%;
-  background: #0f1419;
-  color: #fff;
+  background: var(--ink);
+  color: var(--paper);
   padding: 0.6rem 1rem;
   z-index: 200;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
-  min-height: 44px;
+  min-height: var(--tap);
   display: inline-flex;
   align-items: center;
 }
@@ -46,7 +50,7 @@ body {
 .skip-link:focus,
 .skip-link:focus-visible {
   top: 0;
-  outline: 3px solid #1a5c42;
+  outline: 3px solid var(--jade-ink);
   outline-offset: 2px;
 }
 
@@ -62,7 +66,7 @@ body {
   border: 0;
 }
 
-[lang|='zh'] {
+[lang|="zh"] {
   font-family: var(--font-sc), var(--font-body);
 }
 
@@ -70,8 +74,8 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 a:focus-visible {
-  outline: 2px solid #1a5c42;
-  outline-offset: 2px;
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
 .slide-action--static {

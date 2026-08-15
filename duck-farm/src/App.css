@@ -1,66 +1,74 @@
-/* Quackr ... Interactive deck · Figma-inspired social sandbox */
+/* Quackr ... briefcase matcha casual (brand-tokens + register-casual) */
 
 .quack-app {
-  --qa-bg: #f0f9f4;
-  --qa-bg-warm: #fff8f0;
-  --qa-bg-secondary: #ffffff;
-  --qa-border: #e2ebe6;
-  --qa-text: #1a2e24;
-  --qa-text-muted: #5c7268;
-  /* Decorative mint for soft fills/borders; ink tokens hit WCAG AA 4.5:1 */
-  --qa-accent: #4a9d7a;
-  --qa-accent-hover: #3e8566;
-  --qa-accent-dark: #1a5c42;
-  --qa-accent-ink: #1a5c42;
-  --qa-accent-fill: #1a5c42;
-  --qa-accent-fill-hover: #144a35;
-  --qa-like: #f97316;
-  --qa-requack: #4a9d7a;
-  --qa-reply: #6366f1;
-  --qa-panel: #ffffff;
-  --qa-hover: rgba(74, 157, 122, 0.08);
-  --qa-shadow: 0 4px 24px rgba(26, 92, 66, 0.08);
-  --qa-shadow-lg: 0 8px 32px rgba(26, 92, 66, 0.12);
-  --qa-radius: 20px;
-  --qa-radius-lg: 28px;
+  /* Mirror briefcase tokens into app-local aliases */
+  --qa-bg: var(--paper);
+  --qa-bg-warm: var(--gold-wash);
+  --qa-bg-secondary: var(--card);
+  --qa-border: var(--line);
+  --qa-text: var(--ink);
+  --qa-text-muted: var(--mute);
+  --qa-accent: var(--matcha-mid);
+  --qa-accent-hover: var(--matcha-deep);
+  --qa-accent-dark: var(--matcha-deep);
+  --qa-accent-ink: var(--jade-ink);
+  /* Solid CTAs ... matcha-deep on white (briefcase accent-solid) */
+  --qa-accent-fill: var(--accent-solid);
+  --qa-accent-fill-hover: var(--accent-solid-hover);
+  --qa-like: var(--clay);
+  --qa-requack: var(--matcha-mid);
+  --qa-reply: var(--blue-ink);
+  --qa-panel: var(--card);
+  --qa-hover: var(--jade-glow);
+  --qa-shadow: var(--shadow-sm);
+  --qa-shadow-lg: var(--shadow-md);
+  --qa-radius: var(--radius-md);
+  --qa-radius-lg: 16px;
   --qa-nav-width: 260px;
   --qa-sidebar-width: 320px;
   --qa-main-width: 520px;
-  --duck-body: #f0c84a;
-  --duck-wing: #e4b53a;
-  --duck-beak: #d97828;
-  --duck-eye: #1a2e24;
+  --duck-body: #e8c56a;
+  --duck-wing: #d4b055;
+  --duck-beak: var(--clay);
+  --duck-eye: var(--ink);
 
   min-height: 100vh;
   min-height: 100dvh;
   background:
-    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(74, 157, 122, 0.18) 0%, transparent 55%),
-    linear-gradient(160deg, var(--qa-bg) 0%, #e8f5ee 40%, var(--qa-bg-warm) 75%, #fef3e8 100%);
+    radial-gradient(ellipse 120% 70% at 50% -18%, var(--jade-glow) 0%, transparent 55%),
+    linear-gradient(165deg, var(--paper) 0%, var(--mist) 48%, var(--gold-wash) 100%);
   color: var(--qa-text);
 }
 
 .quack-app--dark {
-  --qa-bg: #0f1a16;
-  --qa-bg-warm: #1a1410;
-  --qa-bg-secondary: #1a2822;
-  --qa-border: #2a3d34;
-  --qa-text: #e8f0ec;
-  --qa-text-muted: #8aa396;
-  --qa-accent: #5cb896;
-  --qa-accent-hover: #6ecda8;
-  --qa-accent-dark: #8ad4b4;
-  --qa-accent-ink: #8ad4b4;
-  --qa-accent-fill: #1a5c42;
-  --qa-accent-fill-hover: #227a56;
-  --qa-panel: #1a2822;
-  --qa-hover: rgba(92, 184, 150, 0.1);
-  --qa-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
-  --qa-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --duck-eye: #e8f0ec;
+  --paper: #121814;
+  --card: #1a221c;
+  --ink: #ece7dd;
+  --mute: #b9b0a3;
+  --line: #2a3530;
+  --mist: #1c2620;
+  --panel: #1a221c;
+  --nav-veil: #121814;
+  --jade: #8fad7e;
+  --jade-ink: #a8c49a;
+  --jade-deep: #c5d8b8;
+  --accent: #8fad7e;
+  --accent-ink: #a8c49a;
+  --accent-solid: #6f8f6a;
+  --accent-solid-hover: #8fad7e;
+  --matcha-deep: #8fad7e;
+  --matcha-mid: #6f8f6a;
+  --matcha-pale: #1c2620;
+  --gold-wash: #1a1814;
+  --jade-glow: rgba(143, 173, 126, 0.14);
+  --focus: #ece7dd;
+  --qa-like: #d4a078;
+  --qa-reply: #7eb0e0;
+  --duck-eye: #ece7dd;
 
   background:
-    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(92, 184, 150, 0.12) 0%, transparent 50%),
-    linear-gradient(160deg, var(--qa-bg) 0%, #141c18 55%, #201810 100%);
+    radial-gradient(ellipse 100% 55% at 50% 0%, var(--jade-glow) 0%, transparent 50%),
+    linear-gradient(165deg, var(--paper) 0%, #141c18 55%, #1a1814 100%);
 }
 
 .quack-shell {
@@ -85,7 +93,12 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  background: var(--qa-panel);
+  /* Solid paper ... no glass (briefcase topbar--paper) */
+  background: var(--nav-veil, var(--paper));
+  background-color: var(--nav-veil, var(--paper));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  opacity: 1;
   border-radius: var(--qa-radius-lg);
   box-shadow: var(--qa-shadow);
   border: 1px solid var(--qa-border);
@@ -105,9 +118,11 @@
 
 .quack-nav__logo {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--matcha-deep);
 }
 
 .quack-nav__badge {
@@ -115,7 +130,7 @@
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 9999px;
-  background: var(--qa-like);
+  background: var(--clay);
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -226,7 +241,36 @@
 }
 
 .quack-main__header {
-  padding: 4px 4px 0;
+  padding: 8px 4px 12px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--qa-border);
+  background: transparent;
+}
+
+.quack-main__brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.quack-main__brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--matcha-deep);
+}
+
+.quack-main__brand-kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--matcha-mid);
 }
 
 .quack-main__title-row {
@@ -238,10 +282,11 @@
 
 .quack-main__header h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.625rem, 4vw, 1.875rem);
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.125rem, 3vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
 .quack-main__theme {
@@ -672,8 +717,15 @@
 }
 
 .ripple-btn--primary {
-  background: var(--qa-accent);
-  color: #fff;
+  background: var(--accent-solid);
+  color: var(--on-accent, #fff);
+  border: 1px solid var(--accent-solid);
+}
+
+.ripple-btn--primary:hover:not(:disabled) {
+  background: var(--accent-solid-hover);
+  border-color: var(--accent-solid-hover);
+  color: var(--on-accent, #fff);
 }
 
 .ripple-btn--ghost {
@@ -832,12 +884,12 @@
   align-items: center;
   justify-content: center;
   min-height: 140px;
-  background: linear-gradient(135deg, var(--qa-bg) 0%, #d4ede0 100%);
+  background: linear-gradient(135deg, var(--mist) 0%, var(--matcha-pale) 100%);
   padding: 24px;
 }
 
 .quack-app--dark .discover-card__hero {
-  background: linear-gradient(135deg, #1a2822 0%, #2d4a3a 100%);
+  background: linear-gradient(135deg, var(--card) 0%, #243028 100%);
 }
 
 .discover-card__mood {
@@ -931,13 +983,15 @@
 }
 
 .discover-btn--wave {
-  background: #e8e0f0;
-  color: #5b4d7a;
+  background: var(--card);
+  color: var(--jade-ink);
+  border: 1px solid var(--line);
 }
 
 .quack-app--dark .discover-btn--wave {
-  background: #2a2438;
-  color: #c4b8e0;
+  background: var(--card);
+  color: var(--jade-ink);
+  border-color: var(--line);
 }
 
 .discover-btn--connect {
@@ -1200,21 +1254,24 @@
 }
 
 .quack-sidebar__footer {
-  font-size: 0.75rem;
-  color: var(--qa-text-muted);
+  font-size: 0.875rem;
+  color: var(--mute);
   line-height: 1.5;
-  padding: 0 8px;
+  padding: 1rem 8px 0.25rem;
+  border-top: 1px solid var(--line);
+  margin-top: 0.5rem;
 }
 
 .quack-sidebar__footer a {
-  color: var(--qa-accent-ink);
+  color: var(--jade-ink);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
   font-weight: 600;
 }
 
 .quack-sidebar__footer a:hover {
-  text-decoration: underline;
+  color: var(--ink);
 }
 
 /* Duck avatar */
@@ -1286,15 +1343,18 @@
 }
 
 .quack-btn--primary {
-  background: var(--qa-accent-fill);
-  color: #fff;
+  background: var(--accent-solid);
+  color: var(--on-accent, #fff);
+  border: 1px solid var(--accent-solid);
 }
 
 .quack-btn--primary:hover:not(:disabled) {
-  background: var(--qa-accent-fill-hover);
+  background: var(--accent-solid-hover);
+  border-color: var(--accent-solid-hover);
+  color: var(--on-accent, #fff);
 }
 
-/* Mobile nav */
+/* Mobile nav ... solid paper, no glass */
 .quack-mobile-nav {
   display: none;
   position: fixed;
@@ -1302,14 +1362,16 @@
   left: 0;
   right: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--qa-panel) 95%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--nav-veil, var(--paper));
+  background-color: var(--nav-veil, var(--paper));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  opacity: 1;
   border-top: 1px solid var(--qa-border);
   padding: 6px 8px max(6px, env(safe-area-inset-bottom));
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -4px 16px rgba(26, 92, 66, 0.06);
+  box-shadow: var(--shadow-sm);
 }
 
 .quack-mobile-nav__item {
@@ -1721,12 +1783,12 @@ dialog.obsession-picker::backdrop {
 .breadcrumb-game__pond {
   position: relative;
   height: 140px;
-  background: linear-gradient(180deg, #b8e0d0 0%, #4a9d7a 100%);
+  background: linear-gradient(180deg, var(--matcha-pale) 0%, var(--matcha-mid) 100%);
   overflow: hidden;
 }
 
 .quack-app--dark .breadcrumb-game__pond {
-  background: linear-gradient(180deg, #2d4a3a 0%, #1a5c42 100%);
+  background: linear-gradient(180deg, #2a3530 0%, var(--matcha-mid) 100%);
 }
 
 .breadcrumb-game__overlay {

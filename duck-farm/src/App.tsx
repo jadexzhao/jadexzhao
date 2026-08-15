@@ -690,6 +690,12 @@ export default function App() {
 
         <main id="main-feed" className="quack-main" tabIndex={-1}>
           <header className="quack-main__header">
+            <div className="quack-main__brand">
+              <p className="quack-main__brand-name">Quackr</p>
+              <p className="quack-main__brand-kicker">
+                duck farm · <span lang="zh-Hans">鸭年</span> · portfolio sandbox
+              </p>
+            </div>
             <div className="quack-main__title-row">
               <h1>{NAV_LABELS[activeNav]}</h1>
               <button
@@ -702,7 +708,7 @@ export default function App() {
               </button>
             </div>
             <p className="quack-main__tagline">
-              <span lang="zh-Hans">鸭年</span> on the pond · swipe, quack, waddle
+              Swipe, quack, waddle ... a React sandbox I ship and test myself, not a launched app.
             </p>
           </header>
 

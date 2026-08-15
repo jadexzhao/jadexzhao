@@ -1,0 +1,68 @@
+/**
+ * Register: business casual · jadexzhao portfolio
+ * Matcha cream paper · Fraunces italic display · Inter body.
+ * Loads brand-tokens; starter-matcha.css is the full named starter.
+ */
+
+@import url("brand-tokens.css");
+
+:root {
+  --paper: var(--cream);
+  --card: #ffffff;
+  --line: var(--rule);
+  --mist: var(--matcha-pale);
+  --accent: var(--matcha-mid);
+  --accent-ink: var(--matcha-deep);
+  --accent-deep: #2f4530;
+  --gold: var(--clay);
+  --gold-hi: var(--clay-ink);
+  --gold-wash: #f3ebe3;
+  --jade: var(--matcha-mid);
+  --jade-ink: var(--matcha-deep);
+  --jade-deep: #2f4530;
+  --jade-glow: rgba(111, 143, 106, 0.16);
+  --accent-solid: var(--matcha-deep);
+  --accent-solid-hover: var(--matcha-mid);
+  --focus: var(--ink);
+  --panel: #faf8f2;
+  --nav-veil: #faf8f2; /* solid paper ... no glass */
+  --watermark: rgba(63, 91, 63, 0.08);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: Inter, "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --max: 920px;
+  --max-wide: 1100px;
+  --tap: 3rem;
+  --space-section: 2.75rem;
+  --transition-base: 0.22s ease;
+  --shadow-sm: 0 1px 2px rgba(35, 41, 31, 0.06);
+  --shadow-md: 0 8px 24px rgba(35, 41, 31, 0.08);
+  /* legacy aliases so older powder-blue selectors resolve */
+  --dress-powder-blue: var(--matcha-mid);
+  --bouquet-cream: var(--cream);
+  --garden-green: var(--matcha-deep);
+  --sky-bright: var(--matcha-mid);
+  --sky-ink: var(--matcha-deep);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ece7dd;
+    --mute: #b9b0a3;
+    --paper: #121814;
+    --card: #1a221c;
+    --jade: #8fad7e;
+    --jade-ink: #a8c49a;
+    --jade-deep: #c5d8b8;
+    --accent: #8fad7e;
+    --accent-ink: #a8c49a;
+    --accent-solid: #6f8f6a;
+    --accent-solid-hover: #8fad7e;
+    --line: #2a3530;
+    --focus: #ece7dd;
+    --mist: #1c2620;
+    --panel: #1a221c;
+    --nav-veil: #121814; /* solid paper ... no glass */
+  }
+}
