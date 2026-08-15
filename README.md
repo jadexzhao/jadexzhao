@@ -6,7 +6,16 @@ CV / narrative hub (start here for one link): [jlzhao.pages.iu.edu](https://jlzh
 
 Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/)
 
-Palette: powder blue / garden (`briefcase/brand-tokens.css`).
+**Palette / register:** business casual · matcha (`briefcase/starter-matcha.css`, `briefcase/brand-tokens.css`). Fraunces italic display, Inter body, cream `#faf8f2`, matcha-deep `#3f5b3f`.
+
+## Four-site map
+
+| Site | Job | Look |
+|------|-----|------|
+| [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) | CV / narrative hub | Professional · slate/sage · upright Source Serif |
+| **This site** | Shipped builds / hire path | Matcha casual · Fraunces italic |
+| [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) | FASE MAP classroom | Ocean campus · Nunito + Fraunces bold |
+| [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/) | Essay / research notes | Rivet / IU WCMS crimson |
 
 ## how I build
 

@@ -1,6 +1,6 @@
-/* jade zhao · business casual register
-   Shared tokens: brand-tokens.css · register: register-casual.css
-   bouquet-cream #f6efe3 · sky-bright #4a90c4 · garden-green accents */
+/* jade zhao · business casual / matcha
+   brand-tokens + register-casual · starter: starter-matcha.css
+   cream #faf8f2 · matcha-deep #3f5b3f · Fraunces italic */
 
 @import url("register-casual.css");
 
@@ -1678,8 +1678,8 @@ html {
   margin-bottom: 1.25rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid var(--dress-powder-blue);
-  box-shadow: none;
+  border: 1px solid rgba(63, 91, 63, 0.28);
+  box-shadow: 3px 4px 0 rgba(111, 143, 106, 0.22);
 }
 
 .site .rail-photo img {
@@ -1701,7 +1701,8 @@ html {
 
 .site .rail-name {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-style: italic;
+  font-weight: 500;
   font-size: clamp(2.4rem, 6vw, 3.35rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
@@ -1837,7 +1838,8 @@ html {
 
 .site .stage-title {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-style: italic;
+  font-weight: 500;
   font-size: clamp(1.75rem, 4vw, 2.35rem);
   line-height: 1.1;
   letter-spacing: -0.02em;

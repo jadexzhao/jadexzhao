@@ -1,72 +1,68 @@
 /**
  * Register: business casual · jadexzhao portfolio
- * Powder blue / garden · soft sky accent · bouquet-cream paper.
+ * Matcha cream paper · Fraunces italic display · Inter body.
+ * Loads brand-tokens; starter-matcha.css is the full named starter.
  */
 
 @import url("brand-tokens.css");
 
 :root {
-  --paper: var(--bouquet-cream);
+  --paper: var(--cream);
   --card: #ffffff;
-  --line: #e2d8c8;
-  --mist: #eef2f4;
-  --accent: var(--sky-bright);
-  --accent-ink: var(--sky-ink);
-  --accent-deep: #245a82;
-  --gold: var(--sky-bright);
-  --gold-hi: var(--sky-ink);
-  --gold-wash: #e6eef4;
-  /* Links / chrome stay sky; captions use --garden-green directly */
-  --jade: var(--sky-bright);
-  --jade-ink: var(--sky-ink);
-  --jade-deep: #245a82;
-  --jade-glow: rgba(74, 144, 196, 0.14);
-  --accent-solid: var(--sky-bright);
-  --accent-solid-hover: var(--sky-ink);
+  --line: var(--rule);
+  --mist: var(--matcha-pale);
+  --accent: var(--matcha-mid);
+  --accent-ink: var(--matcha-deep);
+  --accent-deep: #2f4530;
+  --gold: var(--clay);
+  --gold-hi: var(--clay-ink);
+  --gold-wash: #f3ebe3;
+  --jade: var(--matcha-mid);
+  --jade-ink: var(--matcha-deep);
+  --jade-deep: #2f4530;
+  --jade-glow: rgba(111, 143, 106, 0.16);
+  --accent-solid: var(--matcha-deep);
+  --accent-solid-hover: var(--matcha-mid);
   --focus: var(--ink);
-  --panel: rgba(246, 239, 227, 0.88);
-  --nav-veil: rgba(246, 239, 227, 0.94);
-  --watermark: rgba(74, 144, 196, 0.08);
-  --mute: #555555;
-  --ink: #222222;
-  /* Casual email stack stays approachable; Fraunces OK for display italics */
-  --font-display: "Fraunces", Georgia, "Instrument Serif", serif;
-  --font-body: Arial, Helvetica, sans-serif;
-  --radius-sm: 6px;
-  --radius-md: 8px;
+  --panel: rgba(250, 248, 242, 0.88);
+  --nav-veil: rgba(250, 248, 242, 0.94);
+  --watermark: rgba(63, 91, 63, 0.08);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: Inter, "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --max: 920px;
   --max-wide: 1100px;
   --tap: 3rem;
   --space-section: 2.75rem;
   --transition-base: 0.22s ease;
-  --shadow-sm: none;
-  --shadow-md: none;
+  --shadow-sm: 0 1px 2px rgba(35, 41, 31, 0.06);
+  --shadow-md: 0 8px 24px rgba(35, 41, 31, 0.08);
+  /* legacy aliases so older powder-blue selectors resolve */
+  --dress-powder-blue: var(--matcha-mid);
+  --bouquet-cream: var(--cream);
+  --garden-green: var(--matcha-deep);
+  --sky-bright: var(--matcha-mid);
+  --sky-ink: var(--matcha-deep);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --ink: #ece7dd;
     --mute: #b9b0a3;
-    --paper: #12181c;
-    --card: #1a2228;
-    --gold: #6aa8d4;
-    --gold-hi: #8bb8d9;
-    --gold-wash: #152028;
-    --jade: #6aa8d4;
-    --jade-ink: #8bb8d9;
-    --jade-deep: #a8cce4;
-    --jade-glow: rgba(74, 144, 196, 0.16);
-    --accent: #6aa8d4;
-    --accent-ink: #8bb8d9;
-    --accent-solid: #4a90c4;
-    --accent-solid-hover: #6aa8d4;
-    --line: #2a353c;
+    --paper: #121814;
+    --card: #1a221c;
+    --jade: #8fad7e;
+    --jade-ink: #a8c49a;
+    --jade-deep: #c5d8b8;
+    --accent: #8fad7e;
+    --accent-ink: #a8c49a;
+    --accent-solid: #6f8f6a;
+    --accent-solid-hover: #8fad7e;
+    --line: #2a3530;
     --focus: #ece7dd;
-    --mist: #1c262c;
-    --panel: rgba(26, 34, 40, 0.88);
-    --nav-veil: rgba(18, 24, 28, 0.92);
-    --watermark: rgba(74, 144, 196, 0.1);
-    --shadow-sm: none;
-    --shadow-md: none;
+    --mist: #1c2620;
+    --panel: rgba(26, 34, 28, 0.88);
+    --nav-veil: rgba(18, 24, 20, 0.92);
   }
 }
