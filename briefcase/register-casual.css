@@ -1,0 +1,81 @@
+/**
+ * Register: business casual · jadexzhao portfolio
+ * Imports shared tokens, then maps casual paper + soft blue accent.
+ */
+
+@import url("brand-tokens.css");
+
+:root {
+  --paper: #f4f1ea;
+  --card: #ffffff;
+  --line: #e0d9cf;
+  --mist: #efeae2;
+  --accent: var(--blue);
+  --accent-ink: var(--blue-ink);
+  --accent-deep: #1f5a8a;
+  --gold: var(--blue);
+  --gold-hi: var(--blue-ink);
+  --gold-wash: #e8f1fa;
+  --jade: var(--blue);
+  --jade-ink: var(--blue-ink);
+  --jade-deep: var(--accent-deep);
+  --jade-glow: rgba(55, 138, 221, 0.14);
+  --accent-solid: var(--blue);
+  --accent-solid-hover: var(--blue-ink);
+  --focus: var(--ink);
+  --panel: rgba(244, 241, 234, 0.88);
+  --nav-veil: rgba(244, 241, 234, 0.94);
+  --watermark: rgba(55, 138, 221, 0.07);
+  --mute: #555555;
+  --ink: #222222;
+  /* Casual email stack stays approachable; Fraunces OK for display italics */
+  --font-display: "Fraunces", Georgia, "Instrument Serif", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --max: 920px;
+  --max-wide: 1100px;
+  --tap: 3rem;
+  --space-section: 2.75rem;
+  --transition-base: 0.22s ease;
+  --shadow-sm:
+    0 1px 2px rgba(42, 38, 34, 0.05),
+    0 2px 8px rgba(42, 38, 34, 0.06);
+  --shadow-md:
+    0 2px 4px rgba(42, 38, 34, 0.05),
+    0 6px 16px rgba(42, 38, 34, 0.07),
+    0 14px 32px rgba(42, 38, 34, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ece7dd;
+    --mute: #b9b0a3;
+    --paper: #101915;
+    --card: #18241e;
+    --gold: #5aa3e0;
+    --gold-hi: #7eb8e8;
+    --gold-wash: #15211b;
+    --jade: #5aa3e0;
+    --jade-ink: #7eb8e8;
+    --jade-deep: #9ec9ef;
+    --jade-glow: rgba(47, 189, 133, 0.13);
+    --accent: #5aa3e0;
+    --accent-ink: #7eb8e8;
+    --accent-solid: #378add;
+    --accent-solid-hover: #2a6fad;
+    --line: #2b3a32;
+    --focus: #ece7dd;
+    --mist: #1d2c24;
+    --panel: rgba(24, 36, 30, 0.88);
+    --nav-veil: rgba(16, 25, 21, 0.92);
+    --watermark: rgba(99, 214, 168, 0.06);
+    --shadow-sm:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 2px 8px rgba(0, 0, 0, 0.28);
+    --shadow-md:
+      0 2px 4px rgba(0, 0, 0, 0.3),
+      0 6px 16px rgba(0, 0, 0, 0.32),
+      0 14px 32px rgba(0, 0, 0, 0.34);
+  }
+}

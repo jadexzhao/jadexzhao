@@ -1,78 +1,8 @@
 /* jade zhao · business casual register
-   Tokens aligned to email-register-templates/business-casual.html
-   cream #f4f1ea · blue #378ADD · Arial/Helvetica */
+   Shared tokens: brand-tokens.css · register: register-casual.css
+   cream #f4f1ea · blue #378ADD · Fraunces display OK */
 
-:root {
-  --ink: #222222;
-  --mute: #555555;
-  --paper: #f4f1ea;
-  --card: #ffffff;
-  --gold: #378ADD;
-  /* Text labels only: darkened for WCAG AA 4.5:1 on --paper (accent gold stays decorative) */
-  --gold-hi: #2a6fad;
-  --gold-wash: #e8f1fa;
-  --jade: #378ADD;
-  --jade-ink: #2a6fad;
-  --jade-deep: #1f5a8a;
-  --jade-glow: rgba(55, 138, 221, 0.14);
-  --accent-solid: #378ADD;
-  --accent-solid-hover: #2a6fad;
-  --line: #e0d9cf;
-  --focus: #2a2622;
-  --mist: #efeae2;
-  --panel: rgba(244, 241, 234, 0.88);
-  --nav-veil: rgba(244, 241, 234, 0.94);
-  --watermark: rgba(55, 138, 221, 0.07);
-  --font-display: Arial, Helvetica, sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-sc: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  --max: 920px;
-  --max-wide: 1100px;
-  --tap: 3rem; /* 48px at 16px root · WCAG 2.5.5 / checklist touch target */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --shadow-sm:
-    0 1px 2px rgba(42, 38, 34, 0.05),
-    0 2px 8px rgba(42, 38, 34, 0.06);
-  --shadow-md:
-    0 2px 4px rgba(42, 38, 34, 0.05),
-    0 6px 16px rgba(42, 38, 34, 0.07),
-    0 14px 32px rgba(42, 38, 34, 0.08);
-  --space-section: 2.75rem;
-  --transition-base: 0.22s ease;
-}
-
-/* ... dark scheme · jade glows on deep charcoal ... */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #ece7dd;
-    --mute: #b9b0a3;
-    --paper: #101915;
-    --card: #18241e;
-    --gold: #5aa3e0;
-    --gold-hi: #7eb8e8;
-    --gold-wash: #15211b;
-    --jade: #5aa3e0;
-    --jade-ink: #7eb8e8;
-    --jade-deep: #9ec9ef;
-    --jade-glow: rgba(47, 189, 133, 0.13);
-    --accent-solid: #378ADD;
-    --accent-solid-hover: #2a6fad;
-    --line: #2b3a32;
-    --focus: #ece7dd;
-    --mist: #1d2c24;
-    --panel: rgba(24, 36, 30, 0.88);
-    --nav-veil: rgba(16, 25, 21, 0.92);
-    --watermark: rgba(99, 214, 168, 0.06);
-    --shadow-sm:
-      0 1px 2px rgba(0, 0, 0, 0.3),
-      0 2px 8px rgba(0, 0, 0, 0.28);
-    --shadow-md:
-      0 2px 4px rgba(0, 0, 0, 0.3),
-      0 6px 16px rgba(0, 0, 0, 0.32),
-      0 14px 32px rgba(0, 0, 0, 0.34);
-  }
-}
+@import url("register-casual.css");
 
 *,
 *::before,
