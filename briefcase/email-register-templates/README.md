@@ -1,9 +1,6 @@
 # Email register templates
 
-Three Outlook-safe HTML emails plus a standalone **US / UK register translation** case study page.
-
-- Case study page (portfolio): [us / uk — a register translation](../register-translation.html) · live: https://jadexzhao.github.io/jadexzhao/register-translation.html
-- Companion copy in this folder: `register-translation.html`
+Three Outlook-safe HTML emails for the UK register / IU gear matrix (business casual, professional, IU gear).
 
 ## Outlook email samples
 
