@@ -2420,3 +2420,79 @@ html {
   }
 }
 
+
+/* -- Audience invite + stage CTAs -- */
+.site .rail-for {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.site .stage-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+  margin: 0.85rem 0 0;
+}
+
+.site .stage-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap, 44px);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius, 10px);
+  background: var(--jade-ink, var(--ink));
+  color: var(--paper, #fff);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.site .stage-cta:hover {
+  filter: brightness(1.05);
+}
+
+.site .stage-cta--ghost {
+  background: transparent;
+  color: var(--jade-ink, var(--ink));
+  border-color: var(--line);
+}
+
+.site .stage-cta--ghost:hover {
+  background: var(--paper-dim, rgba(0,0,0,0.04));
+  filter: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site .rail-photo {
+    animation: bc-settle 0.65s ease both;
+  }
+
+  .site .rail-top > :not(.rail-photo) {
+    animation: bc-rise 0.5s ease both;
+  }
+
+  .site .stage-block.rv.in-view,
+  .site .stage-block {
+    /* keep existing rv; light first-block settle */
+  }
+
+  .site .stage-block:first-child {
+    animation: bc-rise 0.55s ease 0.05s both;
+  }
+
+  @keyframes bc-settle {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @keyframes bc-rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+}
