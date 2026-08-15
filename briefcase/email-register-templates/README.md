@@ -12,7 +12,7 @@ Three Outlook-safe HTML emails for the UK register / IU gear matrix (business ca
 
 ## UK-facing portfolio note
 
-This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual stays slightly more indirect with light small talk before the ask. Professional leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear — it stays in the set as a cultural-translation case: the format does not map onto UK conventions, and knowing that is part of the skill.
+This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual stays slightly more indirect with light small talk before the ask. Professional leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear ... it stays in the set as a cultural-translation case: the format does not map onto UK conventions, and knowing that is part of the skill.
 
 ## Visual tokens (from the email HTML)
 
@@ -25,7 +25,7 @@ This portfolio uses UK spelling and letter conventions where it matters (colour,
 ## Outlook constraints
 
 - Tables + **inline** CSS only (Word engine in Outlook).
-- Solid `background-color` — no gradient shorthand as the only style.
+- Solid `background-color` ... no gradient shorthand as the only style.
 - Web-safe fonts; custom webfonts are optional extras.
 - ~600px nested table width.
 - Prefer HTML entities for middot / ndash / CJK when encoding is flaky.
