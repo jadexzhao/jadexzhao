@@ -608,6 +608,11 @@
   padding: 4px 0;
 }
 
+.compose__input:focus-visible {
+  outline: 3px solid var(--focus, #4a90c4);
+  outline-offset: 3px;
+}
+
 .compose__input::placeholder {
   color: var(--qa-text-muted);
 }

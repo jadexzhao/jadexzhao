@@ -21,6 +21,14 @@ html {
   font-size: 100%; /* rem root · zoom-friendly */
 }
 
+@media (max-width: 899px) {
+  html {
+    /* WCAG 2.2 2.4.11: keep focused controls out from under the mobile dock */
+    scroll-padding-bottom: 5.5rem;
+    scroll-padding-top: 0.5rem;
+  }
+}
+
 body {
   margin: 0;
   color-scheme: light dark;

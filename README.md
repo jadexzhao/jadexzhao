@@ -28,6 +28,8 @@ Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jade
 | project | what |
 |---------|------|
 | Serve IT | [Website Team Lead · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) · WCAG 2.1 · Python/PostgreSQL |
+| Lease Precision | [Commercial lease process notes](https://github.com/zhao-langxi/lease-precision) · redlining, CAM, SNDA, operator handoffs |
+| Madrid notes | [Systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · not an EU AI Act project |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · live site |
 | Quackr · duck farm | [social media sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · hire path |
