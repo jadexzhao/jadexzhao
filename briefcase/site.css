@@ -130,23 +130,14 @@ a:focus-visible {
   touch-action: manipulation;
 }
 
-/* Hero / dark photo overlay */
-.site-nav--on-hero a {
-  color: rgba(250, 246, 240, 0.92);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-
-.site-nav--on-hero a:hover,
-.site-nav--on-hero a[aria-current="page"] {
-  color: #fff;
-  border-bottom-color: var(--gold);
-}
-
-/* Interior paper pages */
+/* Interior paper pages ... never text over a photo nav */
+.site-nav--on-hero a,
 .site-nav--on-paper a {
   color: var(--mute);
 }
 
+.site-nav--on-hero a:hover,
+.site-nav--on-hero a[aria-current="page"],
 .site-nav--on-paper a:hover,
 .site-nav--on-paper a[aria-current="page"] {
   color: var(--ink);
@@ -155,12 +146,6 @@ a:focus-visible {
 
 .site-nav a:focus-visible {
   outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
-/* Hero sits on a dark photo ... keep the focus ring light and visible */
-.site-nav--on-hero a:focus-visible {
-  outline-color: #f6efe3;
   outline-offset: 3px;
 }
 
@@ -2474,13 +2459,18 @@ html {
 }
 
 .site .stage-cta--ghost {
-  background: transparent;
+  background: var(--paper, #faf8f2);
+  background-color: var(--paper, #faf8f2);
   color: var(--jade-ink, var(--ink));
-  border-color: var(--line);
+  border-color: var(--jade-ink, #4a90c4);
 }
 
-.site .stage-cta--ghost:hover {
-  background: var(--paper-dim, rgba(0,0,0,0.04));
+.site .stage-cta--hover,
+.site .stage-cta--ghost:hover,
+.site .stage-cta--ghost:focus-visible {
+  background: var(--mist, #eef1e6);
+  background-color: var(--mist, #eef1e6);
+  color: var(--ink);
   filter: none;
 }
 
