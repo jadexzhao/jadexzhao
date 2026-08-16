@@ -28,9 +28,9 @@ Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jade
 | project | what |
 |---------|------|
 | Serve IT | [Website Team Lead · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) · WCAG 2.1 · Python/PostgreSQL |
-| Lease Precision | [Commercial lease process notes](https://github.com/zhao-langxi/lease-precision) · redlining, CAM, SNDA, operator handoffs · not legal advice |
+| Lease Precision | Commercial real estate document support · Dec 2017 to present. [GitHub · notes](https://github.com/zhao-langxi/lease-precision) · lease redlining, contract review, CRE compliance. Public process notes for commercial retail leases: CAM, SNDA, estoppel, personal guaranties, pay-without-setoff, and operator handoffs that include the landlord property manager. Employer omitted. Not legal advice. [essay pointer](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html) |
 | Madrid notes | [Systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · not an EU AI Act project |
-| Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · live site |
+| Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers, 2024 to present · live site |
 | Quackr · duck farm | [social media sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · hire path |
 
