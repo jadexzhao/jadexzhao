@@ -19,6 +19,8 @@ html {
   overflow-y: auto;
   scroll-behavior: smooth;
   font-size: 100%; /* rem root · zoom-friendly */
+  /* WCAG 2.2 2.4.11: sticky paper nav must not hide focused targets */
+  scroll-padding-top: 4.5rem;
 }
 
 @media (max-width: 899px) {
@@ -35,8 +37,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1.0625rem; /* 17px at 16px root */
-  line-height: 1.5;
+  font-size: 1.125rem; /* 18px · GOV.UK body sits at 19; 16 is the floor */
+  line-height: 1.56; /* ~28px, 5px rhythm */
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   /* No overflow on body ... keeps position:sticky rail working. */
@@ -980,7 +982,7 @@ body.interior {
 }
 
 .timeline .tl-zone {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold-hi);
@@ -1040,7 +1042,7 @@ body.interior {
 }
 
 .hub-k {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--jade-ink);
@@ -1074,7 +1076,7 @@ body.interior {
 }
 
 .gov-table th {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--jade-ink);
@@ -1918,7 +1920,7 @@ html {
 }
 
 .site .proj-label {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: lowercase;
@@ -2522,4 +2524,12 @@ html {
 .site .dock {
   background: #121914 !important;
   background-color: #121914 !important;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }

@@ -16,10 +16,17 @@
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 1rem;
+  scroll-padding-bottom: 5.5rem;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--paper);
   color: var(--ink);
+  font-size: 1.125rem;
+  line-height: 1.56;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
