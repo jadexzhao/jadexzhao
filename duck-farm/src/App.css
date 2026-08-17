@@ -242,8 +242,8 @@
 
 /* Hero first viewport ... Quackr brand-first */
 .quack-hero {
-  padding: 10px 4px 16px;
-  margin-bottom: 2px;
+  padding: 10px 4px 20px;
+  margin-bottom: 8px;
   border-bottom: 1px solid var(--qa-border);
   animation: hero-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -508,18 +508,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 20px;
-  background: var(--qa-accent-fill);
-  color: #fff;
+  padding: 14px 18px;
+  background: var(--qa-panel);
+  color: var(--qa-text);
   border-radius: var(--qa-radius);
   box-shadow: var(--qa-shadow);
+  border: 1px solid var(--qa-border);
+  border-left: 4px solid var(--qa-accent-fill);
 }
 
 .obsession-banner__label {
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
-  opacity: 0.85;
+  color: var(--qa-accent-ink);
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -532,9 +534,9 @@
 }
 
 .obsession-banner__link {
-  border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  border: 1px solid var(--qa-border);
+  background: var(--qa-hover);
+  color: var(--qa-accent-ink);
   font-size: 0.8125rem;
   font-weight: 600;
   padding: 8px 14px;
@@ -545,7 +547,9 @@
 }
 
 .obsession-banner__link:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--qa-accent-fill);
+  color: #fff;
+  border-color: var(--qa-accent-fill);
 }
 
 /* Filter pills */
@@ -1491,8 +1495,11 @@
 }
 
 .quack-btn:disabled {
-  opacity: 0.5;
+  opacity: 1;
   cursor: not-allowed;
+  background: var(--mist, #eef1e6);
+  color: var(--mute, #4a5248);
+  border: 1px solid var(--line, #d5d8ce);
 }
 
 .quack-btn--primary {

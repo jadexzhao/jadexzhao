@@ -1,8 +1,200 @@
-/* jade zhao · business casual / matcha
-   brand-tokens + register-casual · starter: starter-matcha.css
-   cream #faf8f2 · matcha-deep #3f5b3f · Fraunces italic */
+/* ═══════════════════════════════════════════════════════════════
+   jadexzhao · business casual / matcha
+   cream paper · matcha ink · Fraunces italic display · Inter body
 
-@import url("register-casual.css");
+   1. tokens ......... palette, roles, type scale, space, motion
+   2. reset + base ... document, typography defaults, links
+   3. chrome ......... skip link, nav, footer
+   4. home ........... rail + stage shell, project cards, case
+   5. interior ....... memo sheet, runbook, tables, callouts
+   6. utilities ...... reveals, print, reduced motion
+
+   Self-contained: no @import chain. Legacy token names are aliased
+   at the end of the token block so older selectors keep resolving.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── palette · raw values, referenced only by the roles below ── */
+  --matcha-deep: #3f5b3f;
+  --matcha-mid: #6f8f6a;
+  --matcha-pale: #eef1e6;
+  --cream: #faf8f2;
+  --clay: #b3714f;
+  --clay-ink: #7d4c33;
+
+  /* ── colour roles ── */
+  --surface: var(--cream);
+  --surface-raised: #ffffff;
+  --surface-sunken: var(--matcha-pale);
+  --surface-wash: #f3ece3;
+
+  --ink: #23291f;
+  --ink-muted: #4a5248;
+  --ink-subtle: #5f6a5c;
+
+  --accent: var(--matcha-deep);
+  --accent-hover: #2f4530;
+  --accent-quiet: var(--matcha-mid);
+  --accent-wash: rgba(63, 91, 63, 0.09);
+  --accent-glow: rgba(111, 143, 106, 0.16);
+  --on-accent: #ffffff;
+
+  --border: rgba(63, 91, 63, 0.22);
+  --border-strong: rgba(63, 91, 63, 0.42);
+  --focus: #23291f;
+  --focus-halo: rgba(63, 91, 63, 0.22);
+
+  /* ── type ── */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: Inter, "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sc: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* fluid modular scale · ~1.2 at 320px, ~1.25 at 1280px */
+  --step--2: clamp(0.75rem, 0.735rem + 0.075vw, 0.8125rem);
+  --step--1: clamp(0.875rem, 0.86rem + 0.075vw, 0.9375rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.08rem + 0.22vw, 1.25rem);
+  --step-2: clamp(1.25rem, 1.16rem + 0.47vw, 1.5rem);
+  --step-3: clamp(1.5rem, 1.32rem + 0.9vw, 2rem);
+  --step-4: clamp(1.75rem, 1.43rem + 1.6vw, 2.625rem);
+  --step-5: clamp(2.25rem, 1.7rem + 2.75vw, 3.5rem);
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.28;
+  --leading-body: 1.6;
+  --tracking-display: -0.022em;
+  --tracking-label: 0.09em;
+
+  /* ── space · fluid from --space-l up ── */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: clamp(1.75rem, 1.5rem + 1.1vw, 2.5rem);
+  --space-xl: clamp(2.5rem, 2rem + 2.2vw, 4rem);
+  --space-2xl: clamp(3.25rem, 2.5rem + 3.4vw, 5.5rem);
+
+  /* ── shape ── */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(35, 41, 31, 0.05);
+  --shadow-sm:
+    0 1px 2px rgba(35, 41, 31, 0.05),
+    0 2px 6px rgba(35, 41, 31, 0.045);
+  --shadow-md:
+    0 2px 4px rgba(35, 41, 31, 0.05),
+    0 10px 26px rgba(35, 41, 31, 0.08);
+  --shadow-lg:
+    0 4px 8px rgba(35, 41, 31, 0.06),
+    0 20px 48px rgba(35, 41, 31, 0.11);
+
+  /* ── motion ── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+
+  /* ── layout ── */
+  --measure-tight: 54ch;
+  --measure: 66ch;
+  --shell-max: 1180px;
+  --sheet-max: 920px;
+  --rail-min: 17.5rem;
+  --rail-max: 23rem;
+  --tap: 2.75rem;
+
+  /* ── layers ── */
+  --z-raised: 1;
+  --z-nav: 10;
+  --z-dock: 90;
+  --z-progress: 200;
+  --z-skip: 300;
+
+  /* ── legacy aliases · keep older selectors resolving ── */
+  --paper: var(--surface);
+  --card: var(--surface-raised);
+  --mist: var(--surface-sunken);
+  --panel: var(--surface);
+  --nav-veil: var(--surface);
+  --line: var(--border);
+  --rule: var(--border);
+  --mute: var(--ink-muted);
+  --jade: var(--accent-quiet);
+  --jade-ink: var(--accent);
+  --jade-deep: var(--accent-hover);
+  --jade-glow: var(--accent-glow);
+  --accent-ink: var(--accent);
+  --accent-deep: var(--accent-hover);
+  --accent-solid: var(--accent);
+  --accent-solid-hover: var(--accent-hover);
+  --gold: var(--clay);
+  --gold-hi: var(--clay-ink);
+  --gold-wash: var(--surface-wash);
+  --watermark: rgba(63, 91, 63, 0.08);
+  --radius: var(--radius-sm);
+  --max: var(--sheet-max);
+  --max-wide: var(--shell-max);
+  --space-section: var(--space-xl);
+  --transition-base: var(--dur-base) var(--ease-out);
+  --focus-ring: var(--accent);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 3px;
+  --dress-powder-blue: var(--accent-quiet);
+  --bouquet-cream: var(--cream);
+  --garden-green: var(--accent);
+  --sky-bright: var(--accent-quiet);
+  --sky-ink: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #121814;
+    --surface-raised: #1a221c;
+    --surface-sunken: #1c2620;
+    --surface-wash: #17201a;
+
+    --ink: #ece7dd;
+    --ink-muted: #b9b0a3;
+    --ink-subtle: #9aa093;
+
+    --accent: #a8c49a;
+    --accent-hover: #c5d8b8;
+    --accent-quiet: #8fad7e;
+    --accent-wash: rgba(168, 196, 154, 0.12);
+    --accent-glow: rgba(143, 173, 126, 0.18);
+    --on-accent: #101915;
+
+    --border: #2a3530;
+    --border-strong: #48584f;
+    --focus: #ece7dd;
+    --focus-halo: rgba(168, 196, 154, 0.28);
+
+    --clay: #d59b72;
+    --clay-ink: #e0b391;
+
+    --accent-solid: #6f8f6a;
+    --accent-solid-hover: #8fad7e;
+
+    --shadow-sm:
+      0 1px 2px rgba(0, 0, 0, 0.4),
+      0 2px 6px rgba(0, 0, 0, 0.28);
+    --shadow-md:
+      0 2px 4px rgba(0, 0, 0, 0.4),
+      0 10px 26px rgba(0, 0, 0, 0.38);
+    --shadow-lg:
+      0 4px 8px rgba(0, 0, 0, 0.42),
+      0 20px 48px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ═══════════════ 2. reset + base ═══════════════ */
 
 *,
 *::before,
@@ -18,9 +210,11 @@ html {
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   font-size: 100%; /* rem root · zoom-friendly */
   /* WCAG 2.2 2.4.11: sticky paper nav must not hide focused targets */
   scroll-padding-top: 4.5rem;
+  accent-color: var(--accent);
 }
 
 @media (max-width: 899px) {
@@ -1863,8 +2057,8 @@ html {
   font-size: 1.05rem;
   color: var(--mute);
   line-height: 1.55;
-  max-width: 52ch;
-  margin-bottom: 1.5rem;
+  max-width: 62ch;
+  margin-bottom: 1.25rem;
 }
 
 .site .proj-grid {
@@ -1961,8 +2155,8 @@ html {
   margin-top: 10px;
   font-size: 0.95rem;
   color: var(--mute);
-  line-height: 1.45;
-  max-width: 48ch;
+  line-height: 1.5;
+  max-width: 62ch;
 }
 
 .site .proj-links {
@@ -2094,7 +2288,7 @@ html {
 
 /* Interior memo pages · same shell, article rhythm in stage */
 .site .stage--article {
-  max-width: 42rem;
+  max-width: 38rem;
 }
 
 .site .stage--article .interior-header {
@@ -2329,9 +2523,9 @@ html {
 
 @media (min-width: 900px) {
   .site .shell {
-    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
-    gap: 0 48px;
-    max-width: 1180px;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    gap: 0 36px;
+    max-width: 1080px;
     margin: 0 auto;
     padding-right: max(24px, env(safe-area-inset-right, 0px));
   }
@@ -2356,7 +2550,7 @@ html {
   .site .rail-nav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    gap: 2px;
   }
 
   .site .stage {
@@ -2368,7 +2562,7 @@ html {
   }
 
   .site .stage-block {
-    margin-bottom: 4.5rem;
+    margin-bottom: 3.25rem;
   }
 
   .site .dock {
