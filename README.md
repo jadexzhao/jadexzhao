@@ -2,20 +2,11 @@
 
 **This repo:** technical proof ... shipped builds, portfolio code, SWE hire path.
 
-CV / narrative hub (start here for one link): [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
+One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
 
 Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/)
 
 **Palette / register:** business casual · matcha (`briefcase/starter-matcha.css`, `briefcase/brand-tokens.css`). Fraunces italic display, Inter body, cream `#faf8f2`, matcha-deep `#3f5b3f`.
-
-## Four-site map
-
-| Site | Job | Look |
-|------|-----|------|
-| [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) | CV / narrative hub | Professional · slate/sage · upright Source Serif |
-| **This site** | Shipped builds / hire path | Matcha casual · Fraunces italic |
-| [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) | FASE MAP classroom | Ocean campus · Nunito + Fraunces bold |
-| [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/) | Essay / research notes | Rivet / IU WCMS crimson |
 
 ## how I build
 
@@ -28,10 +19,16 @@ Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jade
 | project | what |
 |---------|------|
 | Serve IT | [Website Team Lead · ServeAI](https://serveit.luddy.indiana.edu/serve-ai/) · WCAG 2.1 · Python/PostgreSQL |
-| Lease Precision | Commercial real estate document support · Dec 2017 to present. [GitHub · notes](https://github.com/zhao-langxi/lease-precision) · lease redlining, contract review, CRE compliance. Public process notes for commercial retail leases: CAM, SNDA, estoppel, personal guaranties, pay-without-setoff, and operator handoffs that include the landlord property manager. Employer omitted. Not legal advice. [essay pointer](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html) |
+| Lease Precision | Commercial real estate document support · Dec 2017 to present · lease redlining, contract review, CRE compliance. Employer omitted. Not legal advice. [GitHub · notes](https://github.com/zhao-langxi/lease-precision) |
 | Madrid notes | [Systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · not an EU AI Act project |
-| Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers, 2024 to present · live site |
+| Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers · live site |
 | Quackr · duck farm | [social media sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
-| the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · hire path |
+| the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html) · [accessibility note](https://jadexzhao.github.io/jadexzhao/i18n-wcag.html) |
 
-Classroom / FASE MAP process lives on [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Essay / research notes live on [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/).
+**Law-adjacent thread:** `lease-precision` and `madrid-ai-ethics` above are the two law-adjacent notebooks ... where legal, technical, and business concerns meet. Written up at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).
+
+## other doors
+
+- Classroom / FASE MAP process → [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/)
+- Essays / research notes → [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/)
+- CV / narrative hub → [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
