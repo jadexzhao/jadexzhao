@@ -1021,6 +1021,8 @@ export default function App() {
             <p>
               <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
               {' · '}
+              <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">resume</a>
+              {' · '}
               <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
             </p>
           </footer>
