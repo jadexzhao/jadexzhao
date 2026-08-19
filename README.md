@@ -1,4 +1,4 @@
-# jade zhao · 赵 · 龙 · dragon
+# jade zhao · she/her · 赵 · 龙 · dragon
 
 **Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027**
 
