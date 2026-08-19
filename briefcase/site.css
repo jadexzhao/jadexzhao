@@ -590,6 +590,17 @@ a:hover {
   color: var(--accent);
 }
 
+.site .stage-block--hero .stage-tagline {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--ink);
+  max-inline-size: var(--measure);
+  font-variation-settings: 'opsz' 120;
+}
+
 .site .stage-block--hero .stage-lede {
   font-size: var(--step-1);
   color: var(--ink);

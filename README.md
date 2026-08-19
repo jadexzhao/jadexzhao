@@ -2,7 +2,7 @@
 
 **Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027**
 
-**This repo:** **jadewowgreen** on the SWE proof door ... Serve IT Clinic lead, warmer voice, same craft bar.
+**This repo:** **jadewowgreen** ... I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.🦆 Serve IT Clinic lead · warmer voice · same craft bar.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
 
