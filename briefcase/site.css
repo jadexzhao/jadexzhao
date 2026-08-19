@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   jadexzhao · technical proof
+   jadexzhao · jadewowgreen proof door
    Design direction: FIELD DOSSIER.
 
    The audience is a technical peer deciding in ninety seconds
@@ -583,6 +583,27 @@ a:hover {
 
 .site .stage-title::after {
   content: none;
+}
+
+.site .stage-block--hero .stage-title {
+  max-inline-size: 22ch;
+  color: var(--accent);
+}
+
+.site .stage-block--hero .stage-lede {
+  font-size: var(--step-1);
+  color: var(--ink);
+  max-inline-size: var(--measure);
+}
+
+.site .stage-block--hero .stage-cta-row {
+  margin-block-start: var(--space-s);
+}
+
+@media (min-width: 48rem) {
+  .site .stage-block--hero {
+    padding-block-end: var(--space-2xl);
+  }
 }
 
 .site .stage-lede {
