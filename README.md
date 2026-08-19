@@ -1,5 +1,7 @@
 # jade zhao · 赵 · 龙 · dragon
 
+**Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027**
+
 **This repo:** technical proof ... shipped builds, portfolio code, SWE hire path.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
