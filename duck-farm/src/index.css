@@ -18,7 +18,8 @@
   --blue-ink: #2a6fad;
 
   /* ── colour roles ── */
-  --surface: var(--cream);
+  /* Outer wash matches briefcase paper; cards stay white. */
+  --surface: #f6efe3;
   --surface-raised: #ffffff;
   --surface-sunken: var(--matcha-pale);
   --surface-wash: #f3ece3;

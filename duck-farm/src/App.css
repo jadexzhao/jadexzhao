@@ -46,6 +46,27 @@
   --duck-eye: var(--ink);
 
   min-block-size: 100dvh;
+  color-scheme: light;
+  /* Light tokens live on the app so the in-app toggle wins over OS dark. */
+  --surface: #f6efe3;
+  --surface-raised: #ffffff;
+  --surface-sunken: #eef1e6;
+  --surface-wash: #f3ece3;
+  --ink: #23291f;
+  --ink-muted: #4a5248;
+  --ink-subtle: #5f6a5c;
+  --accent: #3f5b3f;
+  --accent-hover: #2f4530;
+  --accent-quiet: #6f8f6a;
+  --accent-wash: rgba(63, 91, 63, 0.09);
+  --on-accent: #ffffff;
+  --border: rgba(63, 91, 63, 0.22);
+  --border-strong: rgba(63, 91, 63, 0.42);
+  --focus: #23291f;
+  --focus-halo: rgba(63, 91, 63, 0.22);
+  --clay: #b3714f;
+  --clay-ink: #7d4c33;
+  --blue-ink: #2a6fad;
   /* One quiet wash from the top instead of a three-stop gradient:
      the old cream → mist → clay ramp turned the whole page grey-green
      and flattened the white cards against it. */
@@ -57,6 +78,7 @@
 }
 
 .quack-app--dark {
+  color-scheme: dark;
   --surface: #121814;
   --surface-raised: #1a221c;
   --surface-sunken: #1c2620;
@@ -132,7 +154,7 @@
   font-weight: 500;
   font-style: italic;
   letter-spacing: -0.01em;
-  color: var(--matcha-deep);
+  color: var(--accent);
 }
 
 .quack-nav__badge {
@@ -182,7 +204,7 @@
 
 .quack-nav__item.is-active {
   background: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
 }
 
@@ -287,7 +309,7 @@
   font-style: italic;
   line-height: 1.02;
   letter-spacing: -0.02em;
-  color: var(--matcha-deep);
+  color: var(--accent);
 }
 
 .quack-hero__kicker {
@@ -296,12 +318,12 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: lowercase;
-  color: var(--matcha-mid);
+  color: var(--accent-quiet);
 }
 
 .quack-hero__lede {
   margin-top: var(--space-xs);
-  max-width: 34ch;
+  max-width: 42ch;
   font-size: var(--step--1);
   line-height: 1.45;
   color: var(--qa-text-muted);
@@ -323,9 +345,9 @@
 }
 
 .quack-hero__cta--ghost {
-  background: var(--qa-panel);
-  color: var(--qa-accent-ink);
-  border: 1px solid var(--qa-border);
+  background: var(--surface-raised);
+  color: var(--accent);
+  border: 1px solid var(--border-strong);
   box-shadow: var(--qa-shadow);
 }
 
@@ -466,6 +488,7 @@
   font-size: var(--step--2);
   font-weight: 600;
   cursor: pointer;
+  min-height: 44px;
   padding: var(--space-2xs) var(--space-xs);
   border-radius: 9999px;
 }
@@ -549,6 +572,7 @@
   color: var(--qa-accent-ink);
   font-size: var(--step--2);
   font-weight: 600;
+  min-height: 44px;
   padding: var(--space-2xs) var(--space-xs);
   border-radius: 9999px;
   cursor: pointer;
@@ -558,7 +582,7 @@
 
 .obsession-banner__link:hover {
   background: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   border-color: var(--qa-accent-fill);
 }
 
@@ -591,7 +615,7 @@
 .filter-pill.is-active {
   background: var(--qa-accent-fill);
   border-color: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* Compose */
@@ -630,6 +654,11 @@
 
 .compose__input::placeholder {
   color: var(--qa-text-muted);
+}
+
+.compose__input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 
 .compose__footer {
@@ -787,16 +816,24 @@
   cursor: pointer;
 }
 
+.ripple-btn:disabled {
+  cursor: not-allowed;
+}
+
+.ripple-btn:disabled .ripple {
+  display: none;
+}
+
 .ripple-btn--primary {
   background: var(--accent);
-  color: var(--on-accent, #fff);
+  color: var(--on-accent);
   border: 1px solid var(--accent);
 }
 
 .ripple-btn--primary:hover:not(:disabled) {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  color: var(--on-accent, #fff);
+  color: var(--on-accent);
 }
 
 .ripple-btn--ghost {
@@ -927,17 +964,22 @@
   fill: currentColor;
 }
 
-.slide-action:hover {
+.slide-action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.slide-action:hover:not(:disabled) {
   background: rgba(42, 111, 173, 0.12);
   color: var(--qa-reply);
 }
 
-.slide-action--requack:hover {
+.slide-action--requack:hover:not(:disabled) {
   background: rgba(74, 157, 122, 0.12);
   color: var(--qa-requack);
 }
 
-.slide-action--heart:hover,
+.slide-action--heart:hover:not(:disabled),
 .slide-action--heart.is-active {
   background: rgba(249, 115, 22, 0.12);
   color: var(--qa-like);
@@ -1071,7 +1113,7 @@
 
 .discover-btn--connect {
   background: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   box-shadow: var(--qa-shadow);
 }
 
@@ -1108,7 +1150,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--matcha-mid);
+  color: var(--accent-quiet);
 }
 
 .nest-gate__preview {
@@ -1244,14 +1286,14 @@
 }
 
 .deck-nav__dot {
-  width: 24px;
-  height: 24px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--qa-border);
   background-clip: content-box;
   cursor: pointer;
-  padding: var(--space-2xs);
+  padding: 14px;
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
@@ -1301,7 +1343,7 @@
 .deck-nav__arrow--next {
   background: var(--qa-accent-fill);
   border-color: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .deck-nav__arrow--next:hover:not(:disabled) {
@@ -1376,7 +1418,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 100%;
+  min-height: 44px;
   padding: var(--space-2xs) var(--space-s);
   border: none;
   background: transparent;
@@ -1614,7 +1658,7 @@
   padding: var(--space-xs) var(--space-m);
   border-radius: 9999px;
   background: var(--qa-accent-fill);
-  color: #fff;
+  color: var(--on-accent);
   font-size: var(--step--1);
   font-weight: 600;
   opacity: 0;
@@ -1763,10 +1807,18 @@
   font-weight: 700;
 }
 
+.swipe-hints--static {
+  justify-content: center;
+  opacity: 1;
+  font-weight: 600;
+  color: var(--qa-text-muted);
+  text-align: center;
+}
+
 .swipe-hint {
   padding: var(--space-3xs) var(--space-2xs);
   border-radius: 9999px;
-  opacity: 0.35;
+  opacity: 0.72;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
@@ -2011,6 +2063,18 @@ dialog.obsession-picker::backdrop {
   box-shadow: var(--qa-shadow);
   overflow: hidden;
   margin-bottom: var(--space-xs);
+}
+
+.breadcrumb-game--loading,
+.breadcrumb-game__loading {
+  min-block-size: 8.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-s);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--qa-text-muted);
 }
 
 .breadcrumb-game__header {

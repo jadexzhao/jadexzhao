@@ -15,8 +15,8 @@ export function OnboardingHint({ onDismiss, onTryDiscover, onEditNest }: Onboard
       <div className="onboard-hint__body">
         <p className="onboard-hint__title">Two moves that matter</p>
         <p className="onboard-hint__text">
-          <strong>Discover</strong> for the swipe feel (fake deck, real craft).{' '}
-          <strong>Your Nest</strong> for the 1st-person gate ... would you keep this profile?
+          <strong>Discover</strong> is the swipe feel (fake deck, real craft).{' '}
+          <strong>Your Nest</strong> is the 1st-person gate ... would you keep this profile?
         </p>
       </div>
       <div className="onboard-hint__actions">

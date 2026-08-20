@@ -174,7 +174,9 @@ export function SwipeableCard({
 
   return (
     <div className="swipeable-wrap">
-      {!reduced && (
+      {reduced ? (
+        <p className="swipe-hints swipe-hints--static">Use Pass or Start waddle. Swipe is off for reduced motion.</p>
+      ) : (
         <div className="swipe-hints" aria-hidden="true">
           <span className={`swipe-hint swipe-hint--pass${stamp === 'pass' ? ' is-active' : ''}`}>
             Pass ←

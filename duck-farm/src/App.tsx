@@ -24,6 +24,7 @@ const BreadcrumbGame = lazy(() =>
 )
 import { useLocalStorage, useLocalStorageSet } from './hooks/useLocalStorage'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
+import { useReducedMotion } from './hooks/useReducedMotion'
 import {
   CURRENT_USER,
   DUCK_PROFILES,
@@ -222,7 +223,7 @@ function QuackSlide({
           {quack.pending && (
             <span className="quack-slide__pending-badge" aria-live="polite">
               {' '}
-              · sending…
+              · sending...
             </span>
           )}
         </span>
@@ -389,7 +390,7 @@ function ShareIcon() {
 function HomeIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      <path d="M12 3.2 3.8 10.2c-.3.26-.3.72.02.96L5 12.2v7.05c0 .41.34.75.75.75H9.5v-5.2h5v5.2h3.75c.41 0 .75-.34.75-.75V12.2l1.18-1.04c.32-.24.32-.7.02-.96L12 3.2z" />
     </svg>
   )
 }
@@ -449,6 +450,7 @@ function useDeckIndex(total: number) {
 export default function App() {
   const composeId = useId()
   const composeRef = useRef<HTMLTextAreaElement>(null)
+  const reducedMotion = useReducedMotion()
 
   const [theme, setTheme] = useLocalStorage<Theme>(
     'quack-theme',
@@ -463,7 +465,7 @@ export default function App() {
   const [userPosts, setUserPosts] = useLocalStorage<Quack[]>('quack-posts', [])
   const [obsession, setObsession] = useLocalStorage<string>(
     'quack-obsession',
-    CURRENT_USER.obsession ?? 'Finding your next obsession…',
+    CURRENT_USER.obsession ?? 'Finding your next obsession...',
   )
 
   const [activeNav, setActiveNav] = useState<NavItem>('home')
@@ -638,7 +640,6 @@ export default function App() {
     enabled: !modalOpen && activeDeck !== null,
     onPrev: () => activeDeck?.goPrev(),
     onNext: () => activeDeck?.goNext(),
-    onObsession: () => setObsessionOpen(true),
   })
 
   const currentDiscover = filteredProfiles[discoverDeck.index]
@@ -722,7 +723,8 @@ export default function App() {
               </button>
             </div>
             <p className="quack-hero__lede">
-              Self-tested React sandbox. Fake ducks, real swipe feel ... not a launched app.
+              Someday a real duck farm. For now: a social sandbox with skip links, contrast, and 44px taps
+              ... fake ducks, real swipe feel. Not a launched app.
             </p>
             <div className="quack-hero__ctas">
               <RippleButton
@@ -773,7 +775,11 @@ export default function App() {
           )}
 
           {activeNav === 'home' && (
-            <section className={`compose${isPosting ? ' is-posting' : ''}`} aria-labelledby={composeId}>
+            <section
+              className={`compose${isPosting ? ' is-posting' : ''}`}
+              aria-labelledby={composeId}
+              aria-busy={isPosting}
+            >
               <h2 id={composeId} className="visually-hidden">
                 Compose a quack
               </h2>
@@ -794,6 +800,7 @@ export default function App() {
                   }}
                   rows={2}
                   maxLength={280}
+                  disabled={isPosting}
                 />
                 <div className="compose__footer">
                   <span className="compose__count" aria-live="polite">
@@ -805,7 +812,7 @@ export default function App() {
                     disabled={!draft.trim() || isPosting}
                     onClick={handlePost}
                   >
-                    {isPosting ? 'Sending…' : 'Quack →'}
+                    {isPosting ? 'Sending...' : 'Quack'}
                   </RippleButton>
                 </div>
               </div>
@@ -813,6 +820,16 @@ export default function App() {
           )}
 
           <section className="deck-stage" aria-label={`${NAV_LABELS[activeNav]} slides`}>
+            {activeNav === 'home' && quacks.length === 0 && (
+              <div className="slide-card slide-card--empty">
+                <EmptyState
+                  emoji="🦆"
+                  title="Pond feed is empty"
+                  message="Compose a quack above. Sample posts load from this sandbox, not a live network."
+                />
+              </div>
+            )}
+
             {activeNav === 'home' && quacks[feedDeck.index] && (
               <SlideDeck
                 index={feedDeck.index}
@@ -832,7 +849,12 @@ export default function App() {
 
             {activeNav === 'explore' && currentDiscover && (
               <>
-                <p className="deck-stage__hint">{filteredProfiles.length} ducks nearby · swipe to decide</p>
+                <p className="deck-stage__hint">
+                  {filteredProfiles.length} sample ducks
+                  {reducedMotion
+                    ? ' · use Pass or Start waddle'
+                    : ' · swipe, or use the buttons'}
+                </p>
                 <SwipeableCard
                   cardKey={currentDiscover.id}
                   onSwipeLeft={() => handlePass(currentDiscover.id)}
@@ -991,7 +1013,13 @@ export default function App() {
         </main>
 
         <aside className="quack-sidebar" aria-label="Pond extras">
-          <Suspense fallback={null}>
+          <Suspense
+            fallback={
+              <div className="breadcrumb-game breadcrumb-game--loading" aria-busy="true">
+                <p className="breadcrumb-game__loading">Loading the crumb pond...</p>
+              </div>
+            }
+          >
             <BreadcrumbGame />
           </Suspense>
 
@@ -1000,9 +1028,12 @@ export default function App() {
             <ul className="trend-list">
               {TRENDING_TOPICS.map((topic) => (
                 <li key={topic.tag}>
-                  <RippleButton className="trend-item">
+                  <RippleButton
+                    className="trend-item"
+                    onClick={() => showToast('Sample tag. Local sandbox, not a live feed.')}
+                  >
                     <span className="trend-item__tag">{withCjkLang(topic.tag)}</span>
-                    <span className="trend-item__count">{topic.posts}</span>
+                    <span className="trend-item__count">{topic.posts} · sample</span>
                   </RippleButton>
                 </li>
               ))}
@@ -1014,8 +1045,8 @@ export default function App() {
             <ul className="feature-list">
               <li>🦆 Swipe craft on a fake deck (pass, waddle, super)</li>
               <li>✨ Nest gate ... would you keep this profile?</li>
+              <li>⌨️ Keyboard arrows, skip link, 44px taps, reduced motion</li>
               <li>💬 Compose a quack that stays in localStorage</li>
-              <li>🍞 Breadcrumb mini-game in the sidebar</li>
             </ul>
           </section>
 

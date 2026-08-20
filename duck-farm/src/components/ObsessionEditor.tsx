@@ -105,7 +105,7 @@ export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEdito
         </div>
 
         <div className="obsession-picker__actions">
-          <RippleButton type="button" variant="ghost" onClick={onClose}>
+          <RippleButton type="button" variant="ghost" className="quack-btn quack-btn--ghost" onClick={onClose}>
             Cancel
           </RippleButton>
           <RippleButton type="submit" variant="primary" className="quack-btn quack-btn--primary">
