@@ -34,6 +34,7 @@ import {
   type DuckProfile,
   type DuckMood,
 } from './data/mockData'
+import { initDoorEggs } from './eggs'
 import './App.css'
 
 type Theme = 'light' | 'dark'
@@ -481,6 +482,10 @@ export default function App() {
     'quack-nest-gate',
     'pending',
   )
+
+  useEffect(() => {
+    initDoorEggs()
+  }, [])
 
   useEffect(() => {
     const userOnly = quacks.filter((q) => q.authorId === CURRENT_USER.id && !q.pending)

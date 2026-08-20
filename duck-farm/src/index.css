@@ -295,3 +295,32 @@ a:focus-visible,
     transition-duration: 0.01ms !important;
   }
 }
+
+.door-egg-toast {
+  position: fixed;
+  inset-inline: 1rem;
+  inset-block-end: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+  margin: 0;
+  padding: 0.65rem 1rem;
+  max-width: 28rem;
+  font-size: 0.875rem;
+  color: var(--ink);
+  background: var(--surface-raised);
+  border: 1px solid var(--matcha-deep);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg, 0 8px 24px rgb(35 41 31 / 0.12));
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.door-egg-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.door-egg-toast a {
+  color: var(--matcha-deep);
+  font-weight: 600;
+}
