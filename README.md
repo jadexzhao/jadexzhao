@@ -16,7 +16,7 @@ Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jade
 
 I came to IU as a Hudson & Holland Scholar, and Mimi Attenoukon was part of what made that programme feel like home. She spent 16+ years with Hudson & Holland as HHSP advisor and STEM coordinator, led HHart since 2009, and was recognised as a CEWIT 2020 Outstanding Staff Mentor/Advocate and the 2025 Terri Nation Award recipient (now Assistant Director, 21st Century Scholars Program at IU Bloomington).
 
-She loved the arts, student orgs, and bonding with students at showcase ... the kind of advising that shows up in the room, not just on paper. First-gen college graduate, Beninese heritage, geology at Smith and MS/PhD at IU. I am grateful for her mentorship.
+What mattered to me was how she worked, not the award list. She showed up in the room ... HHart set-ups, showcases, student org advising ... and her advising was always about connecting students to research, internships, and paths that are not obvious from a syllabus alone. As a first-gen Hudson & Holland Scholar, that practical pathfinding meant more than polish. She was a first-gen college graduate herself (Beninese heritage, geology at Smith, MS/PhD at IU), and the CEWIT mentor/advocate recognition tracks what that felt like from the student side: someone who believed in potential and helped the handoff actually happen. I am grateful for her mentorship.
 
 Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/contact/directory/Mimi-Attenoukon.html) · [Terri Nation Award · BAAC](https://baac.indiana.edu/news/miriam-attenoukon.html)
 
