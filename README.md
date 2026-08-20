@@ -8,7 +8,7 @@ Serve IT Clinic lead · warmer voice · same craft bar.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
 
-Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · [Serve IT · live](https://serveit.luddy.indiana.edu/serve-ai/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/)
+Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/serve-ai/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
 
 **Palette / register:** business casual · matcha (`briefcase/starter-matcha.css`, `briefcase/brand-tokens.css`). Fraunces italic display, Inter body, cream `#faf8f2`, matcha-deep `#3f5b3f`.
 
@@ -46,6 +46,15 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html) · [accessibility note](https://jadexzhao.github.io/jadexzhao/i18n-wcag.html) |
 
 **Law-adjacent thread:** lease-precision and madrid-ai-ethics ... essay at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).
+
+## Primary handles
+
+| | |
+|---|---|
+| **Primary GitHub** | [github.com/zhao-langxi](https://github.com/zhao-langxi) |
+| **Portfolio code repo** | [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) (this repo) |
+| **LinkedIn** | [linkedin.com/in/jadexzhao](https://www.linkedin.com/in/jadexzhao/) |
+| **Instagram** | [@zhao.langxi](https://instagram.com/zhao.langxi) |
 
 ## other doors
 
