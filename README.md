@@ -1,8 +1,10 @@
-# jade zhao · she/her · 赵 · 龙 · dragon
+# jade zhao · she/her · 赵郎溪 · 龙 · dragon
 
 I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.🦆
 
 **Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027** · **jadewowgreen**
+
+Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is the proof-of-work door, not a second person.
 
 Serve IT Clinic lead · warmer voice · same craft bar.
 
