@@ -8,7 +8,7 @@ Serve IT Clinic lead · warmer voice · same craft bar.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
 
-Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/serve-ai/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/jadexzhao/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
+Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/serve-ai/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
 
 **Palette / register:** business casual · matcha (`briefcase/starter-matcha.css`, `briefcase/brand-tokens.css`). Fraunces italic display, Inter body, cream `#faf8f2`, matcha-deep `#3f5b3f`.
 
@@ -53,7 +53,7 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 |---|---|
 | **Primary GitHub** | [github.com/zhao-langxi](https://github.com/zhao-langxi) |
 | **Portfolio code repo** | [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) (this repo) |
-| **LinkedIn** | [linkedin.com/in/jadexzhao](https://www.linkedin.com/in/jadexzhao/) |
+| **LinkedIn** | [linkedin.com/in/zhao-langxi](https://www.linkedin.com/in/zhao-langxi/) |
 | **Instagram** | [@zhao.langxi](https://instagram.com/zhao.langxi) |
 
 ## other doors
