@@ -40,14 +40,14 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 
 | project | pointer |
 |---------|---------|
-| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · cookie classroom |
+| Luddy LINK · Digital Humans | Project Lead, Feb 2025 to present · AI-driven virtual personas for business use cases (Luddy applied-project programme) |
+| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · Faculty and Staff for Student Excellence (FASE) cookie classroom |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
-| Lease Precision | [GitHub · notes](https://github.com/zhao-langxi/lease-precision) · not legal advice |
 | Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) |
 | Quackr · duck farm | [sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html) · [accessibility note](https://jadexzhao.github.io/jadexzhao/i18n-wcag.html) |
 
-**Law-adjacent thread:** lease-precision and madrid-ai-ethics ... essay at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).
+**Law-adjacent thread:** madrid-ai-ethics ... essay at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).
 
 ## Primary handles
 
