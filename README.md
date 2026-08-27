@@ -1,12 +1,12 @@
 # jade zhao · she/her · 赵郎溪 · 龙 · dragon
 
-I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.🦆
+My focus is the work that keeps systems usable after the visible part is finished: reliable handoffs, maintainable web builds for partners without in-house engineering support, and clear technical communication.
 
 **Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027** · **jadewowgreen**
 
 Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is the proof-of-work door, not a second person.
 
-Serve IT Clinic lead · warmer voice · same craft bar.
+Serve IT Clinic web lead · seeking software engineering roles (databases, internal systems, IT, ETL).
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
 
