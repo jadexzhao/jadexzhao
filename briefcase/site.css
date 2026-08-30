@@ -334,7 +334,7 @@ a:hover {
   inline-size: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: 48% 32%;
   border-radius: var(--radius-pill);
   /* a ring rather than a border: it reads as a stamp on paper */
   box-shadow:
