@@ -63,3 +63,12 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 - Classroom / FASE MAP process → [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/)
 - Essays / research notes → [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/)
 - CV / narrative hub → [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
+
+## coursework repos (Fall 2026 · light pointer)
+
+Student prep archives only ... not portfolio ships. Open if you want the week-by-week mess behind the class work.
+
+| Course | Repo |
+|---|---|
+| INFO-I211 | [jadexzhao/i211](https://github.com/jadexzhao/i211) |
+| BUS-Z302 | [jadexzhao/z302](https://github.com/jadexzhao/z302) |
