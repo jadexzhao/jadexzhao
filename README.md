@@ -45,7 +45,7 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 | Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
 | Luddy LINK · Digital Humans | Project Lead, Feb 2025 to present · AI-driven virtual personas for business use cases (separate from ServeIT Website Team Lead) |
 | Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
-| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme (MAP) Coordinator |
+| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM (science, technology, engineering, and mathematics) MAP Coordinator / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
 | Jade🪴 | Founder · web / branding / software for small businesses and community organisations |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
 | Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · HIEP / Spring 2026 |
