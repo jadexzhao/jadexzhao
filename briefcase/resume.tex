@@ -30,13 +30,14 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.1pt}
 
 %----------MARGINS----------
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{0.95in}
 
 \urlstyle{same}
 \raggedbottom
@@ -45,46 +46,44 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{3pt}]
 
 %----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{#1}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+      \textbf{#1} & \small #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \item
+  \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+  \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeSubItem}[1]{
-  \resumeItem{#1}\vspace{-4pt}
+  \resumeItem{#1}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}]
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=4pt, parsep=0pt, topsep=2pt, partopsep=0pt]
 }
 
 \newcommand{\resumeSubHeadingListEnd}{
@@ -92,11 +91,19 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}
+  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=2pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
-  \end{itemize}\vspace{-5pt}
+  \end{itemize}
+}
+
+% Skills row: fixed label column for scannability
+\newcommand{\skillrow}[2]{
+  \item\small
+  \begin{tabular*}{0.97\textwidth}{@{}p{1.35in}@{\hspace{0.08in}}p{5.55in}@{}}
+    \textbf{#1} & #2 \\
+  \end{tabular*}
 }
 
 %----------PDF READABILITY----------
@@ -110,7 +117,7 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\ \vspace{1pt}
+    \textbf{\Huge \scshape Jade Zhao} \\[2pt]
     \small
     \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
     \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
@@ -127,16 +134,17 @@
       {B.S. Informatics (Business and Society)}{Expected May 2027}
       \resumeItemListStart
         \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50}
-        \resumeItem{\textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ \textbf{Direct Admit} \textbar\ \textbf{First-generation college student}}
-        \resumeItem{Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026.}
+        \resumeItem{\textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ Direct Admit \textbar\ First-generation college student}
+        \resumeItem{\textbf{Mentor Apprenticeship Programme (MAP)} Coordinator, \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; First Year Experience programmes}
+        \resumeItem{Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026}
       \resumeItemListEnd
 
     \resumeSubheading
       {Cathedral High School}{Indianapolis, IN}
       {High school diploma, high honours \textbar\ GPA: 4.00}{Aug 2019 to May 2023}
       \resumeItemListStart
-        \resumeItem{\textbf{Advanced Placement (AP) Scholar} and member of \textbf{Quill and Scroll} International Honorary Society.}
-        \resumeItem{\textbf{AP Computer Science A (AP CSA)} (Java), \textbf{AP Computer Science Principles (AP CSP)}; yearbook editor; \textbf{200+} community service hours.}
+        \resumeItem{\textbf{Advanced Placement (AP) Scholar}; Quill and Scroll International Honorary Society}
+        \resumeItem{\textbf{AP Computer Science A (AP CSA)} (Java), \textbf{AP Computer Science Principles (AP CSP)}; yearbook editor; 200+ community service hours}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -149,47 +157,42 @@
       {Software Engineer}{Aug 2026 to present}
       {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Design and ship full-stack and \textbf{artificial intelligence (AI)} systems across \textbf{APIs} (application programming interfaces), automation, developer tooling, and \textbf{LLM} (large language model) workflows, including tool-calling, structured inputs and outputs, and \textbf{RAG} (retrieval-augmented generation) when needed.}
+        \resumeItem{Design and ship full-stack and artificial intelligence (\textbf{AI}) systems in \textbf{Python} and related stacks across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when needed.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Student Researcher}{Jun 2026 to Jul 2026}
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Research how consumer apps collect, store, and protect personal data, on a university project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
+        \resumeItem{Investigate how consumer applications collect, store, and protect personal data and privacy on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{Aug 2025 to Dec 2025}
       {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Continue that privacy work at the Luddy School: how personal data is handled in consumer technology.}
+        \resumeItem{Analyse personal data and privacy practices in consumer technology at the Luddy School, focusing on how apps handle collection, storage, and protection of user information.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{May 2024 to Dec 2024}
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) and \textbf{GTM} (go-to-market) strategy as a public interest technology question for nonprofit settings.}
+        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) and go-to-market (\textbf{GTM}) strategy as public interest technology for nonprofit organisations.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
 \section{Skills}
-  \resumeSubHeadingListStart
-
-    \resumeSubSubheading{\textbf{Technical}}{}
-    \resumeItemListStart
-      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
-      \resumeItem{\textbf{Frameworks \& Infra:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
-      \resumeItem{\textbf{AI \& Product:} LLM and RAG workflows, agentic AI, GTM awareness, tool-calling and structured inputs/outputs}
-      \resumeItem{\textbf{Data \& Privacy:} privacy and personal data handling (high level), database management, extract, transform, load (ETL)}
-      \resumeItem{\textbf{Practices:} WCAG 2.1 accessibility, client intake/scoping, technical documentation, exception handling, input validation, Figma, Canvas LMS}
-      \resumeItem{\textbf{Spoken languages:} English (native), Fuzhounese (native), Spanish (intermediate) $\cdot$ bilingual technical writing (English / \textbf{Chinese})}
-    \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+    \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
+    \skillrow{Frameworks \& Infra}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
+    \skillrow{AI \& Product}{full-stack AI systems, LLM and RAG workflows, agentic AI, GTM / go-to-market, tool-calling, structured inputs/outputs}
+    \skillrow{Data \& Privacy}{privacy, personal data, consumer technology, NDA research context, database management, extract, transform, load (ETL)}
+    \skillrow{Practices}{WCAG 2.1 accessibility, technical documentation, exception handling, input validation, Figma, Canvas LMS}
+    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate); bilingual technical writing (English / Chinese)}
+  \end{itemize}
 
 %-------------------------------------------
 \end{document}
