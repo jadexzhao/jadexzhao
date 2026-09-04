@@ -1,85 +1,129 @@
 %-------------------------
 % Resume in LaTeX
-% One page · ATS-safe · balanced human spacing
+% Optimized for readability, ATS compatibility, and concise technical storytelling
 %-------------------------
 \documentclass[letterpaper,11pt]{article}
 
+\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
+\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
 \usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
 \usepackage{iftex}
 \ifPDFTeX
   \input{glyphtounicode}
 \fi
 
+%----------FONT----------
 \usepackage[sfdefault]{atkinson}
 \usepackage[T1]{fontenc}
 
-\pagestyle{empty}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4.1pt}
 
-% Margins: room to breathe without forcing a second page
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\evensidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-0.52in}
-\addtolength{\textheight}{1.12in}
+%----------MARGINS----------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Thin 0.4pt rule (lighter than \titlerule); even air above/below headings
+%----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{2pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\vspace{1.5pt}\noindent{\color{black}\rule{\textwidth}{0.4pt}}\vspace{3pt}]
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-\newcommand{\resumeItem}[1]{%
-  \item\small{#1}%
+%----------CUSTOM COMMANDS----------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-\newcommand{\resumeSubheading}[4]{%
-  \item
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \small #2 \\
+      \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-1pt}%
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{
+  \resumeItem{#1}\vspace{-4pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-% Gap between school / job blocks
-\newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=4pt, parsep=0pt, topsep=1pt, partopsep=0pt]%
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
 }
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 
-% Gap between bullets under a role
-\newcommand{\resumeItemListStart}{%
-  \begin{itemize}[leftmargin=0.15in, itemsep=1.5pt, parsep=0pt, topsep=2pt, partopsep=0pt]%
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
 }
-\newcommand{\resumeItemListEnd}{\end{itemize}}
 
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-5pt}
+}
+
+%----------PDF READABILITY----------
 \ifPDFTeX
   \pdfgentounicode=1
 \fi
 
+%-------------------------------------------
+%%%%%% RESUME STARTS HERE %%%%%%%%%%%%%%%%%%
 \begin{document}
 
-% Single-column plain extractable contact (no icons / multi-col header table)
+%----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\[3pt]
+    \textbf{\Huge \scshape Jade Zhao} \\ \vspace{1pt}
     \small
-    \href{mailto:jlzhao@iu.edu}{\underline{jlzhao@iu.edu}} $|$
-    \href{https://linkedin.com/in/zhao-langxi}{\underline{linkedin.com/in/zhao-langxi}} $|$
-    \href{https://github.com/zhao-langxi}{\underline{github.com/zhao-langxi}} $|$
-    \href{https://jlzhao.pages.iu.edu/}{\underline{jlzhao.pages.iu.edu}}
+    \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
+    \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
+    \href{https://github.com/zhao-langxi}{\faGithub\ \underline{github.com/zhao-langxi}} $|$
+    \href{https://jlzhao.pages.iu.edu/}{\faGlobe\ \underline{jlzhao.pages.iu.edu}}
 \end{center}
-\vspace{2pt}
 
+%-----------SUMMARY (try; drop if page 2)-----------
+\section{Summary}
+\small Seeking a software engineering role after graduating in May 2027, especially near database management, internal information systems, information technology (IT), and extract, transform, load (ETL) pipelines.
+
+%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
 
@@ -101,6 +145,7 @@
 
   \resumeSubHeadingListEnd
 
+%-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
@@ -138,13 +183,21 @@
 
   \resumeSubHeadingListEnd
 
-% Plain comma-separated skill lines (no multi-col skill tables)
+%-----------SKILLS-----------
 \section{Skills}
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-    \item\small\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX \textbar\ \textbf{Frameworks:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs
-    \item\small\textbf{AI / ML:} full-stack AI systems, LLM, RAG, agentic AI, tool-calling, structured inputs and outputs
-    \item\small\textbf{Data / Systems:} privacy research, NDA-aware analysis, database management, information systems, information technology (IT), ETL \textbar\ \textbf{Tools:} GTM, WCAG 2.1, technical documentation, Figma, Canvas LMS
-    \item\small\textbf{Spoken:} English (native), Fuzhounese (native), Spanish (intermediate)
-  \end{itemize}
+  \resumeSubHeadingListStart
 
+    \resumeSubSubheading{\textbf{Technical}}{}
+    \resumeItemListStart
+      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX}
+      \resumeItem{\textbf{Frameworks:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
+      \resumeItem{\textbf{AI / ML:} full-stack AI systems, LLM, RAG, agentic AI, tool-calling, structured inputs and outputs}
+      \resumeItem{\textbf{Data / Systems:} privacy research, NDA-aware analysis, database management, information systems, information technology (IT), ETL}
+      \resumeItem{\textbf{Tools:} GTM, WCAG 2.1, technical documentation, Figma, Canvas LMS}
+      \resumeItem{\textbf{Spoken:} English (native), Fuzhounese (native), Spanish (intermediate)}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
 \end{document}
