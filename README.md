@@ -8,7 +8,7 @@ Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is th
 
 Website Team Lead · ServeIT · seeking software engineering roles (databases, internal systems, IT, ETL).
 
-One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf)
+One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
 
 Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
 
