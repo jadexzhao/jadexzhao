@@ -1,12 +1,12 @@
 # jade zhao · she/her · 赵郎溪 · 龙 · dragon
 
-I grew up in my family’s Chinese restaurant, where I learned that technology should solve real problems. I study Informatics at IU (Indiana University) Bloomington and build accessible technology for nonprofits and community organisations. My long-term ambition is to open a duck farm.
+I care about the systems that have to keep working after the demo ends. My long-term ambition is to open a duck farm. Looking for a software engineering role after May 2027, especially near databases, internal information systems, IT teams, and ETL pipelines.
 
 **Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027** · **jadewowgreen**
 
 Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is the proof-of-work door, not a second person.
 
-Website Team Lead · ServeIT · seeking software engineering roles (databases, internal systems, IT, ETL).
+Digital Humans Project Lead · Luddy LINK · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM MAP Coordinator · ServeIT Website Team Lead.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
 
@@ -42,10 +42,14 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 
 | project | pointer |
 |---------|---------|
+| Luddy LINK · Digital Humans | Project Lead, Feb 2025 to present · AI-driven virtual personas for business use cases |
+| NSF · Web Developer | Jun 2026 to Jul 2026 · consumer-app privacy under NDA |
+| IUB · User Experience Designer | Aug 2025 to Dec 2025 · Undergraduate Education |
+| PIT-UN · Business Technologist | May 2024 to Dec 2024 · agentic AI and GTM for nonprofits |
+| Restaurant Kid | May 2017 to Jun 2023 · family Chinese buffet, Greenfield · floor to site rebuild |
 | Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
-| Luddy LINK · Digital Humans | Project Lead, Feb 2025 to present · AI-driven virtual personas for business use cases (separate from ServeIT Website Team Lead) |
-| Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
 | FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM (science, technology, engineering, and mathematics) MAP Coordinator / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
+| Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
 | Jade🪴 | Founder · web / branding / software for small businesses and community organisations |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
 | Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · HIEP / Spring 2026 |
