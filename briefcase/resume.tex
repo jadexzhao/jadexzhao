@@ -33,11 +33,11 @@
 \setlength{\footskip}{4.1pt}
 
 %----------MARGINS----------
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.45in}
-\addtolength{\textheight}{0.95in}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
 
 \urlstyle{same}
 \raggedbottom
@@ -46,8 +46,8 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-2pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule\vspace{3pt}]
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{1pt}]
 
 %----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
@@ -83,7 +83,7 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=4pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1.5pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 }
 
 \newcommand{\resumeSubHeadingListEnd}{
@@ -91,17 +91,16 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, itemsep=0pt, parsep=0pt, topsep=0.5pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
   \end{itemize}
 }
 
-% Skills row: fixed label column for scannability
 \newcommand{\skillrow}[2]{
   \item\small
-  \begin{tabular*}{0.97\textwidth}{@{}p{1.35in}@{\hspace{0.08in}}p{5.55in}@{}}
+  \begin{tabular*}{0.97\textwidth}{@{}p{1.25in}@{\hspace{0.06in}}p{5.7in}@{}}
     \textbf{#1} & #2 \\
   \end{tabular*}
 }
@@ -117,7 +116,7 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\[2pt]
+    \textbf{\Huge \scshape Jade Zhao} \\[1pt]
     \small
     \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
     \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
@@ -143,8 +142,7 @@
       {Cathedral High School}{Indianapolis, IN}
       {High school diploma, high honours \textbar\ GPA: 4.00}{Aug 2019 to May 2023}
       \resumeItemListStart
-        \resumeItem{\textbf{Advanced Placement (AP) Scholar}; Quill and Scroll International Honorary Society}
-        \resumeItem{\textbf{AP Computer Science A (AP CSA)} (Java), \textbf{AP Computer Science Principles (AP CSP)}; yearbook editor; 200+ community service hours}
+        \resumeItem{\textbf{Advanced Placement (AP) Scholar}; Quill and Scroll; \textbf{AP CSA} (Java) and \textbf{AP CSP}; yearbook editor; 200+ service hours}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -157,7 +155,9 @@
       {Software Engineer}{Aug 2026 to present}
       {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Design and ship full-stack and artificial intelligence (\textbf{AI}) systems in \textbf{Python} and related stacks across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when needed.}
+        \resumeItem{Design and ship full-stack and artificial intelligence (\textbf{AI}) systems across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when needed.}
+        \resumeItem{Build and evaluate agentic coding flows with task decomposition, model routing, context handoffs, and human-in-the-loop verification before merge or handoff.}
+        \resumeItem{Write bilingual technical notes in English and Chinese so prompts, commits, and handoffs stay specific instead of generic.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -165,32 +165,36 @@
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
         \resumeItem{Investigate how consumer applications collect, store, and protect personal data and privacy on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
+        \resumeItem{Document and analyse privacy and data-handling practices for research deliverables at a high level without disclosing partner-confidential detail.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{Aug 2025 to Dec 2025}
       {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Analyse personal data and privacy practices in consumer technology at the Luddy School, focusing on how apps handle collection, storage, and protection of user information.}
+        \resumeItem{Analyse how consumer technology handles personal data, including collection, storage, and protection practices.}
+        \resumeItem{Extend privacy research on personal data practices in consumer technology in an academic Luddy School setting.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{May 2024 to Dec 2024}
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) and go-to-market (\textbf{GTM}) strategy as public interest technology for nonprofit organisations.}
+        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) as public interest technology for nonprofit organisations.}
+        \resumeItem{Research go-to-market (\textbf{GTM}) strategy as a public interest technology question for nonprofit settings.}
+        \resumeItem{Connect agentic AI and GTM implications for nonprofit adoption; founded Serve-AI via PIT-UN as a public-interest AI track.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
 \section{Skills}
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1pt, parsep=0pt, topsep=0pt, partopsep=0pt]
     \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
     \skillrow{Frameworks \& Infra}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
-    \skillrow{AI \& Product}{full-stack AI systems, LLM and RAG workflows, agentic AI, GTM / go-to-market, tool-calling, structured inputs/outputs}
-    \skillrow{Data \& Privacy}{privacy, personal data, consumer technology, NDA research context, database management, extract, transform, load (ETL)}
-    \skillrow{Practices}{WCAG 2.1 accessibility, technical documentation, exception handling, input validation, Figma, Canvas LMS}
+    \skillrow{AI \& Product}{full-stack AI, LLM, RAG, agentic AI, GTM / go-to-market, tool-calling, structured inputs/outputs}
+    \skillrow{Data \& Privacy}{privacy, personal data, consumer technology, NDA-aware research, database management, ETL}
+    \skillrow{Practices}{WCAG 2.1, technical documentation, exception handling, input validation, Figma, Canvas LMS}
     \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate); bilingual technical writing (English / Chinese)}
   \end{itemize}
 
