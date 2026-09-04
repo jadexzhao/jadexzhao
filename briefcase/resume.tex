@@ -20,7 +20,6 @@
   \input{glyphtounicode}
 \fi
 
-%----------FONT----------
 \usepackage[sfdefault]{atkinson}
 \usepackage[T1]{fontenc}
 
@@ -31,24 +30,21 @@
 \renewcommand{\footrulewidth}{0pt}
 \setlength{\footskip}{4.1pt}
 
-%----------MARGINS----------
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.05in}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.25in}
 
 \urlstyle{same}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-%----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule\vspace{2pt}]
+  \vspace{-6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{1pt}]
 
-%----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
   \item\small{#1}
 }
@@ -61,28 +57,10 @@
     \end{tabular*}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}
-}
-
-\newcommand{\resumeSubItem}[1]{
-  \resumeItem{#1}
-}
-
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 }
 
 \newcommand{\resumeSubHeadingListEnd}{
@@ -90,7 +68,7 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
@@ -99,23 +77,19 @@
 
 \newcommand{\skillrow}[2]{
   \item\small
-  \begin{tabular*}{0.97\textwidth}{@{}p{1.35in}@{\hspace{0.08in}}p{5.55in}@{}}
+  \begin{tabular*}{0.97\textwidth}{@{}p{1.25in}@{\hspace{0.05in}}p{5.7in}@{}}
     \textbf{#1} & #2 \\
   \end{tabular*}
 }
 
-%----------PDF READABILITY----------
 \ifPDFTeX
   \pdfgentounicode=1
 \fi
 
-%-------------------------------------------
-%%%%%% RESUME STARTS HERE %%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\[2pt]
+    \textbf{\Huge \scshape Jade Zhao} \\[1pt]
     \small
     \href{mailto:jlzhao@iu.edu}{\underline{jlzhao@iu.edu}} $|$
     \href{https://linkedin.com/in/zhao-langxi}{\underline{linkedin.com/in/zhao-langxi}} $|$
@@ -123,7 +97,6 @@
     \href{https://jlzhao.pages.iu.edu/}{\underline{jlzhao.pages.iu.edu}}
 \end{center}
 
-%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
 
@@ -131,11 +104,9 @@
       {Indiana University Bloomington}{Bloomington, IN}
       {B.S. Informatics (Business and Society)}{Expected May 2027}
       \resumeItemListStart
-        \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50}
-        \resumeItem{\textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ Direct Admit \textbar\ First-generation college student}
-        \resumeItem{\textbf{STEM MAP Coordinator} (science, technology, engineering, and mathematics; Mentor Apprenticeship Programme), \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; day-to-day coordination for 50+ first-generation and low-income students}
-        \resumeItem{\textbf{Serve IT Clinic} Website Team Lead: 5+ nonprofit web projects (WCAG 2.1); early-career Handshake / Instagram content with about 1.2 million combined views}
-        \resumeItem{Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026}
+        \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50 \textbar\ \textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ First-generation}
+        \resumeItem{\textbf{STEM MAP Coordinator} (science, technology, engineering, and mathematics; Mentor Apprenticeship Programme), \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; First Year Experience programmes}
+        \resumeItem{\textbf{ServeIT} Website Team Lead; accessible nonprofit web (\textbf{WCAG} 2.1) \textbar\ Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -147,7 +118,6 @@
 
   \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
@@ -155,46 +125,44 @@
       {Software Engineer}{Aug 2026 to present}
       {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Designed and shipped full-stack product features in Python, TypeScript, React, and Node.js across application programming interfaces (\textbf{APIs}), backend services, frontend interfaces, and database-backed workflows from design through release.}
-        \resumeItem{Built automation and developer tooling that support reliable releases, and integrated large language model (\textbf{LLM}) workflows such as tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when they speed delivery.}
+        \resumeItem{Design and ship full-stack systems in Python, TypeScript, React, and Node.js across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}).}
+        \resumeItem{Build and evaluate agentic coding flows with task decomposition, model routing, context handoffs, and human-in-the-loop review.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Student Researcher}{Jun 2026 to Jul 2026}
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Investigated how consumer applications collect, store, and protect personal data on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
-        \resumeItem{Documented and analysed privacy and data-handling practices into research deliverables at a high level, without disclosing partner-confidential detail.}
+        \resumeItem{Investigate how consumer applications collect, store, and protect personal data on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
+        \resumeItem{Analyse and document privacy practices for research deliverables at a high level without disclosing partner-confidential detail.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{Aug 2025 to Dec 2025}
       {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Analysed personal data practices in consumer technology, covering collection, storage, and protection methods across product and research sources.}
-        \resumeItem{Produced written research notes that extended Luddy School privacy work through independent review and clear, reusable documentation.}
+        \resumeItem{Analyse how consumer technology handles personal data, including collection, storage, and protection practices.}
+        \resumeItem{Extend privacy research at the Luddy School through independent analysis and written research notes.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{May 2024 to Dec 2024}
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Researched agentic AI (systems that can act toward a goal with limited human prompting) as public interest technology for nonprofit organisations.}
-        \resumeItem{Evaluated go-to-market (\textbf{GTM}) approaches for nonprofit technology adoption and founded Serve-AI as a public-interest AI track via PIT-UN.}
+        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) as public interest technology for nonprofit organisations.}
+        \resumeItem{Research go-to-market (\textbf{GTM}) approaches that help nonprofit organisations adopt and sustain technical tools.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-%-----------SKILLS-----------
 \section{Skills}
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
     \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX}
     \skillrow{Frameworks}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
     \skillrow{AI / ML}{full-stack AI systems, LLM (large language model), RAG (retrieval-augmented generation), agentic AI, tool-calling, structured inputs and outputs}
     \skillrow{Data / Privacy}{privacy, personal data, consumer technology, NDA-aware research, database management, ETL (extract, transform, load)}
     \skillrow{Tools / Practices}{GTM (go-to-market), WCAG (Web Content Accessibility Guidelines) 2.1, technical documentation, exception handling, input validation, Figma, Canvas LMS}
-    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate)}
+    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate), bilingual technical writing (English / Chinese)}
   \end{itemize}
 
-%-------------------------------------------
 \end{document}
