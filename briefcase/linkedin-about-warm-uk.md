@@ -10,37 +10,72 @@ I care about the systems that have to keep working after the demo ends. My long-
 
 I am looking for a software engineering role after graduating in May 2027, especially near database management, internal information systems, IT (information technology) teams, and ETL (extract, transform, load) pipelines. If that is your world, I would love to talk.
 
-At ServeIT (the Laurie Burns McRobbie ServeIT Clinic at Luddy), I lead website work for Bloomington community organisations so local nonprofits can keep their missions running on systems that still work long after delivery. We ship sites to WCAG (Web Content Accessibility Guidelines) 2.1 using React, Python, and PostgreSQL. I joined as a first-year student and later became Website Team Lead. I have also worked on Serve-AI, on how nonprofits might use AI without setting accessibility or trust aside.
+As Digital Humans Project Lead at Luddy LINK, I study how AI-driven virtual personas might work in business ... with customers and inside day-to-day operations.
 
-I coordinate the Mentor Apprenticeship Programme (MAP) within Faculty and Staff for Student Excellence (FASE) in IU’s Office of Student Life, including as STEM (science, technology, engineering, and mathematics) MAP Coordinator, and I support the Hudson and Holland Scholars Programme (HHSP) as a Programme Assistant in Undergraduate Education. I am first-generation and a Hudson and Holland Platinum Scholar.
+The same question shows up under other titles: Web Developer with the National Science Foundation (NSF), User Experience Designer with IUB Undergraduate Education, and Business Technologist with the Public Interest Technology University Network (PIT-UN). Different labels. Same instinct ... will this still hold when someone real has to use it.
 
-My focus has stayed on the unglamorous part: reliable handoffs, maintainable web builds for partners without in-house engineering support, and technical communication that prefers accuracy over polish. Growing up in my family’s restaurant set that bar early. A system has to hold under real use, not only under demonstration.
+I grew up a Restaurant Kid in my family’s Chinese buffet in Greenfield, Indiana. Floor, till, kitchen, then the site and social rebuild after COVID-19. Friday nights taught me more about systems than demos ever did.
 
-I am reading for a B.S. in Informatics (Business and Society) at the Luddy School of Informatics, Computing, and Engineering, Indiana University. Through Luddy LINK I do applied research on digital humans (AI-driven virtual personas) in business settings, plus privacy and public-interest technology work.
+On campus I am STEM (science, technology, engineering, and mathematics) MAP Coordinator for the Mentor Apprenticeship Programme (MAP) in Faculty and Staff for Student Excellence (FASE), and a Programme Assistant for the Hudson and Holland Scholars Programme (HHSP) in Undergraduate Education. I am first-generation and a Hudson and Holland Platinum Scholar, reading for a B.S. in Informatics (Business and Society) at the Luddy School of Informatics, Computing, and Engineering, Indiana University.
 
-Skills: Python · React · WCAG · PostgreSQL · SQL · Research · Data Privacy · Mentoring · Programme Coordination · Web Development · Content Strategy · Database management · ETL
+Skills: Python · React · WCAG · PostgreSQL · SQL · Research · Data Privacy · Mentoring · Programme Coordination · Web Development · Content Strategy · Database management · ETL · User Experience · GTM
 
 ---
 
-## Experience (highlights)
+## Experience (LinkedIn titles · paste-ready bullets)
 
-**Programme Assistant** · Aug 2026 to present · IU Undergraduate Education / HHSP  
-Support HHSP day to day for first-generation, low-income, and rural scholars. Help with events and coordination. Represent Undergraduate Education with prospective students, visitors, and campus partners when needed.
+**Digital Humans Project** · Feb 2025 to present · Luddy LINK  
+- Ask how digital humans (AI-driven virtual personas) might show up in real business workflows, with customers and inside operations.  
+- Luddy LINK places students on applied technology projects at the Luddy School.
+
+**Web Developer** · Jun 2026 to Jul 2026 · National Science Foundation (NSF)  
+- Dig into how consumer apps collect, store, and protect personal data on a university project with an industry partner under an NDA (non-disclosure agreement).  
+- Keep the work high-level and careful ... partner detail stays behind the NDA.
+
+**User Experience Designer** · Aug 2025 to Dec 2025 · IUB Undergraduate Education  
+- Carry privacy work into how people actually meet consumer technology ... collection, storage, and protection of personal data.  
+- Shape the research so the user-facing story stays clear, not just the technical one.
+
+**Business Technologist** · May 2024 to Dec 2024 · Public Interest Technology University Network (PIT-UN)  
+- Research agentic AI (systems that can act toward a goal with limited human prompting) as a public-interest technology question for nonprofit settings.  
+- Study GTM (go-to-market) strategy for the same nonprofit context ... adoption that can last after the pilot.
+
+**Restaurant Kid** · May 2017 to Jun 2023 · Chinese Buffet, Greenfield, IN  
+- Work every role in the family restaurant: floor, till, kitchen.  
+- After COVID-19 closures and staff cuts, rebuild the website and social media from scratch.
+
+---
+
+## Experience (other roles · still true)
+
+**Programme Assistant** · Aug 2026 to present · IU Undergraduate Education / Hudson and Holland Scholars Programme (HHSP)  
+- Keep HHSP moving day to day for first-generation, low-income, and rural scholars ... events, coordination, and the quiet logistics between big programme moments.  
+- Represent Undergraduate Education with prospective students, visitors, and campus partners when the office needs a clear, human face for the pathway.
+
+**STEM MAP Coordinator / MAP Coordinator** · Aug 2023 to present · IU Office of Student Life / Faculty and Staff for Student Excellence (FASE)  
+- Run the Mentor Apprenticeship Programme (MAP) day to day: mentor training, Canvas operations, and programme communications for 50+ first-generation and low-income peer mentors.  
+- As STEM (science, technology, engineering, and mathematics) MAP Coordinator, coach first-year STEM students on coding coursework, study habits, and how to find a real pathway on campus. Started as a mentee. Invited speaker, IU Leadership Conference 2025.
 
 **Website Team Lead** · Jan 2024 to present · ServeIT (Laurie Burns McRobbie ServeIT Clinic), Luddy  
 Lead accessible web projects for Bloomington nonprofits so partners can keep their missions running without a developer on call. Ship WCAG (Web Content Accessibility Guidelines) 2.1 sites using React, Python, and PostgreSQL. Joined as a first-year student; later became Website Team Lead.
 
-**Digital Humans Project Lead** · Feb 2025 to present · Luddy LINK  
-Research how digital humans (AI-driven virtual personas) might be used in business, with customers and in internal operations. Separate from ServeIT Website Team Lead.
-
 **Content Creator** · Aug 2023 to present · Handshake / Instagram / Facebook  
 Make early-career advice usable, not impressive. Short-form content on business-casual dress, workplace norms, and early-career decisions. Organic reach of more than 1.2 million combined views across Handshake and Instagram.
 
-**STEM MAP Coordinator / MAP Coordinator** · Aug 2023 to present · IU Office of Student Life / FASE  
-Coordinate MAP within FASE, including as STEM (science, technology, engineering, and mathematics) MAP Coordinator. Run MAP day to day: mentor training, Canvas operations, and programme communications. Started as a mentee. Invited speaker, IU Leadership Conference 2025.
-
 **Founder** · Jade🪴  
 Technical consulting, web design, branding, and software support for small businesses and community organisations when that work appears.
+
+---
+
+## Organizations (LinkedIn · paste-ready)
+
+**STEM MAP Coordinator / MAP Coordinator** · Aug 2023 to present · Faculty and Staff for Student Excellence (FASE), IU Office of Student Life  
+- Run the Mentor Apprenticeship Programme (MAP) day to day: mentor training, Canvas operations, and programme communications for 50+ first-generation and low-income peer mentors.  
+- As STEM (science, technology, engineering, and mathematics) MAP Coordinator, coach first-year STEM students on coding coursework, study habits, and how to find a real pathway on campus. Started as a mentee. Invited speaker, IU Leadership Conference 2025.
+
+**Student Ambassador** · Aug 2023 to present · Office of the Vice Provost for Undergraduate Education (OVPUE)  
+- Help prospective students and families see IU Bloomington clearly on visit days.  
+- Represent Undergraduate Education with presentations, campus walk-throughs, and simple onboarding messages, working with office staff.
 
 ---
 
