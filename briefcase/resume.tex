@@ -1,20 +1,15 @@
 %-------------------------
 % Resume in LaTeX
-% Optimized for readability, ATS compatibility, and concise technical storytelling
+% One page · ATS-safe · balanced human spacing
 %-------------------------
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
 \usepackage{iftex}
 \ifPDFTeX
   \input{glyphtounicode}
@@ -23,64 +18,50 @@
 \usepackage[sfdefault]{atkinson}
 \usepackage[T1]{fontenc}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\setlength{\footskip}{4.1pt}
+\pagestyle{empty}
 
+% Margins: room to breathe without forcing a second page
 \addtolength{\oddsidemargin}{-0.55in}
 \addtolength{\evensidemargin}{-0.55in}
 \addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-.6in}
-\addtolength{\textheight}{1.25in}
+\addtolength{\topmargin}{-0.52in}
+\addtolength{\textheight}{1.12in}
 
 \urlstyle{same}
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
+% Thin 0.4pt rule (lighter than \titlerule); even air above/below headings
 \titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule\vspace{1pt}]
+  \vspace{2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\vspace{1.5pt}\noindent{\color{black}\rule{\textwidth}{0.4pt}}\vspace{3pt}]
 
-\newcommand{\resumeItem}[1]{
-  \item\small{#1}
+\newcommand{\resumeItem}[1]{%
+  \item\small{#1}%
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[4]{%
   \item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \small #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}
+    \end{tabular*}\vspace{-1pt}%
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+% Gap between school / job blocks
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=4pt, parsep=0pt, topsep=1pt, partopsep=0pt]%
 }
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 
-\newcommand{\resumeSubHeadingListEnd}{
-  \end{itemize}
+% Gap between bullets under a role
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=0.15in, itemsep=1.5pt, parsep=0pt, topsep=2pt, partopsep=0pt]%
 }
-
-\newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.12in, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-}
-
-\newcommand{\resumeItemListEnd}{
-  \end{itemize}
-}
-
-\newcommand{\skillrow}[2]{
-  \item\small
-  \begin{tabular*}{0.97\textwidth}{@{}p{1.25in}@{\hspace{0.05in}}p{5.7in}@{}}
-    \textbf{#1} & #2 \\
-  \end{tabular*}
-}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
 
 \ifPDFTeX
   \pdfgentounicode=1
@@ -88,14 +69,16 @@
 
 \begin{document}
 
+% Single-column plain extractable contact (no icons / multi-col header table)
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\[1pt]
+    \textbf{\Huge \scshape Jade Zhao} \\[3pt]
     \small
     \href{mailto:jlzhao@iu.edu}{\underline{jlzhao@iu.edu}} $|$
     \href{https://linkedin.com/in/zhao-langxi}{\underline{linkedin.com/in/zhao-langxi}} $|$
     \href{https://github.com/zhao-langxi}{\underline{github.com/zhao-langxi}} $|$
     \href{https://jlzhao.pages.iu.edu/}{\underline{jlzhao.pages.iu.edu}}
 \end{center}
+\vspace{2pt}
 
 \section{Education}
   \resumeSubHeadingListStart
@@ -104,16 +87,16 @@
       {Indiana University Bloomington}{Bloomington, IN}
       {B.S. Informatics (Business and Society)}{Expected May 2027}
       \resumeItemListStart
-        \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50 \textbar\ \textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ First-generation}
-        \resumeItem{\textbf{STEM MAP Coordinator} (science, technology, engineering, and mathematics; Mentor Apprenticeship Programme), \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; First Year Experience programmes}
-        \resumeItem{\textbf{ServeIT} Website Team Lead; accessible nonprofit web (\textbf{WCAG} 2.1) \textbar\ Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026}
+        \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50 \textbar\ \textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ Direct Admit \textbar\ First-generation}
+        \resumeItem{\textbf{STEM MAP Coordinator} (Mentor Apprenticeship Programme), \textbf{FASE}, IU Office of Student Life; coordinate for 50+ first-generation and low-income students}
+        \resumeItem{\textbf{ServeIT} Website Team Lead: 5+ nonprofit web projects (\textbf{WCAG} 2.1); Handshake / Instagram content, about 1.2M combined views \textbar\ Study abroad: \textbf{UCM Madrid}, Spring 2026}
       \resumeItemListEnd
 
     \resumeSubheading
       {Cathedral High School}{Indianapolis, IN}
       {High school diploma, high honours \textbar\ GPA: 4.00}{Aug 2019 to May 2023}
       \resumeItemListStart
-        \resumeItem{\textbf{Advanced Placement (AP) Scholar}; Quill and Scroll; \textbf{AP CSA} (Java) and \textbf{AP CSP}; yearbook editor; 200+ service hours}
+        \resumeItem{\textbf{AP Scholar}; Quill and Scroll; \textbf{AP CSA} (Java) and \textbf{AP CSP}; yearbook editor; 200+ service hours}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -125,7 +108,7 @@
       {Software Engineer}{Aug 2026 to present}
       {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Design and ship full-stack systems in Python, TypeScript, React, and Node.js across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}).}
+        \resumeItem{Design and ship full-stack systems in Python, TypeScript, React, and Node.js across \textbf{APIs}, automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}).}
         \resumeItem{Build and evaluate agentic coding flows with task decomposition, model routing, context handoffs, and human-in-the-loop review.}
       \resumeItemListEnd
 
@@ -133,36 +116,35 @@
       {Undergraduate Student Researcher}{Jun 2026 to Jul 2026}
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Investigate how consumer applications collect, store, and protect personal data on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
-        \resumeItem{Analyse and document privacy practices for research deliverables at a high level without disclosing partner-confidential detail.}
+        \resumeItem{Investigate how consumer applications collect, store, and protect personal data on a university research project with an industry partner under \textbf{NDA}.}
+        \resumeItem{Analyse and document privacy practices for research deliverables without disclosing partner-confidential detail.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{Aug 2025 to Dec 2025}
-      {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
+      {IU Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
         \resumeItem{Analyse how consumer technology handles personal data, including collection, storage, and protection practices.}
-        \resumeItem{Extend privacy research at the Luddy School through independent analysis and written research notes.}
+        \resumeItem{Extend privacy research at Luddy through independent analysis and written research notes.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Researcher}{May 2024 to Dec 2024}
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) as public interest technology for nonprofit organisations.}
-        \resumeItem{Research go-to-market (\textbf{GTM}) approaches that help nonprofit organisations adopt and sustain technical tools.}
+        \resumeItem{Research agentic AI as public interest technology for nonprofit organisations.}
+        \resumeItem{Research go-to-market (\textbf{GTM}) approaches that help nonprofits adopt and sustain technical tools.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
+% Plain comma-separated skill lines (no multi-col skill tables)
 \section{Skills}
-  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-    \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX}
-    \skillrow{Frameworks}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
-    \skillrow{AI / ML}{full-stack AI systems, LLM (large language model), RAG (retrieval-augmented generation), agentic AI, tool-calling, structured inputs and outputs}
-    \skillrow{Data / Privacy}{privacy, personal data, consumer technology, NDA-aware research, database management, ETL (extract, transform, load)}
-    \skillrow{Tools / Practices}{GTM (go-to-market), WCAG (Web Content Accessibility Guidelines) 2.1, technical documentation, exception handling, input validation, Figma, Canvas LMS}
-    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate), bilingual technical writing (English / Chinese)}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+    \item\small\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX \textbar\ \textbf{Frameworks:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs
+    \item\small\textbf{AI / ML:} full-stack AI systems, LLM, RAG, agentic AI, tool-calling, structured inputs and outputs
+    \item\small\textbf{Data / Privacy:} privacy research, NDA-aware analysis, database management, ETL \textbar\ \textbf{Tools:} GTM, WCAG 2.1, technical documentation, Figma, Canvas LMS
+    \item\small\textbf{Spoken:} English (native), Fuzhounese (native), Spanish (intermediate)
   \end{itemize}
 
 \end{document}
