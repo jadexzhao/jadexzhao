@@ -15,7 +15,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5}
 \usepackage{iftex}
 \ifPDFTeX
   \input{glyphtounicode}
@@ -33,11 +32,11 @@
 \setlength{\footskip}{4.1pt}
 
 %----------MARGINS----------
-\addtolength{\oddsidemargin}{-0.55in}
-\addtolength{\evensidemargin}{-0.55in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\topmargin}{-.55in}
-\addtolength{\textheight}{1.1in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.05in}
 
 \urlstyle{same}
 \raggedbottom
@@ -46,8 +45,8 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-5pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule\vspace{1pt}]
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{2pt}]
 
 %----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
@@ -83,7 +82,7 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1.5pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=3pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 
 \newcommand{\resumeSubHeadingListEnd}{
@@ -91,7 +90,7 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.12in, itemsep=0pt, parsep=0pt, topsep=0.5pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 
 \newcommand{\resumeItemListEnd}{
@@ -100,7 +99,7 @@
 
 \newcommand{\skillrow}[2]{
   \item\small
-  \begin{tabular*}{0.97\textwidth}{@{}p{1.25in}@{\hspace{0.06in}}p{5.7in}@{}}
+  \begin{tabular*}{0.97\textwidth}{@{}p{1.35in}@{\hspace{0.08in}}p{5.55in}@{}}
     \textbf{#1} & #2 \\
   \end{tabular*}
 }
@@ -116,12 +115,12 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\[1pt]
+    \textbf{\Huge \scshape Jade Zhao} \\[2pt]
     \small
-    \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
-    \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
-    \href{https://github.com/zhao-langxi}{\faGithub\ \underline{github.com/zhao-langxi}} $|$
-    \href{https://jlzhao.pages.iu.edu/}{\faGlobe\ \underline{jlzhao.pages.iu.edu}}
+    \href{mailto:jlzhao@iu.edu}{\underline{jlzhao@iu.edu}} $|$
+    \href{https://linkedin.com/in/zhao-langxi}{\underline{linkedin.com/in/zhao-langxi}} $|$
+    \href{https://github.com/zhao-langxi}{\underline{github.com/zhao-langxi}} $|$
+    \href{https://jlzhao.pages.iu.edu/}{\underline{jlzhao.pages.iu.edu}}
 \end{center}
 
 %-----------EDUCATION-----------
@@ -134,7 +133,8 @@
       \resumeItemListStart
         \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50}
         \resumeItem{\textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ Direct Admit \textbar\ First-generation college student}
-        \resumeItem{\textbf{Mentor Apprenticeship Programme (MAP)} Coordinator, \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; First Year Experience programmes}
+        \resumeItem{\textbf{STEM MAP Coordinator} (science, technology, engineering, and mathematics; Mentor Apprenticeship Programme), \textbf{Faculty and Staff for Student Excellence (FASE)}, IU Office of Student Life; day-to-day coordination for 50+ first-generation and low-income students}
+        \resumeItem{\textbf{Serve IT Clinic} Website Team Lead: 5+ nonprofit web projects (WCAG 2.1); early-career Handshake / Instagram content with about 1.2 million combined views}
         \resumeItem{Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026}
       \resumeItemListEnd
 
@@ -155,17 +155,16 @@
       {Software Engineer}{Aug 2026 to present}
       {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Design and ship full-stack and artificial intelligence (\textbf{AI}) systems across application programming interfaces (\textbf{APIs}), automation, developer tooling, and large language model (\textbf{LLM}) workflows, including tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when needed.}
-        \resumeItem{Build and evaluate agentic coding flows with task decomposition, model routing, context handoffs, and human-in-the-loop verification before merge or handoff.}
-        \resumeItem{Write bilingual technical notes in English and Chinese so prompts, commits, and handoffs stay specific instead of generic.}
+        \resumeItem{Ship full-stack product features across Python, TypeScript, React, and Node.js, including application programming interfaces (\textbf{APIs}), backend services, frontend interfaces, and database-backed workflows from design through release.}
+        \resumeItem{Build developer tooling and automation that keep releases reliable; integrate large language model (\textbf{LLM}) workflows such as tool-calling, structured inputs and outputs, and retrieval-augmented generation (\textbf{RAG}) when they help shipping.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Undergraduate Student Researcher}{Jun 2026 to Jul 2026}
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Investigate how consumer applications collect, store, and protect personal data and privacy on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
-        \resumeItem{Document and analyse privacy and data-handling practices for research deliverables at a high level without disclosing partner-confidential detail.}
+        \resumeItem{Investigate how consumer applications collect, store, and protect personal data on a university research project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
+        \resumeItem{Analyse and document privacy practices for research deliverables at a high level without disclosing partner-confidential detail.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -173,7 +172,7 @@
       {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
         \resumeItem{Analyse how consumer technology handles personal data, including collection, storage, and protection practices.}
-        \resumeItem{Extend privacy research on personal data practices in consumer technology in an academic Luddy School setting.}
+        \resumeItem{Extend privacy research at the Luddy School through independent analysis and written research notes.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -181,21 +180,20 @@
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
         \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) as public interest technology for nonprofit organisations.}
-        \resumeItem{Research go-to-market (\textbf{GTM}) strategy as a public interest technology question for nonprofit settings.}
-        \resumeItem{Connect agentic AI and GTM implications for nonprofit adoption; founded Serve-AI via PIT-UN as a public-interest AI track.}
+        \resumeItem{Research go-to-market (\textbf{GTM}) approaches for nonprofit technology adoption; founded Serve-AI as a public-interest AI track via PIT-UN.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
 \section{Skills}
-  \begin{itemize}[leftmargin=0.12in, label={}, itemsep=1pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-    \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
-    \skillrow{Frameworks \& Infra}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
-    \skillrow{AI \& Product}{full-stack AI, LLM, RAG, agentic AI, GTM / go-to-market, tool-calling, structured inputs/outputs}
-    \skillrow{Data \& Privacy}{privacy, personal data, consumer technology, NDA-aware research, database management, ETL}
-    \skillrow{Practices}{WCAG 2.1, technical documentation, exception handling, input validation, Figma, Canvas LMS}
-    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate); bilingual technical writing (English / Chinese)}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+    \skillrow{Languages}{Python, TypeScript, JavaScript, SQL, HTML, CSS, LaTeX}
+    \skillrow{Frameworks}{React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
+    \skillrow{AI / ML}{full-stack AI systems, LLM (large language model), RAG (retrieval-augmented generation), agentic AI, tool-calling, structured inputs and outputs}
+    \skillrow{Data / Privacy}{privacy, personal data, consumer technology, NDA-aware research, database management, ETL (extract, transform, load)}
+    \skillrow{Tools / Practices}{GTM (go-to-market), WCAG (Web Content Accessibility Guidelines) 2.1, technical documentation, exception handling, input validation, Figma, Canvas LMS}
+    \skillrow{Spoken languages}{English (native), Fuzhounese (native), Spanish (intermediate)}
   \end{itemize}
 
 %-------------------------------------------
