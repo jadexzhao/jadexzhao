@@ -19,3 +19,6 @@ linkedin-featured-pdfs/
 # Nested zhao-langxi project clones (own remotes)
 Stealth/
 prohealth-informatics/
+
+# Local reference dumps (contact PDFs, IG export, search snapshots)
+.local-ref/

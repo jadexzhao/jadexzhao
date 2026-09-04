@@ -16,7 +16,10 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{fontawesome5}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
 
 %----------FONT----------
 \usepackage[sfdefault]{atkinson}
@@ -97,7 +100,9 @@
 }
 
 %----------PDF READABILITY----------
-\pdfgentounicode=1
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
 
 %-------------------------------------------
 %%%%%% RESUME STARTS HERE %%%%%%%%%%%%%%%%%%
@@ -122,7 +127,7 @@
       {B.S. Informatics (Business and Society)}{Expected May 2027}
       \resumeItemListStart
         \resumeItem{Luddy School of Informatics, Computing, and Engineering \textbar\ GPA: 3.50}
-        \resumeItem{\textbf{Hudson \& Holland Scholar} (Full Merit) \textbar\ \textbf{Direct Admit} \textbar\ \textbf{First-generation college student}}
+        \resumeItem{\textbf{Hudson \& Holland Platinum Scholar} (Full Merit) \textbar\ \textbf{Direct Admit} \textbar\ \textbf{First-generation college student}}
         \resumeItem{Study abroad: \textbf{Universidad Complutense de Madrid}, Spring 2026.}
       \resumeItemListEnd
 
@@ -130,8 +135,8 @@
       {Cathedral High School}{Indianapolis, IN}
       {High school diploma, high honours \textbar\ GPA: 4.00}{Aug 2019 to May 2023}
       \resumeItemListStart
-        \resumeItem{\textbf{AP Scholar} and member of \textbf{Quill and Scroll} International Honorary Society.}
-        \resumeItem{Yearbook editor; tennis and Student Council; \textbf{200+} hours of community service.}
+        \resumeItem{\textbf{Advanced Placement (AP) Scholar} and member of \textbf{Quill and Scroll} International Honorary Society.}
+        \resumeItem{\textbf{AP Computer Science A (AP CSA)} (Java), \textbf{AP Computer Science Principles (AP CSP)}; yearbook editor; \textbf{200+} community service hours.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -141,42 +146,62 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Program Assistant}{Aug 2026 to present}
-      {IUB Undergraduate Education}{Bloomington, IN}
+      {Software Engineer}{Aug 2026 to present}
+      {Stealth Startup}{Remote}
       \resumeItemListStart
-        \resumeItem{Support programming for the \textbf{Hudson \& Holland Scholars Programme} (\textbf{HHSP}), Indiana University Bloomington's largest merit-based scholarship programme, helping first-generation, low-income, and rural scholars transition into research, leadership, and professional opportunities.}
-        \resumeItem{A Hudson \& Holland Platinum Scholar and first-generation student myself, bringing direct insight into the scholars I support.}
+        \resumeItem{Design and ship full-stack and \textbf{artificial intelligence (AI)} systems across \textbf{APIs} (application programming interfaces), automation, developer tooling, and \textbf{LLM} (large language model) workflows, including tool-calling, structured inputs and outputs, and \textbf{RAG} (retrieval-augmented generation) when needed.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Luddy LINK $\cdot$ Digital Humans Project}{Feb 2025 to present}
-      {Indiana University Bloomington}{Bloomington, IN}
+      {Programme Assistant}{Aug 2026 to present}
+      {Indiana University Bloomington (IUB) Undergraduate Education}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Researched applications of digital human (AI-driven virtual persona) technology for business use cases, exploring how organisations might deploy digital humans across customer-facing and operational contexts.}
+        \resumeItem{Coordinate \textbf{Hudson \& Holland Scholars Programme (HHSP)} programming and scholar-facing operations for first-generation, low-income, and rural students entering research and technical pathways.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Undergraduate Student Researcher}{Jun 2026 to Jul 2026}
+      {National Science Foundation (NSF)}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Research how consumer apps collect, store, and protect personal data, on a university project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Lead, Digital Humans Project}{Feb 2025 to present}
+      {Luddy LINK $\cdot$ Indiana University Bloomington}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Applied-project research on \textbf{AI-driven digital human} (virtual persona) systems for business deployment in customer-facing and operational workflows.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Undergraduate Researcher}{Aug 2025 to Dec 2025}
+      {Indiana University Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Continue that privacy work at the Luddy School: how personal data is handled in consumer technology.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Website Team Lead}{Jan 2024 to present}
-      {\href{https://serveit.luddy.indiana.edu/}{Laurie McRobbie Serve IT Nonprofit Clinic, Luddy School, Indiana University}}{Bloomington, IN}
+      {\href{https://serveit.luddy.indiana.edu/}{Laurie Burns McRobbie ServeIT Clinic, Luddy School, Indiana University}}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Serve IT is a school-run organisation where students apply technology skills to build the capacity of local nonprofits so they may better serve their own missions. Lead \textbf{5+} nonprofit web projects for Bloomington partners without in-house developers; ship accessible \textbf{WCAG 2.1} sites with \textbf{React} and \textbf{Python/PostgreSQL}, having grown into the role since joining as a first-year student.}
-        \resumeItem{Lead \textbf{ServeAI} (PIT-UN), building responsible \textbf{AI} resources so nonprofits can adopt tools without dropping accessibility or trust.}
+        \resumeItem{Own \textbf{intake, scoping, delegation, and delivery} for \textbf{5+} nonprofit web builds for Bloomington partners without in-house developers; progressed from first-year contributor to team lead.}
+        \resumeItem{Ship staff-maintainable sites with \textbf{React}, \textbf{TypeScript}, \textbf{HTML/CSS}, and \textbf{GitHub Pages}; back structured content and reporting with \textbf{Python}/\textbf{PostgreSQL} \textbf{database management} and extract, transform, load (\textbf{ETL}) pipelines where partners need them.}
+        \resumeItem{Build to \textbf{Web Content Accessibility Guidelines (WCAG) 2.1} baselines with technical documentation and handoff notes so sites hold after clinic delivery.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {MAP Coordinator}{Aug 2023 to present}
-      {\href{https://studentlife.indiana.edu/}{IU Office of Student Life}}{Bloomington, IN}
+      {Undergraduate Researcher}{May 2024 to Dec 2024}
+      {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Run \textbf{FASE} (Faculty and Staff for Student Excellence) \textbf{Mentor Apprenticeship Program} (\textbf{MAP}) day-to-day, overseeing mentor training, \textbf{Canvas} operations, and programme communications for \textbf{50+} first-generation and low-income students, having come up through the same pipeline as a mentee.}
-        \resumeItem{Spoke at the \textbf{IU Leadership Conference 2025} on student leadership and engagement.}
+        \resumeItem{Research agentic AI (systems that can act toward a goal with limited human prompting) and \textbf{GTM} (go-to-market) strategy as a public interest technology question for nonprofit settings.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Restaurant ops, web, and marketing}{May 2017 to present}
-      {Potstickers}{Greenfield, IN}
+      {Mentor Apprenticeship Programme (MAP) Coordinator}{Aug 2023 to present}
+      {\href{https://studentlife.indiana.edu/}{Indiana University (IU) Office of Student Life $\cdot$ Faculty and Staff for Student Excellence (FASE)}}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Worked the floor from 2017 to 2023: serving, till, delivery, and kitchen rushes in the family restaurant.}
-        \resumeItem{During COVID-19, rebuilt the \textbf{website and social} from scratch after closures and staff cuts; from 2023, run web and content (Facebook, Instagram, TikTok) in summers and remotely in term, including \textbf{Matcha and Moxie}.}
+        \resumeItem{Run \textbf{MAP} day-to-day: mentor training, \textbf{Canvas learning management system (LMS)} and internal \textbf{information systems} operations, and programme communications for \textbf{50+} first-generation and low-income peer mentors.}
+        \resumeItem{Coach first-year \textbf{science, technology, engineering, and mathematics (STEM)} students on coding coursework, technical study habits, and pathway navigation.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -187,17 +212,11 @@
 
     \resumeSubSubheading{\textbf{Technical}}{}
     \resumeItemListStart
-      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML/CSS}
-      \resumeItem{\textbf{Frameworks \& Technologies:} React.js, Node.js, PostgreSQL, Git, WCAG 2.1}
-      \resumeItem{\textbf{Tools \& Practices:} Figma, Technical Documentation, Accessibility Compliance, ETL}
-    \resumeItemListEnd
-
-    \vspace{-5pt}
-
-    \resumeSubSubheading{\textbf{Leadership \& Soft Skills}}{}
-    \resumeItemListStart
-      \resumeItem{Social Media Marketing, Mentoring, Content Strategy}
-      \resumeItem{\textbf{Spoken Languages:} English (Native), Fuzhounese (Native), Spanish (Intermediate)}
+      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
+      \resumeItem{\textbf{Frameworks \& Infra:} React, Node.js, PostgreSQL, Git, GitHub Pages}
+      \resumeItem{\textbf{Data \& Systems:} database management, extract, transform, load (ETL) pipelines, internal information systems, information technology (IT) team collaboration}
+      \resumeItem{\textbf{Practices:} WCAG 2.1 accessibility, client intake/scoping, technical documentation, exception handling, input validation, Figma, Canvas LMS}
+      \resumeItem{\textbf{Spoken languages:} English (native), Fuzhounese (native), Spanish (intermediate) $\cdot$ bilingual technical writing (English / \textbf{Chinese})}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
