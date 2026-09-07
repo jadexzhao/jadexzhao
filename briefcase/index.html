@@ -110,8 +110,8 @@
       </p>
       <nav class="rail-nav" aria-label="Primary">
         <a href="#main-content" aria-current="page">home</a>
-        <a href="#elsewhere">elsewhere</a>
-        <a href="resume.pdf" rel="noopener noreferrer">resume</a>
+        <a href="#about">about</a>
+        <a href="#portfolio">portfolio</a>
         <a href="#contact">contact</a>
       </nav>
     </div>
@@ -139,27 +139,39 @@
         guides for community organisations.
       </p>
       <p class="stage-cta-row">
-        <a class="stage-cta" href="https://serveit.luddy.indiana.edu/" rel="noopener noreferrer">ServeIT · live</a>
-        <a class="stage-cta stage-cta--ghost" href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer">Serve-AI</a>
-        <a class="stage-cta stage-cta--ghost" href="#serveit">Case writeup</a>
+        <a class="stage-cta" href="#portfolio">Portfolio · case studies</a>
+        <a class="stage-cta stage-cta--ghost" href="#about">About</a>
+        <a class="stage-cta stage-cta--ghost" href="#contact">Contact</a>
         <a class="stage-cta stage-cta--ghost" href="resume.pdf" rel="noopener noreferrer">Open resume</a>
       </p>
     </section>
 
-    <section id="serveit" class="stage-block rv" aria-labelledby="serveit-heading">
-      <p class="stage-kicker">Serve IT · depth</p>
-      <h2 id="serveit-heading" class="stage-title">nonprofit sites built to last</h2>
+    <section id="portfolio" class="stage-block rv" aria-labelledby="portfolio-heading">
+      <p class="stage-kicker">portfolio</p>
+      <h2 id="portfolio-heading" class="stage-title">case studies · ServeIT and ships</h2>
       <p class="stage-lede">
-        Website Team Lead at Serve IT Clinic (Luddy). Lead nonprofit web projects
+        Website Team Lead at Serve IT Clinic (Luddy). I lead nonprofit web projects
         for partners without in-house developers, having grown into the role
-        since joining as a first-year student; ship WCAG 2.1-compliant
+        since joining as a first-year student. Shipped WCAG 2.1-compliant
         sites and Python/PostgreSQL ETL designed for long-term maintainability.
         Clinic partners include Town of Nashville, IN (accessibility recommendations; no live-site edits),
         Greater Bloomington Chamber of Commerce, Indiana Phenology, Middle Way House,
         and City of Bloomington ... website and accessibility work through ServeIT only.
       </p>
 
-      <article class="case" aria-labelledby="case-title">
+      <article class="case" aria-labelledby="case-nashville" id="serveit-nashville">
+        <h3 id="case-nashville" class="case-name">Town of Nashville, IN · ServeIT case study</h3>
+        <p class="about-copy">
+          Coming soon. This semester I am on the Town of Nashville accessibility
+          recommendations track (no live-site edits). Full case writeup lands next week
+          once the week-four case study assignment opens.
+        </p>
+        <p class="case-links">
+          <a href="https://serveit.luddy.indiana.edu/" rel="noopener noreferrer">ServeIT · live</a>
+        </p>
+      </article>
+
+      <article class="case" aria-labelledby="case-title" id="serveit">
         <h3 id="case-title" class="case-name">Serve IT Clinic · Website Team Lead</h3>
         <dl class="case-beats">
           <div>
@@ -355,7 +367,7 @@
 
   var links = document.querySelectorAll(".rail-nav a[href^='#']");
   if ("IntersectionObserver" in window && links.length) {
-    var sections = ["hub", "serveit", "elsewhere", "about", "build", "contact"]
+    var sections = ["hub", "portfolio", "elsewhere", "about", "build", "contact"]
       .map(function (id) {
         return document.getElementById(id);
       })
@@ -367,10 +379,10 @@
           var id = entry.target.id;
           var map = {
             hub: "#main-content",
-            serveit: "#main-content",
-            elsewhere: "#elsewhere",
-            about: "#elsewhere",
-            build: "#elsewhere",
+            portfolio: "#portfolio",
+            elsewhere: "#portfolio",
+            about: "#about",
+            build: "#about",
             contact: "#contact"
           };
           var target = map[id] || "#" + id;
