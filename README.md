@@ -50,7 +50,7 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 | Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
 | FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM (science, technology, engineering, and mathematics) MAP Coordinator / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
 | Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
-| Jade🪴 | Founder · web / branding / software for small businesses and community organisations |
+| Jade🪴 | Founder · full-stack software engineering (FS SWE), web / branding / software for small businesses and community organisations · [Showit](https://showit.com/)-friendly redesigns · industry archive: [github.com/jadexzhao/matcha](https://github.com/jadexzhao/matcha) (NDA-style client folders; no personal names) |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
 | Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · HIEP / Spring 2026 |
 | Quackr · duck farm | [sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
@@ -64,6 +64,7 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 |---|---|
 | **Primary GitHub** | [github.com/zhao-langxi](https://github.com/zhao-langxi) |
 | **Portfolio code repo** | [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) (this repo) |
+| **Jade🪴 FS SWE archive** | [jadexzhao/matcha](https://github.com/jadexzhao/matcha) · industry folders, mockups, ops docs |
 | **LinkedIn** | [linkedin.com/in/zhao-langxi](https://www.linkedin.com/in/zhao-langxi/) |
 | **Instagram** | [@zhao.langxi](https://instagram.com/zhao.langxi) |
 
