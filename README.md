@@ -6,7 +6,7 @@ I care about the systems that have to keep working after the demo ends. My long-
 
 Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is the proof-of-work door, not a second person.
 
-Digital Humans Project Lead · Luddy LINK · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM MAP Coordinator · ServeIT Website Team Lead.
+Digital Humans Project Lead · Luddy LINK · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM Peer Mentor / MAP Coordinator · ServeIT Website Team Lead.
 
 One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
 
@@ -48,7 +48,7 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 | PIT-UN · Business Technologist | May 2024 to Dec 2024 · agentic AI and GTM for nonprofits |
 | Restaurant Kid | May 2017 to Jun 2023 · family Chinese buffet, Greenfield · floor to site rebuild |
 | Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
-| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM (science, technology, engineering, and mathematics) MAP Coordinator / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
+| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM Peer Mentor / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
 | Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
 | Jade🪴 | Founder · full-stack software engineering (FS SWE), web / branding / software for small businesses and community organisations · [Showit](https://showit.com/)-friendly redesigns · industry archive: [github.com/jadexzhao/matcha](https://github.com/jadexzhao/matcha) (NDA-style client folders; no personal names) |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |

@@ -1370,6 +1370,124 @@ a:hover {
   .site .stage {
     padding-block-end: calc(var(--space-2xl) + 4.5rem);
   }
+
+  /* Mobile first viewport: identity + pitch + CTAs, not a second
+     copy of the rail. Dock already covers email / LinkedIn / resume. */
+  .site .rail {
+    gap: var(--space-s);
+    padding-block: var(--space-m) var(--space-s);
+  }
+
+  .site .rail-photo {
+    inline-size: 4.25rem;
+    margin-block-end: 0;
+  }
+
+  .site .rail-name {
+    font-size: var(--step-3);
+  }
+
+  .site .rail-name::after {
+    margin-block-start: var(--space-2xs);
+  }
+
+  .site .rail-role {
+    font-size: var(--step--1);
+    line-height: 1.45;
+    max-inline-size: 34ch;
+  }
+
+  /* Hero carries role + pitch; rail keeps identity + nav only. */
+  .site .rail-role,
+  .site .rail-for,
+  .site .rail-looking,
+  .site .rail-contact {
+    display: none;
+  }
+
+  .site .rail-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3xs);
+  }
+
+  .site .rail-nav a {
+    padding-inline: var(--space-2xs);
+    justify-content: center;
+    box-shadow: inset 0 -2px 0 var(--line);
+  }
+
+  .site .rail-nav a:hover {
+    box-shadow: inset 0 -2px 0 var(--accent-soft);
+  }
+
+  .site .rail-nav a[aria-current='page'],
+  .site .rail-nav a[aria-current='true'] {
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+
+  .site .stage-block--hero {
+    padding-block: var(--space-l) var(--space-xl);
+  }
+
+  /* Rail already carries the name; hero leads with the idea + CTAs. */
+  .site .stage-block--hero .stage-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .site .stage-block--hero .stage-tagline {
+    font-size: var(--step-1);
+    max-inline-size: 36ch;
+  }
+
+  .site .stage-block--hero .stage-lede,
+  .site .stage-lede--pitch {
+    font-size: var(--step-0);
+  }
+
+  .site .stage-question {
+    font-size: var(--step-1);
+    margin: var(--space-2xs) 0 var(--space-s);
+  }
+
+  .site .stage-cta-row {
+    gap: var(--space-2xs);
+  }
+
+  .site .stage-cta {
+    flex: 1 1 auto;
+    min-inline-size: 6.5rem;
+  }
+
+  .site .case-links a {
+    padding-inline: 0.15em;
+    min-inline-size: var(--tap);
+    justify-content: center;
+  }
+
+  .site .link-hub {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site .about-copy,
+  .site .credential-line {
+    overflow-wrap: anywhere;
+  }
+}
+
+.site .credential-line {
+  margin: 0 0 var(--space-s);
+  padding-inline-start: var(--space-s);
+  border-inline-start: 2px solid var(--accent-soft);
+  font-size: var(--step-0);
+  font-weight: 600;
+  color: var(--ink);
+  max-inline-size: var(--measure);
 }
 
 /* ── 6. interior · the memo sheet ──────────────────────────── */

@@ -1,0 +1,209 @@
+%-------------------------
+% Curriculum Vitae (exec / FAANG-facing, 1 page)
+% Jade Zhao
+% Distinct from full resume.tex ... do not overwrite resume.pdf
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{iftex}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+\fi
+
+%----------FONT----------
+\usepackage[sfdefault]{atkinson}
+\usepackage[T1]{fontenc}
+
+%----------PAGE STYLE----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%----------MARGINS----------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%----------SECTION FORMATTING----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%----------CUSTOM COMMANDS----------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
+
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.18in]
+}
+
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}\vspace{-5pt}
+}
+
+%----------PDF READABILITY----------
+\ifPDFTeX
+  \pdfgentounicode=1
+\fi
+
+%-------------------------------------------
+%%%%%% CV STARTS HERE %%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Jade Zhao} \\ \vspace{2pt}
+    \small
+    \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
+    \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
+    \href{https://github.com/zhao-langxi}{\faGithub\ \underline{github.com/zhao-langxi}} $|$
+    \href{https://jlzhao.pages.iu.edu/}{\faGlobe\ \underline{jlzhao.pages.iu.edu}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+
+\small
+Informatics student at Indiana University (Luddy), expected May 2027. Digital Humans Project Lead at Luddy LINK, researching AI-driven virtual personas for business workflows, alongside shipping accessible web systems for organisations without in-house engineering. Seeking software engineering, AI product, or platforms and data roles after graduation.
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Indiana University Bloomington}{Bloomington, IN}
+      {B.S. Informatics (Business \& Society), Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
+      \resumeItemListStart
+        \resumeItem{\textbf{GPA: 3.50}; \textbf{Hudson \& Holland Platinum Scholar} (full merit); first-generation student; study abroad UCM Madrid, Spring 2026}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Digital Humans Project Lead}{Feb 2025 to Present}
+      {Luddy LINK, Luddy School of Informatics, Computing, and Engineering, Indiana University}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Lead applied research on \textbf{digital humans}, AI-driven virtual personas for customer-facing and internal business workflows.}
+        \resumeItem{Frame questions of trust, adoption, and responsible integration when conversational AI systems look and communicate like people.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Website Team Lead}{Jan 2024 to Present}
+      {Laurie Burns McRobbie ServeIT Nonprofit Clinic, Luddy School, Indiana University}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Lead web delivery for nonprofits without dedicated engineering; stack includes \textbf{React, Python, PostgreSQL}, and \textbf{WCAG 2.1}.}
+        \resumeItem{Scope requirements into maintainable builds and handoffs; clients include City of Bloomington and Middle Way House.}
+        \resumeItem{Progressed from first-year contributor to Website Team Lead.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Web Developer}{Jun 2026 to Jul 2026}
+      {National Science Foundation (NSF)}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Contributed to a university project on how consumer applications collect, store, and protect personal data.}
+        \resumeItem{Worked with an industry partner under \textbf{NDA}, delivering high-level findings while protecting confidential material.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {User Experience Designer}{Aug 2025 to Dec 2025}
+      {Indiana University Undergraduate Education}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Applied UX methods to consumer technology research on data collection, storage, privacy, and user understanding.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Business Technologist}{May 2024 to Dec 2024}
+      {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Researched \textbf{agentic AI} for public-interest and nonprofit use, including go-to-market and adoption barriers beyond pilot.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Restaurant Kid}{May 2017 to Jun 2023}
+      {Family Chinese Buffet}{Greenfield, IN}
+      \resumeItemListStart
+        \resumeItem{Daughter of restaurant owners: learned ops on the floor, then rebuilt the family website and social after COVID without an outside agency.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP-----------
+\section{Leadership}
+
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {STEM Peer Mentor / MAP Coordinator}{Aug 2023 to Present}
+      {Faculty and Staff for Student Excellence (FASE), Indiana University Office of Student Life}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Support \textbf{50+ first-generation and low-income peer mentors} through training, Canvas operations, and programme coordination; coach first-year STEM students on coding and academic pathways.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+
+\resumeSubHeadingListStart
+    \item
+    \resumeItemListStart
+      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, Java, HTML/CSS}
+      \resumeItem{\textbf{Systems:} React, Node.js, PostgreSQL, Git, REST APIs}
+      \resumeItem{\textbf{AI \& HCI:} Digital Humans, LLMs, RAG, Agentic AI, Human-Computer Interaction}
+      \resumeItem{\textbf{Accessibility \& UX:} WCAG 2.1, Figma, UX Research, Data Privacy}
+      \resumeItem{\textbf{Spoken:} English, Fuzhounese, Spanish}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
