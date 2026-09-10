@@ -607,8 +607,66 @@ a:hover {
   max-inline-size: var(--measure);
 }
 
+.site .stage-role-line {
+  margin: 0 0 var(--space-s);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  max-inline-size: var(--measure);
+}
+
+.site .stage-lede--pitch {
+  color: var(--ink);
+  font-size: var(--step-1);
+}
+
+.site .stage-question {
+  margin: var(--space-s) 0 var(--space-m);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--accent);
+  max-inline-size: var(--measure);
+  font-variation-settings: 'opsz' 120;
+}
+
 .site .stage-block--hero .stage-cta-row {
   margin-block-start: var(--space-s);
+}
+
+.site .case--featured {
+  border-inline-start-color: var(--accent-alt);
+  box-shadow: var(--shadow-2);
+}
+
+.site .case-status {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-alt);
+}
+
+.site .case-meta {
+  margin: 0 0 var(--space-s);
+  font-size: var(--step--1);
+  color: var(--ink-faint);
+}
+
+.site .case-soon {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-muted);
+  border-block-end: 1px dashed var(--line-strong);
 }
 
 @media (min-width: 48rem) {
