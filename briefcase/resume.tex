@@ -1,8 +1,8 @@
 %-------------------------
 % Resume in LaTeX
-% Optimized for readability, ATS compatibility, and concise technical storytelling
+% One page · ATS-friendly · UK English · no em dash
 %-------------------------
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -36,7 +36,7 @@
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\textheight}{1.05in}
 
 \urlstyle{same}
 \raggedbottom
@@ -45,46 +45,33 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{#1}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{
-  \resumeItem{#1}\vspace{-4pt}
+    \end{tabular*}\vspace{-6pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}]
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=2pt, parsep=0pt, topsep=0pt]
 }
 
 \newcommand{\resumeSubHeadingListEnd}{
@@ -92,11 +79,11 @@
 }
 
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}
+  \begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=1pt]
 }
 
 \newcommand{\resumeItemListEnd}{
-  \end{itemize}\vspace{-5pt}
+  \end{itemize}\vspace{-3pt}
 }
 
 %----------PDF READABILITY----------
@@ -115,34 +102,24 @@
     \href{mailto:jlzhao@iu.edu}{\faEnvelope\ \underline{jlzhao@iu.edu}} $|$
     \href{https://linkedin.com/in/zhao-langxi}{\faLinkedin\ \underline{linkedin.com/in/zhao-langxi}} $|$
     \href{https://github.com/zhao-langxi}{\faGithub\ \underline{github.com/zhao-langxi}} $|$
-    \href{https://jlzhao.pages.iu.edu/}{\faGlobe\ \underline{jlzhao.pages.iu.edu}}
+    \href{https://jlzhao.pages.iu.edu/}{\faGlobe\ \underline{jlzhao.pages.iu.edu}} $|$
+    \href{https://jadexzhao.github.io/jadexzhao/}{\underline{jadexzhao}}
 \end{center}
 
 %-----------SUMMARY-----------
 \section{Summary}
-\small Looking for a software engineering role after May 2027 near database management, internal information systems, information technology (IT) teams, and extract, transform, load (ETL) pipelines. Systems that keep working after the demo ends.
+\small Looking for a software engineering role after May 2027 near databases, internal information systems, information technology (IT), and extract, transform, load (ETL). Daughter of restaurant owners; grew into software at Indiana University (IU). Digital Humans at Luddy LINK, web leadership at Serve IT, plus privacy, user experience (UX), and artificial intelligence (AI) strategy along the way. Same question every time: will this still work for the people who have to live with it?
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-
     \resumeSubheading
       {Indiana University Bloomington}{Bloomington, IN}
-      {B.S. Informatics (Business and Society)}{Expected May 2027}
+      {B.S. Informatics (Business and Society), Luddy}{Expected May 2027}
       \resumeItemListStart
-        \resumeItem{Luddy; GPA 3.50; \textbf{Hudson \& Holland Platinum Scholar} (full merit); Direct Admit; first-generation}
-        \resumeItem{\textbf{HHSP} (Hudson and Holland Scholars Programme) Programme Assistant, IUB Undergraduate Education}
-        \resumeItem{IU Office of Student Life · \textbf{STEM MAP Coordinator} (FASE / Mentor Apprenticeship Programme)}
-        \resumeItem{Study abroad: Universidad Complutense de Madrid (\textbf{UCM}), Spring 2026}
+        \resumeItem{GPA 3.50; \textbf{Hudson \& Holland Platinum Scholar} (full merit); Direct Admit; first-generation. Study abroad: Universidad Complutense de Madrid (\textbf{UCM}), Spring 2026. Cathedral High School: high honours, GPA 4.00, \textbf{AP Scholar}.}
+        \resumeItem{\textbf{STEM MAP Coordinator}, Faculty and Staff for Student Excellence (\textbf{FASE}) Mentor Apprenticeship Programme; 50+ first-generation and low-income mentors. \textbf{HHSP} Programme Assistant, IUB Undergraduate Education. Handshake / Instagram content, about 1.2M combined views.}
       \resumeItemListEnd
-
-    \resumeSubheading
-      {Cathedral High School}{Indianapolis, IN}
-      {High school diploma, high honours \textbar\ GPA: 4.00}{Aug 2019 to May 2023}
-      \resumeItemListStart
-        \resumeItem{\textbf{AP Scholar}; Quill and Scroll; \textbf{AP CSA} (Java) and \textbf{AP CSP}; yearbook editor; 200+ service hours}
-      \resumeItemListEnd
-
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
@@ -151,39 +128,52 @@
 
     \resumeSubheading
       {Digital Humans Project Lead}{Feb 2025 to present}
-      {Laurie Burns McRobbie ServeIT Nonprofit Clinic, Luddy School, Indiana University}{Bloomington, IN}
+      {Luddy LINK, Luddy School, Indiana University}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Ask how digital humans (AI-driven virtual personas) might show up in real business workflows, with customers and inside operations.}
-        \resumeItem{ServeIT places students on applied technology projects for nonprofit partners at the Luddy School.}
+        \resumeItem{Lead research on digital humans (AI-driven virtual personas) as useful business interfaces ... trust, disclosure, and adoption when AI looks and communicates like a person.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Website Team Lead / Accessibility Analyst}{Jan 2024 to present}
+      {Serve IT Nonprofit Clinic, Luddy School, Indiana University}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Lead website and data handoffs for nonprofit partners without an in-house engineering team; ship maintainable builds targeting Web Content Accessibility Guidelines (\textbf{WCAG}) 2.1 and Python / PostgreSQL extract, transform, load (\textbf{ETL}) pipelines.}
+        \resumeItem{Fall 2026 Accessibility Analyst co-lead for Town of Nashville ACC (Aug 2026 to present) ... assessment findings staff can act on.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Web Developer}{Jun 2026 to Jul 2026}
       {National Science Foundation (NSF)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Dig into how consumer apps collect, store, and protect personal data on a university project with an industry partner under a non-disclosure agreement (\textbf{NDA}).}
-        \resumeItem{Keep deliverables high-level and careful ... partner-confidential detail stays behind the NDA.}
+        \resumeItem{Study how consumer apps collect, store, and protect personal data on a university project with an industry partner under a non-disclosure agreement (\textbf{NDA}). Partner-confidential detail stays behind the NDA.}
       \resumeItemListEnd
 
     \resumeSubheading
       {User Experience Designer}{Aug 2025 to Dec 2025}
       {IUB Undergraduate Education}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Carry privacy work into how people actually meet consumer technology ... collection, storage, and protection of personal data; keep the user-facing story clear.}
+        \resumeItem{Carry privacy research into how people meet consumer technology ... collection, storage, and protection of personal data; keep the user-facing story clear.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Business Technologist}{May 2024 to Dec 2024}
       {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Research agentic AI and go-to-market (\textbf{GTM}) strategy as public-interest technology for nonprofit organisations ... adoption that can last after the pilot.}
+        \resumeItem{Research agentic AI and go-to-market (\textbf{GTM}) strategy as public-interest technology for nonprofit organisations ... adoption that lasts after the pilot.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Founder}{2024 to present}
+      {Jade}{Bloomington / remote}
+      \resumeItemListStart
+        \resumeItem{Web, branding, and software for small businesses and community organisations ... Showit-friendly redesigns and full-stack handoffs partners can maintain.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Restaurant Kid}{May 2017 to Jun 2023}
-      {Chinese Buffet}{Greenfield, IN}
+      {Family Chinese restaurant}{Greenfield, IN}
       \resumeItemListStart
-        \resumeItem{Work every role in the family restaurant (floor, till, kitchen); after COVID-19, rebuild the website and social media from scratch.}
+        \resumeItem{Work every role on the floor, till, and kitchen. After COVID-19, rebuild the website and social from scratch ... the first time technology felt part of keeping the business alive.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -191,16 +181,12 @@
 %-----------SKILLS-----------
 \section{Skills}
   \resumeSubHeadingListStart
-
     \resumeSubSubheading{\textbf{Technical}}{}
     \resumeItemListStart
-      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX}
-      \resumeItem{\textbf{Frameworks \& Infra:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs}
-      \resumeItem{\textbf{Data \& Systems:} database management, ETL pipelines, internal information systems, IT team collaboration}
-      \resumeItem{\textbf{AI / Practices:} LLM, RAG, agentic AI, digital humans, WCAG 2.1, user experience, privacy research, GTM, Figma, Canvas LMS}
-      \resumeItem{\textbf{Spoken languages:} English (native), Fuzhounese (native), Spanish (intermediate)}
+      \resumeItem{\textbf{Languages:} Python, TypeScript, JavaScript, SQL, HTML/CSS, LaTeX. \textbf{Frameworks \& infra:} React, Node.js, PostgreSQL, Git, GitHub Pages, APIs.}
+      \resumeItem{\textbf{Data \& systems:} databases, ETL pipelines, internal information systems, IT collaboration. \textbf{AI \& product:} digital humans, LLM, RAG, agentic AI, HCI, UX, privacy, WCAG 2.1, GTM, Figma.}
+      \resumeItem{\textbf{Spoken:} English (native), Fuzhounese (native), Spanish (intermediate).}
     \resumeItemListEnd
-
   \resumeSubHeadingListEnd
 
 %-------------------------------------------
