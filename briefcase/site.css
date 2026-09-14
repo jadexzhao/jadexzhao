@@ -2474,3 +2474,110 @@ summary:focus-visible {
   font-size: var(--step--1);
   color: var(--ink-muted);
 }
+
+.site .profile-intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+  align-items: flex-start;
+  margin: 0 0 var(--space-m);
+  max-inline-size: var(--measure);
+}
+
+.site .profile-headshot img,
+.site .profile-headshot {
+  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-s);
+  object-fit: cover;
+  border: 1px solid var(--line-strong);
+}
+
+.site .profile-lede {
+  flex: 1 1 16rem;
+  margin: 0;
+}
+
+.site .toc--rubric {
+  margin-block-start: var(--space-m);
+  padding: var(--space-s) var(--space-m);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--surface-raised);
+  max-inline-size: var(--measure);
+}
+
+.site .toc-label {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-alt);
+}
+
+.site .toc-list {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  color: var(--ink-muted);
+}
+
+.site .toc-list a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.site .artifact-figure {
+  margin: var(--space-m) 0;
+  max-inline-size: var(--measure);
+}
+
+.site .artifact-slot {
+  margin: 0;
+  padding: var(--space-m);
+  min-block-size: 7rem;
+  border: 2px dashed var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--surface-raised);
+}
+
+.site .artifact-slot-label {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-alt);
+}
+
+.site .artifact-slot-body {
+  margin: 0;
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+.site .figure-caption {
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--step--2);
+  color: var(--ink-faint);
+}
+
+.site .rail-figure {
+  margin: 0 0 var(--space-s);
+}
+
+.site .rail-figure .figure-caption {
+  margin-block-start: var(--space-3xs);
+  max-inline-size: 12rem;
+}
+
+.site .stage--article h3 {
+  margin: var(--space-m) 0 var(--space-2xs);
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--ink);
+  max-inline-size: var(--measure);
+}
