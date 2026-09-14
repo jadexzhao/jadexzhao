@@ -2364,3 +2364,113 @@ summary:focus-visible {
     break-after: avoid;
   }
 }
+
+/* ── ServeIT portfolio · facts + profile grid + case scaffolding ── */
+
+.site .fact-strip {
+  list-style: none;
+  margin: var(--space-m) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-s);
+  max-inline-size: var(--measure);
+}
+
+.site .fact-strip li {
+  margin: 0;
+  padding: var(--space-s) var(--space-m);
+  background: var(--surface-sunken);
+  border-inline-start: 3px solid var(--accent-soft);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.site .fact-strip strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.site .fact-source {
+  display: inline;
+  font-size: var(--step--2);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.site .profile-grid {
+  display: grid;
+  gap: var(--space-m);
+  margin: 0 0 var(--space-m);
+  max-inline-size: var(--measure);
+}
+
+.site .profile-grid > div {
+  margin: 0;
+  padding-block: var(--space-2xs);
+  border-block-start: 1px solid var(--line);
+}
+
+.site .profile-grid dt {
+  margin: 0 0 var(--space-3xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-alt);
+}
+
+.site .profile-grid dd {
+  margin: 0;
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  color: var(--ink-muted);
+}
+
+.site .scaffold-note {
+  margin: var(--space-s) 0 0;
+  padding: var(--space-s) var(--space-m);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-s);
+  background: var(--surface-raised);
+  font-size: var(--step--1);
+  font-style: italic;
+  color: var(--ink-faint);
+  max-inline-size: var(--measure);
+}
+
+.site .process-list {
+  margin: var(--space-s) 0;
+  padding-inline-start: 1.25rem;
+  max-inline-size: var(--measure);
+  color: var(--ink-muted);
+}
+
+.site .process-list li + li {
+  margin-block-start: var(--space-2xs);
+}
+
+.site .skill-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin: var(--space-s) 0;
+  padding: 0;
+  max-inline-size: var(--measure);
+}
+
+.site .skill-chips li {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0.35em 0.85em;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-raised);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
