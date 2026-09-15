@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Plain Disclosure · four questions before Agree · Jade Zhao</title>
+  <meta name="description" content="Most people skip the terms. This worksheet forces a privacy blurb to answer four questions: what they take, why, where it goes, what if you say no. Jade Zhao · jadexzhao.">
+  <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/plain-disclosure.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="jadexzhao · Jade Zhao">
+  <meta property="og:title" content="Plain Disclosure · Jade Zhao">
+  <meta property="og:description" content="A desk worksheet: paste a privacy blurb, get four plain answers before Agree.">
+  <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/plain-disclosure.html">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <meta name="theme-color" content="#f7efe8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; border-radius: 0 !important; }
+    :root {
+      --paper: #f7efe8;
+      --ink: #1f1a17;
+      --muted: #5c534c;
+      --line: #c9b6ae;
+      --pink: #c45b7a;
+      --pink-wash: #f3d6df;
+      --miss: #8b1e3f;
+    }
+    html, body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.05rem;
+      line-height: 1.45;
+    }
+    a { color: var(--ink); }
+    a:focus-visible, button:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 2px;
+    }
+    .page { width: min(920px, calc(100% - 2rem)); margin: 1.25rem auto 3rem; }
+    .site-nav {
+      display: flex; flex-wrap: wrap; gap: 0.65rem 1rem;
+      margin: 0 0 1.25rem; padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--line);
+      font-family: ui-monospace, "Courier New", monospace;
+      font-size: 0.78rem;
+    }
+    .site-nav a { text-decoration: underline; text-underline-offset: 2px; }
+    .kicker {
+      margin: 0 0 0.35rem;
+      font-family: ui-monospace, "Courier New", monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.85rem;
+      line-height: 1.15;
+    }
+    .lede { margin: 0 0 1.25rem; max-width: 36em; }
+    .work {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.25rem 1.5rem;
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 1rem 0;
+    }
+    @media (max-width: 760px) { .work { grid-template-columns: 1fr; } }
+    label.block {
+      display: block;
+      font-family: ui-monospace, "Courier New", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    textarea, select, button { font: inherit; border-radius: 0; }
+    textarea {
+      width: 100%;
+      min-height: 12rem;
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--ink);
+      background: #fffdf9;
+      color: var(--ink);
+      resize: vertical;
+    }
+    .tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0 0; }
+    select {
+      border: 1px solid var(--ink);
+      background: #fffdf9;
+      padding: 0.35rem 0.45rem;
+    }
+    button {
+      border: 1px solid var(--ink);
+      background: var(--pink-wash);
+      color: var(--ink);
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+    }
+    button.primary { background: var(--pink); color: #fff; }
+    .answers {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .answers li {
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 0.75rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px dotted var(--line);
+    }
+    .q {
+      font-family: ui-monospace, "Courier New", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .a { font-size: 1.05rem; margin: 0; }
+    .gap .a { color: var(--miss); font-style: italic; }
+    .note { margin: 1.25rem 0 0; max-width: 40em; font-size: 0.95rem; }
+    .foot {
+      margin-top: 1.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-width: 42em;
+    }
+    .foot a { color: var(--ink); text-underline-offset: 2px; }
+    mark.confused { background: var(--pink-wash); color: inherit; padding: 0 0.1em; }
+    .source-view {
+      display: none;
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.7rem;
+      border: 1px solid var(--ink);
+      background: #fffdf9;
+      white-space: pre-wrap;
+    }
+    .source-view.on { display: block; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">home</a>
+      <a href="how-i-work.html">how I work</a>
+      <a href="https://zhao-langxi.github.io/zhao-langxi/work/research-stats.html">research stats</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/campus-roles.html#ux">campus roles · ux</a>
+    </nav>
+
+    <p class="kicker">jadexzhao · desk tool · 14 Sep 2026</p>
+    <h1>Plain Disclosure</h1>
+    <p class="lede">
+      Most people do not read the terms. Even when they do, a lot still do not get it.
+      This page forces a blurb to answer four questions before anyone clicks Agree.
+    </p>
+
+    <div class="work">
+      <section aria-labelledby="source-h">
+        <h2 id="source-h" class="kicker">the blurb</h2>
+        <label class="block" for="sample">sample</label>
+        <select id="sample" aria-label="Pick a sample blurb">
+          <option value="a">ok-ish campus blurb</option>
+          <option value="b">vague blurb</option>
+          <option value="c">no opt-out</option>
+        </select>
+        <label class="block" for="source" style="margin-top:0.75rem">or edit the text</label>
+        <textarea id="source" spellcheck="false"></textarea>
+        <div class="tools">
+          <button type="button" class="primary" id="run">run the four questions</button>
+          <button type="button" id="confused" aria-pressed="false">still confused</button>
+        </div>
+        <div id="sourceView" class="source-view" aria-live="polite"></div>
+      </section>
+
+      <section aria-labelledby="out-h">
+        <h2 id="out-h" class="kicker">answers</h2>
+        <ol class="answers" id="answers">
+          <li>
+            <span class="q">1. what do they take</span>
+            <p class="a" data-slot="what">...</p>
+          </li>
+          <li>
+            <span class="q">2. why</span>
+            <p class="a" data-slot="why">...</p>
+          </li>
+          <li>
+            <span class="q">3. where it goes</span>
+            <p class="a" data-slot="where">...</p>
+          </li>
+          <li>
+            <span class="q">4. if you say no</span>
+            <p class="a" data-slot="no">...</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <p class="note">
+      I built this after UX work at IUB Undergraduate Education (Aug 2025 to Dec 2025).
+      The point was never a prettier policy. It was whether someone could tell what was being collected, why, where it went, and what happened if they said no.
+    </p>
+
+    <p class="foot">
+      Tiny research footnotes (published context, not personal metrics):
+      IEEE Access 2021 ... about 55% missed the meaning even when few said the text was hard;
+      Deloitte 2017 ... 91% skip terms, 97% ages 18 to 34;
+      Deloitte 2025 Connected Consumer ... only 20% say providers are very clear;
+      Thales 2025 ... 82% left a brand over data use.
+      <br><br>
+      Jade Zhao · IU Luddy ·
+      <a href="https://zhao-langxi.github.io/zhao-langxi/work/research-stats.html?theme=privacy">research stats · privacy</a> ·
+      <a href="https://zhao-langxi.github.io/zhao-langxi/work/plain-disclosure.html">zhao-langxi copy</a> ·
+      <a href="https://shared-caper-09568209.figma.site">UX Make</a> ·
+      <a href="index.html">portfolio home</a>
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      var samples = {
+        a: {
+          text: "We collect your name, university email, and course selections to personalise your dashboard and send service notices. Data is stored on university systems and retained while you are enrolled. We do not sell personal data. Dashboard personalisation is optional. You may request corrections through the help desk.",
+          out: {
+            what: "name + email + course selections",
+            why: "dashboard personalisation + service notices",
+            where: "uni systems while you're enrolled; not sold",
+            no: "personalisation optional; corrections via help desk",
+            gap: false,
+            marks: ["personalise", "retained", "optional"]
+          }
+        },
+        b: {
+          text: "We may collect information to improve services and communicate with users as needed. Data is handled according to university policy.",
+          out: {
+            what: "\"information\" ... too vague",
+            why: "improve / communicate ... fuzzy",
+            where: "\"university policy\" ... fuzzy",
+            no: "missing ... blurb never says",
+            gap: true,
+            marks: ["may collect", "as needed", "university policy"]
+          }
+        },
+        c: {
+          text: "We collect your name and email for account setup and store it on university systems while you are enrolled.",
+          out: {
+            what: "name + email",
+            why: "account setup",
+            where: "uni systems while you're enrolled",
+            no: "missing ... blurb never says",
+            gap: true,
+            marks: ["account setup", "while you are enrolled"]
+          }
+        }
+      };
+
+      var sampleEl = document.getElementById("sample");
+      var sourceEl = document.getElementById("source");
+      var sourceView = document.getElementById("sourceView");
+      var confusedBtn = document.getElementById("confused");
+      var lastKey = "a";
+      var confusedOn = false;
+
+      function fillSource(key) {
+        lastKey = key;
+        sourceEl.value = samples[key].text;
+        render(samples[key].out, samples[key].text);
+      }
+
+      function render(out, text) {
+        document.querySelector('[data-slot="what"]').textContent = out.what;
+        document.querySelector('[data-slot="why"]').textContent = out.why;
+        document.querySelector('[data-slot="where"]').textContent = out.where;
+        var noEl = document.querySelector('[data-slot="no"]');
+        noEl.textContent = out.no;
+        noEl.parentElement.classList.toggle("gap", !!out.gap || /missing/i.test(out.no));
+
+        var html = text;
+        if (confusedOn && out.marks) {
+          out.marks.forEach(function (m) {
+            html = html.replace(m, "<mark class=\"confused\">" + m + "</mark>");
+          });
+          sourceView.innerHTML = html;
+          sourceView.classList.add("on");
+        } else {
+          sourceView.classList.remove("on");
+          sourceView.textContent = "";
+        }
+      }
+
+      function runCustom() {
+        var t = sourceEl.value.trim();
+        var mapped = null;
+        Object.keys(samples).forEach(function (k) {
+          if (samples[k].text === t) mapped = samples[k];
+        });
+        if (mapped) {
+          render(mapped.out, mapped.text);
+          return;
+        }
+        // light heuristic for edited text ... still honest about gaps
+        var low = t.toLowerCase();
+        var out = {
+          what: /name|email|data|information/.test(low) ? "some data is mentioned ... check the wording" : "missing ... blurb never says",
+          why: /for |to /.test(low) ? "a purpose is hinted ... may still be fuzzy" : "missing ... blurb never says",
+          where: /store|stored|system|share|third/.test(low) ? "storage/sharing hinted ... check detail" : "missing ... blurb never says",
+          no: /optional|opt out|delete|correct|refus/.test(low) ? "some choice language appears" : "missing ... blurb never says",
+          gap: true,
+          marks: []
+        };
+        out.gap = /missing/.test(out.no);
+        render(out, t);
+      }
+
+      sampleEl.addEventListener("change", function () {
+        fillSource(sampleEl.value);
+      });
+      document.getElementById("run").addEventListener("click", runCustom);
+      confusedBtn.addEventListener("click", function () {
+        confusedOn = !confusedOn;
+        confusedBtn.setAttribute("aria-pressed", confusedOn ? "true" : "false");
+        runCustom();
+      });
+
+      fillSource("a");
+    })();
+  </script>
+</body>
+</html>
