@@ -1,11 +1,11 @@
 {
-  "name": "Jade Zhao · ServeIT · software",
+  "name": "Jade Zhao \u00b7 ServeIT \u00b7 software",
   "short_name": "Jade Zhao",
-  "description": "Jade Zhao · ServeIT website team lead · WCAG nonprofit sites · SWE · May 2027",
+  "description": "Jade Zhao \u00b7 ServeIT website team lead \u00b7 WCAG nonprofit sites \u00b7 SWE \u00b7 May 2027",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#faf6f0",
-  "theme_color": "#006644",
+  "background_color": "#f6efe3",
+  "theme_color": "#4a90c4",
   "icons": [
     {
       "src": "favicon-32x32.png?v=20260915-face",

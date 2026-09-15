@@ -2581,3 +2581,29 @@ summary:focus-visible {
   color: var(--ink);
   max-inline-size: var(--measure);
 }
+
+
+/* Lean-nav secondary links in footer */
+.site-footer .footer-groups {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.85rem 0 1rem;
+  text-align: left;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-footer .footer-group {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.site-footer .footer-label {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-right: 0.4rem;
+  opacity: 0.75;
+}
