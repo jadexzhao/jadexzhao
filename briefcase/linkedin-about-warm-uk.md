@@ -6,18 +6,22 @@ Headline + About aligned to IU Pages / jadexzhao / zhao-langxi. UK English. No e
 
 ## Headline (recommended)
 
-Digital Humans Project Lead at Luddy, Software, Informatics @ IU, May 2027
+Digital Humans Project Lead at Luddy | Human-centered AI & business strategy | Informatics @ Indiana University
 
 ---
 
 ## About
 
-I am looking for a software engineering role after May 2027. I care most about databases, internal information systems, IT (information technology), and ETL (extract, transform, load).
+I lead Digital Humans work at Luddy LINK. Informatics student researching how Digital Humans (AI-driven virtual personas) can become useful business interfaces, with experience across AI, UX (user experience), software, privacy, and business strategy.
 
-I am the daughter of restaurant owners. I grew up in my parents' Chinese restaurant in Greenfield, Indiana ... floor, till, kitchen ... before I had words like "systems" or "software." A Friday night taught me more about operations than a slide deck ever could: if one person does not show up, everything shifts. After COVID, I helped rebuild the website and social. That was the first time technology stopped being separate from the business and started being one of the things that kept it alive. I did not arrive at IU (Indiana University) already sure I wanted to be an engineer. I chose Informatics (Business and Society) to understand organisations and technology together, then grew into software by doing the work. Digital Humans (AI-driven virtual personas) at Luddy LINK. Web leadership at Serve IT for partners without an in-house engineering team. Privacy, UX (user experience), and AI (artificial intelligence) strategy along the way. Same question every time: will this still work for the people who have to live with it?
+Core question: when an AI system looks and communicates like a person, what actually makes people want to use it, trust it, and keep using it?
 
-Near term, I want to build close to data and internal systems. Longer term, I want to build products and companies of my own. Eventually, a duck farm. The plan is unfinished. The standard is: ship something real, keep learning, give back.
+I am the daughter of restaurant owners. I grew up in my parents' Chinese restaurant in Greenfield, Indiana ... floor, till, kitchen ... before I had words like "systems" or "software." A Friday night taught me more about operations than a slide deck ever could: if one person does not show up, everything shifts. After COVID, I helped rebuild the website and social. That was the first time technology stopped being separate from the business and started being one of the things that kept it alive. I did not arrive at IU (Indiana University) already sure I wanted to be an engineer. I chose Informatics (Business and Society) to understand organisations and technology together, then grew into software by doing the work. Web leadership at Serve IT for partners without an in-house engineering team. Privacy, UX, and AI strategy along the way. Digital Humans put the pieces together.
 
-Skills: Python, SQL, PostgreSQL, React, TypeScript, databases, ETL (extract, transform, load), AI (artificial intelligence), Digital Humans, HCI (human-computer interaction), UX (user experience), privacy, accessibility, GitHub
+The duck farm is the long-term creative throughline, not a startup pitch. A family restaurant in Greenfield taught the same rule I still use: a system either survives contact with a real customer or it does not. Demo culture rewards the opposite. I want a slower life of gardening, walking, matcha, and film, and a place that has to hold every morning. There is no operating farm, no acreage, no product launch. The React sandbox on jadexzhao is something I test myself.
+
+Near term, I want software engineering after May 2027 close to data, internal information systems, IT (information technology), and ETL (extract, transform, load) ... under that Digital Humans centre of gravity. The standard is: ship something real, keep learning, give back.
+
+Skills: AI, Digital Humans, HCI (human-computer interaction), Python, SQL, PostgreSQL, React, TypeScript, databases, ETL, UX, privacy, accessibility, GitHub
 
 Resume: https://jlzhao.pages.iu.edu/cv.pdf

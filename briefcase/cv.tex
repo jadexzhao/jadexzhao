@@ -1,198 +1,177 @@
 %-------------------------
-% Curriculum Vitae (exec / FAANG-facing, 1 page)
-% Jade Zhao
-% Distinct from full resume.tex ... do not overwrite resume.pdf
+% Resume · ouckah / Aidan-style layout (1 page, ATS)
+% Jade Zhao · GHC career-fair one-pager · Digital Humans first
+% Macros/geometry match cv-template-ouckah.tex / cv-lilly.tex ... do not redesign.
+% Distinct from cv-lilly.tex (Lilly-targeted) and resume.tex ... do not overwrite those.
+% Experience org/role: bold. Project names: underlined.
 %-------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
+\usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage[british]{babel}
 \usepackage{tabularx}
-\usepackage[margin=0.5in]{geometry}
 \usepackage{iftex}
 
 \ifPDFTeX
   \input{glyphtounicode}
+  \pdfgentounicode=1
 \fi
 
-%----------FONT----------
-\usepackage[sfdefault]{atkinson}
-\usepackage[T1]{fontenc}
-
-%----------PAGE STYLE----------
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-%----------MARGINS (ATS-safe 0.5in via geometry)----------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
 \urlstyle{same}
 \raggedbottom
 \raggedright
+\setlength{\parindent}{0pt}
 \setlength{\tabcolsep}{0in}
 
-%----------SECTION FORMATTING----------
+\newcommand{\cvSectionTitle}[1]{\MakeUppercase{#1}}
 \titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\bfseries\raggedright\large
+}{}{0em}{\cvSectionTitle}[\color{black}\titlerule \vspace{-5pt}]
 
-%----------CUSTOM COMMANDS----------
-% Even rhythm: consistent gaps, no title-bullet collisions, no bottom cram.
 \newcommand{\resumeItem}[1]{
-  \item\small{#1}
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\newcommand{\resumeOrgRole}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \textbf{#1} - \textbf{#2} & #3 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSchool}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\linewidth}[t]{@{}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-2.35in}@{\extracolsep{\fill}}r@{}}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-6pt}
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\par\vspace{2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{\linewidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \underline{#1} $|$ \textit{#2} & \\
+    \end{tabular*}\vspace{-7pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\newcommand{\resumeSubHeadingListEnd}{
-  \end{itemize}
-}
-
-\newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.18in, itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt]
-}
-
-\newcommand{\resumeItemListEnd}{
-  \end{itemize}\vspace{-6pt}
-}
-
-%----------PDF READABILITY----------
-\ifPDFTeX
-  \pdfgentounicode=1
-\fi
-
-%-------------------------------------------
-%%%%%% CV STARTS HERE %%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%----------HEADING----------
+%----------HEADER----------
 \begin{center}
-    \textbf{\Huge \scshape Jade Zhao} \\ \vspace{1pt}
-    \small
+  {\Huge\bfseries Jade Zhao} \\[2pt]
+  {\small
     \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
-    \hspace{0.1em}$|$\hspace{0.1em}
+    $|$
     \href{https://linkedin.com/in/zhao-langxi}{linkedin.com/in/zhao-langxi}
-    \hspace{0.1em}$|$\hspace{0.1em}
+    $|$
     \href{https://github.com/zhao-langxi}{github.com/zhao-langxi}
-    \hspace{0.1em}$|$\hspace{0.1em}
-    \href{https://jlzhao.pages.iu.edu/}{jlzhao.pages.iu.edu}
+    $|$
+    \href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao}
+  }\\[2pt]
+  {\small Digital Humans $\cdot$ AI $\cdot$ human-centered business technology.}\\[1pt]
+  {\small When an AI system looks and communicates like a person, what makes people use it, trust it, and keep using it?}
 \end{center}
 
-%-----------SUMMARY-----------
-\section{Summary}
-
-\small
-Informatics student at Indiana University (IU) Luddy, expected May 2027. Digital Humans Project Lead at Luddy LINK on AI-driven virtual personas, trust, privacy, UX research, and adoption, while shipping accessible web for organisations without in-house engineering. Seeking software engineering, AI product, or platforms and data roles.
-
-%-----------EDUCATION-----------
+%----------EDUCATION----------
 \section{Education}
-
 \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Indiana University Bloomington}{Bloomington, IN}
-      {B.S. Informatics (Business \& Society), Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
-      \resumeItemListStart
-        \resumeItem{\textbf{GPA: 3.50}; \textbf{Hudson \& Holland Platinum Scholar} (full merit); f{}irst-generation; Madrid UCM, Spring~2026.}
-      \resumeItemListEnd
-
+  \resumeSchool
+    {Luddy School of Informatics, Computing, and Engineering\newline at Indiana University}{Bloomington, IN}
+    {B.S.\ Informatics (Business \& Society)}{Expected Graduation: May 2027}
+  {\small
+  \textbf{Minors:} Business Technology; UX Research. \textbf{Scholarships:} Hudson \& Holland Platinum Scholar (full merit); GPA \textbf{3.50}; first-generation.\\[1pt]
+  \textbf{Relevant Coursework:} HCI (human-computer interaction), databases, information systems, software engineering, data privacy.
+  }
+  \resumeSchool
+    {Universidad Complutense de Madrid (UCM)}{Madrid, Spain}
+    {Study abroad · own school · Luddy / Hutton International Experiences Programme (HIEP)}{Spring 2026}
+  {\small
+  \textbf{Coursework:} systems friction, cross-cultural UX (user experience), public-service AI ethics.
+  }
 \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
+%----------EXPERIENCE----------
 \section{Experience}
-
 \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Digital Humans Project Lead}{Feb 2025 to present}
-      {Luddy LINK, Luddy School of Informatics, Computing, and Engineering, Indiana University}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Lead applied research on \textbf{Digital Humans}, generative AI, and human-computer interaction (HCI) across customer, operations, and internal workflows (\textbf{[N]} use cases).}
-        \resumeItem{Shipped a research board of \textbf{[N]} metrics across \textbf{[N]} themes (\textbf{[X\%]} layer coverage); ranked builds vs published market inputs, cutting analysis-to-decision turnaround by \textbf{[Y\%]}.}
-      \resumeItemListEnd
+  \resumeOrgRole{Luddy LINK, Indiana University}{Digital Humans Project Lead}{Feb 2025 to present}
+  \resumeItemListStart
+    \resumeItem{\textbf{Luddy LINK} (applied technology projects at Luddy): research AI-driven virtual personas as business interfaces. Core question: when an AI system looks and communicates like a person, what makes people use it, trust it, and keep using it? Family restaurant $\rightarrow$ Informatics $\rightarrow$ Serve IT ships $\rightarrow$ UX / privacy $\rightarrow$ Digital Humans puts the pieces together.}
+    \resumeItem{Frame trust, disclosure, and human handoff as product requirements, not footnotes. Stakeholder translation between research questions and what a partner can actually use after the demo.}
+  \resumeItemListEnd
 
-    \resumeSubheading
-      {Web Developer}{Jun 2026 to Jul 2026}
-      {National Science Foundation (NSF)}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Researched how consumer applications collect, store, and protect personal data under a \textbf{non-disclosure agreement (NDA)}, reviewing \textbf{[N]} product flows.}
-        \resumeItem{Translated privacy findings into user-facing trust and clarity guidance, improving stakeholder comprehension of risk language by \textbf{[X\%]} (internal review).}
-      \resumeItemListEnd
+  \resumeOrgRole{City of Bloomington \& Nashville, IN}{Website Team Lead · Nashville ACC Co-lead}{Jan 2024 to present}
+  \resumeItemListStart
+    \resumeItem{\textbf{Five documented ServeIT handoffs} (Luddy nonprofit technology clinic): \textbf{Spring 2024} City of Bloomington website and accessibility (\textbf{WCAG}~2.1); \textbf{Fall 2024} Middle Way House; \textbf{Spring 2025} Indiana Phenology; \textbf{Fall 2025} Greater Bloomington Chamber; \textbf{Fall 2026} Town of Nashville ACC (accessibility assessment; recommendations only).}
+    \resumeItem{\textbf{Website Team Lead:} intake, scoping, and stakeholder handoff. \textbf{Python} and \textbf{PostgreSQL} \textbf{ETL} from partner \textbf{Excel} into \textbf{relational} schemas, with completeness checks before staff take over.}
+  \resumeItemListEnd
 
-    \resumeSubheading
-      {User Experience Designer}{Aug 2025 to Dec 2025}
-      {Indiana University Undergraduate Education}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Defined UX research questions and synthesised secondary research on privacy communication, consent behaviour, and trust across \textbf{[N]} sources into \textbf{[N]} themes.}
-        \resumeItem{Recommended collection, storage, and protection copy targeting a \textbf{[X~pp]} clarity gap on data-use language, raising prototype task success in review by \textbf{[Y\%]}.}
-      \resumeItemListEnd
+  \resumeOrgRole{Public Interest Technology University Network (PIT-UN)}{Business Technologist}{May 2024 to Dec 2024}
+  \resumeItemListStart
+    \resumeItem{Researched \textbf{agentic AI} for organisations without in-house engineering: adoption barriers and what has to survive after a pilot (a human owner, not a demo-only system). Distinct from ServeIT.}
+  \resumeItemListEnd
 
-    \resumeSubheading
-      {Business Technologist}{May 2024 to Dec 2024}
-      {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Researched \textbf{agentic AI}, go-to-market (GTM) strategy, and organisational adoption for nonprof{}it settings across \textbf{[N]} constraint patterns.}
-        \resumeItem{Mapped AI capabilities to trust, oversight, and post-pilot use, framing adoption paths that fit \textbf{[X\%]} of identified operational constraints.}
-      \resumeItemListEnd
+  \resumeOrgRole{Potstickers, New Palestine, IN}{Customer service / communications}{May 2017 to Jun 2023}
+  \resumeItemListStart
+    \resumeItem{Floor, till, and kitchen: guest-facing \textbf{customer service} and staff \textbf{communications} under Friday-night pressure. A system either survives contact with a real customer or it does not.}
+  \resumeItemListEnd
 
-    \resumeSubheading
-      {Restaurant Kid}{May 2017 to Jun 2023}
-      {Family Chinese Buffet}{Greenfield, IN}
-      \resumeItemListStart
-        \resumeItem{Rebuilt website and social (Facebook, Instagram, TikTok) after COVID-19 while covering floor, till, and kitchen across \textbf{[N]} weekly shifts; grew online reach by \textbf{[X\%]}.}
-      \resumeItemListEnd
+  \resumeOrgRole{Bamboo Gardens Buffet, Greenfield, IN}{Web \& digital builder}{May 2017 to Jun 2023}
+  \resumeItemListStart
+    \resumeItem{Self-taught website and social rebuild after COVID-19; supported online ordering / POS (point of sale). Turned unstructured menu copy into a maintainable public site.}
+  \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------LEADERSHIP-----------
-\section{Leadership}
-
+%----------PROJECTS----------
+\section{Projects}
 \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {City of Bloomington\,$\cdot$\,Website Team Lead}{Jan 2024 to present}
-      {Laurie Burns McRobbie ServeIT Nonprof{}it Clinic, Luddy School, Indiana University}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Lead intake, scoping, and delivery of accessible web for the City of Bloomington; ship on \textbf{[X\%]} of agreed milestones across \textbf{[N]} pages.}
-        \resumeItem{Build and hand off public-facing sites with \textbf{React, Python, PostgreSQL}, and \textbf{WCAG 2.1}; coach \textbf{[N]} student developers.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {STEM Peer Mentor / MAP Coordinator}{Aug 2023 to present}
-      {Faculty and Staff for Student Excellence (FASE), Indiana University Office of Student Life}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Coordinate Mentor Apprenticeship Programme (MAP) for \textbf{[N]+ f{}irst-generation and low-income peer mentors} via training, Canvas, and programme communications; coach \textbf{[N]} STEM mentees/term at \textbf{[X\%]} session completion.}
-      \resumeItemListEnd
+  \resumeProjectHeading{Handshake Content Creator}{influencer · Aug 2023 to present}
+  \resumeItemListStart
+    \resumeItem{Handshake influencer and content creator: practical early-career posts on workplace norms, professional communication, and career decisions for student audiences.}
+  \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------TECHNICAL SKILLS-----------
-\section{Technical Skills}
-{\small
-\textbf{Languages:} Python, TypeScript, JavaScript, SQL, Java, HTML/CSS \textbf{|} \textbf{Systems:} React, Node.js, PostgreSQL, Git, REST APIs \\[1pt]
-\textbf{AI \& HCI:} Digital Humans, Generative AI, LLMs, RAG, Agentic AI, HCI \textbf{|} \textbf{UX:} WCAG 2.1, Figma, UX Research, Data Privacy \textbf{|} \textbf{Spoken:} English, Fuzhounese, Spanish
-}
+%----------SKILLS----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Programming languages:} Python, SQL, JavaScript, TypeScript, Java, HTML/CSS, LaTeX \\
+    \textbf{Spoken languages:} English, Fuzhounese, Spanish \\
+    \textbf{Data \& tools:} PostgreSQL, ETL/ELT, Git, GitHub, REST APIs (JSON), Excel, Planner/Teams \\
+    \textbf{Secondary:} React, Node.js, WordPress, Figma \\
+    \textbf{Concepts:} Digital Humans, HCI, disclosure, human oversight, databases, internal systems, IT, data pipelines, WCAG~2.1, privacy/UX
+  }}
+\end{itemize}
 
-%-------------------------------------------
 \end{document}

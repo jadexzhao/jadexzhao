@@ -1,14 +1,14 @@
 # jade zhao · she/her · 赵郎溪 · 龙 · dragon
 
-I care about the systems that have to keep working after the demo ends. My long-term ambition is to open a duck farm. Looking for a software engineering role after May 2027, especially near databases, internal information systems, IT teams, and ETL pipelines.
+**Digital Humans Project Lead at Luddy LINK · Informatics @ Indiana University · Expected May 2027**
 
-**Informatics @ Indiana University · Luddy HIEP Scholar · Expected May 2027** · **jadewowgreen**
+When an AI system looks and communicates like a person, what makes people use it, trust it, and keep using it? That is the hire lead. ServeIT ships, privacy work, and restaurant-floor systems sit underneath it. Software engineering after May 2027 (databases, internal information systems, IT, ETL) sits under that same centre of gravity.
 
-Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. This repo is the proof-of-work door, not a second person.
+This repo is the proof-of-work door, not a second person. Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. Handle here: **jadewowgreen**.
 
-Digital Humans Project Lead · Luddy LINK · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM Peer Mentor / MAP Coordinator · ServeIT Website Team Lead.
+Digital Humans Project Lead · Luddy LINK · ServeIT Website Team Lead · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM Peer Mentor / MAP Coordinator.
 
-One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/resume.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
+One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/cv.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
 
 Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
 
@@ -49,11 +49,11 @@ Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/
 | Restaurant Kid | May 2017 to Jun 2023 · family Chinese buffet, Greenfield · floor to site rebuild |
 | Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
 | FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM Peer Mentor / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
-| Content Creator | Handshake / Instagram / Facebook · early-career content · ~1.2M combined views |
+| Content Creator | Handshake / Instagram / Facebook · early-career content |
 | Jade🪴 | Founder · full-stack software engineering (FS SWE), web / branding / software for small businesses and community organisations · [Showit](https://showit.com/)-friendly redesigns · industry archive: [github.com/jadexzhao/matcha](https://github.com/jadexzhao/matcha) (NDA-style client folders; no personal names) |
 | Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
 | Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · HIEP / Spring 2026 |
-| Quackr · duck farm | [sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · not on the resume |
+| Quackr · duck farm | [sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · creative throughline I test myself ... no operating farm, no acreage, no product launch · not on the resume |
 | the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html) · [accessibility note](https://jadexzhao.github.io/jadexzhao/i18n-wcag.html) · [warm UK About](https://github.com/jadexzhao/jadexzhao/blob/main/briefcase/linkedin-about-warm-uk.md) |
 
 **Law-adjacent thread:** madrid-ai-ethics ... essay at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).

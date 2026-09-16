@@ -723,8 +723,11 @@ export default function App() {
               </button>
             </div>
             <p className="quack-hero__lede">
-              Someday a real duck farm. For now: a social sandbox with skip links, contrast, and 44px taps
-              ... fake ducks, real swipe feel. Not a launched app.
+              The duck farm is the long-term creative throughline, not a startup pitch. A family restaurant in
+              Greenfield taught the same rule I still use: a system either survives contact with a real customer
+              or it does not. Demo culture rewards the opposite. I want a slower life of gardening, walking,
+              matcha, and film, and a place that has to hold every morning. There is no operating farm, no
+              acreage, no product launch. The React sandbox on jadexzhao is something I test myself.
             </p>
             <div className="quack-hero__ctas">
               <RippleButton
