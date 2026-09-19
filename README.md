@@ -1,75 +1,38 @@
-# jade zhao · she/her · 赵郎溪 · 龙 · dragon
+# Jade Zhao · 赵郎溪 · 龙 · she/her
 
-**Digital Humans Project Lead at Luddy LINK · Informatics @ Indiana University · Expected May 2027**
+Informatics @ IU (Indiana University) Luddy. **Digital Humans Project Lead.**
 
-When an AI system looks and communicates like a person, what makes people use it, trust it, and keep using it? That is the hire lead. ServeIT ships, privacy work, and restaurant-floor systems sit underneath it. Software engineering after May 2027 (databases, internal information systems, IT, ETL) sits under that same centre of gravity.
+I research how Digital Humans become useful business interfaces. When an AI system looks and communicates like a person, what actually makes people want to use it, trust it, and keep using it?
 
-This repo is the proof-of-work door, not a second person. Public name: **zhao-langxi** on GitHub, LinkedIn, and Instagram. Handle here: **jadewowgreen**.
+I grew up in a family Chinese restaurant. Then Informatics, Serve IT ships, UX (user experience) and privacy work, then AI. Digital Humans is where those pieces become one job.
 
-Digital Humans Project Lead · Luddy LINK · ServeIT Website Team Lead · Web Developer (NSF) · UX Designer (IUB) · Business Technologist (PIT-UN) · Restaurant Kid · STEM Peer Mentor / MAP Coordinator.
+**Now:** Luddy LINK · ServeIT Website Team Lead · Jade🪴 · May 2027
 
-One link to start: [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/) · [resume (PDF)](https://jlzhao.pages.iu.edu/cv.pdf) · [GitHub Pages mirror](https://jadexzhao.github.io/jadexzhao/resume.pdf)
+## Ships
 
-Live portfolio: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/) · Primary GitHub: [github.com/zhao-langxi](https://github.com/zhao-langxi) · [Serve IT · live](https://serveit.luddy.indiana.edu/) · [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
+This GitHub is the proof account ... code and live pages that have to hold after the demo.
 
-**Palette / register:** business casual · matcha (`briefcase/starter-matcha.css`, `briefcase/brand-tokens.css`). Fraunces italic display, Inter body, cream `#faf8f2`, matcha-deep `#3f5b3f`.
+- **[jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)** ... portfolio. Digital Humans, org work, Serve IT notes, [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html)
+- **ServeIT Website Team Lead** ... intake, scope, handoff for partners without a developer on call. Public clinic work includes the City of Bloomington, Middle Way House, Indiana Phenology Lab, and the Bloomington Chamber of Commerce. This term I also co-lead Town of Nashville ACC (accessibility assessment ... recommendations only, not a live-site rebuild)
+- **[jadexzhao/matcha](https://github.com/jadexzhao/matcha)** ... Jade🪴 archive. Web, branding, and software for small businesses and nonprofits
+- **[Duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)** ... creative sandbox I test myself. No operating farm, no acreage, no product launch
 
-## With gratitude for Miriam "Mimi" Attenoukon
+Python · SQL · React · PostgreSQL · WCAG 2.1 on clinic sites.
 
-I came to IU as a Hudson & Holland Scholar, and Mimi Attenoukon was part of what made that programme feel like home. She spent 16+ years with Hudson & Holland as HHSP advisor and STEM coordinator, led HHart since 2009, and was recognised as a CEWIT 2020 Outstanding Staff Mentor/Advocate and the 2025 Terri Nation Award recipient (now Assistant Director, 21st Century Scholars Program at IU Bloomington).
+## Other GitHubs
 
-What mattered to me was how she worked, not the award list. She showed up in the room ... HHart set-ups, showcases, student org advising ... and her advising was always about connecting students to research, internships, and paths that are not obvious from a syllabus alone. As a first-gen Hudson & Holland Scholar, that practical pathfinding meant more than polish. She was a first-gen college graduate herself (Beninese heritage, geology at Smith, MS/PhD at IU), and the CEWIT mentor/advocate recognition tracks what that felt like from the student side: someone who believed in potential and helped the handoff actually happen. I am grateful for her mentorship.
+Same person. Different job.
 
-Public bio: [21st Century Scholars · IU](https://21centuryscholars.indiana.edu/contact/directory/Mimi-Attenoukon.html) · [Terri Nation Award · BAAC](https://baac.indiana.edu/news/miriam-attenoukon.html)
+- [zhao-langxi](https://github.com/zhao-langxi) ... essays and research notes
+- [matchaxmoxie](https://github.com/matchaxmoxie) ... FASE MAP classroom
 
-## how I build
+## Four doors
 
-1. **ELI5 it.** If a recruiter, teammate, or nonprofit partner can’t follow it, rewrite until they can.
-2. **Learn it.** Don’t fake fluency ... dig until the system makes sense.
-3. **Ship it slowly.** Small commits that hold up beat flashy demos that don’t.
+- Narrative hub → [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
+- Proof (this site) → [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
+- Classroom → [matchaxmoxie.github.io/matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/)
+- Notes → [zhao-langxi.github.io/zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/)
 
-## Serve IT · lead ship
+## Contact
 
-| | |
-|---|---|
-| Role | [Website Team Lead · ServeIT](https://serveit.luddy.indiana.edu/) |
-| Serve-AI | [Founded · PIT-UN](https://serveit.luddy.indiana.edu/serve-ai/) |
-| Stack | WCAG 2.1 · Python · PostgreSQL · React |
-| Bar | Accessible nonprofit sites and clinic handoffs that keep working after the student team leaves |
-| Partners (clinic) | Town of Nashville, IN (accessibility recommendations; no live-site edits) · Greater Bloomington Chamber of Commerce · Indiana Phenology · Middle Way House · City of Bloomington ... website and accessibility work through ServeIT only |
-
-## elsewhere · one line each
-
-| project | pointer |
-|---------|---------|
-| Luddy LINK · Digital Humans | Project Lead, Feb 2025 to present · AI-driven virtual personas for business use cases |
-| NSF · Web Developer | Jun 2026 to Jul 2026 · consumer-app privacy under NDA |
-| IUB · User Experience Designer | Aug 2025 to Dec 2025 · Undergraduate Education |
-| PIT-UN · Business Technologist | May 2024 to Dec 2024 · agentic AI and GTM for nonprofits |
-| Restaurant Kid | May 2017 to Jun 2023 · family Chinese buffet, Greenfield · floor to site rebuild |
-| Programme Assistant · HHSP | Aug 2026 to present · Undergraduate Education · first-generation, low-income, and rural scholars |
-| FASE MAP | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) · STEM Peer Mentor / MAP Coordinator · Faculty and Staff for Student Excellence (FASE) Mentor Apprenticeship Programme |
-| Content Creator | Handshake / Instagram / Facebook · early-career content |
-| Jade🪴 | Founder · full-stack software engineering (FS SWE), web / branding / software for small businesses and community organisations · [Showit](https://showit.com/)-friendly redesigns · industry archive: [github.com/jadexzhao/matcha](https://github.com/jadexzhao/matcha) (NDA-style client folders; no personal names) |
-| Potstickers | [Marketing & Web Lead](https://sites.google.com/view/potstickers/home) · summers |
-| Madrid notes | [systems friction + public-service AI ethics](https://github.com/zhao-langxi/madrid-ai-ethics) · HIEP / Spring 2026 |
-| Quackr · duck farm | [sandbox](https://jadexzhao.github.io/jadexzhao/duck-farm/) · creative throughline I test myself ... no operating farm, no acreage, no product launch · not on the resume |
-| the briefcase | [portfolio home](https://jadexzhao.github.io/jadexzhao/) · [how I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html) · [accessibility note](https://jadexzhao.github.io/jadexzhao/i18n-wcag.html) · [warm UK About](https://github.com/jadexzhao/jadexzhao/blob/main/briefcase/linkedin-about-warm-uk.md) |
-
-**Law-adjacent thread:** madrid-ai-ethics ... essay at [AI and law](https://zhao-langxi.github.io/zhao-langxi/notes/ai-and-law.html).
-
-## Primary handles
-
-| | |
-|---|---|
-| **Primary GitHub** | [github.com/zhao-langxi](https://github.com/zhao-langxi) |
-| **Portfolio code repo** | [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) (this repo) |
-| **Jade🪴 FS SWE archive** | [jadexzhao/matcha](https://github.com/jadexzhao/matcha) · industry folders, mockups, ops docs |
-| **LinkedIn** | [linkedin.com/in/zhao-langxi](https://www.linkedin.com/in/zhao-langxi/) |
-| **Instagram** | [@zhao.langxi](https://instagram.com/zhao.langxi) |
-
-## other doors
-
-- Classroom / FASE MAP process → [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/)
-- Essays / research notes → [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/)
-- CV / narrative hub → [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
+[jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)
