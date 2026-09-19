@@ -44,7 +44,7 @@
     <a href="index.html#contact">Contact</a>
   </nav>
   <div class="topbar-actions">
-    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" rel="noopener noreferrer">Resume</a>
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
   </div>
 </header>
 
@@ -54,8 +54,8 @@
     <p class="memo-kicker">Notes</p>
     <h1>i18n ∩ WCAG 2.2 AA<span class="sub">mixed-language DOM · density · immigrant household framing</span></h1>
     <p class="standfirst"><strong>In plain English:</strong> A screen reader reads a web page aloud. If a page mixes languages without telling the software which is which, it reads them wrong. I label languages and leave extra room because Chinese characters take up more space than English letters. Learn assistive tech before you ship. Slow progress here beats a pretty page nobody can hear.</p>
-    <p class="lede">The same problem shows up on ServeIT partner pages that mix English with community languages, on restaurant tickets that switch mid-line, and in households that flip between <span class="sc" lang="zh-Hans">福州话</span>, <span class="sc" lang="zh-Hans">普通话</span>, and English without thinking about it. Market context: <strong>94.8%</strong> of the top 1,000,000 home pages had detectable WCAG&nbsp;2 failures in 2025
-    (<a class="fact-source" href="https://webaim.org/projects/million/2025" rel="noopener noreferrer">Source: WebAIM Million 2025</a>).</p>
+    <p class="lede">The same problem shows up on <a href="https://serveit.luddy.indiana.edu/" target="_blank" rel="noopener noreferrer">ServeIT</a> partner pages that mix English with community languages, on restaurant tickets that switch mid-line, and in households that flip between <a href="https://en.wikipedia.org/wiki/Fuzhou" target="_blank" rel="noopener noreferrer"><span class="sc" lang="zh-Hans">福州话</span></a>, <span class="sc" lang="zh-Hans">普通话</span>, and English without thinking about it. Market context: <strong>94.8%</strong> of the top 1,000,000 home pages had detectable WCAG&nbsp;2 failures in 2025
+    (<a class="fact-source" href="https://webaim.org/projects/million/2025" target="_blank" rel="noopener noreferrer">Source: WebAIM Million 2025</a>).</p>
     <nav class="action-bar" aria-label="Related note">
       <a href="how-i-work.html">How I work</a>
     </nav>
@@ -69,12 +69,12 @@
     <h3>what i actually check</h3>
     <ul class="insight">
       <li>set <code>lang</code> on the document root for the primary language of the page.</li>
-      <li>wrap inlined phrases in their own language with <code>lang="zh-Hans"</code>, <code>lang="zh-CN"</code>, or the closest accurate BCP 47 tag. same idea for spanish study-abroad notes.</li>
+      <li>wrap inlined phrases in their own language with <code>lang="zh-Hans"</code>, <code>lang="zh-CN"</code>, or the closest accurate <a href="https://www.w3.org/International/articles/language-tags/" target="_blank" rel="noopener noreferrer">BCP 47</a> tag. same idea for spanish study-abroad notes.</li>
       <li>do not rely on visual bilingualism alone. a human sees two scripts; assistive tech needs the attribute.</li>
       <li>test the critical path with a screen reader, not only contrast checkers. serveit / rivet builds still fail here when chunks paste clean-looking text without language spans.</li>
     </ul>
     <div class="note">
-      <p>in cascade / rivet workflows, treat language markup as part of the chunk composition, not a late copy pass. if the chunk map cannot carry <code>lang</code>, document the workaround in the handoff.</p>
+      <p>in <a href="https://framework.iu.edu/index.html" target="_blank" rel="noopener noreferrer">cascade</a> / <a href="https://rivet.iu.edu/explore/" target="_blank" rel="noopener noreferrer">rivet</a> workflows, treat language markup as part of the chunk composition, not a late copy pass. if the chunk map cannot carry <code>lang</code>, document the workaround in the handoff.</p>
     </div>
   </section>
 
@@ -96,7 +96,7 @@
   <section class="rv" aria-labelledby="roots-heading">
     <h2 id="roots-heading">3 · where the instinct comes from</h2>
     <p>fuzhou roots, midwest restaurant floor. patrons, family, and staff already switch languages mid-conversation. the UI should not pretend monolingual default is neutral. tickets, menu notes, and volunteer-facing pages fail loudly when language and layout ignore density.</p>
-    <p>community orgs on the serveit roster, including <a href="https://middlewayhouse.org" rel="noopener noreferrer">middle way house</a>, need pages staff can maintain and visitors can hear correctly. classroom context lives on <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a>.</p>
+    <p>community orgs on the serveit roster, including <a href="https://middlewayhouse.org/" target="_blank" rel="noopener noreferrer">middle way house</a>, need pages staff can maintain and visitors can hear correctly. classroom context lives on <a href="https://matchaxmoxie.github.io/matchaxmoxie/" target="_blank" rel="noopener noreferrer">matchaxmoxie</a>.</p>
   </section>
 
   <hr class="memo-rule">
@@ -105,29 +105,30 @@
     <h2 id="links-heading">related</h2>
     <div class="link-hub">
       <a href="how-i-work.html"><span class="hub-k">how i work</span>sandwich runbook · serveit chunks · prototype handoffs</a>
-      <a href="https://serveit.luddy.indiana.edu/serve-ai/" rel="noopener noreferrer"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (accessibility) client builds</a>
-      <a href="https://rivet.iu.edu/explore/" rel="noopener noreferrer"><span class="hub-k">rivet</span>IU design system · component constraints</a>
-      <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer"><span class="hub-k">matchaxmoxie</span>Jade Zhao · cookie classroom · IU guide · <span class="sc" lang="zh-Hans">凤凰</span> · phoenix archive</a>
+      <a href="https://serveit.luddy.indiana.edu/serve-ai/" target="_blank" rel="noopener noreferrer"><span class="hub-k">serveit · serveai</span>IU nonprofit tech clinic · WCAG (accessibility) client builds</a>
+      <a href="https://rivet.iu.edu/explore/" target="_blank" rel="noopener noreferrer"><span class="hub-k">rivet</span>IU design system · component constraints</a>
+      <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer"><span class="hub-k">wcag 2.2</span>W3C accessibility guidelines · AA as the working bar</a>
+      <a href="https://matchaxmoxie.github.io/matchaxmoxie/" target="_blank" rel="noopener noreferrer"><span class="hub-k">matchaxmoxie</span>Jade Zhao · cookie classroom · IU guide · <span class="sc" lang="zh-Hans">凤凰</span> · phoenix archive</a>
     </div>
   </section>
   <footer class="site-footer">
     <div class="footer-grid">
       <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
-      <p class="footer-bio">Digital Humans Project Lead at Luddy. Informatics @ IU Luddy · May 2027.</p>
+      <p class="footer-bio">Digital Humans Project Lead at Luddy. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
       <nav class="footer-links" aria-label="Site">
         <a href="nashville-acc.html">Nashville ACC</a>
         <a href="how-i-work.html">How I work</a>
         <a href="i18n-wcag.html">i18n / WCAG</a>
         <a href="duck-farm/">Duck farm</a>
         <a href="quick-adhoc.html">Quick Ad Hoc</a>
-        <a href="https://jlzhao.pages.iu.edu/" rel="noopener noreferrer">IU Pages</a>
-        <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
       <p class="footer-end">
         <span class="egg-handle" title="jadewowgreen · ship handle">jadewowgreen</span>
         · <span class="sc egg-dragon" lang="zh-Hans" tabindex="0" title="龙 · double-click for essays" aria-label="Dragon, double-click for essays">龙</span>
-        · Dreamhouse palette, not official Mattel CSS
-        · with gratitude for Mimi Attenoukon
+        · Dreamhouse palette, not official <a href="https://www.mattel.com/" target="_blank" rel="noopener noreferrer">Mattel</a> CSS
+        · with gratitude for <a href="https://baac.indiana.edu/news/miriam-attenoukon.html" target="_blank" rel="noopener noreferrer">Mimi Attenoukon</a>
       </p>
     </div>
   </footer>
@@ -136,8 +137,8 @@
 
 <nav class="dock" aria-label="Quick contact">
   <a class="dock-primary" href="mailto:jlzhao@iu.edu?subject=Digital%20Humans%20%2F%20portfolio">Email</a>
-  <a href="https://jlzhao.pages.iu.edu/cv.pdf" rel="noopener noreferrer">Resume</a>
-  <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
+  <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
 </nav>
 
 <script src="site.js?v=20260919-ship" defer></script>
