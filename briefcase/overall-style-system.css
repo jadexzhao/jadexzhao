@@ -77,19 +77,19 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 /* --- jadexzhao — accessibility, maintainable systems, duck farm someday ---
    job: business casual. credible, but more "you" than the CV site.
-   feel: imperial jade bracelet + court silk. Arial body.
-   corners: 8px             accent: court gold, used sparingly
+   feel: tasteful Dreamhouse. Five hexes. Arial body.
+   corners: 16px            accent: one hot pink
 ------------------------------------------------------------------- */
 .theme-jadexzhao {
-  --primary:      #1b5c45;  /* jade stone */
-  --primary-deep: #12382c;
-  --secondary:    #3e8f72;  /* icy mid */
-  --accent:       #c6a15b;  /* court gold */
-  --bg:           #f4ebd8;  /* silk */
-  --ink:          #161a17;
-  --font-display: Georgia, 'Times New Roman', serif;
+  --primary:      #b01068;
+  --primary-deep: #2a1a22;
+  --secondary:    #9dd8d6;
+  --accent:       #b01068;
+  --bg:           #faf4ef;
+  --ink:          #2a1a22;
+  --font-display: "Fredoka", Arial, Helvetica, sans-serif;
   --font-body:    Arial, Helvetica, sans-serif;
-  --radius:       8px;
+  --radius:       16px;
 }
 
 /* --- matchaxmoxie — FASE MAP process + cookie classroom ---

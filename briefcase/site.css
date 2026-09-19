@@ -1,16 +1,11 @@
 /* ═══════════════════════════════════════════════════════════════
    jadexzhao · jadewowgreen proof door
-   Design direction: IMPERIAL JADE BANGLE + COURT SILK.
+   Design direction: TASTEFUL DREAMHOUSE.
 
-   The audience is a technical peer deciding in ninety seconds
-   whether the craft is real. So the page is built like a printed
-   dossier rather than a landing page: a fixed masthead rail, an
-   editorial band per section with its number set in the margin,
-   and one deep stone block per screen that carries the thing she
-   most wants read. Colour does hierarchy, not decoration ...
-   court silk for everything ordinary, spinach jade for the featured
-   record, court gold for exactly one thing at a time.
-   Not matchaxmoxie foam. Not IU Rivet navy.
+   Five hexes: cream, blush, one hot pink, pool aqua (spare), ink.
+   The page is still a dossier ... rail, numbered bands, one featured
+   block. Pink is the accent, not the wallpaper. Inspired by Barbie /
+   Life in the Dreamhouse. Not official Mattel CSS.
 
    1. tokens ........ palette, roles, type, space, motion, layers
    2. reset + base .. document, type defaults, links, media
@@ -28,64 +23,80 @@
 /* ── 1. tokens ─────────────────────────────────────────────── */
 
 :root {
-  /* ── palette · imperial jade bracelet + court silk ──
-     Contrast on silk (#f4ebd8) is noted where the value may
-     carry text. Anything under 4.5 is graphic only. */
-  --jade-deep: #12382c; /* 10.9:1 · spinach invert */
-  --jade-stone: #1b5c45; /* 6.7:1 · bracelet face, body-legal */
-  --jade-glow: #3e8f72; /* icy mid · rules and large type */
-  --jade-icy: #d7efe6;
-  --celadon: #a3bfae;
-  --pine: var(--jade-deep);
-  --pine-lift: #1a4a3a;
-  --silk: #f4ebd8;
-  --mutton: #faf6ee;
-  --cream: var(--silk);
-  --cream-warm: #ede3cd;
-  --gold: #c6a15b; /* filigree · graphic */
-  --gold-ink: #7a5a1e; /* 5.4:1 · accent text */
-  --gold-light: #e4c98a; /* 8.0:1 on deep */
-  --russet: #8c5340; /* 5.2:1 · skin, sparingly */
-  --sage-light: #a8c9b8; /* 7.2:1 on deep */
+  /* ── palette · five hexes ──
+     cream #faf4ef · blush #f4d4e0 · pink #b01068 (5.8:1 on cream)
+     pool #9dd8d6 (graphic only) · ink #2a1a22 (14:1)
+     Inspired by Barbie / Life in the Dreamhouse. Not official. */
+  --cream: #faf4ef;
+  --blush: #f4d4e0;
+  --pink: #b01068;
+  --pool: #9dd8d6;
+  --ink: #2a1a22;
 
-  /* kitchen-matcha / clay names keep resolving */
-  --matcha-deep: var(--jade-stone);
-  --matcha-mid: var(--jade-glow);
-  --matcha-pale: var(--jade-icy);
-  --clay: var(--gold);
-  --clay-ink: var(--gold-ink);
-  --clay-light: var(--gold-light);
+  --barbie-pink: var(--pink);
+  --barbie-blush: var(--blush);
+  --barbie-rose: var(--blush);
+  --magenta-ink: var(--pink);
+  --magenta-deep: var(--pink);
+  --pool-ink: var(--ink);
+  --hair: var(--blush);
+  --hair-ink: var(--pink);
+  --hair-light: var(--blush);
+  --house: var(--cream);
+  --house-raised: #ffffff;
+  --house-sunken: var(--blush);
 
-  /* ── colour roles ── */
-  --surface: var(--silk);
-  --surface-raised: var(--mutton);
-  --surface-sunken: var(--cream-warm);
-  --surface-wash: var(--jade-icy);
-  --surface-invert: var(--jade-deep);
-  --surface-invert-raised: var(--pine-lift);
+  --jade-deep: var(--pink);
+  --jade-stone: var(--pink);
+  --jade-glow: var(--pink);
+  --jade-icy: var(--blush);
+  --celadon: var(--pool);
+  --pine: var(--ink);
+  --pine-lift: var(--ink);
+  --silk: var(--cream);
+  --mutton: var(--house-raised);
+  --cream-warm: var(--blush);
+  --gold: var(--blush);
+  --gold-ink: var(--pink);
+  --gold-light: var(--blush);
+  --russet: var(--pink);
+  --sage-light: var(--blush);
 
-  --ink: #161a17; /* 14.8:1 */
-  --ink-muted: #4a5a53; /* 6.2:1 */
-  --ink-faint: #5c6b64; /* 4.7:1 · floor for small text */
-  --on-invert: var(--mutton);
-  --on-invert-muted: #a8c9b8;
+  --matcha-deep: var(--pink);
+  --matcha-mid: var(--pink);
+  --matcha-pale: var(--blush);
+  --clay: var(--blush);
+  --clay-ink: var(--pink);
+  --clay-light: var(--blush);
 
-  --accent: var(--jade-stone);
-  --accent-soft: var(--jade-glow);
-  --accent-wash: var(--jade-icy);
-  --accent-alt: var(--gold-ink);
-  --accent-alt-soft: var(--gold);
+  --surface: var(--cream);
+  --surface-raised: var(--house-raised);
+  --surface-sunken: var(--blush);
+  --surface-wash: var(--blush);
+  --surface-invert: var(--ink);
+  --surface-invert-raised: var(--ink);
 
-  --line: #d8cfbb;
-  --line-strong: #c4b89e;
-  --line-invert: rgba(250, 246, 238, 0.18);
+  --ink-muted: color-mix(in srgb, var(--ink) 68%, var(--cream));
+  --ink-faint: color-mix(in srgb, var(--ink) 55%, var(--cream));
+  --on-invert: var(--cream);
+  --on-invert-muted: var(--blush);
 
-  --focus: var(--gold-ink);
+  --accent: var(--pink);
+  --accent-soft: var(--pink);
+  --accent-wash: var(--blush);
+  --accent-alt: var(--pink);
+  --accent-alt-soft: var(--pool);
+
+  --line: color-mix(in srgb, var(--blush) 70%, var(--ink));
+  --line-strong: color-mix(in srgb, var(--blush) 52%, var(--ink));
+  --line-invert: color-mix(in srgb, var(--cream) 22%, transparent);
+
+  --focus: var(--pink);
 
   /* ── type ──
-     Arial carries the site. Georgia is the restrained serif
-     for nameplate, captions, and italic standfirsts. */
-  --font-display: Georgia, 'Times New Roman', serif;
+     Arial carries body copy for recruiters. Fredoka is the
+     rounded Malibu display for nameplate and titles. */
+  --font-display: "Fredoka", Arial, Helvetica, sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
   --font-sc: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
@@ -118,14 +129,13 @@
   --space-2xl: clamp(3.5rem, 2.4rem + 4.5vw, 6.5rem);
 
   /* ── shape and depth ──
-     Polished stone, not foam layers. A hairline plus a soft
-     inner glow, then one shadow. */
-  --radius-s: 4px;
-  --radius-m: 8px;
+     Soft house: one blush wash, quiet shadow, 16px cards. */
+  --radius-s: 10px;
+  --radius-m: 16px;
   --radius-pill: 999px;
-  --shadow-1: 0 1px 2px rgba(18, 56, 44, 0.06);
-  --shadow-2: 0 12px 28px -18px rgba(18, 56, 44, 0.38);
-  --shadow-3: 0 24px 48px -28px rgba(18, 56, 44, 0.42);
+  --shadow-1: 0 1px 3px color-mix(in srgb, var(--ink) 8%, transparent);
+  --shadow-2: 0 12px 28px -16px color-mix(in srgb, var(--ink) 22%, transparent);
+  --shadow-3: 0 20px 40px -20px color-mix(in srgb, var(--ink) 28%, transparent);
 
   /* ── motion ── */
   --dur-fast: 110ms;
@@ -181,11 +191,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   accent-color: var(--accent);
-  /* court silk: a cool icy wash at the top, then a faint rule */
+  /* cream paper, a blush wash, pool only at the far edge */
   background-image:
-    radial-gradient(120% 70% at 50% -8%, rgba(215, 239, 230, 0.42), transparent 46%),
-    linear-gradient(to bottom, rgba(18, 56, 44, 0.04) 1px, transparent 1px);
-  background-size: auto, 100% 2.5rem;
+    radial-gradient(70% 40% at 100% 0%, color-mix(in srgb, var(--pool) 14%, transparent), transparent 52%),
+    radial-gradient(80% 45% at 0% -10%, color-mix(in srgb, var(--blush) 55%, transparent), transparent 50%);
+  background-size: auto, auto;
 }
 
 h1,
@@ -194,6 +204,7 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 600;
+  font-style: normal;
   line-height: var(--leading-snug);
   margin: 0;
   text-wrap: balance;
@@ -813,15 +824,13 @@ a:hover {
   gap: var(--space-2xs);
   block-size: 100%;
   padding: var(--space-m);
-  background:
-    radial-gradient(120% 70% at 12% 0%, rgba(215, 239, 230, 0.5), transparent 58%),
-    var(--surface-raised);
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-m);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
     var(--shadow-1);
-  /* gold clasp line ... hover fills it with stone */
+  /* blush clasp ... hover fills it with the one pink */
   border-block-start: 2px solid var(--accent-alt-soft);
   transition:
     border-color var(--dur) var(--ease),
@@ -914,11 +923,9 @@ a:hover {
 /* the featured record · one ink block per screen */
 
 .site .proj-card--featured {
-  background:
-    radial-gradient(90% 70% at 88% 0%, rgba(62, 143, 114, 0.3), transparent 52%),
-    var(--surface-invert);
-  border-color: var(--jade-deep);
-  border-block-start-color: var(--gold);
+  background: var(--surface-invert);
+  border-color: var(--ink);
+  border-block-start-color: var(--pink);
   color: var(--on-invert);
   box-shadow: var(--shadow-3);
 }
@@ -970,8 +977,8 @@ a:hover {
 }
 
 .site .proj-card--featured .proj-label {
-  background: rgba(228, 201, 138, 0.16);
-  color: var(--gold-light);
+  background: color-mix(in srgb, var(--blush) 22%, transparent);
+  color: var(--blush);
 }
 
 .site .proj-card--featured .proj-title {
@@ -995,7 +1002,7 @@ a:hover {
 
 .site .proj-card--featured .proj-links a {
   color: var(--gold-light);
-  border-block-end-color: rgba(228, 201, 138, 0.45);
+  border-block-end-color: color-mix(in srgb, var(--blush) 50%, transparent);
 }
 
 .site .proj-card--featured .proj-links a:hover {
@@ -1008,13 +1015,13 @@ a:hover {
   background: var(--surface-sunken);
   border-style: dashed;
   border-block-start-style: solid;
-  border-block-start-color: var(--russet);
+  border-block-start-color: var(--pool-ink);
   box-shadow: none;
 }
 
 .site .proj-card--sandbox .proj-label {
-  background: rgba(140, 83, 64, 0.12);
-  color: var(--russet);
+  background: color-mix(in srgb, var(--pool) 22%, transparent);
+  color: var(--ink);
 }
 
 /* ── the case ledger ───────────────────────────────────────── */
@@ -1022,14 +1029,12 @@ a:hover {
 .site .case {
   margin-block-start: var(--space-s);
   padding: var(--space-l);
-  background:
-    radial-gradient(120% 70% at 8% 0%, rgba(215, 239, 230, 0.4), transparent 56%),
-    var(--surface-raised);
+  background: var(--surface-raised);
   border: 1px solid var(--line);
   border-inline-start: 3px solid var(--accent);
   border-radius: var(--radius-m);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
     var(--shadow-1);
 }
 
@@ -1246,6 +1251,31 @@ a:hover {
   gap: var(--space-2xs);
 }
 
+.site .closer .palette-credit {
+  flex-basis: 100%;
+  width: 100%;
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--step--2);
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+.site .rail-name,
+.site .stage-title,
+.site .stage-block--hero .stage-tagline,
+.site .stage-question,
+.site .proj-card--featured .proj-title,
+.site .case-name,
+.site .stage--article h1,
+.site .stage--article h2,
+.habit-list li::before,
+.runbook .step-n,
+.pull-quote p,
+.site.page-404 .stage h1,
+.sheet h1 {
+  font-style: normal;
+}
+
 /* ── door easter eggs · jadewowgreen cross-links ───────────── */
 
 .site-footer .egg-dragon,
@@ -1299,7 +1329,7 @@ a:hover {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
-  box-shadow: 0 8px 24px rgb(18 56 44 / 0.12);
+  box-shadow: 0 8px 24px rgb(142 14 86 / 0.12);
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.28s ease, transform 0.28s ease;
@@ -1341,7 +1371,7 @@ a:hover {
   padding: var(--space-2xs) var(--space-s)
     calc(var(--space-2xs) + env(safe-area-inset-bottom, 0px));
   background: var(--surface-invert);
-  background-color: #12382c;
+  background-color: #2a1a22;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   opacity: 1;
@@ -1838,7 +1868,7 @@ h4 {
 
 .sandwich-sandbox {
   border-inline-start-color: var(--accent-alt-soft);
-  background: rgba(140, 83, 64, 0.1);
+  background: color-mix(in srgb, var(--pool) 18%, var(--cream));
 }
 
 .sandwich-sandbox .sandbox-k {
@@ -2193,40 +2223,39 @@ summary:focus-visible {
 
 /* ── dark ──────────────────────────────────────────────────── */
 
-/* The sheet turns over: lacquer becomes the page, silk becomes
-   the invert block. Icy jade and court gold still clear AA. */
+/* Night: ink page, blush invert, the same five hexes. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #0e1613;
-    --surface-raised: #15201b;
-    --surface-sunken: #1a2822;
-    --surface-wash: #1e322a;
-    --surface-invert: #f4ebd8;
-    --surface-invert-raised: #faf6ee;
+    --surface: #2a1a22;
+    --surface-raised: color-mix(in srgb, var(--ink) 88%, var(--blush));
+    --surface-sunken: color-mix(in srgb, var(--ink) 80%, var(--blush));
+    --surface-wash: color-mix(in srgb, var(--ink) 76%, var(--blush));
+    --surface-invert: var(--blush);
+    --surface-invert-raised: var(--cream);
 
-    --ink: #e9eee8;
-    --ink-muted: #a8b5ae;
-    --ink-faint: #8a9a93;
-    --on-invert: #161a17;
-    --on-invert-muted: #4a5a53;
+    --ink: #faf4ef;
+    --ink-muted: color-mix(in srgb, #faf4ef 72%, #f4d4e0);
+    --ink-faint: color-mix(in srgb, #faf4ef 58%, #f4d4e0);
+    --on-invert: #2a1a22;
+    --on-invert-muted: color-mix(in srgb, #2a1a22 68%, #faf4ef);
 
-    --accent: #a8c9b8;
-    --accent-soft: #3e8f72;
-    --accent-wash: #1e322a;
-    --accent-alt: #e4c98a;
-    --accent-alt-soft: #c6a15b;
+    --accent: #f4d4e0;
+    --accent-soft: #f4d4e0;
+    --accent-wash: color-mix(in srgb, #2a1a22 76%, #f4d4e0);
+    --accent-alt: #f4d4e0;
+    --accent-alt-soft: #9dd8d6;
 
-    --line: #2a3a33;
-    --line-strong: #3c4e45;
-    --line-invert: rgba(22, 26, 23, 0.16);
+    --line: color-mix(in srgb, #f4d4e0 22%, #2a1a22);
+    --line-strong: color-mix(in srgb, #f4d4e0 34%, #2a1a22);
+    --line-invert: color-mix(in srgb, #2a1a22 20%, transparent);
 
-    --focus: #e4c98a;
+    --focus: #f4d4e0;
   }
 
   body {
     background-image:
-      radial-gradient(120% 70% at 50% -8%, rgba(62, 143, 114, 0.12), transparent 46%),
-      linear-gradient(to bottom, rgba(168, 201, 184, 0.05) 1px, transparent 1px);
+      radial-gradient(70% 40% at 100% 0%, color-mix(in srgb, #9dd8d6 10%, transparent), transparent 52%),
+      radial-gradient(80% 45% at 0% -10%, color-mix(in srgb, #b01068 16%, transparent), transparent 50%);
   }
 
   .site .rail-photo img {
@@ -2241,47 +2270,47 @@ summary:focus-visible {
   .action-bar a:first-child {
     background: var(--accent);
     border-color: var(--accent);
-    color: #0e1613;
+    color: #2a1a22;
   }
 
   .site .stage-cta:hover,
   .site .rail-contact .rail-cta:hover,
   .action-bar a:first-child:hover {
-    background: #faf6ee;
-    border-color: #faf6ee;
-    color: #0e1613;
+    background: #faf4ef;
+    border-color: #faf4ef;
+    color: #2a1a22;
   }
 
   .site .proj-card--featured {
     background: var(--surface-invert);
-    border-color: #d8cfbb;
+    border-color: #f4d4e0;
     color: var(--on-invert);
   }
 
   .site .proj-card--featured .proj-title {
-    color: #12382c;
+    color: #2a1a22;
   }
 
   .site .proj-card--featured .proj-label {
-    background: rgba(122, 90, 30, 0.12);
-    color: #7a5a1e;
+    background: color-mix(in srgb, #b01068 12%, transparent);
+    color: #b01068;
   }
 
   .site .proj-card--featured .proj-stack {
-    color: #1b5c45;
+    color: #b01068;
   }
 
   .site .proj-card--featured .proj-role {
-    color: #4a5a53;
+    color: color-mix(in srgb, #2a1a22 68%, #faf4ef);
   }
 
   .site .proj-card--featured .proj-links a {
-    color: #7a5a1e;
-    border-block-end-color: rgba(122, 90, 30, 0.45);
+    color: #b01068;
+    border-block-end-color: color-mix(in srgb, #b01068 40%, transparent);
   }
 
   .site .proj-card--featured .proj-links a:hover {
-    color: #12382c;
+    color: #2a1a22;
   }
 
   .pull-quote {
@@ -2290,8 +2319,8 @@ summary:focus-visible {
   }
 
   .site .dock {
-    background: #0a100e;
-    background-color: #0a100e;
+    background: #2a1a22;
+    background-color: #2a1a22;
     border-block-start-color: var(--line-strong);
   }
 
@@ -2301,17 +2330,17 @@ summary:focus-visible {
 
   .site .dock a.dock-primary {
     background: var(--accent);
-    color: #0e1613;
+    color: #2a1a22;
   }
 
   .skip-link {
     background: var(--accent);
-    color: #0e1613;
+    color: #2a1a22;
   }
 
   ::selection {
     background: var(--accent);
-    color: #0e1613;
+    color: #2a1a22;
   }
 }
 

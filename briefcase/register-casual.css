@@ -1,66 +1,65 @@
 /**
  * Register: business casual · jadexzhao portfolio
- * Court silk paper · Georgia captions · Arial body.
- * Loads brand-tokens; starter-matcha.css is the named starter file.
+ * Cream paper · Fredoka display · Arial body.
+ * Five hexes. Loads brand-tokens.
  */
 
 @import url("brand-tokens.css");
 
 :root {
-  --paper: var(--silk);
-  --card: var(--mutton);
+  --paper: var(--cream);
+  --card: var(--house-raised);
   --line: var(--rule);
-  --mist: var(--jade-icy);
-  --accent: var(--jade-glow);
-  --accent-ink: var(--jade-stone);
-  --accent-deep: var(--jade-deep);
-  --gold-hi: var(--gold-ink);
-  --gold-wash: #f3ead4;
-  --jade: var(--jade-glow);
-  --jade-ink: var(--jade-stone);
-  --jade-halo: rgba(27, 92, 69, 0.14);
-  --accent-solid: var(--jade-stone);
-  --accent-solid-hover: var(--jade-glow);
+  --mist: var(--blush);
+  --accent: var(--pink);
+  --accent-ink: var(--pink);
+  --accent-deep: var(--pink);
+  --gold-hi: var(--pink);
+  --gold-wash: var(--blush);
+  --jade: var(--pink);
+  --jade-ink: var(--pink);
+  --jade-halo: color-mix(in srgb, var(--pink) 14%, transparent);
+  --accent-solid: var(--pink);
+  --accent-solid-hover: var(--ink);
   --focus: var(--ink);
-  --panel: var(--silk);
-  --nav-veil: var(--silk); /* solid paper ... no glass */
-  --watermark: rgba(18, 56, 44, 0.08);
-  --font-display: Georgia, "Times New Roman", serif;
+  --panel: var(--cream);
+  --nav-veil: var(--cream);
+  --watermark: color-mix(in srgb, var(--ink) 8%, transparent);
+  --font-display: "Fredoka", Arial, Helvetica, sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
   --max: 920px;
   --max-wide: 1100px;
   --tap: 3rem;
   --space-section: 2.75rem;
   --transition-base: 0.22s ease;
-  --shadow-sm: 0 1px 2px rgba(18, 56, 44, 0.06);
-  --shadow-md: 0 8px 24px rgba(18, 56, 44, 0.08);
-  /* legacy aliases so older powder-blue selectors resolve */
-  --dress-powder-blue: var(--jade-glow);
-  --bouquet-cream: var(--silk);
-  --garden-green: var(--jade-stone);
-  --sky-bright: var(--jade-glow);
-  --sky-ink: var(--jade-stone);
+  --shadow-sm: 0 1px 3px color-mix(in srgb, var(--ink) 8%, transparent);
+  --shadow-md: 0 12px 28px color-mix(in srgb, var(--ink) 12%, transparent);
+  --dress-powder-blue: var(--pool);
+  --bouquet-cream: var(--cream);
+  --garden-green: var(--pink);
+  --sky-bright: var(--pool);
+  --sky-ink: var(--ink);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #ece7dd;
-    --mute: #a8b5ae;
-    --paper: #0e1613;
-    --card: #15201b;
-    --jade: #a8c9b8;
-    --jade-ink: #a8c9b8;
-    --jade-deep: #d7efe6;
-    --accent: #a8c9b8;
-    --accent-ink: #a8c9b8;
-    --accent-solid: #3e8f72;
-    --accent-solid-hover: #a8c9b8;
-    --line: #2a3a33;
-    --focus: #ece7dd;
-    --mist: #1e322a;
-    --panel: #15201b;
-    --nav-veil: #0e1613; /* solid paper ... no glass */
+    --ink: #faf4ef;
+    --mute: color-mix(in srgb, #faf4ef 72%, #f4d4e0);
+    --paper: #2a1a22;
+    --card: color-mix(in srgb, #2a1a22 88%, #f4d4e0);
+    --jade: #f4d4e0;
+    --jade-ink: #f4d4e0;
+    --jade-deep: #faf4ef;
+    --accent: #f4d4e0;
+    --accent-ink: #f4d4e0;
+    --accent-solid: #b01068;
+    --accent-solid-hover: #f4d4e0;
+    --line: color-mix(in srgb, #f4d4e0 22%, #2a1a22);
+    --focus: #faf4ef;
+    --mist: color-mix(in srgb, #2a1a22 76%, #f4d4e0);
+    --panel: color-mix(in srgb, #2a1a22 88%, #f4d4e0);
+    --nav-veil: #2a1a22;
   }
 }

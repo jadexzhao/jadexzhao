@@ -3,60 +3,64 @@
  * Hosted on jadexzhao/jadexzhao main under briefcase/.
  * Live sheet: site.css. Starter: starter-matcha.css (kept as filename).
  *
- * This door: imperial jade-stone + court silk.
- * Bracelet / Qing court jewelry, not matchaxmoxie foam and not IU Rivet navy.
+ * This door: tasteful Dreamhouse. Five hexes.
+ * Cream, blush, one hot pink, pool aqua (spare), ink.
+ * Inspired by Barbie / Life in the Dreamhouse. Not official Mattel CSS.
  *
  * Four-site map:
  *   IU Pages     = professional slate/sage (pages/starter-professional.css)
- *   jadexzhao    = jade bracelet + court silk (this file + site.css)
+ *   jadexzhao    = Dreamhouse (this file + site.css)
  *   matchaxmoxie = cookie classroom matcha (leave that door alone)
  *   zhao-langxi  = Rivet / IU WCMS only (no custom palette fight)
  */
 
 :root {
-  /* stone · 翠 / spinach / icy jadeite */
-  --jade-deep: #12382c;
-  --jade-stone: #1b5c45;
-  --jade-glow: #3e8f72;
-  --jade-icy: #d7efe6;
-  --celadon: #a3bfae;
+  --cream: #faf4ef;
+  --blush: #f4d4e0;
+  --pink: #b01068;
+  --pool: #9dd8d6;
+  --ink: #2a1a22;
 
-  /* silk · 羊脂 / court cream */
-  --silk: #f4ebd8;
-  --mutton: #faf6ee;
-  --cream: var(--silk);
+  --house: var(--cream);
+  --house-raised: #ffffff;
+  --barbie-pink: var(--pink);
+  --barbie-blush: var(--blush);
+  --barbie-rose: var(--blush);
+  --magenta-ink: var(--pink);
+  --magenta-deep: var(--pink);
+  --silk: var(--cream);
+  --mutton: var(--house-raised);
+  --mute: color-mix(in srgb, var(--ink) 62%, var(--cream));
+  --rule: color-mix(in srgb, var(--pink) 16%, transparent);
 
-  /* filigree + russet skin ... little crimson */
-  --gold: #c6a15b;
-  --gold-ink: #7a5a1e;
-  --russet: #8c5340;
+  --jade-deep: var(--pink);
+  --jade-stone: var(--pink);
+  --jade-glow: var(--pink);
+  --jade-icy: var(--blush);
+  --celadon: var(--pool);
+  --gold: var(--blush);
+  --gold-ink: var(--pink);
+  --russet: var(--pink);
+  --matcha-deep: var(--pink);
+  --matcha-mid: var(--pink);
+  --matcha-pale: var(--blush);
+  --clay: var(--blush);
+  --clay-ink: var(--pink);
 
-  --ink: #161a17;
-  --mute: #4a5a53;
-  --rule: rgba(18, 56, 44, 0.16);
-
-  /* legacy kitchen-matcha names resolve to stone */
-  --matcha-deep: var(--jade-stone);
-  --matcha-mid: var(--jade-glow);
-  --matcha-pale: var(--jade-icy);
-  --clay: var(--gold);
-  --clay-ink: var(--gold-ink);
-
-  /* other-door samples stay named, unused on this site */
   --navy: #0c447c;
   --crimson: #990000;
   --crimson-deep: #6d0000;
   --blue: #378add;
   --blue-ink: #2a6fad;
 
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-display: "Fredoka", Arial, Helvetica, sans-serif;
   --font-body: Arial, Helvetica, sans-serif;
   --font-sc: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
-  --radius: 8px;
+  --radius: 16px;
 
-  --focus-ring: var(--jade-stone);
+  --focus-ring: var(--pink);
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;
   --tap: 44px;
-  --on-accent: #faf6ee;
+  --on-accent: var(--cream);
 }

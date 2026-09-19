@@ -1,26 +1,36 @@
 /* ============================================
-   jadexzhao · business casual / imperial jade
-   Georgia captions · Arial body
-   Court silk, bracelet stone, gold filigree.
-   Not matchaxmoxie foam. Not IU Rivet navy.
+   jadexzhao · business casual / tasteful Dreamhouse
+   Five hexes. Fredoka display · Arial body.
    ============================================ */
 
 :root{
-    --jade-deep: #12382c;
-    --jade-stone: #1b5c45;
-    --jade-glow: #3e8f72;
-    --jade-icy: #d7efe6;
-    --silk: #f4ebd8;
-    --mutton: #faf6ee;
-    --ink: #161a17;
-    --gold: #c6a15b;
-    --gold-ink: #7a5a1e;
-    --rule: rgba(18,56,44,0.16);
-    --matcha-deep: var(--jade-stone);
-    --matcha-mid: var(--jade-glow);
-    --matcha-pale: var(--jade-icy);
-    --cream: var(--silk);
-    --clay: var(--gold);
+    --cream: #faf4ef;
+    --blush: #f4d4e0;
+    --pink: #b01068;
+    --pool: #9dd8d6;
+    --ink: #2a1a22;
+    --barbie-pink: var(--pink);
+    --barbie-blush: var(--blush);
+    --barbie-rose: var(--blush);
+    --magenta-ink: var(--pink);
+    --magenta-deep: var(--pink);
+    --house: var(--cream);
+    --house-raised: #ffffff;
+    --hair: var(--blush);
+    --hair-ink: var(--pink);
+    --jade-deep: var(--pink);
+    --jade-stone: var(--pink);
+    --jade-glow: var(--pink);
+    --jade-icy: var(--blush);
+    --silk: var(--cream);
+    --mutton: var(--house-raised);
+    --gold: var(--blush);
+    --gold-ink: var(--pink);
+    --rule: color-mix(in srgb, var(--pink) 16%, transparent);
+    --matcha-deep: var(--pink);
+    --matcha-mid: var(--pink);
+    --matcha-pale: var(--blush);
+    --clay: var(--blush);
   }
 
   *{ box-sizing:border-box; }
@@ -41,27 +51,27 @@
     font-size:12px;
     letter-spacing:0.14em;
     text-transform:lowercase;
-    color:var(--jade-glow);
+    color:var(--barbie-pink);
     font-weight:600;
     margin-bottom:14px;
   }
 
   h1{
-    font-family:Georgia, 'Times New Roman', serif;
-    font-weight:500;
-    font-style:italic;
+    font-family:"Fredoka", Arial, Helvetica, sans-serif;
+    font-weight:600;
+    font-style:normal;
     font-size: clamp(34px, 5vw, 52px);
     line-height:1.08;
     letter-spacing:-0.01em;
     margin:0 0 18px;
-    color:var(--jade-stone);
+    color:var(--magenta-ink);
   }
 
   .lede{
     font-size:17px;
     line-height:1.6;
     max-width:640px;
-    color:#4a5a53;
+    color:#6b3a55;
   }
 
   .lede b{ color:var(--ink); font-weight:600; }
@@ -78,16 +88,16 @@
   }
 
   .section-head h2{
-    font-family:Georgia, 'Times New Roman', serif;
-    font-weight:500;
+    font-family:"Fredoka", Arial, Helvetica, sans-serif;
+    font-weight:600;
     font-size:22px;
     margin:0;
-    color:var(--jade-stone);
+    color:var(--magenta-ink);
   }
 
   .section-head span{
     font-size:12px;
-    color:var(--jade-glow);
+    color:var(--barbie-pink);
     letter-spacing:0.06em;
   }
 
@@ -107,7 +117,7 @@
   .label{
     font-size:13px;
     font-weight:600;
-    color:var(--jade-stone);
+    color:var(--magenta-ink);
     text-transform:lowercase;
     letter-spacing:0.02em;
   }
@@ -125,9 +135,9 @@
     flex:0 0 34px;
     font-size:11px;
     font-weight:600;
-    color:#faf6ee;
-    background:var(--jade-glow);
-    border-radius:4px;
+    color:#faf4ef;
+    background:var(--barbie-pink);
+    border-radius:14px;
     height:20px;
     display:flex;
     align-items:center;
@@ -135,8 +145,8 @@
     letter-spacing:0.04em;
   }
 
-  .side.uk .flag{ background:var(--jade-stone); }
-  .side.us .flag{ background:var(--gold-ink); }
+  .side.uk .flag{ background:var(--magenta-deep); }
+  .side.us .flag{ background:var(--hair-ink); }
 
   /* register cards */
   .cards{
@@ -152,26 +162,27 @@
 
   .card{
     background:
-      radial-gradient(120% 70% at 12% 0%, rgba(215,239,230,0.5), transparent 58%),
+      radial-gradient(120% 70% at 12% 0%, rgba(255,255,255,0.92), transparent 58%),
       var(--mutton);
-    border-radius:8px;
+    border-radius:24px;
     padding:24px;
     border:1px solid var(--rule);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(224,33,138,0.10);
   }
 
   .card h3{
-    font-family:Georgia, 'Times New Roman', serif;
-    font-style:italic;
-    font-weight:500;
+    font-family:"Fredoka", Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-weight:600;
     font-size:18px;
     margin:0 0 12px;
-    color:var(--jade-stone);
+    color:var(--magenta-ink);
   }
 
   .card p{
     font-size:14.5px;
     line-height:1.6;
-    color:#3c4438;
+    color:#6b3a55;
     margin:0 0 10px;
   }
 
@@ -179,18 +190,18 @@
 
   .quote{
     font-style:italic;
-    color:var(--jade-stone);
-    border-left:2px solid var(--jade-glow);
+    color:var(--magenta-ink);
+    border-left:2px solid var(--pool);
     padding-left:12px;
     margin: 12px 0;
   }
 
-  /* signature: the stone callout */
+  /* signature: the magenta callout */
   .callout{
     margin-top: 56px;
-    background: var(--jade-deep);
+    background: var(--magenta-deep);
     color: var(--mutton);
-    border-radius: 14px;
+    border-radius: 24px;
     padding: 36px 32px;
     position:relative;
     overflow:hidden;
@@ -202,15 +213,15 @@
     top:-40px; right:-40px;
     width:160px; height:160px;
     border-radius:50%;
-    background: rgba(215,239,230,0.08);
+    background: rgba(255,255,255,0.12);
   }
 
-  .callout .eyebrow{ color:var(--jade-icy); opacity:0.75; }
+  .callout .eyebrow{ color:var(--barbie-blush); opacity:0.9; }
 
   .callout h3{
-    font-family:Georgia, 'Times New Roman', serif;
-    font-style:italic;
-    font-weight:500;
+    font-family:"Fredoka", Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-weight:600;
     font-size:21px;
     margin:6px 0 14px;
   }
@@ -219,7 +230,7 @@
     font-size:15px;
     line-height:1.65;
     max-width:600px;
-    color: rgba(250,246,238,0.9);
+    color: rgba(255,247,251,0.92);
     margin:0 0 10px;
   }
 
@@ -228,21 +239,21 @@
   footer{
     margin-top:64px;
     font-size:12.5px;
-    color:var(--jade-glow);
+    color:var(--barbie-pink);
     letter-spacing:0.02em;
   }
 
-  ::selection{ background: var(--jade-stone); color:#faf6ee; }
+  ::selection{ background: var(--magenta-ink); color:#faf4ef; }
 
 /* photo-wrap · signature offset frame */
 .photo-wrap {
   display: block;
   position: relative;
-  border-radius: 8px;
+  border-radius: 24px;
   overflow: hidden;
-  background: var(--jade-icy);
+  background: var(--barbie-rose);
   border: 1px solid var(--rule);
-  box-shadow: 6px 8px 0 rgba(27, 92, 69, 0.18);
+  box-shadow: 6px 8px 0 rgba(224, 33, 138, 0.18);
 }
 .photo-wrap img {
   display: block;
@@ -259,16 +270,16 @@
   gap: 8px;
   min-height: 44px;
   padding: 10px 18px;
-  background: var(--jade-stone);
+  background: var(--magenta-deep);
   color: var(--mutton);
-  border-radius: 8px;
+  border-radius: 24px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
-.btn:hover { background: var(--jade-deep); }
+.btn:hover { background: var(--magenta-ink); }
 a:focus-visible, .btn:focus-visible, .card:focus-visible {
-  outline: 3px solid var(--jade-stone);
+  outline: 3px solid var(--magenta-ink);
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
