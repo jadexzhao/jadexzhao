@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var GREEN = "#3f5b3f";
+  var GREEN = "#1b5c45";
   var BUFFER_MAX = 24;
   var buffer = "";
   var fired = {};

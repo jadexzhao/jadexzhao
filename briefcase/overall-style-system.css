@@ -77,19 +77,19 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 /* --- jadexzhao — accessibility, maintainable systems, duck farm someday ---
    job: business casual. credible, but more "you" than the CV site.
-   feel: warm matcha green. italic Fraunces. card-based.
-   corners: 10px            accent: clay, used sparingly
+   feel: imperial jade bracelet + court silk. Arial body.
+   corners: 8px             accent: court gold, used sparingly
 ------------------------------------------------------------------- */
 .theme-jadexzhao {
-  --primary:      #3f5b3f;  /* matcha deep */
-  --primary-deep: #2c412c;
-  --secondary:    #6f8f6a;  /* matcha mid */
-  --accent:       #b3714f;  /* clay */
-  --bg:           #faf8f2;  /* cream */
-  --ink:          #23291f;
-  --font-display: 'Fraunces', serif;   /* italic weights used */
-  --font-body:    'Inter', sans-serif;
-  --radius:       10px;
+  --primary:      #1b5c45;  /* jade stone */
+  --primary-deep: #12382c;
+  --secondary:    #3e8f72;  /* icy mid */
+  --accent:       #c6a15b;  /* court gold */
+  --bg:           #f4ebd8;  /* silk */
+  --ink:          #161a17;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body:    Arial, Helvetica, sans-serif;
+  --radius:       8px;
 }
 
 /* --- matchaxmoxie — FASE MAP process + cookie classroom ---

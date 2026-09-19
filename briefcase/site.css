@@ -1,15 +1,16 @@
 /* ═══════════════════════════════════════════════════════════════
    jadexzhao · jadewowgreen proof door
-   Design direction: FIELD DOSSIER.
+   Design direction: IMPERIAL JADE BANGLE + COURT SILK.
 
    The audience is a technical peer deciding in ninety seconds
    whether the craft is real. So the page is built like a printed
    dossier rather than a landing page: a fixed masthead rail, an
    editorial band per section with its number set in the margin,
-   and one deep ink block per screen that carries the thing she
+   and one deep stone block per screen that carries the thing she
    most wants read. Colour does hierarchy, not decoration ...
-   warm paper for everything ordinary, pine ink for the featured
-   record, clay for exactly one thing at a time.
+   court silk for everything ordinary, spinach jade for the featured
+   record, court gold for exactly one thing at a time.
+   Not matchaxmoxie foam. Not IU Rivet navy.
 
    1. tokens ........ palette, roles, type, space, motion, layers
    2. reset + base .. document, type defaults, links, media
@@ -27,55 +28,65 @@
 /* ── 1. tokens ─────────────────────────────────────────────── */
 
 :root {
-  /* ── palette · raw values, referenced only by the roles below ──
-     Contrast on the paper surface (#fbf9f3) is noted where the
-     value is allowed to carry text. Anything under 4.5 is a
-     graphic value only: rules, fills, borders. */
-  --matcha-deep: #3f5b3f; /* 7.1:1 · body-legal */
-  --matcha-mid: #6f8f6a; /* 3.4:1 · rules and fills only */
-  --matcha-pale: #eef1e6;
-  --pine: #1f2b21; /* the ink block */
-  --pine-lift: #2a3a2c; /* raised panel inside the ink block */
-  --cream: #fbf9f3;
-  --cream-warm: #f2efe4;
-  --clay: #b3714f; /* 3.8:1 · rules, large type, fills */
-  --clay-ink: #7d4c33; /* 6.7:1 · accent text */
-  --clay-light: #e0a87f; /* 7.1:1 on pine */
-  --sage-light: #9dbe94; /* 7.2:1 on pine */
+  /* ── palette · imperial jade bracelet + court silk ──
+     Contrast on silk (#f4ebd8) is noted where the value may
+     carry text. Anything under 4.5 is graphic only. */
+  --jade-deep: #12382c; /* 10.9:1 · spinach invert */
+  --jade-stone: #1b5c45; /* 6.7:1 · bracelet face, body-legal */
+  --jade-glow: #3e8f72; /* icy mid · rules and large type */
+  --jade-icy: #d7efe6;
+  --celadon: #a3bfae;
+  --pine: var(--jade-deep);
+  --pine-lift: #1a4a3a;
+  --silk: #f4ebd8;
+  --mutton: #faf6ee;
+  --cream: var(--silk);
+  --cream-warm: #ede3cd;
+  --gold: #c6a15b; /* filigree · graphic */
+  --gold-ink: #7a5a1e; /* 5.4:1 · accent text */
+  --gold-light: #e4c98a; /* 8.0:1 on deep */
+  --russet: #8c5340; /* 5.2:1 · skin, sparingly */
+  --sage-light: #a8c9b8; /* 7.2:1 on deep */
+
+  /* kitchen-matcha / clay names keep resolving */
+  --matcha-deep: var(--jade-stone);
+  --matcha-mid: var(--jade-glow);
+  --matcha-pale: var(--jade-icy);
+  --clay: var(--gold);
+  --clay-ink: var(--gold-ink);
+  --clay-light: var(--gold-light);
 
   /* ── colour roles ── */
-  --surface: var(--cream);
-  --surface-raised: #ffffff;
+  --surface: var(--silk);
+  --surface-raised: var(--mutton);
   --surface-sunken: var(--cream-warm);
-  --surface-wash: var(--matcha-pale);
-  --surface-invert: var(--pine);
+  --surface-wash: var(--jade-icy);
+  --surface-invert: var(--jade-deep);
   --surface-invert-raised: var(--pine-lift);
 
-  --ink: #1b2620; /* 15:1 */
-  --ink-muted: #55635a; /* 5.9:1 */
-  --ink-faint: #67736a; /* 4.7:1 · the floor for small text */
-  --on-invert: var(--cream-warm);
-  --on-invert-muted: #b9c6b6;
+  --ink: #161a17; /* 14.8:1 */
+  --ink-muted: #4a5a53; /* 6.2:1 */
+  --ink-faint: #5c6b64; /* 4.7:1 · floor for small text */
+  --on-invert: var(--mutton);
+  --on-invert-muted: #a8c9b8;
 
-  --accent: var(--matcha-deep);
-  --accent-soft: var(--matcha-mid);
-  --accent-wash: var(--matcha-pale);
-  --accent-alt: var(--clay-ink);
-  --accent-alt-soft: var(--clay);
+  --accent: var(--jade-stone);
+  --accent-soft: var(--jade-glow);
+  --accent-wash: var(--jade-icy);
+  --accent-alt: var(--gold-ink);
+  --accent-alt-soft: var(--gold);
 
-  --line: #ddd8c8; /* hairline on paper */
-  --line-strong: #c2bda9;
-  --line-invert: rgba(242, 239, 228, 0.18);
+  --line: #d8cfbb;
+  --line-strong: #c4b89e;
+  --line-invert: rgba(250, 246, 238, 0.18);
 
-  --focus: var(--clay-ink);
+  --focus: var(--gold-ink);
 
   /* ── type ──
-     Fraunces carries display, Inter carries everything else.
-     The scale is a 1.22 minor third at the small end opening to
-     ~1.28 at the top, so headings gain presence on a large
-     screen without body copy ever leaving the 16px floor. */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+     Arial carries the site. Georgia is the restrained serif
+     for nameplate, captions, and italic standfirsts. */
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: Arial, Helvetica, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
   --font-sc: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
 
@@ -107,14 +118,14 @@
   --space-2xl: clamp(3.5rem, 2.4rem + 4.5vw, 6.5rem);
 
   /* ── shape and depth ──
-     Near-square. Depth comes from a hairline plus one soft
-     shadow, never from a gradient. */
-  --radius-s: 3px;
-  --radius-m: 6px;
+     Polished stone, not foam layers. A hairline plus a soft
+     inner glow, then one shadow. */
+  --radius-s: 4px;
+  --radius-m: 8px;
   --radius-pill: 999px;
-  --shadow-1: 0 1px 2px rgba(31, 43, 33, 0.05);
-  --shadow-2: 0 12px 28px -18px rgba(31, 43, 33, 0.4);
-  --shadow-3: 0 24px 48px -28px rgba(31, 43, 33, 0.45);
+  --shadow-1: 0 1px 2px rgba(18, 56, 44, 0.06);
+  --shadow-2: 0 12px 28px -18px rgba(18, 56, 44, 0.38);
+  --shadow-3: 0 24px 48px -28px rgba(18, 56, 44, 0.42);
 
   /* ── motion ── */
   --dur-fast: 110ms;
@@ -170,11 +181,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   accent-color: var(--accent);
-  /* the paper has a grain: one hairline grid, very faint, so the
-     page reads as a sheet rather than a browser default */
+  /* court silk: a cool icy wash at the top, then a faint rule */
   background-image:
-    linear-gradient(to bottom, rgba(111, 143, 106, 0.05) 1px, transparent 1px);
-  background-size: 100% 2.5rem;
+    radial-gradient(120% 70% at 50% -8%, rgba(215, 239, 230, 0.42), transparent 46%),
+    linear-gradient(to bottom, rgba(18, 56, 44, 0.04) 1px, transparent 1px);
+  background-size: auto, 100% 2.5rem;
 }
 
 h1,
@@ -802,12 +813,16 @@ a:hover {
   gap: var(--space-2xs);
   block-size: 100%;
   padding: var(--space-m);
-  background: var(--surface-raised);
+  background:
+    radial-gradient(120% 70% at 12% 0%, rgba(215, 239, 230, 0.5), transparent 58%),
+    var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--radius-m);
-  box-shadow: var(--shadow-1);
-  /* the accent edge is the hover affordance and the focus target */
-  border-block-start: 2px solid var(--line-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    var(--shadow-1);
+  /* gold clasp line ... hover fills it with stone */
+  border-block-start: 2px solid var(--accent-alt-soft);
   transition:
     border-color var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease),
@@ -899,9 +914,11 @@ a:hover {
 /* the featured record · one ink block per screen */
 
 .site .proj-card--featured {
-  background: var(--surface-invert);
-  border-color: var(--pine);
-  border-block-start-color: var(--clay);
+  background:
+    radial-gradient(90% 70% at 88% 0%, rgba(62, 143, 114, 0.3), transparent 52%),
+    var(--surface-invert);
+  border-color: var(--jade-deep);
+  border-block-start-color: var(--gold);
   color: var(--on-invert);
   box-shadow: var(--shadow-3);
 }
@@ -953,8 +970,8 @@ a:hover {
 }
 
 .site .proj-card--featured .proj-label {
-  background: rgba(224, 168, 127, 0.16);
-  color: var(--clay-light);
+  background: rgba(228, 201, 138, 0.16);
+  color: var(--gold-light);
 }
 
 .site .proj-card--featured .proj-title {
@@ -977,8 +994,8 @@ a:hover {
 }
 
 .site .proj-card--featured .proj-links a {
-  color: var(--clay-light);
-  border-block-end-color: rgba(224, 168, 127, 0.45);
+  color: var(--gold-light);
+  border-block-end-color: rgba(228, 201, 138, 0.45);
 }
 
 .site .proj-card--featured .proj-links a:hover {
@@ -991,13 +1008,13 @@ a:hover {
   background: var(--surface-sunken);
   border-style: dashed;
   border-block-start-style: solid;
-  border-block-start-color: var(--clay);
+  border-block-start-color: var(--russet);
   box-shadow: none;
 }
 
 .site .proj-card--sandbox .proj-label {
-  background: rgba(179, 113, 79, 0.14);
-  color: var(--accent-alt);
+  background: rgba(140, 83, 64, 0.12);
+  color: var(--russet);
 }
 
 /* ── the case ledger ───────────────────────────────────────── */
@@ -1005,11 +1022,15 @@ a:hover {
 .site .case {
   margin-block-start: var(--space-s);
   padding: var(--space-l);
-  background: var(--surface-raised);
+  background:
+    radial-gradient(120% 70% at 8% 0%, rgba(215, 239, 230, 0.4), transparent 56%),
+    var(--surface-raised);
   border: 1px solid var(--line);
   border-inline-start: 3px solid var(--accent);
   border-radius: var(--radius-m);
-  box-shadow: var(--shadow-1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    var(--shadow-1);
 }
 
 .site .case-name {
@@ -1278,7 +1299,7 @@ a:hover {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
-  box-shadow: 0 8px 24px rgb(31 43 33 / 0.12);
+  box-shadow: 0 8px 24px rgb(18 56 44 / 0.12);
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 0.28s ease, transform 0.28s ease;
@@ -1320,7 +1341,7 @@ a:hover {
   padding: var(--space-2xs) var(--space-s)
     calc(var(--space-2xs) + env(safe-area-inset-bottom, 0px));
   background: var(--surface-invert);
-  background-color: #1f2b21;
+  background-color: #12382c;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   opacity: 1;
@@ -1817,7 +1838,7 @@ h4 {
 
 .sandwich-sandbox {
   border-inline-start-color: var(--accent-alt-soft);
-  background: rgba(179, 113, 79, 0.08);
+  background: rgba(140, 83, 64, 0.1);
 }
 
 .sandwich-sandbox .sandbox-k {
@@ -2172,40 +2193,40 @@ summary:focus-visible {
 
 /* ── dark ──────────────────────────────────────────────────── */
 
-/* The sheet turns over: pine becomes the page, paper becomes the
-   ink block. Matcha lifts to the sage tone and clay to its light
-   tone so both still clear AA on the dark field. */
+/* The sheet turns over: lacquer becomes the page, silk becomes
+   the invert block. Icy jade and court gold still clear AA. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #12181c;
-    --surface-raised: #18211d;
-    --surface-sunken: #1c2622;
-    --surface-wash: #223028;
-    --surface-invert: #f2efe4;
-    --surface-invert-raised: #ffffff;
+    --surface: #0e1613;
+    --surface-raised: #15201b;
+    --surface-sunken: #1a2822;
+    --surface-wash: #1e322a;
+    --surface-invert: #f4ebd8;
+    --surface-invert-raised: #faf6ee;
 
     --ink: #e9eee8;
-    --ink-muted: #b3bfb4;
-    --ink-faint: #93a094;
-    --on-invert: #1b2620;
-    --on-invert-muted: #55635a;
+    --ink-muted: #a8b5ae;
+    --ink-faint: #8a9a93;
+    --on-invert: #161a17;
+    --on-invert-muted: #4a5a53;
 
-    --accent: #9dbe94;
-    --accent-soft: #6f8f6a;
-    --accent-wash: #223028;
-    --accent-alt: #e0a87f;
-    --accent-alt-soft: #b3714f;
+    --accent: #a8c9b8;
+    --accent-soft: #3e8f72;
+    --accent-wash: #1e322a;
+    --accent-alt: #e4c98a;
+    --accent-alt-soft: #c6a15b;
 
-    --line: #2b3733;
-    --line-strong: #3c4a44;
-    --line-invert: rgba(27, 38, 32, 0.16);
+    --line: #2a3a33;
+    --line-strong: #3c4e45;
+    --line-invert: rgba(22, 26, 23, 0.16);
 
-    --focus: #e0a87f;
+    --focus: #e4c98a;
   }
 
   body {
     background-image:
-      linear-gradient(to bottom, rgba(157, 190, 148, 0.045) 1px, transparent 1px);
+      radial-gradient(120% 70% at 50% -8%, rgba(62, 143, 114, 0.12), transparent 46%),
+      linear-gradient(to bottom, rgba(168, 201, 184, 0.05) 1px, transparent 1px);
   }
 
   .site .rail-photo img {
@@ -2220,47 +2241,47 @@ summary:focus-visible {
   .action-bar a:first-child {
     background: var(--accent);
     border-color: var(--accent);
-    color: #12181c;
+    color: #0e1613;
   }
 
   .site .stage-cta:hover,
   .site .rail-contact .rail-cta:hover,
   .action-bar a:first-child:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #12181c;
+    background: #faf6ee;
+    border-color: #faf6ee;
+    color: #0e1613;
   }
 
   .site .proj-card--featured {
     background: var(--surface-invert);
-    border-color: #d8d3c2;
+    border-color: #d8cfbb;
     color: var(--on-invert);
   }
 
   .site .proj-card--featured .proj-title {
-    color: #101713;
+    color: #12382c;
   }
 
   .site .proj-card--featured .proj-label {
-    background: rgba(125, 76, 51, 0.14);
-    color: #7d4c33;
+    background: rgba(122, 90, 30, 0.12);
+    color: #7a5a1e;
   }
 
   .site .proj-card--featured .proj-stack {
-    color: #3f5b3f;
+    color: #1b5c45;
   }
 
   .site .proj-card--featured .proj-role {
-    color: #55635a;
+    color: #4a5a53;
   }
 
   .site .proj-card--featured .proj-links a {
-    color: #7d4c33;
-    border-block-end-color: rgba(125, 76, 51, 0.45);
+    color: #7a5a1e;
+    border-block-end-color: rgba(122, 90, 30, 0.45);
   }
 
   .site .proj-card--featured .proj-links a:hover {
-    color: #101713;
+    color: #12382c;
   }
 
   .pull-quote {
@@ -2269,8 +2290,8 @@ summary:focus-visible {
   }
 
   .site .dock {
-    background: #0d1214;
-    background-color: #0d1214;
+    background: #0a100e;
+    background-color: #0a100e;
     border-block-start-color: var(--line-strong);
   }
 
@@ -2280,17 +2301,17 @@ summary:focus-visible {
 
   .site .dock a.dock-primary {
     background: var(--accent);
-    color: #12181c;
+    color: #0e1613;
   }
 
   .skip-link {
     background: var(--accent);
-    color: #12181c;
+    color: #0e1613;
   }
 
   ::selection {
     background: var(--accent);
-    color: #12181c;
+    color: #0e1613;
   }
 }
 
@@ -2561,6 +2582,8 @@ summary:focus-visible {
 
 .site .figure-caption {
   margin: var(--space-2xs) 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
   font-size: var(--step--2);
   color: var(--ink-faint);
 }
