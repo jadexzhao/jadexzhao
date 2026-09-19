@@ -77,16 +77,16 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
 
 /* --- jadexzhao — accessibility, maintainable systems, duck farm someday ---
    job: business casual. credible, but more "you" than the CV site.
-   feel: tasteful Dreamhouse. Five hexes. Arial body.
-   corners: 16px            accent: one hot pink
+   feel: Dreamhouse chrome, GitHub-native proof. Five hexes. Arial body.
+   corners: 16px            accent: hot pink + pool aqua
 ------------------------------------------------------------------- */
 .theme-jadexzhao {
-  --primary:      #b01068;
-  --primary-deep: #2a1a22;
-  --secondary:    #9dd8d6;
-  --accent:       #b01068;
-  --bg:           #faf4ef;
-  --ink:          #2a1a22;
+  --primary:      #d0126e;
+  --primary-deep: #2a1220;
+  --secondary:    #4ec8d4;
+  --accent:       #d0126e;
+  --bg:           #fff4f8;
+  --ink:          #2a1220;
   --font-display: "Fredoka", Arial, Helvetica, sans-serif;
   --font-body:    Arial, Helvetica, sans-serif;
   --radius:       16px;

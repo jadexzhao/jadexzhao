@@ -4,11 +4,11 @@
    ============================================ */
 
 :root{
-    --cream: #faf4ef;
-    --blush: #f4d4e0;
-    --pink: #b01068;
-    --pool: #9dd8d6;
-    --ink: #2a1a22;
+    --cream: #fff4f8;
+    --blush: #ffd0e4;
+    --pink: #d0126e;
+    --pool: #4ec8d4;
+    --ink: #2a1220;
     --barbie-pink: var(--pink);
     --barbie-blush: var(--blush);
     --barbie-rose: var(--blush);

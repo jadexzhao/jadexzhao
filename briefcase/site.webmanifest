@@ -4,8 +4,8 @@
   "description": "Jade Zhao \u00b7 Digital Humans Project Lead at Luddy \u00b7 human-centered business technology \u00b7 May 2027",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#faf4ef",
-  "theme_color": "#b01068",
+  "background_color": "#fff4f8",
+  "theme_color": "#d0126e",
   "icons": [
     {
       "src": "favicon-32x32.png?v=20260915-face",

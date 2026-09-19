@@ -1,10 +1,10 @@
 /**
  * Jade Zhao · brand tokens (source of truth)
  * Hosted on jadexzhao/jadexzhao main under briefcase/.
- * Live sheet: site.css. Starter: starter-matcha.css (kept as filename).
+ * Live sheet: site.css.
  *
- * This door: tasteful Dreamhouse. Five hexes.
- * Cream, blush, one hot pink, pool aqua (spare), ink.
+ * This door: Dreamhouse chrome, GitHub-native proof.
+ * Five hexes. Pink paper, blush, hot pink, pool aqua, ink.
  * Inspired by Barbie / Life in the Dreamhouse. Not official Mattel CSS.
  *
  * Four-site map:
@@ -15,11 +15,11 @@
  */
 
 :root {
-  --cream: #faf4ef;
-  --blush: #f4d4e0;
-  --pink: #b01068;
-  --pool: #9dd8d6;
-  --ink: #2a1a22;
+  --cream: #fff4f8;
+  --blush: #ffd0e4;
+  --pink: #d0126e;
+  --pool: #4ec8d4;
+  --ink: #2a1220;
 
   --house: var(--cream);
   --house-raised: #ffffff;
@@ -31,7 +31,7 @@
   --silk: var(--cream);
   --mutton: var(--house-raised);
   --mute: color-mix(in srgb, var(--ink) 62%, var(--cream));
-  --rule: color-mix(in srgb, var(--pink) 16%, transparent);
+  --rule: color-mix(in srgb, var(--pink) 22%, transparent);
 
   --jade-deep: var(--pink);
   --jade-stone: var(--pink);
@@ -62,5 +62,5 @@
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;
   --tap: 44px;
-  --on-accent: var(--cream);
+  --on-accent: #ffffff;
 }
