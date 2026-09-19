@@ -109,10 +109,11 @@ export function SwipeableCard({
     }
     const onTouchMove = (e: TouchEvent) => {
       const t = e.touches[0]
-      if (t) {
-        e.preventDefault()
-        handleMove(t.clientX, t.clientY)
-      }
+      if (!t || !startRef.current) return
+      const dx = t.clientX - startRef.current.x
+      const dy = t.clientY - startRef.current.y
+      if (Math.abs(dx) > 12 || dy < -12) e.preventDefault()
+      handleMove(t.clientX, t.clientY)
     }
     const onTouchEnd = () => handleEnd()
 

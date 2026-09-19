@@ -8,10 +8,11 @@ interface SlideDeckProps {
   onPrev: () => void
   onNext: () => void
   label: string
+  slideKey?: string
   children: ReactNode
 }
 
-export function SlideDeck({ index, total, onPrev, onNext, label, children }: SlideDeckProps) {
+export function SlideDeck({ index, total, onPrev, onNext, label, slideKey, children }: SlideDeckProps) {
   const reducedMotion = useReducedMotion()
   const canPrev = index > 0
   const canNext = index < total - 1
@@ -39,7 +40,7 @@ export function SlideDeck({ index, total, onPrev, onNext, label, children }: Sli
       aria-atomic="true"
     >
       <div className="slide-deck__viewport" {...bind} style={deckStyle}>
-        <div key={index} className="slide-deck__slide">
+        <div key={slideKey ?? index} className="slide-deck__slide">
           {children}
         </div>
       </div>

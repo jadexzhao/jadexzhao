@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { RippleButton } from './RippleButton'
+import { useFocusTrap } from '../hooks/useFocusTrap'
 
 const PRESET_OBSESSIONS = [
   'Ship playful interfaces before the pond freezes',
@@ -21,6 +22,7 @@ interface ObsessionEditorProps {
 export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEditorProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  useFocusTrap(open, dialogRef)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -53,7 +55,16 @@ export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEdito
   }
 
   return (
-    <dialog ref={dialogRef} className="obsession-picker" onClose={onClose} aria-labelledby="obsession-title">
+    <dialog
+      ref={dialogRef}
+      className="obsession-picker"
+      onClose={onClose}
+      aria-labelledby="obsession-title"
+      aria-modal="true"
+      onClick={(e) => {
+        if (e.target === dialogRef.current) onClose()
+      }}
+    >
       <form className="obsession-picker__form" onSubmit={handleSubmit}>
         <h2 id="obsession-title" className="obsession-picker__title">
           Set your current obsession

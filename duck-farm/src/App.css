@@ -170,6 +170,7 @@
   cursor: pointer;
   width: 100%;
   text-align: left;
+  text-decoration: none;
   border-radius: var(--qa-radius);
 }
 
@@ -221,6 +222,7 @@
   font-size: var(--step--1);
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease;
   min-height: 44px;
   width: 100%;
@@ -270,6 +272,7 @@
   border: none;
   width: 100%;
   text-align: left;
+  text-decoration: none;
   cursor: pointer;
   border-radius: var(--qa-radius);
   background: rgba(28, 24, 20, 0.28);
@@ -537,11 +540,15 @@
 }
 
 .farm-gate__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 48px;
   padding: 0 var(--space-l);
   border-radius: 9999px;
   font-size: var(--step-0);
   font-weight: 700;
+  text-decoration: none;
 }
 
 .farm-gate__cta--ghost {
@@ -1308,6 +1315,23 @@
   background: var(--qa-accent-fill);
 }
 
+.discover-btn--super {
+  background: var(--surface-sunken);
+  color: var(--farm-barn);
+  border: 1px solid var(--farm-barn);
+}
+
+.discover-btn--super:hover:not(:disabled) {
+  background: var(--farm-barn);
+  color: var(--farm-straw);
+}
+
+.quack-app--dark .discover-btn--super {
+  color: var(--farm-straw);
+  border-color: var(--farm-barn);
+  background: var(--surface-raised);
+}
+
 /* Nest gate (profile) ... 1st-person honesty */
 .nest-gate {
   display: flex;
@@ -1656,7 +1680,8 @@
   margin-top: var(--space-2xs);
 }
 
-.quack-sidebar__footer a {
+.quack-sidebar__footer a,
+.pond-link {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -1664,8 +1689,49 @@
   font-weight: 600;
 }
 
-.quack-sidebar__footer a:hover {
+.quack-sidebar__footer a:hover,
+.pond-link:hover {
   color: var(--ink);
+}
+
+.pond-door-trail {
+  margin-top: var(--space-2xs);
+}
+
+.quack-main__footer {
+  display: none;
+  margin-top: var(--space-s);
+  padding: var(--space-s) var(--space-2xs) var(--space-xs);
+  border-top: 1px solid var(--qa-border);
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.quack-main__footer a,
+.quack-hero__lede .pond-link,
+.farm-gate__aside .pond-link,
+.nest-gate__prompt .pond-link,
+.feature-list .pond-link,
+.empty-state__message .pond-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  font-weight: 600;
+}
+
+.quack-main__footer a:hover,
+.pond-link:hover {
+  color: var(--ink);
+}
+
+.quack-main__footer-hints {
+  list-style: none;
+  margin: var(--space-2xs) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
 }
 
 /* Duck avatar */
@@ -1818,6 +1884,7 @@
   border-radius: 12px;
   cursor: pointer;
   padding: var(--space-3xs);
+  text-decoration: none;
   touch-action: manipulation;
 }
 
@@ -1870,6 +1937,10 @@
   .quack-sidebar {
     display: none;
   }
+
+  .quack-main__footer {
+    display: block;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1884,7 +1955,7 @@
 
   .quack-nav__logo,
   .quack-nav__badge,
-  .quack-nav__item span,
+  .quack-nav__item-label,
   .quack-nav__user-info,
   .quack-nav__compose span {
     display: none;
@@ -1913,7 +1984,7 @@
     right: 50%;
     transform: none;
     width: 100%;
-    font-size: 0.55rem;
+    font-size: var(--step--2);
     letter-spacing: 0.04em;
     padding: 0;
   }
@@ -2036,10 +2107,23 @@
 }
 
 .deck-nav__kbd-hint {
-  font-size: 0.7rem;
+  font-size: var(--step--2);
   color: var(--qa-text-muted);
-  opacity: 0.75;
+  opacity: 0.85;
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  .deck-nav__kbd-hint.visually-hidden {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .swipeable-wrap {
@@ -2069,7 +2153,7 @@
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.swipe-hint--pass { color: #ef4444; }
+.swipe-hint--pass { color: var(--farm-barn); }
 .swipe-hint--waddle { color: var(--qa-accent-dark); }
 .swipe-hint--super { color: var(--qa-like); }
 
@@ -2080,7 +2164,7 @@
 
 .swipeable-card {
   position: relative;
-  touch-action: none;
+  touch-action: pan-y;
   cursor: grab;
   will-change: transform, opacity;
 }

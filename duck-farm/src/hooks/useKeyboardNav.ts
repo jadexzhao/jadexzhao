@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 export interface KeyboardNavConfig {
   onPrev?: () => void
   onNext?: () => void
+  onUp?: () => void
   onEscape?: () => void
   enabled?: boolean
 }
@@ -14,9 +15,15 @@ function isEditableTarget(target: EventTarget | null): boolean {
   return target.isContentEditable
 }
 
+function isLocalArrowTarget(target: EventTarget | null): boolean {
+  if (!(target instanceof HTMLElement)) return false
+  return Boolean(target.closest('[role="radiogroup"], dialog, textarea, input, select'))
+}
+
 export function useKeyboardNav({
   onPrev,
   onNext,
+  onUp,
   onEscape,
   enabled = true,
 }: KeyboardNavConfig): void {
@@ -24,7 +31,7 @@ export function useKeyboardNav({
     if (!enabled) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isEditableTarget(e.target)) {
+      if (isEditableTarget(e.target) || isLocalArrowTarget(e.target)) {
         if (e.key === 'Escape') onEscape?.()
         return
       }
@@ -42,6 +49,12 @@ export function useKeyboardNav({
           e.preventDefault()
           onNext?.()
           break
+        case 'ArrowUp':
+          if (onUp) {
+            e.preventDefault()
+            onUp()
+          }
+          break
         case 'Escape':
           onEscape?.()
           break
@@ -52,5 +65,5 @@ export function useKeyboardNav({
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [enabled, onPrev, onNext, onEscape])
+  }, [enabled, onPrev, onNext, onUp, onEscape])
 }

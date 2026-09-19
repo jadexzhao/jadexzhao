@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react'
+
 interface EmptyStateProps {
   title: string
-  message: string
+  message: ReactNode
   action?: { label: string; onClick: () => void }
 }
 

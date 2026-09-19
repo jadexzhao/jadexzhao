@@ -7,6 +7,7 @@ import {
   useRef,
   lazy,
   Suspense,
+  type MouseEvent,
   type ReactNode,
 } from 'react'
 import { DuckAvatar } from './components/DuckAvatar'
@@ -32,6 +33,7 @@ import {
   type DuckMood,
 } from './data/mockData'
 import { initDoorEggs } from './eggs'
+import { DoorTrail, PondLink, POND_HREFS } from './pondLinks'
 import './App.css'
 
 const BreadcrumbGame = lazy(() =>
@@ -130,13 +132,41 @@ function FilterPills({
   active: MoodFilter
   onChange: (filter: MoodFilter) => void
 }) {
+  const groupRef = useRef<HTMLDivElement>(null)
+
+  const move = (dir: 1 | -1) => {
+    const idx = MOOD_FILTERS.findIndex((f) => f.id === active)
+    const next = MOOD_FILTERS[(idx + dir + MOOD_FILTERS.length) % MOOD_FILTERS.length]
+    if (!next) return
+    onChange(next.id)
+    window.requestAnimationFrame(() => {
+      groupRef.current?.querySelector<HTMLButtonElement>(`[data-filter="${next.id}"]`)?.focus()
+    })
+  }
+
   return (
-    <div className="filter-pills" role="radiogroup" aria-label="Filter ducks">
+    <div
+      ref={groupRef}
+      className="filter-pills"
+      role="radiogroup"
+      aria-label="Filter ducks by mood"
+      onKeyDown={(e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault()
+          move(1)
+        }
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault()
+          move(-1)
+        }
+      }}
+    >
       {MOOD_FILTERS.map(({ id, label }) => (
         <button
           key={id}
           type="button"
           role="radio"
+          data-filter={id}
           aria-checked={active === id}
           className={`filter-pill${active === id ? ' is-active' : ''}`}
           onClick={() => onChange(id)}
@@ -194,7 +224,7 @@ function DeckNav({
         </RippleButton>
       </div>
       <p className="deck-nav__kbd-hint visually-hidden">
-        Use arrow keys to navigate slides
+        Arrow keys move slides. On Discover, up arrow sends a super quack.
       </p>
     </div>
   )
@@ -280,11 +310,13 @@ function DiscoverCard({
   profile,
   onMatch,
   onPass,
+  onSuper,
   matched,
 }: {
   profile: DuckProfile
   onMatch: (id: string) => void
   onPass?: (id: string) => void
+  onSuper?: (id: string) => void
   matched: boolean
 }) {
   const badge = moodBadge(profile.mood)
@@ -316,7 +348,7 @@ function DiscoverCard({
         )}
         <p className="discover-card__bio">{withCjkLang(profile.bio)}</p>
       </div>
-      <div className="discover-card__actions">
+      <div className={`discover-card__actions${onPass || onSuper ? ' discover-card__actions--decide' : ''}`}>
         {onPass && (
           <RippleButton
             className="discover-btn discover-btn--wave"
@@ -334,6 +366,15 @@ function DiscoverCard({
         >
           {matched ? 'Matched' : 'Start waddle'}
         </RippleButton>
+        {onSuper && !matched && (
+          <RippleButton
+            className="discover-btn discover-btn--super"
+            onClick={() => onSuper(profile.id)}
+            aria-label={`Super quack with ${profile.displayName}`}
+          >
+            Super quack
+          </RippleButton>
+        )}
       </div>
     </article>
   )
@@ -437,16 +478,94 @@ const NAV_BY_HASH: Record<string, NavItem> = {
   nest: 'profile',
 }
 
+const ROUTE_CHROME: Record<NavItem, { lede: ReactNode; note: string }> = {
+  home: {
+    lede: (
+      <>
+        A pond Jade tests herself. Live on{' '}
+        <PondLink href={POND_HREFS.briefcase}>jadexzhao</PondLink>. Ducks, water, grass.
+      </>
+    ),
+    note: 'the morning feed',
+  },
+  explore: {
+    lede: 'Meet the deck. Pass, start a waddle, or send a super quack.',
+    note: 'swipe or tap to decide',
+  },
+  matches: {
+    lede: (
+      <>
+        Ducks you chose to keep. The longer why is on{' '}
+        <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>.
+      </>
+    ),
+    note: 'saved waddles',
+  },
+  profile: {
+    lede: 'Would you keep this nest? 1st-person only.',
+    note: '1st-person gate',
+  },
+}
+
 const NAV_STORAGE_KEY = 'duck-farm-nav'
+
+function hashFor(nav: NavItem): string {
+  return `#${HASH_BY_NAV[nav]}`
+}
+
+function isModifiedClick(e: Pick<MouseEvent, 'metaKey' | 'ctrlKey' | 'shiftKey' | 'altKey' | 'button'>): boolean {
+  return e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0
+}
+
+function HashNavLink({
+  nav,
+  className,
+  active,
+  ariaLabel,
+  children,
+  onNavigate,
+}: {
+  nav: NavItem
+  className: string
+  active: boolean
+  ariaLabel?: string
+  children: ReactNode
+  onNavigate: (nav: NavItem) => void
+}) {
+  return (
+    <a
+      href={hashFor(nav)}
+      className={`${className}${active ? ' is-active' : ''}`}
+      aria-label={ariaLabel}
+      aria-current={active ? 'page' : undefined}
+      onClick={(e) => {
+        if (isModifiedClick(e)) return
+        e.preventDefault()
+        onNavigate(nav)
+      }}
+    >
+      {children}
+    </a>
+  )
+}
 
 function isNavItem(value: string): value is NavItem {
   return value === 'home' || value === 'explore' || value === 'matches' || value === 'profile'
 }
 
+function readRawHash(): string {
+  if (typeof window === 'undefined') return ''
+  return window.location.hash.replace(/^#/, '').toLowerCase()
+}
+
 function readNavFromLocation(): NavItem | null {
-  if (typeof window === 'undefined') return null
-  const raw = window.location.hash.replace(/^#/, '').toLowerCase()
+  const raw = readRawHash()
+  if (!raw) return null
   return NAV_BY_HASH[raw] ?? null
+}
+
+function isKnownHash(raw: string): boolean {
+  return raw === '' || Object.prototype.hasOwnProperty.call(NAV_BY_HASH, raw)
 }
 
 function readStoredNav(): NavItem | null {
@@ -515,8 +634,10 @@ export default function App() {
   const [matchModal, setMatchModal] = useState<{ profile: DuckProfile; superQuack: boolean } | null>(null)
   const [showOnboard, setShowOnboard] = useState(() => {
     if (typeof window === 'undefined') return false
+    if (readNavFromLocation()) return false
     return localStorage.getItem(ONBOARD_KEY) !== '1'
   })
+  const focusCompose = useRef(false)
   const [nestGate, setNestGate] = useLocalStorage<'pending' | 'kept' | 'shaping'>(
     'quack-nest-gate',
     'pending',
@@ -564,7 +685,7 @@ export default function App() {
     }
   }, [])
 
-  const handleNavChange = (nav: NavItem) => {
+  const handleNavChange = (nav: NavItem, opts?: { compose?: boolean }) => {
     dismissOnboard()
     setActiveNav(nav)
     try {
@@ -576,6 +697,7 @@ export default function App() {
     feedDeck.reset()
     discoverDeck.reset()
     matchDeck.reset()
+    if (opts?.compose) focusCompose.current = true
   }
 
   const tryNest = () => {
@@ -583,19 +705,32 @@ export default function App() {
   }
 
   useEffect(() => {
-    const fromHash = readNavFromLocation()
-    if (fromHash && fromHash !== 'home') {
+    const raw = readRawHash()
+    if (raw && !isKnownHash(raw)) {
+      writeNavHash('home', true)
+      setActiveNav('home')
       dismissOnboard()
+      return
     }
+    const fromHash = readNavFromLocation()
+    if (fromHash) dismissOnboard()
     if (!window.location.hash && localStorage.getItem(ONBOARD_KEY) === '1') {
       writeNavHash(activeNav, true)
     }
+    // Mount only: seed a hash once the gate has already been seen.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- first paint
   }, [dismissOnboard])
 
   useEffect(() => {
     const onHash = () => {
-      const nav = readNavFromLocation()
-      if (!nav) return
+      const raw = readRawHash()
+      if (raw && !isKnownHash(raw)) {
+        writeNavHash('home', true)
+        setActiveNav('home')
+        dismissOnboard()
+        return
+      }
+      const nav = readNavFromLocation() ?? 'home'
       setActiveNav(nav)
       try {
         localStorage.setItem(NAV_STORAGE_KEY, nav)
@@ -605,7 +740,7 @@ export default function App() {
       feedDeck.reset()
       discoverDeck.reset()
       matchDeck.reset()
-      if (nav !== 'home') dismissOnboard()
+      if (raw) dismissOnboard()
     }
     window.addEventListener('hashchange', onHash)
     window.addEventListener('popstate', onHash)
@@ -614,6 +749,23 @@ export default function App() {
       window.removeEventListener('popstate', onHash)
     }
   }, [dismissOnboard])
+
+  useEffect(() => {
+    const label = showGate ? 'Enter' : NAV_LABELS[activeNav]
+    document.title = `Duck farm · ${label} · 鸭年 · Jade Zhao`
+  }, [activeNav, showGate])
+
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]:not([media])')
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#161410' : '#2E5A58')
+    document.documentElement.style.colorScheme = theme === 'dark' ? 'dark' : 'light'
+  }, [theme])
+
+  useEffect(() => {
+    if (!focusCompose.current || showGate || activeNav !== 'home') return
+    focusCompose.current = false
+    window.setTimeout(() => composeRef.current?.focus(), 60)
+  }, [activeNav, showGate])
 
   const handleFlirt = (id: string) => {
     setQuacks((prev) =>
@@ -706,45 +858,71 @@ export default function App() {
 
   const modalOpen = matchModal !== null || obsessionOpen
   const showGate = showOnboard && activeNav === 'home'
+  const currentDiscover = filteredProfiles[discoverDeck.index]
+  const routeChrome = showGate
+    ? {
+        lede: (
+          <>
+            A pond that has to hold every morning. Built on{' '}
+            <PondLink href={POND_HREFS.briefcase}>jadexzhao</PondLink>.
+          </>
+        ),
+        note: 'enter the pond',
+      }
+    : ROUTE_CHROME[activeNav]
 
   useKeyboardNav({
     enabled: !showGate && !modalOpen && activeDeck !== null,
     onPrev: () => activeDeck?.goPrev(),
     onNext: () => activeDeck?.goNext(),
+    onUp:
+      activeNav === 'explore' && currentDiscover && !matches.has(currentDiscover.id)
+        ? () => triggerMatch(currentDiscover.id, true)
+        : undefined,
   })
 
-  const currentDiscover = filteredProfiles[discoverDeck.index]
-
   return (
-    <div className={`quack-app quack-app--${theme}`} data-theme={theme}>
+    <div
+      className={`quack-app quack-app--${theme}`}
+      data-theme={theme}
+      data-route={showGate ? 'gate' : HASH_BY_NAV[activeNav]}
+    >
       <a href="#main-feed" className="skip-link">
         Skip to main content
       </a>
+      <p className="visually-hidden" role="status" aria-live="polite">
+        {showGate ? 'Duck farm gate' : NAV_LABELS[activeNav]}
+      </p>
 
       <div className="quack-shell">
         <aside className="quack-nav" aria-label="Main navigation">
-          <button
-            type="button"
+          <a
+            href={hashFor('home')}
             className="quack-nav__brand"
-            onClick={() => handleNavChange('home')}
             aria-label="Duck farm, back to Pond"
+            onClick={(e) => {
+              if (isModifiedClick(e)) return
+              e.preventDefault()
+              handleNavChange('home')
+            }}
           >
             <DuckAvatar size="sm" label="Duck farm" bounce />
             <span className="quack-nav__logo">Duck farm</span>
-          </button>
+          </a>
 
           <nav className="quack-nav__links">
             {NAV_ITEMS.map(({ id, label, Icon }) => (
-              <RippleButton
+              <HashNavLink
                 key={id}
-                className={`quack-nav__item${activeNav === id ? ' is-active' : ''}`}
-                aria-label={label}
-                aria-current={activeNav === id ? 'page' : undefined}
-                onClick={() => handleNavChange(id)}
+                nav={id}
+                className="quack-nav__item"
+                active={activeNav === id}
+                ariaLabel={label}
+                onNavigate={handleNavChange}
               >
                 <Icon />
-                <span>{label}</span>
-              </RippleButton>
+                <span className="quack-nav__item-label">{label}</span>
+              </HashNavLink>
             ))}
           </nav>
 
@@ -752,27 +930,28 @@ export default function App() {
             variant="primary"
             className="quack-btn quack-btn--primary quack-nav__compose"
             aria-label="Quack"
-            onClick={() => {
-              handleNavChange('home')
-              window.setTimeout(() => composeRef.current?.focus(), 100)
-            }}
+            onClick={() => handleNavChange('home', { compose: true })}
           >
             <QuackIcon />
             <span>Quack</span>
           </RippleButton>
 
-          <button
-            type="button"
+          <a
+            href={hashFor('profile')}
             className="quack-nav__user"
-            onClick={() => handleNavChange('profile')}
             aria-label="Open Nest"
+            onClick={(e) => {
+              if (isModifiedClick(e)) return
+              e.preventDefault()
+              handleNavChange('profile')
+            }}
           >
             <DuckAvatar size="sm" emoji={CURRENT_USER.emoji} label="Your profile" bounce />
             <div className="quack-nav__user-info">
               <span className="quack-nav__user-name">{CURRENT_USER.displayName}</span>
               <span className="quack-nav__user-handle">@{CURRENT_USER.handle}</span>
             </div>
-          </button>
+          </a>
 
           <button
             type="button"
@@ -791,7 +970,7 @@ export default function App() {
                 <p className="quack-hero__kicker">
                   Duck farm · <span lang="zh-Hans">鸭年</span>
                 </p>
-                <h1 className="quack-hero__section">{NAV_LABELS[activeNav]}</h1>
+                <h1 className="quack-hero__section">{showGate ? 'Duck farm' : NAV_LABELS[activeNav]}</h1>
               </div>
               <button
                 type="button"
@@ -803,20 +982,8 @@ export default function App() {
               </button>
             </div>
             <div className="quack-hero__section-row">
-              <p className="quack-hero__lede">
-                A pond Jade tests herself. Ducks, water, grass.
-              </p>
-              <span className="quack-hero__deck-note" aria-hidden={activeNav === 'profile' && !showGate}>
-                {showGate
-                  ? 'enter the pond'
-                  : activeNav === 'explore'
-                    ? 'swipe to decide'
-                    : activeNav === 'matches'
-                      ? 'saved waddles'
-                      : activeNav === 'profile'
-                        ? '1st-person gate'
-                        : 'the morning feed'}
-              </span>
+              <p className="quack-hero__lede">{routeChrome.lede}</p>
+              <span className="quack-hero__deck-note">{routeChrome.note}</span>
             </div>
           </header>
 
@@ -888,7 +1055,12 @@ export default function App() {
               <div className="slide-card slide-card--empty">
                 <EmptyState
                   title="The pond is quiet"
-                  message="Quack above. Posts on this farm stay in your browser."
+                  message={
+                    <>
+                      Quack above. Posts stay in this browser. Code on{' '}
+                      <PondLink href={POND_HREFS.source}>GitHub</PondLink>.
+                    </>
+                  }
                 />
               </div>
             )}
@@ -929,6 +1101,7 @@ export default function App() {
                     matched={matches.has(currentDiscover.id)}
                     onMatch={handleMatch}
                     onPass={handlePass}
+                    onSuper={(id) => triggerMatch(id, true)}
                   />
                 </SwipeableCard>
               </>
@@ -995,6 +1168,10 @@ export default function App() {
                   </h2>
                   <p className="nest-gate__prompt">
                     Would you keep this nest on a real dating app ... or delete the rest after seeing it?
+                    The longer why lives on{' '}
+                    <PondLink href={POND_HREFS.iuPages}>IU Pages</PondLink>
+                    {' and '}
+                    <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>.
                   </p>
                   <div className="nest-gate__choices">
                     <RippleButton
@@ -1070,6 +1247,18 @@ export default function App() {
           )}
             </>
           )}
+
+          <footer className="quack-main__footer">
+            <p>
+              <strong>Jade Zhao</strong> · Duck farm · <span lang="zh-Hans">鸭年</span>
+            </p>
+            <p>Self-tested on this pond. Not a dating product.</p>
+            <ul className="quack-main__footer-hints">
+              <li>Pass, waddle, or super from Discover</li>
+              <li>Quacks stay in this browser</li>
+            </ul>
+            <DoorTrail />
+          </footer>
         </main>
 
         <aside className="quack-sidebar" aria-label="Pond extras">
@@ -1105,8 +1294,18 @@ export default function App() {
             <ul className="feature-list">
               <li>Swipe to pass, waddle, or super</li>
               <li>Nest gate ... would you keep this profile?</li>
-              <li>Keyboard arrows and a skip link</li>
-              <li>Quacks stay in this browser</li>
+              <li>
+                Source on <PondLink href={POND_HREFS.source}>GitHub</PondLink>
+              </li>
+              <li>
+                Classroom twin on <PondLink href={POND_HREFS.classroom}>matchaxmoxie</PondLink>
+              </li>
+              <li>
+                Essays on the water at <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>
+              </li>
+              <li>
+                Contrast notes on <PondLink href={POND_HREFS.wcag}>i18n ∩ WCAG</PondLink>
+              </li>
             </ul>
           </section>
 
@@ -1115,34 +1314,28 @@ export default function App() {
               <strong>Jade Zhao</strong> · Duck farm · <span lang="zh-Hans">鸭年</span>
             </p>
             <p>Self-tested on this pond.</p>
-            <p>
-              <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
-              {' · '}
-              <a href="https://jlzhao.pages.iu.edu/resume.pdf" rel="noopener noreferrer">resume</a>
-              {' · '}
-              <a href="https://github.com/jadexzhao/jadexzhao/tree/main/duck-farm">source</a>
-            </p>
+            <DoorTrail />
           </footer>
         </aside>
       </div>
 
       <nav className="quack-mobile-nav" aria-label="Mobile navigation">
         {NAV_ITEMS.map(({ id, label, Icon }) => (
-          <button
+          <HashNavLink
             key={id}
-            type="button"
-            className={`quack-mobile-nav__item${activeNav === id ? ' is-active' : ''}`}
-            aria-current={activeNav === id ? 'page' : undefined}
-            aria-label={label}
-            onClick={() => handleNavChange(id)}
+            nav={id}
+            className="quack-mobile-nav__item"
+            active={activeNav === id}
+            ariaLabel={label}
+            onNavigate={handleNavChange}
           >
             <Icon />
             <span className="quack-mobile-nav__label">{label}</span>
-          </button>
+          </HashNavLink>
         ))}
       </nav>
 
-      <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">
+      <div className={`quack-toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite" aria-atomic="true">
         {toast}
       </div>
 

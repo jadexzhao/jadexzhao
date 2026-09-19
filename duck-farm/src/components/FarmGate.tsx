@@ -1,5 +1,5 @@
 import { DuckAvatar } from './DuckAvatar'
-import { RippleButton } from './RippleButton'
+import { PondLink, POND_HREFS } from '../pondLinks'
 
 interface FarmGateProps {
   onEnter: () => void
@@ -44,20 +44,36 @@ export function FarmGate({ onEnter, onNest, theme, onToggleTheme, embedded }: Fa
       </p>
 
       <div className="farm-gate__ctas">
-        <RippleButton
-          variant="primary"
-          className="quack-btn quack-btn--primary farm-gate__cta"
-          onClick={onEnter}
+        <a
+          href="#pond"
+          className="ripple-btn ripple-btn--primary quack-btn quack-btn--primary farm-gate__cta"
+          onClick={(e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+            e.preventDefault()
+            onEnter()
+          }}
         >
           Enter the pond
-        </RippleButton>
-        <RippleButton className="farm-gate__cta farm-gate__cta--ghost" onClick={onNest}>
+        </a>
+        <a
+          href="#nest"
+          className="ripple-btn farm-gate__cta farm-gate__cta--ghost"
+          onClick={(e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+            e.preventDefault()
+            onNest()
+          }}
+        >
           Your nest
-        </RippleButton>
+        </a>
       </div>
 
       <p className="farm-gate__aside">
-        Long-term creative throughline. Self-tested on this pond. Not a dating product.
+        Long-term creative throughline. Self-tested on this pond. Built on{' '}
+        <PondLink href={POND_HREFS.briefcase}>jadexzhao</PondLink>
+        . Essays on the water at{' '}
+        <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>
+        . Not a dating product.
       </p>
     </Tag>
   )

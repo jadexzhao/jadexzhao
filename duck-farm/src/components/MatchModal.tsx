@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { DuckAvatar } from './DuckAvatar'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { useFocusTrap } from '../hooks/useFocusTrap'
 import type { DuckProfile } from '../data/mockData'
 
 interface MatchModalProps {
@@ -39,6 +40,7 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
   const reduced = useReducedMotion()
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [particles, setParticles] = useState<Particle[]>([])
+  useFocusTrap(profile !== null, dialogRef)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -79,7 +81,16 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
   if (!profile) return null
 
   return (
-    <dialog ref={dialogRef} className="match-modal" onClose={onClose} aria-labelledby="match-title">
+    <dialog
+      ref={dialogRef}
+      className="match-modal"
+      onClose={onClose}
+      aria-labelledby="match-title"
+      aria-modal="true"
+      onClick={(e) => {
+        if (e.target === dialogRef.current) onClose()
+      }}
+    >
       <div className="match-modal__content match-modal__content--open">
         {!reduced && (
           <div className="match-modal__particles" aria-hidden="true">
