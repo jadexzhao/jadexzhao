@@ -32,7 +32,7 @@ export const CURRENT_USER: DuckProfile = {
   id: 'jade',
   handle: 'jadexzhao',
   displayName: 'Jade Zhao',
-  bio: 'Portfolio duck · 福州 roots · building playful interfaces',
+  bio: 'Greenfield restaurant kid · 福州 roots · a pond that has to hold',
   pond: 'Indiana · 鸭年 2026',
   mood: 'wading',
   emoji: '🦆',
@@ -187,10 +187,10 @@ export const INITIAL_QUACKS: Quack[] = [
 ]
 
 export const TRENDING_TOPICS = [
-  { tag: '#PondParty', posts: 'sandbox tag' },
-  { tag: '#BreadOrBust', posts: 'sandbox tag' },
-  { tag: '#鸭年Social', posts: 'sandbox tag' },
-  { tag: '#NestGoals', posts: 'sandbox tag' },
+  { tag: '#PondParty', posts: 'on the water' },
+  { tag: '#BreadOrBust', posts: 'on the water' },
+  { tag: '#鸭年Social', posts: 'on the water' },
+  { tag: '#NestGoals', posts: 'on the water' },
 ]
 
 export function getProfile(id: string): DuckProfile | undefined {

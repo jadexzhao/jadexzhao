@@ -77,7 +77,7 @@ export function BreadcrumbGame() {
   return (
     <section className="breadcrumb-game" aria-label="Catch breadcrumbs mini-game">
       <div className="breadcrumb-game__header">
-        <h2>Catch crumbs!</h2>
+        <h2>Crumbs on the water</h2>
         <span className="breadcrumb-game__score">
           Score: <AnimatedCounter value={score} />
         </span>
@@ -86,7 +86,7 @@ export function BreadcrumbGame() {
       <div className="breadcrumb-game__pond" role="group" aria-label="Tap falling breadcrumbs">
         {!playing && (
           <div className="breadcrumb-game__overlay">
-            <p>{missed >= 5 ? '5 missed ... game over!' : 'Tap crumbs before they sink!'}</p>
+            <p>{missed >= 5 ? 'Five missed ... the crumbs sank.' : 'Catch crumbs before they sink.'}</p>
             <button type="button" className="quack-btn quack-btn--primary" onClick={startGame}>
               {missed >= 5 || score > 0 ? 'Play again' : 'Start'}
             </button>

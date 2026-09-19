@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
-   Quackr · components
+   Duck farm · components
    Tokens and base live in index.css. This sheet maps the app's
-   semantic --qa-* names onto those roles, then styles the shell,
-   feed, cards, and controls against them.
+   semantic --qa-* names onto farm roles, then styles the barn nav,
+   pond feed, cards, and the first-screen gate.
    ═══════════════════════════════════════════════════════════════ */
 
 .quack-app {
@@ -22,12 +22,12 @@
   --qa-accent-fill: var(--accent);
   --qa-accent-fill-hover: var(--accent-hover);
   --qa-on-accent: var(--on-accent);
-  --qa-like: var(--clay-ink);
-  --qa-requack: var(--accent);
+  --qa-like: var(--farm-barn);
+  --qa-requack: var(--farm-grass);
   --qa-reply: var(--blue-ink);
   --qa-panel: var(--surface-raised);
   --qa-hover: var(--accent-wash);
-  --qa-scrim: rgba(250, 248, 242, 0.88);
+  --qa-scrim: rgba(243, 230, 200, 0.9);
   --qa-shadow: var(--elevation-1);
   --qa-shadow-lg: var(--elevation-2);
   --qa-radius: var(--radius-md);
@@ -40,68 +40,90 @@
   --qa-gutter: var(--space-s);
 
   /* ── mascot ── */
-  --duck-body: #e8c56a;
-  --duck-wing: #d4b055;
-  --duck-beak: var(--clay);
+  --duck-body: var(--farm-duck);
+  --duck-wing: #c4923a;
+  --duck-beak: var(--farm-barn);
   --duck-eye: var(--ink);
 
   min-block-size: 100dvh;
   color-scheme: light;
-  /* Light tokens live on the app so the in-app toggle wins over OS dark. */
-  --surface: #f6efe3;
-  --surface-raised: #ffffff;
-  --surface-sunken: #eef1e6;
-  --surface-wash: #f3ece3;
-  --ink: #23291f;
-  --ink-muted: #4a5248;
-  --ink-subtle: #5f6a5c;
-  --accent: #3f5b3f;
-  --accent-hover: #2f4530;
-  --accent-quiet: #6f8f6a;
-  --accent-wash: rgba(63, 91, 63, 0.09);
-  --on-accent: #ffffff;
-  --border: rgba(63, 91, 63, 0.22);
-  --border-strong: rgba(63, 91, 63, 0.42);
-  --focus: #23291f;
-  --focus-halo: rgba(63, 91, 63, 0.22);
-  --clay: #b3714f;
-  --clay-ink: #7d4c33;
-  --blue-ink: #2a6fad;
-  /* One quiet wash from the top instead of a three-stop gradient:
-     the old cream → mist → clay ramp turned the whole page grey-green
-     and flattened the white cards against it. */
-  background:
-    linear-gradient(180deg, var(--surface-sunken) 0%, var(--surface) 22rem)
-    no-repeat;
-  background-color: var(--surface);
+  --farm-barn: #8c3a2a;
+  --farm-pond: #2e5a58;
+  --farm-grass: #4e5c32;
+  --farm-straw: #f3e6c8;
+  --farm-mud: #6a4634;
+  --farm-pond-mist: #c9d6cc;
+  --farm-duck: #d4a54a;
+  --surface: #f3e6c8;
+  --surface-raised: #fff8ec;
+  --surface-sunken: #e4d7b8;
+  --surface-wash: #e8e0c9;
+  --ink: #1c1814;
+  --ink-muted: #4a4036;
+  --ink-subtle: #6b5e50;
+  --accent: #2e5a58;
+  --accent-hover: #244846;
+  --accent-quiet: #4e5c32;
+  --accent-wash: rgba(46, 90, 88, 0.12);
+  --on-accent: #f3e6c8;
+  --border: rgba(106, 70, 52, 0.28);
+  --border-strong: rgba(106, 70, 52, 0.48);
+  --focus: #8c3a2a;
+  --focus-halo: rgba(140, 58, 42, 0.22);
+  --clay: #8c3a2a;
+  --clay-ink: #5c2a20;
+  --blue-ink: #2a6a7a;
+  background-color: var(--farm-straw);
+  background-image:
+    radial-gradient(ellipse 90% 42% at 50% -12%, rgba(46, 90, 88, 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 28% at 100% 100%, rgba(78, 92, 50, 0.32) 0%, transparent 52%),
+    radial-gradient(ellipse 45% 22% at 0% 95%, rgba(106, 70, 52, 0.22) 0%, transparent 48%),
+    linear-gradient(180deg, #c9d6cc 0%, #f3e6c8 34%, #e4d7b8 100%);
+  background-attachment: scroll;
   color: var(--qa-text);
+  position: relative;
+  overflow-x: clip;
+  max-inline-size: 100%;
 }
 
 .quack-app--dark {
   color-scheme: dark;
-  --surface: #121814;
-  --surface-raised: #1a221c;
-  --surface-sunken: #1c2620;
-  --surface-wash: #17201a;
-  --ink: #ece7dd;
-  --ink-muted: #b9b0a3;
-  --ink-subtle: #9aa093;
-  --border: #2a3530;
-  --border-strong: #48584f;
-  --accent: #a8c49a;
-  --accent-hover: #c5d8b8;
-  --accent-quiet: #8fad7e;
-  --accent-wash: rgba(168, 196, 154, 0.12);
-  --on-accent: #101915;
-  --focus: #ece7dd;
-  --clay: #d59b72;
+  --farm-barn: #c46b58;
+  --farm-pond: #7ea8a0;
+  --farm-grass: #a3b07a;
+  --farm-straw: #f3e6c8;
+  --farm-mud: #3d2a20;
+  --farm-pond-mist: #2a3a38;
+  --surface: #161410;
+  --surface-raised: #241c16;
+  --surface-sunken: #1a2220;
+  --surface-wash: #1c1814;
+  --ink: #f3e6c8;
+  --ink-muted: #c4b496;
+  --ink-subtle: #9a8b74;
+  --border: #3d2a20;
+  --border-strong: #6a4634;
+  --accent: #7ea8a0;
+  --accent-hover: #9bc0b8;
+  --accent-quiet: #a3b07a;
+  --accent-wash: rgba(126, 168, 160, 0.14);
+  --on-accent: #161410;
+  --focus: #f3e6c8;
+  --clay: #c46b58;
   --clay-ink: #e0b391;
-  --blue-ink: #7eb0e0;
-  --duck-eye: #ece7dd;
-  --qa-scrim: rgba(18, 24, 20, 0.86);
+  --blue-ink: #7ea8a0;
+  --duck-eye: #f3e6c8;
+  --qa-scrim: rgba(22, 20, 16, 0.88);
+  background-color: #161410;
+  background-image:
+    radial-gradient(ellipse 90% 42% at 50% -12%, rgba(46, 90, 88, 0.35) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 28% at 100% 100%, rgba(61, 42, 32, 0.55) 0%, transparent 52%),
+    linear-gradient(180deg, #1a2220 0%, #161410 40%, #1c1814 100%);
 }
 
 .quack-shell {
+  position: relative;
+  z-index: 1;
   /* grid, not flex: the three columns have fixed roles and the middle
      one absorbs the slack */
   display: grid;
@@ -130,10 +152,11 @@
   flex-direction: column;
   gap: var(--space-3xs);
   /* solid panel ... no glass */
-  background-color: var(--surface-raised);
+  background-color: var(--farm-mud);
+  color: var(--farm-straw);
   border-radius: var(--qa-radius-lg);
-  box-shadow: var(--qa-shadow);
-  border: 1px solid var(--qa-border);
+  box-shadow: var(--qa-shadow-lg);
+  border: 1px solid rgba(28, 24, 20, 0.35);
 }
 
 .quack-nav__brand {
@@ -141,6 +164,18 @@
   align-items: center;
   gap: var(--space-2xs);
   padding: var(--space-2xs) var(--space-xs) var(--space-s);
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: var(--qa-radius);
+}
+
+.quack-nav__brand:hover,
+.quack-nav__brand:active {
+  background: rgba(243, 230, 200, 0.1);
 }
 
 .quack-nav__icon {
@@ -150,11 +185,11 @@
 
 .quack-nav__logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -0.01em;
-  color: var(--accent);
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.02em;
+  color: var(--farm-straw);
 }
 
 .quack-nav__badge {
@@ -182,7 +217,7 @@
   border: none;
   border-radius: 9999px;
   background: transparent;
-  color: var(--qa-text-muted);
+  color: var(--farm-straw);
   font-size: var(--step--1);
   font-weight: 500;
   cursor: pointer;
@@ -198,13 +233,13 @@
 }
 
 .quack-nav__item:hover {
-  background: var(--qa-hover);
-  color: var(--qa-text);
+  background: rgba(243, 230, 200, 0.12);
+  color: var(--farm-straw);
 }
 
 .quack-nav__item.is-active {
-  background: var(--qa-accent-fill);
-  color: var(--on-accent);
+  background: var(--farm-pond);
+  color: var(--farm-straw);
   font-weight: 600;
 }
 
@@ -215,6 +250,15 @@
   font-size: var(--step--1);
   border-radius: 9999px;
   box-shadow: var(--qa-shadow);
+  background: var(--farm-barn);
+  border-color: var(--farm-barn);
+  color: var(--farm-straw);
+}
+
+.quack-nav__compose:hover:not(:disabled) {
+  background: #6f2e22;
+  border-color: #6f2e22;
+  color: var(--farm-straw);
 }
 
 .quack-nav__user {
@@ -223,8 +267,13 @@
   gap: var(--space-2xs);
   padding: var(--space-2xs) var(--space-xs);
   margin-top: auto;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
   border-radius: var(--qa-radius);
-  background: var(--qa-hover);
+  background: rgba(28, 24, 20, 0.28);
+  color: var(--farm-straw);
 }
 
 .quack-nav__user-info {
@@ -243,23 +292,31 @@
 
 .quack-nav__user-handle {
   font-size: var(--step--2);
-  color: var(--qa-text-muted);
+  color: #e8d4b0;
 }
 
 .quack-nav__theme {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--qa-border);
-  background: var(--qa-panel);
-  font-size: 1.1rem;
+  position: static;
+  width: 100%;
+  height: var(--tap);
+  margin-top: var(--space-2xs);
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(243, 230, 200, 0.28);
+  background: transparent;
+  color: var(--farm-straw);
+  font-family: var(--font-body);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.quack-nav__theme:hover {
+  background: rgba(243, 230, 200, 0.1);
 }
 
 /* Main area */
@@ -272,9 +329,9 @@
   gap: var(--space-xs);
 }
 
-/* Hero first viewport ... Quackr brand-first */
+/* Compact in-farm header ... the job lives on the gate */
 .quack-hero {
-  padding: var(--space-2xs) var(--space-3xs) var(--space-m);
+  padding: var(--space-2xs) var(--space-3xs) var(--space-s);
   margin-bottom: var(--space-2xs);
   border-bottom: 1px solid var(--qa-border);
   animation: hero-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -302,76 +359,41 @@
   min-width: 0;
 }
 
-.quack-hero__brand {
-  font-family: var(--font-display);
-  font-size: clamp(2.35rem, 8vw, 3rem);
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  color: var(--accent);
-}
-
 .quack-hero__kicker {
-  margin-top: var(--space-3xs);
+  margin: 0;
   font-size: var(--step--2);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  color: var(--accent-quiet);
-}
-
-.quack-hero__lede {
-  margin-top: var(--space-xs);
-  max-width: 42ch;
-  font-size: var(--step--1);
-  line-height: 1.45;
-  color: var(--qa-text-muted);
-}
-
-.quack-hero__ctas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2xs);
-  margin-top: var(--space-s);
-}
-
-.quack-hero__cta {
-  min-height: 44px;
-  padding: 0 var(--space-m);
-  border-radius: 9999px;
-  font-size: var(--step--1);
   font-weight: 700;
-}
-
-.quack-hero__cta--ghost {
-  background: var(--surface-raised);
-  color: var(--accent);
-  border: 1px solid var(--border-strong);
-  box-shadow: var(--qa-shadow);
-}
-
-.quack-hero__cta--ghost:hover {
-  border-color: var(--qa-accent);
-  background: var(--qa-hover);
-}
-
-.quack-hero__section-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-2xs);
-  margin-top: var(--space-s);
-  padding-top: var(--space-xs);
-  border-top: 1px solid var(--qa-border);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--farm-pond);
 }
 
 .quack-hero__section {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2.8vw, 1.2rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.85rem, 5vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   color: var(--ink);
+  margin-top: var(--space-3xs);
+}
+
+.quack-hero__lede {
+  margin: 0;
+  max-width: 28ch;
+  font-size: var(--step--1);
+  line-height: 1.4;
+  color: var(--qa-text-muted);
+}
+
+.quack-hero__section-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2xs);
+  margin-top: var(--space-xs);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--qa-border);
 }
 
 .quack-hero__deck-note {
@@ -380,16 +402,23 @@
   letter-spacing: 0.04em;
   text-transform: lowercase;
   color: var(--qa-text-muted);
+  flex-shrink: 0;
 }
 
 .quack-main__theme {
   display: none;
-  width: 44px;
+  min-width: 4.75rem;
   height: 44px;
-  border-radius: 50%;
+  padding-inline: var(--space-s);
+  border-radius: var(--radius-pill);
   border: 1px solid var(--qa-border);
   background: var(--qa-panel);
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--farm-mud);
   cursor: pointer;
   flex-shrink: 0;
   align-items: center;
@@ -400,6 +429,149 @@
 
 .quack-main__theme:active {
   transform: scale(0.94);
+}
+
+/* First screen · walk up to the pond */
+.quack-app--gate {
+  min-block-size: 100dvh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.farm-gate {
+  position: relative;
+  width: min(42rem, 100%);
+  min-block-size: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:
+    max(clamp(2rem, 6vw, 4.5rem), calc(env(safe-area-inset-top, 0px) + 3.5rem))
+    max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-right, 0px))
+    max(clamp(2rem, 6vw, 4.5rem), calc(env(safe-area-inset-bottom, 0px) + 1.5rem))
+    max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-left, 0px));
+}
+
+.farm-gate::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 38%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(46, 90, 88, 0.35) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, rgba(46, 90, 88, 0.18) 100%);
+}
+
+.farm-gate__theme {
+  position: absolute;
+  top: max(var(--space-s), env(safe-area-inset-top, 0px));
+  right: max(var(--space-s), env(safe-area-inset-right, 0px));
+  min-height: var(--tap);
+  min-width: var(--tap);
+  padding-inline: var(--space-s);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-raised);
+  color: var(--farm-mud);
+  font-family: var(--font-body);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.farm-gate__kicker {
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--farm-pond);
+  margin-bottom: var(--space-s);
+}
+
+.farm-gate__mark {
+  margin-bottom: var(--space-s);
+}
+
+.farm-gate__mark .duck-avatar {
+  background:
+    radial-gradient(circle at 40% 35%, var(--farm-pond-mist) 0%, var(--farm-pond) 72%);
+  padding: 0.4rem;
+}
+
+.farm-gate__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 12vw, 6.25rem);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--farm-mud);
+  margin: 0 0 var(--space-m);
+  position: relative;
+}
+
+.quack-app--dark .farm-gate__title {
+  color: var(--farm-straw);
+}
+
+.farm-gate__lede {
+  max-width: 28ch;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0 0 var(--space-l);
+  position: relative;
+}
+
+.farm-gate__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-m);
+  position: relative;
+}
+
+.farm-gate__cta {
+  min-height: 48px;
+  padding: 0 var(--space-l);
+  border-radius: 9999px;
+  font-size: var(--step-0);
+  font-weight: 700;
+}
+
+.farm-gate__cta--ghost {
+  background: var(--surface-raised);
+  color: var(--farm-pond);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--qa-shadow);
+}
+
+.farm-gate__cta--ghost:hover,
+.farm-gate__cta--ghost:active {
+  border-color: var(--farm-pond);
+  background: var(--farm-pond-mist);
+}
+
+.farm-gate__aside {
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+  max-width: 36ch;
+  line-height: 1.45;
+  position: relative;
+}
+
+.farm-gate--embedded {
+  min-block-size: 0;
+  width: 100%;
+  padding:
+    var(--space-s)
+    0
+    max(var(--space-l), env(safe-area-inset-bottom, 0px));
 }
 
 /* Onboarding */
@@ -508,10 +680,14 @@
   padding: var(--space-2xs) 0;
 }
 
-.empty-state__emoji {
-  font-size: 2.5rem;
-  line-height: 1;
+.empty-state__pond {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
   margin-bottom: var(--space-3xs);
+  background:
+    radial-gradient(circle at 38% 32%, var(--farm-pond-mist) 0%, var(--farm-pond) 68%, var(--farm-mud) 100%);
+  box-shadow: inset 0 -10px 18px rgba(28, 24, 20, 0.22);
 }
 
 .empty-state__title {
@@ -607,7 +783,8 @@
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.filter-pill:hover {
+.filter-pill:hover,
+.filter-pill:active {
   border-color: var(--qa-accent);
   color: var(--qa-accent);
 }
@@ -640,7 +817,7 @@
   background: transparent;
   color: var(--qa-text);
   font-family: var(--font-body);
-  font-size: var(--step-0);
+  font-size: 16px;
   line-height: 1.45;
   resize: none;
   outline: none;
@@ -738,7 +915,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-m);
-  background: rgba(15, 26, 22, 0.72);
+  background: rgba(28, 24, 20, 0.72);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
@@ -801,7 +978,8 @@
   padding: var(--space-xs) var(--space-xs);
   border: 1px solid var(--qa-border);
   border-radius: 12px;
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: 16px;
   background: var(--qa-bg-secondary);
   color: var(--qa-text);
 }
@@ -996,13 +1174,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 140px;
-  background: var(--surface-sunken);
+  min-height: 160px;
+  background:
+    radial-gradient(ellipse 90% 80% at 50% 115%, rgba(28, 24, 20, 0.18) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201, 214, 204, 0.55) 0%, transparent 55%),
+    linear-gradient(180deg, #c9d6cc 0%, #6d9a96 46%, #2e5a58 100%);
   padding: var(--space-m);
 }
 
 .quack-app--dark .discover-card__hero {
-  background: linear-gradient(135deg, var(--surface-raised) 0%, #243028 100%);
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(126, 168, 160, 0.35) 0%, transparent 55%),
+    linear-gradient(180deg, #241c16 0%, #1a2220 48%, #2e5a58 100%);
 }
 
 .discover-card__mood {
@@ -1610,7 +1793,11 @@
   -webkit-backdrop-filter: none;
   opacity: 1;
   border-top: 1px solid var(--qa-border);
-  padding: 6px 8px max(6px, env(safe-area-inset-bottom));
+  padding:
+    8px
+    max(8px, env(safe-area-inset-right, 0px))
+    calc(8px + env(safe-area-inset-bottom, 0px))
+    max(8px, env(safe-area-inset-left, 0px));
   justify-content: space-around;
   align-items: center;
   box-shadow: var(--shadow-sm);
@@ -1622,6 +1809,7 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
+  flex: 1;
   min-width: 56px;
   min-height: 48px;
   border: none;
@@ -1630,6 +1818,7 @@
   border-radius: 12px;
   cursor: pointer;
   padding: var(--space-3xs);
+  touch-action: manipulation;
 }
 
 .quack-mobile-nav__item svg {
@@ -1722,15 +1911,19 @@
   .quack-nav__theme {
     bottom: 12px;
     right: 50%;
-    transform: translateX(50%);
+    transform: none;
+    width: 100%;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    padding: 0;
   }
 }
 
 @media (max-width: 640px) {
   .quack-shell {
     grid-template-columns: minmax(0, 1fr);
-    padding-block: var(--space-2xs) 5rem;
-    padding-inline: var(--space-2xs);
+    padding-block: max(var(--space-2xs), env(safe-area-inset-top, 0px)) calc(5.25rem + env(safe-area-inset-bottom, 0px));
+    padding-inline: max(var(--space-2xs), env(safe-area-inset-left, 0px)) max(var(--space-2xs), env(safe-area-inset-right, 0px));
   }
 
   .quack-nav {
@@ -1739,6 +1932,7 @@
 
   .quack-main {
     max-width: 100%;
+    min-width: 0;
   }
 
   .quack-main__theme {
@@ -1765,7 +1959,60 @@
 
   .obsession-banner {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .obsession-banner__link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .quack-hero__section-row {
+    flex-direction: column;
     align-items: flex-start;
+  }
+
+  .farm-gate__title {
+    font-size: clamp(2.6rem, 14vw, 3.4rem);
+  }
+
+  .farm-gate__ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .farm-gate__cta {
+    width: 100%;
+  }
+
+  .farm-gate__lede,
+  .farm-gate__aside {
+    max-width: none;
+  }
+
+  .match-modal__content {
+    min-width: 0;
+    width: min(100%, 22rem);
+  }
+
+  dialog.match-modal {
+    padding:
+      max(var(--space-s), env(safe-area-inset-top, 0px))
+      max(var(--space-s), env(safe-area-inset-right, 0px))
+      max(var(--space-s), env(safe-area-inset-bottom, 0px))
+      max(var(--space-s), env(safe-area-inset-left, 0px));
+  }
+
+  dialog.obsession-picker {
+    width: min(100% - 1.5rem, 28rem);
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem);
+    overflow: auto;
+  }
+
+  .quack-toast {
+    max-inline-size: calc(100% - 2rem);
+    left: 50%;
+    bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -1864,13 +2111,13 @@
 }
 
 .swipe-stamp--pass {
-  color: #c45c4a;
+  color: var(--farm-barn);
   left: 28%;
   transform: translate(-50%, -50%) rotate(-14deg);
 }
 
 .swipe-stamp--waddle {
-  color: var(--matcha-deep);
+  color: var(--farm-pond);
   left: 72%;
   transform: translate(-50%, -50%) rotate(12deg);
 }
@@ -1883,11 +2130,20 @@
 }
 
 dialog.match-modal {
-  border: none;
-  padding: 0;
-  background: transparent;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
-  overflow: visible;
+  max-height: none;
+  margin: 0;
+  border: none;
+  padding: var(--space-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 24, 20, 0.72);
+  overflow: auto;
 }
 
 dialog.match-modal::backdrop {
@@ -2024,7 +2280,7 @@ dialog.obsession-picker::backdrop {
   background: var(--qa-bg-secondary);
   color: var(--qa-text);
   font-family: var(--font-body);
-  font-size: var(--step-0);
+  font-size: 16px;
 }
 
 .obsession-picker__presets {
@@ -2044,7 +2300,8 @@ dialog.obsession-picker::backdrop {
   cursor: pointer;
 }
 
-.obsession-picker__preset:hover {
+.obsession-picker__preset:hover,
+.obsession-picker__preset:active {
   border-color: var(--qa-accent);
   color: var(--qa-accent-dark);
 }
@@ -2098,14 +2355,14 @@ dialog.obsession-picker::backdrop {
 .breadcrumb-game__pond {
   position: relative;
   block-size: 8.75rem;
-  /* water, not a slab: the pale end stays light enough that the duck,
-     the crumbs, and the idle overlay all read against it */
-  background: linear-gradient(180deg, var(--surface-sunken) 0%, var(--accent-quiet) 100%);
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(201, 214, 204, 0.55) 0%, transparent 50%),
+    linear-gradient(180deg, #9bb8b0 0%, #2e5a58 62%, #244846 100%);
   overflow: hidden;
 }
 
 .quack-app--dark .breadcrumb-game__pond {
-  background: linear-gradient(180deg, #23302a 0%, #4c6b4f 100%);
+  background: linear-gradient(180deg, #1a2220 0%, #2e5a58 100%);
 }
 
 /* Idle / game-over state · a legible panel on the water rather than a
@@ -2224,6 +2481,7 @@ dialog.obsession-picker::backdrop {
   .duck-avatar__svg,
   .onboard-hint,
   .quack-hero,
+  .farm-gate,
   .nest-gate {
     animation: none;
     transition: none;

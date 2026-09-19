@@ -16,12 +16,8 @@ import { MatchModal } from './components/MatchModal'
 import { ObsessionEditor } from './components/ObsessionEditor'
 import { AnimatedCounter } from './components/AnimatedCounter'
 import { RippleButton } from './components/RippleButton'
-import { OnboardingHint } from './components/OnboardingHint'
+import { FarmGate } from './components/FarmGate'
 import { EmptyState } from './components/EmptyState'
-
-const BreadcrumbGame = lazy(() =>
-  import('./components/BreadcrumbGame').then((m) => ({ default: m.BreadcrumbGame })),
-)
 import { useLocalStorage, useLocalStorageSet } from './hooks/useLocalStorage'
 import { useKeyboardNav } from './hooks/useKeyboardNav'
 import { useReducedMotion } from './hooks/useReducedMotion'
@@ -38,18 +34,22 @@ import {
 import { initDoorEggs } from './eggs'
 import './App.css'
 
+const BreadcrumbGame = lazy(() =>
+  import('./components/BreadcrumbGame').then((m) => ({ default: m.BreadcrumbGame })),
+)
+
 type Theme = 'light' | 'dark'
 type NavItem = 'home' | 'explore' | 'matches' | 'profile'
 type MoodFilter = 'all' | DuckMood
 
 const NAV_LABELS: Record<NavItem, string> = {
-  home: 'Pond Feed',
+  home: 'Pond',
   explore: 'Discover',
-  matches: 'Matches',
-  profile: 'Your Nest',
+  matches: 'Waddles',
+  profile: 'Nest',
 }
 
-const ONBOARD_KEY = 'quack-onboarded-v2'
+const ONBOARD_KEY = 'duck-farm-gate-v1'
 
 const COMPOSE_ACK_MS = 720
 
@@ -106,21 +106,21 @@ function ObsessionBanner({ obsession, onEdit }: { obsession: string; onEdit: () 
   return (
     <div className="obsession-banner">
       <div className="obsession-banner__text">
-        <span className="obsession-banner__label">Your Current Obsession</span>
+        <span className="obsession-banner__label">On the pond</span>
         <p className="obsession-banner__value">{obsession}</p>
       </div>
       <RippleButton type="button" variant="ghost" className="obsession-banner__link" onClick={onEdit}>
-        Update obsession →
+        Update
       </RippleButton>
     </div>
   )
 }
 
-const MOOD_FILTERS: { id: MoodFilter; label: string; emoji?: string }[] = [
+const MOOD_FILTERS: { id: MoodFilter; label: string }[] = [
   { id: 'all', label: 'All' },
-  { id: 'single', label: 'Single', emoji: '🧡' },
-  { id: 'wading', label: 'Wading', emoji: '🤝' },
-  { id: 'matched', label: 'Matched', emoji: '💚' },
+  { id: 'single', label: 'Single' },
+  { id: 'wading', label: 'Wading' },
+  { id: 'matched', label: 'Matched' },
 ]
 
 function FilterPills({
@@ -132,7 +132,7 @@ function FilterPills({
 }) {
   return (
     <div className="filter-pills" role="radiogroup" aria-label="Filter ducks">
-      {MOOD_FILTERS.map(({ id, label, emoji }) => (
+      {MOOD_FILTERS.map(({ id, label }) => (
         <button
           key={id}
           type="button"
@@ -141,7 +141,6 @@ function FilterPills({
           className={`filter-pill${active === id ? ' is-active' : ''}`}
           onClick={() => onChange(id)}
         >
-          {emoji && <span aria-hidden="true">{emoji} </span>}
           {label}
         </button>
       ))}
@@ -229,10 +228,7 @@ function QuackSlide({
         </span>
       </header>
       {author.obsession && (
-        <p className="quack-slide__obsession">
-          <span aria-hidden="true">✨ </span>
-          {author.obsession}
-        </p>
+        <p className="quack-slide__obsession">{author.obsession}</p>
       )}
       <p className="quack-slide__content">{quack.content}</p>
       <div className="quack-slide__actions" role="group" aria-label="Quack actions">
@@ -261,7 +257,7 @@ function QuackSlide({
           <HeartIcon filled={quack.flirted} />
           <AnimatedCounter value={quack.hearts + (quack.flirted ? 1 : 0)} format={formatCount} />
         </RippleButton>
-        <span className="slide-action slide-action--static" aria-label="Share unavailable in this demo">
+        <span className="slide-action slide-action--static" aria-label="Share stays on this pond">
           <ShareIcon />
         </span>
       </div>
@@ -269,14 +265,14 @@ function QuackSlide({
   )
 }
 
-function moodBadge(mood: DuckMood): { emoji: string; label: string } {
+function moodBadge(mood: DuckMood): string {
   switch (mood) {
     case 'single':
-      return { emoji: '🧡', label: 'Single' }
+      return 'Single'
     case 'wading':
-      return { emoji: '🤝', label: 'Wading' }
+      return 'Wading'
     case 'matched':
-      return { emoji: '💚', label: 'Matched' }
+      return 'Matched'
   }
 }
 
@@ -297,12 +293,7 @@ function DiscoverCard({
     <article className="slide-card discover-card card-tilt">
       <div className="discover-card__hero">
         <DuckAvatar size="lg" emoji={profile.emoji} label={`${profile.displayName}'s avatar`} bounce tilt />
-        <span className="discover-card__mood">
-          {badge.emoji} {badge.label}
-        </span>
-        <span className="discover-card__score" title="Sample duck in a sandbox deck">
-          sample
-        </span>
+        <span className="discover-card__mood">{badge}</span>
       </div>
       <div className="discover-card__body">
         <h2 className="discover-card__name">
@@ -311,10 +302,7 @@ function DiscoverCard({
         </h2>
         <p className="discover-card__pond">{withCjkLang(profile.pond)}</p>
         {profile.obsession && (
-          <p className="discover-card__obsession">
-            <span aria-hidden="true">✨ </span>
-            {withCjkLang(profile.obsession)}
-          </p>
+          <p className="discover-card__obsession">{withCjkLang(profile.obsession)}</p>
         )}
         {profile.sharedInterests && profile.sharedInterests.length > 0 && (
           <p className="discover-card__detail">
@@ -344,7 +332,7 @@ function DiscoverCard({
           onClick={() => onMatch(profile.id)}
           aria-pressed={matched}
         >
-          {matched ? '💚 Matched' : '💚 Start waddle'}
+          {matched ? 'Matched' : 'Start waddle'}
         </RippleButton>
       </div>
     </article>
@@ -428,11 +416,58 @@ function QuackIcon() {
 }
 
 const NAV_ITEMS: { id: NavItem; label: string; Icon: () => JSX.Element }[] = [
-  { id: 'home', label: 'Feed', Icon: HomeIcon },
+  { id: 'home', label: 'Pond', Icon: HomeIcon },
   { id: 'explore', label: 'Discover', Icon: ExploreIcon },
-  { id: 'matches', label: 'Matches', Icon: MatchIcon },
-  { id: 'profile', label: 'Profile', Icon: ProfileIcon },
+  { id: 'matches', label: 'Waddles', Icon: MatchIcon },
+  { id: 'profile', label: 'Nest', Icon: ProfileIcon },
 ]
+
+const HASH_BY_NAV: Record<NavItem, string> = {
+  home: 'pond',
+  explore: 'discover',
+  matches: 'waddles',
+  profile: 'nest',
+}
+
+const NAV_BY_HASH: Record<string, NavItem> = {
+  pond: 'home',
+  '': 'home',
+  discover: 'explore',
+  waddles: 'matches',
+  nest: 'profile',
+}
+
+const NAV_STORAGE_KEY = 'duck-farm-nav'
+
+function isNavItem(value: string): value is NavItem {
+  return value === 'home' || value === 'explore' || value === 'matches' || value === 'profile'
+}
+
+function readNavFromLocation(): NavItem | null {
+  if (typeof window === 'undefined') return null
+  const raw = window.location.hash.replace(/^#/, '').toLowerCase()
+  return NAV_BY_HASH[raw] ?? null
+}
+
+function readStoredNav(): NavItem | null {
+  if (typeof window === 'undefined') return null
+  try {
+    const raw = localStorage.getItem(NAV_STORAGE_KEY)
+    return raw && isNavItem(raw) ? raw : null
+  } catch {
+    return null
+  }
+}
+
+function writeNavHash(nav: NavItem, replace = false) {
+  const next = `#${HASH_BY_NAV[nav]}`
+  if (window.location.hash === next) return
+  if (replace) {
+    window.history.replaceState(null, '', next)
+  } else {
+    window.history.pushState(null, '', next)
+  }
+}
 
 function useDeckIndex(total: number) {
   const [index, setIndex] = useState(0)
@@ -468,7 +503,9 @@ export default function App() {
     CURRENT_USER.obsession ?? 'Finding your next obsession...',
   )
 
-  const [activeNav, setActiveNav] = useState<NavItem>('home')
+  const [activeNav, setActiveNav] = useState<NavItem>(
+    () => readNavFromLocation() ?? readStoredNav() ?? 'home',
+  )
   const [moodFilter, setMoodFilter] = useState<MoodFilter>('all')
   const [quacks, setQuacks] = useState<Quack[]>(() => mergeQuacks(userPosts))
   const [draft, setDraft] = useState('')
@@ -518,13 +555,6 @@ export default function App() {
 
   const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'))
 
-  const handleNavChange = (nav: NavItem) => {
-    setActiveNav(nav)
-    feedDeck.reset()
-    discoverDeck.reset()
-    matchDeck.reset()
-  }
-
   const dismissOnboard = useCallback(() => {
     setShowOnboard(false)
     try {
@@ -534,15 +564,55 @@ export default function App() {
     }
   }, [])
 
-  const tryDiscover = useCallback(() => {
+  const handleNavChange = (nav: NavItem) => {
     dismissOnboard()
-    handleNavChange('explore')
+    setActiveNav(nav)
+    try {
+      localStorage.setItem(NAV_STORAGE_KEY, nav)
+    } catch {
+      /* private mode */
+    }
+    writeNavHash(nav)
+    feedDeck.reset()
+    discoverDeck.reset()
+    matchDeck.reset()
+  }
+
+  const tryNest = () => {
+    handleNavChange('profile')
+  }
+
+  useEffect(() => {
+    const fromHash = readNavFromLocation()
+    if (fromHash && fromHash !== 'home') {
+      dismissOnboard()
+    }
+    if (!window.location.hash && localStorage.getItem(ONBOARD_KEY) === '1') {
+      writeNavHash(activeNav, true)
+    }
   }, [dismissOnboard])
 
-  const tryNest = useCallback(() => {
-    dismissOnboard()
-    handleNavChange('profile')
-    setObsessionOpen(true)
+  useEffect(() => {
+    const onHash = () => {
+      const nav = readNavFromLocation()
+      if (!nav) return
+      setActiveNav(nav)
+      try {
+        localStorage.setItem(NAV_STORAGE_KEY, nav)
+      } catch {
+        /* private mode */
+      }
+      feedDeck.reset()
+      discoverDeck.reset()
+      matchDeck.reset()
+      if (nav !== 'home') dismissOnboard()
+    }
+    window.addEventListener('hashchange', onHash)
+    window.addEventListener('popstate', onHash)
+    return () => {
+      window.removeEventListener('hashchange', onHash)
+      window.removeEventListener('popstate', onHash)
+    }
   }, [dismissOnboard])
 
   const handleFlirt = (id: string) => {
@@ -567,7 +637,7 @@ export default function App() {
     if (!profile || matches.has(id)) return
     setMatches((prev) => new Set(prev).add(id))
     setMatchModal({ profile, superQuack })
-    showToast(superQuack ? `Super quack with ${profile.displayName}!` : `It's a waddle with ${profile.displayName}!`)
+    showToast(superQuack ? `Super quack with ${profile.displayName}` : `A waddle with ${profile.displayName}`)
   }
 
   const handleMatch = (id: string) => {
@@ -635,9 +705,10 @@ export default function App() {
           : 0
 
   const modalOpen = matchModal !== null || obsessionOpen
+  const showGate = showOnboard && activeNav === 'home'
 
   useKeyboardNav({
-    enabled: !modalOpen && activeDeck !== null,
+    enabled: !showGate && !modalOpen && activeDeck !== null,
     onPrev: () => activeDeck?.goPrev(),
     onNext: () => activeDeck?.goNext(),
   })
@@ -652,19 +723,22 @@ export default function App() {
 
       <div className="quack-shell">
         <aside className="quack-nav" aria-label="Main navigation">
-          <div className="quack-nav__brand">
-            <span className="quack-nav__icon" aria-hidden="true">
-              🦆
-            </span>
-            <span className="quack-nav__logo">Quackr</span>
-            <span className="quack-nav__badge">V2</span>
-          </div>
+          <button
+            type="button"
+            className="quack-nav__brand"
+            onClick={() => handleNavChange('home')}
+            aria-label="Duck farm, back to Pond"
+          >
+            <DuckAvatar size="sm" label="Duck farm" bounce />
+            <span className="quack-nav__logo">Duck farm</span>
+          </button>
 
           <nav className="quack-nav__links">
             {NAV_ITEMS.map(({ id, label, Icon }) => (
               <RippleButton
                 key={id}
                 className={`quack-nav__item${activeNav === id ? ' is-active' : ''}`}
+                aria-label={label}
                 aria-current={activeNav === id ? 'page' : undefined}
                 onClick={() => handleNavChange(id)}
               >
@@ -677,6 +751,7 @@ export default function App() {
           <RippleButton
             variant="primary"
             className="quack-btn quack-btn--primary quack-nav__compose"
+            aria-label="Quack"
             onClick={() => {
               handleNavChange('home')
               window.setTimeout(() => composeRef.current?.focus(), 100)
@@ -686,83 +761,69 @@ export default function App() {
             <span>Quack</span>
           </RippleButton>
 
-          <div className="quack-nav__user">
+          <button
+            type="button"
+            className="quack-nav__user"
+            onClick={() => handleNavChange('profile')}
+            aria-label="Open Nest"
+          >
             <DuckAvatar size="sm" emoji={CURRENT_USER.emoji} label="Your profile" bounce />
             <div className="quack-nav__user-info">
               <span className="quack-nav__user-name">{CURRENT_USER.displayName}</span>
               <span className="quack-nav__user-handle">@{CURRENT_USER.handle}</span>
             </div>
-          </div>
+          </button>
 
           <button
             type="button"
             className="quack-nav__theme"
             onClick={toggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={theme === 'light' ? 'Switch to dusk' : 'Switch to dawn'}
           >
-            {theme === 'light' ? '🌙' : '☀️'}
+            {theme === 'light' ? 'Dusk' : 'Dawn'}
           </button>
         </aside>
 
         <main id="main-feed" className="quack-main" tabIndex={-1}>
-          <header className="quack-hero">
+          <header className="quack-hero quack-hero--compact">
             <div className="quack-hero__top">
               <div className="quack-hero__brand-block">
-                <p className="quack-hero__brand">Quackr</p>
                 <p className="quack-hero__kicker">
-                  duck farm · <span lang="zh-Hans">鸭年</span> · portfolio sandbox
+                  Duck farm · <span lang="zh-Hans">鸭年</span>
                 </p>
+                <h1 className="quack-hero__section">{NAV_LABELS[activeNav]}</h1>
               </div>
               <button
                 type="button"
                 className="quack-main__theme"
                 onClick={toggleTheme}
-                aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                aria-label={theme === 'light' ? 'Switch to dusk' : 'Switch to dawn'}
               >
-                {theme === 'light' ? '🌙' : '☀️'}
+                {theme === 'light' ? 'Dusk' : 'Dawn'}
               </button>
             </div>
-            <p className="quack-hero__lede">
-              The duck farm is the long-term creative throughline, not a startup pitch. A family restaurant in
-              Greenfield taught the same rule I still use: a system either survives contact with a real customer
-              or it does not. Demo culture rewards the opposite. I want a slower life of gardening, walking,
-              matcha, and film, and a place that has to hold every morning. There is no operating farm, no
-              acreage, no product launch. The React sandbox on jadexzhao is something I test myself.
-            </p>
-            <div className="quack-hero__ctas">
-              <RippleButton
-                variant="primary"
-                className="quack-btn quack-btn--primary quack-hero__cta"
-                onClick={tryDiscover}
-              >
-                Start Discover
-              </RippleButton>
-              <RippleButton className="quack-hero__cta quack-hero__cta--ghost" onClick={tryNest}>
-                Edit your nest
-              </RippleButton>
-            </div>
             <div className="quack-hero__section-row">
-              <h1 className="quack-hero__section">{NAV_LABELS[activeNav]}</h1>
-              <span className="quack-hero__deck-note" aria-hidden={activeNav === 'profile'}>
-                {activeNav === 'explore'
-                  ? 'swipe to decide'
-                  : activeNav === 'matches'
-                    ? 'saved waddles'
-                    : activeNav === 'profile'
-                      ? '1st-person gate'
-                      : 'sample feed'}
+              <p className="quack-hero__lede">
+                A pond Jade tests herself. Ducks, water, grass.
+              </p>
+              <span className="quack-hero__deck-note" aria-hidden={activeNav === 'profile' && !showGate}>
+                {showGate
+                  ? 'enter the pond'
+                  : activeNav === 'explore'
+                    ? 'swipe to decide'
+                    : activeNav === 'matches'
+                      ? 'saved waddles'
+                      : activeNav === 'profile'
+                        ? '1st-person gate'
+                        : 'the morning feed'}
               </span>
             </div>
           </header>
 
-          {showOnboard && (
-            <OnboardingHint
-              onDismiss={dismissOnboard}
-              onTryDiscover={tryDiscover}
-              onEditNest={tryNest}
-            />
-          )}
-
+          {showGate ? (
+            <FarmGate embedded onEnter={() => handleNavChange('home')} onNest={tryNest} />
+          ) : (
+            <>
           {activeNav !== 'profile' && (
             <ObsessionBanner obsession={obsession} onEdit={() => setObsessionOpen(true)} />
           )}
@@ -795,7 +856,7 @@ export default function App() {
                   ref={composeRef}
                   id="quack-draft"
                   className="compose__input"
-                  placeholder="What's your current obsession on the pond?"
+                  placeholder="What's stirring on the pond?"
                   value={draft}
                   onChange={(e) => setDraft(e.target.value)}
                   onKeyDown={(e) => {
@@ -826,9 +887,8 @@ export default function App() {
             {activeNav === 'home' && quacks.length === 0 && (
               <div className="slide-card slide-card--empty">
                 <EmptyState
-                  emoji="🦆"
-                  title="Pond feed is empty"
-                  message="Compose a quack above. Sample posts load from this sandbox, not a live network."
+                  title="The pond is quiet"
+                  message="Quack above. Posts on this farm stay in your browser."
                 />
               </div>
             )}
@@ -853,7 +913,7 @@ export default function App() {
             {activeNav === 'explore' && currentDiscover && (
               <>
                 <p className="deck-stage__hint">
-                  {filteredProfiles.length} sample ducks
+                  {filteredProfiles.length} ducks on the water
                   {reducedMotion
                     ? ' · use Pass or Start waddle'
                     : ' · swipe, or use the buttons'}
@@ -877,9 +937,8 @@ export default function App() {
             {activeNav === 'explore' && filteredProfiles.length === 0 && (
               <div className="slide-card slide-card--empty">
                 <EmptyState
-                  emoji="🦆"
-                  title="Pond's quiet right now"
-                  message="No ducks match this filter. Try another mood or give passed ducks another look."
+                  title="The pond is quiet"
+                  message="No ducks match this filter. Try another mood, or give passed ducks another look."
                   action={
                     passed.size > 0
                       ? { label: 'Reset passed ducks', onClick: () => setPassed(new Set()) }
@@ -912,10 +971,9 @@ export default function App() {
             {activeNav === 'matches' && matchedProfiles.length === 0 && (
               <div className="slide-card slide-card--empty">
                 <EmptyState
-                  emoji="💚"
                   title="No waddles yet"
-                  message="Head to Discover and swipe right on a duck you vibe with. Your matches land here."
-                  action={{ label: 'Discover ducks →', onClick: () => handleNavChange('explore') }}
+                  message="Discover is where you meet the deck. Waddles you keep land here."
+                  action={{ label: 'Open Discover', onClick: () => handleNavChange('explore') }}
                 />
               </div>
             )}
@@ -926,10 +984,7 @@ export default function App() {
                 <div className="nest-gate__preview">
                   <DuckAvatar size="lg" emoji={CURRENT_USER.emoji} label="Your profile" bounce tilt />
                   <ProfileMeta profile={{ ...CURRENT_USER, obsession }} />
-                  <p className="nest-gate__obsession">
-                    <span aria-hidden="true">✨ </span>
-                    {withCjkLang(obsession)}
-                  </p>
+                  <p className="nest-gate__obsession">{withCjkLang(obsession)}</p>
                   <p className="nest-gate__bio">{withCjkLang(CURRENT_USER.bio)}</p>
                   <p className="nest-gate__pond">{withCjkLang(CURRENT_USER.pond)}</p>
                 </div>
@@ -981,7 +1036,7 @@ export default function App() {
                     <strong>
                       <AnimatedCounter value={matches.size} />
                     </strong>
-                    <span>Sandbox waddles</span>
+                    <span>Waddles on this pond</span>
                   </div>
                   <div>
                     <strong>
@@ -998,7 +1053,7 @@ export default function App() {
                   className="quack-btn quack-btn--primary profile-slide__edit"
                   onClick={() => setObsessionOpen(true)}
                 >
-                  Edit obsession ✨
+                  Edit obsession
                 </RippleButton>
               </article>
             )}
@@ -1012,6 +1067,8 @@ export default function App() {
               onNext={activeDeck.goNext}
               onGoTo={activeDeck.goTo}
             />
+          )}
+            </>
           )}
         </main>
 
@@ -1027,16 +1084,16 @@ export default function App() {
           </Suspense>
 
           <section className="sidebar-panel sidebar-panel--accent" aria-labelledby="trending-heading">
-            <h2 id="trending-heading">Sample pond tags</h2>
+            <h2 id="trending-heading">Pond tags</h2>
             <ul className="trend-list">
               {TRENDING_TOPICS.map((topic) => (
                 <li key={topic.tag}>
                   <RippleButton
                     className="trend-item"
-                    onClick={() => showToast('Sample tag. Local sandbox, not a live feed.')}
+                    onClick={() => showToast('A tag on this pond. Stays in your browser.')}
                   >
                     <span className="trend-item__tag">{withCjkLang(topic.tag)}</span>
-                    <span className="trend-item__count">{topic.posts} · sample</span>
+                    <span className="trend-item__count">{topic.posts}</span>
                   </RippleButton>
                 </li>
               ))}
@@ -1044,19 +1101,20 @@ export default function App() {
           </section>
 
           <section className="sidebar-panel" aria-labelledby="features-heading">
-            <h2 id="features-heading">What this proves</h2>
+            <h2 id="features-heading">Around the pond</h2>
             <ul className="feature-list">
-              <li>🦆 Swipe craft on a fake deck (pass, waddle, super)</li>
-              <li>✨ Nest gate ... would you keep this profile?</li>
-              <li>⌨️ Keyboard arrows, skip link, 44px taps, reduced motion</li>
-              <li>💬 Compose a quack that stays in localStorage</li>
+              <li>Swipe to pass, waddle, or super</li>
+              <li>Nest gate ... would you keep this profile?</li>
+              <li>Keyboard arrows and a skip link</li>
+              <li>Quacks stay in this browser</li>
             </ul>
           </section>
 
           <footer className="quack-sidebar__footer">
             <p>
-              <strong>Jade Zhao</strong> · portfolio sandbox · self-tested only
+              <strong>Jade Zhao</strong> · Duck farm · <span lang="zh-Hans">鸭年</span>
             </p>
+            <p>Self-tested on this pond.</p>
             <p>
               <a href="https://jadexzhao.github.io/jadexzhao/">briefcase</a>
               {' · '}

@@ -1,8 +1,6 @@
-# Quackr · virtual duck farm
+# Duck farm · 鸭年
 
-The duck farm is the long-term creative throughline, not a startup pitch. A family restaurant in Greenfield taught the same rule I still use: a system either survives contact with a real customer or it does not. Demo culture rewards the opposite. I want a slower life of gardening, walking, matcha, and film, and a place that has to hold every morning. There is no operating farm, no acreage, no product launch. The React sandbox on jadexzhao is something I test myself.
-
-A mint-green **portfolio sandbox** on the [jadexzhao briefcase](https://jadexzhao.github.io/jadexzhao/). Swipe to waddle, post quacks, pick an obsession, catch breadcrumbs. Not a launched product.
+A pond that has to hold every morning. Ducks, water, grass, mud. Jade Zhao's long-term creative throughline on [jadexzhao](https://jadexzhao.github.io/jadexzhao/). Self-tested on this pond. Not a dating product.
 
 **Live:** [jadexzhao.github.io/jadexzhao/duck-farm/](https://jadexzhao.github.io/jadexzhao/duck-farm/)  
 **Repo:** lives inside [jadexzhao/jadexzhao](https://github.com/jadexzhao/jadexzhao) under `duck-farm/`
@@ -26,6 +24,7 @@ Runs on `http://localhost:5173`. Production `base` is `/jadexzhao/duck-farm/`.
 ## Build
 
 ```bash
+cd duck-farm
 npm run build
 ```
 
@@ -33,6 +32,8 @@ Output goes in `dist/`. Pages deploy is handled by the parent repo workflow.
 
 ## What to try
 
+- **Enter the pond** ... first screen, then the farm
 - **Discover** ... swipe right to waddle, left to pass, up for super quack
-- **Pond Feed** ... compose a quack, flirt and requack on slides
-- **Sidebar** ... catch breadcrumbs mini-game (desktop)
+- **Pond** ... compose a quack, flirt and requack on slides
+- **Nest** ... 1st-person gate. Would you keep this profile?
+- **Sidebar** ... crumbs on the water (desktop)

@@ -1,13 +1,13 @@
 /** duck-farm · pond-side door hints */
 export function initDoorEggs(): void {
-  const green = '#3f5b3f'
+  const pond = '#2e5a58'
   console.log(
-    '%c🦆 jadewowgreen · Quackr sandbox · other doors: matcha · phoenix',
-    `color:${green};font-size:13px;font-weight:600`,
+    '%cDuck farm · 鸭年 · other doors: matcha · phoenix',
+    `color:${pond};font-size:13px;font-weight:600`,
   )
   console.log(
     '%ctype matcha or phoenix anywhere (not in a text field)',
-    `color:${green};font-size:11px`,
+    `color:${pond};font-size:11px`,
   )
 
   const doors: Record<string, { label: string; url: string }> = {

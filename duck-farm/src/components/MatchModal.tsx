@@ -20,14 +20,14 @@ interface Particle {
   rotation: number
 }
 
-const CONFETTI_COLORS = ['#3f5b3f', '#6f8f6a', '#b3714f', '#f0c84a', '#8a563c', '#a8c49a']
+const CONFETTI_COLORS = ['#8c3a2a', '#2e5a58', '#4e5c32', '#f3e6c8', '#6a4634', '#d4a54a']
 
 function createParticles(count: number): Particle[] {
   return Array.from({ length: count }, (_, i) => ({
     id: i,
     x: 50 + (Math.random() - 0.5) * 20,
     y: 40 + (Math.random() - 0.5) * 10,
-    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length] ?? '#3f5b3f',
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length] ?? '#8c3a2a',
     size: 6 + Math.random() * 8,
     vx: (Math.random() - 0.5) * 8,
     vy: -4 - Math.random() * 6,
@@ -107,23 +107,23 @@ export function MatchModal({ profile, superQuack, onClose }: MatchModalProps) {
         </div>
 
         <div className="match-modal__ducks">
-          <DuckAvatar size="lg" emoji="🦆" label="Your avatar" bounce />
+          <DuckAvatar size="lg" label="Your avatar" bounce />
           <span className="match-modal__heart" aria-hidden="true">
-            {superQuack ? '⭐' : '💚'}
+            {superQuack ? '★' : '✦'}
           </span>
           <DuckAvatar size="lg" emoji={profile.emoji} label={`${profile.displayName}'s avatar`} bounce />
         </div>
 
         <h2 id="match-title" className="match-modal__title">
-          {superQuack ? 'Super Quack!' : "It's a waddle!"}
+          {superQuack ? 'Super quack' : "It's a waddle"}
         </h2>
         <p className="match-modal__subtitle">
-          You and <strong>{profile.displayName}</strong> synced in this sandbox deck
-          {superQuack ? ' ... legendary demo chemistry.' : '.'} Not a real match.
+          You and <strong>{profile.displayName}</strong> found the same reed
+          {superQuack ? ' ... a rare one' : ''}. On this pond only.
         </p>
 
         <button type="button" className="quack-btn quack-btn--primary match-modal__close" onClick={onClose}>
-          Keep waddling →
+          Back to the pond
         </button>
       </div>
     </dialog>

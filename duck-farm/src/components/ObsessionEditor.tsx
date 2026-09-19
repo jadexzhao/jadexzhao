@@ -109,7 +109,7 @@ export function ObsessionEditor({ open, value, onSave, onClose }: ObsessionEdito
             Cancel
           </RippleButton>
           <RippleButton type="submit" variant="primary" className="quack-btn quack-btn--primary">
-            Save obsession ✨
+          Save obsession
           </RippleButton>
         </div>
       </form>
