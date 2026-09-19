@@ -60,7 +60,7 @@
   --surface-invert-raised: var(--ink);
 
   --ink-muted: color-mix(in srgb, var(--ink) 72%, var(--cream));
-  --ink-faint: color-mix(in srgb, var(--ink) 64%, var(--cream));
+  --ink-faint: color-mix(in srgb, var(--ink) 66%, var(--cream));
   --on-invert: var(--cream);
   --on-invert-muted: var(--blush);
 
@@ -94,8 +94,8 @@
   --leading-snug: 1.22;
   --leading-body: 1.55;
 
-  --measure: 62ch;
-  --measure-lede: 46ch;
+  --measure: 65ch;
+  --measure-lede: 48ch;
   --measure-tight: 22ch;
 
   --space-3xs: 0.25rem;
@@ -537,7 +537,7 @@ a:hover {
   font-size: var(--step-3);
   letter-spacing: -0.03em;
   color: var(--ink);
-  max-inline-size: 18ch;
+  max-inline-size: 28ch;
 }
 
 .band-head p,
@@ -824,14 +824,15 @@ a:hover {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     padding-block: 1.5rem var(--space-l);
     gap: 1rem;
+    align-items: start;
   }
 
   .hero-photo {
-    order: -1;
-    inline-size: 6.5rem;
+    order: 0;
+    inline-size: 5.75rem;
     margin-inline: 0;
   }
 
@@ -910,6 +911,25 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+}
+
+.contact-meta {
+  margin: 0.85rem 0 0;
+  color: var(--ink-muted);
+  font-size: var(--step--1);
+}
+
+.contact-meta a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  min-height: var(--tap);
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-meta a:hover {
+  color: var(--pink);
 }
 
 /* ── footer ────────────────────────────────────────────────── */
@@ -1911,12 +1931,10 @@ textarea:focus-visible {
 
 /* ── entrance · a short lift, never a slide show ───────────── */
 
-.js-reveal .rv {
-  opacity: 0;
-  transform: translateY(12px);
-  transition:
-    opacity var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
+.js-reveal .rv,
+.js-reveal .rv.in-view {
+  opacity: 1;
+  transform: none;
 }
 
 .js-reveal .rv.in-view {
@@ -2357,10 +2375,10 @@ textarea:focus-visible {
 .site .artifact-slot {
   margin: 0;
   padding: var(--space-m);
-  min-block-size: 7rem;
-  border: 2px dashed var(--line-strong);
-  border-radius: var(--radius-s);
-  background: var(--surface-raised);
+  min-block-size: 5.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: color-mix(in srgb, var(--blush) 35%, #ffffff);
 }
 
 .site .artifact-slot-label {
@@ -2416,7 +2434,7 @@ textarea:focus-visible {
 
 .site .stage--article h1 {
   color: var(--pink);
-  max-inline-size: 14ch;
+  max-inline-size: 28ch;
 }
 
 .site-footer .footer-groups {
@@ -2429,8 +2447,52 @@ textarea:focus-visible {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   margin: 0 0 0.45rem;
   opacity: 1;
   color: var(--pink);
+}
+
+/* Product pass: one primary per action row, 44px taps, quieter extras */
+
+.action-bar a:first-child {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #ffffff;
+}
+
+.action-bar a:first-child:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
+}
+
+.action-bar a:not(:first-child) {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ink);
+}
+
+.action-bar a:not(:first-child):hover {
+  background: var(--blush);
+  border-color: transparent;
+  color: var(--pink);
+}
+
+.repo-links a:first-child {
+  text-decoration: none;
+}
+
+.site .stage--article h2 {
+  max-inline-size: 28ch;
+}
+
+@media (max-width: 22.5rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-photo {
+    inline-size: 5rem;
+  }
 }
