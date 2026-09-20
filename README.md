@@ -4,7 +4,7 @@ Informatics @ IU (Indiana University) Luddy. **Digital Humans Project Lead.**
 
 I research how Digital Humans become useful business interfaces. When an AI system looks and communicates like a person, what actually makes people want to use it, trust it, and keep using it?
 
-I grew up in a family Chinese restaurant. Then Informatics, Serve IT ships, UX (user experience) and privacy work, then AI. Digital Humans is where those pieces become one job.
+I grew up in a family Chinese restaurant in central Indiana (Greenfield, Indiana). Then Informatics, Serve IT ships, UX (user experience) and privacy work, then AI. Digital Humans is where those pieces become one job.
 
 **Now:** Luddy LINK · ServeIT Website Team Lead · Jade🪴 · May 2027
 

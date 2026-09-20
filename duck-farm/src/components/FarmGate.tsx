@@ -26,7 +26,7 @@ export function FarmGate({ onEnter, onNest, theme, onToggleTheme, embedded }: Fa
 
       <p className="farm-gate__kicker">
         <span lang="zh-Hans">鸭年</span>
-        {' · Greenfield, Indiana'}
+        {' · central Indiana (Greenfield)'}
       </p>
 
       <div className="farm-gate__mark">

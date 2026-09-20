@@ -32,7 +32,7 @@ export const CURRENT_USER: DuckProfile = {
   id: 'jade',
   handle: 'jadexzhao',
   displayName: 'Jade Zhao',
-  bio: 'Greenfield restaurant kid · 福州 roots · a pond that has to hold',
+  bio: 'central Indiana (Greenfield) restaurant kid · 福州 roots · a pond that has to hold',
   pond: 'Indiana · 鸭年 2026',
   mood: 'wading',
   emoji: '🦆',
