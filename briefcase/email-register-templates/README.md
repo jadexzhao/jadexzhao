@@ -7,12 +7,12 @@ Three Outlook-safe HTML emails for the UK register / IU gear matrix (business ca
 | File | Register | Site that matches |
 |---|---|---|
 | `business-casual.html` | Default for recruiters / hiring managers | [briefcase](https://jadexzhao.github.io/jadexzhao/) |
-| `professional.html` | Formal UK hedging / first contact | [IU Pages](https://jlzhao.pages.iu.edu/) |
+| `professional.html` | Formal UK hedging / first contact | IU institutional register |
 | `iu-gear.html` | Brand / community identity first | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) |
 
 ## UK-facing portfolio note
 
-This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual keeps direct headings/nav and only softer hedges in first-person captions / blurbs. Professional (IU Pages) leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear ... spelling may convert; tone stays campus. See `uk-register-iu-gear.mdc` per-site conversion matrix.
+This portfolio uses UK spelling and letter conventions where it matters (colour, favourite, organise, centre; day/month/year dates; Kind regards; Yours sincerely when named / Yours faithfully when unnamed). Business casual keeps direct headings/nav and only softer hedges in first-person captions / blurbs. Professional (IU institutional register) leans on understatement. **IU gear has no UK equivalent** for US campus spirit-wear ... spelling may convert; tone stays campus. See `uk-register-iu-gear.mdc` per-site conversion matrix.
 
 ## Visual tokens (from the email HTML)
 

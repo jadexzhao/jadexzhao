@@ -1,6 +1,6 @@
 # LinkedIn · warm UK About (paste-ready)
 
-Headline + About aligned to IU Pages / jadexzhao / zhao-langxi. Expand abbreviations on first use.
+Headline + About aligned to IU institutional register / jadexzhao / zhao-langxi. Expand abbreviations on first use.
 
 Hire-facing paste lives here. Do not dump this whole About onto the four web doors.
 
@@ -28,4 +28,4 @@ The bar is simple. Will this still work for the people who have to live with it?
 
 Skills: Digital Humans, AI, human-computer interaction, Python, SQL, PostgreSQL, React, TypeScript, databases, ETL, Handshake, user experience, privacy
 
-Resume: https://jlzhao.pages.iu.edu/cv.pdf
+Resume: cv.pdf (on this site)

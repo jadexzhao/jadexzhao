@@ -2,11 +2,11 @@
 
 Informatics @ IU (Indiana University) Luddy. May 2027.
 
+I am building toward Digital Humans that earn trust on an ordinary day, not in a demo. This term the clear work is the ServeIT Town of Nashville ACC, then INFO-I211 code-conversion lessons.
+
 **Portfolio focus for now:** ServeIT Town of Nashville ACC (accessibility assessment of [townofnashville.org](https://www.townofnashville.org/)). Recommendations only. No live-site edits from the student team.
 
 **Learning section:** INFO-I211 code-conversion lessons with embedded Drive videos and the real snippets I talked through.
-
-I also lead Digital Humans work at Luddy. This repo’s public homepage leads with Nashville proof first.
 
 I grew up in a family Chinese restaurant in central Indiana (Greenfield, Indiana). A system either survives Friday night or it does not. Same instinct here: clear handoffs, honest scope, work that holds for real users.
 
@@ -15,12 +15,11 @@ I grew up in a family Chinese restaurant in central Indiana (Greenfield, Indiana
 This GitHub is the proof account ... code and live pages that have to hold after the demo.
 
 - **[jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)** ... portfolio home
-- **[Town of Nashville ACC](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)** ... ServeIT Fall 2026 case study (Team Lead / Co-lead)
-- **[Code conversions](https://jadexzhao.github.io/jadexzhao/code-conversions.html)** ... I211 lesson gallery (W3 try-it · playlist weeks · concept cards)
-- **[How I work](https://jadexzhao.github.io/jadexzhao/how-i-work.html)** ... process notes
-- **ServeIT clinic clients** ... Middle Way House, City of Bloomington, Indiana Phenology, and the Greater Bloomington Chamber of Commerce
-- **[jadexzhao/matcha](https://github.com/jadexzhao/matcha)** ... Jade🪴 archive. Web, branding, and software for small businesses and nonprofits
-- **[Duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)** ... creative sandbox I test myself. No operating farm, no acreage, no product launch
+- **[Town of Nashville ACC](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)** ... ServeIT Fall 2026 case
+- **[Code conversions](https://jadexzhao.github.io/jadexzhao/code-conversions.html)** ... I211 lesson gallery
+- **ServeIT clinic clients** ... Middle Way House, City of Bloomington, Indiana Phenology, Bloomington Chamber
+- **[jadexzhao/matcha](https://github.com/jadexzhao/matcha)** ... Jade🪴 archive
+- **[Duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)** ... creative sandbox I test myself
 
 Python · SQL · React · PostgreSQL · WCAG-minded clinic work.
 
@@ -30,13 +29,6 @@ Same person. Different job.
 
 - [zhao-langxi](https://github.com/zhao-langxi) ... essays and research notes
 - [matchaxmoxie](https://github.com/matchaxmoxie) ... cookie classroom
-
-## Four doors
-
-- Narrative hub → [jlzhao.pages.iu.edu](https://jlzhao.pages.iu.edu/)
-- Proof (this site) → [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
-- Classroom → [matchaxmoxie.github.io/matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/)
-- Notes → [zhao-langxi.github.io/zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/)
 
 ## Contact
 

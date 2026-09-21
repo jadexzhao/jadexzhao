@@ -276,3 +276,14 @@
     font-size: 0.75rem;
   }
 }
+
+.week-card:hover, .lesson:hover {
+  border-color: #0058a3;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .week-card { transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
+  .week-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 #ffdb00; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .week-card:hover { transform: none; box-shadow: none; }
+}
