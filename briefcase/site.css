@@ -1,20 +1,15 @@
 /* ═══════════════════════════════════════════════════════════════
    jadexzhao · proof door
-   Dreamhouse colour, GitHub-native proof, product chrome.
-
-   Five hexes:
-     cream #fff4f8 · blush #ffd0e4 · pink #d0126e
-     pool  #4ec8d4 · ink   #2a1220
-   Pink and ink pass WCAG AA on cream. Pool is chrome only.
-   Inspired by Barbie / Life in the Dreamhouse. Not official Mattel CSS.
+   Catalogue look: white field, blue #0058A3, yellow #FFDB00, ink #111.
+   Flat product chrome. Not a trademarked store brand.
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --cream: #fff4f8;
-  --blush: #ffd0e4;
-  --pink: #d0126e;
-  --pool: #4ec8d4;
-  --ink: #2a1220;
+  --cream: #ffffff;
+  --blush: #f5f5f5;
+  --pink: #0058a3; /* primary blue (legacy token name kept for cascade) */
+  --pool: #ffdb00; /* highlight yellow */
+  --ink: #111111;
 
   --barbie-pink: var(--pink);
   --barbie-blush: var(--blush);
@@ -39,9 +34,9 @@
   --silk: var(--cream);
   --mutton: var(--house-raised);
   --cream-warm: var(--blush);
-  --gold: var(--blush);
-  --gold-ink: var(--pink);
-  --gold-light: var(--blush);
+  --gold: var(--pool);
+  --gold-ink: var(--ink);
+  --gold-light: #fff6b3;
   --russet: var(--pink);
   --sage-light: var(--blush);
 
@@ -52,32 +47,32 @@
   --clay-ink: var(--pink);
   --clay-light: var(--blush);
 
-  --surface: var(--cream);
-  --surface-raised: var(--house-raised);
-  --surface-sunken: var(--blush);
-  --surface-wash: var(--blush);
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f5f5f5;
+  --surface-wash: #f5f5f5;
   --surface-invert: var(--ink);
   --surface-invert-raised: var(--ink);
 
-  --ink-muted: color-mix(in srgb, var(--ink) 72%, var(--cream));
-  --ink-faint: color-mix(in srgb, var(--ink) 66%, var(--cream));
-  --on-invert: var(--cream);
-  --on-invert-muted: var(--blush);
+  --ink-muted: #4a4a4a;
+  --ink-faint: #6b6b6b;
+  --on-invert: #ffffff;
+  --on-invert-muted: #f5f5f5;
 
-  --accent: var(--pink);
-  --accent-soft: var(--pink);
-  --accent-wash: var(--blush);
-  --accent-alt: var(--pink);
-  --accent-alt-soft: var(--pool);
+  --accent: #0058a3;
+  --accent-soft: #0058a3;
+  --accent-wash: #e8f1f8;
+  --accent-alt: #0058a3;
+  --accent-alt-soft: #ffdb00;
 
-  --line: color-mix(in srgb, var(--pink) 22%, var(--blush));
-  --line-strong: color-mix(in srgb, var(--pink) 40%, var(--blush));
-  --line-invert: color-mix(in srgb, var(--cream) 22%, transparent);
+  --line: #dcdcdc;
+  --line-strong: #bdbdbd;
+  --line-invert: rgb(255 255 255 / 0.22);
 
-  --focus: var(--pink);
+  --focus: #0058a3;
 
-  --font-display: "Fredoka", Arial, Helvetica, sans-serif;
-  --font-body: Arial, Helvetica, sans-serif;
+  --font-display: "Noto Sans", Verdana, Arial, Helvetica, sans-serif;
+  --font-body: "Noto Sans", Verdana, Arial, Helvetica, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
   --font-sc: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
 
@@ -87,11 +82,11 @@
   --step-1: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
   --step-2: clamp(1.35rem, 1.15rem + 0.7vw, 1.65rem);
   --step-3: clamp(1.7rem, 1.35rem + 1.3vw, 2.2rem);
-  --step-4: clamp(2.4rem, 1.5rem + 3.5vw, 3.75rem);
-  --step-5: clamp(3.1rem, 1.8rem + 5.5vw, 5.25rem);
+  --step-4: clamp(2.1rem, 1.5rem + 2.2vw, 3rem);
+  --step-5: clamp(2.6rem, 1.8rem + 3vw, 3.75rem);
 
-  --leading-tight: 0.96;
-  --leading-snug: 1.22;
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
   --leading-body: 1.55;
 
   --measure: 65ch;
@@ -107,12 +102,12 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
-  --radius-s: 10px;
-  --radius-m: 18px;
+  --radius-s: 2px;
+  --radius-m: 4px;
   --radius-pill: 999px;
-  --shadow-1: 0 1px 2px rgb(42 18 32 / 0.06);
-  --shadow-2: 0 18px 40px -24px rgb(208 18 110 / 0.45);
-  --shadow-3: 0 28px 56px -28px rgb(208 18 110 / 0.5);
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
 
   --dur-fast: 110ms;
   --dur: 180ms;
@@ -128,14 +123,14 @@
 
   --tap: 44px;
   --rail-w: clamp(15rem, 22vw, 20.5rem);
-  --page: min(68rem, calc(100% - 2.5rem));
-  --read: min(46rem, calc(100% - 2.5rem));
+  --page: min(68rem, calc(100% - 2rem));
+  --read: min(48rem, calc(100% - 2rem));
   --safe-t: env(safe-area-inset-top, 0px);
   --safe-r: env(safe-area-inset-right, 0px);
   --safe-b: env(safe-area-inset-bottom, 0px);
   --safe-l: env(safe-area-inset-left, 0px);
 
-  color-scheme: light dark;
+  color-scheme: light;
 
   --paper: var(--surface);
   --paper-raised: var(--surface-raised);
@@ -143,6 +138,8 @@
   --rule: var(--line);
   --green: var(--accent);
   --green-soft: var(--accent-soft);
+  --ikea-blue: #0058a3;
+  --ikea-yellow: #ffdb00;
 }
 
 *,
@@ -169,10 +166,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   accent-color: var(--accent);
-  background-color: var(--cream);
-  background-image:
-    radial-gradient(70% 55% at 100% -8%, color-mix(in srgb, var(--pool) 28%, transparent), transparent 58%),
-    radial-gradient(80% 50% at -8% 0%, color-mix(in srgb, var(--blush) 80%, transparent), transparent 54%);
+  background-color: #ffffff;
+  background-image: none;
   padding-inline: var(--safe-l) var(--safe-r);
 }
 
@@ -274,11 +269,11 @@ a:hover {
   z-index: var(--layer-progress);
   block-size: 3px;
   inline-size: 0;
-  background: linear-gradient(90deg, var(--pink), var(--pool));
+  background: var(--pool);
   pointer-events: none;
 }
 
-/* ── topbar · product chrome ───────────────────────────────── */
+/* ── topbar · catalogue chrome ──────────────────────────────── */
 
 .topbar {
   position: sticky;
@@ -287,56 +282,59 @@ a:hover {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-s);
-  padding: calc(0.55rem + var(--safe-t)) clamp(1rem, 4vw, 2rem) 0.55rem;
-  background: color-mix(in srgb, var(--cream) 94%, #ffffff);
-  border-block-end: 2px solid var(--pink);
-  box-shadow: 0 1px 0 var(--pool);
+  gap: 0.75rem 1rem;
+  padding: calc(0.85rem + var(--safe-t)) clamp(0.85rem, 3vw, 1.75rem) 0.85rem;
+  background: #ffffff;
+  border-block-end: 4px solid var(--ikea-blue);
+  box-shadow: none;
 }
 
 .topbar-brand {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--pink);
+  color: var(--ikea-blue);
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
 .topbar-brand .sc {
   color: var(--ink);
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 .topbar-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.15rem;
+  gap: 0.15rem 0.35rem;
 }
 
 .topbar-nav a {
   display: inline-flex;
   align-items: center;
   min-height: var(--tap);
-  padding: 0 0.85rem;
-  border-radius: var(--radius-pill);
+  padding: 0 0.75rem;
+  border-radius: 0;
   color: var(--ink);
-  font-size: var(--step--1);
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-decoration: none;
+  border-block-end: 3px solid transparent;
 }
 
 .topbar-nav a:hover {
-  background: var(--blush);
-  color: var(--pink);
+  background: transparent;
+  color: var(--ikea-blue);
+  border-block-end-color: var(--ikea-blue);
 }
 
 .topbar-nav a[aria-current="page"],
 .topbar-nav a[aria-current="true"] {
-  background: var(--pink);
-  color: #ffffff;
+  background: var(--ikea-yellow);
+  color: #111111;
+  border-block-end-color: var(--ikea-blue);
 }
 
 .topbar-actions {
@@ -350,27 +348,29 @@ a:hover {
   align-items: center;
   min-height: var(--tap);
   padding: 0 0.9rem;
-  border-radius: var(--radius-pill);
-  font-size: var(--step--1);
-  font-weight: 600;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-decoration: none;
   color: var(--ink);
 }
 
 .topbar-actions a:not(.btn) {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--pink);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ikea-blue);
 }
 
 .topbar-actions .btn {
-  background: var(--pink);
+  background: var(--ikea-blue);
   color: #ffffff;
-  border: 0;
+  border: 2px solid var(--ikea-blue);
+  border-radius: 0;
 }
 
 .topbar-actions .btn:hover {
-  background: var(--ink);
+  background: #111111;
+  border-color: #111111;
   color: #ffffff;
 }
 
@@ -416,47 +416,46 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: var(--tap);
-  padding: 0 1.25rem;
-  border: 2px solid var(--pink);
-  border-radius: var(--radius-pill);
-  background: var(--pink);
+  padding: 0 1.15rem;
+  border: 2px solid var(--ikea-blue);
+  border-radius: 0;
+  background: var(--ikea-blue);
   color: #ffffff;
   font-size: var(--step--1);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-decoration: none;
   transition:
     background-color var(--dur) var(--ease),
     border-color var(--dur) var(--ease),
-    color var(--dur) var(--ease),
-    transform var(--dur-fast) var(--ease);
+    color var(--dur) var(--ease);
 }
 
 .btn:hover,
 .site .stage-cta:hover,
 .action-bar a:first-child:hover {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: #111111;
+  border-color: #111111;
   color: #ffffff;
 }
 
 .btn:active,
 .site .stage-cta:active {
-  transform: translateY(1px);
+  transform: none;
 }
 
 .btn--ghost,
 .site .stage-cta--ghost {
   background: #ffffff;
-  color: var(--pink);
-  border-color: var(--pink);
+  color: var(--ikea-blue);
+  border-color: var(--ikea-blue);
 }
 
 .btn--ghost:hover,
 .site .stage-cta--ghost:hover {
-  background: var(--blush);
-  border-color: var(--pink);
-  color: var(--pink);
+  background: var(--ikea-yellow);
+  border-color: var(--ikea-blue);
+  color: #111111;
 }
 
 .btn--sm {
@@ -584,8 +583,8 @@ a:hover {
   font-size: var(--step-4);
   font-weight: 700;
   line-height: var(--leading-tight);
-  letter-spacing: -0.04em;
-  color: var(--pink);
+  letter-spacing: -0.02em;
+  color: #111111;
 }
 
 .hero-cjk {
@@ -608,11 +607,11 @@ a:hover {
 .hero-lede {
   margin: 0 0 1.35rem;
   max-inline-size: min(46ch, 100%);
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-1);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--ink-muted);
 }
 
 .hero-cta {
@@ -632,12 +631,9 @@ a:hover {
   aspect-ratio: 1;
   object-fit: cover;
   object-position: 48% 32%;
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 5px var(--pink),
-    0 0 0 11px var(--cream),
-    0 0 0 16px var(--pool),
-    var(--shadow-2);
+  border-radius: 0;
+  border: 3px solid var(--ikea-blue);
+  box-shadow: none;
 }
 
 .chips {
@@ -656,7 +652,7 @@ a:hover {
   min-height: 1.9rem;
   padding: 0 0.7rem;
   border: 1px solid color-mix(in srgb, var(--pink) 28%, var(--blush));
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: #ffffff;
   color: var(--ink);
   font-family: var(--font-mono);
@@ -686,22 +682,19 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  padding: 1.25rem 1.3rem 1.15rem;
+  padding: 1.25rem 1.2rem 1.15rem;
   background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
-  box-shadow: var(--shadow-1);
-  transition:
-    transform var(--dur) var(--ease-out),
-    box-shadow var(--dur) var(--ease),
-    border-color var(--dur) var(--ease);
+  border: 1px solid var(--line-strong);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color var(--dur) var(--ease);
 }
 
 .repo:hover,
 .repo:focus-within {
-  transform: translateY(-3px);
-  border-color: var(--pink);
-  box-shadow: var(--shadow-2);
+  transform: none;
+  border-color: var(--ikea-blue);
+  box-shadow: none;
 }
 
 .repo--featured {
@@ -709,10 +702,9 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  padding: 1.45rem 1.5rem 1.3rem;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--blush) 55%, #ffffff), #ffffff 48%);
-  border: 2px solid var(--pink);
+  padding: 1.4rem 1.3rem 1.25rem;
+  background: #ffffff;
+  border: 3px solid var(--ikea-blue);
 }
 
 .repo-meta {
@@ -745,7 +737,7 @@ a:hover {
 .repo-badge {
   padding: 0.1em 0.5em;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   color: var(--ink-muted);
 }
 
@@ -936,52 +928,53 @@ a:hover {
 
 .site-footer {
   margin-block-start: var(--space-xl);
-  padding: var(--space-l) 0 calc(var(--space-m) + var(--safe-b));
-  border-block-start: 2px solid var(--pink);
+  padding: 1.5rem 0 calc(1.25rem + var(--safe-b));
+  border-block-start: 4px solid var(--ikea-blue);
   font-size: var(--step--1);
   color: var(--ink-muted);
 }
 
 .footer-grid {
   display: grid;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
 .footer-brand {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--pink);
+  color: var(--ikea-blue);
 }
 
 .footer-bio {
   margin: 0;
-  max-inline-size: 52ch;
+  max-inline-size: 60ch;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15rem 0.35rem;
-  margin: 0.35rem 0 0;
+  gap: 0.35rem 1rem;
+  margin: 0.25rem 0 0;
 }
 
 .footer-links a,
 .footer-grid a {
   display: inline-flex;
   align-items: center;
-  min-height: var(--tap);
-  padding-inline: 0.15rem;
-  color: var(--ink);
+  min-height: 2.5rem;
+  padding-inline: 0;
+  color: var(--ikea-blue);
   text-decoration: none;
-  border-block-end: 1px solid transparent;
+  font-weight: 700;
+  border-block-end: 2px solid transparent;
 }
 
 .footer-links a:hover,
 .footer-grid a:hover {
-  color: var(--pink);
-  border-block-end-color: currentColor;
+  color: #111111;
+  border-block-end-color: var(--ikea-yellow);
 }
 
 .footer-end {
@@ -989,12 +982,12 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.35rem 0.65rem;
-  margin: 0.5rem 0 0;
+  margin: 0.65rem 0 0;
   padding-block-start: 0.75rem;
   border-block-start: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  color: var(--ink-muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
 }
 
 .site .closer .duck,
@@ -1107,7 +1100,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: var(--tap);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   color: var(--pink);
   font-size: var(--step--1);
   font-weight: 700;
@@ -1153,7 +1146,7 @@ a:hover {
   min-height: var(--tap);
   padding-inline: var(--space-m);
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: #ffffff;
   color: var(--ink);
   font-size: var(--step--1);
@@ -1291,7 +1284,7 @@ a:hover {
   min-height: var(--tap);
   padding: 0.35em 0.85em;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: #ffffff;
   font-size: var(--step--1);
   color: var(--ink-muted);
@@ -1361,7 +1354,7 @@ a:hover {
   gap: 0.5em;
   padding: 0.4em 0.9em;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: var(--surface-raised);
   font-size: var(--step--1);
   color: var(--ink-muted);
@@ -1375,7 +1368,7 @@ a:hover {
 .status-pill .dot {
   inline-size: 0.5rem;
   block-size: 0.5rem;
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: var(--accent-soft);
 }
 
@@ -1718,7 +1711,7 @@ h4 {
   inset-block-start: 0.35rem;
   inline-size: 0.7rem;
   block-size: 0.7rem;
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: var(--surface);
   border: 2px solid var(--accent-soft);
   font-size: 0;
@@ -1996,140 +1989,9 @@ textarea:focus-visible {
 
 /* Night: ink page, blush invert, the same five hexes. */
 @media (prefers-color-scheme: dark) {
+  /* Keep catalogue light. Visitors get the same white / blue / yellow system. */
   :root {
-    --surface: #2a1220;
-    --surface-raised: color-mix(in srgb, #2a1220 88%, var(--blush));
-    --surface-sunken: color-mix(in srgb, #2a1220 80%, var(--blush));
-    --surface-wash: color-mix(in srgb, #2a1220 76%, var(--blush));
-    --surface-invert: var(--blush);
-    --surface-invert-raised: var(--cream);
-
-    --ink: #fff4f8;
-    --ink-muted: color-mix(in srgb, #fff4f8 72%, #ffd0e4);
-    --ink-faint: color-mix(in srgb, #fff4f8 58%, #ffd0e4);
-    --on-invert: #2a1220;
-    --on-invert-muted: color-mix(in srgb, #2a1220 68%, #fff4f8);
-
-    --accent: #ffd0e4;
-    --accent-soft: #ffd0e4;
-    --accent-wash: color-mix(in srgb, #2a1220 76%, #ffd0e4);
-    --accent-alt: #ffd0e4;
-    --accent-alt-soft: #4ec8d4;
-
-    --line: color-mix(in srgb, #ffd0e4 22%, #2a1220);
-    --line-strong: color-mix(in srgb, #ffd0e4 34%, #2a1220);
-    --line-invert: color-mix(in srgb, #2a1220 20%, transparent);
-
-    --focus: #ffd0e4;
-  }
-
-  body {
-    background-color: #2a1220;
-    background-image:
-      radial-gradient(70% 40% at 100% 0%, color-mix(in srgb, #4ec8d4 16%, transparent), transparent 52%),
-      radial-gradient(80% 45% at 0% -10%, color-mix(in srgb, #d0126e 22%, transparent), transparent 50%);
-  }
-
-  .topbar {
-    background: #2a1220;
-    border-block-end-color: #d0126e;
-  }
-
-  .hero h1,
-  .topbar-brand,
-  .hero-lede,
-  .repo-owner {
-    color: #ffd0e4;
-  }
-
-  .repo,
-  .stat-card {
-    background: color-mix(in srgb, #2a1220 88%, #ffd0e4);
-  }
-
-  .site .rail-photo img {
-    box-shadow:
-      0 0 0 1px var(--line-strong),
-      0 0 0 6px var(--surface),
-      0 0 0 7px var(--accent-soft);
-  }
-
-  .site .stage-cta,
-  .site .rail-contact .rail-cta,
-  .action-bar a:first-child {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #2a1220;
-  }
-
-  .site .stage-cta:hover,
-  .site .rail-contact .rail-cta:hover,
-  .action-bar a:first-child:hover {
-    background: #fff4f8;
-    border-color: #fff4f8;
-    color: #2a1220;
-  }
-
-  .site .proj-card--featured {
-    background: var(--surface-invert);
-    border-color: #ffd0e4;
-    color: var(--on-invert);
-  }
-
-  .site .proj-card--featured .proj-title {
-    color: #2a1220;
-  }
-
-  .site .proj-card--featured .proj-label {
-    background: color-mix(in srgb, #d0126e 12%, transparent);
-    color: #d0126e;
-  }
-
-  .site .proj-card--featured .proj-stack {
-    color: #d0126e;
-  }
-
-  .site .proj-card--featured .proj-role {
-    color: color-mix(in srgb, #2a1220 68%, #fff4f8);
-  }
-
-  .site .proj-card--featured .proj-links a {
-    color: #d0126e;
-    border-block-end-color: color-mix(in srgb, #d0126e 40%, transparent);
-  }
-
-  .site .proj-card--featured .proj-links a:hover {
-    color: #2a1220;
-  }
-
-  .pull-quote {
-    background: var(--surface-invert);
-    color: var(--on-invert);
-  }
-
-  .site .dock {
-    background: #2a1220;
-    background-color: #2a1220;
-    border-block-start-color: var(--line-strong);
-  }
-
-  .site .dock a {
-    color: var(--ink);
-  }
-
-  .site .dock a.dock-primary {
-    background: var(--accent);
-    color: #2a1220;
-  }
-
-  .skip-link {
-    background: var(--accent);
-    color: #2a1220;
-  }
-
-  ::selection {
-    background: var(--accent);
-    color: #2a1220;
+    color-scheme: light;
   }
 }
 
@@ -2308,7 +2170,7 @@ textarea:focus-visible {
   min-height: var(--tap);
   padding: 0.35em 0.85em;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: var(--surface-raised);
   font-size: var(--step--1);
   color: var(--ink-muted);
@@ -2494,5 +2356,184 @@ textarea:focus-visible {
 
   .hero-photo {
     inline-size: 5rem;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   IKEA CATALOGUE LOCK · flat overrides + mobile ~390px
+   ═══════════════════════════════════════════════════════════════ */
+
+.site,
+.site .stage,
+.band,
+.hero,
+.repo,
+.lesson,
+.week-card {
+  background-image: none;
+}
+
+.band-kicker,
+.site .stage-kicker,
+.memo-kicker,
+.part-label {
+  color: #111111 !important;
+  background: var(--ikea-yellow);
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0;
+  letter-spacing: 0.08em;
+}
+
+.lang-dot { background: var(--ikea-blue); }
+.lang-dot--pool { background: var(--ikea-yellow); border: 1px solid #111; }
+
+.repo-badge {
+  border-radius: 0;
+  background: var(--ikea-yellow);
+  border-color: #111111;
+  color: #111111;
+}
+
+.chips li,
+.stack li,
+.site .skill-chips li,
+.status-pill {
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid var(--line-strong) !important;
+  color: #111111 !important;
+}
+
+.site .artifact-slot {
+  background: #f5f5f5;
+  border-radius: 0;
+}
+
+.dock {
+  background: #ffffff;
+  border-block-start: 3px solid var(--ikea-blue);
+  box-shadow: none;
+}
+
+.dock a,
+.dock-primary {
+  border-radius: 0;
+}
+
+.dock-primary {
+  background: var(--ikea-blue);
+  color: #ffffff;
+}
+
+/* Mobile · ~390px */
+@media (max-width: 52rem) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 0.5rem;
+    padding-inline: 0.75rem;
+  }
+
+  .topbar-brand {
+    font-size: 0.95rem;
+    white-space: normal;
+    max-inline-size: 11rem;
+    line-height: 1.2;
+  }
+
+  .topbar-nav {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    order: 3;
+    gap: 0.15rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-block-end: 0.15rem;
+  }
+
+  .topbar-nav::-webkit-scrollbar { display: none; }
+
+  .topbar-nav a {
+    flex: 0 0 auto;
+    padding: 0 0.55rem;
+    font-size: 0.85rem;
+    min-height: 2.5rem;
+  }
+
+  .topbar-actions .btn {
+    padding-inline: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  html {
+    scroll-padding-top: calc(7.5rem + var(--safe-t));
+  }
+
+  .site .stage,
+  .site .stage--article,
+  .lessons-shell .stage--article {
+    width: 100%;
+    max-inline-size: 100%;
+    padding-inline: 0.85rem;
+    box-sizing: border-box;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding-block: 1.5rem 2rem;
+  }
+
+  .hero-photo {
+    inline-size: min(9rem, 42vw);
+    margin-inline: 0;
+    order: -1;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-grid > li:first-child,
+  .repo--featured {
+    grid-column: auto;
+  }
+
+  .footer-links {
+    gap: 0.15rem 0.85rem;
+  }
+
+  .footer-end {
+    font-size: 0.75rem;
+  }
+
+  .dock {
+    padding-inline: 0.65rem;
+  }
+}
+
+@media (max-width: 24.375rem) {
+  .topbar-brand .sc { display: none; }
+  .site .stage,
+  .site .stage--article {
+    padding-inline: 0.7rem;
   }
 }
