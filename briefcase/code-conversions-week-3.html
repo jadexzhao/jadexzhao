@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="description" content="INFO-I211 Code Conversation week 3: Functions, defaults, and return values. Embedded Drive videos and Jade Zhao snippets.">
+<title>Code conversions · Week 3 · Jade Zhao</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/code-conversions-week-3.html">
+<link rel="icon" href="favicon.ico?v=20260915-face" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260915-face">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260915-face">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260915-face">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915-face">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d0126e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jade Zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/code-conversions-week-3.html">
+<meta property="og:title" content="Code conversions · Week 3 · Jade Zhao">
+<meta property="og:description" content="INFO-I211 Code Conversation week 3: Functions, defaults, and return values. Embedded Drive videos and Jade Zhao snippets.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/og-share.jpg?v=20260921-og">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA%E9%BE%99" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20260921-lessons">
+<link rel="stylesheet" href="lessons.css?v=20260921-lessons">
+</head>
+<body class="site lessons-shell">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="nashville-acc.html">Nashville</a>
+    <a href="code-conversions.html" aria-current="page">Lessons</a>
+    <a href="how-i-work.html">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</header>
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="interior-header rv">
+    <p class="memo-kicker"><a href="code-conversions.html">Code conversions</a> · Week 3</p>
+    <h1>Week 3<span class="sub">Functions, defaults, and return values</span></h1>
+    <p class="standfirst">
+      Playlist order matches the shared Drive folder
+      <a href="https://drive.google.com/drive/folders/1rWKZt2OG-D85h1VOWb1Wx2jA0QxQ7zCn" target="_blank" rel="noopener noreferrer">Code Conversation | Week 3</a>.
+      Watch the embed, read the try-it block, then flip the concept cards.
+    </p>
+  </header>
+
+  <ul class="playlist-rail" aria-label="Lesson weeks">
+    <li><a href="code-conversions.html">All weeks</a></li>
+    <li><a href="code-conversions-week-1.html">Week 1</a></li><li><a href="code-conversions-week-2.html">Week 2</a></li><li><a href="code-conversions-week-3.html" aria-current="page">Week 3</a></li><li><a href="code-conversions-week-4.html">Week 4</a></li><li><a href="code-conversions-week-5.html">Week 5</a></li>
+  </ul>
+
+
+  <article class="lesson" id="snippet-1" aria-labelledby="w3-s1">
+    <div class="lesson-head">
+      <h2 id="w3-s1">Snippet 1 · add_two · parameter + return</h2>
+      <p class="lesson-meta">Week 3 · snippet 01</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1m--D-uMmgw97DhpIm9aW4FNym4DeZeGT/preview" title="Jade Zhao · Week 3 snippet 1 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1m--D-uMmgw97DhpIm9aW4FNym4DeZeGT/view" target="_blank" rel="noopener noreferrer">codeconv_w3_snippet01_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>def add_two(n):  # n is the parameter (the empty input slot when you define the block)
+    # Scratch: report ((n) + (2)) ... send the answer back to whoever called
+    return n + 2  # return hands 7 back when n is 5 (does not print by itself)
+
+value = add_two(5)  # call: plug 5 into n · body runs · return 7 · store in value
+print(value)  # predicted output: 7
+# combine lines 4+5 idea: print(add_two(5))  # same result, no middle box
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: define a custom block &quot;add two&quot; that takes a number, then run it with 5 and say the answer.</li>
+        <li>(W3Schools · Python Functions) search YouTube: &quot;Python functions return beginners&quot;</li>
+        <li>Scratch: define [add_two (n)] ... custom block with one input</li>
+        <li>Scratch: report ((n) + (2)) ... send the answer back to whoever called</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-3" aria-labelledby="w3-s3">
+    <div class="lesson-head">
+      <h2 id="w3-s3">Snippet 3 · greet · intentional errors (assignment code left broken on purpose)</h2>
+      <p class="lesson-meta">Week 3 · snippet 03</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1a02Qt0iwzBMFXzmsWkR27rDOPe7k1FN1/preview" title="Jade Zhao · Week 3 snippet 3 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1a02Qt0iwzBMFXzmsWkR27rDOPe7k1FN1/view" target="_blank" rel="noopener noreferrer">codeconv_w3_snippet03_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>def greet()  # BUG line 1: missing colon : after () ... Python expects def greet():
+print(&quot;Hello, class!&quot;)  # BUG line 2: body not indented under the def (and def is broken anyway)
+
+greet  # BUG line 4: this names the function but does not call it ... need greet()
+# define = write the recipe. body runs only when you call with ().
+# print() shows text on screen. return sends a value back to the caller (this snippet uses print).
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>(W3Schools · Functions · Syntax) search: &quot;Python def colon IndentationError&quot;</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-4" aria-labelledby="w3-s4">
+    <div class="lesson-head">
+      <h2 id="w3-s4">Snippet 4 · introduce · default parameter</h2>
+      <p class="lesson-meta">Week 3 · snippet 04</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1XaMm96SqBCWyWkrzBQdP3jO2MVcrsNHl/preview" title="Jade Zhao · Week 3 snippet 4 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1XaMm96SqBCWyWkrzBQdP3jO2MVcrsNHl/view" target="_blank" rel="noopener noreferrer">codeconv_w3_snippet04_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code># Call with only &quot;Riley&quot; → major keeps the default.
+
+def introduce(name, major=&quot;Informatics&quot;):  # major has a default if you omit it
+    print(name, &quot;studies&quot;, major)  # say the two pieces
+
+introduce(&quot;Riley&quot;)  # supplied: name=&quot;Riley&quot; · uses default: major=&quot;Informatics&quot;
+# predicted output: Riley studies Informatics
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>(W3Schools · Function Arguments · Default Parameter Value)</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-5" aria-labelledby="w3-s5">
+    <div class="lesson-head">
+      <h2 id="w3-s5">Snippet 5 · stats · multiple return values (tuple)</h2>
+      <p class="lesson-meta">Week 3 · snippet 05</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1kve_VYPv8flM25j5_NdiVAv9d9M1cQgI/preview" title="Jade Zhao · Week 3 snippet 5 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1kve_VYPv8flM25j5_NdiVAv9d9M1cQgI/view" target="_blank" rel="noopener noreferrer">codeconv_w3_snippet05_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code># Python packs them into a tuple (ordered pair).
+
+def stats(a, b):
+    total = a + b  # 8 + 3 → 11
+    difference = a - b  # 8 - 3 → 5
+    return total, difference  # return two values → becomes a tuple
+
+result = stats(8, 3)  # result type: tuple · like (11, 5)
+print(result)  # predicted output: (11, 5)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>(W3Schools · Python Tuples · return) search: &quot;Python return multiple values&quot;</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-9" aria-labelledby="w3-s9">
+    <div class="lesson-head">
+      <h2 id="w3-s9">Snippet 9 · word indexing · repeated len()</h2>
+      <p class="lesson-meta">Week 3 · snippet 09</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/11SyR_uotdUsCl81hikFrViuXKbiGdpEI/preview" title="Jade Zhao · Week 3 snippet 9 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/11SyR_uotdUsCl81hikFrViuXKbiGdpEI/view" target="_blank" rel="noopener noreferrer">codeconv_w3_snippet09_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>word = &quot;Python&quot;  # box holding the text Python
+print(word[0])  # first character · predicted: P
+print(len(word))  # length 6 · predicted: 6
+print(len(word))  # same call again · predicted: 6 (repeated work)
+# in tiny examples this is fine; in huge loops, store length once: n = len(word)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>(W3Schools · Python Strings · len) search: &quot;Python string indexing beginners&quot;</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        <li>Trace the green-flag order out loud before you change a line.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+
+  <p class="source-note">
+    Snippet source: Jade Zhao INFO-I211 Code Conversation annotations (local course pack mirrored to private <code>jadexzhao/jlzhao</code> · <code>i211</code> branch · commit <code>3e52491</code>).
+    Public GitHub API could not list the private PR without auth; this site uses the same files from that branch tip.
+  </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
+      <p class="footer-bio">Portfolio focus for now: ServeIT Town of Nashville ACC. Learning section: INFO-I211 code-conversion lessons. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
+      <nav class="footer-links" aria-label="Site">
+        <a href="nashville-acc.html">Nashville ACC</a>
+        <a href="code-conversions.html">Code conversions</a>
+        <a href="how-i-work.html">How I work</a>
+        <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-end">Public proof only · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+    </div>
+  </footer>
+</main>
+<script src="site.js?v=20260921-lessons" defer></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="description" content="INFO-I211 Code Conversation week 2: Conditionals, loops, and try / except. Embedded Drive videos and Jade Zhao snippets.">
+<title>Code conversions · Week 2 · Jade Zhao</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/code-conversions-week-2.html">
+<link rel="icon" href="favicon.ico?v=20260915-face" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260915-face">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260915-face">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260915-face">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915-face">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d0126e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jade Zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/code-conversions-week-2.html">
+<meta property="og:title" content="Code conversions · Week 2 · Jade Zhao">
+<meta property="og:description" content="INFO-I211 Code Conversation week 2: Conditionals, loops, and try / except. Embedded Drive videos and Jade Zhao snippets.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/og-share.jpg?v=20260921-og">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA%E9%BE%99" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20260921-lessons">
+<link rel="stylesheet" href="lessons.css?v=20260921-lessons">
+</head>
+<body class="site lessons-shell">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="nashville-acc.html">Nashville</a>
+    <a href="code-conversions.html" aria-current="page">Lessons</a>
+    <a href="how-i-work.html">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</header>
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="interior-header rv">
+    <p class="memo-kicker"><a href="code-conversions.html">Code conversions</a> · Week 2</p>
+    <h1>Week 2<span class="sub">Conditionals, loops, and try / except</span></h1>
+    <p class="standfirst">
+      Playlist order matches the shared Drive folder
+      <a href="https://drive.google.com/drive/folders/11KjCI_SiwKwUVDL95sgB-ZbCCoqwY4lA" target="_blank" rel="noopener noreferrer">Code Conversation | Week 2</a>.
+      Watch the embed, read the try-it block, then flip the concept cards.
+    </p>
+  </header>
+
+  <ul class="playlist-rail" aria-label="Lesson weeks">
+    <li><a href="code-conversions.html">All weeks</a></li>
+    <li><a href="code-conversions-week-1.html">Week 1</a></li><li><a href="code-conversions-week-2.html" aria-current="page">Week 2</a></li><li><a href="code-conversions-week-3.html">Week 3</a></li><li><a href="code-conversions-week-4.html">Week 4</a></li><li><a href="code-conversions-week-5.html">Week 5</a></li>
+  </ul>
+
+
+  <article class="lesson" id="snippet-1" aria-labelledby="w2-s1">
+    <div class="lesson-head">
+      <h2 id="w2-s1">Snippet 1 · if / elif / else grade ladder</h2>
+      <p class="lesson-meta">Week 2 · snippet 01</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1iyC01rl1WIDDd_4RAl--VbAFwcEj77bd/preview" title="Jade Zhao · Week 2 snippet 1 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1iyC01rl1WIDDd_4RAl--VbAFwcEj77bd/view" target="_blank" rel="noopener noreferrer">I211-W2-CodeConvo-01-grade-if-elif-else.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>grade = 84  # box labelled grade holds 84 (the score we will test)
+if grade &gt;= 90:  # is 84 at least 90? no → skip this whole block
+    # Scratch: say [A]
+    print(&quot;A&quot;)  # only runs if the if test was True
+elif grade &gt;= 80:  # is 84 at least 80? yes → take this branch
+    # Scratch: say [B]
+    print(&quot;B&quot;)  # predicted: this is what runs → prints B
+else:
+    # Scratch: say [C]
+    print(&quot;C&quot;)  # would run only if grade was under 80
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: if &lt;&gt; then / else if / else. Python: if / elif / else.</li>
+        <li>(W3Schools · If ... Else) (YouTube · Corey Schafer · Conditionals and booleans)</li>
+        <li>search YouTube: &quot;Python if elif else beginners&quot;</li>
+        <li>Scratch: set [grade v] to (84) ... whole number in a box</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-2" aria-labelledby="w2-s2">
+    <div class="lesson-head">
+      <h2 id="w2-s2">Snippet 2 · truthy / falsy empty string</h2>
+      <p class="lesson-meta">Week 2 · snippet 02</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1LRZMdPtmseDEzHkBCdYVaTkYgKpFg0Qg/preview" title="Jade Zhao · Week 2 snippet 2 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1LRZMdPtmseDEzHkBCdYVaTkYgKpFg0Qg/view" target="_blank" rel="noopener noreferrer">I211-W2-CodeConvo-02-empty-name-truthy.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>name = &quot;&quot;  # empty string ... zero characters ... looks blank
+if name:  # &quot;&quot; is falsy → this test is False → skip the yes branch
+    # Scratch: say [Name provided]
+    print(&quot;Name provided&quot;)  # only if name had any text inside
+else:  # the &quot;no&quot; path when the if was False
+    # Scratch: say [No name]
+    print(&quot;No name&quot;)  # predicted: this runs → prints No name
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: if &lt;(name) is not blank&gt; then ... else ...</li>
+        <li>(W3Schools · Booleans / If ... Else) (YouTube · Corey Schafer · Conditionals and booleans)</li>
+        <li>search YouTube: &quot;Python truthy falsy empty string beginners&quot;</li>
+        <li>Scratch: set [name v] to [ ] ... two quote marks with nothing between = empty costume</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-4" aria-labelledby="w2-s4">
+    <div class="lesson-head">
+      <h2 id="w2-s4">Snippet 4 · try / except / finally</h2>
+      <p class="lesson-meta">Week 2 · snippet 04</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1RNZrheCYKY0GiOtP-qIUBfwyRI_mlc8Z/preview" title="Jade Zhao · Week 2 snippet 4 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1RNZrheCYKY0GiOtP-qIUBfwyRI_mlc8Z/view" target="_blank" rel="noopener noreferrer">I211-W2-CodeConvo-04-try-except-finally.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>try:  # start the &quot;attempt this&quot; bubble
+    # Scratch: say (10 ÷ 0) ... divide by zero crashes in real maths and in Python
+    print(10 / 0)  # ZeroDivisionError here · never finishes this print
+except ZeroDivisionError:  # only catches divide-by-zero, not every error in the world
+    # Scratch: say [Cannot divide by zero]
+    print(&quot;Cannot divide by zero&quot;)  # safety message instead of a red traceback
+finally:
+    # Scratch: say [Done]
+    print(&quot;Done&quot;)  # predicted order: Cannot divide by zero · then Done
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>(W3Schools · Try Except) (YouTube · Corey Schafer · Common Python errors)</li>
+        <li>search YouTube: &quot;Python try except finally beginners&quot;</li>
+        <li>Scratch: try (risky stuff) ...</li>
+        <li>Scratch: say (10 ÷ 0) ... divide by zero crashes in real maths and in Python</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-5" aria-labelledby="w2-s5">
+    <div class="lesson-head">
+      <h2 id="w2-s5">Snippet 5 · while loop, step +2</h2>
+      <p class="lesson-meta">Week 2 · snippet 05</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1AjHeOckMysgXO4jONTTkR91dXEKVdBtS/preview" title="Jade Zhao · Week 2 snippet 5 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1AjHeOckMysgXO4jONTTkR91dXEKVdBtS/view" target="_blank" rel="noopener noreferrer">I211-W2-CodeConvo-05-while-count-by-2.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>i = 0  # loop counter box
+while i &lt; 5:  # first check: 0 &lt; 5 True · later 2 &lt; 5 True · 4 &lt; 5 True · 6 &lt; 5 False stop
+    # Scratch: say (i)
+    print(i)  # predicted prints: 0 · then 2 · then 4
+    # Scratch: change [i v] by (2) ... must move the counter or you loop forever
+    # eli5: += 2 means &quot;take whatever i is, add 2, put it back in i&quot;
+    i += 2  # 0→2 · 2→4 · 4→6 ... then while test fails and we leave
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: repeat until &lt;not (i &lt; 5)&gt; · or while with a counter.</li>
+        <li>(W3Schools · While Loops) (YouTube · Corey Schafer · While loops)</li>
+        <li>search YouTube: &quot;Python while loop beginners&quot; · &quot;Python += &quot;</li>
+        <li>Scratch: set [i v] to (0) ... counter starts at zero</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-7" aria-labelledby="w2-s7">
+    <div class="lesson-head">
+      <h2 id="w2-s7">Snippet 7 · for letter + break</h2>
+      <p class="lesson-meta">Week 2 · snippet 07</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1lPwikBO_7ngbL9B2q5NbYXpQBfejs5Lb/preview" title="Jade Zhao · Week 2 snippet 7 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1lPwikBO_7ngbL9B2q5NbYXpQBfejs5Lb/view" target="_blank" rel="noopener noreferrer">I211-W2-CodeConvo-07-for-break-cat.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>for letter in &quot;cat&quot;:  # letter is a temporary box for the current character
+    # Scratch: if &lt;(letter) = [a]&gt; then
+    if letter == &quot;a&quot;:  # compare: is this letter exactly &quot;a&quot;? (== asks, = would set)
+        # Scratch: stop this loop (leave early)
+        # eli5: break = leave the for loop right now · do not finish the rest of &quot;cat&quot;
+        break  # on &quot;a&quot;: exit loop before print · &quot;t&quot; never visited
+    # Scratch: say (letter) ... only if we did not break
+    print(letter)  # predicted: only &quot;c&quot; prints (a breaks · t never reached)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: for each letter of [cat] · if letter = a then stop · else say letter.</li>
+        <li>(W3Schools · For Loops · Break) (YouTube · Corey Schafer · For loops)</li>
+        <li>search YouTube: &quot;Python for loop break beginners&quot;</li>
+        <li>Scratch: for each [letter] of [cat]</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+
+  <p class="source-note">
+    Snippet source: Jade Zhao INFO-I211 Code Conversation annotations (local course pack mirrored to private <code>jadexzhao/jlzhao</code> · <code>i211</code> branch · commit <code>3e52491</code>).
+    Public GitHub API could not list the private PR without auth; this site uses the same files from that branch tip.
+  </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
+      <p class="footer-bio">Portfolio focus for now: ServeIT Town of Nashville ACC. Learning section: INFO-I211 code-conversion lessons. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
+      <nav class="footer-links" aria-label="Site">
+        <a href="nashville-acc.html">Nashville ACC</a>
+        <a href="code-conversions.html">Code conversions</a>
+        <a href="how-i-work.html">How I work</a>
+        <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-end">Public proof only · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+    </div>
+  </footer>
+</main>
+<script src="site.js?v=20260921-lessons" defer></script>
+</body>
+</html>

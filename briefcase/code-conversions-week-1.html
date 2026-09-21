@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="description" content="INFO-I211 Code Conversation week 1: Variables, strings, input, and syntax bugs. Embedded Drive videos and Jade Zhao snippets.">
+<title>Code conversions · Week 1 · Jade Zhao</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/code-conversions-week-1.html">
+<link rel="icon" href="favicon.ico?v=20260915-face" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260915-face">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260915-face">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260915-face">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915-face">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d0126e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jade Zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/code-conversions-week-1.html">
+<meta property="og:title" content="Code conversions · Week 1 · Jade Zhao">
+<meta property="og:description" content="INFO-I211 Code Conversation week 1: Variables, strings, input, and syntax bugs. Embedded Drive videos and Jade Zhao snippets.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/og-share.jpg?v=20260921-og">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA%E9%BE%99" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20260921-lessons">
+<link rel="stylesheet" href="lessons.css?v=20260921-lessons">
+</head>
+<body class="site lessons-shell">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="nashville-acc.html">Nashville</a>
+    <a href="code-conversions.html" aria-current="page">Lessons</a>
+    <a href="how-i-work.html">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</header>
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="interior-header rv">
+    <p class="memo-kicker"><a href="code-conversions.html">Code conversions</a> · Week 1</p>
+    <h1>Week 1<span class="sub">Variables, strings, input, and syntax bugs</span></h1>
+    <p class="standfirst">
+      Playlist order matches the shared Drive folder
+      <a href="https://drive.google.com/drive/folders/1QFArS0lrYMH1mZjCT1Rm8AKCJnBNs7CW" target="_blank" rel="noopener noreferrer">Code Conversation | Week 1</a>.
+      Watch the embed, read the try-it block, then flip the concept cards.
+    </p>
+  </header>
+
+  <ul class="playlist-rail" aria-label="Lesson weeks">
+    <li><a href="code-conversions.html">All weeks</a></li>
+    <li><a href="code-conversions-week-1.html" aria-current="page">Week 1</a></li><li><a href="code-conversions-week-2.html">Week 2</a></li><li><a href="code-conversions-week-3.html">Week 3</a></li><li><a href="code-conversions-week-4.html">Week 4</a></li><li><a href="code-conversions-week-5.html">Week 5</a></li>
+  </ul>
+
+
+  <article class="lesson" id="snippet-2" aria-labelledby="w1-s2">
+    <div class="lesson-head">
+      <h2 id="w1-s2">Snippet 2 · number, exponent, f-string</h2>
+      <p class="lesson-meta">Week 1 · snippet 02</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1SFrohqsYmGsFjqSvkbw4Aqlx0p_gh-Lf/preview" title="Jade Zhao · Week 1 snippet 2 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1SFrohqsYmGsFjqSvkbw4Aqlx0p_gh-Lf/view" target="_blank" rel="noopener noreferrer">codeconv_w1_snippet02_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>num = 3  # whole number in a box
+# ** means &quot;times itself that many times&quot; ... 3 ** 2 is 3×3 = 9, not &quot;3 times 2&quot;
+# f&quot;...&quot; = f-string; {} drops the expression&#x27;s value into the text (join metaphor)
+print(f&quot;{num} squared is {num ** 2}&quot;)  # predicted: 3 squared is 9
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [num v] to (3), say (join [num] [ squared is ] [num ** 2]).</li>
+        <li>(W3Schools Operators: ** is exponentiation / power)</li>
+        <li>search YouTube: &quot;Python f-strings for beginners&quot; · &quot;Python ** exponentiation&quot;</li>
+        <li>Scratch: set [num v] to (3)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-4" aria-labelledby="w1-s4">
+    <div class="lesson-head">
+      <h2 id="w1-s4">Snippet 4 · syntax bugs on purpose (names + quotes)</h2>
+      <p class="lesson-meta">Week 1 · snippet 04</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1NaEsS4ZEaNssJ7uG6zC6N4uPJuvHOVlD/preview" title="Jade Zhao · Week 1 snippet 4 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1NaEsS4ZEaNssJ7uG6zC6N4uPJuvHOVlD/view" target="_blank" rel="noopener noreferrer">codeconv_w1_snippet04_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>first-name = &quot;Mia&quot;  # hyphen breaks the name ... python reads first minus name
+print(first_name)  # this name was never created as written
+
+name = input(&quot;Enter a name: &quot;)
+# these quotes don&#x27;t match ... string never closes cleanly
+# W3 quote idea: you can nest the *other* quote style inside, but opening/closing must match
+print(&#x27;Welcome, &quot; + name + &quot;)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [first_name v] needs ONE legal name. hyphen looks like minus, not one block.</li>
+        <li>Scratch: ask [Enter a name:] and wait → say (join [Welcome, ] (answer)).</li>
+        <li>search YouTube: &quot;Python variable naming rules&quot; · &quot;Python string quotes beginners&quot;</li>
+        <li>Scratch: set [first-name v] ... broken. hyphen = minus between two names, not one variable.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-6" aria-labelledby="w1-s6">
+    <div class="lesson-head">
+      <h2 id="w1-s6">Snippet 6 · string clean-up, case, indexing, length</h2>
+      <p class="lesson-meta">Week 1 · snippet 06</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/14bgw2C9BnG6jF3B8zz5jzrLFB0DP-Kma/preview" title="Jade Zhao · Week 1 snippet 6 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/14bgw2C9BnG6jF3B8zz5jzrLFB0DP-Kma/view" target="_blank" rel="noopener noreferrer">codeconv_w1_snippet06_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>#          say (lowercase of cleaned), say (letter 1 of cleaned), compare length of cleaned vs greeting.
+
+greeting = &quot;  Hello there  &quot;  # original has blank bits at both ends
+cleaned = greeting.strip()  # trim ends only; middle stays; cleaned still has capital H
+print(cleaned.lower())  # lower only happens inside this print → hello there
+print(cleaned[0])  # index 0 = first character of cleaned (not lowercased) → H
+print(len(cleaned) == len(greeting))  # cleaned is shorter → False (W3: len() = length of string)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [greeting v] to [  Hello there  ], set [cleaned v] to (trim ends),</li>
+        <li>search YouTube: &quot;Python string strip lower len&quot; (or Corey Schafer · Strings)</li>
+        <li>Scratch: set [greeting v] to [  Hello there  ] ... blank bits on both ends</li>
+        <li>Scratch: set [cleaned v] to (trim edge spaces of greeting)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-7" aria-labelledby="w1-s7">
+    <div class="lesson-head">
+      <h2 id="w1-s7">Snippet 7 · warm-up: variables, types, simple maths</h2>
+      <p class="lesson-meta">Week 1 · snippet 07</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1LjHLo38msNTMiIbFRnk_FiAic207gxaK/preview" title="Jade Zhao · Week 1 snippet 7 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1LjHLo38msNTMiIbFRnk_FiAic207gxaK/view" target="_blank" rel="noopener noreferrer">codeconv_w1_snippet07_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>a = 12  # box labelled a holds the whole number 12 (int)
+b = 20  # box labelled b holds 20
+c = b - a  # c gets whatever b minus a is → 8
+
+print(c)  # say whatever c is holding → prints 8
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [a v] to (12), set [b v] to (20), set [c v] to (b - a), say (c).</li>
+        <li>search YouTube: &quot;Python variables for beginners&quot; (or CS Dojo · What are variables?)</li>
+        <li>Scratch: set [a v] to (12) ... whole number, no quotes.</li>
+        <li>Scratch: set [b v] to (20)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-8" aria-labelledby="w1-s8">
+    <div class="lesson-head">
+      <h2 id="w1-s8">Snippet 8 · input(), types, naming rules (bugs are intentional)</h2>
+      <p class="lesson-meta">Week 1 · snippet 08</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1sMJu8nRF22lvpLCOTFLCr_0zdBpcVtla/preview" title="Jade Zhao · Week 1 snippet 8 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1sMJu8nRF22lvpLCOTFLCr_0zdBpcVtla/view" target="_blank" rel="noopener noreferrer">codeconv_w1_snippet08_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>fav_num = input(&#x27;What is your favorite number?&#x27; )  # input() always returns a string
+# wait ... can a Scratch variable name start with 2? (no ... illegal name)
+# is * on text costumes the same as doubling a number? (no ... need int() first, then * 2)
+# Scratch brain for a fix: set [num v] to (answer as number), then set [doubled v] to (num × 2)
+2num = fav_num * fav_num
+
+# if this line ever ran with &quot;14&quot;, string + would make &quot;1414&quot;, not 28
+print(&#x27;Your favorite number doubled is:&#x27;, fav_num + fav_num)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: ask [What is your favorite number?] and wait → set [fav_num v] to (answer).</li>
+        <li>search YouTube: &quot;Python input() returns string&quot; · &quot;convert string to int Python beginners&quot;</li>
+        <li>Scratch: ask [What is your favorite number?] and wait</li>
+        <li>Scratch: say (join of fav_num + fav_num) ... string + glues text, does not add numbers</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+
+  <p class="source-note">
+    Snippet source: Jade Zhao INFO-I211 Code Conversation annotations (local course pack mirrored to private <code>jadexzhao/jlzhao</code> · <code>i211</code> branch · commit <code>3e52491</code>).
+    Public GitHub API could not list the private PR without auth; this site uses the same files from that branch tip.
+  </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
+      <p class="footer-bio">Portfolio focus for now: ServeIT Town of Nashville ACC. Learning section: INFO-I211 code-conversion lessons. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
+      <nav class="footer-links" aria-label="Site">
+        <a href="nashville-acc.html">Nashville ACC</a>
+        <a href="code-conversions.html">Code conversions</a>
+        <a href="how-i-work.html">How I work</a>
+        <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-end">Public proof only · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+    </div>
+  </footer>
+</main>
+<script src="site.js?v=20260921-lessons" defer></script>
+</body>
+</html>

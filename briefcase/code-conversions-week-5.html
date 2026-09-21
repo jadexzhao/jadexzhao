@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="description" content="INFO-I211 Code Conversation week 5: CSV reader, DictReader, and writer. Embedded Drive videos and Jade Zhao snippets.">
+<title>Code conversions · Week 5 · Jade Zhao</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/code-conversions-week-5.html">
+<link rel="icon" href="favicon.ico?v=20260915-face" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260915-face">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260915-face">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260915-face">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915-face">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d0126e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jade Zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/code-conversions-week-5.html">
+<meta property="og:title" content="Code conversions · Week 5 · Jade Zhao">
+<meta property="og:description" content="INFO-I211 Code Conversation week 5: CSV reader, DictReader, and writer. Embedded Drive videos and Jade Zhao snippets.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/og-share.jpg?v=20260921-og">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA%E9%BE%99" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20260921-lessons">
+<link rel="stylesheet" href="lessons.css?v=20260921-lessons">
+</head>
+<body class="site lessons-shell">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="nashville-acc.html">Nashville</a>
+    <a href="code-conversions.html" aria-current="page">Lessons</a>
+    <a href="how-i-work.html">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</header>
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="interior-header rv">
+    <p class="memo-kicker"><a href="code-conversions.html">Code conversions</a> · Week 5</p>
+    <h1>Week 5<span class="sub">CSV reader, DictReader, and writer</span></h1>
+    <p class="standfirst">
+      Playlist order matches the shared Drive folder
+      <a href="https://drive.google.com/drive/folders/1D-cpwg-dCxTMRo34mmoUqGWOfH4p24lI" target="_blank" rel="noopener noreferrer">Code Conversation | Week 5</a>.
+      Watch the embed, read the try-it block, then flip the concept cards.
+    </p>
+  </header>
+
+  <ul class="playlist-rail" aria-label="Lesson weeks">
+    <li><a href="code-conversions.html">All weeks</a></li>
+    <li><a href="code-conversions-week-1.html">Week 1</a></li><li><a href="code-conversions-week-2.html">Week 2</a></li><li><a href="code-conversions-week-3.html">Week 3</a></li><li><a href="code-conversions-week-4.html">Week 4</a></li><li><a href="code-conversions-week-5.html" aria-current="page">Week 5</a></li>
+  </ul>
+
+
+  <article class="lesson" id="snippet-1" aria-labelledby="w5-s1">
+    <div class="lesson-head">
+      <h2 id="w5-s1">Snippet 1 · csv.reader people.csv · print each row</h2>
+      <p class="lesson-meta">Week 5 · snippet 01</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1pORhcUiZZHT0Jp1FCZ1IAOYosgUKiK4F/preview" title="Jade Zhao · Week 5 snippet 1 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1pORhcUiZZHT0Jp1FCZ1IAOYosgUKiK4F/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet01_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import csv  # standard library · teaches Python how to split spreadsheet rows
+
+with open(&quot;people.csv&quot;, &quot;r&quot;, newline=&quot;&quot;) as file:
+    # Scratch: set [reader v] to (csv reader pointing at the file)
+    reader = csv.reader(file)  # walks rows · each row becomes a list of strings
+    # Scratch: forever for each row
+    for row in reader:
+        # Scratch: say (row)
+        print(row)  # predicted: [&#x27;Name&#x27;, &#x27;Age&#x27;] then [&#x27;Alice&#x27;, &#x27;30&#x27;] style lists (depends on file)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: import [csv] · open [people.csv] · forever for each row · say (row as a list)</li>
+        <li>(W3Schools · Python CSV · reader) (Quizlet · CSV vs TXT) search YouTube: &quot;Python csv.reader beginners&quot;</li>
+        <li>Scratch: add the csv backpack tools</li>
+        <li>Scratch: open people.csv look-only · newline=&quot;&quot; is the CSV-safe open habit</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-2" aria-labelledby="w5-s2">
+    <div class="lesson-head">
+      <h2 id="w5-s2">Snippet 2 · csv.DictReader scores.csv · print name</h2>
+      <p class="lesson-meta">Week 5 · snippet 02</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1Hp6lQoSQhxEyQ0Qtxdas7qjBFL37OFyR/preview" title="Jade Zhao · Week 5 snippet 2 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1Hp6lQoSQhxEyQ0Qtxdas7qjBFL37OFyR/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet02_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import csv
+
+with open(&quot;scores.csv&quot;, &quot;r&quot;, newline=&quot;&quot;) as file:
+    # Scratch: set reader to DictReader (header row becomes the key labels)
+    reader = csv.DictReader(file)  # first line = column names · later lines = dicts
+    for row in reader:  # each row type: dict (mapping), not a plain list
+        # Scratch: say (row&#x27;s name field)
+        print(row[&quot;name&quot;])  # predicted: each person&#x27;s name string, one per line
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: forever for each row · say (item [name] of row)</li>
+        <li>(W3Schools · csv DictReader) (Quizlet · dict keys) search YouTube: &quot;Python csv DictReader beginners&quot;</li>
+        <li>Scratch: open scores look-only (CSV-safe newline)</li>
+        <li>Scratch: set reader to DictReader (header row becomes the key labels)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-3" aria-labelledby="w5-s3">
+    <div class="lesson-head">
+      <h2 id="w5-s3">Snippet 3 · DictReader sum scores · int conversion</h2>
+      <p class="lesson-meta">Week 5 · snippet 03</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1Ao3MJTKNTUlFR_wKLP0rgfLtlnrWL3qv/preview" title="Jade Zhao · Week 5 snippet 3 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1Ao3MJTKNTUlFR_wKLP0rgfLtlnrWL3qv/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet03_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import csv
+
+total = 0
+with open(&quot;scores.csv&quot;, &quot;r&quot;, newline=&quot;&quot;) as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        # Scratch: change total by (score turned into a number)
+        total += int(row[&quot;score&quot;])  # without int(), &quot;85&quot;+&quot;90&quot; would glue text, not add
+print(total)  # predicted: sum of all score numbers in the file
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [total v] to (0) · forever · change total by (score as number)</li>
+        <li>(W3Schools · DictReader · int) (Quizlet · type conversion) search YouTube: &quot;Python csv sum column int&quot;</li>
+        <li>Scratch: set [total v] to (0) ... accumulator before the loop</li>
+        <li>Scratch: change total by (score turned into a number)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-4" aria-labelledby="w5-s4">
+    <div class="lesson-head">
+      <h2 id="w5-s4">Snippet 4 · csv.writer bookmarks.csv · header + row</h2>
+      <p class="lesson-meta">Week 5 · snippet 04</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1bhGMTRdrWbI9SLvY1kHBM-xeCLe9qrab/preview" title="Jade Zhao · Week 5 snippet 4 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1bhGMTRdrWbI9SLvY1kHBM-xeCLe9qrab/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet04_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import csv
+
+with open(&quot;bookmarks.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as file:
+    writer = csv.writer(file)  # helper that joins list items with commas
+    # Scratch: write header labels first (column names)
+    writer.writerow([&quot;name&quot;, &quot;url&quot;])  # header helps humans + DictReader later
+    # Scratch: write one data row
+    writer.writerow([&quot;OpenAI&quot;, &quot;https://openai.com&quot;])
+# predicted file: two lines ... name,url then OpenAI,https://openai.com
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [bookmarks.csv] as write · write list [name, url] · write list [OpenAI, url]</li>
+        <li>(W3Schools · csv writer) (Quizlet · header row) search YouTube: &quot;Python csv.writer newline beginners&quot;</li>
+        <li>Scratch: open bookmarks wipe-and-write · CSV-safe newline</li>
+        <li>Scratch: write header labels first (column names)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-5" aria-labelledby="w5-s5">
+    <div class="lesson-head">
+      <h2 id="w5-s5">Snippet 5 · DictReader students · first last major</h2>
+      <p class="lesson-meta">Week 5 · snippet 05</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1zkG8chJBruz9LXGyhz5XYdf5eei3TyUj/preview" title="Jade Zhao · Week 5 snippet 5 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1zkG8chJBruz9LXGyhz5XYdf5eei3TyUj/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet05_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import csv
+
+with open(&quot;students.csv&quot;, &quot;r&quot;, newline=&quot;&quot;) as file:
+    reader = csv.DictReader(file)  # keys come from the header line
+    for row in reader:
+        # Scratch: say three fields from this student card
+        print(row[&quot;first_name&quot;], row[&quot;last_name&quot;], row[&quot;major&quot;])
+        # if a column is missing &gt; KeyError when you ask for that key
+        # robust idea: row.get(&quot;major&quot;, &quot;unknown&quot;) or check headers first
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: forever · say (join first_name last_name major)</li>
+        <li>(W3Schools · DictReader keys) (Quizlet · KeyError) search YouTube: &quot;Python DictReader missing column&quot;</li>
+        <li>Scratch: say three fields from this student card</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-6" aria-labelledby="w5-s6">
+    <div class="lesson-head">
+      <h2 id="w5-s6">Snippet 6 · intentional error · import math not csv</h2>
+      <p class="lesson-meta">Week 5 · snippet 06</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1kXyvw9XB18N5r4QadE3XOBJXgyUgjDhj/preview" title="Jade Zhao · Week 5 snippet 6 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1kXyvw9XB18N5r4QadE3XOBJXgyUgjDhj/view" target="_blank" rel="noopener noreferrer">codeconv_w5_snippet06_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>import math  # BUG line 1: should be import csv ... math has no writer
+
+data = [[&quot;Name&quot;, &quot;Age&quot;], [&quot;Alice&quot;, 30], [&quot;Bob&quot;, 25]]
+with open(&quot;people.csv&quot;, &quot;w&quot;, newline=&#x27;&#x27;) as csvfile:
+    writer = csv.writer(csvfile)  # crashes here: NameError · csv was never imported
+    writer.writerows(data)  # writerows = write EVERY row in the list in one go
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: (oops) import math backpack · but later uses csv.writer ... NameError.</li>
+        <li>(W3Schools · csv writerows · import) search YouTube: &quot;Python NameError csv not defined&quot;</li>
+        <li>Scratch: set [data v] to a list of rows (header + two people)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+
+  <p class="source-note">
+    Snippet source: Jade Zhao INFO-I211 Code Conversation annotations (local course pack mirrored to private <code>jadexzhao/jlzhao</code> · <code>i211</code> branch · commit <code>3e52491</code>).
+    Public GitHub API could not list the private PR without auth; this site uses the same files from that branch tip.
+  </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
+      <p class="footer-bio">Portfolio focus for now: ServeIT Town of Nashville ACC. Learning section: INFO-I211 code-conversion lessons. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
+      <nav class="footer-links" aria-label="Site">
+        <a href="nashville-acc.html">Nashville ACC</a>
+        <a href="code-conversions.html">Code conversions</a>
+        <a href="how-i-work.html">How I work</a>
+        <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-end">Public proof only · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+    </div>
+  </footer>
+</main>
+<script src="site.js?v=20260921-lessons" defer></script>
+</body>
+</html>

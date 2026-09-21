@@ -1,0 +1,76 @@
+/* Code-conversion lessons · W3 / playlist / Quizlet / Scratch gallery feel
+   Fits jadexzhao Dreamhouse chrome. Not matchaxmoxie matcha / Fraunces. */
+
+.lessons-shell { --lesson-ink: #1f2a33; --lesson-paper: #f7fafc; --lesson-panel: #ffffff; --lesson-line: #c5d4de; --lesson-accent: #2b6cb0; --lesson-warn: #c05621; --lesson-ok: #2f855a; --lesson-card: #edf2f7; }
+
+.lessons-shell .stage--article { max-inline-size: min(58rem, calc(100% - 2.5rem)); }
+
+.playlist-rail {
+  display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1rem 0 1.5rem; padding: 0; list-style: none;
+}
+.playlist-rail a {
+  display: inline-flex; align-items: center; min-height: 2.5rem; padding: 0 0.9rem;
+  border: 1px solid var(--lesson-line); border-radius: 999px; background: var(--lesson-panel);
+  color: var(--lesson-ink); text-decoration: none; font-size: 0.9rem; font-weight: 600;
+}
+.playlist-rail a[aria-current="page"], .playlist-rail a:hover {
+  background: var(--lesson-accent); border-color: var(--lesson-accent); color: #fff;
+}
+
+.week-grid {
+  display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  margin: 1.25rem 0 2rem; padding: 0; list-style: none;
+}
+.week-card {
+  display: flex; flex-direction: column; gap: 0.45rem; min-height: 10rem;
+  padding: 1rem 1.05rem; border: 2px solid var(--lesson-line); border-radius: 14px;
+  background: linear-gradient(180deg, #fff 0%, var(--lesson-card) 100%);
+  text-decoration: none; color: inherit; box-shadow: 0 8px 24px -18px rgb(31 42 51 / 0.45);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.week-card:hover { transform: translateY(-2px); box-shadow: 0 16px 28px -18px rgb(43 108 176 / 0.45); }
+.week-card .wk { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; color: var(--lesson-accent); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.week-card h3 { margin: 0; font-family: Fredoka, Arial, sans-serif; font-size: 1.2rem; color: var(--pink, #d0126e); }
+.week-card p { margin: 0; font-size: 0.95rem; color: var(--ink-muted, #5a4a52); }
+
+.lesson {
+  margin: 0 0 2.25rem; padding: 1.15rem 1.15rem 1.35rem;
+  border: 2px solid var(--lesson-line); border-radius: 16px; background: var(--lesson-panel);
+}
+.lesson-head { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; margin-bottom: 0.85rem; }
+.lesson-head h2 { margin: 0; font-size: 1.25rem; font-family: Fredoka, Arial, sans-serif; }
+.lesson-meta { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; color: var(--lesson-accent); }
+
+.video-frame {
+  position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 1rem;
+  border: 1px solid var(--lesson-line); border-radius: 12px; overflow: hidden; background: #0f1720;
+}
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-fallback { margin: 0.35rem 0 1rem; font-size: 0.9rem; }
+
+.tryit {
+  display: grid; gap: 0.75rem; margin: 0.5rem 0 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 52rem) {
+  .tryit { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
+}
+.tryit-label {
+  margin: 0 0 0.35rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--lesson-ok);
+}
+.tryit pre {
+  margin: 0; padding: 0.9rem 1rem; border-radius: 10px; border: 1px solid #9ae6b4;
+  background: #f0fff4; overflow: auto; font-family: "Source Code Pro", ui-monospace, Menlo, monospace;
+  font-size: 0.86rem; line-height: 1.45; color: #1a202c; white-space: pre;
+}
+.concept-cards { display: grid; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.concept-cards li {
+  padding: 0.7rem 0.8rem; border-radius: 10px; border: 1px dashed var(--lesson-accent);
+  background: #ebf8ff; font-size: 0.92rem; color: var(--lesson-ink);
+}
+.next-step {
+  margin: 0.75rem 0 0; padding: 0.7rem 0.85rem; border-left: 4px solid var(--lesson-warn);
+  background: #fffaf0; font-size: 0.95rem;
+}
+.source-note { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--lesson-line); font-size: 0.9rem; color: var(--ink-muted, #5a4a52); }

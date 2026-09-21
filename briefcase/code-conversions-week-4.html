@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta name="description" content="INFO-I211 Code Conversation week 4: Reading and writing text files. Embedded Drive videos and Jade Zhao snippets.">
+<title>Code conversions · Week 4 · Jade Zhao</title>
+<link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/code-conversions-week-4.html">
+<link rel="icon" href="favicon.ico?v=20260915-face" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260915-face">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=20260915-face">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=20260915-face">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=20260915-face">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#d0126e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Jade Zhao">
+<meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/code-conversions-week-4.html">
+<meta property="og:title" content="Code conversions · Week 4 · Jade Zhao">
+<meta property="og:description" content="INFO-I211 Code Conversation week 4: Reading and writing text files. Embedded Drive videos and Jade Zhao snippets.">
+<meta property="og:image" content="https://jadexzhao.github.io/jadexzhao/assets/og-share.jpg?v=20260921-og">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA%E9%BE%99" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=20260921-lessons">
+<link rel="stylesheet" href="lessons.css?v=20260921-lessons">
+</head>
+<body class="site lessons-shell">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="nashville-acc.html">Nashville</a>
+    <a href="code-conversions.html" aria-current="page">Lessons</a>
+    <a href="how-i-work.html">Notes</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </div>
+</header>
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="interior-header rv">
+    <p class="memo-kicker"><a href="code-conversions.html">Code conversions</a> · Week 4</p>
+    <h1>Week 4<span class="sub">Reading and writing text files</span></h1>
+    <p class="standfirst">
+      Playlist order matches the shared Drive folder
+      <a href="https://drive.google.com/drive/folders/1m5FETmlw3bIpGP7hz92g3Ovme-CmOrlO" target="_blank" rel="noopener noreferrer">Code Conversation | Week 4</a>.
+      Watch the embed, read the try-it block, then flip the concept cards.
+    </p>
+  </header>
+
+  <ul class="playlist-rail" aria-label="Lesson weeks">
+    <li><a href="code-conversions.html">All weeks</a></li>
+    <li><a href="code-conversions-week-1.html">Week 1</a></li><li><a href="code-conversions-week-2.html">Week 2</a></li><li><a href="code-conversions-week-3.html">Week 3</a></li><li><a href="code-conversions-week-4.html" aria-current="page">Week 4</a></li><li><a href="code-conversions-week-5.html">Week 5</a></li>
+  </ul>
+
+
+  <article class="lesson" id="snippet-1" aria-labelledby="w4-s1">
+    <div class="lesson-head">
+      <h2 id="w4-s1">Snippet 1 · open notes.txt read mode · with + read()</h2>
+      <p class="lesson-meta">Week 4 · snippet 01</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1bnkNYjPbkc2tGTnVqu9g81DC9VFs62LL/preview" title="Jade Zhao · Week 4 snippet 1 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1bnkNYjPbkc2tGTnVqu9g81DC9VFs62LL/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet01_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>with open(&quot;notes.txt&quot;, &quot;r&quot;) as file:  # r = read mode · needs the file to already exist
+    # Scratch: set [text v] to (whole contents of notebook)
+    text = file.read()  # one big string of the whole file (newlines stay inside)
+print(text)  # predicted: whatever is in notes.txt, as one chunk on screen
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [notes.txt v] as read · set [text v] to (whole page) · say (text)</li>
+        <li>(W3Schools · File Handling · open / read) (Quizlet · TXT modes: r = read, file must exist)</li>
+        <li>search YouTube: &quot;Python with open read beginners&quot; · &quot;Python file read() vs readline&quot;</li>
+        <li>Scratch: when green flag clicked · open notebook [notes.txt] look-only (r) · nickname it file</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-2" aria-labelledby="w4-s2">
+    <div class="lesson-head">
+      <h2 id="w4-s2">Snippet 2 · append journal.txt · write New entry + newline</h2>
+      <p class="lesson-meta">Week 4 · snippet 02</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1A4pgzskShWdwjzy8mQmvKSKBStmnDv-d/preview" title="Jade Zhao · Week 4 snippet 2 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1A4pgzskShWdwjzy8mQmvKSKBStmnDv-d/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet02_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>with open(&quot;journal.txt&quot;, &quot;a&quot;) as file:  # a keeps old lines · creates file if missing
+    # Scratch: write [New entry] then go to next line
+    file.write(&quot;New entry\n&quot;)  # \n = press Enter · next write starts on a new line
+# when with ends, file auto-closes · predicted: journal.txt gains one new line at the end
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [journal.txt v] as append · write [New entry] + newline</li>
+        <li>(W3Schools · File Write) (Quizlet · Mode a vs Mode w) search YouTube: &quot;Python append vs write file&quot;</li>
+        <li>Scratch: when green flag · open guestbook append mode · nickname it file</li>
+        <li>Scratch: write [New entry] then go to next line</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-3" aria-labelledby="w4-s3">
+    <div class="lesson-head">
+      <h2 id="w4-s3">Snippet 3 · read grades.txt line by line · strip()</h2>
+      <p class="lesson-meta">Week 4 · snippet 03</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/11KvfyyNnNfxkCymNJbtRRnaLfnwNteS-/preview" title="Jade Zhao · Week 4 snippet 3 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/11KvfyyNnNfxkCymNJbtRRnaLfnwNteS-/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet03_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>with open(&quot;grades.txt&quot;) as file:  # no mode &gt; same as &quot;r&quot;
+    # Scratch: forever for each line in the list
+    for line in file:  # one line at a time · includes trailing \n until you strip
+        # Scratch: say (line with edges cleaned)
+        print(line.strip())  # strip() peels spaces/newlines off both ends · cleaner print
+# predicted: each grade on its own line, no blank gap from leftover \n
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [grades.txt] · forever (for each line) · say (line without extra spaces)</li>
+        <li>(W3Schools · File Read · strip) (Quizlet · for line in file) search YouTube: &quot;Python for line in file strip&quot;</li>
+        <li>Scratch: open grades notebook (default = look-only)</li>
+        <li>Scratch: forever for each line in the list</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-4" aria-labelledby="w4-s4">
+    <div class="lesson-head">
+      <h2 id="w4-s4">Snippet 4 · open without with · missing close best practice</h2>
+      <p class="lesson-meta">Week 4 · snippet 04</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1_t19QBgz2iCR_zYQ8Y5YAP-CX54oIiCE/preview" title="Jade Zhao · Week 4 snippet 4 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1_t19QBgz2iCR_zYQ8Y5YAP-CX54oIiCE/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet04_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>file = open(&quot;data.txt&quot;, &quot;r&quot;)  # works, but YOU must remember to close later
+contents = file.read()  # one big string (same idea as snippet 1)
+print(contents)  # predicted: whole file text
+# missing best practice: file.close() or better &gt; with open(...) as file:
+# readlines() instead of read() &gt; list of line-strings (each usually still has \n), not one blob
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [data.txt] · set contents · say ... but forgot &quot;close notebook&quot;</li>
+        <li>(W3Schools · File close / with) (Quizlet · Why close matters) search YouTube: &quot;Python with open vs close&quot;</li>
+        <li>Scratch: open notebook look-only (but no auto-close wrapper)</li>
+        <li>Scratch: set [contents v] to (whole page)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-5" aria-labelledby="w4-s5">
+    <div class="lesson-head">
+      <h2 id="w4-s5">Snippet 5 · count lines in reminders.txt</h2>
+      <p class="lesson-meta">Week 4 · snippet 05</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1vAGpxSCzeq2XA84o0GVOXVTX7TaZs-Qp/preview" title="Jade Zhao · Week 4 snippet 5 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1vAGpxSCzeq2XA84o0GVOXVTX7TaZs-Qp/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet05_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code>with open(&quot;reminders.txt&quot;, &quot;r&quot;) as file:
+    # Scratch: set [count v] to (0)
+    count = 0  # accumulator box starts empty-zero
+    # Scratch: forever for each line
+    for line in file:  # each pass = one line (even a blank line counts)
+        # Scratch: change [count v] by (1)
+        count += 1  # 0&gt;1&gt;2&gt;... once per line
+print(count)  # predicted: how many lines were in the file (an integer)
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: set [count v] to (0) · forever for each line · change count by 1 · say (count)</li>
+        <li>(W3Schools · For Loops · File) (Quizlet · for line in file) search YouTube: &quot;Python count lines in file beginners&quot;</li>
+        <li>Scratch: open reminders look-only</li>
+        <li>Scratch: set [count v] to (0)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+  <article class="lesson" id="snippet-6" aria-labelledby="w4-s6">
+    <div class="lesson-head">
+      <h2 id="w4-s6">Snippet 6 · write mode journal.txt · tab escape</h2>
+      <p class="lesson-meta">Week 4 · snippet 06</p>
+    </div>
+    <div class="video-frame">
+      <iframe src="https://drive.google.com/file/d/1GZ0U2rO7eep7fXVkciHsFcrLyDwl_RUV/preview" title="Jade Zhao · Week 4 snippet 6 code conversation" allow="autoplay" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-fallback">If the embed is blocked, open the shared Drive file: <a href="https://drive.google.com/file/d/1GZ0U2rO7eep7fXVkciHsFcrLyDwl_RUV/view" target="_blank" rel="noopener noreferrer">codeconv_w4_snippet06_jadezhao.mp4</a>.</p>
+    <div class="tryit">
+      <div>
+        <p class="tryit-label">Try it · read the code</p>
+        <pre><code># w creates the file if missing · if it exists, old contents are wiped first.
+
+with open(&quot;journal.txt&quot;, &quot;w&quot;) as file:  # w = overwrite · journal.txt does NOT need to exist first
+    # Scratch: write [New entry] then jump one tab stop (not a newline)
+# predicted: journal.txt becomes just &quot;New entry&quot; + tab (old text gone)
+# contrast: append &quot;a&quot; would keep old lines · &quot;r&quot; would need the file already there
+</code></pre>
+      </div>
+      <div>
+        <p class="tryit-label">Concept cards</p>
+        <ul class="concept-cards">
+        <li>Scratch: open [journal.txt] as write (erase first) · write [New entry] + tab</li>
+        <li>(W3Schools · File Write · escape characters) (Quizlet · Mode w) search YouTube: &quot;Python write mode tab \\t&quot;</li>
+        <li>Scratch: open journal wipe-and-write · nickname file</li>
+        <li>Scratch: write [New entry] then jump one tab stop (not a newline)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="next-step"><strong>Next step:</strong> pause the video, predict the printout, then change one value and re-trace the Scratch / green-flag story.</p>
+  </article>
+
+
+  <p class="source-note">
+    Snippet source: Jade Zhao INFO-I211 Code Conversation annotations (local course pack mirrored to private <code>jadexzhao/jlzhao</code> · <code>i211</code> branch · commit <code>3e52491</code>).
+    Public GitHub API could not list the private PR without auth; this site uses the same files from that branch tip.
+  </p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <p class="footer-brand">Jade Zhao · <span class="sc" lang="zh-Hans">赵郎溪</span></p>
+      <p class="footer-bio">Portfolio focus for now: ServeIT Town of Nashville ACC. Learning section: INFO-I211 code-conversion lessons. Informatics @ <a href="https://luddy.iu.edu/" target="_blank" rel="noopener noreferrer">IU Luddy</a> · May 2027.</p>
+      <nav class="footer-links" aria-label="Site">
+        <a href="nashville-acc.html">Nashville ACC</a>
+        <a href="code-conversions.html">Code conversions</a>
+        <a href="how-i-work.html">How I work</a>
+        <a href="https://jlzhao.pages.iu.edu/cv.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://jlzhao.pages.iu.edu/" target="_blank" rel="noopener noreferrer">IU Pages</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-end">Public proof only · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+    </div>
+  </footer>
+</main>
+<script src="site.js?v=20260921-lessons" defer></script>
+</body>
+</html>

@@ -20,7 +20,7 @@ I lead Digital Humans work at Luddy LINK. When an AI system looks and talks like
 
 Handshake is the live version. I am a content creator there: a real person writing in public, in a system that rewards a polished profile. If it feels fake, students leave. Hiring managers do too. At Luddy LINK I lead the next layer: AI-driven virtual personas for business workflows, not avatar demos. Once the influencer is a system, what still makes someone stay?
 
-I also build the layer that has to keep working after the demo: databases, pipelines, internal tools, and websites staff can maintain. At the Laurie Burns McRobbie Serve IT Nonprofit Clinic I lead website delivery for organisations without an in-house developer, including the City of Bloomington and Nashville, Indiana.
+I also build the layer that has to keep working after the demo: databases, pipelines, internal tools, and websites staff can maintain. At the Laurie Burns McRobbie Serve IT Nonprofit Clinic I lead website delivery for organisations without an in-house developer, including the City of Bloomington. For Fall 2026 I co-lead the Town of Nashville ACC (accessibility assessment ... recommendations only). The public jadexzhao portfolio leads with that Nashville case for now, plus INFO-I211 code-conversion lessons.
 
 I grew up in my family's Chinese restaurant in central Indiana (Greenfield, Indiana). Floor, till, and kitchen came first. A Friday night still shows whether a process holds. If one person does not show up, everything shifts. After COVID I rebuilt the restaurant's website and social media. Technology stopped sitting beside the business. It became how the business ran. That is why I chose Informatics, Business and Society, at IU Luddy: organisations and technology as one problem.
 
