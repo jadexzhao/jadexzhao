@@ -1,6 +1,6 @@
 # LinkedIn · warm UK About (paste-ready)
 
-Headline + About aligned to IU Pages / jadexzhao / zhao-langxi. UK English. No em dash. Pauses with `...`. Ranges with `to`. Expand abbreviations on first use.
+Headline + About aligned to IU Pages / jadexzhao / zhao-langxi. Expand abbreviations on first use.
 
 Hire-facing paste lives here. Do not dump this whole About onto the four web doors.
 

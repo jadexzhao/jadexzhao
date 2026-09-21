@@ -1,0 +1,17 @@
+NOTES FOR JADE (1st-person) · jadexzhao / briefcase
+Generated during site polish. Agent fixed 2nd-person items; these need your call.
+
+1. Favicon at 16px
+   Face photo favicons can look mushy at 16×16. Keep photo, swap to a logo mark, or leave as-is?
+
+2. Handshake profile link
+   https://iubloomington.joinhandshake.com/profiles/zhao-langxi returns 403 to automated checks.
+   If it also fails in a private browser window, swap to your public Handshake / LinkedIn path.
+
+3. OG crop
+   New assets/og-share.jpg is a 1200×630 centre-crop of the speaker hero for link previews.
+   If the crop cuts the wrong part of the frame, say which photo (or crop) you prefer.
+
+4. human-centered spelling
+   Meta / hire vocabulary still uses "human-centered" (US tech phrasing, locked with Digital Humans voice).
+   UK pages already use organisations / Programme / catalogue elsewhere. Change meta to human-centred only if you want full UK on those strings.
