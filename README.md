@@ -29,7 +29,7 @@ Python · SQL · React · PostgreSQL · WCAG-minded clinic work.
 Same person. Different job.
 
 - [zhao-langxi](https://github.com/zhao-langxi) ... essays and research notes
-- [matchaxmoxie](https://github.com/matchaxmoxie) ... FASE MAP classroom
+- [matchaxmoxie](https://github.com/matchaxmoxie) ... cookie classroom
 
 ## Four doors
 
