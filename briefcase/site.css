@@ -563,5 +563,191 @@ a:hover {
 .interior-header .sub { display: block; margin-block-start: 0.25rem; font-size: 1rem; font-weight: 600; color: var(--muted); }
 .interior-header .standfirst { margin: 0.75rem 0 0; max-inline-size: 48ch; color: var(--muted); }
 
-.stage.stage--article, .stage--article { width: min(58rem, 100%); }
+.stage.stage--article,
+.stage--article {
+  width: min(58rem, 100%);
+}
+
+/* Nashville Canvas portfolio case study */
+.rubric-note {
+  margin: 1rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid var(--yellow);
+  background: var(--wash);
+  max-inline-size: 58ch;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.rubric-note code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #fff;
+  padding: 0.05rem 0.25rem;
+  border: 1px solid var(--line);
+}
+
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.85rem 0 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2rem;
+  padding: 0.2rem 0.55rem;
+  border: 2px solid var(--line);
+  background: #fff;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.status-pill strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.case-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.1rem 0 0;
+}
+
+.case-toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 2px solid var(--blue);
+  background: #fff;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.case-toc a:hover,
+.case-toc a:focus-visible {
+  background: var(--yellow);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.memo-rule {
+  margin: 1.75rem 0;
+  border: 0;
+  border-block-start: 4px solid var(--blue);
+}
+
+.case-section {
+  margin: 0 0 0.5rem;
+}
+
+.part-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.case-section h2 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem);
+}
+
+.case-section h3 {
+  margin: 1.25rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.case-section p,
+.case-section dd {
+  max-inline-size: 58ch;
+  color: var(--ink);
+}
+
+.case-beats {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.case-beats > div {
+  padding: 0.75rem 0.85rem;
+  border: 2px solid var(--line);
+  background: #fff;
+}
+
+.case-beats dt {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.case-beats dd {
+  margin: 0;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-chips li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.25rem 0.65rem;
+  border: 2px solid var(--blue);
+  background: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.artifact-figure {
+  margin: 1rem 0;
+}
+
+.artifact-slot {
+  padding: 1rem;
+  border: 2px dashed var(--blue);
+  background: var(--wash);
+  min-height: 5.5rem;
+}
+
+.artifact-slot-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.artifact-slot-body {
+  margin: 0;
+  color: var(--muted);
+  max-inline-size: none;
+}
+
+.figure-caption {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 

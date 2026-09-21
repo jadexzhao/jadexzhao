@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Town of Nashville ACC · ServeIT Fall 2026. Accessibility assessment of townofnashville.org. Recommendations only. No live-site edits.">
+<meta name="description" content="Town of Nashville ACC · ServeIT Fall 2026 Canvas portfolio case study. Accessibility assessment of townofnashville.org. Recommendations only.">
 <title>Town of Nashville ACC · Jade Zhao</title>
 <link rel="icon" type="image/png" sizes="32x32" href="https://jadexzhao.github.io/jadexzhao/favicon-32x32.png?v=20260921-facecenter">
 <link rel="icon" type="image/png" sizes="16x16" href="https://jadexzhao.github.io/jadexzhao/favicon-16x16.png?v=20260921-facecenter">
@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Jade Zhao">
 <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/nashville-acc.html">
 <meta property="og:title" content="Town of Nashville ACC · Jade Zhao">
-<meta property="og:description" content="Accessibility assessment of townofnashville.org. Recommendations only. No student edits on the live municipal site.">
+<meta property="og:description" content="ServeIT Fall 2026 Canvas portfolio case study. Accessibility assessment. Recommendations only.">
 <meta name="twitter:title" content="Town of Nashville ACC · Jade Zhao">
 <meta name="twitter:description" content="Accessibility assessment of townofnashville.org. Recommendations only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20260921-newsite">
+<link rel="stylesheet" href="site.css?v=20260921-nashville">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -47,41 +47,388 @@
     <a class="btn btn--sm" href="cv.pdf">CV</a>
   </div>
 </header>
-<main id="main-content" class="stage" tabindex="-1">
+
+<main id="main-content" class="stage stage--article" tabindex="-1">
   <header class="page-head">
-    <p class="band-kicker">ServeIT · Fall 2026</p>
+    <p class="band-kicker">ServeIT · Fall 2026 · Canvas portfolio</p>
     <h1>Town of Nashville ACC<span class="sub">Accessibility assessment · recommendations only</span></h1>
+    <p class="status-row" role="group" aria-label="Project status">
+      <span class="status-pill">status <strong>in progress</strong></span>
+      <span class="status-pill">role <strong>Team Lead / Co-lead</strong></span>
+      <span class="status-pill">scope <strong>recommendations only</strong></span>
+      <span class="status-pill">term <strong>Fall 2026</strong></span>
+    </p>
     <p class="standfirst">
-      This is the work in front of me this term. With Aanya Arora I co-lead ServeIT&rsquo;s Town of Nashville ACC:
-      look at <a href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">townofnashville.org</a>,
-      write what staff can actually fix, and hand it over clean. We do not touch the live municipal site.
+      With Aanya Arora I co-lead ServeIT&rsquo;s Town of Nashville ACC. We assess
+      <a href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">townofnashville.org</a>
+      and hand the town clear, prioritised recommendations. Students do not edit the live municipal site.
     </p>
+    <p class="rubric-note">
+      This page is long on purpose. ServeIT Canvas asks for a portfolio / case study with every rubric row on the page
+      (Overview, Client, Process, Skills, Deliverables, Reflection). It is not a longer personal story.
+      Where evidence is not ready yet, you will see a visible <code>[placeholder: &hellip;]</code> so I can fill it without inventing results.
+    </p>
+    <nav class="case-toc" aria-label="Rubric sections on this page">
+      <a href="#overview">01 Overview</a>
+      <a href="#client">02 Client</a>
+      <a href="#process">03 Process</a>
+      <a href="#skills">04 Skills</a>
+      <a href="#deliverables">05 Deliverables</a>
+      <a href="#reflection">06 Reflection</a>
+    </nav>
   </header>
-  <div class="prose">
-    <p>Municipal sites are public infrastructure. Accessibility is not a polish pass. It is whether a resident can use the page on an ordinary day.</p>
-    <p>That question sits under the longer Digital Humans work too: useful interfaces people trust when nothing flashy is happening. Nashville is the clear ticket first.</p>
-    <ul>
-      <li>Scope: recommendations only. No student edits on the live site.</li>
-      <li>Client: Town of Nashville (Brown County, Indiana).</li>
-      <li>Status: in progress. Mid-semester honesty stays.</li>
-    </ul>
-    <p class="hero-cta">
-      <a class="btn" href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">Client site</a>
-      <a class="btn btn--ghost" href="code-conversions.html">Lessons next</a>
+
+  <hr class="memo-rule">
+
+  <section id="overview" class="case-section" aria-labelledby="overview-heading">
+    <p class="part-label">01</p>
+    <h2 id="overview-heading">Overview</h2>
+
+    <h3>Problem statement</h3>
+    <p>
+      Residents and visitors use the Town of Nashville website for public information and services.
+      Accessibility barriers shut people out of content they have a right to use. ServeIT tasked our team with an ACC
+      (accessibility assessment) of
+      <a href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">https://www.townofnashville.org/</a>:
+      evaluate the public site against
+      <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">WCAG</a>-minded practice,
+      then deliver recommendations the town can act on. This is assessment and handoff, not a redesign sprint on the live domain.
     </p>
-  </div>
+
+    <dl class="case-beats">
+      <div>
+        <dt>Dates</dt>
+        <dd>Fall 2026 academic term · ServeIT clinic calendar. Mid-semester honesty: assessment pipeline in progress.</dd>
+      </div>
+      <div>
+        <dt>Team</dt>
+        <dd>
+          ServeIT Fall 2026 · Nashville ACC.
+          <strong>Team Lead / Co-lead:</strong> Jade Zhao and Aanya Arora.
+          <strong>Interns:</strong> Chiara Bouckaert, Mueyae Pae, Bhumika Sati.
+          Clinic supervisor: Maya Marotti.
+          Weekly team meeting window: Thursday 18:00 to 19:00.
+        </dd>
+      </div>
+      <div>
+        <dt>The ask</dt>
+        <dd>
+          Assess accessibility of the public town website and produce clear, prioritised recommendations for town staff.
+          Recommendations only. No live-site edits. Lead Design Manager = N/A (ACC track, not a design build).
+        </dd>
+      </div>
+      <div>
+        <dt>Jade&rsquo;s role on this project</dt>
+        <dd>
+          Team Lead / Co-lead with Aanya: sprint planning, Microsoft Planner / kanban, delegation, quality of assessment work,
+          Canvas attendance / team-doc submits (co-leads alternate), and client-facing clarity through clinic channels.
+        </dd>
+      </div>
+      <div>
+        <dt>Earlier ServeIT clients (context only)</dt>
+        <dd>
+          Middle Way House · City of Bloomington · Indiana Phenology · Bloomington Chamber.
+          Those ships are not this term&rsquo;s ACC deliverable.
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <hr class="memo-rule">
+
+  <section id="client" class="case-section" aria-labelledby="client-heading">
+    <p class="part-label">02</p>
+    <h2 id="client-heading">Client</h2>
+
+    <p>
+      Client organisation: <strong>Town of Nashville</strong> (Brown County, Indiana).
+      Public website:
+      <a href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">https://www.townofnashville.org/</a>.
+      Town-side contact is coordinated through ServeIT supervision. Private emails stay off this portfolio.
+    </p>
+
+    <h3>What the client wanted</h3>
+    <p>
+      An accessibility assessment of the public town website, with findings packaged so staff can improve access
+      for residents and visitors ... without relying on a student team to edit the live site.
+      Scope of work: inspect, test, and document; compile a report; present; hand off. Do not change the live site.
+    </p>
+
+    <h3>The challenge</h3>
+    <p>
+      Municipal sites are public infrastructure. When accessibility fails, people lose access to town information and services.
+      The challenge is not &ldquo;make it look newer.&rdquo; It is to surface real barriers, prioritise what staff can fix and maintain,
+      and keep the recommendation-only boundary honest.
+    </p>
+
+    <h3>What we are doing</h3>
+    <p>
+      Stakeholder research and standards framing · ACC training · weekly Thursday meetings ·
+      Planner backlog and sprint planning · planned automated + manual accessibility checks ·
+      prioritised recommendations document for handoff. Detail in
+      <a href="#process">Process</a>.
+    </p>
+
+    <h3>Planned handoff</h3>
+    <p>
+      [placeholder: prioritised accessibility recommendations report for Town of Nashville ACC, once the evaluation pass is ready to share publicly]
+      Recommendations only. No live-site edits from the student team.
+    </p>
+  </section>
+
+  <hr class="memo-rule">
+
+  <section id="process" class="case-section" aria-labelledby="process-heading">
+    <p class="part-label">03</p>
+    <h2 id="process-heading">Process</h2>
+    <p>
+      Mid-semester honesty: we are building the assessment pipeline now. No invented audit scores or WCAG pass rates.
+      Automated scans help triage; they do not catch everything.
+    </p>
+
+    <h3>Research</h3>
+    <p>
+      Stakeholder research for Town of Nashville (clinic working docs stay offline).
+      Standards research including WCAG framing. Goal: understand visitor paths and what &ldquo;good enough for staff handoff&rdquo; looks like.
+    </p>
+    <div class="artifact-slot" role="note">
+      <p class="artifact-slot-label">Figure P1</p>
+      <p class="artifact-slot-body">[placeholder: public-safe stakeholder research summary excerpt]</p>
+    </div>
+
+    <h3>Data collection</h3>
+    <p>
+      Inventory of key public pages and visitor journeys (information, services, contact).
+      Notes in team docs. No private vulnerability dumps on this site.
+    </p>
+    <p>[placeholder: page inventory count / journey list once it is stable enough to publish]</p>
+
+    <h3>Accessibility assessment</h3>
+    <p>
+      Planned mix:
+      <a href="https://wave.webaim.org/" target="_blank" rel="noopener noreferrer">WAVE</a>
+      and
+      <a href="https://www.deque.com/axe/devtools/" target="_blank" rel="noopener noreferrer">axe DevTools</a>
+      for triage,
+      <a href="https://developer.chrome.com/docs/lighthouse/overview" target="_blank" rel="noopener noreferrer">Lighthouse</a>
+      as a supporting signal, keyboard-only passes on critical paths, and limited screen-reader spot-checks.
+      Status: training and framing in progress; full findings not claimed yet.
+    </p>
+    <p>[placeholder: first public-safe finding example with severity language, after review]</p>
+
+    <h3>Wireframes</h3>
+    <p>
+      N/A for ACC redesign. This track is recommendations-focused, not a UI redesign.
+      If annotation sketches help explain a recommendation later, they will be labelled as explanation aids, not new designs shipping live.
+    </p>
+
+    <h3>Agile / sprint workflows</h3>
+    <p>
+      Microsoft Planner (kanban / backlog) · Microsoft Teams · weekly team meeting Thursday 18:00 to 19:00 ·
+      co-lead sprint planning and Canvas attendance rhythm with Aanya.
+    </p>
+    <p>[placeholder: public-safe Planner screenshot or sprint goal wording once safe to share]</p>
+
+    <h3>Testing</h3>
+    <p>
+      Planned: automated triage + human review of priority paths.
+      [placeholder: testing notes / paths covered once evaluation runs produce public-safe examples]
+    </p>
+
+    <h3>Iteration</h3>
+    <p>
+      Findings will be re-prioritised as severity, effort, and staff maintainability become clearer.
+      The recommendations document iterates toward final handoff ... not live edits.
+    </p>
+
+    <h3>Technical decision-making</h3>
+    <p>
+      Decide what to test first, which tools to trust for triage versus confirmation, and how to phrase
+      recommendations so a town office can act without a developer on call. Boundary decision stays firm:
+      recommend, do not silently change the live municipal site.
+    </p>
+
+    <h3>Process to final solution (planned)</h3>
+    <p>
+      Research + inventory + evaluate + prioritise → prioritised accessibility recommendations for Town of Nashville.
+      [placeholder: link or excerpt of the finished recommendations report at handoff]
+    </p>
+  </section>
+
+  <hr class="memo-rule">
+
+  <section id="skills" class="case-section" aria-labelledby="skills-heading">
+    <p class="part-label">04</p>
+    <h2 id="skills-heading">Skills</h2>
+
+    <h3>Technical tools</h3>
+    <ul class="skill-chips" role="list">
+      <li>Microsoft Planner / Kanban</li>
+      <li>Microsoft Teams</li>
+      <li><a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a> (portfolio versioning)</li>
+      <li>Excel (standards / research matrices)</li>
+      <li>PowerPoint (presentation slides · planned)</li>
+    </ul>
+
+    <h3>Accessibility methods</h3>
+    <ul class="skill-chips" role="list">
+      <li>WAVE · planned / in training</li>
+      <li>axe DevTools · planned / in training</li>
+      <li>Lighthouse · supporting signal · planned</li>
+      <li>Keyboard-only testing · planned</li>
+      <li>Screen-reader spot-checks · planned</li>
+      <li>WCAG-minded review language</li>
+    </ul>
+
+    <h3>Collaboration and leadership</h3>
+    <ul class="skill-chips" role="list">
+      <li>Team Lead / Co-lead with Aanya Arora</li>
+      <li>Sprint planning and delegation</li>
+      <li>Canvas attendance / team docs (co-leads alternate)</li>
+      <li>Client communication via clinic channels</li>
+      <li>Facilitation of Thursday team meetings</li>
+    </ul>
+
+    <h3>Documentation</h3>
+    <ul class="skill-chips" role="list">
+      <li>Stakeholder research notes (clinic-side)</li>
+      <li>Standards / research matrix (Excel)</li>
+      <li>Prioritised recommendations report · planned client handoff</li>
+    </ul>
+    <p>
+      Skipped on purpose here: wireframe tools as a redesign stack, Tableau, custom APIs, and CMS rebuilds.
+      Those are not this ACC recommendations track unless a later annotation needs them.
+    </p>
+  </section>
+
+  <hr class="memo-rule">
+
+  <section id="deliverables" class="case-section" aria-labelledby="deliverables-heading">
+    <p class="part-label">05</p>
+    <h2 id="deliverables-heading">Deliverables</h2>
+    <p>
+      Early semester: labelled placeholders only. No private vulnerability screenshots, no client email paste,
+      no blocked security docs. Public homepage context is OK when added.
+    </p>
+
+    <figure class="artifact-figure">
+      <div class="artifact-slot" role="img" aria-label="Placeholder for public homepage context screenshot">
+        <p class="artifact-slot-label">Figure 1</p>
+        <p class="artifact-slot-body">
+          [placeholder: public homepage screenshot of townofnashville.org with no private vuln callouts]
+        </p>
+      </div>
+      <figcaption class="figure-caption">Figure 1. Client site context · screenshot forthcoming</figcaption>
+    </figure>
+
+    <figure class="artifact-figure">
+      <div class="artifact-slot">
+        <p class="artifact-slot-label">Figure 2</p>
+        <p class="artifact-slot-body">[placeholder: accessibility recommendations report PDF or structured doc at handoff]</p>
+      </div>
+      <figcaption class="figure-caption">Figure 2. Recommendations report · planned deliverable</figcaption>
+    </figure>
+
+    <figure class="artifact-figure">
+      <div class="artifact-slot">
+        <p class="artifact-slot-label">Figure 3</p>
+        <p class="artifact-slot-body">[placeholder: presentation slides for clinic / client readout]</p>
+      </div>
+      <figcaption class="figure-caption">Figure 3. Presentation slides · planned</figcaption>
+    </figure>
+
+    <figure class="artifact-figure">
+      <div class="artifact-slot">
+        <p class="artifact-slot-label">Figure 4</p>
+        <p class="artifact-slot-body">[placeholder: public-safe standards / research matrix excerpt]</p>
+      </div>
+      <figcaption class="figure-caption">Figure 4. Standards / research matrix · placeholder</figcaption>
+    </figure>
+
+    <h3>Before / after</h3>
+    <p>
+      N/A for now. Recommendations track ... no live-site before/after, and the student team does not edit townofnashville.org.
+      [placeholder: if the town later publishes fixes, optional public before/after with permission]
+    </p>
+
+    <h3>Testimonials</h3>
+    <p>[placeholder: client or supervisor quote, only if they give permission to publish]</p>
+
+    <h3>Wireframes / dashboards / code</h3>
+    <p>
+      N/A / light note: ACC is recommendations-only. No product dashboard or production code ship claimed for this case study.
+    </p>
+  </section>
+
+  <hr class="memo-rule">
+
+  <section id="reflection" class="case-section" aria-labelledby="reflection-heading">
+    <p class="part-label">06</p>
+    <h2 id="reflection-heading">Reflection</h2>
+    <p>
+      Mid-semester reflection that still has to read complete for Canvas: what I know now, what I am still building,
+      and what I refuse to overclaim.
+    </p>
+
+    <h3>What I learned</h3>
+    <p>
+      Leading an ACC is different from shipping a website build. The product is clarity: scope, evidence,
+      prioritisation, and language a town office can keep. Co-leading with Aanya taught me that rhythm
+      (Planner, Thursday meetings, Canvas alternation) is part of the deliverable, not admin noise.
+    </p>
+
+    <h3>Challenges encountered</h3>
+    <p>
+      Holding the recommendation-only boundary when the instinct is to &ldquo;just fix it.&rdquo;
+      Translating WCAG-minded findings into staff-actionable steps without dumping jargon.
+      Keeping private clinic detail off a public portfolio while still showing real process.
+    </p>
+
+    <h3>What I would improve</h3>
+    <p>
+      Earlier public-safe artifacts (homepage context figure, standards matrix excerpt) so graders can see the work
+      without waiting for final handoff. Tighter written severity language before the first full evaluation pass.
+      [placeholder: one concrete improvement after the next sprint retro]
+    </p>
+
+    <h3>Team communication lessons</h3>
+    <p>
+      Write the ask before the meeting. Put owners on Planner cards. Alternate Canvas admin so co-leads both stay fluent.
+      Route client outreach through clinic supervision ... do not freestyle town contacts.
+    </p>
+
+    <h3>Ethical considerations</h3>
+    <p>
+      Accessibility is access, not a compliance checkbox for its own sake.
+      Recommendations-only ethics: we do not silently change a live municipal site; we leave staff with honest priorities.
+      No overclaiming finished audit results that do not exist yet. No publishing vulnerability detail that could harm the town.
+    </p>
+
+    <h3>Technical growth</h3>
+    <p>
+      Moving from &ldquo;I can build accessible pages&rdquo; toward &ldquo;I can lead an assessment pipeline&rdquo;:
+      tool triage (WAVE, axe, keyboard), evidence notes, and handoff writing.
+      Same instinct as longer Digital Humans work: will this hold for the people who have to live with it on an ordinary day?
+    </p>
+  </section>
+
+  <p class="hero-cta">
+    <a class="btn" href="https://www.townofnashville.org/" target="_blank" rel="noopener noreferrer">Client site</a>
+    <a class="btn btn--ghost" href="code-conversions.html">Lessons</a>
+  </p>
+
   <footer class="site-footer">
-  <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
-  <p class="footer-bio">Nashville first, then lessons. Longer arc: Digital Humans people can trust on a normal Tuesday.</p>
-  <nav class="footer-links" aria-label="Site">
-    <a href="nashville-acc.html">Nashville</a>
-    <a href="code-conversions.html">Lessons</a>
-    <a href="cv.pdf">CV</a>
-    <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="mailto:jlzhao@iu.edu">Email</a>
-  </nav>
-  <p class="footer-end">Public proof · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
-</footer>
+    <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
+    <p class="footer-bio">Nashville first, then lessons. Longer arc: Digital Humans people can trust on a normal Tuesday.</p>
+    <nav class="footer-links" aria-label="Site">
+      <a href="nashville-acc.html">Nashville</a>
+      <a href="code-conversions.html">Lessons</a>
+      <a href="cv.pdf">CV</a>
+      <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:jlzhao@iu.edu">Email</a>
+    </nav>
+    <p class="footer-end">Public proof · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+  </footer>
 </main>
 </body>
 </html>
