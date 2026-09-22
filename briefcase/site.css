@@ -751,3 +751,45 @@ a:hover {
   color: var(--muted);
 }
 
+.profile-grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (min-width: 40rem) {
+  .profile-grid {
+    grid-template-columns: 11rem 1fr;
+  }
+}
+
+.profile-photo img {
+  width: 11rem;
+  height: 11rem;
+  object-fit: cover;
+  border: 4px solid var(--blue);
+  background: var(--wash);
+}
+
+.profile-links {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.profile-links a {
+  font-weight: 700;
+}
+
+.privacy-note {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid var(--line);
+  background: var(--wash);
+  max-inline-size: 58ch;
+  font-size: 0.95rem;
+}
+
