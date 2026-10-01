@@ -4,6 +4,10 @@ jadexzhao · she/her
 
 I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.
 
+The product is whether they can keep using it.
+
+Live site: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
+
 Informatics student at the Luddy School, Indiana University Bloomington. Minors in Business Technology and UX (user experience) Research. Informatics, in the way Luddy uses it, is how people, information, and technology fit together. Not just coding, and not just computers: who a system is for, whether they can use it, and whether the organisation can keep it.
 
 This GitHub is the proof account. Code and live pages that have to hold after the demo.
@@ -14,7 +18,7 @@ The [Laurie Burns McRobbie Serve IT Clinic](https://serveit.luddy.indiana.edu/) 
 
 My path is one ladder, not five jobs.
 
-- Jan 2024 to May 2024: accessibility tester (freshman start, WCAG 2.1, keyboard and screen reader, written recommendations)
+- Jan 2024 to May 2024: joined as a freshman accessibility tester. That semester the clinic took 19 students from 125 applications, about a 6.5% acceptance rate. The rate is only for the semester I got in. WCAG 2.1, keyboard and screen reader, written recommendations. Not a separate client.
 - Aug 2024 to Dec 2024: WordPress redesign lead, [Middle Way House](https://middlewayhouse.org/)
 - Jan 2025 to May 2025: web development lead, [Indiana Phenology](https://www.indianaphenology.org/)
 - Aug 2025 to Dec 2025: web designer, [Greater Bloomington Chamber of Commerce](https://www.chamberbloomington.org/)
@@ -26,10 +30,11 @@ Website and accessibility teams are the work I have done. The clinic also runs c
 
 - **[jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)** ... portfolio home
 - **[About](https://jadexzhao.github.io/jadexzhao/about.html)**
-- **[Town of Nashville case](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)** ... this semester’s audit
+- **[Serve IT partners](https://jadexzhao.github.io/jadexzhao/serve-it.html)** ... four handoffs, after the freshman tester semester
+- **[Town of Nashville rubric](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)** ... this semester’s audit, recommendations only
+- **[Why a duck farm](https://jadexzhao.github.io/jadexzhao/why-duck-farm.html)** ... a long want, not a launch
 - **[Code conversions](https://jadexzhao.github.io/jadexzhao/code-conversions.html)** ... lesson gallery
 - **[jadexzhao/matcha](https://github.com/jadexzhao/matcha)** ... Jade🪴 archive
-- **[Duck farm](https://jadexzhao.github.io/jadexzhao/duck-farm/)** ... creative sandbox I test myself
 
 Python · SQL · React · PostgreSQL · WCAG-minded clinic work.
 
