@@ -2,7 +2,7 @@
 
 jadexzhao · she/her
 
-I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.
+I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm. I want an MBA from Stanford Graduate School of Business (GSB). That is an aim, not an admission.
 
 The product is whether they can keep using it.
 
@@ -14,7 +14,7 @@ This GitHub is the proof account. Code and live pages that have to hold after th
 
 ## Serve IT
 
-The [Laurie Burns McRobbie Serve IT Clinic](https://serveit.luddy.indiana.edu/) is an undergraduate tech clinic at Luddy, and a way through the Informatics capstone. Community-engaged learning: course credit with local nonprofits and government. The capstone path is INFO I389, then INFO I489 (6 credits over two semesters), with a minimum of 3 semesters in the clinic. The clinic is where that idea meets a real partner and has to survive the handoff.
+The [Laurie Burns McRobbie Serve IT Clinic](https://serveit.luddy.indiana.edu/) is an undergraduate tech clinic at Luddy, and a way through the Informatics capstone. Community-engaged learning: course credit with local nonprofits and government. The capstone path is INFO I389, then INFO I489 (6 credits over two consecutive semesters), with a minimum of 3 semesters in the clinic. The clinic is where that idea meets a real partner and has to survive the handoff.
 
 My path is one ladder, not five jobs.
 

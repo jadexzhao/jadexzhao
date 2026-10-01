@@ -642,6 +642,7 @@ export default function App() {
     'quack-nest-gate',
     'pending',
   )
+  const showGate = showOnboard && activeNav === 'home'
 
   useEffect(() => {
     initDoorEggs()
@@ -857,7 +858,6 @@ export default function App() {
           : 0
 
   const modalOpen = matchModal !== null || obsessionOpen
-  const showGate = showOnboard && activeNav === 'home'
   const currentDiscover = filteredProfiles[discoverDeck.index]
   const routeChrome = showGate
     ? {
