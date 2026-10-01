@@ -1,11 +1,11 @@
 {
   "name": "Jade Zhao",
   "short_name": "Jade Zhao",
-  "description": "Jade Zhao · ServeIT Town of Nashville ACC · INFO-I211 code conversions · IU Luddy · May 2027",
+  "description": "Jade Zhao · Informatics at Luddy · Serve IT clinic · accessibility and handoff",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0058A3",
+  "background_color": "#F2F0EB",
+  "theme_color": "#1E3932",
   "icons": [
     {
       "src": "https://jadexzhao.github.io/jadexzhao/favicon-32x32.png?v=20260921-facecenter",

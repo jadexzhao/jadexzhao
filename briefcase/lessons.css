@@ -1,16 +1,15 @@
-/* Code-conversion lessons · catalogue product grid
-   White / blue #0058A3 / yellow #FFDB00. Flat. Mobile-safe. */
+/* Code-conversion lessons. Cream, house green, white cards. */
 
 .lessons-shell {
-  --lesson-ink: #111111;
+  --lesson-ink: #1E3932;
   --lesson-panel: #ffffff;
-  --lesson-line: #bdbdbd;
-  --lesson-accent: #0058a3;
-  --lesson-warn: #111111;
-  --lesson-ok: #0058a3;
-  --lesson-card: #f5f5f5;
-  --ikea-blue: #0058a3;
-  --ikea-yellow: #ffdb00;
+  --lesson-line: #d5ddd9;
+  --lesson-accent: #00704A;
+  --lesson-warn: #1E3932;
+  --lesson-ok: #00704A;
+  --lesson-card: #F2F0EB;
+  --ikea-blue: #00704A;
+  --ikea-yellow: #d8efe3;
 }
 
 .lessons-shell .stage--article {
@@ -278,11 +277,11 @@
 }
 
 .week-card:hover, .lesson:hover {
-  border-color: #0058a3;
+  border-color: #00704A;
 }
 @media (prefers-reduced-motion: no-preference) {
   .week-card { transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
-  .week-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 #ffdb00; }
+  .week-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 #d8efe3; }
 }
 @media (prefers-reduced-motion: reduce) {
   .week-card:hover { transform: none; box-shadow: none; }
