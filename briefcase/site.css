@@ -901,11 +901,28 @@ a:hover {
 }
 
 .life-grid figcaption {
+  display: grid;
+  gap: 0.2rem;
   margin: 0;
   padding: 0.75rem 0.7rem 0.9rem;
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--ink);
+}
+
+.life-title {
+  font-weight: 700;
+}
+
+.life-scene,
+.life-context {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.life-lens {
+  font-size: 0.88rem;
+  color: var(--house);
 }
 
 .essay-figure {
