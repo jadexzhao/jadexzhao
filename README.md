@@ -34,6 +34,7 @@ Website and accessibility teams are the work I have done. The clinic also runs c
 - **[Town of Nashville rubric](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)** ... this semester’s audit, recommendations only
 - **[Why a duck farm](https://jadexzhao.github.io/jadexzhao/why-duck-farm.html)** ... a long want, not a launch
 - **[Code conversions](https://jadexzhao.github.io/jadexzhao/code-conversions.html)** ... lesson gallery
+- **[Digital Humans](https://jadexzhao.github.io/jadexzhao/digital-humans.html)** ... research overview at Luddy
 - **[Jade🪴 client ships](https://jadexzhao.github.io/jadexzhao/matcha.html)** ... matcha.html on the portfolio
 
 Python · SQL · React · PostgreSQL · WCAG-minded clinic work.
