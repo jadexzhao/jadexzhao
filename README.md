@@ -20,7 +20,7 @@ The [Laurie Burns McRobbie Serve IT Clinic](https://serveit.luddy.indiana.edu/) 
 
 My path is one ladder, not five jobs.
 
-- Jan 2024 to May 2024: accessibility tester, City of Bloomington. The bottom of the ladder. That semester the clinic took 19 students from 125 applications, about a 6.5% acceptance rate. The rate is only for the semester I got in. WCAG 2.1 as a habit: keyboard and screen reader, then written recommendations. This is not a second Nashville.
+- Jan 2024 to May 2024: first year as an intern. Accessibility tester, City of Bloomington. The bottom of the ladder. That semester the clinic took 19 students from 125 applications, about a 6.5% acceptance rate. The rate is only for the semester I got in. WCAG 2.1 as a habit: keyboard and screen reader, then written recommendations. This is not a second Nashville.
 - Aug 2024 to Dec 2024: WordPress redesign lead, [Middle Way House](https://middlewayhouse.org/)
 - Jan 2025 to May 2025: web development lead, [Indiana Phenology](https://www.indianaphenology.org/)
 - Aug 2025 to Dec 2025: web designer, [Greater Bloomington Chamber of Commerce](https://www.chamberbloomington.org/)
