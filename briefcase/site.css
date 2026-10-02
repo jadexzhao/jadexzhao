@@ -144,13 +144,13 @@ a:hover {
 .topbar-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: var(--tap);
-  padding: 0 0.65rem;
+  min-height: 2.25rem;
+  padding: 0 0.55rem;
   color: var(--ink);
   font-size: 0.875rem;
   font-weight: 600;
   white-space: nowrap;
-  border-block-end: 2px solid transparent;
+  border-block-end: 3px solid transparent;
 }
 
 .topbar-nav a:hover {
@@ -186,7 +186,7 @@ a:hover {
 
 .hero {
   margin: 0;
-  padding: 3.25rem 1.25rem 1.5rem;
+  padding: 2.25rem 1.25rem 0.75rem;
   background: var(--canvas);
   color: var(--ink);
 }
@@ -206,7 +206,7 @@ a:hover {
 }
 
 .hero-role {
-  margin: 0 0 1.15rem;
+  margin: 0 0 0.85rem;
   max-inline-size: 40rem;
   color: var(--ink);
   font-size: 1.05rem;
@@ -215,7 +215,7 @@ a:hover {
 }
 
 .hero h1 {
-  margin: 0 0 0.85rem;
+  margin: 0 0 0.55rem;
   max-inline-size: 18em;
   color: var(--ink);
   font-size: clamp(1.85rem, 1.35rem + 1.4vw, 2.5rem);
@@ -280,9 +280,16 @@ a:hover {
 
 .how-to-read li {
   counter-increment: door;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "num title"
+    "num line";
+  column-gap: 0.65rem;
+  row-gap: 0.15rem;
+  align-items: start;
   margin: 0;
-  padding: 0.7rem 0.85rem 0.7rem 2.6rem;
-  position: relative;
+  padding: 0.85rem 1rem;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -294,12 +301,26 @@ a:hover {
 
 .how-to-read li::before {
   content: counter(door, decimal-leading-zero);
-  position: absolute;
-  inset-inline-start: 0.75rem;
-  inset-block-start: 0.75rem;
+  grid-area: num;
   color: var(--blue);
   font-size: 0.75rem;
   font-weight: 600;
+  line-height: 1.45;
+}
+
+.how-to-read .card-title {
+  grid-area: title;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.how-to-read li > p {
+  grid-area: line;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .how-to-read a {
@@ -310,7 +331,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin: 0 0 1.35rem;
+  margin: 0 0 0.9rem;
   padding: 0;
   list-style: none;
 }
@@ -341,6 +362,19 @@ a:hover {
 
 .hero-cta .btn {
   white-space: nowrap;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.7rem 0 0;
+  max-inline-size: 42rem;
+}
+
+.hero-links a {
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .btn {
@@ -455,8 +489,8 @@ a:hover {
 }
 
 .page-head {
-  margin: 0 0 1.25rem;
-  padding: 2rem 0 0.25rem;
+  margin: 0 0 0.5rem;
+  padding: 1.5rem 0 0.25rem;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -497,6 +531,17 @@ a:hover {
   border: 0;
   border-block-start: 1px solid var(--line);
   box-shadow: none;
+}
+
+.stage--home .page-outline {
+  position: sticky;
+  top: 3.05rem;
+  z-index: 30;
+  margin: 0.75rem 0 0;
+  padding: 0.35rem 0 0.45rem;
+  background: var(--canvas);
+  border-block-start: 0;
+  border-block-end: 1px solid var(--line);
 }
 
 .page-outline ol {
@@ -543,8 +588,13 @@ a:hover {
 #overview,
 #research-ships,
 #life-photos,
-#hire-path {
-  scroll-margin-top: 4.5rem;
+#hire-path,
+#bloomington,
+#middle-way,
+#phenology,
+#chamber,
+#nashville {
+  scroll-margin-top: 6.25rem;
 }
 
 /* project cards */
@@ -611,11 +661,45 @@ a:hover {
   white-space: nowrap;
 }
 
-.ladder > li {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
+.card-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "role date"
+    "role link";
+  align-items: start;
+  column-gap: 0.75rem;
+  row-gap: 0.15rem;
+  width: 100%;
+}
+
+.card-row h3 {
+  grid-area: role;
+  margin: 0;
+  min-width: 0;
+}
+
+.card-row time {
+  grid-area: date;
+  justify-self: end;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.card-row > a,
+.card-links {
+  grid-area: link;
+  justify-self: end;
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: end;
+}
+
+.card-links a {
+  font-weight: 600;
 }
 
 .story-grid,
@@ -739,10 +823,15 @@ a:hover {
 
 .life-grid img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  height: 11rem;
   object-fit: cover;
   object-position: center 18%;
+}
+
+@media (min-width: 64rem) {
+  .life-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .life-grid figcaption {
@@ -1128,10 +1217,19 @@ a:hover {
   color: var(--muted);
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 52rem) {
+  .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .topbar-brand { grid-area: 1 / 1; }
+  .topbar-actions { grid-area: 1 / 2; }
   .topbar-nav {
+    grid-area: 2 / 1 / 3 / -1;
     margin-inline-start: 0;
-    width: 100%;
+    width: auto;
   }
 }
 

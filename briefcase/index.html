@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20261001-board">
+<link rel="stylesheet" href="site.css?v=20261002-rows">
 </head>
 <body>
 <!-- Site chrome: skip-link; topbar Home · About · Serve IT (serve-it.html) · Digital Humans · Contact + CV. On this page, #serve-it still jumps the ladder. Footer adds Nashville case, GitHub, and email. -->
@@ -69,18 +69,13 @@
       <p class="hero-cta">
         <a class="btn" href="cv.pdf">CV</a>
       </p>
-      <p class="hero-subhead">
-        Five clinic semesters, from City of Bloomington accessibility tester to Town of Nashville audit lead.
-        I build systems the organisation can run after I leave.
-        The part I care about is the Monday after the demo, when the people who depend on it are still there and I am not.
+      <p class="hero-links">
+        <a href="#serve-it">Serve IT ladder</a>
+        <a href="serve-it.html">Case studies</a>
+        <a href="mailto:jlzhao@iu.edu">Email</a>
+        <a href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
       <!-- I want an MBA from Stanford Graduate School of Business. That is an aim. I have not been admitted, and I have not enrolled. -->
-      <p class="hero-cta">
-        <a class="btn btn--ghost" href="#serve-it">Serve IT ladder</a>
-        <a class="btn btn--ghost" href="serve-it.html">Case studies</a>
-        <a class="btn btn--ghost" href="mailto:jlzhao@iu.edu">Email</a>
-        <a class="btn btn--ghost" href="https://github.com/jadexzhao" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
     </div>
   </section>
 
@@ -101,11 +96,26 @@
     <nav class="how-to-read" aria-labelledby="doors-heading">
       <p class="band-kicker" id="doors-heading">How to read this</p>
       <ol>
-        <li><a href="serve-it.html">Serve IT</a>: the capstone ladder and the partner case studies.</li>
-        <li><a href="digital-humans.html">Digital Humans</a>: the research lead role at Luddy.</li>
-        <li><a href="handshake.html">Handshake</a>: career writing for students since Aug 2023.</li>
-        <li><a href="matcha.html">Jade🪴</a>: client web and branding under my name.</li>
-        <li><a href="why-duck-farm.html">Duck farm</a>: a long want, and the <a href="duck-farm/">pond sketch</a>.</li>
+        <li>
+          <a class="card-title" href="serve-it.html">Serve IT</a>
+          <p>the capstone ladder and the partner case studies.</p>
+        </li>
+        <li>
+          <a class="card-title" href="digital-humans.html">Digital Humans</a>
+          <p>the research lead role at Luddy.</p>
+        </li>
+        <li>
+          <a class="card-title" href="handshake.html">Handshake</a>
+          <p>career writing for students since Aug 2023.</p>
+        </li>
+        <li>
+          <a class="card-title" href="matcha.html">Jade🪴</a>
+          <p>client web and branding under my name.</p>
+        </li>
+        <li>
+          <a class="card-title" href="why-duck-farm.html">Duck farm</a>
+          <p>a long want, and the <a href="duck-farm/">pond sketch</a>.</p>
+        </li>
       </ol>
     </nav>
   </section>
@@ -113,6 +123,11 @@
   <section class="band page-section" id="overview" aria-labelledby="about-heading">
     <p class="band-kicker">01 · Overview</p>
     <h2 id="about-heading">Shipped proof, one ladder</h2>
+    <p>
+      Five clinic semesters, from City of Bloomington accessibility tester to Town of Nashville audit lead.
+      I build systems the organisation can run after I leave.
+      The part I care about is the Monday after the demo, when the people who depend on it are still there and I am not.
+    </p>
     <p>
       Informatics at Luddy is people, information, and technology in one system: who it is for, whether they can use it, and whether the organisation can keep it.
       The <a href="https://serveit.luddy.indiana.edu/" target="_blank" rel="noopener noreferrer">Serve IT Clinic</a> is where that becomes a capstone: INFO I389, then INFO I489, a real partner, a handoff staff can run.
@@ -139,34 +154,44 @@
     </p>
     <ol class="ladder timeline" aria-label="Serve IT semesters chronological">
       <li>
-        <time datetime="2024-01/2024-05">Jan 2024 to May 2024</time>
-        <h3>Accessibility tester, City of Bloomington</h3>
+        <div class="card-row">
+          <h3>Accessibility tester, City of Bloomington</h3>
+          <time datetime="2024-01/2024-05">Jan 2024 to May 2024</time>
+          <a href="serve-it.html#bloomington">Case study</a>
+        </div>
         <p>Freshman intern: keyboard and screen-reader tests, then written recommendations.</p>
-        <p class="ladder-link"><a href="serve-it.html#bloomington">Case study</a></p>
       </li>
       <li>
-        <time datetime="2024-08/2024-12">Aug 2024 to Dec 2024</time>
-        <h3>WordPress redesign lead, Middle Way House</h3>
+        <div class="card-row">
+          <h3>WordPress redesign lead, Middle Way House</h3>
+          <time datetime="2024-08/2024-12">Aug 2024 to Dec 2024</time>
+          <a href="serve-it.html#middle-way">Case study</a>
+        </div>
         <p>Rebuilt journeys with staff so essential information is findable.</p>
-        <p class="ladder-link"><a href="serve-it.html#middle-way">Case study</a></p>
       </li>
       <li>
-        <time datetime="2025-01/2025-05">Jan 2025 to May 2025</time>
-        <h3>Web development lead, Indiana Phenology</h3>
+        <div class="card-row">
+          <h3>Web development lead, Indiana Phenology</h3>
+          <time datetime="2025-01/2025-05">Jan 2025 to May 2025</time>
+          <a href="serve-it.html#phenology">Case study</a>
+        </div>
         <p>One navigation structure for public visitors and research users.</p>
-        <p class="ladder-link"><a href="serve-it.html#phenology">Case study</a></p>
       </li>
       <li>
-        <time datetime="2025-08/2025-12">Aug 2025 to Dec 2025</time>
-        <h3>Web designer, Greater Bloomington Chamber of Commerce</h3>
+        <div class="card-row">
+          <h3>Web designer, Greater Bloomington Chamber of Commerce</h3>
+          <time datetime="2025-08/2025-12">Aug 2025 to Dec 2025</time>
+          <a href="serve-it.html#chamber">Case study</a>
+        </div>
         <p>Stakeholder asks became pages staff can find and keep.</p>
-        <p class="ladder-link"><a href="serve-it.html#chamber">Case study</a></p>
       </li>
       <li>
-        <time datetime="2026-08">Aug 2026 to present</time>
-        <h3>First year as team lead. Accessibility auditor, Town of Nashville</h3>
+        <div class="card-row">
+          <h3>First year as team lead. Accessibility auditor, Town of Nashville</h3>
+          <time datetime="2026-08">Aug 2026 to present</time>
+          <span class="card-links"><a href="serve-it.html#nashville">Case study</a> · <a href="nashville-acc.html">Semester rubric</a></span>
+        </div>
         <p>Accessibility audit with recommendations only. No live-site edits.</p>
-        <p class="ladder-link"><a href="serve-it.html#nashville">Case study</a> · <a href="nashville-acc.html">Semester rubric</a></p>
       </li>
     </ol>
   </section>
