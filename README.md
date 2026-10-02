@@ -2,17 +2,15 @@
 
 jadexzhao · she/her
 
-I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.
+**The product is whether they can keep using it.**
+
+Informatics at the Luddy School · Serve IT capstone ships · Digital Humans Project Lead. I build and audit accessible web work for municipal and nonprofit partners (Bloomington intern to Town of Nashville team lead). This repo is public proof: code and pages that have to hold after the demo.
 
 <!-- I want an MBA from Stanford Graduate School of Business (GSB). That is an aim, not a place I have. -->
 
-The product is whether they can keep using it.
-
 Live site: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
 
-Informatics student at the Luddy School, Indiana University Bloomington. Minors in Business Technology and UX (user experience) Research. Informatics, in the way Luddy uses it, is how people, information, and technology fit together. Not just coding, and not just computers: who a system is for, whether they can use it, and whether the organisation can keep it.
-
-This GitHub is the proof account. Code and live pages that have to hold after the demo.
+Minors in Business Technology and UX (user experience) Research. Informatics, in the way Luddy uses it, is how people, information, and technology fit together: who a system is for, whether they can use it, and whether the organisation can keep it.
 
 ## Serve IT
 
