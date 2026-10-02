@@ -885,10 +885,10 @@ a:hover {
 
 .life-grid figcaption {
   margin: 0;
-  padding: 0.55rem 0.4rem 0.7rem;
-  font-size: 0.82rem;
-  line-height: 1.35;
-  color: var(--muted);
+  padding: 0.75rem 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--ink);
 }
 
 .essay-figure {
