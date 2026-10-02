@@ -2,7 +2,9 @@
 
 jadexzhao · she/her
 
-I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm. I want an MBA from Stanford Graduate School of Business (GSB). That is an aim, not an admission.
+I care about accessibility, maintainable systems, and building technology for the people who depend on it. Someday I want to open a duck farm.
+
+<!-- I want an MBA from Stanford Graduate School of Business (GSB). That is an aim, not a place I have. -->
 
 The product is whether they can keep using it.
 
@@ -18,11 +20,11 @@ The [Laurie Burns McRobbie Serve IT Clinic](https://serveit.luddy.indiana.edu/) 
 
 My path is one ladder, not five jobs.
 
-- Jan 2024 to May 2024: joined as a freshman accessibility tester. That semester the clinic took 19 students from 125 applications, about a 6.5% acceptance rate. The rate is only for the semester I got in. WCAG 2.1, keyboard and screen reader, written recommendations. Not a separate client.
+- Jan 2024 to May 2024: accessibility tester, City of Bloomington. The bottom of the ladder. That semester the clinic took 19 students from 125 applications, about a 6.5% acceptance rate. The rate is only for the semester I got in. WCAG 2.1 as a habit: keyboard and screen reader, then written recommendations. This is not a second Nashville.
 - Aug 2024 to Dec 2024: WordPress redesign lead, [Middle Way House](https://middlewayhouse.org/)
 - Jan 2025 to May 2025: web development lead, [Indiana Phenology](https://www.indianaphenology.org/)
 - Aug 2025 to Dec 2025: web designer, [Greater Bloomington Chamber of Commerce](https://www.chamberbloomington.org/)
-- Aug 2026 to present: accessibility auditor, [Town of Nashville](https://www.townofnashville.org/). Recommendations only. No live-site edits from the student team.
+- Aug 2026 to present: first year as team lead. Accessibility auditor, [Town of Nashville](https://www.townofnashville.org/). Recommendations only. No live-site edits from the student team.
 
 Website and accessibility teams are the work I have done. The clinic also runs cybersecurity, data visualisation, and Teach IT. Serve AI is a separate project. I do not fold either into this ladder.
 
