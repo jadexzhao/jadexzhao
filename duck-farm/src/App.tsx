@@ -496,7 +496,7 @@ const ROUTE_CHROME: Record<NavItem, { lede: ReactNode; note: string }> = {
     lede: (
       <>
         Ducks you chose to keep. The longer why is on{' '}
-        <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>.
+        <PondLink href="../why-duck-farm.html">why a duck farm</PondLink>.
       </>
     ),
     note: 'saved waddles',
@@ -1167,11 +1167,9 @@ export default function App() {
                     1st-person gate
                   </h2>
                   <p className="nest-gate__prompt">
-                    Would you keep this nest on a real dating app ... or delete the rest after seeing it?
-                    The longer why lives on{' '}
-                    <PondLink href={POND_HREFS.iuPages}>IU Pages</PondLink>
-                    {' and '}
-                    <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>.
+                    Would you keep this nest ... or is it only impressive in the moment?
+                    The longer why is on{' '}
+                    <PondLink href="../why-duck-farm.html">why a duck farm</PondLink>.
                   </p>
                   <div className="nest-gate__choices">
                     <RippleButton
@@ -1296,12 +1294,6 @@ export default function App() {
               <li>Nest gate ... would you keep this profile?</li>
               <li>
                 Source on <PondLink href={POND_HREFS.source}>GitHub</PondLink>
-              </li>
-              <li>
-                Classroom twin on <PondLink href={POND_HREFS.classroom}>matchaxmoxie</PondLink>
-              </li>
-              <li>
-                Essays on the water at <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>
               </li>
               <li>
                 Contrast notes on <PondLink href={POND_HREFS.wcag}>i18n ∩ WCAG</PondLink>

@@ -40,13 +40,6 @@ Website and accessibility teams are the work I have done. The clinic also runs c
 
 Python · SQL · React · PostgreSQL · WCAG-minded clinic work.
 
-## Other GitHubs
-
-Same person. Different job.
-
-- [zhao-langxi](https://github.com/zhao-langxi) ... essays and research notes
-- [matchaxmoxie](https://github.com/matchaxmoxie) ... cookie classroom
-
 ## Contact
 
 [jlzhao@iu.edu](mailto:jlzhao@iu.edu) · [LinkedIn](https://www.linkedin.com/in/zhao-langxi/) · [@zhao.langxi](https://instagram.com/zhao.langxi)

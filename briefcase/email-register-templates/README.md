@@ -8,7 +8,7 @@ Three Outlook-safe HTML emails for the UK register / IU gear matrix (business ca
 |---|---|---|
 | `business-casual.html` | Default for recruiters / hiring managers | [briefcase](https://jadexzhao.github.io/jadexzhao/) |
 | `professional.html` | Formal UK hedging / first contact | IU institutional register |
-| `iu-gear.html` | Brand / community identity first | [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) |
+| `iu-gear.html` | Brand / community identity first | Campus register. Not a separate public site. |
 
 ## UK-facing portfolio note
 

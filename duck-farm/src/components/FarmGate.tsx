@@ -74,10 +74,8 @@ export function FarmGate({ onEnter, onNest, theme, onToggleTheme, embedded }: Fa
 
       <p className="farm-gate__aside">
         <PondLink href="../why-duck-farm.html">Why this pond</PondLink>
-        . Long-term creative throughline. Self-tested on this pond. Built on{' '}
+        . A long want, tested on this pond. Portfolio on{' '}
         <PondLink href={POND_HREFS.briefcase}>jadexzhao</PondLink>
-        . Essays on the water at{' '}
-        <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>
         . Not a dating product.
       </p>
     </Tag>
