@@ -1,15 +1,15 @@
-/* Code-conversion lessons. Cream, house green, white cards. */
+/* Lesson pages. Light surface, blue accent, small radius. */
 
 .lessons-shell {
-  --lesson-ink: #1E3932;
+  --lesson-ink: #242424;
   --lesson-panel: #ffffff;
-  --lesson-line: #d5ddd9;
-  --lesson-accent: #00704A;
-  --lesson-warn: #1E3932;
-  --lesson-ok: #00704A;
-  --lesson-card: #F2F0EB;
-  --ikea-blue: #00704A;
-  --ikea-yellow: #d8efe3;
+  --lesson-line: #EDEBE9;
+  --lesson-accent: #0078D4;
+  --lesson-warn: #242424;
+  --lesson-ok: #0078D4;
+  --lesson-card: #FAF9F8;
+  --ikea-blue: #0078D4;
+  --ikea-yellow: #F3F2F1;
 }
 
 .lessons-shell .stage--article {
@@ -33,7 +33,7 @@
   min-height: 2.5rem;
   padding: 0 0.85rem;
   border: 2px solid var(--ikea-blue);
-  border-radius: 0;
+  border-radius: 8px;
   background: #ffffff;
   color: var(--ikea-blue);
   text-decoration: none;
@@ -64,7 +64,7 @@
   min-height: 10rem;
   padding: 1.1rem 1rem;
   border: 2px solid var(--lesson-line);
-  border-radius: 0;
+  border-radius: 8px;
   background: #ffffff;
   text-decoration: none;
   color: inherit;
@@ -108,7 +108,7 @@
   margin: 0 0 2rem;
   padding: 1rem;
   border: 2px solid var(--lesson-line);
-  border-radius: 0;
+  border-radius: 8px;
   background: #ffffff;
   max-width: 100%;
   overflow: hidden;
@@ -144,7 +144,7 @@
   aspect-ratio: 16 / 9;
   margin: 0 0 0.85rem;
   border: 2px solid #111111;
-  border-radius: 0;
+  border-radius: 8px;
   overflow: hidden;
   background: #111111;
 }
@@ -198,7 +198,7 @@
 .tryit pre {
   margin: 0;
   padding: 0.85rem 0.9rem;
-  border-radius: 0;
+  border-radius: 8px;
   border: 2px solid var(--ikea-blue);
   background: #f5f5f5;
   overflow: auto;
@@ -221,7 +221,7 @@
 
 .concept-cards li {
   padding: 0.7rem 0.75rem;
-  border-radius: 0;
+  border-radius: 8px;
   border: 1px solid var(--ikea-blue);
   background: #ffffff;
   font-size: 0.92rem;
@@ -277,11 +277,11 @@
 }
 
 .week-card:hover, .lesson:hover {
-  border-color: #00704A;
+  border-color: #0078D4;
 }
 @media (prefers-reduced-motion: no-preference) {
   .week-card { transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease; }
-  .week-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 #d8efe3; }
+  .week-card:hover { transform: none; box-shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.08); }
 }
 @media (prefers-reduced-motion: reduce) {
   .week-card:hover { transform: none; box-shadow: none; }
