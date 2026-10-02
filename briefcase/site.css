@@ -321,6 +321,10 @@ a:hover {
   margin-block-end: 1.15rem;
 }
 
+.prose .story-stack {
+  margin-block-end: 1.25rem;
+}
+
 .band > p {
   margin: 0 0 1rem;
   color: var(--ink);
@@ -980,6 +984,44 @@ a:hover {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--house);
+}
+
+.story-stack {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.35rem 0 0.65rem;
+  max-inline-size: 62ch;
+}
+
+.story-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-card {
+  margin: 0;
+  padding: 1rem 1.05rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  display: grid;
+  gap: 0.25rem;
+}
+
+.ladder-link {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.ladder .story-stack {
+  margin-block-end: 0.35rem;
+}
+
+.case-section .story-stack + p {
+  margin-block-start: 0.75rem;
 }
 
 .essay-figure {
