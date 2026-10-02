@@ -6,7 +6,7 @@ jadexzhao · she/her
 
 Informatics at the Luddy School · Serve IT capstone ships · Digital Humans Project Lead. I build and audit accessible web work for municipal and nonprofit partners (Bloomington intern to Town of Nashville team lead). This repo is public proof: code and pages that have to hold after the demo.
 
-<!-- I want an MBA from Stanford Graduate School of Business (GSB). That is an aim, not a place I have. -->
+<!-- I want an MBA from Stanford Graduate School of Business. That is an aim. I have not been admitted, and I have not enrolled. -->
 
 Live site: [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
 
@@ -35,6 +35,7 @@ Website and accessibility teams are the work I have done. The clinic also runs c
 - **[Why a duck farm](https://jadexzhao.github.io/jadexzhao/why-duck-farm.html)** ... a long want, not a launch
 - **[Code conversions](https://jadexzhao.github.io/jadexzhao/code-conversions.html)** ... lesson gallery
 - **[Digital Humans](https://jadexzhao.github.io/jadexzhao/digital-humans.html)** ... research overview at Luddy
+- **[Handshake](https://jadexzhao.github.io/jadexzhao/handshake.html)** ... career posts since Aug 2023
 - **[Jade🪴 client ships](https://jadexzhao.github.io/jadexzhao/matcha.html)** ... matcha.html on the portfolio
 
 Python · SQL · React · PostgreSQL · WCAG-minded clinic work.

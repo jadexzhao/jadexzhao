@@ -43,6 +43,10 @@ export function FarmGate({ onEnter, onNest, theme, onToggleTheme, embedded }: Fa
         A pond that has to hold every morning. Ducks, water, grass, mud. Jade tests it herself.
       </p>
 
+      <p className="farm-gate__rooms">
+        Pond is the morning feed. Discover is other ducks. Waddles is what you kept. Nest is you.
+      </p>
+
       <div className="farm-gate__ctas">
         <a
           href="#pond"
@@ -69,7 +73,8 @@ export function FarmGate({ onEnter, onNest, theme, onToggleTheme, embedded }: Fa
       </div>
 
       <p className="farm-gate__aside">
-        Long-term creative throughline. Self-tested on this pond. Built on{' '}
+        <PondLink href="../why-duck-farm.html">Why this pond</PondLink>
+        . Long-term creative throughline. Self-tested on this pond. Built on{' '}
         <PondLink href={POND_HREFS.briefcase}>jadexzhao</PondLink>
         . Essays on the water at{' '}
         <PondLink href={POND_HREFS.essays}>zhao-langxi</PondLink>

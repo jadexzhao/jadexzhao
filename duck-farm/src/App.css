@@ -527,7 +527,16 @@
   font-size: var(--step-1);
   line-height: 1.45;
   color: var(--ink);
+  margin: 0 0 var(--space-s);
+  position: relative;
+}
+
+.farm-gate__rooms {
+  max-width: 36ch;
   margin: 0 0 var(--space-l);
+  font-size: var(--step-0);
+  line-height: 1.45;
+  color: var(--ink);
   position: relative;
 }
 

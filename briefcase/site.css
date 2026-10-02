@@ -193,6 +193,40 @@ a:hover {
   color: #e7f2ec;
 }
 
+.hero-aim {
+  margin: 0 0 1rem;
+  max-inline-size: 46rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.how-to-read {
+  margin: 0 0 1.2rem;
+  max-inline-size: 46rem;
+}
+
+.how-to-read p {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #d8efe3;
+}
+
+.how-to-read ol {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+  color: #e7f2ec;
+  line-height: 1.5;
+}
+
+.how-to-read a {
+  color: #fff;
+  font-weight: 700;
+}
+
 .hero-name-line {
   font-weight: 700;
   color: #fff;
