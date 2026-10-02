@@ -316,6 +316,11 @@ a:hover {
   color: var(--house);
 }
 
+.prose .band-lede,
+.page-head .band-lede {
+  margin-block-end: 1.15rem;
+}
+
 .band > p {
   margin: 0 0 1rem;
   color: var(--ink);
