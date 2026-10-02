@@ -34,10 +34,11 @@ body {
   margin: 0;
   font-family: var(--font);
   font-size: 1.0625rem;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -47,10 +48,18 @@ img {
 
 a {
   color: var(--blue);
+  text-underline-offset: 0.18em;
 }
 
 a:hover {
   color: var(--ink);
+}
+
+.topbar a,
+.btn,
+.footer-links a,
+.case-toc a {
+  text-decoration: none;
 }
 
 :focus-visible {
@@ -231,7 +240,11 @@ a:hover {
 
 /* cards */
 .band {
-  margin-block: 2rem;
+  margin-block: 2.75rem;
+}
+
+.band + .band {
+  padding-block-start: 0.25rem;
 }
 
 .band-kicker {
@@ -246,14 +259,17 @@ a:hover {
 }
 
 .band h2 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.7rem);
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.55rem, 1.25rem + 1vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .band > p {
   margin: 0 0 1rem;
-  color: var(--muted);
-  max-inline-size: 48ch;
+  color: var(--ink);
+  max-inline-size: 62ch;
+  line-height: 1.65;
 }
 
 .card-grid {
@@ -669,8 +685,8 @@ a:hover {
 }
 
 .case-section {
-  margin: 1.15rem 0;
-  padding: 1.15rem 1.15rem 0.35rem;
+  margin: 1.5rem 0;
+  padding: 1.35rem 1.35rem 0.55rem;
   background: #fff;
   border: 1px solid var(--line);
   border-left: 4px solid var(--house);
@@ -837,6 +853,7 @@ a:hover {
 
 .stage--home {
   width: min(72rem, 100%);
+  padding-block-start: 2.5rem;
 }
 
 .footer-end {
@@ -912,17 +929,22 @@ a:hover {
 
 .ladder {
   display: grid;
-  gap: 0.75rem;
-  margin: 0.5rem 0 0;
+  gap: 0.85rem;
+  margin: 1.15rem 0 0;
   padding: 0;
   list-style: none;
+}
+
+#serve-it,
+.case-section {
+  scroll-margin-top: 5.5rem;
 }
 
 .ladder li {
   background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--blue);
-  padding: 0.85rem 1rem;
+  padding: 1.05rem 1.15rem 1.1rem;
 }
 
 .ladder time {
@@ -935,8 +957,9 @@ a:hover {
 }
 
 .ladder h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
 }
 
 .ladder p {
