@@ -1094,3 +1094,128 @@ a:hover {
   margin: 0 0 0.4rem;
 }
 
+/* page IA: home outline, section bands, timeline ladder */
+.page-outline {
+  margin: 0 0 1.75rem;
+  padding: 0.9rem 1rem 0.85rem;
+  background: var(--card);
+  border: 2px solid var(--line);
+}
+
+.page-outline-label {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.page-outline ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: page-outline;
+}
+
+.page-outline li {
+  margin: 0;
+  counter-increment: page-outline;
+}
+
+.page-outline a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--house);
+}
+
+.page-outline a::before {
+  content: counter(page-outline, decimal-leading-zero) " · ";
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+}
+
+.page-outline a:hover,
+.page-outline a:focus-visible {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.page-outline--compact {
+  margin-block-end: 1.25rem;
+}
+
+.page-section {
+  scroll-margin-top: 5.5rem;
+}
+
+.stage--home > .page-section {
+  padding-block-start: 1.25rem;
+  border-block-start: 3px solid var(--line);
+}
+
+.stage--home > .page-outline + .page-section,
+.stage--home > nav.page-outline + .page-section {
+  border-block-start: 0;
+  padding-block-start: 0;
+}
+
+.hero .hero-proof.proof-band li {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.prose .page-section {
+  margin-block: 2rem 0;
+  padding-block-start: 1.5rem;
+  border-block-start: 3px solid var(--line);
+}
+
+.prose .page-section:first-of-type {
+  border-block-start: 0;
+  padding-block-start: 0;
+  margin-block-start: 0;
+}
+
+.page-section h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 1.1rem + 0.9vw, 1.85rem);
+  line-height: 1.2;
+}
+
+.page-section .case-section {
+  margin-block: 1rem 0;
+}
+
+.page-section .case-section:first-of-type {
+  margin-block-start: 0.5rem;
+}
+
+#overview,
+#research-ships,
+#life-photos,
+#hire-path {
+  scroll-margin-top: 5.5rem;
+}
+
+.timeline.ladder > li {
+  position: relative;
+}
+
+@media (min-width: 40rem) {
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 52rem) {
+  .story-grid--home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

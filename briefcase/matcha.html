@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20261001-nav">
+<link rel="stylesheet" href="site.css?v=20261001-structure">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -41,19 +41,38 @@
     <p class="band-kicker">Client work</p>
     <h1>Jade🪴</h1>
     <p class="standfirst">Web, branding, and software I ship under my own name for small businesses and nonprofits. Hire proof for clinic partners stays on Serve IT; this page is the client-facing lane.</p>
+  </header>
+  <div class="prose">
+    <nav class="page-outline page-outline--compact" aria-label="Page sections">
+      <p class="page-outline-label">On this page</p>
+      <ol>
+        <li><a href="#jade-brand">Jade🪴</a></li>
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#ships">Ships</a></li>
+      </ol>
+    </nav>
+    <section class="page-section" id="jade-brand" aria-labelledby="brand-heading">
+      <p class="band-kicker">01 · Brand</p>
+      <h2 id="brand-heading">Jade🪴 client lane</h2>
     <div class="story-stack">
       <span class="life-title">Jade🪴</span>
       <span class="life-scene">Founder-led builds: sites, social, and light software when the owner cannot keep a developer on call.</span>
       <span class="life-context">Grew up in a family Chinese restaurant in central Indiana (Greenfield, Indiana); Friday night on the floor is the same handoff test as a nonprofit site after students leave.</span>
       <span class="life-lens">Judged on whether they can keep using it Monday morning, not on demo polish.</span>
     </div>
-  </header>
-  <div class="prose">
+    </section>
+    <section class="page-section" id="scope" aria-labelledby="scope-heading">
+      <p class="band-kicker">02 · Scope</p>
+      <h2 id="scope-heading">Who, what, how judged</h2>
     <p class="band-lede">
       <strong>Who it is for:</strong> small businesses and nonprofits without a full-time web team.
       <strong>What shipped:</strong> public sites, branding, and marketing surfaces staff can run.
       <strong>How judged:</strong> handoff the owner or staff can keep without me on retainer.
     </p>
+    </section>
+    <section class="page-section" id="ships" aria-labelledby="ships-heading">
+      <p class="band-kicker">03 · Ships</p>
+      <h2 id="ships-heading">Client proof</h2>
     <ul class="story-grid" aria-label="Jade🪴 ships">
       <li class="story-card">
         <span class="life-title">Family restaurant · New Palestine</span>
@@ -74,6 +93,7 @@
         <span class="life-lens">One builder name, one handoff standard.</span>
       </li>
     </ul>
+    </section>
     <p class="hero-cta">
       <a class="btn" href="contact.html">Email for client work</a>
       <a class="btn" href="serve-it.html">Serve IT case studies</a>
