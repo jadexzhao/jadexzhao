@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Scratch-style duck costumes: tap a sprite for fun facts about Jade Zhao ... gardening, matcha, central Indiana, and the creative pond throughline.">
+  <meta name="theme-color" content="#990000">
+  <title>Duck costumes · fun facts · Jade Zhao</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/duck-scratch.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="serve-it.html">Serve IT</a>
+    <a href="digital-humans.html">Digital Humans</a>
+    <a href="student-life.html">Student life</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="topbar-actions">
+    <a class="btn btn--sm" href="cv.pdf">CV</a>
+  </div>
+</header>
+<main id="main-content" class="stage stage--article" tabindex="-1">
+  <header class="page-head">
+    <p class="band-kicker">Code conversations</p>
+    <h1>Duck costumes</h1>
+    <p class="standfirst">A blocky stage, not Scratch itself. Pick a costume; the sprite says a true fun fact. Same playful thread as <a href="code-conversations.html">how I talk about code</a> ... green flag, try it, revise.</p>
+  </header>
+
+  <div class="scratch-app" data-scratch-app>
+    <div class="scratch-app__bar">
+      <button type="button" class="scratch-flag" id="scratch-run" aria-describedby="scratch-run-hint">
+        <span class="scratch-flag__icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Run programme</span>
+      </button>
+      <p id="scratch-run-hint" class="scratch-hint-block">
+        <span class="scratch-hint-block__cap" aria-hidden="true">when</span>
+        <span class="scratch-hint-block__label">green flag clicked</span>
+      </p>
+      <p class="scratch-app__intro muted">Click the flag or press <kbd>R</kbd> to hear the welcome line. Tab through costumes; Enter or Space to switch.</p>
+    </div>
+
+    <div class="scratch-app__layout">
+      <section class="scratch-stage-wrap" aria-labelledby="scratch-stage-heading">
+        <h2 id="scratch-stage-heading" class="visually-hidden">Stage</h2>
+        <div class="scratch-stage" id="scratch-stage">
+          <div class="scratch-stage__sky" aria-hidden="true"></div>
+          <div class="scratch-sprite" id="scratch-sprite" role="img" aria-label="Duck sprite on stage">
+            <svg class="scratch-sprite__svg" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true" focusable="false">
+              <ellipse class="sprite-body" cx="60" cy="58" rx="42" ry="32"/>
+              <circle class="sprite-head" cx="78" cy="38" r="22"/>
+              <polygon class="sprite-bill" points="98,38 118,42 98,48"/>
+              <circle class="sprite-eye" cx="86" cy="34" r="4" fill="#1a1614"/>
+              <ellipse class="sprite-wing" cx="48" cy="58" rx="18" ry="12"/>
+            </svg>
+          </div>
+          <div class="scratch-say" id="scratch-say" role="status" aria-live="polite">
+            <p class="scratch-say__text" id="scratch-say-text">Press the green flag or choose a costume to begin.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="scratch-panel" aria-labelledby="scratch-costumes-heading">
+        <h2 id="scratch-costumes-heading">Sprites · costumes</h2>
+        <ul class="scratch-costume-list" id="scratch-costume-list">
+          <li>
+            <button type="button" class="scratch-costume is-selected" data-costume="garden" aria-pressed="true">
+              <span class="scratch-costume__thumb scratch-costume__thumb--garden" aria-hidden="true"></span>
+              <span class="scratch-costume__name">Garden duck</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="scratch-costume" data-costume="matcha" aria-pressed="false">
+              <span class="scratch-costume__thumb scratch-costume__thumb--matcha" aria-hidden="true"></span>
+              <span class="scratch-costume__name">Matcha duck</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="scratch-costume" data-costume="hoosier" aria-pressed="false">
+              <span class="scratch-costume__thumb scratch-costume__thumb--hoosier" aria-hidden="true"></span>
+              <span class="scratch-costume__name">Hoosier duck</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="scratch-costume" data-costume="shutter" aria-pressed="false">
+              <span class="scratch-costume__thumb scratch-costume__thumb--shutter" aria-hidden="true"></span>
+              <span class="scratch-costume__name">Shutter duck</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="scratch-costume" data-costume="pond" aria-pressed="false">
+              <span class="scratch-costume__thumb scratch-costume__thumb--pond" aria-hidden="true"></span>
+              <span class="scratch-costume__name">Pond duck</span>
+            </button>
+          </li>
+        </ul>
+        <p class="scratch-panel__note muted">Costumes are personas, not a product demo. Want the bigger build? <a href="/jadexzhao/duck-farm/">Full pond sketch</a> (React + Vite).</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p class="muted">Part of <a href="code-conversations.html">code conversations</a>. Archived essay on the long want: <a href="archive/portfolio-2026-10-03/why-duck-farm.html">why a duck farm</a>.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
+    <p class="footer-bio">One room for IU Student Life: Digital Humans, Serve IT, MAP, and community proof that compounds.</p>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="code-conversations.html">Code conversations</a></li>
+      <li><a href="duck-scratch.html" aria-current="page">Duck costumes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cv.pdf">CV</a></li>
+    </ul>
+    <p class="footer-end">Public proof · <a href="https://jadexzhao.github.io/jadexzhao/">jadexzhao.github.io/jadexzhao</a></p>
+  </div>
+</footer>
+<script>
+(function () {
+  var costumes = {
+    garden: {
+      label: "Garden duck",
+      colours: { body: "#6b8f4e", head: "#7aa35c", bill: "#e8a84a", wing: "#5a7a42" },
+      fact: "I keep herbs and cherry tomatoes on a Bloomington windowsill. Gardening is the slow counterweight to screen time ... if a plant wilts, I notice before a user files a bug."
+    },
+    matcha: {
+      label: "Matcha duck",
+      colours: { body: "#3d6b4a", head: "#006b45", bill: "#f4c9a8", wing: "#2d5238" },
+      fact: "I whisk matcha when I want focus without another espresso spiral. The matchaxmoxie classroom site borrows the colour; the ritual is mine, not a brand deck."
+    },
+    hoosier: {
+      label: "Hoosier duck",
+      colours: { body: "#990000", head: "#b30000", bill: "#ff9f4a", wing: "#6b0000" },
+      fact: "I grew up in central Indiana (Greenfield) in a family Chinese restaurant. A system either survives a real Friday night rush or it does not ... same instinct I bring to clinic handoffs."
+    },
+    shutter: {
+      label: "Shutter duck",
+      colours: { body: "#4a5568", head: "#2d3748", bill: "#f6ad55", wing: "#718096" },
+      fact: "Film photography and long walks are how I notice light and pace before I wireframe anything. Madrid on Film was a diary phase; the habit stuck."
+    },
+    pond: {
+      label: "Pond duck",
+      colours: { body: "#4a90c4", head: "#3a7aad", bill: "#ffb347", wing: "#2e6f9e" },
+      fact: "Ducks stay in my creative throughline: a pond I poke at when I want code that feels like morning chores, not a slide feature list. The full sketch is optional depth, not the homepage lead."
+    }
+  };
+
+  var welcome = "Hi! I am costume duck. Pick a card or tap me ... I will say a fun fact in Jade's voice.";
+
+  var stage = document.getElementById("scratch-stage");
+  var sprite = document.getElementById("scratch-sprite");
+  var sayText = document.getElementById("scratch-say-text");
+  var list = document.getElementById("scratch-costume-list");
+  var runBtn = document.getElementById("scratch-run");
+  var current = "garden";
+  var hasRun = false;
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function applyColours(key) {
+    var c = costumes[key].colours;
+    var svg = sprite.querySelector(".scratch-sprite__svg");
+    if (!svg) return;
+    svg.querySelector(".sprite-body").setAttribute("fill", c.body);
+    svg.querySelector(".sprite-head").setAttribute("fill", c.head);
+    svg.querySelector(".sprite-bill").setAttribute("fill", c.bill);
+    svg.querySelector(".sprite-wing").setAttribute("fill", c.wing);
+    sprite.setAttribute("aria-label", costumes[key].label + " on stage");
+  }
+
+  function say(message) {
+    sayText.textContent = message;
+  }
+
+  function selectCostume(key, fromUser) {
+    if (!costumes[key]) return;
+    current = key;
+    applyColours(key);
+    var buttons = list.querySelectorAll(".scratch-costume");
+    buttons.forEach(function (btn) {
+      var on = btn.getAttribute("data-costume") === key;
+      btn.classList.toggle("is-selected", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    if (fromUser || hasRun) {
+      say(costumes[key].fact);
+      if (!prefersReducedMotion()) {
+        stage.classList.remove("scratch-stage--pop");
+        void stage.offsetWidth;
+        stage.classList.add("scratch-stage--pop");
+      }
+    }
+  }
+
+  function runProgramme() {
+    hasRun = true;
+    say(welcome);
+    if (!prefersReducedMotion()) {
+      sprite.classList.remove("scratch-sprite--wave");
+      void sprite.offsetWidth;
+      sprite.classList.add("scratch-sprite--wave");
+    }
+    selectCostume(current, false);
+    if (hasRun) say(costumes[current].fact);
+  }
+
+  list.addEventListener("click", function (e) {
+    var btn = e.target.closest(".scratch-costume");
+    if (!btn) return;
+    hasRun = true;
+    selectCostume(btn.getAttribute("data-costume"), true);
+  });
+
+  list.addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    var buttons = Array.prototype.slice.call(list.querySelectorAll(".scratch-costume"));
+    var idx = buttons.indexOf(document.activeElement);
+    if (idx === -1) return;
+    e.preventDefault();
+    var next = e.key === "ArrowDown" ? Math.min(idx + 1, buttons.length - 1) : Math.max(idx - 1, 0);
+    buttons[next].focus();
+  });
+
+  runBtn.addEventListener("click", runProgramme);
+  sprite.addEventListener("click", function () {
+    hasRun = true;
+    selectCostume(current, true);
+  });
+  sprite.setAttribute("tabindex", "0");
+  sprite.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      hasRun = true;
+      selectCostume(current, true);
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.target.matches("input, textarea, select") || e.target.isContentEditable) return;
+    if (e.key === "r" || e.key === "R") {
+      e.preventDefault();
+      runProgramme();
+    }
+  });
+
+  applyColours(current);
+})();
+</script>
+</body>
+</html>
