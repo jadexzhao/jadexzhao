@@ -1,38 +1,44 @@
 /*
  * jadexzhao briefcase
- * Spacing, type scale, and alignment ideas (not CSS) from
- * https://kellyleedekay.com/portfolio-kld-2026/
- * and https://madeline-baker.com/work
- * Selected-work book: poster name, campaign credit, numbered plates.
- * Small label, large title, tight lines. Wide space between plates.
- * Quiet slate band under the nav. Players stay 16:9 with a hairline.
+ * Warm cream personal portfolio (pre-AI), with Scratch accents for
+ * duck-scratch and light orange / motion blue on handoffs.
+ * Not a full Scratch clone sitewide.
  *
- * Palette: paper #f3f5f7, ink #12141a, muted #5a6170,
- * hairline #d5dae3, accent slate-blue #1e4d6b.
+ * Palette: outer cream #f6efe3, card #ffffff, powder line #c3d4de,
+ * sky #4a90c4, garden #4a6b3d, Scratch orange #ff8c1a, motion #4c97ff,
+ * green flag #4cbf56. Type: Arial / Helvetica first.
  */
 
 :root {
   color-scheme: light;
-  --paper: #f3f5f7;
+  --paper: #f6efe3;
   --well: #ffffff;
-  --ink: #12141a;
-  --muted: #5a6170;
-  --line: #d5dae3;
-  --accent: #1e4d6b;
-  --accent-deep: #163a52;
-  --focus: #12141a;
-  --serif: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
-  --sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --ink: #1c1612;
+  --muted: #5a5048;
+  --line: #c3d4de;
+  --accent: #4a90c4;
+  --accent-deep: #2f6f9a;
+  --garden: #4a6b3d;
+  --scratch-orange: #ff8c1a;
+  --scratch-orange-deep: #e46c00;
+  --motion: #4c97ff;
+  --looks: #9966ff;
+  --events: #ffbf00;
+  --operators: #59c059;
+  --flag: #4cbf56;
+  --focus: #1c1612;
+  --serif: Arial, Helvetica, sans-serif;
+  --sans: Arial, Helvetica, sans-serif;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --measure: 43.75rem;
-  --fs-label: 0.72rem;
+  --measure: 40rem;
+  --fs-label: 0.8125rem;
   --fs-body: 1.0625rem;
-  --fs-lead: 1.22rem;
-  --fs-title: clamp(2.05rem, 4.6vw, 2.75rem);
-  --fs-section: clamp(1.2rem, 2vw, 1.45rem);
-  --fs-display: clamp(3.35rem, 10.5vw, 5.35rem);
-  --space-entry: clamp(3.5rem, 8.5vw, 5.75rem);
-  --space-rule: clamp(2.15rem, 5vw, 3.15rem);
+  --fs-lead: 1.2rem;
+  --fs-title: clamp(1.55rem, 3vw, 1.95rem);
+  --fs-section: clamp(1.25rem, 2vw, 1.5rem);
+  --fs-display: clamp(2.35rem, 6.5vw, 3.4rem);
+  --space-entry: clamp(2.25rem, 5vw, 3.5rem);
+  --space-rule: clamp(1.5rem, 3.5vw, 2.25rem);
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -72,8 +78,7 @@ body {
   font-size: var(--fs-body);
   line-height: 1.62;
   color: var(--ink);
-  background:
-    linear-gradient(180deg, #eef1f4 0%, var(--paper) 18rem, var(--paper) 100%);
+  background: var(--paper);
 }
 
 h1,
@@ -164,34 +169,34 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 40;
-  padding: calc(1rem + var(--safe-t)) 0 0.7rem;
-  background: var(--paper);
-  border-bottom: 0;
+  padding: calc(0.85rem + var(--safe-t)) 0 0.55rem;
+  background: var(--well);
+  border-bottom: 2px solid var(--line);
 }
 
 .topbar::after {
   content: "";
   display: block;
-  height: 0.5rem;
-  background: var(--accent);
+  height: 0.35rem;
+  background: var(--scratch-orange);
 }
 
 .topbar__inner {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.85rem 1.25rem;
+  gap: 0.65rem 1.25rem;
 }
 
 .topbar-brand {
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 650;
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   text-decoration: none;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--scratch-orange);
 }
 
 .topbar-brand:hover {
@@ -331,9 +336,10 @@ a:hover {
   height: auto;
   margin: 0;
   overflow: hidden;
-  background: #0e1218;
-  border: 1px solid var(--line);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent);
+  background: #1e2228;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  box-shadow: none;
 }
 
 .drive-frame {
@@ -356,9 +362,10 @@ a:hover {
   aspect-ratio: 16 / 9;
   object-fit: contain;
   margin-top: 0.85rem;
-  background: #0e1218;
-  border: 1px solid var(--line);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent);
+  background: #1e2228;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  box-shadow: none;
 }
 
 .clip + .clip {
@@ -439,10 +446,10 @@ a:hover {
   margin: 0 0 0.7rem;
   font-family: var(--sans);
   font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--garden);
 }
 
 .page-head + .prose {
@@ -453,7 +460,7 @@ a:hover {
   margin: var(--space-entry) 0 0;
   padding-top: var(--space-rule);
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
   scroll-margin-top: 8rem;
 }
 
@@ -492,7 +499,10 @@ a:hover {
   font-size: 0.92em;
 }
 
-.caption,
+.caption {
+  color: var(--garden);
+}
+
 .muted,
 .media-note,
 .contact-note {
@@ -518,7 +528,7 @@ a:hover {
   margin: var(--space-entry) 0 0;
   padding-top: var(--space-rule);
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
 }
 
 .case-section h2 {
@@ -551,16 +561,7 @@ a:hover {
 #foundation > .case-section::before,
 #make-and-post > .case-section::before,
 #more-channels > .case-section::before {
-  content: counter(plate, decimal-leading-zero);
-  display: block;
-  margin: 0 0 0.45rem;
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 0.88rem;
-  font-weight: 650;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.18em;
-  line-height: 1;
+  content: none;
 }
 
 #partner-writeups .case-section h2 a,
@@ -583,11 +584,11 @@ a:hover {
   margin: 0 0 0.4rem;
   font-family: var(--sans);
   font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.35;
-  text-transform: uppercase;
-  color: var(--accent);
+  text-transform: none;
+  color: var(--garden);
 }
 
 .story-stack,
@@ -816,10 +817,59 @@ kbd {
   font-size: 0.95em;
 }
 
+/* Full Scratch editor chrome when the stage is on the page. */
+body:has(.scratch-app) {
+  background: #e9eef2;
+}
+
+body:has(.scratch-app) .topbar {
+  background: var(--scratch-orange);
+  border-bottom: 3px solid var(--scratch-orange-deep);
+}
+
+body:has(.scratch-app) .topbar::after {
+  display: none;
+}
+
+body:has(.scratch-app) .topbar-brand {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+}
+
+body:has(.scratch-app) .topbar-brand:hover {
+  color: #fff;
+}
+
+body:has(.scratch-app) .topbar-nav a {
+  color: #fff;
+}
+
+body:has(.scratch-app) .topbar-nav a:hover,
+body:has(.scratch-app) .topbar-nav a[aria-current="page"] {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+body:has(.scratch-app) .page-head h1 {
+  color: var(--ink);
+}
+
+body:has(.scratch-app) a {
+  color: var(--motion);
+}
+
+body:has(.scratch-app) a:hover {
+  color: #2e6fd6;
+}
+
 .scratch-app {
   margin: 0 0 var(--space-4);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--line);
+  padding: 0.85rem;
+  background: #f0f4f7;
+  border: 2px solid #b3b9c0;
+  border-radius: 8px;
 }
 
 .scratch-app__bar {
@@ -827,7 +877,11 @@ kbd {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.65rem;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 6px;
 }
 
 .scratch-app__intro {
@@ -844,7 +898,7 @@ kbd {
   padding: 0;
   border: 2px solid #1a6b38;
   border-radius: 4px;
-  background: #2faf62;
+  background: var(--flag);
   cursor: pointer;
 }
 
@@ -862,25 +916,33 @@ kbd {
   align-items: center;
   gap: 0.35rem;
   margin: 0;
-  padding: 0.35rem 0.55rem;
+  padding: 0.4rem 0.65rem;
   font-weight: 700;
-  background: #f3d36a;
+  color: var(--ink);
+  background: var(--events);
+  border-radius: 1rem 1rem 4px 4px;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12);
 }
 
 .scratch-hint-block__cap {
-  font-weight: 600;
+  font-weight: 700;
   color: #5c4a00;
 }
 
 .scratch-hint-block__label {
-  padding: 0.1rem 0.35rem;
-  background: #2f9a4a;
-  color: #fff;
+  padding: 0.1rem 0.4rem;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
 }
 
 .scratch-app__layout {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.25rem;
+}
+
+.scratch-stage-wrap {
+  min-width: 0;
 }
 
 .scratch-stage {
@@ -888,8 +950,14 @@ kbd {
   aspect-ratio: 4 / 3;
   max-height: 22rem;
   overflow: hidden;
-  background: #e7f3ea;
-  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, #cce9ff 0%, #e8f6ff 45%, #fff 100%);
+  border: 2px solid #b3b9c0;
+  border-radius: 8px;
+}
+
+.scratch-stage__sky {
+  display: none;
 }
 
 .scratch-sprite {
@@ -910,8 +978,9 @@ kbd {
   right: 0.75rem;
   bottom: 0.75rem;
   padding: 0.7rem 0.8rem;
-  background: var(--well);
-  border: 1px solid var(--line);
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
 }
 
 .scratch-say__text {
@@ -919,10 +988,19 @@ kbd {
   font-size: 1rem;
 }
 
+.scratch-panel {
+  min-width: 0;
+  padding: 0.85rem;
+  background: #fff;
+  border: 2px solid #b3b9c0;
+  border-radius: 8px;
+}
+
 .scratch-panel h2 {
   margin: 0 0 0.75rem;
-  font-family: var(--serif);
-  font-size: 1.25rem;
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .scratch-costume-list {
@@ -930,7 +1008,7 @@ kbd {
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .scratch-costume {
@@ -939,34 +1017,40 @@ kbd {
   gap: 0.75rem;
   width: 100%;
   min-height: 2.75rem;
-  padding: 0.45rem 0;
+  padding: 0.45rem 0.55rem;
   font: inherit;
   text-align: left;
   color: var(--ink);
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--line);
+  background: #f7f9fb;
+  border: 2px solid var(--line);
+  border-radius: 6px;
   cursor: pointer;
 }
 
+.scratch-costume.is-selected {
+  border-color: var(--motion);
+  background: #e8f1ff;
+}
+
 .scratch-costume.is-selected .scratch-costume__name {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  color: var(--motion);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .scratch-costume__thumb {
   flex-shrink: 0;
   width: 1.75rem;
   height: 1.75rem;
-  border-radius: 2px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.scratch-costume__thumb--garden { background: #6b8f4e; }
+.scratch-costume__thumb--garden { background: var(--operators); }
 .scratch-costume__thumb--matcha { background: #3d6b4a; }
-.scratch-costume__thumb--hoosier { background: #6b2b24; }
-.scratch-costume__thumb--shutter { background: #4a5568; }
-.scratch-costume__thumb--pond { background: #4a90c4; }
+.scratch-costume__thumb--hoosier { background: #990000; }
+.scratch-costume__thumb--shutter { background: var(--looks); }
+.scratch-costume__thumb--pond { background: var(--motion); }
 
 .scratch-costume__name {
   font-weight: 600;
@@ -974,6 +1058,13 @@ kbd {
 
 .scratch-panel__note {
   margin: 0.9rem 0 0;
+}
+
+@media (min-width: 48rem) {
+  .scratch-app__layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+    align-items: start;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1077,13 +1168,13 @@ kbd {
   width: fit-content;
   max-width: 100%;
   margin: 0 0 1.15rem;
-  color: var(--accent);
+  color: var(--garden);
   font-family: var(--sans);
   font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.4;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .folio .hero-lead {
@@ -1108,7 +1199,7 @@ kbd {
   padding-top: var(--space-rule);
   padding-bottom: 0;
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
 }
 
 #contact.folio-block {
@@ -1116,57 +1207,47 @@ kbd {
 }
 
 .folio-block > h2 {
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.15rem;
   font-family: var(--sans);
-  font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.3;
-  text-transform: uppercase;
-  color: var(--accent);
+  text-transform: none;
+  color: var(--ink);
 }
 
 #work {
-  counter-reset: plate;
+  counter-reset: none;
 }
 
 .work-item {
   min-width: 0;
   max-width: 100%;
   padding: 0;
-  counter-increment: plate;
 }
 
 .work-item::before {
-  content: counter(plate, decimal-leading-zero);
-  display: block;
-  margin: 0 0 0.4rem;
-  color: var(--accent);
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.16em;
-  line-height: 1;
+  content: none;
 }
 
 .work-item + .work-item {
   margin-top: var(--space-entry);
   padding-top: var(--space-rule);
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
 }
 
 .work-cat,
 .prose h3.pillar {
   margin: 0 0 0.35rem;
-  color: var(--accent);
+  color: var(--garden);
   font-family: var(--sans);
   font-size: var(--fs-label);
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.35;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .prose h3.pillar {
@@ -1239,7 +1320,7 @@ kbd {
   min-width: 0;
   padding: 0.85rem 0 0.9rem;
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
 }
 
 .skill-grid > div:first-child {
@@ -1261,10 +1342,9 @@ kbd {
 
 .exp-list li {
   position: relative;
-  padding: 1rem 0 1.05rem 2.85rem;
+  padding: 1rem 0 1.05rem;
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
-  counter-increment: exp;
+  box-shadow: none;
 }
 
 .exp-list li:first-child {
@@ -1273,19 +1353,7 @@ kbd {
 }
 
 .exp-list li::before {
-  content: counter(exp, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 1.15rem;
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.14em;
-}
-
-.exp-list li:first-child::before {
-  top: 0.15rem;
+  content: none;
 }
 
 .contact-line {
@@ -1316,7 +1384,7 @@ kbd {
   margin: var(--space-entry) 0 0;
   border: 0;
   border-top: 1px solid var(--line);
-  box-shadow: inset 0 2px 0 0 var(--accent);
+  box-shadow: none;
   height: 0;
 }
 
