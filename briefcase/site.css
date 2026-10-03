@@ -1,28 +1,35 @@
 /*
  * jadexzhao briefcase
- * Home structure (not CSS) from https://kellyleedekay.com/portfolio-kld-2026/
- * Name, place, one intersection line, work list, how I work, experience, contact.
- * Also looked at https://www.basicagency.com/ and https://andwalsh.com/
- * and https://madeline-baker.com/work for a short work list. CSS not copied.
+ * Spacing, type scale, and alignment ideas (not CSS) from
+ * https://kellyleedekay.com/portfolio-kld-2026/
+ * and https://madeline-baker.com/work
+ * One reading column, quiet labels, titles flush with the text under them,
+ * open space between name, intro, work, groups, and contact.
  *
- * Palette: warm paper #f4efe6, ink #1c1612, muted #5a5048,
- * line #ddd2c4, lacquer #7a342c, lacquer deep #4e1f1a, well #fbf7f1.
+ * Palette: paper #f7f6f3, ink #161616, muted #5c584f,
+ * hairline #e4e0d8, accent #1f4d3a.
  */
 
 :root {
   color-scheme: light;
-  --paper: #f4efe6;
-  --well: #fbf7f1;
-  --ink: #1c1612;
-  --muted: #5a5048;
-  --line: #ddd2c4;
-  --accent: #7a342c;
-  --accent-deep: #4e1f1a;
-  --focus: #1c1612;
+  --paper: #f7f6f3;
+  --well: #ffffff;
+  --ink: #161616;
+  --muted: #5c584f;
+  --line: #e4e0d8;
+  --accent: #1f4d3a;
+  --accent-deep: #163828;
+  --focus: #161616;
   --serif: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
   --sans: "Source Sans 3", "Segoe UI", sans-serif;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
   --measure: 40rem;
+  --fs-label: 0.8125rem;
+  --fs-body: 1.0625rem;
+  --fs-lead: 1.3125rem;
+  --fs-title: clamp(1.7rem, 3vw, 2.05rem);
+  --fs-section: clamp(1.35rem, 2.2vw, 1.6rem);
+  --fs-display: clamp(2.85rem, 8vw, 4.25rem);
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -42,7 +49,7 @@
 }
 
 html {
-  scroll-padding-top: 8rem;
+  scroll-padding-top: 6.5rem;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -53,11 +60,14 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   margin: 0;
   overflow-x: clip;
   font-family: var(--sans);
-  font-size: 1.125rem;
-  line-height: 1.55;
+  font-size: var(--fs-body);
+  line-height: 1.6;
   color: var(--ink);
   background: var(--paper);
 }
@@ -68,8 +78,13 @@ h2 {
 }
 
 img,
-video {
+video,
+iframe {
   max-width: 100%;
+}
+
+img,
+video {
   height: auto;
   display: block;
 }
@@ -129,6 +144,7 @@ a:hover {
 
 .shell {
   width: min(var(--measure), 100%);
+  max-width: 100%;
   margin-inline: auto;
   padding-inline: max(1.25rem, var(--safe-l)) max(1.25rem, var(--safe-r));
 }
@@ -293,8 +309,9 @@ a:hover {
 .player {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
   background: var(--ink);
   border: 1px solid var(--line);
@@ -322,7 +339,7 @@ a:hover {
 }
 
 .clip + .clip {
-  margin-top: 1.15rem;
+  margin-top: 1.75rem;
 }
 
 .media-grid .clip + .clip {
@@ -333,11 +350,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.35rem;
+  gap: 0.4rem;
   width: 100%;
   max-width: 100%;
-  margin-top: 0.65rem;
-  font-size: 1.05rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
 .media-frame {
@@ -357,16 +375,22 @@ a:hover {
 }
 
 .stage {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding-bottom: calc(var(--space-5) + var(--safe-b));
 }
 
 .page-head {
-  padding-block: var(--space-5) var(--space-4);
+  padding-block: clamp(2.75rem, 7vw, 4.5rem) clamp(1.75rem, 4vw, 2.5rem);
 }
 
 .page-head h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  margin: 0 0 1.15rem;
+  font-size: clamp(2.35rem, 6vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
 }
 
 .page-head .sub {
@@ -383,16 +407,17 @@ a:hover {
 .band-lede,
 .matcha-lede {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.45;
+  max-width: none;
+  font-size: var(--fs-lead);
+  line-height: 1.5;
 }
 
 .band-kicker {
-  margin: 0 0 0.6rem;
-  font-size: 0.8rem;
+  margin: 0 0 0.65rem;
+  font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   color: var(--muted);
 }
 
@@ -402,8 +427,8 @@ a:hover {
 }
 
 .prose h2 {
-  margin: 0 0 0.8rem;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 0.9rem;
+  font-size: var(--fs-section);
 }
 
 .prose ul,
@@ -422,7 +447,7 @@ a:hover {
   overflow-x: auto;
   font-size: 0.95rem;
   line-height: 1.5;
-  background: #fffdf8;
+  background: var(--well);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -457,9 +482,17 @@ a:hover {
   border-top: 1px solid var(--line);
 }
 
+.case-section h2 {
+  font-size: var(--fs-title);
+  line-height: 1.15;
+}
+
 .part-label {
-  margin: 0 0 0.4rem;
-  font-size: 0.95rem;
+  margin: 0 0 0.45rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
   color: var(--muted);
 }
 
@@ -526,10 +559,10 @@ a:hover {
 }
 
 .case-beats dt {
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   color: var(--muted);
 }
 
@@ -591,10 +624,10 @@ a:hover {
 
 .reflection-band__label {
   margin: 0 0 0.4rem;
-  font-size: 0.8rem;
+  font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   color: var(--ink);
 }
 
@@ -614,7 +647,12 @@ a:hover {
 }
 
 .site-footer {
-  padding: var(--space-4) 0 calc(2.5rem + var(--safe-b));
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  padding: clamp(2rem, 5vw, 2.75rem) 0 calc(2.5rem + var(--safe-b));
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 1rem;
@@ -778,7 +816,7 @@ kbd {
   right: 0.75rem;
   bottom: 0.75rem;
   padding: 0.7rem 0.8rem;
-  background: #fffdf8;
+  background: var(--well);
   border: 1px solid var(--line);
 }
 
@@ -868,125 +906,190 @@ kbd {
 
 @media (max-width: 42rem) {
   html {
-    scroll-padding-top: 14rem;
+    scroll-padding-top: 8.5rem;
+  }
+
+  .topbar {
+    padding-bottom: 0.35rem;
+  }
+
+  .topbar__inner {
+    gap: 0.15rem;
   }
 
   .topbar-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 1rem;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
   }
 
   .topbar-nav a {
+    flex: 0 1 auto;
+    max-width: 100%;
     min-height: 2.75rem;
-    padding: 0.45rem 0.7rem;
+    padding: 0.35rem 0;
     white-space: normal;
-    border-bottom: 1px solid var(--line);
+    border: 0;
   }
 
-  .topbar-nav a:nth-child(odd) {
-    border-right: 1px solid var(--line);
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  .footer-links a,
+  .footer-links--quiet a {
+    max-width: 100%;
+    white-space: normal;
   }
 }
 
-/* Home: name, place, work list, skills, experience, contact. One column on a phone. */
+/* Home: one reading column. Space between name, intro, work, groups, contact. */
 .folio .hero {
-  padding-block: clamp(2.5rem, 8vw, 5rem) 1rem;
+  padding-top: clamp(2.75rem, 7vw, 4.75rem);
+  padding-bottom: 0.25rem;
 }
 
 .folio .hero h1 {
-  margin: 0 0 0.6rem;
-  font-size: clamp(3rem, 12vw, 5.25rem);
+  margin: 0 0 clamp(1.5rem, 3.5vw, 2.25rem);
+  font-size: var(--fs-display);
+  line-height: 1.02;
 }
 
 .folio .place {
-  margin: 0 0 1.75rem;
+  margin: 0 0 0.7rem;
   color: var(--muted);
   font-size: 1rem;
-}
-
-.folio .hero-lead {
-  max-width: 36rem;
-  margin: 0;
-  font-family: var(--sans);
-  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
-  font-weight: 400;
-  letter-spacing: 0;
   line-height: 1.45;
 }
 
+.folio .hero-lead {
+  max-width: none;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
 .folio .intersect {
-  max-width: 34rem;
-  margin: 1.25rem 0 0;
-  font-size: 1.15rem;
+  max-width: none;
+  margin: 1.35rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.55;
 }
 
 .folio-block {
-  padding-block: clamp(2.25rem, 6vw, 3.5rem);
+  margin-top: clamp(3rem, 7vw, 4.75rem);
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-bottom: 0;
   border-top: 1px solid var(--line);
+}
+
+#contact.folio-block {
+  margin-top: clamp(3.5rem, 8vw, 5.5rem);
 }
 
 .folio-block > h2 {
-  margin: 0 0 1.25rem;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.15rem);
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: var(--fs-section);
   font-weight: 650;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .work-item {
-  padding-block: 1.75rem 0.25rem;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
 }
 
 .work-item + .work-item {
-  margin-top: 1.5rem;
-  padding-top: 1.75rem;
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding-top: clamp(2.25rem, 5vw, 3.25rem);
   border-top: 1px solid var(--line);
 }
 
-.work-cat {
-  margin: 0 0 0.35rem;
-  color: var(--muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.work-cat,
+.prose h3.pillar {
+  margin: 0 0 0.45rem;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.prose h3.pillar {
+  margin-top: 1.5rem;
 }
 
 .work-item h3,
 .skill-grid h3,
 .exp-list h3 {
-  margin: 0 0 0.55rem;
   font-family: var(--serif);
-  font-size: clamp(1.55rem, 3vw, 2.15rem);
   font-weight: 650;
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
 
-.work-item ul {
+.work-item h3 {
   margin: 0 0 0.85rem;
-  padding-left: 1.15rem;
+  font-size: var(--fs-title);
+}
+
+.work-item ul {
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
 }
 
 .work-item li {
-  margin: 0.2rem 0;
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 0;
 }
 
-.work-item p,
+.work-item li::before {
+  content: "·";
+  position: absolute;
+  left: -0.85rem;
+  color: var(--muted);
+}
+
+.work-item > p,
+.folio-note {
+  margin: 0;
+}
+
+.skill-grid h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+}
+
 .skill-grid p,
-.exp-list p,
-.folio-note,
-.contact-line {
-  margin: 0 0 0.75rem;
+.exp-list p {
+  margin: 0;
 }
 
 .skill-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.35rem 1.75rem;
-  margin-bottom: 1.25rem;
+  gap: clamp(1.85rem, 4.5vw, 2.85rem);
+  margin: 0 0 clamp(1.85rem, 4vw, 2.6rem);
+}
+
+.skill-grid > div {
+  min-width: 0;
 }
 
 .exp-list {
@@ -996,9 +1099,14 @@ kbd {
   counter-reset: exp;
 }
 
+.exp-list h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+}
+
 .exp-list li {
   position: relative;
-  padding: 0.9rem 0 0.9rem 2.5rem;
+  padding: 1.35rem 0 1.35rem 2.75rem;
   border-top: 1px solid var(--line);
   counter-increment: exp;
 }
@@ -1007,18 +1115,15 @@ kbd {
   content: counter(exp, decimal-leading-zero);
   position: absolute;
   left: 0;
-  top: 1.05rem;
+  top: 1.55rem;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .contact-line {
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  line-height: 1.4;
-}
-
-@media (min-width: 42rem) {
-  .skill-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  margin: 0 0 1.15rem;
+  font-size: var(--fs-lead);
+  line-height: 1.45;
 }
