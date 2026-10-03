@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://jadexzhao.github.io/jadexzhao/sitemap.xml
