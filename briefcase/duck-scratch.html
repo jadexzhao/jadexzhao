@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Duck costumes, a small aside. Tap a costume for a true fun fact.">
+  <meta name="description" content="A Scratch page for fun. Pick a costume and the duck says a true fun fact.">
   <meta name="theme-color" content="#f4efe6">
   <title>Duck costumes · fun facts · Jade Zhao</title>
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -33,7 +33,7 @@
   
   <div class="shell"><header class="page-head">
     <h1>Duck costumes</h1>
-    <p class="standfirst">A small aside. Pick a costume and the duck says a true fun fact. Related: <a href="https://matchaxmoxie.github.io/matchaxmoxie/">code conversations</a>.</p>
+    <p class="standfirst">My Scratch page for fun. Pick a costume and the duck says a true fun fact. Code help is on <a href="https://matchaxmoxie.github.io/matchaxmoxie/">matchaxmoxie</a>.</p>
   </header>
 
   <div class="scratch-app" data-scratch-app>
@@ -46,7 +46,7 @@
         <span class="scratch-hint-block__cap" aria-hidden="true">when</span>
         <span class="scratch-hint-block__label">green flag clicked</span>
       </p>
-      <p class="scratch-app__intro muted">Click the flag or press <kbd>R</kbd> to hear the welcome line. Tab through costumes; Enter or Space to switch.</p>
+      <p class="scratch-app__intro muted">Click the flag or press <kbd>R</kbd> and she'll say hi. Tab through the costumes. Enter or Space switches.</p>
     </div>
 
     <div class="scratch-app__layout">
@@ -103,20 +103,20 @@
             </button>
           </li>
         </ul>
-        <p class="scratch-panel__note muted">Costumes are personas, not a product demo. Want the bigger build? <a href="/jadexzhao/duck-farm/">Full pond sketch</a> (React + Vite).</p>
+        <p class="scratch-panel__note muted">Costumes for fun. The bigger pond sketch is <a href="/jadexzhao/duck-farm/">here</a> if you want it (React + Vite).</p>
       </aside>
     </div>
   </div>
 
   <div class="prose">
-    <p class="muted">Part of <a href="code-conversations.html">code conversations</a>.</p>
+    <p class="muted">It also sits with <a href="code-conversations.html">code conversations</a>.</p>
   </div>
   </div>
 </main>
 <footer class="site-footer">
   <div class="shell">
     <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
-    <p class="footer-bio">For a family restaurant, and for students.</p>
+    <p class="footer-bio">IU student. Restaurant posts, campus videos, and pages.</p>
     <nav class="footer-links" aria-label="Site">
       <a href="about.html">About</a>
       <a href="serve-it.html">Serve IT</a>
@@ -140,31 +140,31 @@
     garden: {
       label: "Garden duck",
       colours: { body: "#6b8f4e", head: "#7aa35c", bill: "#e8a84a", wing: "#5a7a42" },
-      fact: "I keep herbs and cherry tomatoes on a Bloomington windowsill. Gardening is the slow counterweight to screen time ... if a plant wilts, I notice before a user files a bug."
+      fact: "I keep herbs and cherry tomatoes on a Bloomington windowsill. If a plant wilts, I notice. The screen can wait."
     },
     matcha: {
       label: "Matcha duck",
       colours: { body: "#3d6b4a", head: "#006b45", bill: "#f4c9a8", wing: "#2d5238" },
-      fact: "I whisk matcha when I want focus without another espresso spiral. The matchaxmoxie classroom site borrows the colour; the ritual is mine, not a brand deck."
+      fact: "I whisk matcha when I want to focus and coffee sounds like too much. The matchaxmoxie site uses this green. I just like the drink."
     },
     hoosier: {
       label: "Hoosier duck",
       colours: { body: "#990000", head: "#b30000", bill: "#ff9f4a", wing: "#6b0000" },
-      fact: "I grew up in New Palestine, in central Indiana (Greenfield, IN), in a family Chinese restaurant."
+      fact: "I grew up in a family Chinese restaurant in New Palestine, in central Indiana (Greenfield, IN)."
     },
     shutter: {
       label: "Shutter duck",
       colours: { body: "#4a5568", head: "#2d3748", bill: "#f6ad55", wing: "#718096" },
-      fact: "Film photography and long walks are how I notice light and pace before I wireframe anything."
+      fact: "I shoot film and take long walks. That's when I notice the light, before I start a page."
     },
     pond: {
       label: "Pond duck",
       colours: { body: "#4a90c4", head: "#3a7aad", bill: "#ffb347", wing: "#2e6f9e" },
-      fact: "Ducks stay in my creative throughline: a pond I poke at when I want code that feels like morning chores, not a slide feature list. The full sketch is optional depth, not the homepage lead."
+      fact: "I play with ducks when I want a small coding project. The full pond sketch is there if you want more. This page is the fun one."
     }
   };
 
-  var welcome = "Hi! I am costume duck. Pick a card or tap me ... I will say a fun fact in Jade's voice.";
+  var welcome = "Hi, I'm the costume duck. Pick a card or tap me and I'll tell you a fun fact.";
 
   var stage = document.getElementById("scratch-stage");
   var sprite = document.getElementById("scratch-sprite");
