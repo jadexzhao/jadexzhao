@@ -1,10 +1,9 @@
 /*
  * jadexzhao briefcase
- * Direction: warm campaign index.
- * Feeling adapted from these portfolios. Their CSS was not copied.
- * https://www.basicagency.com/  quiet paper, small wordmark, air around the type
- * https://andwalsh.com/         food and brand work as stacked rows in one column
- * https://meglewis.com/         a personal marketing voice with large type
+ * Home structure (not CSS) from https://kellyleedekay.com/portfolio-kld-2026/
+ * Name, place, one intersection line, work list, how I work, experience, contact.
+ * Also looked at https://www.basicagency.com/ and https://andwalsh.com/
+ * and https://madeline-baker.com/work for a short work list. CSS not copied.
  *
  * Palette: warm paper #f4efe6, ink #1c1612, muted #5a5048,
  * line #ddd2c4, lacquer #7a342c, lacquer deep #4e1f1a, well #fbf7f1.
@@ -888,5 +887,138 @@ kbd {
 
   .topbar-nav a:nth-child(odd) {
     border-right: 1px solid var(--line);
+  }
+}
+
+/* Home: name, place, work list, skills, experience, contact. One column on a phone. */
+.folio .hero {
+  padding-block: clamp(2.5rem, 8vw, 5rem) 1rem;
+}
+
+.folio .hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(3rem, 12vw, 5.25rem);
+}
+
+.folio .place {
+  margin: 0 0 1.75rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.folio .hero-lead {
+  max-width: 36rem;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+.folio .intersect {
+  max-width: 34rem;
+  margin: 1.25rem 0 0;
+  font-size: 1.15rem;
+}
+
+.folio-block {
+  padding-block: clamp(2.25rem, 6vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.folio-block > h2 {
+  margin: 0 0 1.25rem;
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.work-item {
+  padding-block: 1.75rem 0.25rem;
+}
+
+.work-item + .work-item {
+  margin-top: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.work-cat {
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.work-item h3,
+.skill-grid h3,
+.exp-list h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.work-item ul {
+  margin: 0 0 0.85rem;
+  padding-left: 1.15rem;
+}
+
+.work-item li {
+  margin: 0.2rem 0;
+}
+
+.work-item p,
+.skill-grid p,
+.exp-list p,
+.folio-note,
+.contact-line {
+  margin: 0 0 0.75rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: exp;
+}
+
+.exp-list li {
+  position: relative;
+  padding: 0.9rem 0 0.9rem 2.5rem;
+  border-top: 1px solid var(--line);
+  counter-increment: exp;
+}
+
+.exp-list li::before {
+  content: counter(exp, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.contact-line {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+}
+
+@media (min-width: 42rem) {
+  .skill-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

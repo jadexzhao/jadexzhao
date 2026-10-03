@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="I do the restaurant social, Handshake videos, and a Scratch page for fun.">
+  <meta name="description" content="For my parents and for students on campus. I do the restaurant social, Handshake videos, and a Scratch page for fun.">
   <meta name="theme-color" content="#f4efe6">
   <title>Jade Zhao · 赵郎溪</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="folio">
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="topbar">
@@ -44,83 +44,119 @@
   </div>
 </header>
 
-<section class="hero" aria-labelledby="hero-headline">
-  <div class="shell">
-    <h1 id="hero-headline">For my parents and for students on campus.</h1>
-    <p class="hero-lead">I do the restaurant social, Handshake videos, and a Scratch page for fun.</p>
-  </div>
-</section>
-
 <main id="main-content" class="stage stage--home" tabindex="-1">
   <div class="shell">
-    <h2 class="visually-hidden">Work</h2>
+    <header class="hero">
+      <h1>Jade Zhao</h1>
+      <p class="place">IU Luddy, Bloomington. Informatics student.</p>
+      <p class="hero-lead">For my parents and for students on campus. I do the restaurant social, Handshake videos, and a <a href="duck-scratch.html">Scratch page</a> for fun.</p>
+      <p class="intersect">I do the social and the page, for my parents' restaurant and for students.</p>
+    </header>
 
-    <article class="campaign" id="restaurant" aria-labelledby="restaurant-heading">
-      <h2 id="restaurant-heading">Family restaurant</h2>
-      <p>It's my family's Chinese restaurant, in New Palestine, in central Indiana (Greenfield, IN).</p>
-      <p>I do the social, the site, and the marketing.</p>
-      <p>Tuesday to Sunday, 11 AM to 9 PM. Closed Mondays.</p>
-      <p><a href="https://sites.google.com/view/potstickers/home">Potstickers</a></p>
-    </article>
+    <section class="folio-block" id="work" aria-labelledby="work-heading">
+      <h2 id="work-heading">Work</h2>
 
-    <article class="campaign" id="handshake" aria-labelledby="handshake-heading">
-      <h2 id="handshake-heading">Handshake</h2>
-      <p>Two videos I made for students on Handshake. Same shoot.</p>
-      <figure class="clip">
-        <div class="player">
-          <iframe class="drive-frame" src="https://drive.google.com/file/d/1bw_ic7xdUu7a6nrgk36oPYSt_Gj5IiER/preview" title="Handshake campus video 1" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        <figcaption>First Handshake video. <a href="https://drive.google.com/file/d/1bw_ic7xdUu7a6nrgk36oPYSt_Gj5IiER/view?usp=sharing" rel="noopener noreferrer">Watch on Drive</a></figcaption>
-        <video class="media-video" controls preload="metadata" playsinline>
-          <source src="assets/handshake/handshake-campus-clip-01.mov" type="video/quicktime">
-          <a href="assets/handshake/handshake-campus-clip-01.mov">Local copy of campus video 1</a>
-        </video>
-      </figure>
-      <figure class="clip">
-        <div class="player">
-          <iframe class="drive-frame" src="https://drive.google.com/file/d/1VibFcR2EyQzQFrdkrNph5RxDDUJXLZyN/preview" title="Handshake campus video 2" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        <figcaption>Second one, from the same shoot. <a href="https://drive.google.com/file/d/1VibFcR2EyQzQFrdkrNph5RxDDUJXLZyN/view?usp=sharing" rel="noopener noreferrer">Watch on Drive</a></figcaption>
-        <video class="media-video" controls preload="metadata" playsinline>
-          <source src="assets/handshake/handshake-campus-clip-02.mov" type="video/quicktime">
-          <a href="assets/handshake/handshake-campus-clip-02.mov">Local copy of campus video 2</a>
-        </video>
-      </figure>
-      <p class="media-note">No captions yet. <a href="mailto:jlzhao@iu.edu">Email me</a> if you need a transcript. More on <a href="handshake.html">Handshake</a>.</p>
-    </article>
+      <article class="work-item" id="restaurant" aria-labelledby="restaurant-heading">
+        <p class="work-cat">Restaurant social and web</p>
+        <h3 id="restaurant-heading">Family restaurant</h3>
+        <ul>
+          <li>New Palestine, in central Indiana (Greenfield, IN).</li>
+          <li>Social, the site, and the marketing.</li>
+          <li>Tuesday to Sunday, 11 AM to 9 PM. Closed Mondays.</li>
+        </ul>
+        <p><a href="https://sites.google.com/view/potstickers/home">The restaurant site</a></p>
+      </article>
 
-    <aside class="aside-note" aria-labelledby="duck-heading">
-      <h2 id="duck-heading" class="visually-hidden">Scratch</h2>
-      <p>The Scratch page is for fun. It's <a href="duck-scratch.html">duck costumes</a>.</p>
-    </aside>
+      <article class="work-item" id="handshake" aria-labelledby="handshake-heading">
+        <p class="work-cat">Student content</p>
+        <h3 id="handshake-heading">Handshake</h3>
+        <ul>
+          <li>Two videos for students on Handshake.</li>
+          <li>Same shoot. Watch each one here, or on Drive.</li>
+        </ul>
+        <figure class="clip">
+          <div class="player">
+            <iframe class="drive-frame" src="https://drive.google.com/file/d/1bw_ic7xdUu7a6nrgk36oPYSt_Gj5IiER/preview" title="Handshake campus video 1" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <figcaption>First video. <a href="https://drive.google.com/file/d/1bw_ic7xdUu7a6nrgk36oPYSt_Gj5IiER/view?usp=sharing" rel="noopener noreferrer">Watch on Drive</a></figcaption>
+        </figure>
+        <figure class="clip">
+          <div class="player">
+            <iframe class="drive-frame" src="https://drive.google.com/file/d/1VibFcR2EyQzQFrdkrNph5RxDDUJXLZyN/preview" title="Handshake campus video 2" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <figcaption>Second video. <a href="https://drive.google.com/file/d/1VibFcR2EyQzQFrdkrNph5RxDDUJXLZyN/view?usp=sharing" rel="noopener noreferrer">Watch on Drive</a></figcaption>
+        </figure>
+        <p><a href="handshake.html">Handshake page</a></p>
+      </article>
 
-    <article class="campaign" id="code-conversations" aria-labelledby="code-heading">
-      <h2 id="code-heading">Code conversations</h2>
-      <p>Five weeks of Informatics (INFO-I211). Watch one, then try it yourself.</p>
-      <p><a href="code-conversations.html">Code conversations</a></p>
-    </article>
-
-    <article class="campaign" id="serve-it" aria-labelledby="serve-heading">
-      <h2 id="serve-heading">Serve IT</h2>
-      <p>For nonprofit staff who have to use the page after we leave.</p>
-      <p>I make pages people can use.</p>
-      <p><a href="serve-it.html">Serve IT</a></p>
-    </article>
-
-    <section class="strip" aria-labelledby="strip-heading">
-      <h2 id="strip-heading" class="visually-hidden">Campus and research</h2>
-      <p>I'm an HHSP Program Assistant.</p>
-      <p>Undergraduate research with <a href="https://undergradresearch.indiana.edu/">IU Undergraduate Education</a>, Aug to Dec 2025. I looked at privacy and consumer technology, and whether people can tell what they're consenting to.</p>
-      <p><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></p>
+      <article class="work-item" id="serve-it" aria-labelledby="serve-heading">
+        <p class="work-cat">Pages for nonprofits</p>
+        <h3 id="serve-heading">Serve IT</h3>
+        <ul>
+          <li>For nonprofit staff who have to use the page after we leave.</li>
+          <li>I make pages people can use.</li>
+          <li>I started by testing the City of Bloomington site.</li>
+        </ul>
+        <p><a href="serve-it.html">See the pages</a></p>
+      </article>
     </section>
 
+    <section class="folio-block" id="how" aria-labelledby="how-heading">
+      <h2 id="how-heading">How I work</h2>
+      <div class="skill-grid">
+        <div>
+          <h3>Social posts</h3>
+          <p>For the restaurant, and for students.</p>
+        </div>
+        <div>
+          <h3>Simple sites</h3>
+          <p>Pages someone else can open and use.</p>
+        </div>
+        <div>
+          <h3>Handshake video</h3>
+          <p>Two campus videos, on this page.</p>
+        </div>
+        <div>
+          <h3>Serve IT pages</h3>
+          <p>Pages staff still use after we leave.</p>
+        </div>
+        <div>
+          <h3><a href="digital-humans.html">Digital Humans</a></h3>
+          <p>A project I care about.</p>
+        </div>
+      </div>
+      <p class="folio-note"><a href="https://matchaxmoxie.github.io/matchaxmoxie/i211.html">Code clips</a></p>
+    </section>
+
+    <section class="folio-block" id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <ol class="exp-list">
+        <li>
+          <h3>HHSP Program Assistant</h3>
+          <p><a href="student-life.html">Student life</a></p>
+        </li>
+        <li>
+          <h3>Informatics at Luddy</h3>
+          <p>IU Bloomington. <a href="about.html">About</a></p>
+        </li>
+        <li>
+          <h3>Undergraduate research</h3>
+          <p>Aug to Dec 2025, with <a href="https://undergradresearch.indiana.edu/">IU Undergraduate Education</a>.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="folio-block" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p class="contact-line">Got a question about a page or a video? Email me. <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></p>
+      <p><a href="contact.html">Contact page</a></p>
+    </section>
   </div>
 </main>
 
 <footer class="site-footer">
   <div class="shell">
     <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
-    <p class="footer-bio">I'm an IU student. Restaurant posts, campus videos, and pages.</p>
     <nav class="footer-links" aria-label="Site">
       <a href="about.html">About</a>
       <a href="serve-it.html">Serve IT</a>
