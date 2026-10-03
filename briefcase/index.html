@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow">
   <meta name="description" content="Jade Zhao · Digital Humans, Serve IT, and IU Student Life in one room: builder proof, mentorship, and community at Indiana University.">
-  <meta name="theme-color" content="#3a7aad">
+  <meta name="theme-color" content="#990000">
   <title>Jade Zhao · 赵郎溪 · IU Student Life</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -17,8 +17,7 @@
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -26,9 +25,8 @@
 
 <header class="topbar">
   <div class="shell topbar__inner">
-  <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
+  <a class="topbar-brand" href="index.html" aria-current="page">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
   <nav class="topbar-nav" aria-label="Primary">
-    <a href="index.html" aria-current="page">Home</a>
     <a href="about.html">About</a>
     <a href="serve-it.html">Serve IT</a>
     <a href="digital-humans.html">Digital Humans</a>
@@ -43,164 +41,89 @@
 
 <section class="hero" aria-labelledby="hero-headline">
   <div class="shell">
-    <div class="hero__inner">
-      <div class="hero__primary">
-        <p class="hero-kicker">Informatics · Luddy · Hudson &amp; Holland Scholars Program · she/her · May 2027</p>
-        <h1 id="hero-headline">Digital Humans researcher and builder inside IU Student Life.</h1>
-        <p class="hero-lead">Informatics at Luddy is where I study systems people actually use. I lead Digital Humans research on trust and disclosure when AI behaves like a person, ship clinic partners through Serve IT, and support Hudson &amp; Holland Scholars Program (HHSP) scholars as a Program Assistant with the Office of Student Life. One thread: useful after the demo.</p>
-        <p class="hero-cta">
-          <a class="btn" href="cv.pdf">CV</a>
-          <a class="btn btn--ghost" href="#projects">Selected work</a>
-          <a class="btn btn--ghost" href="duck-scratch.html">Duck costumes · fun facts</a>
-        </p>
-        <p class="hero-links">
-          <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
-          <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://instagram.com/zhao.langxi" rel="noopener noreferrer">@zhao.langxi</a>
-        </p>
-      </div>
-      <div class="hero__rail">
-        <p class="hero-rail__title">Stack + scope</p>
-        <ul class="proof-band" aria-label="Scope at a glance">
-          <li>Digital Humans · Luddy</li>
-          <li>Hudson &amp; Holland scholar</li>
-          <li>Serve IT · ongoing since Jan 2024</li>
-          <li>HHSP Program Assistant</li>
-          <li>Madrid · Spring 2026</li>
-          <li>IU Leadership Conference session leader · Feb 2025</li>
-        </ul>
-      </div>
-    </div>
+    <p class="hero-kicker">Informatics · Luddy · Hudson &amp; Holland Scholars Program · she/her · May 2027</p>
+    <h1 id="hero-headline">Digital Humans researcher and builder inside IU Student Life.</h1>
+    <p class="hero-lead">Informatics at Luddy is where I study systems people actually use. I lead Digital Humans research on trust and disclosure when AI behaves like a person, ship clinic partners through Serve IT, and support Hudson &amp; Holland Scholars Program (HHSP) scholars as a Program Assistant with the Office of Student Life. One thread: useful after the demo.</p>
+    <p class="hero-cta">
+      <a class="btn" href="cv.pdf">CV</a>
+      <a class="btn btn--ghost" href="#projects">Selected work</a>
+      <a class="btn btn--ghost" href="duck-scratch.html">Duck costumes · fun facts</a>
+    </p>
+    <p class="hero-links">
+      <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
+      <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://instagram.com/zhao.langxi" rel="noopener noreferrer">@zhao.langxi</a>
+    </p>
   </div>
 </section>
 
 <main id="main-content" class="stage stage--home" tabindex="-1">
-  
   <div class="shell">
-  <nav class="page-jump" aria-label="On this page">
-    <a href="#student-life">IU Student Life</a>
-    <a href="#projects">Selected work</a>
-    <a href="#serve-it">Serve IT ladder</a>
-    <a href="#mentorship">Mentorship</a>
-    <a href="#ships">Ships</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
-  <section class="band band--iu page-section" id="student-life" aria-labelledby="student-life-heading">
-    <p class="band-kicker">IU Student Life</p>
-    <h2 id="student-life-heading">Campus alongside the clinic</h2>
+  <section class="band page-section" id="student-life" aria-labelledby="student-life-heading">
+    <h2 id="student-life-heading"><span class="band-kicker">IU Student Life</span> Campus alongside the clinic</h2>
     <p>
       Hudson &amp; Holland scholar and <strong>HHSP Program Assistant</strong> with the Office of Student Life; Serve IT Website Team Lead; Digital Humans project lead; Handshake content creator since Aug 2023; Madrid Spring 2026; IU Leadership Conference session leader (Feb 2025). HHSP programming (bingo nights, wings, community tables) sits next to clinic ships, not instead of them.
       Pillar-by-pillar log: <a href="student-life.html#footprint-heading">student life</a>.
     </p>
-    <ul class="pillar-chips pillar-chips--iu" aria-label="Campus proof at a glance">
-      <li>HHSP Program Assistant · current</li>
-      <li>Serve IT lead · Nashville 2026</li>
-      <li>Digital Humans · Luddy</li>
-      <li>Handshake · Aug 2023</li>
-      <li>Madrid · Spring 2026</li>
-      <li>Leadership Conference · Feb 2025</li>
-      <li>Clinic ships · Jan 2024</li>
-      <li>HHSP community nights</li>
-    </ul>
   </section>
 
   <section class="band page-section" id="projects" aria-labelledby="projects-heading">
-    <div class="selected-work-header">
-      <p class="band-kicker">Selected work</p>
-      <h2 id="projects-heading">Anchor + supporting builds</h2>
-      <p class="band-intro muted">Depth beats volume. Evidence tiers keep me honest about what shipped.</p>
-    </div>
-    <ul class="project-grid">
-      <li>
-        <article class="project-card project-card--anchor" aria-labelledby="anchor-title">
-          <p class="project-card-label">Anchor · clinic</p>
-          <h3 id="anchor-title"><a href="serve-it.html">Serve IT partner ladder</a></h3>
-          <p class="project-meta">Jan 2024 to present · Laurie Burns McRobbie Serve IT Clinic</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>Nonprofits and municipalities need sites staff can run without a student developer on retainer.</dd>
-            <dt>Your role</dt>
-            <dd>Accessibility tester to team lead: Bloomington, Middle Way House, Indiana Phenology, Chamber, Town of Nashville audit.</dd>
-          </dl>
-          <dl class="evidence-tier" aria-label="Outcome evidence">
-            <dt>Defended outcome</dt>
-            <dd>Five clinic semesters with handoffs; Nashville 2026 is recommendations-only audit.</dd>
-            <dt>Would measure next</dt>
-            <dd>Partner task success after handoff, not demo applause.</dd>
-            <dt>Lesson</dt>
-            <dd>The product is whether they can keep using it.</dd>
-            <dt>Minors in the room</dt>
-            <dd>Business Technology for intake and scoping; UX (user experience) Research and clinic HCI (human-computer interaction) for accessibility, real users, and iteration after the demo.</dd>
-          </dl>
-          <ul class="tag-list" aria-label="Technologies">
-            <li>WCAG 2.1</li>
-            <li>WordPress</li>
-            <li>Stakeholder pages</li>
-          </ul>
-          <div class="card-actions">
-            <a class="btn" href="serve-it.html">Case studies</a>
-            <a class="btn btn--ghost" href="nashville-acc.html">Nashville rubric</a>
-          </div>
-        </article>
+    <h2 id="projects-heading"><span class="band-kicker">Selected work</span> Anchor + supporting builds</h2>
+    <p class="band-intro muted">Depth beats volume. Evidence tiers keep me honest about what shipped.</p>
+
+    <article class="project-spotlight" aria-labelledby="anchor-title">
+      <p class="project-card-label">Anchor · clinic</p>
+      <h3 id="anchor-title"><a href="serve-it.html">Serve IT partner ladder</a></h3>
+      <p class="project-meta">Jan 2024 to present · Laurie Burns McRobbie Serve IT Clinic</p>
+      <dl class="project-facts">
+        <dt>Problem</dt>
+        <dd>Nonprofits and municipalities need sites staff can run without a student developer on retainer.</dd>
+        <dt>Your role</dt>
+        <dd>Accessibility tester to team lead: Bloomington, Middle Way House, Indiana Phenology, Chamber, Town of Nashville audit.</dd>
+      </dl>
+      <dl class="evidence-tier" aria-label="Outcome evidence">
+        <dt>Defended outcome</dt>
+        <dd>Five clinic semesters with handoffs; Nashville 2026 is recommendations-only audit.</dd>
+        <dt>Would measure next</dt>
+        <dd>Partner task success after handoff, not demo applause.</dd>
+        <dt>Lesson</dt>
+        <dd>The product is whether they can keep using it.</dd>
+        <dt>Minors in the room</dt>
+        <dd>Business Technology for intake and scoping; UX (user experience) Research and clinic HCI (human-computer interaction) for accessibility, real users, and iteration after the demo.</dd>
+      </dl>
+      <p class="project-tags"><span class="visually-hidden">Technologies: </span>WCAG 2.1 · WordPress · Stakeholder pages</p>
+      <p class="project-links">
+        <a href="serve-it.html">Case studies</a>
+        <a href="nashville-acc.html">Nashville rubric</a>
+      </p>
+    </article>
+
+    <ul class="work-list" aria-label="Supporting builds">
+      <li class="work-list__item">
+        <h3><a href="digital-humans.html">Digital Humans · Luddy</a></h3>
+        <p class="work-list__meta">Project lead · undergraduate research · the Luddy work I care about most</p>
+        <p>When AI-driven interfaces look and communicate like a person, organisations still need adoption, disclosure, and human oversight that hold up on an ordinary Tuesday. Student project lead framing human-centred AI as a business interface.</p>
+        <p class="project-links"><a href="digital-humans.html">Research scope</a></p>
       </li>
-    </ul>
-    <ul class="project-grid project-grid--supporting">
-      <li>
-        <article class="project-card" aria-labelledby="dh-title">
-          <h3 id="dh-title"><a href="digital-humans.html">Digital Humans · Luddy</a></h3>
-          <p class="project-meta">Project lead · undergraduate research · the Luddy work I care about most</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>When AI-driven interfaces look and communicate like a person, organisations still need adoption, disclosure, and human oversight that hold up on an ordinary Tuesday.</dd>
-            <dt>Your role</dt>
-            <dd>Student project lead framing human-centred AI as a business interface; HCI (human-computer interaction), trust, and keep-using-it adoption.</dd>
-            <dt>Outcome</dt>
-            <dd>High-level public research scope; complements clinic handoffs without overclaiming a shipped product.</dd>
-          </dl>
-          <div class="card-actions">
-            <a class="btn" href="digital-humans.html">Research scope</a>
-          </div>
-        </article>
+      <li class="work-list__item">
+        <h3><a href="client-work.html">Jade🪴 client ships</a></h3>
+        <p class="work-list__meta">Founder · small business and nonprofit web</p>
+        <p>Owners without a developer on call still need Monday-morning usability. Family restaurant marketing and light software under my own name.</p>
+        <p class="project-links"><a href="client-work.html">Client lane</a></p>
       </li>
-      <li>
-        <article class="project-card" aria-labelledby="jade-title">
-          <h3 id="jade-title"><a href="client-work.html">Jade🪴 client ships</a></h3>
-          <p class="project-meta">Founder · small business and nonprofit web</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>Owners without a developer on call still need Monday-morning usability.</dd>
-            <dt>Outcome</dt>
-            <dd>Family restaurant marketing and light software under my own name.</dd>
-          </dl>
-          <div class="card-actions">
-            <a class="btn btn--ghost" href="client-work.html">Client lane</a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="project-card" aria-labelledby="duck-scratch-title">
-          <h3 id="duck-scratch-title"><a href="duck-scratch.html">Duck costumes (Scratch-style fun facts)</a></h3>
-          <p class="project-meta">Playful · code conversations · static HTML</p>
-          <dl>
-            <dt>Problem</dt>
-            <dd>Recruiters do not need a React pond first; they need proof I can explain code like a table conversation.</dd>
-            <dt>Outcome</dt>
-            <dd>Blocky stage, costume ducks, true fun facts ... gardening, matcha, central Indiana, and the creative throughline.</dd>
-          </dl>
-          <div class="card-actions">
-            <a class="btn" href="duck-scratch.html">Open costumes</a>
-            <a class="btn btn--ghost" href="/jadexzhao/duck-farm/">Full pond build</a>
-          </div>
-        </article>
+      <li class="work-list__item">
+        <h3><a href="duck-scratch.html">Duck costumes (Scratch-style fun facts)</a></h3>
+        <p class="work-list__meta">Playful · code conversations · static HTML</p>
+        <p>Recruiters do not need a React pond first; they need proof I can explain code like a table conversation. Blocky stage, costume ducks, true fun facts ... gardening, matcha, central Indiana, and the creative throughline.</p>
+        <p class="project-links"><a href="duck-scratch.html">Open costumes</a> · <a href="/jadexzhao/duck-farm/">Full pond build</a></p>
       </li>
     </ul>
   </section>
 
   <section class="band page-section" id="serve-it" aria-labelledby="serve-heading">
-    <p class="band-kicker">Serve IT</p>
-    <h2 id="serve-heading">Clinic ladder</h2>
+    <h2 id="serve-heading"><span class="band-kicker">Serve IT</span> Clinic ladder</h2>
     <p class="band-lede">
       <strong>Who it is for:</strong> partners who must run the product after students leave.
       <strong>How judged:</strong> handoff, not demo day.
@@ -209,100 +132,83 @@
       Business Technology minor work shows up in client intake and nonprofit capacity; UX Research and clinic semesters are the same HCI loop as my Digital Humans thread, with partner ships as proof.
       <a href="serve-it.html#minors-clinic">How the minors show up in Serve IT</a>.
     </p>
-    <ol class="ladder timeline" aria-label="Serve IT semesters chronological">
-      <li>
-        <div class="card-row">
+    <ol class="work-list work-list--timeline" aria-label="Serve IT semesters chronological">
+      <li class="work-list__item">
+        <div class="work-list__head">
           <h3>Accessibility tester, City of Bloomington</h3>
           <time datetime="2024-01/2024-05">Jan to May 2024</time>
-          <a href="serve-it.html#bloomington">Case study</a>
         </div>
-        <p>Freshman intern: keyboard and screen-reader tests, then written recommendations.</p>
+        <p>Freshman intern: keyboard and screen-reader tests, then written recommendations. <a href="serve-it.html#bloomington">Case study</a></p>
       </li>
-      <li>
-        <div class="card-row">
+      <li class="work-list__item">
+        <div class="work-list__head">
           <h3>WordPress redesign lead, Middle Way House</h3>
           <time datetime="2024-08/2024-12">Aug to Dec 2024</time>
-          <a href="serve-it.html#middle-way">Case study</a>
         </div>
-        <p>Essential journeys rebuilt with staff; documented HHSP community service (~84 hours).</p>
+        <p>Essential journeys rebuilt with staff; documented HHSP community service (~84 hours). <a href="serve-it.html#middle-way">Case study</a></p>
       </li>
-      <li>
-        <div class="card-row">
+      <li class="work-list__item">
+        <div class="work-list__head">
           <h3>Web development lead, Indiana Phenology</h3>
           <time datetime="2025-01/2025-05">Jan to May 2025</time>
-          <a href="serve-it.html#phenology">Case study</a>
         </div>
+        <p><a href="serve-it.html#phenology">Case study</a></p>
       </li>
-      <li>
-        <div class="card-row">
+      <li class="work-list__item">
+        <div class="work-list__head">
           <h3>Web designer, Greater Bloomington Chamber of Commerce</h3>
           <time datetime="2025-08/2025-12">Aug to Dec 2025</time>
-          <a href="serve-it.html#chamber">Case study</a>
         </div>
+        <p><a href="serve-it.html#chamber">Case study</a></p>
       </li>
-      <li>
-        <div class="card-row">
+      <li class="work-list__item">
+        <div class="work-list__head">
           <h3>Team lead · accessibility auditor, Town of Nashville</h3>
           <time datetime="2026-08">Aug 2026 to present</time>
-          <span class="card-links"><a href="serve-it.html#nashville">Case study</a> · <a href="nashville-acc.html">Rubric</a></span>
         </div>
-        <p>Recommendations only; no live-site edits.</p>
+        <p>Recommendations only; no live-site edits. <a href="serve-it.html#nashville">Case study</a> · <a href="nashville-acc.html">Rubric</a></p>
       </li>
     </ol>
   </section>
 
   <section class="band page-section" id="mentorship" aria-labelledby="mentorship-heading">
-    <p class="band-kicker">Mentorship</p>
-    <h2 id="mentorship-heading">What helped, what I do now</h2>
+    <h2 id="mentorship-heading"><span class="band-kicker">Mentorship</span> What helped, what I do now</h2>
     <p>
-      Sophomore year I was a FASE Mentor Apprenticeship Programme (MAP) protege (Oct 2024 to May 2025). Staff mentor check-ins, programme events, and office hours made campus legible when I was still learning clubs and careers as a first-generation and low-income student. Today I support scholars as an HHSP Program Assistant.
+      Sophomore year I was a FASE Mentor Apprenticeship Programme (MAP) protege (Oct 2024 to May 2025). Staff mentor check-ins, programme events, and office hours made campus legible when I was still learning clubs and careers as a first-generation and low-income student. Today I support scholars as an HHSP Program Assistant. Career writing for students: <a href="handshake.html">Handshake</a>.
     </p>
-    <ul class="pillar-chips" aria-label="Mentorship proof">
-      <li>MAP protege · Oct 2024 to May 2025</li>
-      <li>HHSP Program Assistant · current</li>
-      <li><a href="handshake.html">Handshake</a> · career writing for students</li>
-    </ul>
   </section>
 
   <section class="band page-section" id="ships" aria-labelledby="ships-heading">
-    <p class="band-kicker">Ships + thinking</p>
-    <h2 id="ships-heading">What else ships</h2>
-    <ul class="story-grid story-grid--home" aria-label="Research and ships">
-      <li class="story-card">
-        <span class="life-title"><a href="handshake.html">Handshake · content creator</a></span>
-        <span class="life-scene">Posts and short campus clips for students on workplace norms and early career decisions.</span>
-        <span class="life-lens">Use-it-next-week bar, same as clinic handoffs.</span>
+    <h2 id="ships-heading"><span class="band-kicker">Ships + thinking</span> What else ships</h2>
+    <ul class="work-list work-list--ships" aria-label="Research and ships">
+      <li class="work-list__item">
+        <h3><a href="handshake.html">Handshake · content creator</a></h3>
+        <p>Posts and short campus clips for students on workplace norms and early career decisions. Use-it-next-week bar, same as clinic handoffs.</p>
       </li>
-      <li class="story-card story-card--matcha">
-        <span class="life-title"><a href="writing.html">Matcha · Writing &amp; disclosure</a></span>
-        <span class="life-scene">Plain-language notes on trust when systems behave like people.</span>
-        <span class="life-lens">Brought in-site instead of sending visitors to a separate essay door.</span>
+      <li class="work-list__item work-list__item--matcha">
+        <h3><a href="writing.html">Matcha · Writing &amp; disclosure</a></h3>
+        <p>Plain-language notes on trust when systems behave like people. Brought in-site instead of sending visitors to a separate essay door.</p>
       </li>
-      <li class="story-card">
-        <span class="life-title"><a href="code-conversations.html">Code conversations</a></span>
-        <span class="life-scene">Scratch blocks in comments, the same question-and-revise voice I use in HHSP community work and clinic scoping, question → try → revise ... not stripped for corporate polish.</span>
-        <span class="life-lens">Same table voice as INFO-I211 Code Conversation and <a href="duck-scratch.html">duck costume fun facts</a>.</span>
+      <li class="work-list__item">
+        <h3><a href="code-conversations.html">Code conversations</a></h3>
+        <p>Scratch blocks in comments, the same question-and-revise voice I use in HHSP community work and clinic scoping, question → try → revise ... not stripped for corporate polish. Same table voice as INFO-I211 Code Conversation and <a href="duck-scratch.html">duck costume fun facts</a>.</p>
       </li>
-      <li class="story-card">
-        <span class="life-title"><a href="digital-humans.html#undergraduate-research">OVPUE · undergraduate research (UX)</a></span>
-        <span class="life-scene">Aug to Dec 2025: privacy and consumer technology inquiry with IU Undergraduate Education ... office-sponsored undergraduate research, not an NSF REU summer placement.</span>
-        <span class="life-lens">Users have to understand what they are consenting to; ties to Digital Humans on disclosure and trust.</span>
+      <li class="work-list__item">
+        <h3><a href="digital-humans.html#undergraduate-research">OVPUE · undergraduate research (UX)</a></h3>
+        <p>Aug to Dec 2025: privacy and consumer technology inquiry with IU Undergraduate Education ... office-sponsored undergraduate research, not an NSF REU summer placement. Users have to understand what they are consenting to; ties to Digital Humans on disclosure and trust.</p>
       </li>
     </ul>
   </section>
 
   <section class="band page-section" id="contact" aria-labelledby="contact-heading">
-    <p class="band-kicker">Contact</p>
-    <h2 id="contact-heading">Say hello</h2>
-    <div class="contact-panel">
-      <ul class="contact-list">
-        <li><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></li>
-        <li><a href="https://github.com/jadexzhao" rel="noopener noreferrer">github.com/jadexzhao</a></li>
-        <li><a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="cv.pdf">CV (PDF)</a></li>
-      </ul>
-      <p class="contact-note">Longer narrative also on <a href="https://jlzhao.pages.iu.edu/">IU Pages</a> when you want the formal version.</p>
-    </div>
+    <h2 id="contact-heading"><span class="band-kicker">Contact</span> Say hello</h2>
+    <ul class="contact-list contact-list--inline">
+      <li><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></li>
+      <li><a href="https://github.com/jadexzhao" rel="noopener noreferrer">github.com/jadexzhao</a></li>
+      <li><a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+    <p class="contact-note">Longer narrative also on <a href="https://jlzhao.pages.iu.edu/">IU Pages</a> when you want the formal version.</p>
   </section>
 
   <aside class="reflection-band thanks-note" aria-labelledby="home-thanks-heading">
@@ -319,10 +225,9 @@
     <p class="footer-bio">One room for IU Student Life: Digital Humans, Serve IT, MAP, and community proof that compounds.</p>
     <ul class="footer-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="student-life.html">Student life</a></li>
       <li><a href="serve-it.html">Serve IT</a></li>
-      <li><a href="handshake.html">Handshake</a></li>
-      <li><a href="code-conversations.html">Code conversations</a></li>
+      <li><a href="digital-humans.html">Digital Humans</a></li>
+      <li><a href="student-life.html">Student life</a></li>
       <li><a href="duck-scratch.html">Duck costumes</a></li>
       <li><a href="writing.html">Matcha · Writing</a></li>
       <li><a href="contact.html">Contact</a></li>
