@@ -1,4 +1,13 @@
-/* jadexzhao briefcase · IU cream + crimson design system */
+/*
+ * jadexzhao briefcase · IU cream + crimson design system
+ *
+ * Layout inspired by (patterns adapted, not copied):
+ * https://brittanychiang.com/ · sticky in-page nav + section rhythm
+ * https://courses.ics.hawaii.edu/ics314s26/morea/professional-persona/reading-professional-portfolio-style-guide.html · case-study IA
+ * https://showproof.io/guides/how-recruiters-read-developer-portfolios/ · hero proof rail
+ * https://hcii.cmu.edu/news/10-amazing-portfolios-carnegie-mellon-students · research-led scan path
+ * https://www.joshwcomeau.com/ · max-width measure + generous section spacing
+ */
 
 :root {
   color-scheme: light;
@@ -18,7 +27,8 @@
   --stroke: var(--line-strong);
   --highlight: #fff9f2;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --font: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --measure: 42rem;
   --prose: 38rem;
@@ -148,21 +158,31 @@ a:hover {
   border: 0;
 }
 
+.shell {
+  width: 100%;
+  max-width: var(--board);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
 .topbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2) var(--space-3);
-  padding: calc(0.6rem + var(--safe-t)) var(--gutter) 0.6rem;
+  padding: calc(0.6rem + var(--safe-t)) 0 0.6rem;
   background: color-mix(in srgb, var(--card) 88%, transparent);
   border-block-end: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
 }
 
 .topbar-brand {
@@ -259,17 +279,43 @@ a:hover {
 }
 
 .stage {
-  max-width: var(--board);
-  margin: 0 auto;
-  padding: 0 1.25rem calc(4rem + var(--safe-b));
+  padding-block-end: calc(var(--space-7) + var(--safe-b));
+}
+
+.stage > .shell {
+  padding-block-start: var(--space-5);
 }
 
 .hero {
-  max-width: var(--board);
-  margin: 0 auto;
-  padding: var(--space-6) 1.25rem var(--space-4);
+  padding-block: var(--space-6) var(--space-5);
   border-block-end: 1px solid var(--line);
   background: linear-gradient(180deg, var(--card) 0%, var(--canvas) 100%);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 56rem) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: end;
+    gap: var(--space-5) var(--space-6);
+  }
+
+  .hero__primary {
+    grid-column: 1;
+  }
+
+  .hero__rail {
+    grid-column: 2;
+    padding: var(--space-4);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .hero-kicker {
@@ -288,11 +334,16 @@ a:hover {
   color: var(--garden);
 }
 
+.hero h1,
+.page-head h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
 .hero h1 {
   margin: 0 0 var(--space-3);
   font-size: var(--text-3xl);
   line-height: 1.15;
-  font-weight: 600;
   max-width: var(--measure);
   letter-spacing: -0.02em;
 }
@@ -632,6 +683,42 @@ a:hover {
   margin: var(--space-3) 0 0;
   font-size: var(--text-xs);
   color: var(--muted);
+}
+
+.reflection-band,
+.thanks-note {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-4);
+  max-width: var(--prose);
+  background: var(--highlight);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  border-inline-start: 3px solid var(--crimson);
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.reflection-band p,
+.thanks-note p {
+  margin: 0;
+}
+
+.reflection-band p + p,
+.thanks-note p + p {
+  margin-block-start: var(--space-2);
+}
+
+.reflection-band__label {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.stage--matcha-writing .reflection-band {
+  border-inline-start-color: #006b45;
 }
 
 .site-footer {
