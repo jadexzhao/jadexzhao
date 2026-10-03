@@ -714,8 +714,63 @@ a:hover {
 }
 
 .prose p,
-.prose ul {
+.prose ul,
+.prose ol {
   font-size: var(--text-sm);
+}
+
+.prose pre {
+  margin: var(--space-3) 0;
+  padding: var(--space-3) var(--space-4);
+  overflow-x: auto;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.prose pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.prose .caption {
+  margin-block-start: calc(-1 * var(--space-2));
+  font-size: var(--text-xs);
+}
+
+.code-dialogue {
+  margin: var(--space-3) 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.code-dialogue li {
+  padding: var(--space-3) var(--space-4);
+  border-block-end: 1px solid var(--line);
+}
+
+.code-dialogue li:last-child {
+  border-block-end: none;
+}
+
+.code-dialogue p {
+  margin: 0 0 var(--space-2);
+}
+
+.code-dialogue p:last-child {
+  margin-block-end: 0;
+}
+
+.code-dialogue-q {
+  color: var(--ink);
+}
+
+.code-dialogue-a {
+  color: var(--muted);
 }
 
 .figure-placeholder {
