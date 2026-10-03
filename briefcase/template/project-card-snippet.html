@@ -1,0 +1,61 @@
+<!--
+  Copy-paste patterns (PATTERN C · case-study shaped; PATTERN F · evidence-tier on anchor cards).
+
+  Anchor card: paste into the first ul.project-grid (single column).
+  Supporting card: paste into ul.project-grid.project-grid--supporting.
+-->
+
+<!-- ANCHOR (PATTERN G) -->
+<li>
+  <article class="project-card project-card--anchor" aria-labelledby="project-N-title">
+    <p class="project-card-label">Anchor project</p>
+    <h3 id="project-N-title"><a href="[project-writeup.html]">[Project title]</a></h3>
+    <p class="project-meta">[Year] · [Context]</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>[Who needed what?]</dd>
+      <dt>Your role</dt>
+      <dd>[What you built or led.]</dd>
+    </dl>
+    <dl class="evidence-tier" aria-label="Outcome evidence">
+      <dt>Defended outcome</dt>
+      <dd>[Fact you can defend in interview.]</dd>
+      <dt>Would measure next</dt>
+      <dd>[Metric you would track if you had instrumentation.]</dd>
+      <dt>Lesson</dt>
+      <dd>[One honest takeaway.]</dd>
+    </dl>
+    <ul class="tag-list" aria-label="Technologies">
+      <li>[Tag]</li>
+    </ul>
+    <div class="card-actions">
+      <a class="btn" href="[demo-url]" rel="noopener noreferrer">Live demo</a>
+      <a class="btn btn--ghost" href="[repo-url]" rel="noopener noreferrer">Source</a>
+      <a class="btn btn--ghost" href="[project-writeup.html]">Full write-up</a>
+    </div>
+  </article>
+</li>
+
+<!-- SUPPORTING (shorter) -->
+<li>
+  <article class="project-card" aria-labelledby="project-N-title">
+    <h3 id="project-N-title"><a href="[project-writeup.html]">[Project title]</a></h3>
+    <p class="project-meta">[Year] · [Context]</p>
+    <dl>
+      <dt>Problem</dt>
+      <dd>[Who needed what?]</dd>
+      <dt>Your role</dt>
+      <dd>[What you built or led.]</dd>
+      <dt>Outcome</dt>
+      <dd>[What shipped or what you would improve next.]</dd>
+    </dl>
+    <ul class="tag-list" aria-label="Technologies">
+      <li>[Tag]</li>
+    </ul>
+    <div class="card-actions">
+      <a class="btn" href="[demo-url]" rel="noopener noreferrer">Live demo</a>
+      <a class="btn btn--ghost" href="[repo-url]" rel="noopener noreferrer">Source</a>
+      <a class="btn btn--ghost" href="[project-writeup.html]">Write-up</a>
+    </div>
+  </article>
+</li>
