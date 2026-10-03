@@ -1,42 +1,59 @@
-/* Student SWE portfolio template · jadexzhao briefcase · refined light system */
+/* jadexzhao briefcase · IU cream + crimson design system */
 
 :root {
   color-scheme: light;
-  --canvas: #f6efe3;
+  --crimson: #990000;
+  --crimson-deep: #6b0000;
+  --crimson-soft: rgba(153, 0, 0, 0.09);
+  --canvas: #f7f2ea;
+  --canvas-deep: #efe6d8;
   --card: #ffffff;
-  --ink: #1a1a1a;
-  --muted: #3d4a5c;
-  --line: #c3d4de;
-  --accent: #3a7aad;
-  --accent-hover: #2d6289;
-  --garden: #3d5c32;
-  --blue: var(--accent);
-  --blue-hover: var(--accent-hover);
-  --stroke: #b8c9d4;
-  --shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.08), 0 0.3px 0.9px rgba(0, 0, 0, 0.06);
+  --ink: #1a1614;
+  --muted: #5a524c;
+  --line: #e4d9cc;
+  --line-strong: #d4c4b0;
+  --accent: var(--crimson);
+  --accent-hover: var(--crimson-deep);
+  --garden: #7a3030;
+  --stroke: var(--line-strong);
+  --highlight: #fff9f2;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --highlight: #fff9f0;
-  --radius: 8px;
+  --font: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --measure: 42rem;
-  --board: 58rem;
-  --prose: 40rem;
+  --prose: 38rem;
+  --board: 72rem;
+  --gutter: clamp(1rem, 4vw, 1.75rem);
   --tap: 2.75rem;
-  --font: Arial, Helvetica, sans-serif;
-  --text-xs: 0.8125rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.0625rem;
-  --text-lg: 1.2rem;
-  --text-xl: 1.35rem;
-  --text-2xl: clamp(1.55rem, 3.5vw + 0.5rem, 2.15rem);
-  --text-3xl: clamp(1.75rem, 4vw + 0.5rem, 2.35rem);
-  --space-1: 0.35rem;
-  --space-2: 0.65rem;
-  --space-3: 1rem;
-  --space-4: 1.35rem;
-  --space-5: 2rem;
-  --space-6: 2.75rem;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(26, 22, 20, 0.05);
+  --shadow: 0 4px 14px rgba(26, 22, 20, 0.06), 0 1px 3px rgba(26, 22, 20, 0.04);
+  --shadow-lg: 0 12px 40px rgba(26, 22, 20, 0.08), 0 2px 8px rgba(26, 22, 20, 0.04);
+  --text-xs: clamp(0.78rem, 0.74rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.9rem, 0.86rem + 0.2vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.25vw, 1.0625rem);
+  --text-lg: clamp(1.1rem, 1.02rem + 0.4vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.45rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-3xl: clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem);
+  --space-1: 0.375rem;
+  --space-2: 0.75rem;
+  --space-3: 1.125rem;
+  --space-4: 1.5rem;
+  --space-5: 2.25rem;
+  --space-6: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+  --space-7: clamp(3.5rem, 2.5rem + 3vw, 5rem);
+  --bp-sm: 40rem;
+  --bp-md: 48rem;
+  --bp-lg: 56rem;
+  --bp-xl: 64rem;
   --safe-t: env(safe-area-inset-top, 0px);
   --safe-b: env(safe-area-inset-bottom, 0px);
+  --focus-ring: 2px solid var(--crimson);
+  --focus-offset: 3px;
 }
 
 *,
@@ -60,9 +77,13 @@ body {
   margin: 0;
   font-family: var(--font);
   font-size: var(--text-base);
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--ink);
-  background: var(--canvas);
+  background-color: var(--canvas);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -30%, var(--crimson-soft), transparent 55%),
+    linear-gradient(180deg, var(--canvas) 0%, var(--canvas-deep) 100%);
+  background-attachment: fixed;
 }
 
 img {
@@ -74,7 +95,8 @@ img {
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.18em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
@@ -82,9 +104,19 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+}
+
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .skip-link {
@@ -125,14 +157,18 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-2) var(--space-3);
-  padding: calc(0.65rem + var(--safe-t)) 1.25rem 0.65rem;
-  background: var(--card);
+  padding: calc(0.6rem + var(--safe-t)) var(--gutter) 0.6rem;
+  background: color-mix(in srgb, var(--card) 88%, transparent);
   border-block-end: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .topbar-brand {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--text-sm);
+  letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
 }
@@ -144,22 +180,26 @@ a:hover {
 }
 
 .topbar-nav a {
-  color: var(--ink);
+  color: var(--muted);
   text-decoration: none;
   font-size: var(--text-sm);
-  padding: 0.35rem 0;
+  font-weight: 500;
+  padding: 0.35rem 0.15rem;
   min-block-size: var(--tap);
   display: inline-flex;
   align-items: center;
+  border-block-end: 2px solid transparent;
+  margin-block-end: -1px;
 }
 
 .topbar-nav a:hover {
-  color: var(--accent);
+  color: var(--ink);
 }
 
 .topbar-nav a[aria-current="page"] {
   color: var(--accent);
   font-weight: 600;
+  border-block-end-color: var(--accent);
 }
 
 .topbar-actions {
@@ -172,7 +212,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-block-size: var(--tap);
-  padding: 0.45rem 1rem;
+  padding: 0.5rem 1.15rem;
   font: inherit;
   font-size: var(--text-sm);
   font-weight: 600;
@@ -180,8 +220,17 @@ a:hover {
   background: var(--accent);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
 }
 
 .btn:hover {
@@ -193,11 +242,14 @@ a:hover {
 .btn--ghost {
   color: var(--accent);
   background: transparent;
+  box-shadow: none;
 }
 
 .btn--ghost:hover {
-  background: rgba(58, 122, 173, 0.1);
+  background: var(--crimson-soft);
   color: var(--accent-hover);
+  box-shadow: none;
+  transform: none;
 }
 
 .btn--sm {
