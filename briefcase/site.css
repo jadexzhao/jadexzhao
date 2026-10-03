@@ -851,10 +851,13 @@ a:hover {
 }
 
 .case-toc a {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   background: var(--card);
   color: var(--ink);
 }
