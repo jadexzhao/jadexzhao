@@ -1,24 +1,24 @@
 {
   "name": "Jade Zhao",
   "short_name": "Jade Zhao",
-  "description": "Jade Zhao · Informatics at Luddy · Serve IT clinic · accessibility and handoff",
+  "description": "Pages and posts for a family restaurant, and for students.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#F2F0EB",
-  "theme_color": "#3a7aad",
+  "background_color": "#f6f1e8",
+  "theme_color": "#f6f1e8",
   "icons": [
     {
-      "src": "https://jadexzhao.github.io/jadexzhao/favicon-32x32.png?v=20260921-facecenter",
+      "src": "favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "https://jadexzhao.github.io/jadexzhao/apple-touch-icon.png?v=20260921-facecenter",
+      "src": "apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "https://jadexzhao.github.io/jadexzhao/assets/site-pfp.jpg?v=20260921-facecenter",
+      "src": "assets/site-pfp.jpg",
       "sizes": "512x512",
       "type": "image/jpeg"
     }
