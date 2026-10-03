@@ -1,37 +1,43 @@
 /*
- * jadexzhao briefcase · IU cream + crimson design system
+ * jadexzhao briefcase
  *
- * Primary layout direction (adapted, not copied): Delba Oliveira · delba.dev
- * Single-column editorial flow, list-shaped work, minimal chrome, hire scan in prose.
- *
- * Research references:
- * https://delba.dev/
- * https://www.joshwcomeau.com/
+ * Colour theme borrowed from Cassidy Williams.
  * https://cassidoo.co/
- * https://maggieappleton.com/
- * https://showproof.io/guides/how-recruiters-read-developer-portfolios/
- * https://courses.ics.hawaii.edu/ics314s26/morea/professional-persona/reading-professional-portfolio-style-guide.html
- * https://hcii.cmu.edu/news/10-amazing-portfolios-carnegie-mellon-students
- * https://www.joyofreact.com/
+ *
+ * Her page: blush paper #faf5f6, ink #252525, gray #6b6b6b,
+ * sky blue #10a2f5, yellow underline #e9bc3f, lime wash #e5ffc3.
+ * Blue and yellow are darkened here so link text and the focus
+ * ring clear contrast on this background.
+ * A small IU crimson mark sits on the brand only.
+ * Matcha writing keeps its light green tint.
  */
 
 :root {
   color-scheme: light;
+  /* Cassidy Williams · https://cassidoo.co/ */
+  --background: #faf5f6;
+  --surface: #ffffff;
+  --text: #252525;
+  --muted: #5e5e5e;
+  --border: #9a8890;
+  --accent: #0a6eab;
+  --link: #0a6eab;
+  --link-hover: #08527e;
+  --focus: #a07c10;
   --crimson: #990000;
   --crimson-deep: #6b0000;
-  --crimson-soft: rgba(153, 0, 0, 0.09);
-  --canvas: #f7f2ea;
-  --canvas-deep: #efe6d8;
-  --card: #ffffff;
-  --ink: #1a1614;
-  --muted: #5a524c;
-  --line: #e4d9cc;
-  --line-strong: #d4c4b0;
-  --accent: var(--crimson);
-  --accent-hover: var(--crimson-deep);
-  --garden: #7a3030;
+  --crimson-soft: rgba(153, 0, 0, 0.1);
+  --canvas: var(--background);
+  --canvas-deep: #f3e8ea;
+  --card: var(--surface);
+  --ink: var(--text);
+  --line: var(--border);
+  --line-strong: #7d6c74;
+  --accent-hover: var(--link-hover);
+  --accent-soft: rgba(10, 110, 171, 0.12);
+  --garden: var(--link);
   --stroke: var(--line-strong);
-  --highlight: #fff9f2;
+  --highlight: #e5ffc3;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
   --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -44,9 +50,9 @@
   --radius: 10px;
   --radius-lg: 14px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(26, 22, 20, 0.05);
-  --shadow: 0 4px 14px rgba(26, 22, 20, 0.06), 0 1px 3px rgba(26, 22, 20, 0.04);
-  --shadow-lg: 0 12px 40px rgba(26, 22, 20, 0.08), 0 2px 8px rgba(26, 22, 20, 0.04);
+  --shadow-sm: 0 1px 2px rgba(37, 37, 37, 0.05);
+  --shadow: 0 4px 14px rgba(37, 37, 37, 0.06), 0 1px 3px rgba(37, 37, 37, 0.04);
+  --shadow-lg: 0 12px 40px rgba(37, 37, 37, 0.08), 0 2px 8px rgba(37, 37, 37, 0.04);
   --text-xs: clamp(0.78rem, 0.74rem + 0.15vw, 0.8125rem);
   --text-sm: clamp(0.9rem, 0.86rem + 0.2vw, 0.9375rem);
   --text-base: clamp(1rem, 0.96rem + 0.25vw, 1.0625rem);
@@ -67,7 +73,7 @@
   --bp-xl: 64rem;
   --safe-t: env(safe-area-inset-top, 0px);
   --safe-b: env(safe-area-inset-bottom, 0px);
-  --focus-ring: 2px solid var(--crimson);
+  --focus-ring: 2px solid var(--focus);
   --focus-offset: 3px;
 }
 
@@ -104,14 +110,15 @@ img {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
+  text-decoration-color: var(--focus);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 a:hover {
-  color: var(--accent-hover);
+  color: var(--link-hover);
   text-decoration-thickness: 2px;
 }
 
@@ -189,6 +196,7 @@ a:hover {
   letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
+  border-block-end: 2px solid var(--crimson);
 }
 
 .topbar-nav {
@@ -264,7 +272,7 @@ a:hover {
 }
 
 .btn--ghost:hover {
-  background: var(--crimson-soft);
+  background: var(--accent-soft);
   color: var(--accent-hover);
   box-shadow: none;
   transform: none;
@@ -650,7 +658,7 @@ a:hover {
 .project-card--anchor {
   border-width: 2px;
   border-color: var(--accent);
-  box-shadow: 0 4px 0 var(--crimson-soft);
+  box-shadow: 0 4px 0 var(--accent-soft);
 }
 
 .project-card-label {
@@ -835,7 +843,7 @@ a:hover {
   background: var(--highlight);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  border-inline-start: 3px solid var(--crimson);
+  border-inline-start: 3px solid var(--focus);
   font-size: var(--text-sm);
   color: var(--muted);
 }
@@ -902,7 +910,7 @@ a:hover {
   margin-block-start: var(--space-6);
   padding: var(--space-4);
   background: var(--highlight);
-  border: 1px dashed #c9a227;
+  border: 1px dashed var(--focus);
   border-radius: var(--radius);
   font-size: var(--text-sm);
 }
@@ -1727,7 +1735,7 @@ a:hover {
 
 .scratch-panel {
   padding: var(--space-3);
-  background: #f0ebe3;
+  background: var(--canvas-deep);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
