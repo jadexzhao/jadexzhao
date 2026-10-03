@@ -17,14 +17,17 @@
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header class="topbar">
+  <div class="shell topbar__inner">
   <a class="topbar-brand" href="index.html">Jade Zhao <span class="sc" lang="zh-Hans">赵郎溪</span></a>
   <nav class="topbar-nav" aria-label="Primary">
     <a href="index.html" aria-current="page">Home</a>
@@ -36,6 +39,7 @@
   </nav>
   <div class="topbar-actions">
     <a class="btn btn--sm" href="cv.pdf">CV</a>
+  </div>
   </div>
 </header>
 
@@ -65,7 +69,8 @@
 </section>
 
 <main id="main-content" class="stage stage--home" tabindex="-1">
-  <nav class="page-outline" aria-label="On this page">
+  
+  <div class="shell"><nav class="page-outline" aria-label="On this page">
     <p class="page-outline-label">On this page</p>
     <ol>
       <li><a href="#student-life">IU Student Life</a></li>
@@ -300,10 +305,11 @@
     <h2 id="home-thanks-heading" class="visually-hidden">Gratitude</h2>
     <p>Thank you to the HHSP community I work beside, MAP mentor check-ins during sophomore year, Serve IT partners and clinic staff, and Luddy mentors who keep Digital Humans honest after the demo. First-generation navigation is quiet work; I am glad it can live in one room here.</p>
   </aside>
+  </div>
 </main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
+  <div class="shell footer-inner">
     <p class="footer-brand">Jade Zhao · <span lang="zh-Hans">赵郎溪</span></p>
     <p class="footer-bio">One room for IU Student Life: Digital Humans, Serve IT, MAP, and community proof that compounds.</p>
     <ul class="footer-links">
