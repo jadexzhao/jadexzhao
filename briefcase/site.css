@@ -444,6 +444,30 @@ a:hover {
   padding-block: clamp(1.25rem, 4vw, 2.25rem) 0;
 }
 
+.page-head--handoff {
+  display: flow-root;
+}
+
+.page-kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.page-kicker a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page-kicker a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .page-head h1 {
   margin: 0 0 0.55rem;
   font-size: clamp(1.75rem, 4vw, 2.1rem);
@@ -484,6 +508,75 @@ a:hover {
 
 .page-head + .prose {
   padding-top: 1rem;
+}
+
+.page-head--handoff .standfirst {
+  max-width: 40rem;
+}
+
+/* Wikipedia-adjacent summary box (Crassula_ovata / Vector infobox grey) */
+.handoff-infobox {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem 1rem;
+  max-width: 22rem;
+  background: var(--infobox);
+  border: 1px solid var(--line);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 56rem) {
+  .page-head--handoff .handoff-infobox {
+    float: right;
+    width: 15.5rem;
+    max-width: 42%;
+    margin: 0 0 1rem 1.25rem;
+  }
+}
+
+.handoff-infobox__title {
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line-subtle);
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--heading);
+}
+
+.handoff-infobox ul {
+  margin: 0 0 0.65rem;
+  padding-left: 1.1rem;
+}
+
+.handoff-infobox li {
+  margin-bottom: 0.3rem;
+}
+
+.handoff-infobox__note {
+  margin: 0.55rem 0 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.handoff-infobox__cta {
+  margin: 0.75rem 0 0;
+}
+
+.handoff-infobox__cta .btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.handoff-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.1rem;
+  margin: 0.75rem 0 0;
 }
 
 .page-section {
@@ -548,6 +641,7 @@ a:hover {
   max-width: 100%;
   margin-top: 1.25rem;
   padding: 0.75rem 1rem;
+  clear: both;
   background: var(--infobox);
   border: 1px solid var(--line);
   border-radius: 0;
@@ -558,6 +652,27 @@ a:hover {
   max-width: 100%;
   white-space: normal;
   font-size: 0.9375rem;
+}
+
+.case-toc--grouped {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.65rem;
+}
+
+.case-toc__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.85rem;
+}
+
+.case-toc__label {
+  min-width: 3.25rem;
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .case-section {
@@ -582,28 +697,36 @@ a:hover {
 #partner-writeups,
 #foundation,
 #make-and-post,
-#more-channels {
+#more-channels,
+#desk,
+#social {
   counter-reset: plate;
 }
 
 #partner-writeups > .case-section,
 #foundation > .case-section,
 #make-and-post > .case-section,
-#more-channels > .case-section {
+#more-channels > .case-section,
+#desk > .case-section,
+#social > .case-section {
   counter-increment: plate;
 }
 
 #partner-writeups > .case-section::before,
 #foundation > .case-section::before,
 #make-and-post > .case-section::before,
-#more-channels > .case-section::before {
+#more-channels > .case-section::before,
+#desk > .case-section::before,
+#social > .case-section::before {
   content: none;
 }
 
 #partner-writeups .case-section h2 a,
 #foundation .case-section h2 a,
 #make-and-post .case-section h2 a,
-#more-channels .case-section h2 a {
+#more-channels .case-section h2 a,
+#desk .case-section h2 a,
+#social .case-section h2 a {
   color: var(--ink);
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
@@ -612,7 +735,9 @@ a:hover {
 #partner-writeups .case-section h2 a:hover,
 #foundation .case-section h2 a:hover,
 #make-and-post .case-section h2 a:hover,
-#more-channels .case-section h2 a:hover {
+#more-channels .case-section h2 a:hover,
+#desk .case-section h2 a:hover,
+#social .case-section h2 a:hover {
   color: var(--accent);
 }
 
