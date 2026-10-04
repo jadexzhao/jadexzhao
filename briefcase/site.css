@@ -1,24 +1,30 @@
 /*
  * jadexzhao briefcase
- * Warm cream personal portfolio (pre-AI), with Scratch accents for
- * duck-scratch and light orange / motion blue on handoffs.
- * Not a full Scratch clone sitewide.
+ * Classic Wikipedia / MediaWiki Vector chrome, sampled from
+ * https://en.wikipedia.org/wiki/Crassula_ovata (jade plant page).
+ * Scratch accents stay scoped to duck-scratch only.
  *
- * Palette: outer cream #f6efe3, card #ffffff, powder line #c3d4de,
- * sky #4a90c4, garden #4a6b3d, Scratch orange #ff8c1a, motion #4c97ff,
- * green flag #4cbf56. Type: Arial / Helvetica first.
+ * Sampled tokens (Crassula_ovata, Vector):
+ * page/body bg #f8f9fa · content well #ffffff · ink #202122 ·
+ * heading #101418 · link #3366cc (--color-progressive #36c) ·
+ * visited #6a60b0 · border #a2a9b1 · subtle border #c8ccd1 ·
+ * infobox grey #f8f9fa. Headings: Linux Libertine / Georgia stack, weight 400.
  */
 
 :root {
   color-scheme: light;
-  --paper: #f6efe3;
+  --paper: #f8f9fa;
   --well: #ffffff;
-  --ink: #1c1612;
-  --muted: #5a5048;
-  --line: #c3d4de;
-  --accent: #4a90c4;
-  --accent-deep: #2f6f9a;
-  --garden: #4a6b3d;
+  --ink: #202122;
+  --muted: #54595d;
+  --line: #a2a9b1;
+  --line-subtle: #c8ccd1;
+  --accent: #3366cc;
+  --accent-deep: #0645ad;
+  --visited: #6a60b0;
+  --heading: #101418;
+  --infobox: #f8f9fa;
+  --garden: #54595d;
   --scratch-orange: #ff8c1a;
   --scratch-orange-deep: #e46c00;
   --motion: #4c97ff;
@@ -26,11 +32,11 @@
   --events: #ffbf00;
   --operators: #59c059;
   --flag: #4cbf56;
-  --focus: #1c1612;
-  --serif: Arial, Helvetica, sans-serif;
-  --sans: Arial, Helvetica, sans-serif;
+  --focus: #36c;
+  --serif: "Linux Libertine", Georgia, Times, "Source Serif 4", "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --serif-sc: "Noto Serif SC", "Songti SC", "STSong", serif;
-  --measure: 40rem;
+  --measure: 60rem;
   --fs-label: 0.8125rem;
   --fs-body: 1.0625rem;
   --fs-lead: 1.2rem;
@@ -101,12 +107,18 @@ video {
 
 a {
   color: var(--accent);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:visited {
+  color: var(--visited);
 }
 
 a:hover {
   color: var(--accent-deep);
+  text-decoration-thickness: 2px;
 }
 
 :focus-visible {
@@ -169,38 +181,39 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 40;
-  padding: calc(0.85rem + var(--safe-t)) 0 0.55rem;
+  padding: calc(0.55rem + var(--safe-t)) 0 0.4rem;
   background: var(--well);
-  border-bottom: 2px solid var(--line);
+  border-bottom: 1px solid var(--line-subtle);
 }
 
 .topbar::after {
-  content: "";
-  display: block;
-  height: 0.35rem;
-  background: var(--scratch-orange);
+  content: none;
 }
 
 .topbar__inner {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.65rem 1.25rem;
+  gap: 0.45rem 1.25rem;
 }
 
 .topbar-brand {
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 1.25rem;
-  font-weight: 700;
+  color: var(--heading);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
   line-height: 1.2;
   letter-spacing: 0;
   text-decoration: none;
-  border-bottom: 2px solid var(--scratch-orange);
+  border-bottom: none;
 }
 
 .topbar-brand:hover {
-  color: var(--ink);
+  color: var(--accent);
+}
+
+.topbar-brand:visited {
+  color: var(--heading);
 }
 
 .topbar-nav {
@@ -217,24 +230,28 @@ a:hover {
 .topbar-nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.2rem 0;
-  color: var(--ink);
-  font-size: 0.98rem;
+  min-height: 2.5rem;
+  padding: 0.15rem 0;
+  color: var(--accent);
+  font-size: 0.9375rem;
   line-height: 1.25;
   white-space: nowrap;
   text-decoration: none;
 }
 
+.topbar-nav a:visited {
+  color: var(--visited);
+}
+
 .topbar-nav a:hover {
-  color: var(--accent);
+  text-decoration: underline;
 }
 
 .topbar-nav a[aria-current="page"] {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.28em;
+  color: var(--heading);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
 }
 
 .hero {
@@ -244,10 +261,10 @@ a:hover {
 .hero h1,
 .hero-lead {
   font-family: var(--serif);
-  font-weight: 650;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.15;
+  color: var(--heading);
 }
 
 .hero h1 {
@@ -270,9 +287,12 @@ a:hover {
 .prose h2,
 .case-section h2 {
   font-family: var(--serif);
-  font-weight: 650;
-  letter-spacing: -0.03em;
-  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+  color: var(--heading);
+  border-bottom: 1px solid var(--line-subtle);
+  padding-bottom: 0.15em;
 }
 
 .campaign h2 {
@@ -336,9 +356,9 @@ a:hover {
   height: auto;
   margin: 0;
   overflow: hidden;
-  background: #1e2228;
-  border: 2px solid var(--line);
-  border-radius: 6px;
+  background: #101418;
+  border: 1px solid var(--line);
+  border-radius: 0;
   box-shadow: none;
 }
 
@@ -410,17 +430,27 @@ a:hover {
   max-width: 100%;
   min-width: 0;
   padding-bottom: calc(var(--space-5) + var(--safe-b));
+  background: var(--paper);
+}
+
+.stage--article > .shell {
+  background: var(--well);
+  border: 1px solid var(--line-subtle);
+  border-top: none;
+  padding-block: 1.25rem 2rem;
 }
 
 .page-head {
-  padding-block: clamp(2.75rem, 7vw, 4.75rem) 0;
+  padding-block: clamp(1.25rem, 4vw, 2.25rem) 0;
 }
 
 .page-head h1 {
-  margin: 0 0 0.9rem;
-  font-size: var(--fs-display);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.75rem, 4vw, 2.1rem);
+  letter-spacing: 0;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--heading);
 }
 
 .page-head .sub {
@@ -468,9 +498,9 @@ a:hover {
   margin: 0 0 0.85rem;
   font-family: var(--serif);
   font-size: var(--fs-section);
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.25;
 }
 
 .prose ul,
@@ -517,11 +547,17 @@ a:hover {
   gap: 0.35rem 1rem;
   max-width: 100%;
   margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--infobox);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  list-style: none;
 }
 
 .case-toc a {
   max-width: 100%;
   white-space: normal;
+  font-size: 0.9375rem;
 }
 
 .case-section {
@@ -683,13 +719,12 @@ a:hover {
 .btn--sm {
   display: inline-flex;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.2rem 0;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.85rem;
   color: var(--accent);
-  background: transparent;
-  border: 0;
-  border-bottom: 2px solid var(--accent);
-  border-radius: 0;
+  background: var(--infobox);
+  border: 1px solid var(--line);
+  border-radius: 2px;
   box-shadow: none;
   font: inherit;
   font-weight: 600;
@@ -700,8 +735,14 @@ a:hover {
 .btn--ghost:hover,
 .btn--sm:hover {
   color: var(--accent-deep);
-  background: transparent;
-  border-color: var(--accent-deep);
+  background: var(--well);
+  border-color: var(--accent);
+}
+
+.btn:visited,
+.btn--ghost:visited,
+.btn--sm:visited {
+  color: var(--accent);
 }
 
 .reflection-band,
