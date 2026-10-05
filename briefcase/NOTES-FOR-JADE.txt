@@ -1,30 +1,27 @@
 jadexzhao briefcase · NOTES FOR JADE
-Skeleton layout pass (founder-story structure). Not committed unless you ask.
+Younger-Whitney voice + Bumble-adjacent CSS pass. Review before next edit.
 
 STATUS · matchaxmoxie
 - Left alone. Scratch MIT.edu classroom vibe stays.
-- Do NOT Whitney-ify matchaxmoxie HTML / CSS.
-- Only a pointer link from this proof door and from zhao-langxi Status.
+- Only a pointer link from this proof door.
 
-Whitney pattern mapped (structure only; not Bumble yellow / not her claims)
-1. Thesis / product rule
-2. Origin → why this exists
-3. Proof / ships
-4. Beyond the first product (BFF-style expansion: same brand, more rooms)
-5. Clear CTAs
+Voice choices (true to Jade; inspired by Whitney public framing)
+- Thesis: “Looking human is not the product. Respect is.”
+- Kindness + control framing adapted to Digital Humans / handoffs
+- No Seeking SWE lead; no invented metrics; no dating-app company claims
+- Fill-holes replaced with real draft copy you can still edit
 
-What to fill next (look for dashed “Fill later” boxes on index.html)
-- thesis-line: optional sharper one-line rule in your voice
-- origin-story: short origin for THIS door (deep narrative stays IU Pages)
-- proof-case: one flagship case blurb (problem → ship → who keeps it)
-- beyond-rooms: which rooms to name (Jade🪴, Serve-AI, Madrid … only if true)
-- cta-priority: one primary CTA for peers vs hire path
+CSS choices
+- Yellow #FFC629 · black · white · warm paper #FFFBF0
+- Outfit bold sans; yellow sticky nav; pill CTAs; flagship case panel
+- 2–3 motions: hero rise, CTA rise, button lift (respects reduced-motion)
+- Scratch duck page chrome still scoped separately
+
+1st-person taste calls
+- Keep or soften “Respect is.” as the second thesis beat
+- Whether contact band should stay full yellow block
+- Favicon photo-at-16px vs logo (unchanged this pass)
 
 Preview
 - file:///Users/jadexzhao/Documents/jadexzhao/briefcase/index.html
-- or: open briefcase/ locally; live: https://jadexzhao.github.io/jadexzhao/
-
-1st-person taste calls (agent will not silently rewrite)
-- Keep or cut the Bumble BFF analogy sentence in #beyond
-- Whether nav labels Thesis / Origin / Proof / Beyond feel right vs Work / Serve IT
-- When fill-holes are filled, delete the dashed boxes
+- live after push: https://jadexzhao.github.io/jadexzhao/
