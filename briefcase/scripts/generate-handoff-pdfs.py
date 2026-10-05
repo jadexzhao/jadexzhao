@@ -37,6 +37,11 @@ WARN_BG = HexColor("#f7f1e8")
 BOX_BG = HexColor("#f4f8fb")
 
 LAST_CHECKED = "October 2026"
+START_HERE = (
+    "Use only an account you have permission to use. If you do not know which account to use, "
+    "or cannot sign in, stop and ask the named account owner. Never share or write down a "
+    "password or sign-in code."
+)
 
 # --- Priority SOP sheets (Email, Meta, Google Reviews) ---
 
@@ -174,7 +179,7 @@ SIMPLE_SHEETS = [
         "slug": "apple-notes",
         "title": "Apple Notes handoff",
         "for_whom": "For the person who will open, write, and find notes on iPhone or iPad after the builder leaves.",
-        "why": "Tickets pile up when notes live on the wrong Apple ID, or when someone cannot find Search / Pin.",
+        "why": "Notes can be hard to find if they are saved under a different Apple Account or folder.",
         "steps": [
             "Open the Notes app on the iPhone (or iPad).",
             "Tap a folder, then tap a note in the list to open it.",
@@ -201,7 +206,7 @@ SIMPLE_SHEETS = [
         "slug": "google-drive",
         "title": "Google Drive handoff",
         "for_whom": "For the person who will find files, share links, and check access after the builder leaves.",
-        "why": "Tickets pile up when the file is in a different Google account, or when Share is set to Editor when Viewer would do.",
+        "why": "Files can be hard to find when they are in a different Google Account. Viewer access is safer when someone only needs to look.",
         "steps": [
             "Open drive.google.com and sign in with the same Google account that owns the files.",
             "To find a file, use the search box at the top, then open the result.",
@@ -224,7 +229,7 @@ SIMPLE_SHEETS = [
         "slug": "canva",
         "title": "Canva handoff",
         "for_whom": "For the person who will make a simple post or flyer in Canva after the builder leaves.",
-        "why": "Tickets pile up when the design looks done on screen but nobody clicks Share, then Download.",
+        "why": "A design is not ready to use until it is downloaded or shared with the right person.",
         "steps": [
             "Open canva.com and sign in with the account that owns the designs.",
             "Click Create a design. Search for Instagram post or Flyer, then open a size that fits.",
@@ -247,7 +252,7 @@ SIMPLE_SHEETS = [
         "slug": "linkedin",
         "title": "LinkedIn handoff",
         "for_whom": "For the person who will edit profile basics and share a post after the builder leaves.",
-        "why": "Tickets pile up when someone edits the profile draft but never Posts, or posts from the wrong account.",
+        "why": "A saved draft is not public until you choose Post. Check that you are using the correct account.",
         "steps": [
             "Open linkedin.com (or the LinkedIn app) and sign in.",
             "Open your profile (your photo or Me, then View profile).",
@@ -277,7 +282,7 @@ SIMPLE_SHEETS = [
         "slug": "google-calendar",
         "title": "Google Calendar handoff",
         "for_whom": "For the person who will create events and share a calendar after the builder leaves.",
-        "why": "Tickets pile up when events stay private on the wrong Google account, or when sharing is never turned on.",
+        "why": "Events may stay private if the calendar is owned by a different account or has not been shared.",
         "steps": [
             "Open calendar.google.com and sign in with the Google account that owns the calendar.",
             "To create an event, click Create (or click an empty time slot). Add a title, date, and time, then Save.",
@@ -300,7 +305,7 @@ SIMPLE_SHEETS = [
         "slug": "yelp",
         "title": "Yelp for Business handoff",
         "for_whom": "For the person who will keep the Yelp page accurate and reply to reviews after the builder leaves.",
-        "why": "Tickets pile up when the page is not claimed, or when staff can read reviews but never Respond.",
+        "why": "A business page must be claimed before an owner can manage it. Having an account does not always mean it has access.",
         "steps": [
             "Open biz.yelp.com and sign in with the owner account.",
             "Check you are on the right location.",
@@ -330,7 +335,7 @@ SIMPLE_SHEETS = [
         "slug": "youtube",
         "title": "YouTube Studio handoff",
         "for_whom": "For the person who will upload and publish videos in YouTube Studio after the builder leaves.",
-        "why": "Tickets pile up when the wrong channel is selected, or when a video stays Private because Publish was never clicked.",
+        "why": "Videos can stay private if the wrong channel is selected or the visibility setting is not changed.",
         "steps": [
             "Open studio.youtube.com and sign in with the Google account that owns the channel.",
             "Check the channel name at the top. Switch if needed.",
@@ -354,7 +359,7 @@ SIMPLE_SHEETS = [
         "slug": "tiktok",
         "title": "TikTok handoff",
         "for_whom": "For the person who will record or upload a short video and post it after the builder leaves.",
-        "why": "Tickets pile up when someone records on the wrong account, or leaves the draft before tapping Post.",
+        "why": "Check which profile is selected before posting. A video left as a draft is not published.",
         "steps": [
             "Open the TikTok app and sign in with the account that owns the business profile.",
             "Tap Profile and check the username before you post.",
@@ -405,8 +410,8 @@ def styles() -> dict:
             "JH2",
             parent=base["Heading2"],
             fontName="Helvetica-Bold",
-            fontSize=10,
-            leading=12,
+            fontSize=11,
+            leading=14,
             textColor=ACCENT,
             spaceBefore=6,
             spaceAfter=3,
@@ -415,8 +420,8 @@ def styles() -> dict:
             "JBody",
             parent=base["Normal"],
             fontName="Helvetica",
-            fontSize=9,
-            leading=11,
+            fontSize=10,
+            leading=13,
             textColor=INK,
             spaceAfter=3,
         ),
@@ -424,16 +429,17 @@ def styles() -> dict:
             "JLi",
             parent=base["Normal"],
             fontName="Helvetica",
-            fontSize=9,
-            leading=11,
+            fontSize=10,
+            leading=13,
             textColor=INK,
+            spaceAfter=3,
         ),
         "link": ParagraphStyle(
             "JLink",
             parent=base["Normal"],
             fontName="Helvetica",
-            fontSize=8,
-            leading=10,
+            fontSize=9,
+            leading=11,
             textColor=INK,
             spaceAfter=1,
         ),
@@ -546,9 +552,18 @@ def make_sop_pdf(item: dict, s: dict) -> Path:
     story.append(Paragraph("<b>Who owns the login?</b>", s["h2"]))
     story.append(_bullets(item["owners"], s))
     story.append(Paragraph(item["owner_note"], s["body"]))
-    story.append(Paragraph("<b>ELI5 steps</b>", s["h2"]))
+    story.append(Paragraph("<b>Before you start</b>", s["h2"]))
+    story.append(Paragraph(START_HERE, s["body"]))
+    story.append(Paragraph("<b>Steps to follow</b>", s["h2"]))
     story.append(_numbered(item["steps"], s))
     story.append(Spacer(1, 4))
+    story.append(
+        _box(
+            "If the screen looks different, stop before changing settings. Use the official help "
+            "link below or ask the account owner for help.",
+            s["warn"],
+        )
+    )
     story.append(Paragraph("<b>Official help</b> (US links; region may differ)", s["h2"]))
     for label, url in item["help"]:
         story.append(
@@ -603,10 +618,18 @@ def make_simple_pdf(item: dict, s: dict) -> Path:
         Paragraph(item["title"], s["title"]),
         Paragraph(f"Jade Zhao · handoff sheet · Last checked: {LAST_CHECKED}", s["meta"]),
         Paragraph(item["for_whom"], s["body"]),
-        Paragraph("<b>Why tickets happen</b>", s["h2"]),
+        Paragraph("<b>Before you start</b>", s["h2"]),
+        Paragraph(START_HERE, s["body"]),
+        Paragraph("<b>Why this matters</b>", s["h2"]),
         Paragraph(item["why"], s["body"]),
-        Paragraph("<b>Steps</b>", s["h2"]),
+        Paragraph("<b>Steps to follow</b>", s["h2"]),
         _numbered(item["steps"], s),
+        Spacer(1, 4),
+        _box(
+            "If the screen looks different, stop before changing settings. Use the official help "
+            "link below or ask the account owner for help.",
+            s["warn"],
+        ),
         Spacer(1, 4),
         Paragraph("<b>Write this down</b>", s["h2"]),
         _bullets(item["write_down"], s),

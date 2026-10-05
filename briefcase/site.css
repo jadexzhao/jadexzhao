@@ -548,15 +548,6 @@ a:hover {
   line-height: 1.45;
 }
 
-@media (min-width: 56rem) {
-  .page-head--handoff .handoff-infobox {
-    float: right;
-    width: 15.5rem;
-    max-width: 42%;
-    margin: 0 0 1rem 1.25rem;
-  }
-}
-
 .handoff-infobox__title {
   margin: 0 0 0.55rem;
   padding-bottom: 0.35rem;
@@ -2231,7 +2222,7 @@ body:has(.scratch-app) a:hover {
 }
 
 @media (min-width: 60rem) {
-  .stage--article > .shell {
+  .stage--article > .shell:has(> .page-head + .prose) {
     display: grid;
     grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.55fr);
     column-gap: clamp(2.5rem, 6vw, 6rem);
