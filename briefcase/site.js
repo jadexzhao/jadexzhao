@@ -9,6 +9,28 @@
     });
   }
 
+  var sanctuaryForm = document.querySelector(".sanctuary-form");
+  if (sanctuaryForm) {
+    var reflectionInput = document.getElementById("reflection-input");
+    var reflectionStatus = document.getElementById("reflection-status");
+    sanctuaryForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var reflection = reflectionInput.value.trim();
+      if (!reflection) {
+        reflectionStatus.textContent = "Take your time. Write a boundary or clear the prompt before reflecting back.";
+        reflectionInput.focus();
+        return;
+      }
+      reflectionStatus.textContent = "Reflection received by the prototype. Nothing was sent or stored.";
+    });
+    sanctuaryForm.addEventListener("reset", function () {
+      window.setTimeout(function () {
+        reflectionStatus.textContent = "Reflection cleared. Nothing was sent or stored.";
+        reflectionInput.focus();
+      }, 0);
+    });
+  }
+
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var nodes = document.querySelectorAll(".reveal");
   if (!nodes.length) return;

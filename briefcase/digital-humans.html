@@ -10,7 +10,7 @@
 <link rel="icon" href="https://jadexzhao.github.io/jadexzhao/favicon.ico?v=20260921-facecenter" sizes="any">
 <link rel="apple-touch-icon" href="https://jadexzhao.github.io/jadexzhao/apple-touch-icon.png?v=20260921-facecenter">
 <link rel="manifest" href="https://jadexzhao.github.io/jadexzhao/site.webmanifest">
-<meta name="theme-color" content="#FFC629">
+<meta name="theme-color" content="#dfe9df">
 <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/digital-humans.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Digital Humans · Jade Zhao">
@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600&display=swap&text=%E8%B5%B5%E9%83%8E%E6%BA%AA" rel="stylesheet">
   <link rel="stylesheet" href="site.css?v=20261004-whitney">
 </head>
-<body>
+<body class="digital-humans-page">
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="topbar">
   <div class="shell topbar__inner">
@@ -66,12 +66,18 @@
     <section class="page-section" id="digital-human-hypothesis" aria-labelledby="hypothesis-heading">
       <h2 id="hypothesis-heading">The digital-human hypothesis</h2>
       <p>This is my interpretation, not a claim about Wolfe Herd's private beliefs: if an AI concierge is meant to handle intimate context, a digital human could become the interface that makes that disclosure feel possible. That same realism could also make manipulation harder to notice.</p>
-      <h3>1. Trust before the match</h3>
-      <p>A sterile text box may be a poor place to share a breakup, a fear, or a commitment issue. A face, voice, and responsive expression could lower the barrier to honesty. It could also invite people to trust a system before they understand what it records, infers, or remembers.</p>
-      <h3>2. A buffer, not a replacement</h3>
-      <p>The strongest version of the concierge idea is not that AI replaces romance. It is that AI absorbs the repetitive search, awkward small talk, and rejection before a person chooses to meet another person. The gate has to stay human: the system can surface a possibility, but it cannot decide that someone is worth your life.</p>
-      <h3>3. From swiping to conversation</h3>
-      <p>Swiping turned a person into a card. A conversational digital human could make the interface feel more alive, but "more alive" is not the same as more truthful. The next interface shift needs a visible boundary between empathy as an experience and empathy as a claim.</p>
+      <details open>
+        <summary>1. Trust before the match</summary>
+        <p>A sterile text box may be a poor place to share a breakup, a fear, or a commitment issue. A face, voice, and responsive expression could lower the barrier to honesty. It could also invite people to trust a system before they understand what it records, infers, or remembers.</p>
+      </details>
+      <details>
+        <summary>2. A buffer, not a replacement</summary>
+        <p>The strongest version of the concierge idea is not that AI replaces romance. It is that AI absorbs the repetitive search, awkward small talk, and rejection before a person chooses to meet another person. The gate has to stay human: the system can surface a possibility, but it cannot decide that someone is worth your life.</p>
+      </details>
+      <details>
+        <summary>3. From swiping to conversation</summary>
+        <p>Swiping turned a person into a card. A conversational digital human could make the interface feel more alive, but "more alive" is not the same as more truthful. The next interface shift needs a visible boundary between empathy as an experience and empathy as a claim.</p>
+      </details>
       <p class="folio-note">The research test: can a digital human make vulnerable interaction easier while keeping the system's limits, incentives, and final decision visible?</p>
     </section>
     <section class="page-section" id="product-boundaries" aria-labelledby="boundaries-heading">
@@ -84,6 +90,75 @@
         <li><strong>Use ML for nuance, not isolation:</strong> understand specific compatibility needs inside one shared ecosystem instead of forcing people into separate boxes.</li>
       </ul>
       <p>This is where the product earns its right to exist. It should make the real person more capable, not make the system more difficult to leave.</p>
+    </section>
+    <section class="page-section" id="accessibility" aria-labelledby="accessibility-heading">
+      <h2 id="accessibility-heading">Accessibility is emotional equity</h2>
+      <p>This is how I translate the empowerment logic into product work: accessibility is not a checklist after the launch. If the interface creates extra friction for disabled, neurodivergent, tired, grieving, or overwhelmed users, the system is asking some people to spend more energy just to reach the same human connection.</p>
+      <h3>1. Reduce burnout at the interface</h3>
+      <p>A platform that requires fast swiping, perfect vision, precise motor control, or effortless social parsing is not neutral. It makes the people already carrying more friction work harder. Semantic regions, screen-reader announcements, captions, text alternatives, and calm pacing make the private space usable before it becomes intimate.</p>
+      <h3>2. Make safety readable</h3>
+      <p>You cannot ask someone to share a breakup or a relationship boundary while the interface clips text, hides state changes, or relies on sound. The user needs visible labels, scalable text, high contrast, clear "AI is thinking..." status text, and a simple way to edit, undo, or leave.</p>
+      <h3>3. Let the interface adapt</h3>
+      <p>Voice can be an option, never a requirement. Keyboard and switch access must work. Motion needs a reduced-motion path. Match explanations and private reflections need a clear focus state and a reversible next step. The system should adapt to the person's available energy, not demand that the person become fluent in the system.</p>
+      <p class="folio-note">The standard is emotional as well as technical: if a system asks someone to show up authentically, it has to give them a perceivable, navigable, and reversible way to do it.</p>
+    </section>
+    <section class="page-section" id="sanctuary-prototype" aria-labelledby="sanctuary-heading">
+      <div class="sanctuary-prototype">
+        <header class="sanctuary-prototype__header">
+          <div>
+            <p class="sanctuary-label">Prototype interaction</p>
+            <h2 id="sanctuary-heading">AI Sanctuary</h2>
+          </div>
+          <p class="sanctuary-status">Private reflection · no account connected</p>
+        </header>
+        <ol class="sanctuary-flow" aria-label="AI concierge flow">
+          <li><strong>Confess</strong><span>Share only what you choose. The assistant helps you name a boundary or pattern.</span></li>
+          <li><strong>Understand</strong><span>Translate your words into values and preferences you can inspect and correct.</span></li>
+          <li><strong>Hand off</strong><span>Let authorized assistants reduce the noise, then return the decision to you.</span></li>
+        </ol>
+        <div class="sanctuary-prototype__body">
+          <div class="sanctuary-aura" aria-hidden="true"><span></span></div>
+          <p class="sanctuary-prompt">Tell me about a boundary you wish you had set in your last relationship.</p>
+          <details class="reflection-card" open>
+            <summary>Reflective insight</summary>
+            <p>It sounds like clear communication is important to you when things start to change. We can look for that value without turning one difficult experience into your whole identity.</p>
+          </details>
+          <form class="sanctuary-form" aria-labelledby="reflection-label">
+            <label id="reflection-label" for="reflection-input">Your reflection</label>
+            <textarea id="reflection-input" name="reflection" rows="4" placeholder="Write at your own pace..."></textarea>
+            <div class="sanctuary-form__actions">
+              <button class="btn btn--primary" type="submit">Reflect back</button>
+              <button class="btn btn--ghost" type="reset">Clear</button>
+            </div>
+            <p class="sanctuary-form__note">Text is the full alternative to voice. This prototype does not send or store your response.</p>
+            <p class="sanctuary-form__status" id="reflection-status" aria-live="polite"></p>
+          </form>
+        </div>
+        <section class="sanctuary-commons" aria-labelledby="commons-heading">
+          <div class="sanctuary-prototype__header">
+            <div>
+              <p class="sanctuary-label">Progressive disclosure</p>
+              <h3 id="commons-heading">The Commons</h3>
+            </div>
+            <p class="sanctuary-status">Three possibilities · human choice required</p>
+          </div>
+          <div class="match-list">
+            <details class="match-card">
+              <summary>Sam · open communication</summary>
+              <p><strong>Why this surfaced:</strong> both assistants noted a preference for direct conversations and independent weekend routines.</p>
+            </details>
+            <details class="match-card">
+              <summary>Jordan · steady transitions</summary>
+              <p><strong>Why this surfaced:</strong> both people described wanting clarity when plans change. The recommendation is an invitation, not a verdict.</p>
+            </details>
+            <details class="match-card">
+              <summary>Riley · curious and grounded</summary>
+              <p><strong>Why this surfaced:</strong> both profiles value learning, honest pacing, and room to say no before saying yes.</p>
+            </details>
+          </div>
+          <p class="sanctuary-boundary"><strong>Never:</strong> fabricate a person's identity, replace a human partner, or send automated messages to a real person without their knowledge.</p>
+        </section>
+      </div>
     </section>
     <section class="page-section" id="nsf" aria-labelledby="nsf-heading">
       <h2 id="nsf-heading"><a href="https://www.nsf.gov/" rel="noopener noreferrer">NSF research</a></h2>
