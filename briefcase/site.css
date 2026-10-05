@@ -1638,3 +1638,74 @@ body:has(.scratch-app) a:hover {
   min-width: 0;
   overflow-wrap: break-word;
 }
+
+/* Founder-story skeleton (structure only; keep Wikipedia / folio chrome) */
+.folio .hero-rule {
+  margin: 0 0 0.85rem;
+  max-width: 42rem;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--heading);
+}
+
+.folio .section-kicker {
+  margin: -0.55rem 0 0.85rem;
+  font-family: var(--sans);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.folio .origin-beats {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.folio .origin-beats li {
+  position: relative;
+  margin: 0.2rem 0;
+  padding-left: 0.9rem;
+  line-height: 1.45;
+}
+
+.folio .origin-beats li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+}
+
+.folio .fill-hole {
+  margin: 1.15rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px dashed var(--line);
+  background: var(--infobox);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  max-width: 48rem;
+}
+
+.folio .fill-hole__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.folio .hero-cta {
+  margin-top: 1.15rem;
+}
+
+.folio .hero-cta a {
+  font-weight: 600;
+}

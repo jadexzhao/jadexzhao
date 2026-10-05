@@ -1,0 +1,30 @@
+jadexzhao briefcase · NOTES FOR JADE
+Skeleton layout pass (founder-story structure). Not committed unless you ask.
+
+STATUS · matchaxmoxie
+- Left alone. Scratch MIT.edu classroom vibe stays.
+- Do NOT Whitney-ify matchaxmoxie HTML / CSS.
+- Only a pointer link from this proof door and from zhao-langxi Status.
+
+Whitney pattern mapped (structure only; not Bumble yellow / not her claims)
+1. Thesis / product rule
+2. Origin → why this exists
+3. Proof / ships
+4. Beyond the first product (BFF-style expansion: same brand, more rooms)
+5. Clear CTAs
+
+What to fill next (look for dashed “Fill later” boxes on index.html)
+- thesis-line: optional sharper one-line rule in your voice
+- origin-story: short origin for THIS door (deep narrative stays IU Pages)
+- proof-case: one flagship case blurb (problem → ship → who keeps it)
+- beyond-rooms: which rooms to name (Jade🪴, Serve-AI, Madrid … only if true)
+- cta-priority: one primary CTA for peers vs hire path
+
+Preview
+- file:///Users/jadexzhao/Documents/jadexzhao/briefcase/index.html
+- or: open briefcase/ locally; live: https://jadexzhao.github.io/jadexzhao/
+
+1st-person taste calls (agent will not silently rewrite)
+- Keep or cut the Bumble BFF analogy sentence in #beyond
+- Whether nav labels Thesis / Origin / Proof / Beyond feel right vs Work / Serve IT
+- When fill-holes are filled, delete the dashed boxes
