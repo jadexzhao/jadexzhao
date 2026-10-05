@@ -691,7 +691,7 @@ a:hover {
 }
 
 .case-toc__label {
-  min-width: 3.25rem;
+  min-width: 4.25rem;
   font-family: var(--sans);
   font-size: var(--fs-label);
   font-weight: 700;
