@@ -1,38 +1,26 @@
 jadexzhao briefcase · NOTES FOR JADE
-zhao-langxi craft port (Whitney / yellow) adapted for technical proof door.
+Younger-Whitney (founding-era) energy + still-in-the-grind voice on proof door.
 
-STATUS · matchaxmoxie
-- Left alone. Scratch MIT.edu classroom vibe stays.
-- Only a pointer link from this proof door.
-
-What leveled up (2026-10-04)
-- Hero: “After the demo” thesis + rule + claim stack + byline + photo
-- Proof: flagship panel + ship-list (door-list rhythm) + Handshake clips
-- Beyond: beyond-list with other doors + Jade🪴
-- Status note panel + yellow footer + site switcher
-- Reveal scroll motion (respects reduced-motion)
-- Bolder yellow/black/white than essay-readable zhao-langxi
-
-Voice choices (true to Jade; inspired by Whitney public framing)
+Voice lock (2026-10-04)
+- Early Whitney craft: one sharp rule, kindness + control, more rooms, building in public
+- NOT current CEO / IPO / empire energy
+- Hungry early-career Jade: still proving, still rewriting, still have to work hard
 - Thesis: “Looking human is not the product. Respect is.”
-- Kindness + control framing adapted to Digital Humans / handoffs
-- No Seeking SWE lead; no invented metrics; no dating-app company claims
-- Door job stays ships / handoffs, not essays
+- Ships are proof of work, not trophies; CTAs invite collaboration
+- No Seeking SWE lead; no invented metrics; never SPC; no em dash; no AI product names
 
-CSS choices
-- Yellow #FFC629 · black · white · warm paper #FFFBF0
-- Outfit bold sans; yellow sticky nav; pill CTAs; flagship case panel
-- White card shell on home; yellow underline on h1
-- Motions: hero rise, CTA rise, scroll reveal, button lift
-- Scratch duck page chrome still scoped separately
+What shipped
+- Home thesis / origin / proof / beyond / contact rewrite
+- All small + handoff + case pages: standfirsts + consistent nav/footer/switcher
+- Case gaps labeled [still writing: …] instead of fake polish
+- Yellow #FFC629 Outfit system; site.css?v=20261004-whitney
 
 1st-person taste calls
-- Keep or soften “After the demo” as the h1 (vs “Jade Zhao”)
-- Keep or soften “Respect is.” as the second thesis beat
-- Whether contact band should stay full yellow block
-- Favicon photo-at-16px vs logo (unchanged this pass)
-- Hero photo crop / whether boat pfp stays on proof door
+- Keep or soften “After the demo” / “Respect is.”
+- Contact yellow band
+- Favicon photo-at-16px
+- Case study gap notes vs fuller write-ups later
 
 Preview
 - file:///Users/jadexzhao/Documents/jadexzhao/briefcase/index.html
-- live after push: https://jadexzhao.github.io/jadexzhao/
+- live: https://jadexzhao.github.io/jadexzhao/
