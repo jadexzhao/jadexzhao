@@ -1,26 +1,37 @@
 jadexzhao briefcase · NOTES FOR JADE
-Younger-Whitney voice + Bumble-adjacent CSS pass. Review before next edit.
+zhao-langxi craft port (Whitney / yellow) adapted for technical proof door.
 
 STATUS · matchaxmoxie
 - Left alone. Scratch MIT.edu classroom vibe stays.
 - Only a pointer link from this proof door.
 
+What leveled up (2026-10-04)
+- Hero: “After the demo” thesis + rule + claim stack + byline + photo
+- Proof: flagship panel + ship-list (door-list rhythm) + Handshake clips
+- Beyond: beyond-list with other doors + Jade🪴
+- Status note panel + yellow footer + site switcher
+- Reveal scroll motion (respects reduced-motion)
+- Bolder yellow/black/white than essay-readable zhao-langxi
+
 Voice choices (true to Jade; inspired by Whitney public framing)
 - Thesis: “Looking human is not the product. Respect is.”
 - Kindness + control framing adapted to Digital Humans / handoffs
 - No Seeking SWE lead; no invented metrics; no dating-app company claims
-- Fill-holes replaced with real draft copy you can still edit
+- Door job stays ships / handoffs, not essays
 
 CSS choices
 - Yellow #FFC629 · black · white · warm paper #FFFBF0
 - Outfit bold sans; yellow sticky nav; pill CTAs; flagship case panel
-- 2–3 motions: hero rise, CTA rise, button lift (respects reduced-motion)
+- White card shell on home; yellow underline on h1
+- Motions: hero rise, CTA rise, scroll reveal, button lift
 - Scratch duck page chrome still scoped separately
 
 1st-person taste calls
+- Keep or soften “After the demo” as the h1 (vs “Jade Zhao”)
 - Keep or soften “Respect is.” as the second thesis beat
 - Whether contact band should stay full yellow block
 - Favicon photo-at-16px vs logo (unchanged this pass)
+- Hero photo crop / whether boat pfp stays on proof door
 
 Preview
 - file:///Users/jadexzhao/Documents/jadexzhao/briefcase/index.html
