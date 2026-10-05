@@ -2122,3 +2122,87 @@ body:has(.scratch-app) a:hover {
     transform: none;
   }
 }
+
+/* Article pages: thesis rail + evidence column. The rail collapses on mobile. */
+.stage--article > .shell {
+  background:
+    linear-gradient(90deg, var(--yellow-soft) 0, var(--yellow-soft) 0.35rem, var(--well) 0.35rem),
+    var(--well);
+}
+
+.stage--article .page-section {
+  position: relative;
+}
+
+.stage--article .page-section h2 {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.stage--article .prose h3:not(.pillar) {
+  margin: 1.5rem 0 0.45rem;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--teal);
+}
+
+@media (min-width: 60rem) {
+  .stage--article > .shell {
+    display: grid;
+    grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.55fr);
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+
+  .stage--article > .shell > .page-head {
+    position: sticky;
+    top: 5.75rem;
+    min-width: 0;
+    padding-block: 0;
+  }
+
+  .stage--article > .shell > .prose,
+  .stage--article > .shell > .page-head + .prose {
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .stage--article .page-head h1 {
+    max-width: 16ch;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  .stage--article .standfirst {
+    max-width: 31ch;
+  }
+
+  .stage--article .page-section {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    padding-top: 1.5rem;
+    border-top: 3px solid var(--ink);
+  }
+
+  .stage--article .prose > .page-section:first-child {
+    margin-top: 0;
+  }
+
+  .stage--article .page-section h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+}
+
+@media (max-width: 59.99rem) {
+  .stage--article > .shell {
+    background:
+      linear-gradient(90deg, var(--yellow-soft) 0, var(--yellow-soft) 0.25rem, var(--well) 0.25rem),
+      var(--well);
+  }
+
+  .stage--article .page-head h1 {
+    max-width: 15ch;
+  }
+}
