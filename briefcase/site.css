@@ -10,6 +10,8 @@
   --yellow: #ffc629;
   --yellow-soft: #fff6d6;
   --yellow-deep: #e0a800;
+  --coral: #ff6b4a;
+  --teal: #0f6b68;
   --paper: #fffbf0;
   --well: #ffffff;
   --ink: #0d0d0d;
@@ -182,7 +184,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 40;
-  padding: calc(0.55rem + var(--safe-t)) 0 0.4rem;
+  padding: calc(0.7rem + var(--safe-t)) 0 0.55rem;
   background: var(--yellow);
   border-bottom: 3px solid var(--ink);
 }
@@ -201,7 +203,7 @@ a:hover {
 .topbar-brand {
   color: var(--heading);
   font-family: var(--sans);
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -478,7 +480,7 @@ a:hover {
   font-size: clamp(1.75rem, 4vw, 2.1rem);
   letter-spacing: 0;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 800;
   color: var(--heading);
 }
 
@@ -498,7 +500,22 @@ a:hover {
   margin: 0;
   max-width: none;
   font-size: var(--fs-lead);
-  line-height: 1.5;
+  line-height: 1.52;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+.page-head {
+  position: relative;
+  border-top: 0.45rem solid var(--coral);
+}
+
+.page-head h1::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  margin-top: 0.65rem;
+  border-bottom: 0.3rem solid var(--yellow);
 }
 
 .band-kicker {
