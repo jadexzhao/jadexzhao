@@ -67,6 +67,8 @@
 html {
   scroll-padding-top: 6.5rem;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -2221,6 +2223,8 @@ body:has(.scratch-app) a:hover {
   }
 }
 
+/* Thesis rail: only prose articles (page-head + .prose). Serve IT case pages
+   keep a single flowing column ... sticky rail there stacked text over photo. */
 @media (min-width: 60rem) {
   .stage--article > .shell:has(> .page-head + .prose) {
     display: grid;
@@ -2230,30 +2234,32 @@ body:has(.scratch-app) a:hover {
     padding-block: clamp(2rem, 5vw, 4rem);
   }
 
-  .stage--article > .shell > .page-head {
+  .stage--article > .shell:has(> .page-head + .prose) > .page-head {
     position: sticky;
     top: 5.75rem;
+    z-index: 1;
     min-width: 0;
     padding-block: 0;
+    background: var(--well);
   }
 
-  .stage--article > .shell > .prose,
+  .stage--article > .shell:has(> .page-head + .prose) > .prose,
   .stage--article > .shell > .page-head + .prose {
     min-width: 0;
     padding-top: 0;
   }
 
-  .stage--article .page-head h1 {
+  .stage--article > .shell:has(> .page-head + .prose) .page-head h1 {
     max-width: 16ch;
     font-size: clamp(2.5rem, 5vw, 4.2rem);
     line-height: 0.98;
   }
 
-  .stage--article .standfirst {
+  .stage--article > .shell:has(> .page-head + .prose) .standfirst {
     max-width: 31ch;
   }
 
-  .stage--article .page-section {
+  .stage--article > .shell:has(> .page-head + .prose) .page-section {
     margin-top: clamp(2.5rem, 5vw, 4rem);
     padding-top: 1.5rem;
     border-top: 3px solid var(--ink);
@@ -2263,7 +2269,7 @@ body:has(.scratch-app) a:hover {
     margin-top: 0;
   }
 
-  .stage--article .page-section h2 {
+  .stage--article > .shell:has(> .page-head + .prose) .page-section h2 {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 }
@@ -2275,9 +2281,24 @@ body:has(.scratch-app) a:hover {
       var(--well);
   }
 
-  .stage--article .page-head h1 {
+  .stage--article > .shell:has(> .page-head + .prose) .page-head h1 {
     max-width: 15ch;
   }
+}
+
+/* Serve IT rubric case pages: normal document flow, no sticky rail. */
+.stage--article > .shell:has(> .page-head):not(:has(> .page-head + .prose)) > .page-head {
+  position: static;
+  z-index: auto;
+  background: transparent;
+}
+
+.stage--article > .shell:has(> .page-head):not(:has(> .page-head + .prose)) .page-head h1 {
+  max-width: 22ch;
+}
+
+.stage--article > .shell:has(> .page-head):not(:has(> .page-head + .prose)) .standfirst {
+  max-width: 48rem;
 }
 
 .sanctuary-prototype {
