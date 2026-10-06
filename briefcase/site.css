@@ -2223,10 +2223,9 @@ body:has(.scratch-app) a:hover {
   }
 }
 
-/* Thesis rail: only prose articles (page-head + .prose). Serve IT case pages
-   keep a single flowing column ... sticky rail there stacked text over photo. */
+/* Thesis rail: only prose articles (page-head + .prose). Never on .stage--case. */
 @media (min-width: 60rem) {
-  .stage--article > .shell:has(> .page-head + .prose) {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) {
     display: grid;
     grid-template-columns: minmax(14rem, 0.72fr) minmax(0, 1.55fr);
     column-gap: clamp(2.5rem, 6vw, 6rem);
@@ -2234,7 +2233,7 @@ body:has(.scratch-app) a:hover {
     padding-block: clamp(2rem, 5vw, 4rem);
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) > .page-head {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) > .page-head {
     position: sticky;
     top: 5.75rem;
     z-index: 1;
@@ -2243,23 +2242,23 @@ body:has(.scratch-app) a:hover {
     background: var(--well);
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) > .prose,
-  .stage--article > .shell > .page-head + .prose {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) > .prose,
+  .stage--article:not(.stage--case) > .shell > .page-head + .prose {
     min-width: 0;
     padding-top: 0;
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) .page-head h1 {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) .page-head h1 {
     max-width: 16ch;
     font-size: clamp(2.5rem, 5vw, 4.2rem);
     line-height: 0.98;
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) .standfirst {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) .standfirst {
     max-width: 31ch;
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) .page-section {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) .page-section {
     margin-top: clamp(2.5rem, 5vw, 4rem);
     padding-top: 1.5rem;
     border-top: 3px solid var(--ink);
@@ -2269,24 +2268,25 @@ body:has(.scratch-app) a:hover {
     margin-top: 0;
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) .page-section h2 {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) .page-section h2 {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 }
 
 @media (max-width: 59.99rem) {
-  .stage--article > .shell {
+  .stage--article:not(.stage--case) > .shell {
     background:
       linear-gradient(90deg, var(--yellow-soft) 0, var(--yellow-soft) 0.25rem, var(--well) 0.25rem),
       var(--well);
   }
 
-  .stage--article > .shell:has(> .page-head + .prose) .page-head h1 {
+  .stage--article:not(.stage--case) > .shell:has(> .page-head + .prose) .page-head h1 {
     max-width: 15ch;
   }
 }
 
-/* Serve IT rubric case pages: normal document flow, no sticky rail. */
+/* Serve IT rubric case pages: normal document flow, no sticky rail.
+   Prefer explicit .stage--case (set on case HTML). :has() kept as fallback. */
 .stage--article > .shell:has(> .page-head):not(:has(> .page-head + .prose)) > .page-head {
   position: static;
   z-index: auto;
@@ -2299,6 +2299,105 @@ body:has(.scratch-app) a:hover {
 
 .stage--article > .shell:has(> .page-head):not(:has(> .page-head + .prose)) .standfirst {
   max-width: 48rem;
+}
+
+/* Explicit case stage: never grid, never sticky head, never teal-over-photo. */
+.stage--case > .shell {
+  display: block;
+  grid-template-columns: none;
+  column-gap: 0;
+  align-items: stretch;
+  background: var(--well);
+}
+
+.stage--case > .shell > .page-head {
+  position: static;
+  top: auto;
+  z-index: auto;
+  min-width: 0;
+  max-width: none;
+  padding-block: clamp(1.25rem, 4vw, 2.25rem) 0;
+  background: transparent;
+}
+
+.stage--case .page-head h1 {
+  max-width: 22ch;
+  font-size: clamp(1.85rem, 4.2vw, 2.4rem);
+  line-height: 1.12;
+}
+
+.stage--case .standfirst,
+.stage--case .band-lede {
+  position: static;
+  z-index: auto;
+  max-width: 48rem;
+  margin-top: 0.85rem;
+}
+
+.stage--case .band-lede {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.stage--case .standfirst {
+  color: var(--teal);
+}
+
+.stage--case .story-stack {
+  position: static;
+  z-index: auto;
+  margin-top: 1rem;
+}
+
+.stage--case .case-toc {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.35rem 0.65rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+  overflow-wrap: anywhere;
+}
+
+.stage--case .case-toc a {
+  flex: 0 1 auto;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.stage--case .case-section,
+.stage--case .profile-grid,
+.stage--case .profile-photo {
+  position: static;
+  z-index: auto;
+}
+
+@media (min-width: 40rem) {
+  .stage--case .profile-grid {
+    grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 42rem) {
+  .stage--case .case-toc {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+
+  .stage--case .case-toc a {
+    min-height: 2.5rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--line-subtle);
+  }
+
+  .stage--case .case-toc a:last-child {
+    border-bottom: 0;
+  }
 }
 
 .sanctuary-prototype {

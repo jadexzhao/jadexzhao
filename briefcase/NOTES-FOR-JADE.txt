@@ -13,7 +13,9 @@ What shipped
 - Home thesis / origin / proof / beyond / contact rewrite
 - All small + handoff + case pages: standfirsts + consistent nav/footer/switcher
 - Case gaps labeled [still writing: …] instead of fake polish
-- Yellow #FFC629 Outfit system; site.css?v=20261004-whitney
+- Yellow #FFC629 Outfit system
+- Serve IT cases use stage--case so thesis-rail sticky cannot stack teal over photo
+- Jump nav wraps on small screens; site.css?v=20261006-case2
 
 1st-person taste calls
 - Keep or soften “After the demo” / “Respect is.”
