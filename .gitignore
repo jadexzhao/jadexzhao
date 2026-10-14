@@ -22,3 +22,12 @@ prohealth-informatics/
 
 # Local reference dumps (contact PDFs, IG export, search snapshots)
 .local-ref/
+
+# Local Digital Humans research (never push)
+digital-humans-research-local/
+
+# Local blog drafts (not for GitHub yet)
+blog-posts-local/
+
+# Local INFO-I 453 coursework (never push)
+ethics/
