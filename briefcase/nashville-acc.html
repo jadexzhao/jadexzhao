@@ -1,12 +1,199 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://floret-heap-13099640.figma.site/case-study.html">
-  <title>Jade Zhao</title>
-  <link rel="canonical" href="https://floret-heap-13099640.figma.site/case-study.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Town of Nashville accessibility assessment · Jade Zhao</title>
+  <style>
+    :root {
+      --outer: #f6efe3;
+      --card: #ffffff;
+      --line: #c3d4de;
+      --accent: #4a90c4;
+      --ink: #1c1c1c;
+      --link: #0d4f78;
+      --caption: #4a6b3d;
+      --muted: #3d4a52;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--outer);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    a { color: var(--link); }
+    a:hover { text-decoration-thickness: 2px; }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: -3rem;
+      background: var(--card);
+      border: 2px solid var(--accent);
+      padding: 0.4rem 0.7rem;
+    }
+    .skip:focus { top: 0.75rem; }
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    header, section, footer {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.25rem 1.35rem;
+      margin: 0 0 1rem;
+    }
+    header { border-top: 6px solid var(--accent); }
+    .profile {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .profile img {
+      width: 7.5rem;
+      height: 7.5rem;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+    h1, h2, h3 { line-height: 1.25; margin: 0 0 0.6rem; }
+    h1 { font-size: 1.7rem; }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--link);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.25rem;
+    }
+    h3 { font-size: 1.05rem; margin-top: 1rem; }
+    p, li { margin: 0.45rem 0; }
+    ul { padding-left: 1.2rem; }
+    .kicker {
+      margin: 0 0 0.35rem;
+      color: var(--caption);
+      font-size: 0.92rem;
+    }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.9rem;
+    }
+    dl { margin: 0.4rem 0 0; }
+    dt { font-weight: 700; margin-top: 0.55rem; }
+    dd { margin: 0.15rem 0 0; }
+    footer { font-size: 0.95rem; }
+    @media (max-width: 36rem) {
+      .profile { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  <p><a href="https://floret-heap-13099640.figma.site/case-study.html">https://floret-heap-13099640.figma.site/case-study.html</a></p>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <p class="kicker">ServeIT (community technology clinic) · Fall 2026</p>
+      <div class="profile">
+        <img src="assets/jadexzhao.jpg" width="900" height="900" alt="Jade Zhao, holding a bouquet of pink lilies beside a window.">
+        <div>
+          <h1>Town of Nashville accessibility assessment</h1>
+          <p class="meta">Jade Zhao · ServeIT Website Team Lead · Co-lead, Nashville ACC (accessibility assessment)</p>
+          <nav aria-label="Contact">
+            <ul>
+              <li><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></li>
+              <li><a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a></li>
+              <li><a href="https://github.com/jadexzhao">GitHub</a></li>
+              <li><a href="https://jlzhao.pages.iu.edu/resume.pdf">Resume (IU Pages)</a></li>
+              <li><a href="index.html">Home</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="introduction">
+        <h2>Introduction</h2>
+        <p>I am Jade Zhao, an Informatics student at Indiana University Bloomington in the Luddy School of Informatics, Computing, and Engineering. I am a first-generation student. My minors are Business Technology and user experience (UX) research. I am interested in how a public system holds up once a real person has to finish a task on it.</p>
+        <p>On this project my technical work is reading page structure, mapping checks to the Web Content Accessibility Guidelines (WCAG), and keeping a small team's tasks visible. The work I want sits in that same place: accessibility, client communication, and software that a community partner can actually use.</p>
+      </section>
+
+      <section id="overview">
+        <h2>Project overview</h2>
+        <p>In Fall 2026 I co-lead the ServeIT accessibility team for the Town of Nashville, Indiana. The clinic kickoff was Friday 28 August 2026. Our team meeting window is Thursday 18:00 to 19:00. The scope of work asks us to inspect, test, and document the town website, compile those checks into a report, and later present recommendations and hand off the documents. Live edits stay with the instructor or an authorised town representative.</p>
+        <h3>Team</h3>
+        <ul>
+          <li>Jade Zhao, Team Lead / Co-lead and ServeIT Website Team Lead</li>
+          <li>Aanya Arora, Co-lead</li>
+          <li>Chiara Bouckaert, Mueyae Pae, and Bhumika Sati</li>
+          <li>Supervisor: Maya Marotti</li>
+        </ul>
+        <p>Accessibility teams do not use a Lead Design Manager. That role is not part of this assessment. Aanya and I share Canvas admin, client coordination, and the Microsoft Planner board. Interns pull tasks from the board.</p>
+        <h3>My part</h3>
+        <p>I wrote the Week 4 sprint plan (due Sunday 20 September 2026) and the stakeholder meeting agenda for a proposed Wednesday 23 September 2026 noon Zoom. On that agenda I am meeting lead and timekeeper. I am also a named author on the team's Fall 2026 stakeholder research. On 4 October 2026 I drafted working notes on headings and page titles in Google Chrome on macOS. The packaged reports in the team folder, dated 4 to 18 October 2026, credit Chiara, Mueyae, and Bhumika as the auditors for the checks they own.</p>
+      </section>
+
+      <section id="client">
+        <h2>Client</h2>
+        <p>The client is the Town of Nashville, Indiana. The site under assessment is <a href="https://www.townofnashville.org/">townofnashville.org</a>. Our scope names Maddie Bond, Town of Nashville Administrative Assistant, as the client contact. I coordinate with Maya before client outreach.</p>
+        <p>The town site is the public information hub for administration, water and sewer utilities, the Clerk-Treasurer, Town Council records, police, boards and commissions, development review, parks and arts, and links out to Brown County services. People use it to pay a bill, start or stop water service, find a meeting, read an ordinance, or act on a time-sensitive notice.</p>
+        <p>Our stakeholder research, drawn from the scope of work and from public pages on the town site in early September 2026, treats people with disabilities as part of every audience. They need the same civic tasks to work with a screen reader, magnification, a keyboard, captions, or plain language. One check in the team folder also records a client ask: make contact, parking, and disability-access help easier to find for residents with hearing or visual impairments. A formal town-wide mission statement was not on the pages we reviewed. Commission pages, such as the Town Park Commission and the Arts and Entertainment Commission, publish their own purpose statements.</p>
+      </section>
+
+      <section id="process">
+        <h2>Process and solution</h2>
+        <p>We organised the semester as assessment work. Setup, accessibility training, stakeholder research, then structured checks. Findings go into a shared report for the town and for the ServeIT web team. We do not change the live site.</p>
+        <p>Before the client conversation I prepared a one-page agenda: introductions, what access problems the town has already noticed, a short mapping of users and needs, how we would check against WCAG, and time to set a later presentation. The September agenda still left the final presentation date open. I am not treating that presentation as delivered.</p>
+        <p>After that, the team split the checks. Local final-report files cover carousels and rotating banners, contact / parking / disability-access information, headings and content structure, page titles, font size and colour contrast, and keyboard-only use. Each write-up records the page, what was tested, a rating, the relevant WCAG criterion, and a recommended correction. The solution at this point in the semester is that recommendation set, ready for handoff. The town decides what to change.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills and tools</h2>
+        <p>These are the skills this project actually used, from my notes and the team files.</p>
+        <ul>
+          <li>Project management: sprint planning, agendas, and a Microsoft Planner board with a backlog and a lane per person</li>
+          <li>Client research and meeting design for a municipal website</li>
+          <li>HTML structure: headings, document titles, and how a page is reached from navigation</li>
+          <li>WCAG as the shared standard for the written findings</li>
+          <li>Google Chrome on macOS, including page source and the accessibility tree, on my 4 October headings and titles notes</li>
+          <li>Microsoft Teams as the shared channel</li>
+        </ul>
+        <p>My clinic setup notes for this assessment also name axe DevTools, the Web Developer extension, the WebAIM contrast checker, macOS keyboard navigation, and VoiceOver. A fuller VoiceOver or NVDA (NonVisual Desktop Access) pass is still open in my headings notes.</p>
+      </section>
+
+      <section id="deliverables">
+        <h2>Deliverables</h2>
+        <p>The public site we assessed is <a href="https://www.townofnashville.org/">https://www.townofnashville.org/</a>.</p>
+        <p>These artefacts exist in my local clinic folder. I am not posting them on this page. They are the town's finding set, and they include page-level detail that belongs in the client handoff.</p>
+        <ul>
+          <li>Scope of work, Accessibility Team, Town of Nashville, Fall 2026</li>
+          <li>Town of Nashville Stakeholder Research, Fall 2026 (team document)</li>
+          <li>Stakeholder meeting agenda, 23 September 2026</li>
+          <li>Week 4 sprint plan for the Nashville accessibility team</li>
+          <li>Final-report checks dated 4 October, 11 October, and 18 October 2026: carousels, contact / parking / disability access, headings, page titles, font size and colour contrast, and keyboard navigability</li>
+        </ul>
+        <p>I do not have a screenshot I can show here without publishing those findings. My 4 October notes still listed homepage and title screenshots as not yet filed.</p>
+      </section>
+
+      <section id="reflection">
+        <h2>Reflection</h2>
+        <p>The lesson I wrote down from the Deque training panel, How Persons with Disabilities Use the Web, is the one I am using on this team. Fatigue came from small barriers stacking up: weak headings, clutter, inconsistent navigation, and tasks that assume everyone has the same energy left in the day. When I write a finding, I want the note to say what that extra effort costs, and to be specific enough that someone else can recommend a correction.</p>
+        <p>The same notes changed how wide I set the check. Keyboard use, structure, and plain language sit beside colour contrast. The report should help the town improve the site residents already use. On the lead side, a Planner card with a name and an honest Done status is how I can see the week. Praise can sit in the team channel. Corrective notes stay private and about the work.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Jade Zhao · IU Luddy · ServeIT Website Team Lead</p>
+      <p><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></p>
+    </footer>
+  </div>
 </body>
 </html>
