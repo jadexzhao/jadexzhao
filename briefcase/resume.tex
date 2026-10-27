@@ -1,9 +1,10 @@
 %-------------------------
 % Jade Zhao · hire-facing résumé (jadexzhao)
-% Facts from PROJECT-INVENTORY + identity memory. No invented metrics.
-% UK spelling. Ranges use "to". No em dash.
+% Author draft 26 Oct 2026. UK spelling. Ranges use "to". No em dash.
+% No invented phone. Author: Jade Zhao.
 %-------------------------
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,9pt]{article}
+\usepackage{extsizes}
 
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -18,7 +19,7 @@
   pdfauthor={Jade Zhao},
   pdfcreator={Jade Zhao},
   pdfproducer={Jade Zhao},
-  pdfsubject={Digital Humans, human-centred AI, business technology}
+  pdfsubject={Informatics, Digital Humans, accessibility, business technology}
 }
 
 \pagestyle{fancy}
@@ -30,8 +31,8 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.55in}
-\addtolength{\textheight}{1.15in}
+\addtolength{\topmargin}{-0.62in}
+\addtolength{\textheight}{1.35in}
 
 \urlstyle{same}
 \raggedbottom
@@ -40,8 +41,8 @@
 \setlength{\parindent}{0pt}
 
 \titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\titlerule \vspace{-4pt}]
+  \vspace{-8pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\titlerule \vspace{-5pt}]
 
 \newcommand{\resumeItem}[1]{
   \item\small{#1}
@@ -57,11 +58,11 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=3pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=1.5pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.14in, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
@@ -70,7 +71,7 @@
 \begin{center}
     \textbf{\LARGE Jade Zhao} \\ \vspace{3pt}
     \small
-    Bloomington, IN
+    Indianapolis, IN
     \,$\vert$\,
     \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
     \,$\vert$\,
@@ -81,22 +82,27 @@
     \href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao}
 \end{center}
 
-\section{Summary}
-\small
-Informatics student at Indiana University researching how Digital Humans can become useful business interfaces. Work across human-centred AI, accessibility, civic technology, and systems that have to survive real customers. Expected May 2027.
-
 \section{Education}
 \resumeSubHeadingListStart
     \resumeSubheading
-      {Indiana University Bloomington, Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
-      {B.S. Informatics. Minors: Business Technology and UX Research. GPA: 3.50}{Bloomington, IN}
+      {Indiana University Bloomington}{Bloomington, IN}
+      {Bachelor of Science in Informatics. Expected May 2027}{}
       \resumeItemListStart
-        \resumeItem{Hudson \& Holland Scholar (full merit). First-generation college student. Luddy Direct Admit.}
+        \resumeItem{Minor: Human-Computer Interaction / Design. Cognate: Business \& Society.}
+        \resumeItem{Honours: Hudson \& Holland Scholar, Provost's Scholarship, Founders Scholar, Luddy Dean's List.}
+        \resumeItem{Coursework: programming, database systems, systems analysis, technology infrastructure, project management, financial management.}
         \resumeItem{Study abroad: Universidad Complutense de Madrid, Spring 2026.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-\section{Experience}
+\section{Technical Skills}
+\small
+\textbf{Languages:} Python, SQL, JavaScript, HTML, CSS, Java. \\
+\textbf{Frameworks and databases:} React.js, PostgreSQL. \\
+\textbf{Tools:} GitHub, Figma, Wix Studio, WordPress, Jira, Confluence. \\
+\textbf{Technical areas:} web development, database management, digital accessibility, WCAG 2.1, technical documentation, information systems.
+
+\section{Technical Experience}
 \resumeSubHeadingListStart
 
     \resumeSubheading
@@ -104,73 +110,85 @@ Informatics student at Indiana University researching how Digital Humans can bec
       {Luddy School of Informatics, Computing, and Engineering}{Bloomington, IN}
       \resumeItemListStart
         \resumeItem{Student lead on interfaces that look and communicate like a person: trust, disclosure, consent, and human oversight.}
-        \resumeItem{Public work stays high level: can a person inspect and correct the profile in use, refuse at each stage, and find who is accountable when the system is wrong.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Website Team Lead}{Jan 2024 to present}
-      {Laurie Burns McRobbie ServeIT Clinic, Luddy}{Bloomington, IN}
+      {Technical Project Lead}{Jan 2024 to present}
+      {Laurie Burns McRobbie ServeIT Clinic, Indiana University}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Promoted from intern to Website Team Lead: intake, scoping, delegation, accessibility as delivery, and handoffs for partners without a developer on call.}
-        \resumeItem{Public partners include City of Bloomington, Middle Way House, Indiana Phenology Lab, and Bloomington Chamber of Commerce.}
-        \resumeItem{Fall 2026: co-lead accessibility assessment for the Town of Nashville, Indiana (WCAG-oriented checks and report; no live-site edits).}
+        \resumeItem{Lead web and accessibility work for nonprofit and public-sector partners; turn requirements into deliverables teams can maintain.}
+        \resumeItem{Coordinate student teams, schedules, evaluations, and documentation.}
+        \resumeItem{Lead a WCAG 2.1 AA review for the Town of Nashville (keyboard, colour contrast, structure). Prioritised notes and handoff; no live-site edits.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Web Developer}{Jun 2026 to Jul 2026}
-      {National Science Foundation (NSF)}{Bloomington, IN}
+      {Web Development Intern}{Nov 2024 to Mar 2025}
+      {Benyue Restaurant}{Indianapolis, IN}
       \resumeItemListStart
-        \resumeItem{Documented how application data moves through internal systems. Work is NDA-bound; no client names or unpublished metrics.}
+        \resumeItem{Developed and deployed four customer-facing web pages in React.js for menus, hours, and location.}
+        \resumeItem{Refined AI-assisted layouts and copy for readability, navigation, and usability.}
+        \resumeItem{Structured site information so public pages stay consistent.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Founder, Serve-AI}{May 2024 to Dec 2024}
-      {Public Interest Technology University Network (PIT-UN)}{Bloomington, IN}
+      {Consultant Intern}{May 2024 to Dec 2024}
+      {Public Interest Technology University Network · Serve-AI}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Public-interest AI initiative, distinct from ServeIT. Lightweight tools and adoption notes for nonprofit operations. Materials under CC BY-SA 4.0 on \href{https://github.com/zhao-langxi}{github.com/zhao-langxi}.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Web, ordering, and operations}{Ongoing}
-      {Family restaurant (Potstickers) and independent practice}{New Palestine / Indianapolis, IN}
-      \resumeItemListStart
-        \resumeItem{Digital systems for a restaurant that has to work Tuesday to Sunday: site, ordering, and social. Handoff guides so the next person can keep the tools running.}
-        \resumeItem{Independent practice (Jade): civic partners, hospitality concepts, Showit-friendly booking sites, and anonymised campus ventures. Mock-ups labelled as such. Inventory: jadexzhao.github.io/jadexzhao/jade-practice.html.}
+        \resumeItem{Wrote a public guide on database maintenance and scripts for setup workflows. Distinct from ServeIT.}
+        \resumeItem{Documented processes so others can maintain the work.}
       \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-\section{Leadership}
+\section{Selected Projects}
 \resumeSubHeadingListStart
 
     \resumeSubheading
-      {FASE MAP Coordinator / Peer Mentor}{2025 to Aug 2026}
-      {Office of Student Life}{Bloomington, IN}
+      {Restaurant website and online ordering}{COVID period to present}
+      {Potstickers · web development and business systems}{New Palestine, IN}
       \resumeItemListStart
-        \resumeItem{Mentored first-generation and low-income students. Distinct from Hudson \& Holland and FAMIU roles.}
+        \resumeItem{Built a customer-facing restaurant website in HTML and CSS during the COVID-19 pandemic.}
+        \resumeItem{Helped implement online ordering and point-of-sale systems for daily operations.}
+        \resumeItem{Organised menus, ordering instructions, and business information so customers can use the digital channels.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Program Assistant}{2025 to present}
-      {Office of Student Life, Hudson \& Holland Scholars Program}{Bloomington, IN}
+      {Property management database}{Course project}
+      {Indiana University · relational database design}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Programme support for Hudson \& Holland Scholars. Handshake career content for early-career peers (no vanity metrics).}
+        \resumeItem{Collaborated on a data model for homeowners, students, property listings, and payments.}
+        \resumeItem{Represented relationships between property-management entities to support organised record-keeping.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {FAMIU}{2023 to present}
-      {Events and alumni relations}{Bloomington, IN}
+      {AI-assisted interface prototyping}{Course project}
+      {Indiana University · interface design and development}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Campus events and alumni-facing work. Separate from MAP.}
+        \resumeItem{Developed interface prototypes with AI-assisted design and application-building tools (no product brand names).}
+        \resumeItem{Refined layouts, navigation flows, and components through iterative evaluation.}
       \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-\section{Skills}
-\small
-\textbf{Languages:} Python, SQL, JavaScript, TypeScript, HTML/CSS, Java. \\
-\textbf{Tools:} React, PostgreSQL, Git, WCAG 2.1. \\
-\textbf{Practices:} accessibility, technical documentation, product handoffs, privacy-conscious design. \\
-\textbf{Spoken:} English, Fuzhounese, Spanish.
+\section{Leadership and Community}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Program Assistant}{Aug 2026 to present}
+      {Indiana University Office of Student Life, Hudson \& Holland Scholars Program}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Coordinate student programming, resource referrals, and administrative support for Hudson \& Holland Scholars.}
+        \resumeItem{Connect students with academic and campus resources through one-to-one guidance and programme communications.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Events and Alumni Relations}{2023 to present}
+      {FIRST Alumni and Mentors at Indiana University (FAMIU)}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Coordinate campus events, alumni engagement, and professional networking.}
+        \resumeItem{Work with alumni and university partners on engagement and mentorship.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 \end{document}

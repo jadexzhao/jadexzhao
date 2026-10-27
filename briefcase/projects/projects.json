@@ -40,6 +40,18 @@
       "external": true
     },
     {
+      "id": "benyue",
+      "title": "Benyue Restaurant web pages",
+      "year": "Nov 2024 to Mar 2025",
+      "role": "Web Development Intern",
+      "dek": "Four customer-facing React pages for menus, hours, and location.",
+      "tags": ["Business Technology", "Web Development", "Product & UX"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "jade-practice.html#commercial",
+      "external": false
+    },
+    {
       "id": "jade-practice",
       "title": "Jade · independent practice",
       "year": "Ongoing",
