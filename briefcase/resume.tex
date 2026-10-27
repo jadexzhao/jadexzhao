@@ -1,6 +1,7 @@
 %-------------------------
 % Jade Zhao résumé
-% Author draft 27 Oct 2026 (honours in Education). UK spelling. "to" for ranges.
+% Order: Education, Technical Skills, Technical Experience, Projects, Additional Experience
+% UK spelling. Ranges use "to".
 %-------------------------
 \documentclass[letterpaper,9pt]{article}
 \usepackage{extsizes}
@@ -27,18 +28,18 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.48in}
-\addtolength{\textheight}{1.10in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.15in}
 
 \urlstyle{same}
 \raggedright
 \setlength{\tabcolsep}{0in}
 \setlength{\parindent}{0pt}
-\linespread{1.08}\selectfont
+\linespread{1.05}\selectfont
 
 \titleformat{\section}{
-  \vspace{4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\titlerule \vspace{3pt}]
+  \vspace{3pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\titlerule \vspace{2pt}]
 
 \newcommand{\resumeItem}[1]{\item{#1}}
 
@@ -46,24 +47,24 @@
   \item
     \textbf{#1} \hfill {#2} \\
     \textit{\small #3}\if\relax#4\relax\else \hfill \textit{\small #4}\fi
-    \par\vspace{2pt}
+    \par\vspace{1pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=3.5pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=3pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.15in, itemsep=2pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 \begin{document}
 
 \begin{center}
-    {\LARGE\bfseries JADE ZHAO} \\ \vspace{5pt}
+    {\LARGE\bfseries JADE ZHAO} \\ \vspace{4pt}
     Bloomington, IN
     \,$\vert$\,
     \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
@@ -84,6 +85,15 @@
         \resumeItem{\textbf{Study abroad:} Universidad Complutense de Madrid, Spring 2026.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\small
+\textbf{Programming languages:} Python, JavaScript, TypeScript, SQL, HTML, CSS \\
+\textbf{Frameworks and tools:} React.js, PostgreSQL, Git, GitHub, Figma \\
+\textbf{Databases and systems:} relational databases, data management, data-flow mapping, ETL fundamentals \\
+\textbf{Web and accessibility:} responsive web design, WCAG accessibility evaluation, UI prototyping, usability testing \\
+\textbf{Technical practices:} requirements gathering, technical documentation, project coordination \\
+\textbf{Spoken languages:} English, Mandarin Chinese, Fuzhounese, Spanish
 
 \section{Technical Experience}
 \resumeSubHeadingListStart
@@ -117,6 +127,26 @@
 
 \resumeSubHeadingListEnd
 
+\section{Projects}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Restaurant website and online ordering}{Ongoing}
+      {Potstickers · web development and business systems}{New Palestine, IN}
+      \resumeItemListStart
+        \resumeItem{Built a customer-facing restaurant website in HTML and CSS, then helped implement online ordering and point-of-sale systems for daily operations.}
+        \resumeItem{Organised menus, hours, and ordering instructions so customers can use the restaurant's digital channels.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Property management database}{Course project}
+      {Indiana University · relational database design}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Collaborated on a data model for homeowners, students, property listings, and payments, representing the relationships needed for organised record-keeping.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
 \section{Additional Experience}
 \resumeSubHeadingListStart
 
@@ -137,16 +167,5 @@
       \resumeItemListEnd
 
 \resumeSubHeadingListEnd
-
-\begin{samepage}
-\section{Technical Skills}
-\small
-\textbf{Programming languages:} Python, JavaScript, TypeScript, SQL, HTML, CSS \\
-\textbf{Frameworks and tools:} React.js, PostgreSQL, Git, GitHub, Figma \\
-\textbf{Databases and systems:} relational databases, data management, data-flow mapping, ETL fundamentals \\
-\textbf{Web and accessibility:} responsive web design, WCAG accessibility evaluation, UI prototyping, usability testing \\
-\textbf{Technical practices:} requirements gathering, technical documentation, project coordination \quad
-\textbf{Spoken languages:} English, Mandarin Chinese, Fuzhounese, Spanish
-\end{samepage}
 
 \end{document}
