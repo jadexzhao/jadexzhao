@@ -421,6 +421,25 @@ nav ul,
   padding-left: 1.2rem;
 }
 
+.inventory {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.inventory th,
+.inventory td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.45rem 0.4rem 0.45rem 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.inventory th {
+  color: var(--caption);
+  font-weight: 700;
+}
+
 @media (max-width: 36rem) {
   .profile {
     grid-template-columns: 1fr;
