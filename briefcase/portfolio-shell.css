@@ -399,6 +399,57 @@ nav ul,
   margin: 0.35rem 0;
 }
 
+.ig-grid,
+.ig-reels {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+@media (min-width: 40rem) {
+  .ig-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ig-reels {
+    grid-template-columns: repeat(2, minmax(0, 18rem));
+    justify-content: start;
+  }
+}
+
+.ig-embed {
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ig-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 34rem;
+  border: 0;
+  background: var(--card);
+}
+
+.ig-embed--reel iframe {
+  min-height: 40rem;
+}
+
+.ig-embed figcaption {
+  padding: 0.55rem 0.75rem 0.7rem;
+  font-size: 0.88rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .door-links {
   display: flex;
   flex-wrap: wrap;
