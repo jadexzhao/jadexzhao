@@ -4,97 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Town of Nashville accessibility assessment · Jade Zhao</title>
-  <style>
-    :root {
-      --outer: #f6efe3;
-      --card: #ffffff;
-      --line: #c3d4de;
-      --accent: #4a90c4;
-      --ink: #1c1c1c;
-      --link: #0d4f78;
-      --caption: #4a6b3d;
-      --muted: #3d4a52;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--outer);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-    a { color: var(--link); }
-    a:hover { text-decoration-thickness: 2px; }
-    .skip {
-      position: absolute;
-      left: 0.75rem;
-      top: -3rem;
-      background: var(--card);
-      border: 2px solid var(--accent);
-      padding: 0.4rem 0.7rem;
-    }
-    .skip:focus { top: 0.75rem; }
-    .wrap {
-      max-width: 42rem;
-      margin: 0 auto;
-      padding: 1.5rem 1rem 3rem;
-    }
-    header, section, footer {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 1.25rem 1.35rem;
-      margin: 0 0 1rem;
-    }
-    header { border-top: 6px solid var(--accent); }
-    .profile {
-      display: grid;
-      grid-template-columns: 7.5rem 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .profile img {
-      width: 7.5rem;
-      height: 7.5rem;
-      object-fit: cover;
-      object-position: center 18%;
-      border-radius: 6px;
-      border: 1px solid var(--line);
-    }
-    h1, h2, h3 { line-height: 1.25; margin: 0 0 0.6rem; }
-    h1 { font-size: 1.7rem; }
-    h2 {
-      font-size: 1.25rem;
-      color: var(--link);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.25rem;
-    }
-    h3 { font-size: 1.05rem; margin-top: 1rem; }
-    p, li { margin: 0.45rem 0; }
-    ul { padding-left: 1.2rem; }
-    .kicker {
-      margin: 0 0 0.35rem;
-      color: var(--caption);
-      font-size: 0.92rem;
-    }
-    .meta { color: var(--muted); font-size: 0.95rem; }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.8rem 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.9rem;
-    }
-    dl { margin: 0.4rem 0 0; }
-    dt { font-weight: 700; margin-top: 0.55rem; }
-    dd { margin: 0.15rem 0 0; }
-    footer { font-size: 0.95rem; }
-    @media (max-width: 36rem) {
-      .profile { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f6efe3">
+  <link rel="stylesheet" href="portfolio-shell.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -102,7 +18,13 @@
     <header>
       <p class="kicker">ServeIT (community technology clinic) · Fall 2026</p>
       <div class="profile">
-        <img src="assets/jadexzhao.jpg" width="900" height="900" alt="Jade Zhao, holding a bouquet of pink lilies beside a window.">
+        <img
+          src="assets/site-pfp.jpg"
+          width="120"
+          height="120"
+          alt="Jade Zhao, profile photo."
+          decoding="async"
+        >
         <div>
           <h1>Town of Nashville accessibility assessment</h1>
           <p class="meta">Jade Zhao · ServeIT Website Team Lead · Co-lead, Nashville ACC (accessibility assessment)</p>
@@ -111,7 +33,7 @@
               <li><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></li>
               <li><a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a></li>
               <li><a href="https://github.com/jadexzhao">GitHub</a></li>
-              <li><a href="https://jlzhao.pages.iu.edu/resume.pdf">Resume (IU Pages)</a></li>
+              <li><a href="resume.pdf">Résumé (PDF)</a></li>
               <li><a href="index.html">Home</a></li>
             </ul>
           </nav>

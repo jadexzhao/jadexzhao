@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "description": "jadexzhao project archive"
+  },
+  "projects": [
+    {
+      "id": "digital-humans",
+      "title": "Digital Humans Project Lead",
+      "year": "Feb 2025 to present",
+      "role": "Student project lead, Luddy",
+      "dek": "High-level public work on useful business interfaces when AI communicates like a person.",
+      "tags": ["Digital Humans", "AI", "Research"],
+      "permission": "PUBLIC",
+      "layer": "FEAT",
+      "url": "digital-humans.html",
+      "external": false
+    },
+    {
+      "id": "nashville-acc",
+      "title": "Town of Nashville accessibility assessment",
+      "year": "Fall 2026",
+      "role": "ServeIT team lead / co-lead",
+      "dek": "WCAG-oriented assessment of a municipal website; process and scope without publishing client findings.",
+      "tags": ["Civic Technology", "Accessibility", "Product & UX"],
+      "permission": "CONFIRM",
+      "layer": "FEAT",
+      "url": "nashville-acc.html",
+      "external": false
+    },
+    {
+      "id": "potstickers",
+      "title": "Potstickers · family restaurant digital",
+      "year": "Ongoing",
+      "role": "Web, ordering, marketing, operations",
+      "dek": "Business technology for a family restaurant that has to work every service.",
+      "tags": ["Business Technology", "Web Development", "Product & UX"],
+      "permission": "PUBLIC",
+      "layer": "FEAT",
+      "url": "https://github.com/jadexzhao/pstickers24",
+      "external": true
+    },
+    {
+      "id": "middle-way-house",
+      "title": "Middle Way House website",
+      "year": "2023 to 2025",
+      "role": "ServeIT · UX and web",
+      "dek": "Nonprofit web work; publish only after client approval.",
+      "tags": ["Product & UX", "Accessibility", "Civic Technology"],
+      "permission": "CONFIRM",
+      "layer": "ARCH",
+      "url": "middle-way-house.html",
+      "external": false
+    },
+    {
+      "id": "indiana-phenology",
+      "title": "Indiana Phenology Lab web",
+      "year": "ServeIT",
+      "role": "Website team",
+      "dek": "Research-facing information architecture; publish after client approval.",
+      "tags": ["Product & UX", "Civic Technology", "Research"],
+      "permission": "CONFIRM",
+      "layer": "ARCH",
+      "url": "indiana-phenology.html",
+      "external": false
+    },
+    {
+      "id": "serveit-overview",
+      "title": "ServeIT nonprofit technology clinic",
+      "year": "2023 to present",
+      "role": "Intern to Website Team Lead",
+      "dek": "Accessible builds and handoffs for community partners.",
+      "tags": ["Civic Technology", "Leadership", "Web Development"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://matchaxmoxie.github.io/matchaxmoxie/courses/serveit.html",
+      "external": true
+    },
+    {
+      "id": "serve-ai",
+      "title": "Serve-AI",
+      "year": "PIT-UN",
+      "role": "Founder",
+      "dek": "Public-interest AI initiative; separate from ServeIT.",
+      "tags": ["AI", "Research", "Civic Technology"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://github.com/zhao-langxi",
+      "external": true
+    },
+    {
+      "id": "duck-farm",
+      "title": "duck-farm",
+      "year": "Ongoing",
+      "role": "Builder",
+      "dek": "Creative Vite demo on GitHub Pages.",
+      "tags": ["Web Development"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://jadexzhao.github.io/jadexzhao/duck-farm/",
+      "external": true
+    },
+    {
+      "id": "bm25-notes-search",
+      "title": "BM25 notes search",
+      "year": "2025+",
+      "role": "Builder",
+      "dek": "Stdlib Python keyword search over local markdown.",
+      "tags": ["Web Development", "AI"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search",
+      "external": true
+    },
+    {
+      "id": "handoffs",
+      "title": "Handoff guides",
+      "year": "2025 to 2026",
+      "role": "Author",
+      "dek": "Operational handoffs for small organisations; full guides on matchaxmoxie.",
+      "tags": ["Product & UX", "Business Technology"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://matchaxmoxie.github.io/matchaxmoxie/handoffs.html",
+      "external": true
+    },
+    {
+      "id": "matchaxmoxie-courses",
+      "title": "Informatics coursework portfolio",
+      "year": "2023 to 2027",
+      "role": "Student",
+      "dek": "Course artifacts and code videos; classroom door.",
+      "tags": ["Web Development", "Research"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://matchaxmoxie.github.io/matchaxmoxie/",
+      "external": true
+    },
+    {
+      "id": "zhao-langxi-essays",
+      "title": "zhao-langxi essays",
+      "year": "2025 to 2026",
+      "role": "Author",
+      "dek": "HRI and everyday life with intelligent machines; link out, do not duplicate.",
+      "tags": ["Research", "Digital Humans", "AI"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://zhao-langxi.github.io/zhao-langxi/",
+      "external": true
+    },
+    {
+      "id": "bloomington",
+      "title": "City of Bloomington",
+      "year": "ServeIT",
+      "role": "Clinic partner",
+      "dek": "Web partner; card after CONFIRM.",
+      "tags": ["Civic Technology"],
+      "permission": "CONFIRM",
+      "layer": "ARCH",
+      "url": "bloomington.html",
+      "external": false
+    },
+    {
+      "id": "chamber",
+      "title": "Bloomington Chamber of Commerce",
+      "year": "ServeIT",
+      "role": "Clinic partner",
+      "dek": "Web partner; card after CONFIRM.",
+      "tags": ["Civic Technology"],
+      "permission": "CONFIRM",
+      "layer": "ARCH",
+      "url": "chamber.html",
+      "external": false
+    },
+    {
+      "id": "online-ordering",
+      "title": "Online ordering system",
+      "year": "2020+",
+      "role": "Builder",
+      "dek": "Family restaurant ordering stack; overlaps Potstickers narrative.",
+      "tags": ["Business Technology", "Web Development"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system",
+      "external": true
+    },
+    {
+      "id": "full-stack-features",
+      "title": "Full-stack web features",
+      "year": "Prototype",
+      "role": "Builder",
+      "dek": "Accessible modules and human-AI workflow patterns.",
+      "tags": ["Web Development", "Accessibility", "AI"],
+      "permission": "PUBLIC",
+      "layer": "ARCH",
+      "url": "https://github.com/jadexzhao/jadexzhao/tree/main/full-stack-web-features",
+      "external": true
+    },
+    {
+      "id": "adaptive-learning",
+      "title": "Adaptive learning platform",
+      "year": "Prototype",
+      "role": "Builder",
+      "dek": "Ed-tech prototype; verify README claims before featuring.",
+      "tags": ["Web Development", "AI"],
+      "permission": "CONFIRM",
+      "layer": "ARCH",
+      "url": "https://github.com/jadexzhao/jadexzhao/tree/main/adaptive-learning-platform",
+      "external": true
+    }
+  ]
+}

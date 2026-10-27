@@ -1,55 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jade Zhao</title>
-  <style>
-    :root {
-      --outer: #f6efe3;
-      --card: #ffffff;
-      --line: #c3d4de;
-      --accent: #4a90c4;
-      --ink: #1c1c1c;
-      --link: #0d4f78;
-      --caption: #4a6b3d;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--outer);
-      color: var(--ink);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-    a { color: var(--link); }
-    .wrap {
-      max-width: 42rem;
-      margin: 0 auto;
-      padding: 1.5rem 1rem 3rem;
-    }
-    main {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-top: 6px solid var(--accent);
-      border-radius: 8px;
-      padding: 1.25rem 1.35rem;
-    }
-    h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 0.6rem; }
-    .kicker { margin: 0 0 0.35rem; color: var(--caption); font-size: 0.92rem; }
-    p { margin: 0.45rem 0; }
-  </style>
+  <title>Jade Zhao · jadexzhao</title>
+  <meta name="description" content="Jade Zhao explores how people understand, trust and use emerging technology. Digital Humans, human-centred AI, product and business technology at IU Luddy.">
+  <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#f6efe3">
+  <link rel="stylesheet" href="portfolio-shell.css">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-top">
+    <div class="site-top__inner">
+      <a class="site-top__brand" href="index.html">Jade Zhao</a>
+      <ul class="site-top__nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="resume.pdf">Résumé</a></li>
+        <li><a href="mailto:jlzhao@iu.edu">Contact</a></li>
+      </ul>
+    </div>
+  </header>
   <div class="wrap">
-    <main>
-      <p class="kicker">Jade Zhao · IU Luddy</p>
-      <h1>Case study</h1>
-      <p>This page points at my Fall 2026 ServeIT (community technology clinic) case study: an accessibility assessment of the Town of Nashville website.</p>
-      <p><a href="nashville-acc.html">Town of Nashville accessibility assessment</a></p>
-      <p><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></p>
+    <header class="hero panel--accent-top">
+      <p class="kicker">Jade Zhao · Informatics · human-centred technology</p>
+      <div class="profile">
+        <img src="assets/site-pfp.jpg" width="120" height="120" alt="Jade Zhao, profile photo." decoding="async">
+        <div>
+          <h1>Building technology people can understand, trust and use.</h1>
+          <p class="meta">Product, research and technical work across Digital Humans, human-centred AI, accessible experiences and business systems.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#featured">Explore selected work</a>
+            <a class="btn" href="projects/index.html">Browse all projects</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="panel">
+        <p class="lead">I'm an Informatics student at Indiana University working across Digital Humans, human-centred AI, product design and business technology.</p>
+        <p>My work connects research, design and implementation, from accessible digital experiences to technology supporting real organisations.</p>
+      </section>
+
+      <section class="panel" id="featured" aria-labelledby="featured-heading">
+        <h2 id="featured-heading">Selected work</h2>
+        <p class="meta">Selected work shows the throughline; the archive holds everything else.</p>
+        <ul class="featured-grid">
+          <li>
+            <a class="card-link" href="digital-humans.html">
+              <h3>Digital Humans at Luddy</h3>
+              <p>Student project lead on useful business interfaces when AI communicates like a person ... trust, disclosure, and limits.</p>
+              <span class="tag">Digital Humans</span>
+            </a>
+          </li>
+          <li>
+            <a class="card-link" href="nashville-acc.html">
+              <h3>Town of Nashville accessibility assessment</h3>
+              <p>ServeIT Fall 2026: WCAG-oriented municipal web assessment ... team lead, process, and handoff.</p>
+              <span class="tag">Accessibility · Civic</span>
+            </a>
+          </li>
+          <li>
+            <a class="card-link" href="https://github.com/jadexzhao/pstickers24" rel="noopener noreferrer">
+              <h3>Potstickers · family restaurant digital</h3>
+              <p>Web, ordering, and operations technology for a small business that has to work Tuesday to Sunday.</p>
+              <span class="tag">Business technology</span>
+            </a>
+          </li>
+          <li>
+            <a class="card-link" href="https://matchaxmoxie.github.io/matchaxmoxie/courses/serveit.html" rel="noopener noreferrer">
+              <h3>ServeIT nonprofit technology clinic</h3>
+              <p>From intern to Website Team Lead: accessible builds and handoffs for community partners.</p>
+              <span class="tag">Civic technology</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" id="archive" aria-labelledby="archive-heading">
+        <h2 id="archive-heading">All projects</h2>
+        <p class="meta">Searchable archive by domain, year, and contribution.</p>
+        <p><a class="btn btn--primary" href="projects/index.html">Open project archive</a></p>
+      </section>
+
+      <section class="panel" id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+        <p class="meta">Roles, collaborations and leadership in chronological order. FASE MAP, ServeIT, OSL and FAMIU stay separate.</p>
+        <p><a class="btn" href="experience.html">View experience timeline</a></p>
+      </section>
+
+      <section class="panel" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About and contact</h2>
+        <p>Informatics student at Indiana University (Luddy). I care about what happens after the demo: handoffs, trust, and systems that hold up for real people.</p>
+        <p><a href="resume.pdf">Résumé (PDF)</a> · <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a> · <a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a></p>
+      </section>
     </main>
+
+    <footer class="site-footer panel">
+      <p><strong>Elsewhere</strong></p>
+      <ul class="door-links">
+        <li><a href="https://zhao-langxi.github.io/zhao-langxi/" rel="noopener noreferrer">zhao-langxi (essays)</a></li>
+        <li><a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie (coursework)</a></li>
+        <li><a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+      <p><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></p>
+    </footer>
   </div>
 </body>
 </html>
