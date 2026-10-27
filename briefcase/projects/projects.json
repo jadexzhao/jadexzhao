@@ -16,6 +16,42 @@
       "external": false
     },
     {
+      "id": "ai-ethics",
+      "title": "Ethics of human-centred AI",
+      "year": "2025 to 2026",
+      "role": "Author / student project lead",
+      "dek": "Accountability, disclosure, and human control when AI mediates choices. Essays on zhao-langxi; this card is the hire-facing pointer.",
+      "tags": ["AI", "Research", "Digital Humans"],
+      "permission": "PUBLIC",
+      "layer": "FEAT",
+      "url": "ethics.html",
+      "external": false
+    },
+    {
+      "id": "mentee-conversations",
+      "title": "Mentee conversations",
+      "year": "Ongoing",
+      "role": "Mentee",
+      "dek": "Advice from mentors at MAANG, Big Three, Big Four, and Fortune 100 organisations. Input, not a job title.",
+      "tags": ["Leadership"],
+      "permission": "PUBLIC",
+      "layer": "FEAT",
+      "url": "mentee.html",
+      "external": false
+    },
+    {
+      "id": "study-abroad-madrid",
+      "title": "Study abroad · Madrid",
+      "year": "Spring 2026",
+      "role": "Student, Universidad Complutense de Madrid",
+      "dek": "Informatics term in Madrid. Hire-facing pointer, not a travel diary.",
+      "tags": ["Research"],
+      "permission": "PUBLIC",
+      "layer": "FEAT",
+      "url": "study-abroad.html",
+      "external": false
+    },
+    {
       "id": "nashville-acc",
       "title": "Town of Nashville accessibility assessment",
       "year": "Fall 2026",
