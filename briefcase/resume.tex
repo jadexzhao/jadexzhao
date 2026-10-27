@@ -1,9 +1,9 @@
 %-------------------------
 % Jade Zhao résumé
-% Source: ~/Downloads/JadeZhao_Resume.pdf (20 Oct 2026)
-% UK spelling. Ranges use "to". No em dash.
+% Author draft 27 Oct 2026. UK spelling. Ranges use "to". No em dash.
 %-------------------------
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,9pt]{article}
+\usepackage{extsizes}
 
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -27,18 +27,18 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.45in}
-\addtolength{\textheight}{1.05in}
+\addtolength{\topmargin}{-0.48in}
+\addtolength{\textheight}{1.10in}
 
 \urlstyle{same}
 \raggedright
 \setlength{\tabcolsep}{0in}
 \setlength{\parindent}{0pt}
-\linespread{1.02}\selectfont
+\linespread{1.14}\selectfont
 
 \titleformat{\section}{
-  \vspace{4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\titlerule \vspace{3pt}]
+  \vspace{3pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\titlerule \vspace{2pt}]
 
 \newcommand{\resumeItem}[1]{\item{#1}}
 
@@ -52,7 +52,7 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=3pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=5pt, parsep=0pt, topsep=2pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{
@@ -61,94 +61,92 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 \begin{document}
-\enlargethispage{52pt}
+\enlargethispage{8pt}
 
 \begin{center}
     {\LARGE\bfseries JADE ZHAO} \\ \vspace{5pt}
-    \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
-    \,$\cdot$\,
     Bloomington, IN
-    \,$\cdot$\,
+    \,$\vert$\,
+    \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
+    \,$\vert$\,
     \href{https://www.linkedin.com/in/zhao-langxi/}{linkedin.com/in/zhao-langxi}
-    \,$\cdot$\,
+    \,$\vert$\,
     \href{https://github.com/jadexzhao}{github.com/jadexzhao}
 \end{center}
 
 \section{Education}
 \resumeSubHeadingListStart
     \resumeSubheading
-      {Indiana University Bloomington · Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
-      {Bachelor of Science in Informatics · Minors in Business Technology and User Experience Research}{Bloomington, IN}
+      {Indiana University Bloomington | Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
+      {Bachelor of Science in Informatics}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{GPA: 3.55/4.00. First-generation college student and Hudson \& Holland Scholar.}
+        \resumeItem{Minors: Business Technology and User Experience Research. GPA: 3.55/4.00.}
+        \resumeItem{Hudson \& Holland Scholar. First-generation college student.}
         \resumeItem{Study abroad: Universidad Complutense de Madrid, Spring 2026.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-\section{Experience}
+\section{Technical Experience}
 \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Program Assistant}{Aug 2026 to present}
-      {IU Office of Student Life · Hudson \& Holland Scholars Program (HHSP)}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Coordinate scholar programming, student engagement, and connections to academic and wellness resources.}
-        \resumeItem{Support conferences and mentoring. Help first-generation scholars find academic and personal support.}
-      \resumeItemListEnd
-
-    \resumeSubheading
       {Project Lead}{Jan 2024 to present}
-      {Laurie Burns McRobbie ServeIT Clinic · Luddy School, Indiana University}{Bloomington, IN}
+      {Laurie Burns McRobbie ServeIT Clinic, Indiana University}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Lead technology projects for nonprofits and public offices, turning partner needs into practical digital solutions.}
-        \resumeItem{Coordinate website work for the City of Bloomington, Middle Way House, the Greater Bloomington Chamber of Commerce, and the Town of Nashville.}
-        \resumeItem{Co-lead Town of Nashville accessibility reviews: find barriers, prioritise recommendations, keep solutions maintainable.}
+        \resumeItem{Lead community-focused technology projects, turning stakeholder requirements into accessible, practical, maintainable digital solutions.}
+        \resumeItem{Coordinate website work for the City of Bloomington, Middle Way House, Greater Bloomington Chamber of Commerce, and Town of Nashville.}
+        \resumeItem{Co-lead Town of Nashville accessibility evaluations. Work with student teams and stakeholders to review deliverables and document solutions.}
       \resumeItemListEnd
 
     \resumeSubheading
       {Researcher}{May 2024 to Dec 2025}
-      {Indiana University · Research Experiences for Undergraduates (REU)}{Bloomington, IN}
+      {Indiana University, Research Experiences for Undergraduates}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Designed and refined user-interface prototypes to improve navigation, consistency, and usability.}
-        \resumeItem{Developed Figma user flows and reusable interface components.}
-        \resumeItem{Contributed to Public Interest Technology University Network (PIT-UN) and Serve-AI work on user-centred tools. Distinct from ServeIT.}
-      \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-\section{Leadership and Community Engagement}
-\resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Career Content Creator}{May 2025 to Aug 2025}
-      {Handshake Career Creator · Indiana University}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Created career guidance for a platform with more than 100,000 followers and over 1 million profile views.}
-        \resumeItem{Helped students use Handshake, LinkedIn, internship searches, and professional networking.}
+        \resumeItem{Designed interface prototypes, Figma user flows, and reusable components to improve information architecture and usability.}
+        \resumeItem{Contributed to Public Interest Technology University Network (PIT-UN) and Serve-AI (distinct from ServeIT).}
       \resumeItemListEnd
 
     \resumeSubheading
       {Web Design Intern}{Aug 2024 to Dec 2024}
-      {Middle Way House · ServeIT Clinic}{Bloomington, IN}
+      {Middle Way House, ServeIT Clinic}{Bloomington, IN}
       \resumeItemListStart
-        \resumeItem{Contributed to website design and digital improvements for a Bloomington nonprofit partner.}
-        \resumeItem{Applied web design and usability principles so organisational information and support resources are clearer and more accessible.}
-        \resumeItem{Kept the needs of people seeking sensitive services in mind when contributing to content, design, and usability.}
+        \resumeItem{Supported website design and usability improvements for a nonprofit serving survivors of domestic violence and sexual assault.}
+        \resumeItem{Improved how digital information is organised and presented, with attention to accessibility, clear navigation, and access to essential support resources.}
       \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-\section{Awards and Honours}
-\small
-Hudson \& Holland Scholar · Luddy Study Abroad Scholarship · Hutton International Experiences Programme (HIEP) Grant.
+\section{Additional Experience and Leadership}
+\resumeSubHeadingListStart
 
-\section{Skills}
+    \resumeSubheading
+      {Program Assistant}{Aug 2026 to present}
+      {Hudson \& Holland Scholars Program, IU Office of Student Life}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Coordinate scholar programming, leadership initiatives, and student engagement that support academic and professional development.}
+        \resumeItem{Connect first-generation scholars with university resources, mentoring, and academic support.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Career Content Creator}{May 2025 to Aug 2025}
+      {Handshake Career Creator}{Bloomington, IN}
+      \resumeItemListStart
+        \resumeItem{Developed accessible career content on internship searches, professional networking, and career development.}
+        \resumeItem{Wrote practical guidance so students can use Handshake, LinkedIn, and early-career opportunities.}
+      \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Honours and Awards}
 \small
-\textbf{Programming:} Python · SQL · TypeScript · HTML · CSS \quad
-\textbf{Web:} React.js · responsive design · prototyping \\
-\textbf{Data:} PostgreSQL · relational databases · data-flow mapping · ETL fundamentals \\
-\textbf{Design and accessibility:} Figma · wireframes · user flows · WCAG-oriented review \\
-\textbf{Leadership:} project coordination · stakeholder communication · technical documentation \\
-\textbf{Languages:} English · Mandarin Chinese · Fuzhounese
+Hudson \& Holland Scholar \,$\vert$\, Luddy Study Abroad Scholarship \,$\vert$\, Hutton International Experiences Programme (HIEP) Grant
+
+\section{Technical Skills}
+\small
+\textbf{Programming and web:} Python, SQL, TypeScript, HTML, CSS, React.js, responsive web design \\
+\textbf{Data:} PostgreSQL, relational databases, database design, data-flow mapping, ETL fundamentals \\
+\textbf{Design and accessibility:} Figma, wireframing, user flows, interface prototyping, accessibility evaluation \\
+\textbf{Practices:} requirements gathering, stakeholder communication, technical documentation, project coordination \quad
+\textbf{Languages:} English, Mandarin Chinese, Fuzhounese
 
 \end{document}
