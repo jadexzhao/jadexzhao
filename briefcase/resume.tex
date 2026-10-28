@@ -1,11 +1,11 @@
 %-------------------------
 % Jade Zhao résumé
-% Order: Education, Technical Skills, Technical Experience, Technical Projects, Leadership
+% Order: Education, Technical Skills, Volunteer Experience, Projects, Work Experience
 % UK spelling. Traditional one-page, black and white.
 %-------------------------
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[letterpaper,margin=0.48in]{geometry}
+\usepackage[letterpaper,margin=0.45in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -24,37 +24,36 @@
 \setlength{\tabcolsep}{0pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\fontsize{10}{10.6}\selectfont
+\fontsize{10}{10.5}\selectfont
 
 \titleformat{\section}{
   \vspace{2pt}%
   \fontsize{11}{12}\selectfont\bfseries\scshape\raggedright
-}{}{0em}{}[\titlerule\vspace{1.8pt}]
+}{}{0em}{}[\titlerule\vspace{1.6pt}]
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
-\newcommand{\resumeSubheading}[4]{%
+\newcommand{\resumeRole}[2]{%
   \item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & {#2} \\
-      \textit{#3} & \textit{#4} \\
     \end{tabular*}%
 }
 
-\newcommand{\resumeOneLine}[3]{%
+\newcommand{\resumeOrg}[2]{%
   \item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} \textit{#2} & {#3} \\
+      \textbf{#1} & {#2} \\
     \end{tabular*}%
 }
 
 \newcommand{\resumeItem}[1]{\item{#1}}
 
 \newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0pt, label={}, itemsep=1.8pt, parsep=0pt, topsep=0.6pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0pt, label={}, itemsep=1.6pt, parsep=0pt, topsep=0.4pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{%
-  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=0.4pt, parsep=0pt, topsep=0.4pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=0.3pt, parsep=0pt, topsep=0.3pt, partopsep=0pt]
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
@@ -70,98 +69,85 @@
   \,$\vert$\,
   \href{https://www.linkedin.com/in/zhao-langxi/}{linkedin.com/in/zhao-langxi}
   \,$\vert$\,
-  \href{https://github.com/jadexzhao}{github.com/jadexzhao}\\[1.5pt]
-  Portfolio:
+  \href{https://github.com/jadexzhao}{github.com/jadexzhao}
+  \,$\vert$\,
   \href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao/}
 \end{center}
 
 \section{Education}
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-  \textbf{Indiana University Bloomington} & Expected May 2027 \\
-  \textit{B.S. Informatics, Luddy School of Informatics} & \textit{Bloomington, IN} \\
-\end{tabular*}\\[2.5pt]
-Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1pt]
-\textbf{Honours:} Hudson \& Holland Scholar $\vert$ First-generation college student\\[1pt]
-\textbf{Study abroad:} Universidad Complutense de Madrid, Spring 2026
+  \textbf{Indiana University Bloomington} & Bloomington, IN \\
+\end{tabular*}\\[1pt]
+B.S. Informatics $\vert$ Expected May 2027\\[1pt]
+Minors: Business Technology, User Experience Research $\vert$ GPA: 3.55/4.00 $\vert$ Hudson \& Holland Scholar
 
 \section{Technical Skills}
-\skillline{Languages}{Python, JavaScript, TypeScript, SQL, HTML5, CSS3}\\[1pt]
-\skillline{Frameworks and data}{React.js, PostgreSQL, relational databases, SQL queries}\\[1pt]
-\skillline{Developer tools}{Git, GitHub, GitHub Pages, VS Code, Figma, Wix}\\[1pt]
-\skillline{Engineering practices}{debugging, responsive web development, WCAG accessibility, requirements gathering, technical documentation, client handoffs}\\[1pt]
-\skillline{Spoken languages}{English, Fuzhounese, Spanish}
+\skillline{Programming}{Python, JavaScript, TypeScript, SQL, HTML, CSS}\\[1pt]
+\skillline{Frameworks \& Databases}{React.js, PostgreSQL}\\[1pt]
+\skillline{Tools}{Git, GitHub, VS Code, GitHub Pages, Figma}\\[1pt]
+\skillline{Practices}{Responsive Web Development, WCAG Accessibility, Debugging, Requirements Analysis, Technical Documentation}
 
-\section{Technical Experience}
+\section{Volunteer Experience}
 \resumeSubHeadingListStart
+  \resumeOrg
+    {Laurie Burns McRobbie Serve IT Clinic}{Bloomington, IN}
+  \textit{Community Technology \& Nonprofit Consulting}
 
-  \resumeSubheading
-    {Technical Project Lead}{Aug 2026 to present}
-    {Laurie Burns McRobbie Serve IT Clinic, Indiana University}{Bloomington, IN}
+  \resumeRole{Technical Project Lead}{Aug 2026 to Present}
     \resumeItemListStart
-      \resumeItem{Lead student teams delivering web and accessibility work for nonprofit and civic clients, from requirements through implementation.}
-      \resumeItem{Translate stakeholder needs into technical tasks for the City of Bloomington, Middle Way House, Greater Bloomington Chamber of Commerce, and Town of Nashville.}
-      \resumeItem{For the Town of Nashville, evaluate page structure, navigation, and colour contrast against WCAG and document recommended improvements.}
+      \resumeItem{Lead student teams conducting website accessibility assessments for nonprofit and civic clients, coordinating evaluations, technical deliverables, and recommendations.}
+      \resumeItem{Translate stakeholder requirements into project tasks and lead WCAG evaluations for the Town of Nashville, documenting barriers involving navigation, page structure, and colour contrast.}
     \resumeItemListEnd
 
-  \resumeSubheading
-    {Web Development, AI and Accessibility Intern}{Jan 2024 to Dec 2025}
-    {Laurie Burns McRobbie Serve IT Clinic, Indiana University}{Bloomington, IN}
+  \resumeRole{Web Development, AI \& Accessibility Intern}{Jan 2024 to Dec 2025}
     \resumeItemListStart
-      \resumeItem{Developed and maintained client websites, including responsive interfaces and usability fixes.}
+      \resumeItem{Developed and maintained responsive websites for community clients, supporting frontend functionality, usability, and accessibility improvements.}
+      \resumeItem{Troubleshot website issues, evaluated accessibility against WCAG guidelines, and prepared technical findings and maintenance documentation for client handoffs.}
     \resumeItemListEnd
-
-  \resumeSubheading
-    {Web Development Intern}{Nov 2024 to Mar 2025}
-    {Benyue Restaurant}{Indianapolis, IN}
-    \resumeItemListStart
-      \resumeItem{Developed four customer-facing React.js pages covering menus, hours, and location.}
-    \resumeItemListEnd
-
-  \resumeSubheading
-    {IT Support Intern}{May 2025 to Aug 2025}
-    {Commercial real estate}{Indianapolis, IN}
-    \resumeItemListStart
-      \resumeItem{Reviewed business documentation and coordinated technical and operational handoffs across stakeholders.}
-    \resumeItemListEnd
-
-  \resumeSubheading
-    {Digital and operations}{Aug 2019 to Aug 2023}
-    {Potstickers}{New Palestine, IN}
-    \resumeItemListStart
-      \resumeItem{Built and maintained the website, online ordering, POS, digital menus, and online marketing for customer-facing restaurant operations.}
-    \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
-\section{Technical Projects}
+\section{Projects}
 \resumeSubHeadingListStart
-
-  \resumeOneLine
-    {matchaxmoxie}{Learning archive}{\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}
+  \resumeRole{Matcha x Moxie $\vert$ Coding Education \& Web Development}{\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}
+  \textit{Independent STEM Education Initiative}
     \resumeItemListStart
-      \resumeItem{Publish coding walkthroughs, course notes, and website handoff guides for Informatics students.}
+      \resumeItem{Build and maintain an online learning archive containing programming walkthroughs, course resources, and technical documentation for Informatics students.}
+      \resumeItem{Create accessible coding resources and website handoff guides to help first-generation and low-income students navigate technical coursework.}
     \resumeItemListEnd
 
-  \resumeOneLine
-    {Digital Humans}{Student project lead, IU Luddy}{}
+  \resumeRole{Digital Humans $\vert$ AI Interface Research \& Project Leadership}{}
+  \textit{Human-Centred AI \& Responsible Interaction Design}
     \resumeItemListStart
-      \resumeItem{Lead student work on useful business interfaces when AI looks and communicates like a person, with a focus on trust, disclosure, and limits.}
+      \resumeItem{Lead student exploration of human-like AI interfaces for business applications, investigating user trust, transparency, and expectations of AI-generated interactions.}
+      \resumeItem{Examine AI disclosure, communication limitations, and interface design decisions to inform responsible digital human experiences.}
     \resumeItemListEnd
-
-  \resumeOneLine
-    {Personal Portfolio}{\href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao/}}{}
-    \resumeItemListStart
-      \resumeItem{Built and deployed a personal portfolio in HTML, CSS, and JavaScript on GitHub Pages, organising Digital Humans, Serve IT client work, and frontend proof.}
-    \resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
-\section{Leadership and Additional Experience}
-\textbf{Program Assistant}, IU Office of Student Life, Hudson \& Holland Scholars Program \hfill Aug 2026 to present\\
-Programme support; distinct from MAP.\\[1pt]
-\textbf{FASE MAP Coordinator / Peer Mentor}, IU Office of Student Life \hfill 2025 to Aug 2026\\
-Mentored first-generation and low-income students on academic navigation and career resources.\\[1pt]
-\textbf{Handshake Career Creator}, Career content, Bloomington, IN \hfill May 2025 to Aug 2025\\
-Created career-focused posts and videos that translate recruiting and professional-development topics into student resources.
+\section{Work Experience}
+\resumeSubHeadingListStart
+  \resumeOrg{Potstickers Restaurant}{New Palestine, IN}
+  \textit{Restaurant \& Food Service}\\[-1pt]
+  \resumeRole{Team Member}{Aug 2019 to Present}
+    \resumeItemListStart
+      \resumeItem{Support daily restaurant operations, including customer service, point-of-sale transactions, and online ordering.}
+      \resumeItem{Assist with digital menus, customer inquiries, and coordination of restaurant services.}
+    \resumeItemListEnd
+
+  \resumeOrg{SunQuest Property Management}{Indianapolis, IN}
+  \textit{Property Management \& Real Estate}\\[-1pt]
+  \resumeRole{Team Member}{May 2025 to Present}
+    \resumeItemListStart
+      \resumeItem{Assist with property management operations, business documentation, and administrative coordination.}
+      \resumeItem{Support information sharing and day-to-day communication across operational activities.}
+    \resumeItemListEnd
+
+  \resumeOrg{Benyue Restaurant}{Indianapolis, IN}
+  \textit{Restaurant \& Hospitality}\\[-1pt]
+  \resumeRole{Team Member}{Nov 2024 to Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Supported daily restaurant operations, customer service, and customer-facing website information.}
+      \resumeItem{Assisted with digital content, customer inquiries, and service coordination.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
 
 \end{document}
