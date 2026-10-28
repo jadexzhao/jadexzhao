@@ -1,11 +1,11 @@
 %-------------------------
 % Jade Zhao résumé
-% Order: Education, Experience, Projects, Technical Skills
+% Order: Education, Technical Skills, Experience, Projects, Additional Experience
 % UK spelling. Traditional one-page, black and white.
 %-------------------------
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[letterpaper,margin=0.55in]{geometry}
+\usepackage[letterpaper,margin=0.48in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -24,12 +24,12 @@
 \setlength{\tabcolsep}{0pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\fontsize{10}{11.2}\selectfont
+\fontsize{10}{10.6}\selectfont
 
 \titleformat{\section}{
-  \vspace{4pt}%
-  \fontsize{11}{13}\selectfont\bfseries\scshape\raggedright
-}{}{0em}{}[\titlerule\vspace{2.6pt}]
+  \vspace{2pt}%
+  \fontsize{11}{12}\selectfont\bfseries\scshape\raggedright
+}{}{0em}{}[\titlerule\vspace{1.8pt}]
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \newcommand{\resumeSubheading}[4]{%
@@ -40,14 +40,21 @@
     \end{tabular*}%
 }
 
+\newcommand{\resumeOneLine}[3]{%
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \textit{#2} & {#3} \\
+    \end{tabular*}%
+}
+
 \newcommand{\resumeItem}[1]{\item{#1}}
 
 \newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0pt, label={}, itemsep=3.5pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0pt, label={}, itemsep=1.8pt, parsep=0pt, topsep=0.6pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{%
-  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=0.4pt, parsep=0pt, topsep=0.4pt, partopsep=0pt]
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
@@ -56,24 +63,33 @@
 \begin{document}
 
 \begin{center}
-  {\fontsize{17}{20}\selectfont\bfseries JADE ZHAO}\\[4pt]
+  {\fontsize{16}{18}\selectfont\bfseries JADE ZHAO}\\[2pt]
   Bloomington, IN
   \,$\vert$\,
   \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
   \,$\vert$\,
   \href{https://www.linkedin.com/in/zhao-langxi/}{linkedin.com/in/zhao-langxi}
   \,$\vert$\,
-  \href{https://github.com/jadexzhao}{github.com/jadexzhao}
+  \href{https://github.com/jadexzhao}{github.com/jadexzhao}\\[1.5pt]
+  Portfolio:
+  \href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao/}
 \end{center}
 
 \section{Education}
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
   \textbf{Indiana University Bloomington} & Expected May 2027 \\
   \textit{B.S. Informatics, Luddy School of Informatics} & \textit{Bloomington, IN} \\
-\end{tabular*}\\[3pt]
-Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1.5pt]
-\textbf{Honours:} Hudson \& Holland Scholar\\[1.5pt]
+\end{tabular*}\\[2.5pt]
+Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1pt]
+\textbf{Honours:} Hudson \& Holland Scholar $\vert$ First-generation college student\\[1pt]
 \textbf{Study abroad:} Universidad Complutense de Madrid, Spring 2026
+
+\section{Technical Skills}
+\skillline{Languages}{Python, JavaScript, TypeScript, SQL, HTML5, CSS3}\\[1pt]
+\skillline{Frameworks and data}{React.js, PostgreSQL, relational databases, SQL queries}\\[1pt]
+\skillline{Developer tools}{Git, GitHub, GitHub Pages, VS Code, Figma, Wix}\\[1pt]
+\skillline{Engineering practices}{debugging, responsive web development, WCAG accessibility, requirements gathering, technical documentation, client handoffs}\\[1pt]
+\skillline{Spoken languages}{English, Fuzhounese, Spanish}
 
 \section{Experience}
 \resumeSubHeadingListStart
@@ -84,6 +100,7 @@ Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1.5pt
     \resumeItemListStart
       \resumeItem{Lead student teams delivering web and accessibility work for nonprofit and civic clients: requirements, implementation, and handoffs.}
       \resumeItem{Translate stakeholder needs into technical tasks and document maintainable solutions for the City of Bloomington, Middle Way House, Greater Bloomington Chamber of Commerce, and Town of Nashville.}
+      \resumeItem{For the Town of Nashville, lead WCAG evaluations of page structure, navigation, and colour contrast, then document findings and hand off recommendations (not a conformance badge).}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -112,34 +129,38 @@ Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1.5pt
 \section{Projects and initiatives}
 \resumeSubHeadingListStart
 
-  \resumeSubheading
-    {Digital Humans}{Student project lead}
-    {IU Luddy}{Bloomington, IN}
+  \resumeOneLine
+    {Digital Humans}{Student project lead, IU Luddy}{}
     \resumeItemListStart
       \resumeItem{Lead student work on useful business interfaces when AI looks and communicates like a person, with a focus on trust, disclosure, and limits.}
     \resumeItemListEnd
 
-  \resumeSubheading
-    {matchaxmoxie}{Learning archive}
-    {\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}{}
+  \resumeOneLine
+    {matchaxmoxie}{Learning archive}{\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}
     \resumeItemListStart
       \resumeItem{Publish coding walkthroughs, course notes, and website handoff guides for Informatics students, including first-generation and low-income students.}
     \resumeItemListEnd
 
-  \resumeSubheading
-    {Handshake Career Creator}{May 2025 to Aug 2025}
-    {Career content}{Bloomington, IN}
+  \resumeOneLine
+    {Personal Portfolio}{\href{https://jadexzhao.github.io/jadexzhao/}{jadexzhao.github.io/jadexzhao/}}{}
     \resumeItemListStart
-      \resumeItem{Created career-focused posts and videos that translate recruiting and professional-development topics into student resources.}
+      \resumeItem{Built a personal portfolio in HTML, CSS, and JavaScript on GitHub Pages, organising Digital Humans, Serve IT client work, and frontend proof.}
+    \resumeItemListEnd
+
+  \resumeOneLine
+    {Benyue Restaurant}{Web Development Intern}{Nov 2024 to Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Built four customer-facing React pages covering menus, hours, and location. No public repository or live URL attached.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-\section{Technical Skills}
-\skillline{Languages}{Python, JavaScript, TypeScript, SQL, HTML5, CSS3}\\[1.5pt]
-\skillline{Frameworks and data}{React.js, PostgreSQL, relational databases, SQL queries}\\[1.5pt]
-\skillline{Developer tools}{Git, GitHub, GitHub Pages, VS Code, Figma, Wix}\\[1.5pt]
-\skillline{Engineering practices}{debugging, responsive web development, WCAG accessibility, requirements gathering, technical documentation, client handoffs}\\[1.5pt]
-\skillline{Spoken languages}{English, Fuzhounese, Spanish}
+\section{Additional Experience}
+\textbf{Handshake Career Creator}, Career content, Bloomington, IN \hfill May 2025 to Aug 2025\\
+Created career-focused posts and videos that translate recruiting and professional-development topics into student resources.\\[1pt]
+\textbf{FASE MAP Coordinator / Peer Mentor}, IU Office of Student Life \hfill 2025 to Aug 2026\\
+Mentored first-generation and low-income students on academic navigation and career resources.\\[1pt]
+\textbf{Program Assistant}, IU Office of Student Life, Hudson \& Holland Scholars Program \hfill Aug 2026 to present\\
+Programme support; distinct from MAP.
 
 \end{document}
