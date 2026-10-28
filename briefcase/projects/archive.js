@@ -83,7 +83,10 @@ function buildChips(tags) {
 async function init() {
   const res = await fetch("projects.json");
   const data = await res.json();
-  projects = (data.projects || []).filter((p) => p.permission !== "PRIVATE");
+  const layerOrder = { FEAT: 0, ARCH: 1, TIME: 2 };
+  projects = (data.projects || [])
+    .filter((p) => p.permission !== "PRIVATE")
+    .sort((a, b) => (layerOrder[a.layer] ?? 9) - (layerOrder[b.layer] ?? 9));
   const tagSet = new Set();
   for (const p of projects) {
     for (const t of p.tags || []) {

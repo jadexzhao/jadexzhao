@@ -11,7 +11,7 @@
       "dek": "High-level public work on useful business interfaces when AI communicates like a person.",
       "tags": ["Digital Humans", "AI", "Research"],
       "permission": "PUBLIC",
-      "layer": "FEAT",
+      "layer": "ARCH",
       "url": "digital-humans.html",
       "external": false
     },
@@ -23,7 +23,7 @@
       "dek": "Accountability, disclosure, and human control when AI mediates choices. Essays on zhao-langxi; this card is the hire-facing pointer.",
       "tags": ["AI", "Research", "Digital Humans"],
       "permission": "PUBLIC",
-      "layer": "FEAT",
+      "layer": "ARCH",
       "url": "ethics.html",
       "external": false
     },
@@ -35,7 +35,7 @@
       "dek": "Advice from mentors at MAANG, Big Three, Big Four, and Fortune 100 organisations. Input, not a job title.",
       "tags": ["Leadership"],
       "permission": "PUBLIC",
-      "layer": "FEAT",
+      "layer": "ARCH",
       "url": "mentee.html",
       "external": false
     },
@@ -47,7 +47,7 @@
       "dek": "Informatics term in Madrid. Hire-facing pointer, not a travel diary.",
       "tags": ["Research"],
       "permission": "PUBLIC",
-      "layer": "FEAT",
+      "layer": "ARCH",
       "url": "study-abroad.html",
       "external": false
     },
@@ -72,8 +72,8 @@
       "tags": ["Business Technology", "Web Development", "Product & UX"],
       "permission": "PUBLIC",
       "layer": "FEAT",
-      "url": "https://github.com/jadexzhao/pstickers24",
-      "external": true
+      "url": "potstickers.html",
+      "external": false
     },
     {
       "id": "benyue",
@@ -83,8 +83,8 @@
       "dek": "Four customer-facing React pages for menus, hours, and location.",
       "tags": ["Business Technology", "Web Development", "Product & UX"],
       "permission": "PUBLIC",
-      "layer": "ARCH",
-      "url": "jade-practice.html#commercial",
+      "layer": "FEAT",
+      "url": "benyue.html",
       "external": false
     },
     {
@@ -95,7 +95,7 @@
       "dek": "Civic partners, hospitality concepts, industry sketches, and anonymised campus ventures. Mock-ups labelled as mock-ups.",
       "tags": ["Business Technology", "Product & UX", "Web Development"],
       "permission": "PUBLIC",
-      "layer": "FEAT",
+      "layer": "ARCH",
       "url": "jade-practice.html",
       "external": false
     },
@@ -107,8 +107,8 @@
       "dek": "Nonprofit web work; fuller case after client approval.",
       "tags": ["Product & UX", "Accessibility", "Civic Technology"],
       "permission": "CONFIRM",
-      "layer": "ARCH",
-      "url": "jade-practice.html#civic",
+      "layer": "FEAT",
+      "url": "middle-way-house.html",
       "external": false
     },
     {
@@ -191,7 +191,7 @@
       "dek": "Course artifacts and code videos; classroom door.",
       "tags": ["Web Development", "Research"],
       "permission": "PUBLIC",
-      "layer": "ARCH",
+      "layer": "FEAT",
       "url": "https://matchaxmoxie.github.io/matchaxmoxie/",
       "external": true
     },
