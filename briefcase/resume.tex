@@ -1,16 +1,14 @@
 %-------------------------
 % Jade Zhao résumé
-% Order: Education, Technical Skills, Technical Experience, Projects, Additional Experience
-% UK spelling. Ranges use "to".
+% Order: Education, Experience, Projects, Technical Skills
+% UK spelling. Traditional one-page, black and white.
 %-------------------------
-\documentclass[letterpaper,9pt]{article}
-\usepackage{extsizes}
+\documentclass[letterpaper,10pt]{article}
 
-\usepackage[empty]{fullpage}
+\usepackage[letterpaper,margin=0.55in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage[english]{babel}
 
 \hypersetup{
@@ -20,152 +18,128 @@
   pdfproducer={Jade Zhao}
 }
 
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.0in}
-\addtolength{\topmargin}{-0.5in}
-\addtolength{\textheight}{1.15in}
-
+\pagestyle{empty}
 \urlstyle{same}
 \raggedright
-\setlength{\tabcolsep}{0in}
+\setlength{\tabcolsep}{0pt}
 \setlength{\parindent}{0pt}
-\linespread{1.05}\selectfont
+\setlength{\parskip}{0pt}
+\fontsize{10}{11.2}\selectfont
 
 \titleformat{\section}{
-  \vspace{3pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\titlerule \vspace{2pt}]
+  \vspace{4pt}%
+  \fontsize{11}{13}\selectfont\bfseries\scshape\raggedright
+}{}{0em}{}[\titlerule\vspace{2.6pt}]
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\newcommand{\resumeSubheading}[4]{%
+  \item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {#2} \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}%
+}
 
 \newcommand{\resumeItem}[1]{\item{#1}}
 
-\newcommand{\resumeSubheading}[4]{
-  \item
-    \textbf{#1} \hfill {#2} \\
-    \textit{\small #3}\if\relax#4\relax\else \hfill \textit{\small #4}\fi
-    \par\vspace{1pt}
-}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0.08in, label={}, itemsep=3pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0pt, label={}, itemsep=3.5pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.15in, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=1pt, parsep=0pt, topsep=1pt, partopsep=0pt]
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\newcommand{\skillline}[2]{\textbf{#1:} #2}
 
 \begin{document}
 
 \begin{center}
-    {\LARGE\bfseries JADE ZHAO} \\ \vspace{4pt}
-    Bloomington, IN
-    \,$\vert$\,
-    \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
-    \,$\vert$\,
-    \href{https://www.linkedin.com/in/zhao-langxi/}{linkedin.com/in/zhao-langxi}
-    \,$\vert$\,
-    \href{https://github.com/jadexzhao}{github.com/jadexzhao}
+  {\fontsize{17}{20}\selectfont\bfseries JADE ZHAO}\\[4pt]
+  Bloomington, IN
+  \,$\vert$\,
+  \href{mailto:jlzhao@iu.edu}{jlzhao@iu.edu}
+  \,$\vert$\,
+  \href{https://www.linkedin.com/in/zhao-langxi/}{linkedin.com/in/zhao-langxi}
+  \,$\vert$\,
+  \href{https://github.com/jadexzhao}{github.com/jadexzhao}
 \end{center}
 
 \section{Education}
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+  \textbf{Indiana University Bloomington} & Expected May 2027 \\
+  \textit{B.S. Informatics, Luddy School of Informatics} & \textit{Bloomington, IN} \\
+\end{tabular*}\\[3pt]
+Minors: Business Technology and User Experience Research. GPA: 3.55/4.00\\[1.5pt]
+\textbf{Honours:} Hudson \& Holland Scholar\\[1.5pt]
+\textbf{Study abroad:} Universidad Complutense de Madrid, Spring 2026
+
+\section{Experience}
 \resumeSubHeadingListStart
-    \resumeSubheading
-      {Indiana University Bloomington | Luddy School of Informatics, Computing, and Engineering}{Expected May 2027}
-      {Bachelor of Science in Informatics}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Minors: Business Technology and User Experience Research. GPA: 3.55/4.00.}
-        \resumeItem{\textbf{Honours:} Hudson \& Holland Scholar, Luddy Study Abroad Scholarship, Hutton International Experiences Programme (HIEP) Grant.}
-        \resumeItem{\textbf{Study abroad:} Universidad Complutense de Madrid, Spring 2026.}
-      \resumeItemListEnd
+
+  \resumeSubheading
+    {Technical Project Lead}{Aug 2026 to present}
+    {Laurie Burns McRobbie Serve IT Clinic, Indiana University}{Bloomington, IN}
+    \resumeItemListStart
+      \resumeItem{Lead student teams delivering web and accessibility work for nonprofit and civic clients: requirements, implementation, and handoffs.}
+      \resumeItem{Translate stakeholder needs into technical tasks and document maintainable solutions for the City of Bloomington, Middle Way House, Greater Bloomington Chamber of Commerce, and Town of Nashville.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Web Development, AI and Accessibility Intern}{Jan 2024 to Dec 2025}
+    {Laurie Burns McRobbie Serve IT Clinic, Indiana University}{Bloomington, IN}
+    \resumeItemListStart
+      \resumeItem{Developed client websites, ran WCAG accessibility evaluations, and supported troubleshooting, documentation, and handoffs.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {IT Support Intern}{May 2025 to Aug 2025}
+    {Commercial real estate}{Indianapolis, IN}
+    \resumeItemListStart
+      \resumeItem{Reviewed business documentation and coordinated technical and operational handoffs across stakeholders.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Digital and operations}{Aug 2019 to Aug 2023}
+    {Potstickers}{New Palestine, IN}
+    \resumeItemListStart
+      \resumeItem{Supported the website, online ordering, POS, digital menus, and online marketing for customer-facing restaurant operations.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Projects and initiatives}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Digital Humans}{Student project lead}
+    {IU Luddy}{Bloomington, IN}
+    \resumeItemListStart
+      \resumeItem{Lead student work on useful business interfaces when AI looks and communicates like a person, with a focus on trust, disclosure, and limits.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {matchaxmoxie}{Learning archive}
+    {\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}{}
+    \resumeItemListStart
+      \resumeItem{Publish coding walkthroughs, course notes, and website handoff guides for Informatics students, including first-generation and low-income students.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Handshake Career Creator}{May 2025 to Aug 2025}
+    {Career content}{Bloomington, IN}
+    \resumeItemListStart
+      \resumeItem{Created career-focused posts and videos that translate recruiting and professional-development topics into student resources.}
+    \resumeItemListEnd
+
 \resumeSubHeadingListEnd
 
 \section{Technical Skills}
-\small
-\textbf{Programming languages:} Python, JavaScript, TypeScript, SQL, HTML, CSS \\
-\textbf{Frameworks and tools:} React.js, PostgreSQL, Git, GitHub, Figma \\
-\textbf{Databases and systems:} relational databases, data management, data-flow mapping, ETL fundamentals \\
-\textbf{Web and accessibility:} responsive web design, WCAG accessibility evaluation, UI prototyping, usability testing \\
-\textbf{Technical practices:} requirements gathering, technical documentation, project coordination \\
-\textbf{Spoken languages:} English, Mandarin Chinese, Fuzhounese, Spanish
-
-\section{Technical Experience}
-\resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Project Lead}{January 2024 to present}
-      {Laurie Burns McRobbie Serve IT Clinic, Indiana University}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Lead technology projects for nonprofit and public-sector partners, translating organisational needs into technical requirements and project deliverables.}
-        \resumeItem{Coordinate website development and digital improvements for the City of Bloomington, Middle Way House, Greater Bloomington Chamber of Commerce, and Town of Nashville.}
-        \resumeItem{Co-lead accessibility evaluations for the Town of Nashville, identifying website usability barriers and developing prioritised recommendations.}
-        \resumeItem{Collaborate with student teams and community stakeholders to establish project priorities, review deliverables, and document solutions for long-term maintenance.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Researcher}{May 2024 to December 2025}
-      {Indiana University, Research Experiences for Undergraduates}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Designed and refined user-interface prototypes to improve navigation, information organisation, and usability.}
-        \resumeItem{Developed Figma user flows and reusable interface components for consistent, user-centred digital experiences.}
-        \resumeItem{Contributed to Public Interest Technology University Network (PIT-UN) and Serve-AI initiatives focused on public-interest technology and digital tool development.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Web Design Intern}{August 2024 to December 2024}
-      {Middle Way House, Serve IT Clinic}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Contributed to website design and accessibility improvements for a nonprofit supporting survivors of domestic violence and sexual assault.}
-        \resumeItem{Improved content organisation and navigation so essential support information is easier to find.}
-      \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-\section{Projects}
-\resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Restaurant website and online ordering}{Ongoing}
-      {Potstickers · web development and business systems}{New Palestine, IN}
-      \resumeItemListStart
-        \resumeItem{Built a customer-facing restaurant website in HTML and CSS, then helped implement online ordering and point-of-sale systems for daily operations.}
-        \resumeItem{Organised menus, hours, and ordering instructions so customers can use the restaurant's digital channels.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Property management database}{Course project}
-      {Indiana University · relational database design}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Collaborated on a data model for homeowners, students, property listings, and payments, representing the relationships needed for organised record-keeping.}
-      \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-\section{Additional Experience}
-\resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Program Assistant}{August 2026 to present}
-      {Hudson \& Holland Scholars Program, IU {O}{ff}ice of Student Life}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Coordinate scholar programming, leadership initiatives, and mentoring activities supporting academic and professional development.}
-        \resumeItem{Connect first-generation students with university resources, academic support, and professional opportunities.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Career Content Creator}{May 2025 to August 2025}
-      {Handshake Career Creator}{Bloomington, IN}
-      \resumeItemListStart
-        \resumeItem{Developed career-focused digital content covering internship searches, professional networking, and career development.}
-        \resumeItem{Created practical guidance so students can use Handshake, LinkedIn, and early-career opportunities.}
-      \resumeItemListEnd
-
-\resumeSubHeadingListEnd
+\skillline{Languages}{Python, JavaScript, TypeScript, SQL, HTML5, CSS3}\\[1.5pt]
+\skillline{Frameworks and data}{React.js, PostgreSQL, relational databases, SQL queries}\\[1.5pt]
+\skillline{Developer tools}{Git, GitHub, GitHub Pages, VS Code, Figma, Wix}\\[1.5pt]
+\skillline{Engineering practices}{debugging, responsive web development, WCAG accessibility, requirements gathering, technical documentation, client handoffs}\\[1.5pt]
+\skillline{Spoken languages}{English, Fuzhounese, Spanish}
 
 \end{document}
