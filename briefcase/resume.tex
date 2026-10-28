@@ -5,7 +5,7 @@
 %-------------------------
 \documentclass[letterpaper,10pt]{article}
 
-\usepackage[letterpaper,margin=0.45in]{geometry}
+\usepackage[letterpaper,left=0.55in,right=0.55in,top=0.48in,bottom=0.48in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -24,12 +24,12 @@
 \setlength{\tabcolsep}{0pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\fontsize{10}{10.5}\selectfont
+\fontsize{10}{10.4}\selectfont
 
 \titleformat{\section}{
-  \vspace{2pt}%
+  \vspace{1.5pt}%
   \fontsize{11}{12}\selectfont\bfseries\scshape\raggedright
-}{}{0em}{}[\titlerule\vspace{1.6pt}]
+}{}{0em}{}[\titlerule\vspace{1.2pt}]
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 
 \newcommand{\resumeRole}[2]{%
@@ -49,11 +49,12 @@
 \newcommand{\resumeItem}[1]{\item{#1}}
 
 \newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0pt, label={}, itemsep=1.6pt, parsep=0pt, topsep=0.4pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0pt, label={}, itemsep=1.1pt, parsep=0pt, topsep=0.3pt, partopsep=0pt]
 }
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{%
-  \begin{itemize}[leftmargin=10pt, label=\textbullet, itemsep=0.3pt, parsep=0pt, topsep=0.3pt, partopsep=0pt]
+  \begin{itemize}[leftmargin=0.28in, labelsep=4.96pt, labelindent=0.10in, itemindent=0pt, labelwidth=8pt, align=left, label=\textbullet, itemsep=0.15pt, parsep=0pt, topsep=0.15pt, partopsep=0pt]
+  \fontsize{10}{10.4}\selectfont
 }
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
@@ -77,15 +78,17 @@
 \section{Education}
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
   \textbf{Indiana University Bloomington} & Bloomington, IN \\
-\end{tabular*}\\[1pt]
-B.S. Informatics $\vert$ Expected May 2027\\[1pt]
-Minors: Business Technology, User Experience Research $\vert$ GPA: 3.55/4.00 $\vert$ Hudson \& Holland Scholar
+\end{tabular*}\\[0.4pt]
+Luddy School of Informatics, Computing, and Engineering\\[0.4pt]
+Bachelor of Science in Informatics $\vert$ Expected May 2027\\[0.4pt]
+{\fontsize{9.5}{10.4}\selectfont Minors: Business Technology, User Experience Research $\vert$ GPA: 3.55/4.00 $\vert$ Hudson \& Holland Scholar (Full-Ride Scholarship)}\\[0.4pt]
+Study Abroad: Universidad Complutense de Madrid, Spain $\vert$ Spring 2026
 
 \section{Technical Skills}
-\skillline{Programming}{Python, JavaScript, TypeScript, SQL, HTML, CSS}\\[1pt]
-\skillline{Frameworks \& Databases}{React.js, PostgreSQL}\\[1pt]
-\skillline{Tools}{Git, GitHub, VS Code, GitHub Pages, Figma}\\[1pt]
-\skillline{Practices}{Responsive Web Development, WCAG Accessibility, Debugging, Requirements Analysis, Technical Documentation}
+\skillline{Programming}{Python, JavaScript, TypeScript, SQL, HTML, CSS}\\[0.6pt]
+\skillline{Frameworks \& Databases}{React.js, PostgreSQL}\\[0.6pt]
+\skillline{Tools}{Git, GitHub, VS Code, GitHub Pages, Figma}\\[0.6pt]
+\skillline{Practices}{WCAG Accessibility, Debugging, Requirements Analysis, Technical Documentation}
 
 \section{Volunteer Experience}
 \resumeSubHeadingListStart
@@ -111,11 +114,11 @@ Minors: Business Technology, User Experience Research $\vert$ GPA: 3.55/4.00 $\v
   \resumeRole{Matcha x Moxie $\vert$ Coding Education \& Web Development}{\href{https://matchaxmoxie.github.io/matchaxmoxie/}{matchaxmoxie.github.io/matchaxmoxie/}}
   \textit{Independent STEM Education Initiative}
     \resumeItemListStart
-      \resumeItem{Build and maintain an online learning archive containing programming walkthroughs, course resources, and technical documentation for Informatics students.}
+      \resumeItem{Build and maintain an online learning archive structured around programming walkthroughs, course notes, and technical documentation for Informatics students.}
       \resumeItem{Create accessible coding resources and website handoff guides to help first-generation and low-income students navigate technical coursework.}
     \resumeItemListEnd
 
-  \resumeRole{Digital Humans $\vert$ AI Interface Research \& Project Leadership}{}
+  \resumeRole{Digital Humans $\vert$ AI Interface Research \& Project Leadership}{\href{https://zhao-langxi.github.io/zhao-langxi/}{zhao-langxi.github.io/zhao-langxi/}}
   \textit{Human-Centred AI \& Responsible Interaction Design}
     \resumeItemListStart
       \resumeItem{Lead student exploration of human-like AI interfaces for business applications, investigating user trust, transparency, and expectations of AI-generated interactions.}
@@ -129,24 +132,24 @@ Minors: Business Technology, User Experience Research $\vert$ GPA: 3.55/4.00 $\v
   \textit{Restaurant \& Food Service}\\[-1pt]
   \resumeRole{Team Member}{Aug 2019 to Present}
     \resumeItemListStart
-      \resumeItem{Support daily restaurant operations, including customer service, point-of-sale transactions, and online ordering.}
-      \resumeItem{Assist with digital menus, customer inquiries, and coordination of restaurant services.}
+      \resumeItem{Support daily restaurant operations, including customer service, point-of-sale transactions, online ordering, and digital menus.}
+      \resumeItem{Assist with website updates, customer inquiries, and coordination of dining-room and online restaurant services.}
     \resumeItemListEnd
 
   \resumeOrg{SunQuest Property Management}{Indianapolis, IN}
   \textit{Property Management \& Real Estate}\\[-1pt]
   \resumeRole{Team Member}{May 2025 to Present}
     \resumeItemListStart
-      \resumeItem{Assist with property management operations, business documentation, and administrative coordination.}
-      \resumeItem{Support information sharing and day-to-day communication across operational activities.}
+      \resumeItem{Assist with property management operations, including business documentation, administrative coordination, and operational handoffs.}
+      \resumeItem{Support information sharing and day-to-day communication across property management activities.}
     \resumeItemListEnd
 
   \resumeOrg{Benyue Restaurant}{Indianapolis, IN}
   \textit{Restaurant \& Hospitality}\\[-1pt]
   \resumeRole{Team Member}{Nov 2024 to Mar 2025}
     \resumeItemListStart
-      \resumeItem{Supported daily restaurant operations, customer service, and customer-facing website information.}
-      \resumeItem{Assisted with digital content, customer inquiries, and service coordination.}
+      \resumeItem{Supported daily restaurant operations, customer service, and customer-facing website information for guests.}
+      \resumeItem{Assisted with digital content, customer inquiries, and coordination of restaurant services.}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
