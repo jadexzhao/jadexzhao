@@ -40,3 +40,5 @@ tools/portfolio-qa/node_modules/
 tools/portfolio-qa/test-results/
 tools/portfolio-qa/playwright-report/
 tools/portfolio-qa/screenshots/
+tools/portfolio-qa/lighthouse-reports/
+tools/portfolio-qa/.lighthouseci/

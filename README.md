@@ -38,6 +38,10 @@ cd bm25-notes-search
 python3 search.py . "tokenize index rank markdown" --top 3
 ```
 
+## Local quality checks
+
+Dev-only. Lives in `tools/portfolio-qa/`. See that README for Playwright, axe-core, html-validate, and Lighthouse commands. Do not point those tools at `briefcase/nashville-acc.html` or `briefcase/portfolio-shell.css` when fixing.
+
 ## Résumé
 
 [resume.pdf](https://jadexzhao.github.io/jadexzhao/resume.pdf)

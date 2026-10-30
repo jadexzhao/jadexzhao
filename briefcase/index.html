@@ -30,7 +30,7 @@
   </head>
   <body class="garden-page">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="site-top">
+    <header class="site-top" aria-label="Banner">
       <div class="site-top__inner">
         <a class="site-top__brand" href="index.html">Jade Zhao</a>
         <nav aria-label="Site">
@@ -46,7 +46,7 @@
       </div>
     </header>
     <div class="wrap">
-      <header class="hero panel--accent-top">
+      <header class="hero panel--accent-top" aria-label="Introduction">
         <div class="hero-split hero-split--photo">
           <div class="hero-copy">
             <p class="kicker">Jade Zhao · Informatics at Indiana University</p>
@@ -67,12 +67,18 @@
             </div>
           </div>
           <figure class="hero-photo">
-            <img
-              src="assets/garden-portrait.jpg"
-              width="480"
-              height="600"
-              alt="Jade Zhao smiling outdoors in a garden, wearing a cream sweater."
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="assets/garden-portrait.webp"
+              />
+              <img
+                src="assets/garden-portrait.jpg"
+                width="480"
+                height="600"
+                alt="Jade Zhao smiling outdoors in a garden, wearing a cream sweater."
+              />
+            </picture>
             <figcaption>
               Garden, not a studio set.
               <a href="photography.html">More pictures</a>.

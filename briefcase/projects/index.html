@@ -20,7 +20,7 @@
   </head>
   <body class="garden-page work-editorial">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="site-top">
+    <header class="site-top" aria-label="Banner">
       <div class="site-top__inner">
         <a class="site-top__brand" href="../index.html">Jade Zhao</a>
         <nav aria-label="Site">
@@ -36,7 +36,7 @@
       </div>
     </header>
     <div class="wrap">
-      <header class="panel panel--accent-top work-hero">
+      <header class="panel panel--accent-top work-hero" aria-label="Introduction">
         <p class="work-num">01 / Introduction</p>
         <h1>Things I have built, studied, and made better.</h1>
         <p class="home-tagline">
@@ -252,15 +252,22 @@
             </ul>
             <figure class="work-shot" data-pswp-gallery>
               <a
-                href="../assets/work/nashville-process.png"
+                href="../assets/work/nashville-process.webp"
+                data-pswp-src="../assets/work/nashville-process.png"
                 data-pswp-width="1280"
                 data-pswp-height="800"
                 target="_blank"
               >
-                <img
-                  src="../assets/work/nashville-process.png"
-                  alt="Screenshot of the existing Town of Nashville process page, captured locally on 30 October 2026. The assignment HTML was not edited."
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="../assets/work/nashville-process.webp"
+                  />
+                  <img
+                    src="../assets/work/nashville-process.png"
+                    alt="Screenshot of the existing Town of Nashville process page, captured locally on 30 October 2026. The assignment HTML was not edited."
+                  />
+                </picture>
               </a>
               <figcaption>
                 The current process page, captured as it is. Click to enlarge.
@@ -356,6 +363,7 @@
             <div
               id="filter-chips"
               class="filter-chips"
+              role="group"
               aria-label="Filter by topic"
             ></div>
           </div>
