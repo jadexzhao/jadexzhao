@@ -31,6 +31,8 @@ GitHub Pages publishes `briefcase/` as the site root, plus `duck-farm/` at `/jad
 
 A physical `archive/` folder has been planned and not moved yet. Read each project README before treating a folder as shipped software.
 
+This repository is public. It does not yet have a root licence file, so do not call the portfolio “open source.” Vendor licences stay with those files.
+
 ## Implemented code to open first
 
 ```bash
