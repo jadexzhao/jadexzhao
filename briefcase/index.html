@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jade Zhao · building thoughtful software for the real world</title>
-  <meta name="description" content="Jade Zhao builds practical software and accessible digital experiences for real clients and small organisations. Informatics student at Indiana University.">
+  <title>Jade Zhao · curious about technology</title>
+  <meta name="description" content="Jade Zhao is an Informatics student at Indiana University. Software engineering, human-centred AI, and digital accessibility. Built to be honest about what shipped.">
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#F5F4EA">
-  <meta property="og:title" content="Jade Zhao · building thoughtful software for the real world">
-  <meta property="og:description" content="Software, accessibility, and client work. Informatics at Indiana University. Serve IT Technical Project Lead.">
+  <meta name="theme-color" content="#F7F6EF">
+  <meta property="og:title" content="Jade Zhao · curious about technology">
+  <meta property="og:description" content="Software engineering, human-centred AI, and digital accessibility. Informatics at Indiana University.">
   <meta property="og:url" content="https://jadexzhao.github.io/jadexzhao/">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="portfolio-shell.css">
+  <link rel="stylesheet" href="garden-shell.css">
 </head>
-<body>
+<body class="garden-page">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-top">
     <div class="site-top__inner">
@@ -26,11 +27,9 @@
       <ul class="site-top__nav">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="projects/index.html">Work</a></li>
-        <li><a href="experience.html">Experience</a></li>
+        <li><a href="field-notes.html">Garden</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="resume.pdf">Résumé</a></li>
-        <li><a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="mailto:jlzhao@iu.edu">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -39,81 +38,65 @@
       <div class="hero-split">
         <div class="hero-copy">
           <p class="kicker">Jade Zhao · Informatics · Indiana University</p>
-          <h1>Building thoughtful software for the real world.</h1>
-          <p class="home-tagline">Client-facing web work, accessibility, and systems someone else can keep running.</p>
+          <h1>Curious about technology. Building things to understand it.</h1>
+          <p class="home-tagline">Software engineering, human-centred AI, and digital accessibility.</p>
           <p>
-            I'm Jade. I write software for restaurants, nonprofits, and civic partners ...
-            usually with matcha nearby. This site is HTML, CSS, and a little JavaScript.
+            I'm an Informatics student at Indiana University. I like figuring out how systems work,
+            building practical software, and making complicated ideas easier for other people to use.
           </p>
           <p class="meta">
-            Serve IT: web development, AI and accessibility intern (January 2024 to December 2025),
-            then Technical Project Lead (August 2026 to present). I like working next to the people
-            who have to use the system.
+            Serve IT Technical Project Lead (August 2026 to present). Before that, web development,
+            AI and accessibility intern (January 2024 to December 2025). This site is HTML, CSS, and
+            a little JavaScript ... usually written with matcha nearby.
           </p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
+            <a class="btn btn--primary" href="projects/index.html">Work</a>
+            <a class="btn" href="about.html">About</a>
             <a class="btn" href="resume.pdf">Résumé</a>
-            <a class="btn" href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
-        <aside class="hero-snapshot" aria-label="Technical snapshot">
+        <aside class="hero-snapshot" aria-label="Portrait and focus">
           <div class="snapshot-head">
             <img
               class="snapshot-photo"
-              src="assets/site-pfp.jpg"
+              src="assets/garden-portrait.jpg"
               width="120"
               height="120"
-              alt="Jade Zhao, profile photo."
+              alt="Jade Zhao smiling outdoors in a garden, wearing a cream sweater."
             >
             <div>
-              <p class="kicker">Technical snapshot</p>
-              <p class="meta">From the résumé. React only where a project used it.</p>
+              <p class="kicker">At a glance</p>
+              <p class="meta">First-generation college student. Hudson &amp; Holland Scholar. Expected May 2027.</p>
             </div>
           </div>
-          <dl class="skill-list skill-list--compact">
-            <div>
-              <dt>Languages</dt>
-              <dd>Python, JavaScript, TypeScript, SQL, HTML5, CSS3</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>Git, GitHub, GitHub Pages, VS Code, Figma, Wix</dd>
-            </div>
-            <div>
-              <dt>Practices</dt>
-              <dd>Debugging, responsive web, WCAG checks, requirements, handoffs</dd>
-            </div>
-          </dl>
-          <article class="snapshot-ship">
-            <p class="kicker">Featured ship</p>
-            <h2><a href="benyue.html">Benyue Restaurant</a></h2>
-            <p>Four React pages for menus, hours, and location. Intern, Nov 2024 to Mar 2025. Case note only.</p>
-          </article>
+          <p class="meta">Python, JavaScript, TypeScript, SQL, HTML, CSS. React and PostgreSQL where a project used them. WCAG checks and handoffs on clinic work.</p>
         </aside>
       </div>
     </header>
 
     <main id="main">
       <section class="panel" id="work" aria-labelledby="work-heading">
-        <h2 id="work-heading">Selected projects</h2>
-        <p class="meta">What I built, the problem, and the links that actually exist.</p>
+        <h2 id="work-heading">Selected work</h2>
+        <p class="meta">Four pieces I will stand behind. The archive has the rest, labelled by what they actually are.</p>
         <ul class="featured-grid">
           <li>
             <article class="work-card">
-              <p class="meta">Nov 2024 to Mar 2025</p>
+              <p class="lane">Engineering</p>
+              <p class="meta">2025+</p>
               <ul class="tech-list">
-                <li>React</li>
-                <li>Web</li>
+                <li>Python</li>
+                <li>BM25</li>
               </ul>
-              <h3><a href="benyue.html">Benyue Restaurant</a></h3>
-              <p>Need: guest-facing menus, hours, and location. I built four React pages as Web Development Intern.</p>
+              <h3><a href="https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search" rel="noopener noreferrer">BM25 notes search</a></h3>
+              <p>Stdlib Python keyword search over local markdown. Tokenise, index, rank. No API keys.</p>
               <div class="work-card__links">
-                <a href="benyue.html">Case note</a>
+                <a href="https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search" rel="noopener noreferrer">Source</a>
               </div>
             </article>
           </li>
           <li>
             <article class="work-card">
+              <p class="lane">Accessibility</p>
               <p class="meta">Fall 2026</p>
               <ul class="tech-list">
                 <li>WCAG</li>
@@ -130,6 +113,22 @@
           </li>
           <li>
             <article class="work-card">
+              <p class="lane">AI research</p>
+              <p class="meta">Feb 2025 to present</p>
+              <ul class="tech-list">
+                <li>Digital Humans</li>
+                <li>HCI</li>
+              </ul>
+              <h3><a href="digital-humans.html">Digital Humans</a></h3>
+              <p>Student project lead at Luddy. High-level public work on useful business interfaces when AI communicates like a person. No launch claim.</p>
+              <div class="work-card__links">
+                <a href="digital-humans.html">Public summary</a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="work-card">
+              <p class="lane">Client work</p>
               <p class="meta">2019 to present</p>
               <ul class="tech-list">
                 <li>HTML</li>
@@ -145,104 +144,25 @@
               </div>
             </article>
           </li>
-          <li>
-            <article class="work-card">
-              <p class="meta">2023 to 2025 · share still limited</p>
-              <ul class="tech-list">
-                <li>Serve IT</li>
-                <li>Web</li>
-                <li>UX</li>
-              </ul>
-              <h3><a href="middle-way-house.html">Middle Way House</a></h3>
-              <p>Need: nonprofit web and UX through Serve IT. I will not invent navigation metrics. Instagram is the public proof a site shipped.</p>
-              <div class="work-card__links">
-                <a href="middle-way-house.html">Case note</a>
-                <a href="https://www.instagram.com/p/DeU0euUMGEE/" rel="noopener noreferrer">Instagram</a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="work-card">
-              <p class="meta">Ongoing</p>
-              <ul class="tech-list">
-                <li>HTML</li>
-                <li>Classroom</li>
-              </ul>
-              <h3><a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a></h3>
-              <p>Need: notes someone else can follow. I211 Python videos and website handoff guides. Matcha classroom door, not a second résumé.</p>
-              <div class="work-card__links">
-                <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">Live site</a>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="work-card">
-              <p class="meta">Feb 2025 to present · archive</p>
-              <ul class="tech-list">
-                <li>Digital Humans</li>
-                <li>HCI</li>
-              </ul>
-              <h3><a href="digital-humans.html">Digital Humans</a></h3>
-              <p>Student project lead at Luddy. High-level public work on useful business interfaces when AI communicates like a person. No launch claim.</p>
-              <div class="work-card__links">
-                <a href="digital-humans.html">Public summary</a>
-              </div>
-            </article>
-          </li>
         </ul>
         <p><a href="projects/index.html">Open the full project archive</a></p>
       </section>
 
-      <section class="panel" id="experience" aria-labelledby="experience-heading">
-        <h2 id="experience-heading">Experience</h2>
-        <p class="meta">Verified clinic and employment roles. Campus programmes sit on the experience page so they do not look like jobs they are not.</p>
-        <ul class="exp-grid">
-          <li class="exp-card">
-            <p class="meta">Aug 2026 to present</p>
-            <h3>Technical Project Lead</h3>
-            <p>Laurie Burns McRobbie Serve IT Clinic. Lead student teams on web and accessibility work: requirements, implementation, and handoffs. Nashville ACC is a project under this role.</p>
-          </li>
-          <li class="exp-card">
-            <p class="meta">Jan 2024 to Dec 2025</p>
-            <h3>Web Development, AI and Accessibility Intern</h3>
-            <p>Serve IT. Client websites, WCAG evaluations, troubleshooting, documentation, and handoffs.</p>
-          </li>
-          <li class="exp-card">
-            <p class="meta">May 2025 to Aug 2025</p>
-            <h3>IT Support Intern</h3>
-            <p>Commercial real estate, Indianapolis. Reviewed business documentation and coordinated technical and operational handoffs.</p>
-          </li>
-          <li class="exp-card">
-            <p class="meta">Aug 2019 to Aug 2023</p>
-            <h3>Digital and operations · Potstickers</h3>
-            <p>Website, online ordering, POS, digital menus, and online marketing for a family restaurant.</p>
-          </li>
-        </ul>
-        <p><a href="experience.html">Full experience, campus programmes, and education</a></p>
-      </section>
-
-      <section class="panel" id="skills" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Technical skills</h2>
-        <dl class="skill-list">
+      <section class="panel" id="garden" aria-labelledby="garden-heading">
+        <h2 id="garden-heading">Garden</h2>
+        <div class="garden-preview">
           <div>
-            <dt>Languages</dt>
-            <dd>Python, JavaScript, TypeScript, SQL, HTML5, CSS3</dd>
+            <p>Field notes for things I am still learning in public. Finished notes only. Empty until I have a piece I will stand behind.</p>
+            <p class="meta">I211 Python walkthroughs already live on <a href="https://matchaxmoxie.github.io/matchaxmoxie/i211.html" rel="noopener noreferrer">matchaxmoxie</a>.</p>
+            <p><a href="field-notes.html">Open the garden</a></p>
           </div>
-          <div>
-            <dt>Tools</dt>
-            <dd>Git, GitHub, GitHub Pages, VS Code, Figma, Wix. React.js and PostgreSQL where a project used them.</dd>
-          </div>
-          <div>
-            <dt>Practices</dt>
-            <dd>Debugging, responsive web, WCAG checks, requirements gathering, technical documentation, client handoffs</dd>
-          </div>
-        </dl>
-        <p class="meta garden-note">I start from the task a real person has to finish, write the work so someone else can run it, and ship the smallest stack that survives Tuesday.</p>
+          <p class="meta more-experiments"><a href="jade-practice.html#food">More experiments</a> · restaurant and hospitality sketches, labelled as personal explorations. Not clients.</p>
+        </div>
       </section>
 
       <section class="panel" id="photos" aria-labelledby="photos-heading">
-        <h2 id="photos-heading">Photography</h2>
-        <p class="meta">How the site looks. Not the work. Frames from gardens and <a href="https://zhao-langxi.github.io/zhao-langxi/" rel="noopener noreferrer">zhao-langxi</a>, the campus and Instagram origin door. <a href="photography.html">More pictures</a>.</p>
+        <h2 id="photos-heading">A little of the rest</h2>
+        <p class="meta">Gardens and film. Not the work. <a href="photography.html">More pictures</a> · <a href="about.html">About</a>.</p>
         <ul class="photo-grid photo-grid--compact">
           <li>
             <figure>
@@ -262,8 +182,8 @@
 
     <footer class="site-footer panel">
       <p>
-        <a href="field-notes.html">Field notes</a> ·
         <a href="experience.html">Experience</a> ·
+        <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a> ·
         <a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a> ·
         <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
       </p>

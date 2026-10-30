@@ -1,33 +1,7 @@
-# Data Validation Pipeline (archived demo)
+# Data validation pipeline (archived concept)
 
-**Not linked from the public portfolio.** Generic ETL validation demo kept for reference only.
+**Not linked from the public portfolio.** Kept as a folder only.
 
-Problem: Partner org data imports need reliable validation before bad rows propagate downstream.
+The files here are a README, `package.json`, and an env example. There is no `src/main.py`, no validation rules, and no working extract-transform-load (ETL) pipeline in this repository.
 
-What this sketches: Python/SQL pipeline with validation rules, anomaly checks, and monitoring hooks.
-
-Status: Demo / reference implementation
-
-## Features
-
-- Automated validation rules and duplicate detection
-- Batch and streaming processing patterns
-- PostgreSQL-oriented schema examples
-- Monitoring hooks for pipeline runs
-
-## Tech Stack
-
-- Python 3.10+
-- SQL (PostgreSQL)
-- Pandas / NumPy
-- Docker Compose (optional local stack)
-
-## Getting Started
-
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-python src/main.py
-```
+Do not follow the old setup commands. They describe a programme that is not present.

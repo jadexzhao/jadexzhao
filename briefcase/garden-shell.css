@@ -1,0 +1,138 @@
+/* Isolated garden / hire-page layer.
+   Town of Nashville (nashville-acc.html) does not load this file
+   and does not use body.garden-page. Do not attach it there. */
+
+body.garden-page {
+  --paper: #f7f6ef;
+  --matcha-wash: #dde6cd;
+  --sage: #768a61;
+  --forest: #344735;
+  --clay: #c6ab91;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 48% 32% at 100% 0%, rgb(221 230 205 / 0.7), transparent 72%),
+    radial-gradient(ellipse 38% 26% at 0% 88%, rgb(118 138 97 / 0.12), transparent 70%);
+}
+
+body.garden-page .site-top {
+  background: rgb(247 246 239 / 0.95);
+}
+
+body.garden-page .site-top__inner {
+  max-width: 68rem;
+  padding: 0.55rem 1.15rem;
+}
+
+body.garden-page .site-top__nav {
+  row-gap: 0.35rem;
+}
+
+body.garden-page .wrap {
+  max-width: 68rem;
+  padding: 1rem 1.15rem 2.4rem;
+}
+
+body.garden-page .hero h1,
+body.garden-page .panel--accent-top h1 {
+  font-size: clamp(1.7rem, 4.2vw, 2.35rem);
+  letter-spacing: -0.03em;
+  color: var(--forest);
+}
+
+body.garden-page .home-tagline {
+  font-size: 1.08rem;
+  color: var(--sage);
+  max-width: 38rem;
+}
+
+body.garden-page .hero-snapshot {
+  background:
+    linear-gradient(180deg, rgb(221 230 205 / 0.45), rgb(247 246 239 / 0.7));
+  border-color: var(--clay);
+}
+
+body.garden-page .snapshot-photo {
+  width: 4.4rem;
+  height: 4.4rem;
+}
+
+body.garden-page .featured-grid,
+body.garden-page .exp-grid {
+  gap: 0.9rem;
+}
+
+body.garden-page .work-card,
+body.garden-page .exp-card,
+body.garden-page .card-link {
+  padding: 0.95rem 1rem;
+  border-color: rgb(198 171 145 / 0.55);
+  background: rgb(255 254 248 / 0.92);
+}
+
+body.garden-page .work-card h3,
+body.garden-page .card-link h3 {
+  font-size: 1.08rem;
+}
+
+body.garden-page .lane {
+  display: inline-block;
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+body.garden-page .garden-preview {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 40rem) {
+  body.garden-page .garden-preview {
+    grid-template-columns: 1.4fr 0.8fr;
+    align-items: start;
+  }
+}
+
+body.garden-page .more-experiments {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+body.garden-page .archive-group {
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
+}
+
+body.garden-page .archive-group + .archive-group {
+  margin-top: 0.35rem;
+}
+
+body.garden-page .archive-group h2 {
+  margin-bottom: 0.55rem;
+}
+
+@media (max-width: 39.99rem) {
+  body.garden-page .site-top__inner {
+    align-items: flex-start;
+  }
+
+  body.garden-page .wrap {
+    padding: 0.85rem 0.9rem 2rem;
+  }
+
+  body.garden-page .panel,
+  body.garden-page header.hero,
+  body.garden-page footer.site-footer {
+    padding: 0.95rem 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.garden-page * {
+    transition: none;
+  }
+}
