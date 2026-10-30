@@ -1,0 +1,10 @@
+Lucide icons (github, external-link, search) are MIT-licensed.
+https://github.com/lucide-icons/lucide
+Copyright (c) 2020, Lucide Contributors
+
+Shiki highlighted HTML was generated at build time. Shiki does not load in the browser.
+https://github.com/shikijs/shiki
+MIT License
+
+PhotoSwipe 5.4.4 is MIT-licensed. See ../photoswipe/LICENSE
+https://github.com/dimsemenov/PhotoSwipe

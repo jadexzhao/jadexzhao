@@ -1,6 +1,13 @@
 const FILTER_ALL = "All";
+const GROUP_ORDER = [
+  "Engineering",
+  "AI research",
+  "Accessibility",
+  "Client work",
+];
+
 const chips = document.getElementById("filter-chips");
-const grid = document.getElementById("project-grid");
+const groupsRoot = document.getElementById("project-groups");
 const searchInput = document.getElementById("project-search");
 let projects = [];
 let activeFilter = FILTER_ALL;
@@ -18,6 +25,7 @@ function matches(project, query) {
     project.role,
     project.dek,
     project.year,
+    project.workGroup,
     ...(project.tags || []),
   ].join(" ");
   return normalise(blob).includes(query);
@@ -27,41 +35,60 @@ function tagMatches(project, tag) {
   if (tag === FILTER_ALL) {
     return true;
   }
+  if (GROUP_ORDER.includes(tag)) {
+    return project.workGroup === tag;
+  }
   return (project.tags || []).includes(tag);
 }
 
+function cardHtml(project) {
+  const url = project.url;
+  const href = project.external ? url : `../${url}`;
+  const perm =
+    project.permission === "CONFIRM"
+      ? ' <span class="tag">Awaiting share approval</span>'
+      : "";
+  const rel = project.external ? ' rel="noopener noreferrer"' : "";
+  return `<li><a class="card-link" href="${href}"${rel}><h3>${project.title}</h3><p class="meta">${project.year} · ${project.role}</p><p>${project.dek}</p>${perm}</a></li>`;
+}
+
 function render() {
+  if (!groupsRoot) {
+    return;
+  }
   const query = normalise(searchInput?.value || "");
   const visible = projects.filter(
-    (p) => tagMatches(p, activeFilter) && matches(p, query)
+    (p) => tagMatches(p, activeFilter) && matches(p, query),
   );
 
-  grid.innerHTML = "";
+  groupsRoot.innerHTML = "";
   if (visible.length === 0) {
-    grid.innerHTML =
-      '<li class="meta">No projects match. Try another filter or search.</li>';
+    groupsRoot.innerHTML =
+      '<p class="meta" role="status">No projects match. Try another filter or search.</p>';
     return;
   }
 
-  for (const project of visible) {
-    const li = document.createElement("li");
-    const url = project.url;
-    const href = project.external ? url : `../${url}`;
-    const perm =
-      project.permission === "CONFIRM"
-        ? ' <span class="tag">Awaiting share approval</span>'
-        : "";
-    li.innerHTML = `<a class="card-link" href="${href}"${
-      project.external ? ' rel="noopener noreferrer"' : ""
-    }><h3>${project.title}</h3><p class="meta">${project.year} · ${project.role}</p><p>${project.dek}</p>${perm}</a>`;
-    grid.appendChild(li);
+  const groups = GROUP_ORDER.filter((name) =>
+    visible.some((p) => p.workGroup === name),
+  );
+  for (const name of groups) {
+    const items = visible.filter((p) => p.workGroup === name);
+    const section = document.createElement("section");
+    section.className = "archive-group";
+    section.innerHTML = `<h3>${name}</h3><ul class="project-grid">${items
+      .map(cardHtml)
+      .join("")}</ul>`;
+    groupsRoot.appendChild(section);
   }
 }
 
-function buildChips(tags) {
-  const sorted = [FILTER_ALL, ...tags.sort()];
+function buildChips() {
+  if (!chips) {
+    return;
+  }
+  const labels = [FILTER_ALL, ...GROUP_ORDER];
   chips.innerHTML = "";
-  for (const tag of sorted) {
+  for (const tag of labels) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = tag;
@@ -71,7 +98,7 @@ function buildChips(tags) {
       for (const child of chips.querySelectorAll("button")) {
         child.setAttribute(
           "aria-pressed",
-          child.textContent === activeFilter ? "true" : "false"
+          child.textContent === activeFilter ? "true" : "false",
         );
       }
       render();
@@ -85,22 +112,16 @@ async function init() {
   const data = await res.json();
   const layerOrder = { FEAT: 0, ARCH: 1, TIME: 2 };
   projects = (data.projects || [])
-    .filter((p) => p.permission !== "PRIVATE")
+    .filter((p) => p.permission !== "PRIVATE" && p.workArchive !== false)
     .sort((a, b) => (layerOrder[a.layer] ?? 9) - (layerOrder[b.layer] ?? 9));
-  const tagSet = new Set();
-  for (const p of projects) {
-    for (const t of p.tags || []) {
-      tagSet.add(t);
-    }
-  }
-  buildChips([...tagSet]);
+  buildChips();
   searchInput?.addEventListener("input", render);
   render();
 }
 
 init().catch(() => {
-  if (grid) {
-    grid.innerHTML =
-      '<li class="meta">Could not load projects.json. Open this page from the deployed site or a local server.</li>';
+  if (groupsRoot) {
+    groupsRoot.innerHTML =
+      '<p class="meta">Could not load projects.json. Open this page from the deployed site or a local server.</p>';
   }
 });

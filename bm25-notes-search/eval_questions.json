@@ -1,0 +1,23 @@
+[
+  {
+    "id": "long-notes",
+    "question": "How does this BM25 ranker treat a long note?",
+    "must_retrieve": ["bm25-basics.md"]
+  },
+  {
+    "id": "hours",
+    "question": "What days is the family restaurant open?",
+    "must_retrieve": ["restaurant-hours.md"]
+  },
+  {
+    "id": "trust",
+    "question": "What research question sits behind Digital Humans work here?",
+    "must_retrieve": ["digital-humans-q.md"]
+  },
+  {
+    "id": "absent",
+    "question": "What is the NSF grant award number for this work?",
+    "must_retrieve": [],
+    "expect_unknown": true
+  }
+]

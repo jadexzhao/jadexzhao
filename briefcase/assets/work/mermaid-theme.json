@@ -1,0 +1,12 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#dde6cd",
+    "primaryTextColor": "#344735",
+    "primaryBorderColor": "#344735",
+    "lineColor": "#344735",
+    "secondaryColor": "#f7f6ef",
+    "tertiaryColor": "#fffef8",
+    "fontFamily": "Georgia, Times New Roman, serif"
+  }
+}

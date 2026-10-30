@@ -1,42 +1,378 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work · Jade Zhao</title>
-  <meta name="description" content="Jade Zhao's work archive: engineering, accessibility, AI research, and confirmed client work. Practice folders are labelled as practice.">
-  <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="stylesheet" href="../portfolio-shell.css">
-  <link rel="stylesheet" href="../garden-shell.css">
-</head>
-<body class="garden-page">
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-top">
-    <div class="site-top__inner">
-      <a class="site-top__brand" href="../index.html">Jade Zhao</a>
-      <ul class="site-top__nav">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="index.html" aria-current="page">Work</a></li>
-        <li><a href="../field-notes.html">Garden</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../resume.pdf">Résumé</a></li>
-      </ul>
-    </div>
-  </header>
-  <div class="wrap">
-    <header class="panel panel--accent-top">
-      <h1>Work</h1>
-      <p class="meta">Grouped by what the files can prove: engineering, accessibility, AI research, client work, then practice. Search still works across all of it.</p>
-    </header>
-    <main id="main" class="panel">
-      <div class="archive-toolbar">
-        <label class="meta" for="project-search">Search</label>
-        <input id="project-search" type="search" placeholder="Title, role, skill, or year" autocomplete="off">
-        <div id="filter-chips" class="filter-chips" aria-label="Filter by topic"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Work · Jade Zhao</title>
+    <meta
+      name="description"
+      content="Things Jade Zhao has built, studied, and made better: Python search, Digital Humans research, and accessibility work."
+    />
+    <link
+      rel="canonical"
+      href="https://jadexzhao.github.io/jadexzhao/projects/"
+    />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="../portfolio-shell.css" />
+    <link rel="stylesheet" href="../garden-shell.css" />
+    <link rel="stylesheet" href="../vendor/photoswipe/photoswipe.css" />
+    <meta name="theme-color" content="#F7F6EF" />
+  </head>
+  <body class="garden-page work-editorial">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-top">
+      <div class="site-top__inner">
+        <a class="site-top__brand" href="../index.html">Jade Zhao</a>
+        <nav aria-label="Site">
+          <ul class="site-top__nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html" aria-current="page">Work</a></li>
+            <li><a href="../field-notes.html">Garden</a></li>
+            <li><a href="../experience.html">Experience</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../resume.pdf">Résumé</a></li>
+          </ul>
+        </nav>
       </div>
-      <div id="project-grid" aria-live="polite"></div>
-    </main>
-  </div>
-  <script src="archive.js"></script>
-</body>
+    </header>
+    <div class="wrap">
+      <header class="panel panel--accent-top work-hero">
+        <p class="work-num">01 / Introduction</p>
+        <h1>Things I have built, studied, and made better.</h1>
+        <p class="home-tagline">
+          Software, human-centred AI, and accessibility. Some projects started
+          with a question. Others started with someone needing a better way to
+          do something.
+        </p>
+        <p class="meta work-cats">Python · research · WCAG</p>
+      </header>
+
+      <main id="main">
+        <article class="panel work-feature work-feature--code" id="bm25">
+          <div class="work-feature__copy">
+            <p class="work-num">02 / Featured engineering</p>
+            <p class="lane">Implemented</p>
+            <h2>BM25 notes search</h2>
+            <p class="work-question">
+              How do you find the right information in a folder full of notes?
+            </p>
+            <p>
+              I wrote a Python keyword search that walks a folder of markdown,
+              tokenises it, and ranks files with Okapi BM25. No API key and no
+              vector database. Two files do the ranking:
+              <code>bm25.py</code> and <code>search.py</code>.
+            </p>
+            <p>
+              A word that is rare across the folder but common in one note helps
+              that note rise. Repeating the word helps less and less. A long
+              note does not automatically win.
+            </p>
+            <p class="meta">Python · BM25 · information retrieval</p>
+            <p>
+              <a class="btn btn--primary" href="../bm25.html"
+                >Case study
+                <svg
+                  class="work-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14 21 3" />
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  /></svg
+              ></a>
+              <a
+                class="btn"
+                href="https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search"
+                rel="noopener noreferrer"
+                >Source
+                <svg
+                  class="work-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-6.5-.08-1.25-.3-2.49-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 4.5 3 6.5 6 6.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  />
+                  <path d="M9 18c-4.51 2-5-2-7-2" /></svg
+              ></a>
+            </p>
+          </div>
+          <div class="work-feature__media">
+            <p class="lane">Ranking pipeline</p>
+            <ol class="work-pipeline">
+              <li>Walk <code>.md</code> files</li>
+              <li>Tokenise <code>[a-z0-9]+</code></li>
+              <li>Score with BM25</li>
+              <li>Print a snippet</li>
+            </ol>
+            <p class="meta">
+              Colouring is baked into the HTML from the real
+              <code>score()</code> method. The highlighter does not load in the
+              browser.
+            </p>
+            <div class="work-code">
+              <pre
+                class="shiki min-light"
+                style="background-color: #f3f1e6; color: #24292eff"
+                tabindex="0"
+              ><code><span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> score</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> query_tokens</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">float</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Document</span><span style="color:#212121">]]</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">        if</span><span style="color:#D32F2F"> not</span><span style="color:#24292EFF"> query_tokens </span><span style="color:#D32F2F">or</span><span style="color:#D32F2F"> not</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">documents</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">            return</span><span style="color:#24292EFF"> []</span></span></code></pre>
+            </div>
+            <p class="meta">
+              Run from 30 October 2026, against a four-note fixture folder:
+            </p>
+            <div class="work-code">
+              <pre
+                class="shiki min-light"
+                style="background-color: #f3f1e6; color: #24292eff"
+                tabindex="0"
+              ><code><span class="line"><span style="color:#6F42C1">python3</span><span style="color:#2B5581"> search.py</span><span style="color:#2B5581"> fixtures</span><span style="color:#22863A"> "how does ranking treat a long note"</span><span style="color:#2B5581"> --top</span><span style="color:#1976D2"> 3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">Indexed</span><span style="color:#1976D2"> 4</span><span style="color:#2B5581"> markdown</span><span style="color:#2B5581"> files</span></span>
+<span class="line"><span style="color:#6F42C1">1.</span><span style="color:#2B5581"> score=</span><span style="color:#1976D2">4.042</span><span style="color:#2B5581">  bm25-basics.md</span></span>
+<span class="line"><span style="color:#6F42C1">   A</span><span style="color:#2B5581"> long</span><span style="color:#2B5581"> note</span><span style="color:#2B5581"> is</span><span style="color:#2B5581"> slightly</span><span style="color:#2B5581"> down-weighted.</span></span>
+<span class="line"><span style="color:#6F42C1">   A</span><span style="color:#2B5581"> long</span><span style="color:#2B5581"> note</span><span style="color:#2B5581"> does</span><span style="color:#2B5581"> not</span><span style="color:#2B5581"> automatically</span><span style="color:#2B5581"> win.</span></span></code></pre>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="panel work-feature work-feature--research"
+          id="digital-humans"
+        >
+          <div class="work-feature__media">
+            <p class="lane">Tests I can stand behind</p>
+            <ul class="work-tests">
+              <li>Can a person inspect and correct the profile being used?</li>
+              <li>Can they delete it or refuse at each stage?</li>
+              <li>
+                Does the system reduce friction without hiding what it is?
+              </li>
+            </ul>
+            <p class="meta">
+              Those are design tests, not published experiment results. I have
+              not shipped a Digital Human product on this site.
+            </p>
+          </div>
+          <div class="work-feature__copy">
+            <p class="work-num">03 / AI research</p>
+            <p class="lane">Research · not a launch</p>
+            <h2>Digital Humans</h2>
+            <p class="work-question">
+              What makes an AI interface useful, understandable, and
+              trustworthy?
+            </p>
+            <p>
+              Student project lead at Luddy. Digital Humans are interfaces that
+              borrow the social cues of a person. That can make a system easier
+              to approach and easier to misunderstand.
+            </p>
+            <p>
+              The public question I will stand behind: when an AI system looks
+              and communicates like a person, what actually makes people want to
+              use it, trust it, and keep using it?
+            </p>
+            <p class="meta">
+              Human-AI interaction · evaluation questions · interface research
+            </p>
+            <p>
+              <a class="btn btn--primary" href="../digital-humans.html"
+                >Research note</a
+              >
+              <a class="btn" href="../ethics.html">Ethics pointer</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="panel work-feature work-feature--access" id="access">
+          <div class="work-feature__copy">
+            <p class="work-num">04 / Accessibility</p>
+            <p class="lane">Clinic methods</p>
+            <h2>Designing for access</h2>
+            <p class="work-question">
+              A website is not useful if people cannot navigate it.
+            </p>
+            <p>
+              Serve IT is Indiana University's student technology clinic. As
+              Website Team Lead I treat accessibility as part of intake,
+              scoping, and handoff, not a pass at the end.
+            </p>
+            <p>
+              What I can show in public is the method: semantic HTML, keyboard
+              paths, contrast that holds on cream paper, and findings written
+              specifically enough that someone else can fix the page. Partner
+              issue lists stay with the partner.
+            </p>
+            <p class="meta">WCAG · semantic HTML · accessibility evaluation</p>
+            <p>
+              <a class="btn btn--primary" href="../accessibility.html"
+                >Methods</a
+              >
+              <a class="btn" href="../nashville-acc.html"
+                >Town of Nashville (process)</a
+              >
+            </p>
+          </div>
+          <div class="work-feature__media">
+            <p class="lane">What a reviewer can open</p>
+            <ul class="work-tests">
+              <li>
+                <a href="../nashville-acc.html">Town of Nashville</a> ...
+                existing process page. Assignment files are not edited from this
+                redesign.
+              </li>
+              <li>
+                <a href="../middle-way-house.html">Middle Way House</a> ...
+                named because it is already on the public clinic showcase.
+                Fuller case after share approval.
+              </li>
+              <li>
+                No unpublished audit scores, and no before-and-after metrics I
+                do not have.
+              </li>
+            </ul>
+            <figure class="work-shot" data-pswp-gallery>
+              <a
+                href="../assets/work/nashville-process.png"
+                data-pswp-width="1280"
+                data-pswp-height="800"
+                target="_blank"
+              >
+                <img
+                  src="../assets/work/nashville-process.png"
+                  alt="Screenshot of the existing Town of Nashville process page, captured locally on 30 October 2026. The assignment HTML was not edited."
+                />
+              </a>
+              <figcaption>
+                The current process page, captured as it is. Click to enlarge.
+                If scripts are off, the image still opens as a file.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <section
+          class="panel"
+          id="other-work"
+          aria-labelledby="other-work-heading"
+        >
+          <p class="work-num">05 / Other work</p>
+          <h2 id="other-work-heading">Implemented and documented</h2>
+          <ul class="work-other">
+            <li>
+              <article>
+                <p class="lane">Client work</p>
+                <h3><a href="../potstickers.html">Potstickers</a></h3>
+                <p>
+                  Family restaurant site and Clover order path. Staff have to
+                  keep hours and dishes without a developer on call.
+                </p>
+                <p class="meta">HTML · Clover · Formspree</p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <p class="lane">Client work</p>
+                <h3><a href="../benyue.html">Benyue Restaurant</a></h3>
+                <p>
+                  Web development intern, November 2024 to March 2025. Four
+                  guest-facing React pages for menus, hours, and location.
+                </p>
+                <p class="meta">React · no public repo attached yet</p>
+              </article>
+            </li>
+            <li>
+              <article>
+                <p class="lane">Clinic</p>
+                <h3>
+                  <a
+                    href="https://matchaxmoxie.github.io/matchaxmoxie/courses/serveit.html"
+                    rel="noopener noreferrer"
+                    >Serve IT</a
+                  >
+                </h3>
+                <p>
+                  Intern to Website Team Lead. Accessible builds and handoffs
+                  for community partners.
+                </p>
+                <p class="meta">Classroom write-up on matchaxmoxie</p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel" id="archive" aria-labelledby="archive-heading">
+          <p class="work-num">06 / Complete archive</p>
+          <h2 id="archive-heading">Explore all work</h2>
+          <p class="meta">
+            Search still works. Mentorship, study abroad, hospitality sketches,
+            and unfinished scaffolds are not in this list. Sketches live in the
+            <a href="../field-notes.html">Garden</a>.
+          </p>
+          <div class="archive-toolbar">
+            <label class="meta" for="project-search"
+              ><svg
+                class="work-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" /></svg
+              >Search</label
+            >
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Title, role, skill, or year"
+              autocomplete="off"
+            />
+            <div
+              id="filter-chips"
+              class="filter-chips"
+              aria-label="Filter by topic"
+            ></div>
+          </div>
+          <div id="project-groups"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer panel">
+        <p class="footer-mark">Jade Zhao</p>
+        <p>
+          <a href="../resume.pdf">Résumé</a> ·
+          <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a> ·
+          <a href="../index.html">Home</a>
+        </p>
+      </footer>
+    </div>
+    <script src="archive.js"></script>
+    <script type="module" src="../vendor/work-enhance.js"></script>
+  </body>
 </html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BM25 notes search · Jade Zhao</title>
+    <meta
+      name="description"
+      content="A small Python keyword search over local markdown using Okapi BM25. Case study from the actual source in bm25-notes-search."
+    />
+    <link
+      rel="canonical"
+      href="https://jadexzhao.github.io/jadexzhao/bm25.html"
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="portfolio-shell.css" />
+    <link rel="stylesheet" href="garden-shell.css" />
+    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css" />
+    <meta name="theme-color" content="#F7F6EF" />
+  </head>
+  <body class="garden-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-top">
+      <div class="site-top__inner">
+        <a class="site-top__brand" href="index.html">Jade Zhao</a>
+        <nav aria-label="Site">
+          <ul class="site-top__nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects/index.html">Work</a></li>
+            <li><a href="field-notes.html">Garden</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.pdf">Résumé</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="wrap">
+      <header class="panel panel--accent-top">
+        <p class="lane">Engineering · personal project</p>
+        <h1>BM25 notes search</h1>
+        <p class="meta">
+          Python 3, standard library only for search. Two files do the ranking:
+          <code>bm25.py</code> and <code>search.py</code>.
+        </p>
+      </header>
+      <main id="main" class="panel prose">
+        <section>
+          <h2>Overview</h2>
+          <p>
+            I wanted to search a folder of markdown notes by keyword without an
+            API key or a vector database. The programme walks a directory,
+            tokenises each <code>.md</code> file, scores documents with Okapi
+            BM25, and prints a short snippet from the best-matching lines.
+          </p>
+        </section>
+        <section>
+          <h2>A run I actually executed</h2>
+          <p>
+            From the repository root, 30 October 2026, against the project
+            folder itself:
+          </p>
+          <pre><code>cd bm25-notes-search
+python3 search.py . "tokenize index rank markdown" --top 3</code></pre>
+          <pre><code>Indexed 1 markdown files in .../bm25-notes-search
+Query: "tokenize index rank markdown" → tokens: ['tokenize', 'index', 'rank', 'markdown']
+
+1. score=1.222  README.md
+   # BM25 Notes Search · A tiny keyword search engine over local markdown files...</code></pre>
+          <p>
+            That folder contains one markdown file, so there is only one ranked
+            hit. The same day I pointed the command at
+            <code>fixtures/</code>, a four-note sample corpus:
+          </p>
+          <pre><code>python3 search.py fixtures "how does ranking treat a long note" --top 3
+
+Indexed 4 markdown files
+1. score=4.042  bm25-basics.md
+   A long note is slightly down-weighted.
+   A long note does not automatically win.</code></pre>
+        </section>
+        <section>
+          <h2>How ranking works</h2>
+          <p>
+            Tokens are lowercase <code>[a-z0-9]+</code> runs. For each query
+            term that appears in a document, the score adds inverse document
+            frequency times a saturated term-frequency term. Longer documents
+            are slightly down-weighted. Defaults in <code>BM25Index</code> are
+            <code>k1 = 1.5</code> and <code>b = 0.75</code>.
+          </p>
+          <p>
+            In plain language: a word that is rare across the folder but common
+            in one note helps that note rise. Repeating the word helps less and
+            less. A long note does not automatically win.
+          </p>
+        </section>
+        <section>
+          <h2>My role</h2>
+          <p>
+            I wrote the ranker, the CLI, a small fixture corpus, and the tests.
+            Optional local-model asking is a separate script. It never downloads
+            a model by itself.
+          </p>
+        </section>
+        <section>
+          <h2>Technical decisions</h2>
+          <ul>
+            <li>
+              No third-party packages on the search path, so
+              <code>python3 search.py</code> still runs on a laptop with nothing
+              extra installed.
+            </li>
+            <li>
+              The index is rebuilt on every run. Fine for tens of notes; not a
+              persistent search service.
+            </li>
+            <li>
+              Snippets pick the line with the most query-token overlap, then two
+              lines of context. That is a display helper, not part of the BM25
+              score.
+            </li>
+            <li>
+              <code>score()</code> from <code>bm25.py</code>, colour added ahead
+              of time. The highlighter does not load in the browser.
+            </li>
+          </ul>
+          <div class="work-code">
+            <pre
+              class="shiki min-light"
+              style="background-color: #f3f1e6; color: #24292eff"
+              tabindex="0"
+            ><code><span class="line"><span style="color:#D32F2F">    def</span><span style="color:#6F42C1"> score</span><span style="color:#24292EFF">(</span><span style="color:#FF9800">self</span><span style="color:#212121">,</span><span style="color:#FF9800"> query_tokens</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#1976D2">str</span><span style="color:#212121">]</span><span style="color:#24292EFF">) </span><span style="color:#212121">-></span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">float</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Document</span><span style="color:#212121">]]</span><span style="color:#24292EFF">:</span></span>
+<span class="line"><span style="color:#D32F2F">        if</span><span style="color:#D32F2F"> not</span><span style="color:#24292EFF"> query_tokens </span><span style="color:#D32F2F">or</span><span style="color:#D32F2F"> not</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">documents</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">            return</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">        scores</span><span style="color:#212121">:</span><span style="color:#24292EFF"> list</span><span style="color:#212121">[</span><span style="color:#24292EFF">tuple</span><span style="color:#212121">[</span><span style="color:#1976D2">float</span><span style="color:#212121">,</span><span style="color:#24292EFF"> Document</span><span style="color:#212121">]]</span><span style="color:#D32F2F"> =</span><span style="color:#24292EFF"> []</span></span>
+<span class="line"><span style="color:#D32F2F">        for</span><span style="color:#24292EFF"> idx</span><span style="color:#212121">,</span><span style="color:#24292EFF"> doc </span><span style="color:#D32F2F">in</span><span style="color:#6F42C1"> enumerate</span><span style="color:#212121">(self.documents):</span></span>
+<span class="line"><span style="color:#24292EFF">            total </span><span style="color:#D32F2F">=</span><span style="color:#1976D2"> 0.0</span></span>
+<span class="line"><span style="color:#24292EFF">            tf_doc </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">tf</span><span style="color:#212121">[</span><span style="color:#24292EFF">idx</span><span style="color:#212121">]</span></span>
+<span class="line"><span style="color:#D32F2F">            for</span><span style="color:#24292EFF"> term </span><span style="color:#D32F2F">in</span><span style="color:#24292EFF"> query_tokens</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">                freq </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> tf_doc</span><span style="color:#212121">.</span><span style="color:#6F42C1">get</span><span style="color:#212121">(term, </span><span style="color:#1976D2">0</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">                if</span><span style="color:#24292EFF"> freq </span><span style="color:#D32F2F">==</span><span style="color:#1976D2"> 0</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#D32F2F">                    continue</span></span>
+<span class="line"><span style="color:#24292EFF">                idf </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#6F42C1">_idf</span><span style="color:#212121">(term)</span></span>
+<span class="line"><span style="color:#24292EFF">                denom </span><span style="color:#D32F2F">=</span><span style="color:#24292EFF"> freq </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">k1 </span><span style="color:#D32F2F">*</span><span style="color:#24292EFF"> (</span><span style="color:#1976D2">1</span><span style="color:#D32F2F"> -</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">b </span><span style="color:#D32F2F">+</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">b </span><span style="color:#D32F2F">*</span><span style="color:#24292EFF"> doc</span><span style="color:#212121">.</span><span style="color:#24292EFF">length </span><span style="color:#D32F2F">/</span><span style="color:#24292EFF"> self</span><span style="color:#212121">.</span><span style="color:#24292EFF">avg_dl)</span></span>
+<span class="line"><span style="color:#24292EFF">                total </span><span style="color:#D32F2F">+=</span><span style="color:#24292EFF"> idf </span><span style="color:#D32F2F">*</span><span style="color:#24292EFF"> (freq </span><span style="color:#D32F2F">*</span><span style="color:#24292EFF"> (self</span><span style="color:#212121">.</span><span style="color:#24292EFF">k1 </span><span style="color:#D32F2F">+</span><span style="color:#1976D2"> 1</span><span style="color:#24292EFF">)) </span><span style="color:#D32F2F">/</span><span style="color:#24292EFF"> denom</span></span>
+<span class="line"><span style="color:#D32F2F">            if</span><span style="color:#24292EFF"> total </span><span style="color:#D32F2F">></span><span style="color:#1976D2"> 0</span><span style="color:#212121">:</span></span>
+<span class="line"><span style="color:#24292EFF">                scores</span><span style="color:#212121">.</span><span style="color:#6F42C1">append</span><span style="color:#212121">((total, doc))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292EFF">        scores</span><span style="color:#212121">.</span><span style="color:#6F42C1">sort</span><span style="color:#212121">(key</span><span style="color:#D32F2F">=lambda</span><span style="color:#FF9800"> item</span><span style="color:#212121">: item[</span><span style="color:#1976D2">0</span><span style="color:#212121">], reverse</span><span style="color:#D32F2F">=</span><span style="color:#1976D2">True</span><span style="color:#212121">)</span></span>
+<span class="line"><span style="color:#D32F2F">        return</span><span style="color:#24292EFF"> scores</span></span></code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>What a reviewer can inspect</h2>
+          <p>
+            <code>python3 -m unittest discover -s tests -v</code> in
+            <code>bm25-notes-search/</code> ... 15 tests, including ranking,
+            passage splits, and a mocked local-model failure. Live model
+            generation was not run here. No model was downloaded.
+          </p>
+        </section>
+        <section>
+          <h2>Limitations</h2>
+          <ul>
+            <li>
+              No stemming, so <code>tokeniz</code> does not match
+              <code>tokenize</code>.
+            </li>
+            <li>No embeddings, synonyms, or phrase queries.</li>
+            <li>
+              File-level search has no web UI and no saved index. The optional
+              local-model path is not a public endpoint.
+            </li>
+          </ul>
+        </section>
+        <p>
+          <a
+            class="btn btn--primary"
+            href="https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search"
+            rel="noopener noreferrer"
+            >View the code</a
+          >
+          <a class="btn" href="field-notes.html">Garden note</a>
+          <a class="btn" href="projects/index.html">More work</a>
+        </p>
+      </main>
+    </div>
+    <script type="module" src="vendor/work-enhance.js"></script>
+  </body>
+</html>

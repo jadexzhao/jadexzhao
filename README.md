@@ -1,26 +1,43 @@
 # jadexzhao
 
-**Live portfolio:** [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
+**Live site:** [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
 
-Jade Zhao · Informatics @ Indiana University (Luddy). Work centres on **Digital Humans**, **human-centred AI**, and **business technology**, with evidence across product design, accessibility, civic technology, and implementation.
+Jade Zhao · Informatics @ Indiana University (Luddy). The public site is a hire-facing portfolio: software she can show, accessibility and clinic work, and Digital Humans research at a high level.
 
-- **Homepage:** featured work, searchable project archive, experience timeline  
-- **Résumé:** [resume.pdf](https://jadexzhao.github.io/jadexzhao/resume.pdf)  
-- **Essays:** [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/) (what she thinks)  
-- **Coursework and handoffs:** [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/) (what she learned)  
-- **LinkedIn:** [zhao-langxi](https://www.linkedin.com/in/zhao-langxi/) (who she is professionally)
+Classroom notes live on [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Campus writing lives on [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/). LinkedIn: [zhao-langxi](https://www.linkedin.com/in/zhao-langxi/).
 
-IU Pages is retired. Recruiters start here or on LinkedIn.
+## Run the site locally
 
-## Repo layout
+```bash
+cd briefcase
+python3 -m http.server 8765
+# http://127.0.0.1:8765/
+```
 
-| Path | Role |
-| --- | --- |
-| `briefcase/` | GitHub Pages site root (HTML portfolio) |
-| `briefcase/projects/projects.json` | Public archive data |
-| `duck-farm/` | Vite demo at `/jadexzhao/duck-farm/` |
-| `online-ordering-system/`, `full-stack-web-features/`, etc. | Project source (see archive on site) |
+GitHub Pages publishes `briefcase/` as the site root, plus `duck-farm/` at `/jadexzhao/duck-farm/`.
 
-Private inventory (not deployed): `briefcase/PROJECT-INVENTORY.md`.
+## What is in this repository
 
-Software engineering is part of the toolkit; the portfolio story is product, research, and systems people can trust and use.
+| Path                          | What it is                                        |
+| ----------------------------- | ------------------------------------------------- |
+| `briefcase/`                  | Live HTML/CSS/JS portfolio                        |
+| `briefcase/bm25.html`         | Case study for the Python search                  |
+| `bm25-notes-search/`          | Implemented BM25 ranker (stdlib only)             |
+| `duck-farm/`                  | Personal Vite demo                                |
+| `online-ordering-system/`     | Practice scaffold. Not the Potstickers order path |
+| `full-stack-web-features/`    | Practice scaffold                                 |
+| `adaptive-learning-platform/` | Unverified starter. Not a deployed ML product     |
+| `data-validation-pipeline/`   | Archived concept. No pipeline source              |
+
+A physical `archive/` folder has been planned and not moved yet. Read each project README before treating a folder as shipped software.
+
+## Implemented code to open first
+
+```bash
+cd bm25-notes-search
+python3 search.py . "tokenize index rank markdown" --top 3
+```
+
+## Résumé
+
+[resume.pdf](https://jadexzhao.github.io/jadexzhao/resume.pdf)

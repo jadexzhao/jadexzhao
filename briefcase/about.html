@@ -1,97 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About · Jade Zhao</title>
-  <meta name="description" content="Jade Zhao: Informatics student at Indiana University. Curious about how technology works. Software, accessibility, human-centred AI, matcha, gardens, photography.">
-  <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/about.html">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="portfolio-shell.css">
-  <link rel="stylesheet" href="garden-shell.css">
-  <meta name="theme-color" content="#F7F6EF">
-</head>
-<body class="garden-page">
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-top">
-    <div class="site-top__inner">
-      <a class="site-top__brand" href="index.html">Jade Zhao</a>
-      <ul class="site-top__nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects/index.html">Work</a></li>
-        <li><a href="field-notes.html">Garden</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="resume.pdf">Résumé</a></li>
-      </ul>
-    </div>
-  </header>
-  <div class="wrap">
-    <header class="panel panel--accent-top">
-      <div class="hero-split">
-        <div class="hero-copy">
-          <p class="kicker">About</p>
-          <h1>Jade Zhao</h1>
-          <p class="meta">Informatics · Indiana University · expected May 2027</p>
-        </div>
-        <aside class="hero-snapshot" aria-label="Contact and facts">
-          <div class="snapshot-head">
-            <img
-              class="snapshot-photo"
-              src="assets/garden-portrait.jpg"
-              width="120"
-              height="120"
-              alt="Jade Zhao smiling outdoors in a garden, wearing a cream sweater."
-            >
-            <div>
-              <p class="kicker">At a glance</p>
-              <p class="meta">First-generation college student. Hudson &amp; Holland Scholar.</p>
-            </div>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="resume.pdf">Résumé</a>
-            <a class="btn" href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-        </aside>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About · Jade Zhao</title>
+    <meta
+      name="description"
+      content="Jade Zhao: Informatics student at Indiana University. Curious about how technology works. Matcha, gardens, photography, and a someday duck farm."
+    />
+    <link
+      rel="canonical"
+      href="https://jadexzhao.github.io/jadexzhao/about.html"
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="portfolio-shell.css" />
+    <link rel="stylesheet" href="garden-shell.css" />
+    <link rel="stylesheet" href="vendor/photoswipe/photoswipe.css" />
+    <meta name="theme-color" content="#F7F6EF" />
+  </head>
+  <body class="garden-page about-garden work-editorial">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-top">
+      <div class="site-top__inner">
+        <a class="site-top__brand" href="index.html">Jade Zhao</a>
+        <nav aria-label="Site">
+          <ul class="site-top__nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects/index.html">Work</a></li>
+            <li><a href="field-notes.html">Garden</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="resume.pdf">Résumé</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <main id="main" class="panel prose">
-      <p>
-        I have always been curious about how technology works. I like taking a complicated idea
-        apart, trying a small build, and explaining it in language I would have wanted earlier.
-        That habit is older than any job title.
-      </p>
-      <p>
-        Over time it became software I could hand to someone else, accessibility work at IU's
-        Laurie Burns McRobbie Serve IT Clinic, and student research on Digital Humans ... useful
-        business interfaces when AI (artificial intelligence) communicates like a person. I grew
-        from a web development, AI and accessibility intern into Technical Project Lead. The work
-        is websites, WCAG (Web Content Accessibility Guidelines) checks, documentation, and
-        handoffs staff can keep running when the student team leaves.
-      </p>
-      <p>
-        The first system that had to survive a Tuesday was my family's restaurant. During the
-        pandemic I built the digital side so online ordering was not a rumour. That is still a
-        useful test. It is not the only reason I care about this field.
-      </p>
-      <p>
-        I am a first-generation college student. That is part of why I publish coding notes and
-        handoff guides on
-        <a href="https://matchaxmoxie.github.io/matchaxmoxie/" rel="noopener noreferrer">matchaxmoxie</a>
-        for first-generation and low-income students finding their way into Informatics.
-      </p>
-      <p>
-        Off the clock I drink matcha, keep plants, take pictures, walk, and read. A duck farm is a
-        long-term creative throughline, not a product I am selling. Those habits are why this site
-        looks like a garden journal. The case studies are why a hiring manager should stay.
-      </p>
-      <p>
-        <a href="resume.pdf">Résumé (PDF)</a> ·
-        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a> ·
-        <a href="https://github.com/jadexzhao" rel="noopener noreferrer">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/zhao-langxi/" rel="noopener noreferrer">LinkedIn</a>
-      </p>
-    </main>
-  </div>
-</body>
+    <div class="wrap">
+      <header class="panel panel--accent-top">
+        <p class="work-num">01 / Introduction</p>
+        <div class="hero-split hero-split--photo">
+          <div class="hero-copy">
+            <p class="kicker">About</p>
+            <h1>Jade Zhao</h1>
+            <p class="home-tagline">
+              I like taking a complicated idea apart, trying a small build, and
+              explaining it in language I would have wanted earlier.
+            </p>
+            <p class="meta">
+              Informatics · Indiana University · expected May 2027.
+              First-generation college student. Hudson &amp; Holland Scholar.
+              English, Fuzhounese, and Spanish.
+            </p>
+          </div>
+          <figure class="hero-photo" data-pswp-gallery>
+            <a
+              href="assets/garden-portrait.webp"
+              data-pswp-width="460"
+              data-pswp-height="460"
+              data-pswp-src="assets/garden-portrait.jpg"
+              target="_blank"
+            >
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="assets/garden-portrait.webp"
+                />
+                <img
+                  src="assets/garden-portrait.jpg"
+                  width="460"
+                  height="460"
+                  alt="Jade Zhao smiling outdoors in a garden, wearing a cream sweater."
+                />
+              </picture>
+            </a>
+            <figcaption>
+              Garden, not a studio set. Click to enlarge. The JPEG stays if
+              WebP does not load.
+            </figcaption>
+          </figure>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="panel prose">
+          <p class="work-num">02 / How I think</p>
+          <h2>Curiosity came first</h2>
+          <p>
+            I have always liked technology because I enjoy understanding how
+            things work. That habit is older than any job title. It is why I
+            ended up in Informatics. Software, accessibility, and human-centred
+            AI were ways to keep asking the same question with better tools.
+          </p>
+          <p>
+            I grew up in a family Chinese restaurant in central Indiana
+            (Greenfield, Indiana). A page either survives a Tuesday dinner rush
+            or it does not. During the pandemic I built the digital side so
+            people could see the menu and order online. That was an early,
+            practical test. It is not the only reason I care about this field.
+          </p>
+          <p>
+            At IU's Laurie Burns McRobbie Serve IT Clinic I moved from intern
+            to Website Team Lead. The work is websites, WCAG (Web Content
+            Accessibility Guidelines) checks, documentation, and handoffs staff
+            can keep running when the student team leaves. Digital Humans
+            research asks the same thing of interfaces that talk back: can a
+            person see what the system is, and get a human when it should stop?
+          </p>
+          <p>
+            I publish coding notes and handoff guides on
+            <a
+              href="https://matchaxmoxie.github.io/matchaxmoxie/"
+              rel="noopener noreferrer"
+              >matchaxmoxie</a
+            >
+            for first-generation and low-income students finding their way into
+            Informatics.
+          </p>
+        </section>
+
+        <section class="panel" aria-labelledby="exploring-heading">
+          <p class="work-num">03 / Currently exploring</p>
+          <h2 id="exploring-heading">What I am learning on purpose</h2>
+          <ul class="explore-list">
+            <li>
+              How a small Python ranker decides a note is relevant, without
+              embeddings.
+              <a href="bm25.html">BM25 case study</a>.
+            </li>
+            <li>
+              How an AI interface can say what it is at the moment someone has
+              to decide.
+              <a href="digital-humans.html">Digital Humans</a>.
+            </li>
+            <li>
+              How to write an accessibility finding specific enough that
+              someone else can fix the page.
+              <a href="accessibility.html">Methods</a>.
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel" aria-labelledby="path-heading">
+          <p class="work-num">04 / A short path</p>
+          <h2 id="path-heading">How the work changed shape</h2>
+          <p class="meta">
+            This is not a second résumé. Role dates live on
+            <a href="experience.html">Experience</a>.
+          </p>
+          <ol class="timeline">
+            <li>
+              <p class="when">Restaurant kitchen, then a screen</p>
+              <h3>A system has to survive a real customer</h3>
+              <p>
+                Family restaurant first. Then a site and an order path people
+                could actually use.
+              </p>
+            </li>
+            <li>
+              <p class="when">IU Luddy</p>
+              <h3>Informatics, and teaching what I just learned</h3>
+              <p>
+                First-generation student. Notes and handoffs on matchaxmoxie so
+                the next person does not start from zero.
+              </p>
+            </li>
+            <li>
+              <p class="when">Clinic</p>
+              <h3>Intern to Website Team Lead</h3>
+              <p>
+                Serve IT: intake, scoping, accessibility, and the handoff after
+                the demo.
+              </p>
+            </li>
+            <li>
+              <p class="when">Feb 2025 to present</p>
+              <h3>Digital Humans project lead</h3>
+              <p>
+                Questions about trust and disclosure. No launch claim on this
+                site.
+              </p>
+            </li>
+            <li>
+              <p class="when">Lately</p>
+              <h3>Inspectable notes</h3>
+              <p>
+                A BM25 ranker you can read line by line. Garden notes I can
+                stand behind.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="panel prose">
+          <p class="work-num">05 / Beyond the screen</p>
+          <h2>Matcha, plants, pictures, ducks</h2>
+          <p>
+            I drink matcha, keep plants, take pictures, walk, and read. I would
+            like a duck farm someday. That is a real wish, not a product I am
+            selling. The
+            <a href="https://jadexzhao.github.io/jadexzhao/duck-farm/"
+              >duck-farm</a
+            >
+            page is a small demo, not the farm.
+          </p>
+        </section>
+
+        <section class="panel" aria-labelledby="photos-heading">
+          <p class="work-num">06 / Photographs</p>
+          <h2 id="photos-heading">Pictures I actually took</h2>
+          <p class="meta">
+            Instagram frames from
+            <a
+              href="https://www.instagram.com/zhao.langxi/"
+              rel="noopener noreferrer"
+              >@zhao.langxi</a
+            >. Click a photo to enlarge. Scripts off: the image still opens.
+          </p>
+          <ul class="about-scrap" data-pswp-gallery>
+            <li>
+              <figure>
+                <a
+                  href="assets/ig/ig-hydrangeas-01.webp"
+                  data-pswp-width="1050"
+                  data-pswp-height="1400"
+                  target="_blank"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="assets/ig/ig-hydrangeas-01.webp"
+                    />
+                    <img
+                      src="assets/ig/ig-hydrangeas-01.jpg"
+                      width="640"
+                      height="853"
+                      alt="Two clusters of pink hydrangeas among wet green leaves."
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <figcaption>
+                  Pink hydrangeas.
+                  <a
+                    href="https://www.instagram.com/p/DenZubLlrAc/"
+                    rel="noopener noreferrer"
+                    >Post</a
+                  >.
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <a
+                  href="assets/ig/ig-hibiscus-01.webp"
+                  data-pswp-width="1050"
+                  data-pswp-height="1400"
+                  target="_blank"
+                >
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="assets/ig/ig-hibiscus-01.webp"
+                    />
+                    <img
+                      src="assets/ig/ig-hibiscus-01.jpg"
+                      width="640"
+                      height="853"
+                      alt="A single white hibiscus with a red centre on a leafy shrub."
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <figcaption>
+                  White hibiscus.
+                  <a
+                    href="https://www.instagram.com/p/Ddeykjtlhx0/"
+                    rel="noopener noreferrer"
+                    >Post</a
+                  >.
+                </figcaption>
+              </figure>
+            </li>
+            <li class="about-scrap__wide">
+              <figure>
+                <a
+                  href="assets/jadexzhao.webp"
+                  data-pswp-width="900"
+                  data-pswp-height="900"
+                  target="_blank"
+                >
+                  <picture>
+                    <source type="image/webp" srcset="assets/jadexzhao.webp" />
+                    <img
+                      src="assets/jadexzhao.jpg"
+                      width="800"
+                      height="800"
+                      alt="Jade Zhao holding a bouquet of pink lilies and baby's breath beside a white curtain and a window."
+                      loading="lazy"
+                    />
+                  </picture>
+                </a>
+                <figcaption>Lilies, indoor light.</figcaption>
+              </figure>
+            </li>
+          </ul>
+          <p class="meta">
+            <a href="photography.html">Full photography page</a>. I still do
+            not have a matcha bowl in this folder.
+          </p>
+        </section>
+
+        <section class="panel" aria-labelledby="links-heading">
+          <p class="work-num">07 / Connections</p>
+          <h2 id="links-heading">Where to go next</h2>
+          <p>
+            <a class="btn btn--primary" href="projects/index.html">Work</a>
+            <a class="btn" href="field-notes.html">Garden</a>
+            <a class="btn" href="experience.html">Experience</a>
+            <a
+              class="btn"
+              href="https://github.com/jadexzhao"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+            <a
+              class="btn"
+              href="https://matchaxmoxie.github.io/matchaxmoxie/"
+              rel="noopener noreferrer"
+              >matchaxmoxie</a
+            >
+            <a class="btn" href="resume.pdf">Résumé</a>
+            <a class="btn" href="mailto:jlzhao@iu.edu">Email</a>
+          </p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="vendor/work-enhance.js"></script>
+  </body>
 </html>

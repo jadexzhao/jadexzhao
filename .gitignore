@@ -3,6 +3,9 @@ node_modules/
 dist/
 .DS_Store
 
+__pycache__/
+*.pyc
+
 # Local workspace-only (separate git repos / agent rules)
 .cursor/
 pstickers24/
@@ -31,3 +34,9 @@ blog-posts-local/
 
 # Local INFO-I 453 coursework (never push)
 ethics/
+
+# Portfolio QA (Playwright / axe / Prettier)
+tools/portfolio-qa/node_modules/
+tools/portfolio-qa/test-results/
+tools/portfolio-qa/playwright-report/
+tools/portfolio-qa/screenshots/

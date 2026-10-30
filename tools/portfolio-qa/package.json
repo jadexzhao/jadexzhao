@@ -1,0 +1,22 @@
+{
+  "name": "jadexzhao-portfolio-qa",
+  "private": true,
+  "description": "Dev-only Playwright, axe-core, and Prettier checks. Not deployed.",
+  "scripts": {
+    "test": "playwright test",
+    "screenshots": "playwright test screenshots.spec.js",
+    "a11y": "playwright test a11y.spec.js",
+    "format": "prettier --write"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.56.1",
+    "fuse.js": "^7.5.0",
+    "html-validate": "^11.17.0",
+    "lighthouse": "^13.6.0",
+    "photoswipe": "^5.4.4",
+    "prettier": "^3.6.2",
+    "shiki": "^4.5.0"
+  }
+}

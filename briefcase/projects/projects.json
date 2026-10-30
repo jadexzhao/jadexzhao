@@ -13,7 +13,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "digital-humans.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "AI research"
     },
     {
       "id": "ai-ethics",
@@ -25,31 +27,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "ethics.html",
-      "external": false
-    },
-    {
-      "id": "mentee-conversations",
-      "title": "Mentee conversations",
-      "year": "Ongoing",
-      "role": "Mentee",
-      "dek": "Advice from mentors at MAANG, Big Three, Big Four, and Fortune 100 organisations. Input, not a job title.",
-      "tags": ["Leadership"],
-      "permission": "PUBLIC",
-      "layer": "ARCH",
-      "url": "mentee.html",
-      "external": false
-    },
-    {
-      "id": "study-abroad-madrid",
-      "title": "Study abroad · Madrid",
-      "year": "Spring 2026",
-      "role": "Student, Universidad Complutense de Madrid",
-      "dek": "Informatics term in Madrid. Hire-facing pointer, not a travel diary.",
-      "tags": ["Research"],
-      "permission": "PUBLIC",
-      "layer": "ARCH",
-      "url": "study-abroad.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "AI research"
     },
     {
       "id": "nashville-acc",
@@ -61,11 +41,13 @@
       "permission": "CONFIRM",
       "layer": "FEAT",
       "url": "nashville-acc.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "potstickers",
-      "title": "Potstickers · family restaurant digital",
+      "title": "Potstickers \u00b7 family restaurant digital",
       "year": "Ongoing",
       "role": "Web, ordering, marketing, operations",
       "dek": "Business technology for a family restaurant that has to work every service.",
@@ -73,7 +55,9 @@
       "permission": "PUBLIC",
       "layer": "FEAT",
       "url": "potstickers.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Client work"
     },
     {
       "id": "benyue",
@@ -85,31 +69,37 @@
       "permission": "PUBLIC",
       "layer": "FEAT",
       "url": "benyue.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Client work"
     },
     {
       "id": "jade-practice",
-      "title": "Jade · independent practice",
+      "title": "Jade \u00b7 independent practice",
       "year": "Ongoing",
       "role": "Web, branding, software for small organisations",
-      "dek": "Civic partners, design experiments, industry sketches, and anonymised campus ventures. Mock-ups labelled as mock-ups.",
+      "dek": "Civic partners and industry sketches. Hospitality experiments live on the Garden experiments page.",
       "tags": ["Business Technology", "Product & UX", "Web Development"],
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Client work"
     },
     {
       "id": "middle-way-house",
       "title": "Middle Way House website",
       "year": "2023 to 2025",
-      "role": "ServeIT · UX and web",
+      "role": "ServeIT \u00b7 UX and web",
       "dek": "Nonprofit web work; fuller case after client approval.",
       "tags": ["Product & UX", "Accessibility", "Civic Technology"],
       "permission": "CONFIRM",
       "layer": "FEAT",
       "url": "middle-way-house.html",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "indiana-phenology",
@@ -121,7 +111,9 @@
       "permission": "CONFIRM",
       "layer": "ARCH",
       "url": "jade-practice.html#civic",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "serveit-overview",
@@ -133,7 +125,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://matchaxmoxie.github.io/matchaxmoxie/courses/serveit.html",
-      "external": true
+      "external": true,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "serve-ai",
@@ -145,7 +139,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://github.com/zhao-langxi",
-      "external": true
+      "external": true,
+      "workArchive": true,
+      "workGroup": "AI research"
     },
     {
       "id": "duck-farm",
@@ -157,7 +153,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://jadexzhao.github.io/jadexzhao/duck-farm/",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "bm25-notes-search",
@@ -168,8 +166,10 @@
       "tags": ["Web Development", "AI"],
       "permission": "PUBLIC",
       "layer": "FEAT",
-      "url": "https://github.com/jadexzhao/jadexzhao/tree/main/bm25-notes-search",
-      "external": true
+      "url": "bm25.html",
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Engineering"
     },
     {
       "id": "handoffs",
@@ -181,7 +181,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://matchaxmoxie.github.io/matchaxmoxie/handoffs.html",
-      "external": true
+      "external": true,
+      "workArchive": true,
+      "workGroup": "Client work"
     },
     {
       "id": "matchaxmoxie-courses",
@@ -193,7 +195,9 @@
       "permission": "PUBLIC",
       "layer": "FEAT",
       "url": "https://matchaxmoxie.github.io/matchaxmoxie/",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "zhao-langxi-essays",
@@ -205,7 +209,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://zhao-langxi.github.io/zhao-langxi/",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "bloomington",
@@ -217,7 +223,9 @@
       "permission": "CONFIRM",
       "layer": "ARCH",
       "url": "jade-practice.html#civic",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "chamber",
@@ -229,7 +237,9 @@
       "permission": "CONFIRM",
       "layer": "ARCH",
       "url": "jade-practice.html#civic",
-      "external": false
+      "external": false,
+      "workArchive": true,
+      "workGroup": "Accessibility"
     },
     {
       "id": "jade-cre",
@@ -241,7 +251,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#cre",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-consulting-org",
@@ -253,11 +265,13 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#consulting-org",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-hair-beauty",
-      "title": "Hair / beauty · Showit",
+      "title": "Hair / beauty \u00b7 Showit",
       "year": "Practice",
       "role": "Sitemap, booking, brand paperwork",
       "dek": "Showit-friendly redesign lane. Sketch, not a live salon URL.",
@@ -265,11 +279,13 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#hair-beauty",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-stylist",
-      "title": "Independent hair stylist · Showit",
+      "title": "Independent hair stylist \u00b7 Showit",
       "year": "Practice",
       "role": "Booking-led site sketch",
       "dek": "Creative booking structure. Sketch, not a live booking link.",
@@ -277,7 +293,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#stylist",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-cleaning",
@@ -289,7 +307,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#cleaning",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-landscaping",
@@ -301,7 +321,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#landscaping",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-car-sale",
@@ -313,7 +335,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#car-sale",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-yoga",
@@ -325,7 +349,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#yoga",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "jade-peer-ventures",
@@ -337,7 +363,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "jade-practice.html#ventures",
-      "external": false
+      "external": false,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "online-ordering",
@@ -349,7 +377,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://github.com/jadexzhao/jadexzhao/tree/main/online-ordering-system",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "full-stack-features",
@@ -361,7 +391,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://github.com/jadexzhao/jadexzhao/tree/main/full-stack-web-features",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     },
     {
       "id": "adaptive-learning",
@@ -373,7 +405,9 @@
       "permission": "PUBLIC",
       "layer": "ARCH",
       "url": "https://github.com/jadexzhao/jadexzhao/tree/main/adaptive-learning-platform",
-      "external": true
+      "external": true,
+      "workArchive": false,
+      "workGroup": "Garden"
     }
   ]
 }

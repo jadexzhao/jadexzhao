@@ -1,0 +1,6 @@
+%% BM25 notes search as implemented in search.py and bm25.py
+flowchart LR
+  A[Markdown folder] --> B[Tokenise a-z0-9]
+  B --> C[BM25Index]
+  C --> D[Score and rank]
+  D --> E[Print snippet]
