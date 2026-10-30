@@ -1,6 +1,6 @@
 # Portfolio QA (dev only)
 
-Not deployed. GitHub Pages copies `briefcase/` only.
+Not deployed. GitHub Pages copies `briefcase/` only. Site architecture: [`docs/ARCHITECTURE.md`](../../docs/ARCHITECTURE.md).
 
 ## Commands
 
