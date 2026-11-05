@@ -2,9 +2,9 @@
 
 **Live site:** [jadexzhao.github.io/jadexzhao](https://jadexzhao.github.io/jadexzhao/)
 
-Informatics student at Indiana University (Luddy). I build software you can open, inspect, and hand off: Python search, accessible web work, and static sites that have to survive real use.
+Informatics student at Indiana University (Luddy), researching how Digital Humans can become useful business interfaces. I build software you can open, inspect, and hand off: Python search, accessible web work, and static sites that have to survive real use.
 
-This repository is the hire-facing door. It answers what I have built and what I can contribute.
+This repository is the hire-facing door. It answers what I have built, what I research in public summary form, and what I can contribute.
 
 Classroom notes live on [matchaxmoxie](https://matchaxmoxie.github.io/matchaxmoxie/). Photographs and days live on [zhao-langxi](https://zhao-langxi.github.io/zhao-langxi/). LinkedIn: [zhao-langxi](https://www.linkedin.com/in/zhao-langxi/).
 
