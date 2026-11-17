@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Middle Way House accessibility assessment · Jade Zhao</title>
-  <meta name="description" content="Serve IT accessibility assessment for Middle Way House, Bloomington.">
+  <meta name="description" content="Serve IT WCAG 2.1 AA accessibility case study for Middle Way House, Bloomington. Findings and proposed remediations; production edits stay with the client.">
+  <meta name="author" content="Jade Zhao">
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/middle-way-house.html">
   <style>
     :root {
@@ -14,6 +15,8 @@
       --blue: #3a5a7c;
       --card: #ffffff;
       --edge: #c8b496;
+      --muted: #5a4a45;
+      --priority: #7a4a1a;
     }
     * { box-sizing: border-box; }
     body {
@@ -28,7 +31,7 @@
       padding: 2.5rem 1.25rem 3rem;
     }
     main {
-      max-width: 40rem;
+      max-width: 44rem;
       margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--edge);
@@ -42,38 +45,158 @@
       font-size: 1.65rem;
       line-height: 1.25;
     }
+    h2 {
+      margin: 1.6rem 0 0.55rem;
+      color: var(--crimson);
+      font-size: 1.2rem;
+    }
     .meta {
       margin: 0 0 1.1rem;
-      color: #5a4a45;
+      color: var(--muted);
       font-size: 0.95rem;
     }
     p { line-height: 1.5; margin: 0 0 0.9rem; }
-    ul { margin: 0 0 1rem; padding-left: 1.2rem; line-height: 1.45; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.2rem; line-height: 1.45; }
+    li + li { margin-top: 0.35rem; }
     a { color: var(--blue); font-weight: 700; text-underline-offset: 0.15em; }
-    a:hover { color: var(--crimson); }
-    nav { margin-top: 1.25rem; font-size: 0.95rem; }
+    a:hover, a:focus-visible { color: var(--crimson); }
+    a:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 2px;
+    }
+    .note {
+      margin: 0 0 1rem;
+      padding: 0.75rem 0.9rem;
+      background: #f7f0e4;
+      border-left: 3px solid var(--edge);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    figure {
+      margin: 0 0 1.15rem;
+      padding: 0;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--edge);
+      border-radius: 0.5rem;
+    }
+    figcaption {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .priority {
+      font-weight: 700;
+      color: var(--priority);
+    }
+    nav.site-nav { margin-top: 1.35rem; font-size: 0.95rem; }
   </style>
 </head>
 <body>
   <main>
     <h1>Middle Way House accessibility assessment</h1>
-    <p class="meta">Serve IT Clinic · Accessibility Project Lead</p>
+    <p class="meta">Serve IT Clinic · Accessibility Project Lead · Jade Zhao</p>
+
     <p>
-      WCAG 2.1 AA review of the Middle Way House public website, covering keyboard access,
-      focus visibility, colour contrast, navigation, and content structure. Findings are turned
-      into prioritised remediation notes for the client. Live site edits stay with authorised
-      client representatives.
+      WCAG (Web Content Accessibility Guidelines) 2.1 Level AA review of
+      <a href="https://middlewayhouse.org/">middlewayhouse.org</a>, covering keyboard access,
+      focus visibility, colour contrast, navigation, headings and structure, safety/exit patterns,
+      and resource discovery. Findings become prioritised remediation notes for authorised client
+      representatives. This case study documents assessment and proposed fixes only.
+      Live production edits stay with the client.
     </p>
+
+    <p class="note">
+      Scope note: the public site credits Serve IT Nonprofit Clinic in the footer. Portfolio pages
+      here do not modify middlewayhouse.org. Screenshots are browser evidence from the live site.
+    </p>
+
+    <h2>Evidence from the live site</h2>
+
+    <figure>
+      <img src="acc-evidence/middle-way/homepage-safety-modal.jpg" width="1200" height="800" alt="Middle Way House homepage with EXIT SITE control and STOP ARE YOU BEING MONITORED safety modal">
+      <figcaption>Homepage with safety modal and EXIT SITE controls. Safety messaging is essential for survivors; the dialog still needs robust keyboard and focus behaviour.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="acc-evidence/middle-way/resources.jpg" width="1200" height="800" alt="Middle Way House Resources page with accordion sections for emergency housing, food, and related links">
+      <figcaption>Resources page: accordion panels for emergency housing, food, clothing, sexual violence, and pets.</figcaption>
+    </figure>
+
+    <h2>Concrete findings</h2>
+    <ol>
+      <li>
+        <strong>Focus visibility.</strong> A large share of sampled links and controls showed weak or
+        missing visible focus (outline computed as none). Keyboard users need a clear focus ring across
+        the primary nav, EXIT SITE controls, card CTAs, and accordion buttons.
+      </li>
+      <li>
+        <strong>Heading structure.</strong> The homepage exposes multiple <code>h1</code> nodes
+        (repeated “We’re here for you.” plus the safety modal title). Services and Resources use an
+        <code>h2</code> page title while the modal often remains the only <code>h1</code>. Card section
+        titles such as “Donate to MWH” and “Shop Our Merch” also appear duplicated in the outline.
+      </li>
+      <li>
+        <strong>Link text and content quality.</strong> Vague CTA copy such as “Links Here” fails
+        descriptive-link expectations. Homepage CTA spelling includes “Additonal Resources”.
+        On Resources, an accordion label reads “Homlessness” (missing “e”).
+      </li>
+      <li>
+        <strong>Safety modal behaviour.</strong> The “STOP! ARE YOU BEING MONITORED?” dialog is
+        important, but during review it was difficult to dismiss cleanly with Escape / Close while
+        keeping a predictable focus return. Modal should trap focus while open, restore focus on close,
+        and not leave duplicate headings in the page outline after dismiss.
+      </li>
+      <li>
+        <strong>What is already working.</strong> A “Skip to content” link is present. Header, main,
+        nav, and footer landmarks were detected. EXIT SITE affordances appear in multiple places,
+        which is appropriate for this audience when implemented accessibly.
+      </li>
+    </ol>
+
+    <h2>Prioritised remediation notes (proposed)</h2>
     <ul>
-      <li>Organisation site: <a href="https://middlewayhouse.org/">middlewayhouse.org</a></li>
-      <li>Related Serve IT work: <a href="nashville-acc.html">Town of Nashville accessibility case study</a></li>
+      <li>
+        <span class="priority">P1 · Focus styles.</span> Add consistent
+        <code>:focus-visible</code> outlines on links, buttons, accordion headers, and EXIT SITE
+        controls. Test full keyboard paths through nav dropdowns and the safety dialog.
+      </li>
+      <li>
+        <span class="priority">P1 · Modal accessibility.</span> Implement a proper dialog pattern
+        (<code>role="dialog"</code>, labelled title, focus trap, Escape to close, return focus to the
+        opener). Keep EXIT SITE as the fastest escape without trapping users who need to stay.
+      </li>
+      <li>
+        <span class="priority">P2 · Headings.</span> One page-level <code>h1</code>; demote hero copies
+        and card titles; remove duplicate heading nodes created by repeated blocks or carousels.
+      </li>
+      <li>
+        <span class="priority">P2 · Link names and typos.</span> Replace “Links Here” with destination-specific
+        text (for example “Open Middle Way House Linktree”). Fix “Additonal” and “Homlessness” in the CMS.
+      </li>
+      <li>
+        <span class="priority">P3 · Accordion semantics.</span> Ensure Resources expand/collapse buttons
+        expose <code>aria-expanded</code> and associate controls with panels so keyboard and screen-reader
+        users get the same state.
+      </li>
     </ul>
+
     <p>
-      A fuller scrapbook portfolio PDF, including this Serve IT work, is here:
-      <a href="portfolio.pdf">portfolio.pdf</a>
+      Related Serve IT work:
+      <a href="nashville-acc.html">Town of Nashville accessibility case study</a>.
+      Fuller scrapbook portfolio:
+      <a href="portfolio.pdf">portfolio.pdf</a>.
     </p>
-    <nav>
+
+    <nav class="site-nav" aria-label="Case study links">
       <a href="index.html">Home</a>
+      ·
+      <a href="nashville-acc.html">Town of Nashville</a>
       ·
       <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
       ·

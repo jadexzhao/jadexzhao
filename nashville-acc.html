@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Town of Nashville accessibility assessment · Jade Zhao</title>
-  <meta name="description" content="Serve IT Fall 2026 accessibility assessment for the Town of Nashville, Indiana.">
+  <meta name="description" content="Serve IT Fall 2026 WCAG 2.1 AA accessibility case study for the Town of Nashville, Indiana. Findings and proposed remediations; production edits stay with the client.">
+  <meta name="author" content="Jade Zhao">
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/nashville-acc.html">
   <style>
     :root {
@@ -14,6 +15,8 @@
       --blue: #3a5a7c;
       --card: #ffffff;
       --edge: #c8b496;
+      --muted: #5a4a45;
+      --priority: #7a4a1a;
     }
     * { box-sizing: border-box; }
     body {
@@ -28,7 +31,7 @@
       padding: 2.5rem 1.25rem 3rem;
     }
     main {
-      max-width: 40rem;
+      max-width: 44rem;
       margin: 0 auto;
       background: var(--card);
       border: 1px solid var(--edge);
@@ -42,38 +45,168 @@
       font-size: 1.65rem;
       line-height: 1.25;
     }
+    h2 {
+      margin: 1.6rem 0 0.55rem;
+      color: var(--crimson);
+      font-size: 1.2rem;
+    }
     .meta {
       margin: 0 0 1.1rem;
-      color: #5a4a45;
+      color: var(--muted);
       font-size: 0.95rem;
     }
     p { line-height: 1.5; margin: 0 0 0.9rem; }
-    ul { margin: 0 0 1rem; padding-left: 1.2rem; line-height: 1.45; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.2rem; line-height: 1.45; }
+    li + li { margin-top: 0.35rem; }
     a { color: var(--blue); font-weight: 700; text-underline-offset: 0.15em; }
-    a:hover { color: var(--crimson); }
-    nav { margin-top: 1.25rem; font-size: 0.95rem; }
+    a:hover, a:focus-visible { color: var(--crimson); }
+    a:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 2px;
+    }
+    .note {
+      margin: 0 0 1rem;
+      padding: 0.75rem 0.9rem;
+      background: #f7f0e4;
+      border-left: 3px solid var(--edge);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    figure {
+      margin: 0 0 1.15rem;
+      padding: 0;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--edge);
+      border-radius: 0.5rem;
+    }
+    figcaption {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .priority {
+      font-weight: 700;
+      color: var(--priority);
+    }
+    nav.site-nav { margin-top: 1.35rem; font-size: 0.95rem; }
   </style>
 </head>
 <body>
   <main>
     <h1>Town of Nashville accessibility assessment</h1>
-    <p class="meta">Serve IT Clinic · Fall 2026 · Accessibility Project Lead</p>
+    <p class="meta">Serve IT Clinic · Fall 2026 · Accessibility Project Lead · Jade Zhao</p>
+
     <p>
-      WCAG 2.1 AA review of the Town of Nashville public website, covering keyboard access,
-      focus visibility, colour contrast, navigation, and content structure. Findings are turned
-      into prioritised remediation notes for the client. Live site edits stay with authorised
-      town representatives.
+      WCAG (Web Content Accessibility Guidelines) 2.1 Level AA review of
+      <a href="https://www.townofnashville.org/">townofnashville.org</a>, covering keyboard access,
+      focus visibility, colour contrast, navigation, headings and structure, and the public contact form.
+      Findings become prioritised remediation notes for authorised town representatives.
+      This case study documents assessment work only. Live production edits stay with the client.
     </p>
+
+    <p class="note">
+      Scope note: Serve IT does not push changes to the live Squarespace site from this portfolio.
+      Screenshots below are browser evidence from the public site at the time of review.
+    </p>
+
+    <h2>Evidence from the live site</h2>
+
+    <figure>
+      <img src="acc-evidence/nashville/homepage.jpg" width="1200" height="800" alt="Town of Nashville homepage showing light grey top navigation, hero image of Town Hall, and contact details">
+      <figcaption>Homepage: dense all-caps navigation in light grey, hero banner, and centred contact block.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="acc-evidence/nashville/calendar.jpg" width="1200" height="800" alt="Calendar of Meetings and Events page with November 2026 grid and light grey navigation">
+      <figcaption>Calendar of Meetings and Events: monthly grid plus the same low-contrast navigation pattern.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="acc-evidence/nashville/contact-form.jpg" width="1000" height="700" alt="Town of Nashville contact form with name, email, message, address fields and Submit button">
+      <figcaption>Homepage contact form: required fields, address block, and Submit control near the footer search.</figcaption>
+    </figure>
+
+    <h2>Concrete findings</h2>
+    <ol>
+      <li>
+        <strong>Colour contrast (nav).</strong> Top navigation links render at about
+        <code>rgb(153, 153, 153)</code> on white at roughly 12px. That pairing is well under the
+        4.5:1 AA ratio for normal text, so menu labels are hard to read for low-vision users.
+      </li>
+      <li>
+        <strong>Focus visibility.</strong> Keyboard focus on sampled links, buttons, and form controls
+        showed no reliable visible outline or focus ring (outline often computed as none). Keyboard-only
+        users cannot tell where they are.
+      </li>
+      <li>
+        <strong>Skip link and landmarks.</strong> No skip-to-content link was present. Landmark support
+        was incomplete: navigation exists, but dedicated <code>main</code>, <code>header</code>, and
+        <code>footer</code> landmarks were not detected on the homepage.
+      </li>
+      <li>
+        <strong>Heading structure.</strong> The homepage exposes multiple <code>h1</code> headings
+        (for example “Town of Nashville”, “What’s Going On?”, “Project Retree”, and the SR&nbsp;46 notice).
+        Screen-reader users relying on a single page title lose a clear document outline.
+      </li>
+      <li>
+        <strong>Forms.</strong> The contact form exposes required name, email, subject, message, and address
+        fields. Most controls have accessible names, but required cues rely on light grey “(required)” text,
+        field borders are very light, and a generic “Click Here …” link sits above the form.
+      </li>
+      <li>
+        <strong>Hero text over imagery.</strong> White page titles over photographic banners can fail
+        contrast where the photo is light (sky or pale stone).
+      </li>
+    </ol>
+
+    <h2>Prioritised remediation notes (proposed)</h2>
     <ul>
-      <li>Site under assessment: <a href="https://www.townofnashville.org/">townofnashville.org</a></li>
-      <li>Related Serve IT work: <a href="middle-way-house.html">Middle Way House accessibility case study</a></li>
+      <li>
+        <span class="priority">P1 · Focus styles.</span> Add a global
+        <code>:focus-visible</code> style with at least a 2px solid high-contrast outline (or equivalent
+        box-shadow) on all interactive controls. Do not remove browser focus without a stronger replacement.
+      </li>
+      <li>
+        <span class="priority">P1 · Navigation contrast.</span> Darken inactive nav text to meet 4.5:1
+        against white (for example near <code>#595959</code> or darker). Keep the gold active state only if
+        it still meets contrast.
+      </li>
+      <li>
+        <span class="priority">P1 · Skip link.</span> Add a visually hidden “Skip to main content” link as
+        the first focusable control, revealed on focus, targeting a single <code>main</code> landmark.
+      </li>
+      <li>
+        <span class="priority">P2 · Headings.</span> Keep one <code>h1</code> per page for the page title;
+        demote section titles to <code>h2</code>/<code>h3</code> in logical order.
+      </li>
+      <li>
+        <span class="priority">P2 · Form clarity.</span> Strengthen label and required-indicator contrast;
+        thicken input borders; replace “Click Here …” with descriptive link text; confirm error messages
+        are programmeatically associated with fields.
+      </li>
+      <li>
+        <span class="priority">P3 · Hero overlays.</span> Add a dark scrim or text shadow behind white
+        titles so contrast holds across banner frames.
+      </li>
     </ul>
+
     <p>
-      A fuller scrapbook portfolio PDF, including this Serve IT work, is here:
-      <a href="portfolio.pdf">portfolio.pdf</a>
+      Related Serve IT work:
+      <a href="middle-way-house.html">Middle Way House accessibility case study</a>.
+      Fuller scrapbook portfolio:
+      <a href="portfolio.pdf">portfolio.pdf</a>.
     </p>
-    <nav>
+
+    <nav class="site-nav" aria-label="Case study links">
       <a href="index.html">Home</a>
+      ·
+      <a href="middle-way-house.html">Middle Way House</a>
       ·
       <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
       ·
