@@ -6,6 +6,7 @@ on:
     paths:
       - "index.html"
       - "nashville-acc.html"
+      - "middle-way-house.html"
       - "JadeZhao-Portfolio-Scrapbook.pdf"
       - "README.md"
       - ".nojekyll"
@@ -33,6 +34,7 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp nashville-acc.html _site/
+          cp middle-way-house.html _site/
           cp JadeZhao-Portfolio-Scrapbook.pdf _site/
           cp .nojekyll _site/
       - uses: actions/configure-pages@v5

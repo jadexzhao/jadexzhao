@@ -6,5 +6,6 @@ Informatics student at Indiana University (Luddy). Portfolio PDF, Serve IT Nashv
 
 - [Portfolio (PDF)](https://jadexzhao.github.io/jadexzhao/JadeZhao-Portfolio-Scrapbook.pdf)
 - [Town of Nashville ACC](https://jadexzhao.github.io/jadexzhao/nashville-acc.html)
+- [Middle Way House ACC](https://jadexzhao.github.io/jadexzhao/middle-way-house.html)
 - [LinkedIn](https://www.linkedin.com/in/zhao-langxi/)
 - [GitHub](https://github.com/jadexzhao)
