@@ -57,6 +57,26 @@
       text-underline-offset: 0.15em;
     }
     a:hover { color: var(--crimson); }
+    a:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 2px;
+    }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      background: #fff;
+      color: var(--crimson);
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--edge);
+    }
+    .skip:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
     .note {
       margin: 1.35rem 0 0;
       font-size: 0.92rem;
@@ -66,19 +86,21 @@
   </style>
 </head>
 <body>
-  <main>
+  <a class="skip" href="#content">Skip to content</a>
+  <main id="content">
     <h1>Jade Zhao</h1>
-    <p class="lede">Informatics at Indiana University (Luddy). Accessibility, software, and human-centred technology.</p>
+    <p class="lede">Informatics at Indiana University (Luddy). Digital Humans, accessibility, and human-centred business technology.</p>
     <ul>
       <li><a href="portfolio.pdf">Portfolio (PDF)</a></li>
       <li><a href="nashville-acc.html">Town of Nashville accessibility case study</a></li>
       <li><a href="middle-way-house.html">Middle Way House accessibility case study</a></li>
       <li><a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a></li>
       <li><a href="https://github.com/jadexzhao">GitHub</a></li>
-      <li><a href="https://matchaxmoxie.github.io/matchaxmoxie/">Matcha x Moxie</a></li>
+      <li><a href="https://matchaxmoxie.github.io/matchaxmoxie/">Matcha x Moxie</a> ... classroom notes</li>
+      <li><a href="https://zhao-langxi.github.io/zhao-langxi/">Zhao Langxi</a> ... photography and campus notes</li>
       <li><a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a></li>
     </ul>
-    <p class="note">Exploring full-time software engineering opportunities beginning in 2027.</p>
+    <p class="note">Serve IT case pages are assessments and proposed fixes. Live site edits stay with the client.</p>
   </main>
 </body>
 </html>
