@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Middle Way House accessibility assessment · Jade Zhao</title>
-  <meta name="description" content="Serve IT WCAG 2.1 AA accessibility case study for Middle Way House, Bloomington. Findings and proposed remediations; production edits stay with the client.">
+  <meta name="description" content="Serve IT case study: WCAG 2.1 AA review of middlewayhouse.org. Findings and proposed remediations. Production edits stay with the client.">
   <meta name="author" content="Jade Zhao">
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/middle-way-house.html">
   <style>
@@ -46,12 +46,17 @@
       line-height: 1.25;
     }
     h2 {
-      margin: 1.6rem 0 0.55rem;
+      margin: 1.7rem 0 0.55rem;
       color: var(--crimson);
       font-size: 1.2rem;
+      scroll-margin-top: 0.75rem;
+    }
+    h3 {
+      margin: 1.1rem 0 0.35rem;
+      font-size: 1.05rem;
     }
     .meta {
-      margin: 0 0 1.1rem;
+      margin: 0 0 1rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -73,6 +78,16 @@
       line-height: 1.45;
       color: var(--muted);
     }
+    .toc {
+      margin: 0 0 1.1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    dt {
+      font-weight: 700;
+      margin: 0.75rem 0 0.15rem;
+    }
+    dd { margin: 0 0 0.15rem; line-height: 1.45; }
     figure {
       margin: 0 0 1.15rem;
       padding: 0;
@@ -95,32 +110,177 @@
       color: var(--priority);
     }
     nav.site-nav { margin-top: 1.35rem; font-size: 0.95rem; }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      background: #fff;
+      color: var(--crimson);
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--edge);
+    }
+    .skip:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
   </style>
 </head>
 <body>
-  <main>
+  <a class="skip" href="#content">Skip to content</a>
+  <main id="content">
     <h1>Middle Way House accessibility assessment</h1>
-    <p class="meta">Serve IT Clinic · Accessibility Project Lead · Jade Zhao</p>
+    <p class="meta">Serve IT Clinic · Web Design and Accessibility Intern · Jade Zhao · evidence checked 22 November 2026</p>
 
-    <p>
-      WCAG (Web Content Accessibility Guidelines) 2.1 Level AA review of
-      <a href="https://middlewayhouse.org/">middlewayhouse.org</a>, covering keyboard access,
-      focus visibility, colour contrast, navigation, headings and structure, safety/exit patterns,
-      and resource discovery. Findings become prioritised remediation notes for authorised client
-      representatives. This case study documents assessment and proposed fixes only.
-      Live production edits stay with the client.
-    </p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#profile">Profile</a>
+      ·
+      <a href="#overview">Overview</a>
+      ·
+      <a href="#client">Client</a>
+      ·
+      <a href="#process">Process</a>
+      ·
+      <a href="#skills">Skills</a>
+      ·
+      <a href="#deliverables">Deliverables</a>
+      ·
+      <a href="#reflection">Reflection</a>
+    </nav>
 
     <p class="note">
-      Scope note: the public site credits Serve IT Nonprofit Clinic in the footer. Portfolio pages
-      here do not modify middlewayhouse.org. Screenshots are browser evidence from the live site.
+      Scope note: this page is an assessment and a set of proposed fixes.
+      Serve IT does not push changes to middlewayhouse.org from this portfolio.
+      The public footer already credits the Serve IT Nonprofit Clinic.
+      Screenshots are browser evidence from the live site.
     </p>
 
-    <h2>Evidence from the live site</h2>
+    <h2 id="profile">Introduction / professional profile</h2>
+    <dl>
+      <dt>Who you are</dt>
+      <dd>
+        Jade Zhao. Informatics student at Indiana University Bloomington, Luddy School, expected May 2027.
+        Minors in Business Technology and User Experience (UX) Research. First-generation college student.
+        Web Design and Accessibility Intern at the Laurie Burns McRobbie Serve IT Clinic, Jan 2024 to Dec 2025.
+        Accessibility Project Lead from Aug 2026.
+      </dd>
+      <dt>Area of interest</dt>
+      <dd>
+        Digital Humans, human-centred artificial intelligence (AI), accessibility, and human-centred business technology.
+        The question under the research is what makes a system trustworthy enough that people keep using it.
+      </dd>
+      <dt>Technical strengths</dt>
+      <dd>
+        WCAG (Web Content Accessibility Guidelines) 2.1 Level AA reviews, HTML structure, written remediation, and a handoff a partner can use after the student team is gone.
+      </dd>
+      <dt>The kinds of work you want to do</dt>
+      <dd>
+        Work that joins the technical fix to the person who has to use the system.
+        Accessibility, human-centred product work, and Digital Humans research.
+      </dd>
+      <dt>Résumé, contact, and links</dt>
+      <dd>
+        <a href="portfolio.pdf">Portfolio PDF</a> (résumé is inside it).
+        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>.
+        <a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a>.
+        <a href="https://github.com/jadexzhao">GitHub</a>.
+        <a href="index.html">jadexzhao.github.io/jadexzhao</a>.
+      </dd>
+    </dl>
+
+    <h2 id="overview">Project overview</h2>
+    <p>
+      People open this site when they need Middle Way House, sometimes as a quiet first step.
+      If focus is invisible, the headings are duplicated, or a resource label is misspelled, the page fails the person who came for help and the staff who have to keep it afterwards.
+    </p>
+    <dl>
+      <dt>Dates</dt>
+      <dd>
+        The partnership sits in the Serve IT internship, Jan 2024 to Dec 2025.
+        I am not publishing a single kickoff day, because that date is not in the public notes.
+        The findings below were rechecked on the live site on 22 November 2026.
+      </dd>
+      <dt>Team</dt>
+      <dd>
+        A student team in the Laurie Burns McRobbie Serve IT Clinic, matched with Middle Way House.
+        The clinic places students with a community partner for course credit and expects a handoff the partner can keep.
+        Teammate names are not listed on this public page.
+      </dd>
+      <dt>What the team was asked to do</dt>
+      <dd>
+        Review the public website and turn barriers into notes staff can act on.
+        The semester scope document is not republished here.
+        The work on this page is a WCAG 2.1 Level AA review. Live production edits stay with the client.
+      </dd>
+      <dt>What my part entailed</dt>
+      <dd>
+        I walked the public homepage and the Resources page, recorded what failed and what already worked, and wrote the prioritised fixes.
+        My internship work at Serve IT was this kind of note: keyboard navigation, semantic structure, contrast, and a recommendation someone else can try.
+      </dd>
+    </dl>
+
+    <h2 id="client">Client description</h2>
+    <p>
+      Client: Middle Way House, a Bloomington nonprofit.
+      Public site: <a href="https://middlewayhouse.org/">middlewayhouse.org</a>.
+      On that site, Middle Way House supports people affected by domestic violence, sexual assault, and human trafficking, and it educates the community through outreach and prevention.
+      The homepage says the organisation has provided crisis services since 1971, including counselling, advocacy, emergency shelter, housing, and 24/7 help.
+      Outreach offices are listed for Owen, Greene, and Martin counties as well as Bloomington.
+    </p>
+    <dl>
+      <dt>Client needs</dt>
+      <dd>
+        The homepage sorts visitors into three paths: "I need help", "I need resources", and "I need to help someone".
+        The Resources page groups emergency housing, food, clothing, sexual violence, and pets.
+        An EXIT SITE control and a "STOP! ARE YOU BEING MONITORED?" dialog are part of the public safety pattern.
+        Staff still have to update those pages after students leave.
+      </dd>
+      <dt>What challenge the project was solving</dt>
+      <dd>
+        A safety feature that a keyboard user cannot see or dismiss is not a safety feature.
+        The review looks for the places where the public site makes help harder to reach: focus, headings, link names, typos, and the monitoring dialog.
+      </dd>
+      <dt>Why the agency needed this</dt>
+      <dd>
+        The website is a door people use before they are ready to ask out loud.
+        Middle Way House does not keep a student team on call. The notes have to be specific enough for staff to apply in the content system they already have.
+      </dd>
+    </dl>
+
+    <h2 id="process">Process / approach</h2>
+    <p>Final deliverables: this written review, the two screenshots, the findings list, and the prioritised remediation notes. No live deploy.</p>
+    <ol>
+      <li>Read the public homepage for who the site is for, and confirm the footer credit to the Serve IT Nonprofit Clinic.</li>
+      <li>Open the homepage and the Resources page in the browser. Check the skip link, landmarks, heading outline, link names, and the safety dialog.</li>
+      <li>Save screenshots of the safety dialog and the Resources accordions so a reader can see the pages the notes refer to.</li>
+      <li>Separate what already works from what fails. The skip link and the landmarks stay in the "working" row so a later edit does not remove them.</li>
+      <li>Rewrite each failure as a page, a barrier, and a fix. Priority is P1 for keyboard and the dialog, P2 for headings and typos, P3 for accordion state.</li>
+      <li>Recheck the live site on 22 November 2026. "Additonal Resources", "Links Here", the repeated headings, and the Resources button "Homlessness" were still present.</li>
+    </ol>
+    <p>
+      Standard used: WCAG 2.1 Level AA, focused on keyboard focus, info and relationships (heading structure), and link purpose.
+      The iteration was the recheck: earlier notes were kept only where the live page still showed the same barrier.
+    </p>
+
+    <h2 id="skills">Professional and technical skills</h2>
+    <ul>
+      <li>WCAG 2.1 Level AA review</li>
+      <li>Keyboard and focus checks</li>
+      <li>Heading outline and landmark review in the browser</li>
+      <li>Link-purpose and content-quality review (including typos in labels)</li>
+      <li>Dialog pattern notes: name, focus trap, Escape, return focus</li>
+      <li>Screenshot evidence and written remediation</li>
+      <li>Client handoff: production edits stay with Middle Way House staff</li>
+      <li>GitHub, for publishing this case study</li>
+    </ul>
+
+    <h2 id="deliverables">Deliverables / artifacts</h2>
 
     <figure>
       <img src="acc-evidence/middle-way/homepage-safety-modal.jpg" width="1200" height="800" alt="Middle Way House homepage with EXIT SITE control and STOP ARE YOU BEING MONITORED safety modal">
-      <figcaption>Homepage with safety modal and EXIT SITE controls. Safety messaging is essential for survivors; the dialog still needs robust keyboard and focus behaviour.</figcaption>
+      <figcaption>Homepage with the safety dialog and EXIT SITE. The dialog is essential. It still needs a predictable keyboard path.</figcaption>
     </figure>
 
     <figure>
@@ -128,73 +288,112 @@
       <figcaption>Resources page: accordion panels for emergency housing, food, clothing, sexual violence, and pets.</figcaption>
     </figure>
 
-    <h2>Concrete findings</h2>
+    <h3>Findings</h3>
     <ol>
       <li>
-        <strong>Focus visibility.</strong> A large share of sampled links and controls showed weak or
-        missing visible focus (outline computed as none). Keyboard users need a clear focus ring across
-        the primary nav, EXIT SITE controls, card CTAs, and accordion buttons.
+        <strong>Focus visibility.</strong> A large share of sampled links and controls showed weak or missing visible focus.
+        Keyboard users need a clear focus ring on the primary nav, EXIT SITE controls, card links, and accordion buttons.
       </li>
       <li>
-        <strong>Heading structure.</strong> The homepage exposes multiple <code>h1</code> nodes
-        (repeated “We’re here for you.” plus the safety modal title). Services and Resources use an
-        <code>h2</code> page title while the modal often remains the only <code>h1</code>. Card section
-        titles such as “Donate to MWH” and “Shop Our Merch” also appear duplicated in the outline.
+        <strong>Heading structure.</strong> The homepage exposes more than one <code>h1</code>, including repeated "We're here for you." and the safety dialog title.
+        On Resources, the page title is an <code>h2</code> while the dialog is often the only <code>h1</code>.
+        Card titles such as "Donate to MWH" and "Shop Our Merch" also repeat in the outline.
       </li>
       <li>
-        <strong>Link text and content quality.</strong> Vague CTA copy such as “Links Here” fails
-        descriptive-link expectations. Homepage CTA spelling includes “Additonal Resources”.
-        On Resources, an accordion label reads “Homlessness” (missing “e”).
+        <strong>Link text and labels.</strong> "Links Here" does not say where the link goes.
+        The homepage still shows the link "Additonal Resources".
+        On Resources, an accordion button still reads "Homlessness".
       </li>
       <li>
-        <strong>Safety modal behaviour.</strong> The “STOP! ARE YOU BEING MONITORED?” dialog is
-        important, but during review it was difficult to dismiss cleanly with Escape / Close while
-        keeping a predictable focus return. Modal should trap focus while open, restore focus on close,
-        and not leave duplicate headings in the page outline after dismiss.
+        <strong>Safety dialog.</strong> "STOP! ARE YOU BEING MONITORED?" has to stay.
+        During review it was difficult to dismiss cleanly with Escape and land back on a predictable control.
+        While it is open, focus should stay inside it. When it closes, focus should return, and the dialog title should not remain a second page <code>h1</code>.
       </li>
       <li>
-        <strong>What is already working.</strong> A “Skip to content” link is present. Header, main,
-        nav, and footer landmarks were detected. EXIT SITE affordances appear in multiple places,
-        which is appropriate for this audience when implemented accessibly.
+        <strong>What is already working.</strong> A "Skip to content" link is present.
+        Header, main, nav, and footer landmarks were detected.
+        EXIT SITE appears in more than one place, which fits this audience when the control itself is keyboard accessible.
       </li>
     </ol>
 
-    <h2>Prioritised remediation notes (proposed)</h2>
+    <h3>Prioritised remediation (proposed)</h3>
     <ul>
       <li>
-        <span class="priority">P1 · Focus styles.</span> Add consistent
-        <code>:focus-visible</code> outlines on links, buttons, accordion headers, and EXIT SITE
-        controls. Test full keyboard paths through nav dropdowns and the safety dialog.
+        <span class="priority">P1 · Focus styles.</span>
+        Add a consistent <code>:focus-visible</code> outline on links, buttons, accordion headers, and EXIT SITE controls.
+        Test the full keyboard path through the nav and the safety dialog.
       </li>
       <li>
-        <span class="priority">P1 · Modal accessibility.</span> Implement a proper dialog pattern
-        (<code>role="dialog"</code>, labelled title, focus trap, Escape to close, return focus to the
-        opener). Keep EXIT SITE as the fastest escape without trapping users who need to stay.
+        <span class="priority">P1 · Dialog.</span>
+        Use a dialog pattern with a labelled title, a focus trap, Escape to close, and focus returned to the opener.
+        Keep EXIT SITE as the fast way out for someone who should not stay on the page.
       </li>
       <li>
-        <span class="priority">P2 · Headings.</span> One page-level <code>h1</code>; demote hero copies
-        and card titles; remove duplicate heading nodes created by repeated blocks or carousels.
+        <span class="priority">P2 · Headings.</span>
+        One page-level <code>h1</code>. Demote repeated hero lines and card titles so the outline matches the page.
       </li>
       <li>
-        <span class="priority">P2 · Link names and typos.</span> Replace “Links Here” with destination-specific
-        text (for example “Open Middle Way House Linktree”). Fix “Additonal” and “Homlessness” in the CMS.
+        <span class="priority">P2 · Names and typos.</span>
+        Replace "Links Here" with the destination, for example "Open Middle Way House Linktree".
+        Fix "Additonal" and "Homlessness" in the content system.
       </li>
       <li>
-        <span class="priority">P3 · Accordion semantics.</span> Ensure Resources expand/collapse buttons
-        expose <code>aria-expanded</code> and associate controls with panels so keyboard and screen-reader
-        users get the same state.
+        <span class="priority">P3 · Accordion state.</span>
+        Expose <code>aria-expanded</code> on the Resources buttons and tie each button to its panel.
       </li>
     </ul>
+    <p>No client quotation is printed here. I do not have a cleared quote to attribute.</p>
+
+    <h2 id="reflection">Final reflection</h2>
+    <h3>What I learned</h3>
+    <p>
+      The safety dialog and the accessibility fix are the same job.
+      A page can announce "we're here for you" and still hide the next step behind a vague link, a typo, or a dialog that will not give the keyboard back.
+    </p>
+    <h3>Challenges, and how I handled them</h3>
+    <p>
+      EXIT SITE has to stay fast for someone who is not safe, and the dialog still has to be a proper dialog for a keyboard user.
+      I did not treat that as a choice between safety and accessibility.
+      The note keeps EXIT SITE, and it asks for a focus trap, Escape, and a return of focus so both needs stay in the same pattern.
+      The other challenge is that this portfolio does not edit the live site.
+      A vague "improve accessibility" line would not help staff. Naming the control and the typo does.
+    </p>
+    <h3>What I would improve</h3>
+    <p>
+      I would file the semester roster, the kickoff date, and the scope sentence in the same week as the review.
+      Reconstructing them later leaves a thinner public page than the work was.
+    </p>
+    <h3>Team communication</h3>
+    <p>
+      A teammate or a staff member who missed the meeting should be able to open the same URL and see the same failure.
+      That is why each note names the page, the control, and the change.
+      "The modal is confusing" is not a handoff.
+    </p>
+    <h3>Ethical considerations</h3>
+    <p>
+      This write-up stays on the public interface. It does not add stories about clients of Middle Way House, and it does not publish private scope text.
+      The monitoring dialog exists because someone may be watched. My job is to keep that path private and usable, not to dramatise it for a portfolio.
+      Production edits stay with the organisation.
+    </p>
+    <h3>Technical growth</h3>
+    <p>
+      I got more specific than "check contrast".
+      The useful checks here were the heading outline, the accessible name of a link, and the keyboard behaviour of a dialog that is doing safety work.
+    </p>
 
     <p>
       Related Serve IT work:
+      <a href="bloomington.html">City of Bloomington accessibility case study</a>
+      ·
       <a href="nashville-acc.html">Town of Nashville accessibility case study</a>.
-      Fuller scrapbook portfolio:
+      Fuller scrapbook:
       <a href="portfolio.pdf">portfolio.pdf</a>.
     </p>
 
     <nav class="site-nav" aria-label="Case study links">
       <a href="index.html">Home</a>
+      ·
+      <a href="bloomington.html">City of Bloomington</a>
       ·
       <a href="nashville-acc.html">Town of Nashville</a>
       ·

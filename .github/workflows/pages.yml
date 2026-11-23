@@ -7,6 +7,7 @@ on:
       - "index.html"
       - "nashville-acc.html"
       - "middle-way-house.html"
+      - "bloomington.html"
       - "acc-evidence/**"
       - "portfolio.pdf"
       - "README.md"
@@ -36,6 +37,7 @@ jobs:
           cp index.html _site/
           cp nashville-acc.html _site/
           cp middle-way-house.html _site/
+          cp bloomington.html _site/
           cp -R acc-evidence _site/
           cp portfolio.pdf _site/
           cp .nojekyll _site/

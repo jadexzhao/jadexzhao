@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City of Bloomington accessibility assessment · Jade Zhao</title>
+  <meta name="description" content="Serve IT case study: WCAG 2.1 AA review of bloomington.in.gov. Findings and proposed remediations. Production edits stay with the city.">
+  <meta name="author" content="Jade Zhao">
+  <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/bloomington.html">
+  <style>
+    :root {
+      --paper: #fffaf4;
+      --ink: #3d2e2e;
+      --crimson: #990000;
+      --blue: #3a5a7c;
+      --card: #ffffff;
+      --edge: #c8b496;
+      --muted: #5a4a45;
+      --priority: #7a4a1a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 50% 35% at 100% 0%, rgba(248, 226, 168, 0.55), transparent 70%),
+        radial-gradient(ellipse 40% 30% at 0% 100%, rgba(184, 224, 207, 0.35), transparent 70%),
+        var(--paper);
+      padding: 2.5rem 1.25rem 3rem;
+    }
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--edge);
+      border-radius: 1rem;
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0.2rem 0.25rem 0 rgba(200, 180, 150, 0.45);
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      color: var(--crimson);
+      font-size: 1.65rem;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 1.7rem 0 0.55rem;
+      color: var(--crimson);
+      font-size: 1.2rem;
+      scroll-margin-top: 0.75rem;
+    }
+    h3 {
+      margin: 1.1rem 0 0.35rem;
+      font-size: 1.05rem;
+    }
+    .meta {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    p { line-height: 1.5; margin: 0 0 0.9rem; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.2rem; line-height: 1.45; }
+    li + li { margin-top: 0.35rem; }
+    a { color: var(--blue); font-weight: 700; text-underline-offset: 0.15em; }
+    a:hover, a:focus-visible { color: var(--crimson); }
+    a:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 2px;
+    }
+    .note {
+      margin: 0 0 1rem;
+      padding: 0.75rem 0.9rem;
+      background: #f7f0e4;
+      border-left: 3px solid var(--edge);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .toc {
+      margin: 0 0 1.1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    dt {
+      font-weight: 700;
+      margin: 0.75rem 0 0.15rem;
+    }
+    dd { margin: 0 0 0.15rem; line-height: 1.45; }
+    figure {
+      margin: 0 0 1.15rem;
+      padding: 0;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--edge);
+      border-radius: 0.5rem;
+    }
+    figcaption {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .priority {
+      font-weight: 700;
+      color: var(--priority);
+    }
+    nav.site-nav { margin-top: 1.35rem; font-size: 0.95rem; }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      background: #fff;
+      color: var(--crimson);
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--edge);
+    }
+    .skip:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main id="content">
+    <h1>City of Bloomington accessibility assessment</h1>
+    <p class="meta">Serve IT Clinic · Web Design and Accessibility Intern · Jade Zhao · public-site evidence 22 November 2026</p>
+
+    <nav class="toc" aria-label="On this page">
+      <a href="#profile">Profile</a>
+      ·
+      <a href="#overview">Overview</a>
+      ·
+      <a href="#client">Client</a>
+      ·
+      <a href="#process">Process</a>
+      ·
+      <a href="#skills">Skills</a>
+      ·
+      <a href="#deliverables">Deliverables</a>
+      ·
+      <a href="#reflection">Reflection</a>
+    </nav>
+
+    <p class="note">
+      Scope note: this page documents a review of the public city website.
+      It is not a private clinic file, and it is not a live edit.
+      Production changes stay with the City of Bloomington.
+      Screenshots are the top of each page in the browser on 22 November 2026.
+    </p>
+
+    <h2 id="profile">Introduction / professional profile</h2>
+    <dl>
+      <dt>Who you are</dt>
+      <dd>
+        Jade Zhao. Informatics student at Indiana University Bloomington, Luddy School, expected May 2027.
+        Minors in Business Technology and User Experience (UX) Research. First-generation college student.
+        Web Design and Accessibility Intern at the Laurie Burns McRobbie Serve IT Clinic, Jan 2024 to Dec 2025.
+        Accessibility Project Lead from Aug 2026.
+      </dd>
+      <dt>Area of interest</dt>
+      <dd>
+        Digital Humans, human-centred artificial intelligence (AI), accessibility, and human-centred business technology.
+        The question under the research is what makes a system trustworthy enough that people keep using it.
+      </dd>
+      <dt>Technical strengths</dt>
+      <dd>
+        WCAG (Web Content Accessibility Guidelines) 2.1 Level AA reviews, HTML structure, written remediation, and a handoff a partner can use after the student team is gone.
+      </dd>
+      <dt>The kinds of work you want to do</dt>
+      <dd>
+        Work that joins the technical fix to the person who has to use the system.
+        Accessibility, human-centred product work, and Digital Humans research.
+      </dd>
+      <dt>Résumé, contact, and links</dt>
+      <dd>
+        <a href="portfolio.pdf">Portfolio PDF</a> (résumé is inside it).
+        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>.
+        <a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a>.
+        <a href="https://github.com/jadexzhao">GitHub</a>.
+        <a href="index.html">jadexzhao.github.io/jadexzhao</a>.
+      </dd>
+    </dl>
+
+    <h2 id="overview">Project overview</h2>
+    <p>
+      Residents use bloomington.in.gov to pay a bill, report a non-emergency problem, and contact the city.
+      A homepage can look finished and still give a screen-reader user no page heading, plus news images whose names are filenames.
+    </p>
+    <dl>
+      <dt>Dates</dt>
+      <dd>
+        The city partnership sits in the Serve IT internship, Jan 2024 to Dec 2025.
+        I am not publishing a single kickoff day, because that date is not in the public notes.
+        The evidence on this page is from the live site on 22 November 2026.
+      </dd>
+      <dt>Team</dt>
+      <dd>
+        A student team in the Laurie Burns McRobbie Serve IT Clinic, matched with the City of Bloomington.
+        The clinic places students with a community or government partner for course credit and expects notes the partner can keep.
+        Teammate names are not listed on this public page.
+      </dd>
+      <dt>What the team was asked to do</dt>
+      <dd>
+        Review the public website and write what should change.
+        The semester scope document is not republished here.
+        The work on this page is a WCAG 2.1 Level AA review of structure, alternative text, and a sample of colour contrast.
+        The student team does not rebuild the live city site.
+      </dd>
+      <dt>What my part entailed</dt>
+      <dd>
+        I reviewed the homepage and the Top Services page, compared their heading patterns, checked image names and the main navigation contrast, and wrote the fixes below.
+        During the internship, my Serve IT work was documenting keyboard navigation, semantic structure, and contrast findings with a recommendation someone else can try.
+      </dd>
+    </dl>
+
+    <h2 id="client">Client description</h2>
+    <p>
+      Client: City of Bloomington, Indiana.
+      Public site: <a href="https://bloomington.in.gov/">bloomington.in.gov</a>.
+      The city's own homepage describes Bloomington as a southern Indiana city of about 85,000 residents, and a home for Indiana University students.
+      The <a href="https://bloomington.in.gov/services">Top Services</a> page, updated 29 August 2026, says the city offers services to residents and businesses and collects the popular ones in one place.
+    </p>
+    <dl>
+      <dt>Client needs</dt>
+      <dd>
+        Top Services is the public list of what the site is for: pay a water or trash bill, pay a parking citation, pay a permit fee, report an issue, find a staff member, contact a council member or the mayor, start water or sewer service, and reach housing, parks, and public-safety tasks.
+        The clinic need that this page covers is an accessibility review of that public site, with notes the city can apply.
+      </dd>
+      <dt>What challenge the project was solving</dt>
+      <dd>
+        The front door and the services page do not use the same structure.
+        Top Services has one <code>h1</code> and groups tasks under <code>h2</code> headings.
+        The homepage has no <code>h1</code>, and several news images are named <code>cob-thumbnail.png</code>.
+        A resident who relies on headings or image names does not get the same page a sighted reader sees.
+      </dd>
+      <dt>Why the agency needed this</dt>
+      <dd>
+        Bill pay, issue reports, and council contact are city services, not optional articles.
+        If those paths are hard to perceive or hard to navigate, the resident cannot finish the task.
+        City staff keep the site. The useful deliverable is a note they can reproduce, not a student rebuild.
+      </dd>
+    </dl>
+
+    <h2 id="process">Process / approach</h2>
+    <p>Final deliverables: this written review, two screenshots, the findings list, and the prioritised remediation notes. No live deploy.</p>
+    <ol>
+      <li>Read Top Services first, so the review starts from the tasks residents actually open the site to do.</li>
+      <li>On 22 November 2026, open the homepage and Top Services in the browser. Record the document title, heading outline, landmarks, skip link, and image alternative text.</li>
+      <li>Sample the icon navigation. Resting link text is white on navy <code>rgb(24, 45, 90)</code>, about 13.45:1, which clears the 4.5:1 AA ratio for normal text. That pairing is a pass, so it is not in the failure list.</li>
+      <li>Compare the two templates. Keep the Top Services heading pattern as the model for the homepage, instead of inventing a new one.</li>
+      <li>Screenshot the top of each page. The heading and alt-text findings were read from the document. They sit below the hero, so the crops show the nav and the page title area, not every teaser.</li>
+      <li>Write each failure as the page, the barrier, and a fix a city staff member can try. Leave anything that already works in its own row.</li>
+    </ol>
+    <p>
+      Standard used: WCAG 2.1 Level AA.
+      The checks that drove the notes are non-text content (alternative text), info and relationships (headings), bypass blocks (the skip link, which is present), and contrast of the main navigation.
+      A full keyboard pass of every form and portal is not claimed on this page.
+    </p>
+
+    <h2 id="skills">Professional and technical skills</h2>
+    <ul>
+      <li>WCAG 2.1 Level AA review</li>
+      <li>Browser document review: headings, landmarks, skip link, image names</li>
+      <li>Colour contrast check on the main navigation (computed colour against the nav bar)</li>
+      <li>Comparison of two templates on the same site</li>
+      <li>Screenshot evidence and written remediation</li>
+      <li>Client handoff: the city keeps the live site</li>
+      <li>GitHub, for publishing this case study</li>
+    </ul>
+
+    <h2 id="deliverables">Deliverables / artifacts</h2>
+
+    <figure>
+      <img src="acc-evidence/bloomington/homepage.jpg" width="1200" height="800" alt="City of Bloomington homepage with navy icon navigation, search field, and a park hero image">
+      <figcaption>Homepage, top of the page: icon navigation, search, and the hero. The document has no h1. News images further down use the filename cob-thumbnail.png as their text alternative.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="acc-evidence/bloomington/services.jpg" width="1200" height="800" alt="City of Bloomington Top Services page showing the page title and the start of the Pay Online section">
+      <figcaption>Top Services, 29 August 2026 update: one visible page title, then grouped tasks such as Pay Online. This is the heading pattern the homepage does not yet follow.</figcaption>
+    </figure>
+
+    <h3>Findings</h3>
+    <ol>
+      <li>
+        <strong>Homepage heading outline.</strong> The homepage exposes no <code>h1</code>.
+        The outline starts at <code>h2</code> and stays flat: "Top Services", "News", "Events", individual event titles, and footer groups such as "City Government" are siblings.
+        Two event headings used the same text, "Animal Control Commission- Special Session", so the outline does not tell them apart.
+        Top Services does this differently: one <code>h1</code> ("Top Services"), <code>h2</code> groups ("Pay Online", "Contact The City"), and <code>h3</code> tasks.
+      </li>
+      <li>
+        <strong>News image names.</strong> Four homepage news images use the alternative text <code>cob-thumbnail.png</code>.
+        That is a filename. A screen-reader user hears a file name instead of the story. Other images on the same page do have real descriptions, including the city logo and one news photo of a scholarship presentation.
+      </li>
+      <li>
+        <strong>What is already working.</strong> "Skip to main content" is the first link, and it targets <code>#main-content</code>.
+        A <code>main</code> landmark and navigation landmarks are present.
+        The search field exposes the name "Search".
+        Icon-nav text is white on navy at about 13.45:1.
+        The stylesheet also sets a focus background on those nav links, <code>rgb(26, 79, 152)</code>, which is about 8:1 with white text.
+      </li>
+    </ol>
+
+    <h3>Prioritised remediation (proposed)</h3>
+    <ul>
+      <li>
+        <span class="priority">P1 · One homepage h1.</span>
+        Add a single page title as <code>h1</code>.
+        Demote section labels that are competing with it.
+        Put event titles under the Events section as <code>h3</code>, and include the date in the heading when two events share a name.
+      </li>
+      <li>
+        <span class="priority">P1 · Image names.</span>
+        Replace <code>cob-thumbnail.png</code> with the story title.
+        If the adjacent link text already names the story, and the image adds nothing, use empty alternative text so it is not read twice.
+      </li>
+      <li>
+        <span class="priority">P2 · Copy the working template.</span>
+        Use the Top Services heading pattern (one <code>h1</code>, <code>h2</code> groups, <code>h3</code> items) on the homepage instead of a new structure.
+        Leave the skip link, the named search field, and the nav contrast in place.
+      </li>
+      <li>
+        <span class="priority">P3 · Keyboard pass still to do.</span>
+        The nav focus style is in the stylesheet. A later pass should tab the icon nav, search, and one payment or report form on a real keyboard and confirm the focus background is visible. That pass is not claimed as finished here.
+      </li>
+    </ul>
+    <p>No client quotation is printed here. I do not have a cleared quote to attribute.</p>
+
+    <h2 id="reflection">Final reflection</h2>
+    <h3>What I learned</h3>
+    <p>
+      A city homepage can pass the checks people notice first.
+      The skip link is there, the nav contrast is strong, and the search field has a name.
+      The failure was one level down: no page heading, and news images named like files.
+      Top Services already showed the better pattern, on the same website.
+    </p>
+    <h3>Challenges, and how I handled them</h3>
+    <p>
+      The site is large, and the student team does not ship the fix.
+      A note that says "improve the homepage" does not help a staff member who was not in the room.
+      I limited the review to two pages, wrote only the barriers I could point at in the document, and recorded the contrast pass so a later edit does not "fix" a nav colour that already meets AA.
+      Where I had not finished a check, the keyboard pass, I left it as open instead of describing a result I do not have.
+    </p>
+    <h3>What I would improve</h3>
+    <p>
+      I would file the semester roster, the kickoff date, and the scope sentence in the same week as the review.
+      I would also screenshot the news row itself, not only the hero, so the filename problem is visible without reading the document tree.
+    </p>
+    <h3>Team communication</h3>
+    <p>
+      The comparison is the handoff.
+      "Make the homepage like Top Services: one h1, then groups, then tasks" is something another student or a city editor can try.
+      A contrast percentage with no colour values is not.
+    </p>
+    <h3>Ethical considerations</h3>
+    <p>
+      Paying a utility bill, reporting a street problem, and contacting council are resident tasks.
+      A barrier on those pages is someone locked out of a public service.
+      This page stays on the public HTML. It does not list non-public systems, staff who are not already on the public site, or security vulnerabilities.
+      The city applies any change. I do not.
+    </p>
+    <h3>Technical growth</h3>
+    <p>
+      I used to treat contrast as the whole review.
+      On this site the contrast passed, and the structure did not.
+      Reading the heading outline, the image names, and a second template on the same domain told me more than another colour sample would have.
+    </p>
+
+    <p>
+      Related Serve IT work:
+      <a href="middle-way-house.html">Middle Way House accessibility case study</a>
+      ·
+      <a href="nashville-acc.html">Town of Nashville accessibility case study</a>.
+      Fuller scrapbook:
+      <a href="portfolio.pdf">portfolio.pdf</a>.
+    </p>
+
+    <nav class="site-nav" aria-label="Case study links">
+      <a href="index.html">Home</a>
+      ·
+      <a href="middle-way-house.html">Middle Way House</a>
+      ·
+      <a href="nashville-acc.html">Town of Nashville</a>
+      ·
+      <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
+      ·
+      <a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a>
+    </nav>
+  </main>
+</body>
+</html>
