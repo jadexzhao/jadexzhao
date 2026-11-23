@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Town of Nashville accessibility assessment · Jade Zhao</title>
-  <meta name="description" content="Serve IT Fall 2026 WCAG 2.1 AA accessibility case study for the Town of Nashville, Indiana. Findings and proposed remediations; production edits stay with the client.">
+  <meta name="description" content="Serve IT Fall 2026 case study: WCAG 2.1 AA review of townofnashville.org. Findings and proposed remediations. Production edits stay with the town.">
   <meta name="author" content="Jade Zhao">
   <link rel="canonical" href="https://jadexzhao.github.io/jadexzhao/nashville-acc.html">
   <style>
@@ -46,12 +46,17 @@
       line-height: 1.25;
     }
     h2 {
-      margin: 1.6rem 0 0.55rem;
+      margin: 1.7rem 0 0.55rem;
       color: var(--crimson);
       font-size: 1.2rem;
+      scroll-margin-top: 0.75rem;
+    }
+    h3 {
+      margin: 1.1rem 0 0.35rem;
+      font-size: 1.05rem;
     }
     .meta {
-      margin: 0 0 1.1rem;
+      margin: 0 0 1rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -73,6 +78,16 @@
       line-height: 1.45;
       color: var(--muted);
     }
+    .toc {
+      margin: 0 0 1.1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    dt {
+      font-weight: 700;
+      margin: 0.75rem 0 0.15rem;
+    }
+    dd { margin: 0 0 0.15rem; line-height: 1.45; }
     figure {
       margin: 0 0 1.15rem;
       padding: 0;
@@ -95,27 +110,177 @@
       color: var(--priority);
     }
     nav.site-nav { margin-top: 1.35rem; font-size: 0.95rem; }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      background: #fff;
+      color: var(--crimson);
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--edge);
+    }
+    .skip:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
   </style>
 </head>
 <body>
-  <main>
+  <a class="skip" href="#content">Skip to content</a>
+  <main id="content">
     <h1>Town of Nashville accessibility assessment</h1>
     <p class="meta">Serve IT Clinic · Fall 2026 · Accessibility Project Lead · Jade Zhao</p>
 
-    <p>
-      WCAG (Web Content Accessibility Guidelines) 2.1 Level AA review of
-      <a href="https://www.townofnashville.org/">townofnashville.org</a>, covering keyboard access,
-      focus visibility, colour contrast, navigation, headings and structure, and the public contact form.
-      Findings become prioritised remediation notes for authorised town representatives.
-      This case study documents assessment work only. Live production edits stay with the client.
-    </p>
+    <nav class="toc" aria-label="On this page">
+      <a href="#profile">Profile</a>
+      ·
+      <a href="#overview">Overview</a>
+      ·
+      <a href="#client">Client</a>
+      ·
+      <a href="#process">Process</a>
+      ·
+      <a href="#skills">Skills</a>
+      ·
+      <a href="#deliverables">Deliverables</a>
+      ·
+      <a href="#reflection">Reflection</a>
+    </nav>
 
     <p class="note">
-      Scope note: Serve IT does not push changes to the live Squarespace site from this portfolio.
-      Screenshots below are browser evidence from the public site at the time of review.
+      Scope note: this semester is an accessibility assessment, not a design build.
+      There is no Lead Design Manager on the team.
+      Serve IT does not push changes to the live Squarespace site from this portfolio.
+      Screenshots are browser evidence from the public site. The calendar view is November 2026.
     </p>
 
-    <h2>Evidence from the live site</h2>
+    <h2 id="profile">Introduction / professional profile</h2>
+    <dl>
+      <dt>Who you are</dt>
+      <dd>
+        Jade Zhao. Informatics student at Indiana University Bloomington, Luddy School, expected May 2027.
+        Minors in Business Technology and User Experience (UX) Research. First-generation college student.
+        Web Design and Accessibility Intern at the Laurie Burns McRobbie Serve IT Clinic, Jan 2024 to Dec 2025.
+        Accessibility Project Lead from Aug 2026. On this project I am team lead, co-leading with Aanya Arora.
+      </dd>
+      <dt>Area of interest</dt>
+      <dd>
+        Digital Humans, human-centred artificial intelligence (AI), accessibility, and human-centred business technology.
+        The question under the research is what makes a system trustworthy enough that people keep using it.
+      </dd>
+      <dt>Technical strengths</dt>
+      <dd>
+        WCAG (Web Content Accessibility Guidelines) 2.1 Level AA reviews, HTML structure, written remediation, and a handoff a partner can use after the student team is gone.
+      </dd>
+      <dt>The kinds of work you want to do</dt>
+      <dd>
+        Work that joins the technical fix to the person who has to use the system.
+        Accessibility, human-centred product work, and Digital Humans research.
+      </dd>
+      <dt>Résumé, contact, and links</dt>
+      <dd>
+        <a href="portfolio.pdf">Portfolio PDF</a> (résumé is inside it).
+        <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>.
+        <a href="https://www.linkedin.com/in/zhao-langxi/">LinkedIn</a>.
+        <a href="https://github.com/jadexzhao">GitHub</a>.
+        <a href="index.html">jadexzhao.github.io/jadexzhao</a>.
+      </dd>
+    </dl>
+
+    <h2 id="overview">Project overview</h2>
+    <p>
+      Residents and visitors use townofnashville.org to find meetings, read notices, and send a message to the town.
+      The top navigation is light grey on white, keyboard focus is hard to see, and the homepage has no skip link and more than one <code>h1</code>.
+      Those barriers sit on the same pages as the contact form.
+    </p>
+    <dl>
+      <dt>Dates</dt>
+      <dd>
+        Fall 2026. This is the semester project.
+        The team meets Thursdays, 18:00 to 19:00.
+        The public calendar screenshot on this page is a November 2026 view.
+      </dd>
+      <dt>Team</dt>
+      <dd>
+        Serve IT accessibility team for the Town of Nashville.
+        Co-leads: Jade Zhao and Aanya Arora. We alternate the weekly Canvas record.
+        Interns: Chiara Bouckaert, Mueyae Pae, and Bhumika Sati.
+        Clinic supervisor: Maya Marotti. Lead Design Manager: not applicable, because this is an assessment rather than a design build.
+      </dd>
+      <dt>What the team was asked to do</dt>
+      <dd>
+        Review <a href="https://www.townofnashville.org/">townofnashville.org</a> against WCAG 2.1 Level AA and turn the barriers into prioritised notes the town can apply.
+        The team was not asked to redesign the site or to edit the live Squarespace pages.
+      </dd>
+      <dt>What my part entailed</dt>
+      <dd>
+        I co-led the assessment with Aanya Arora.
+        My part was the scope of the review, the weekly team record, and this write-up: the pages we checked, the findings, and the fixes in priority order.
+        Client notes go through Maya Marotti before they go to the town contact, Maddie Bond.
+      </dd>
+    </dl>
+
+    <h2 id="client">Client description</h2>
+    <p>
+      Client: Town of Nashville, Indiana.
+      Public site: <a href="https://www.townofnashville.org/">townofnashville.org</a>.
+      The site is the town's public web presence. The homepage carries Town Hall, a contact block, and a contact form.
+      A separate page lists the calendar of meetings and events.
+      The town contact for this semester is Maddie Bond. Email addresses stay off this page.
+    </p>
+    <dl>
+      <dt>Client needs</dt>
+      <dd>
+        The public site has to work for people who read the navigation, look up a meeting, and use the contact form.
+        The semester need is an accessibility assessment with notes the town can use on the Squarespace site they already have.
+        The scope document itself is not republished here.
+      </dd>
+      <dt>What challenge the project was solving</dt>
+      <dd>
+        Menu labels at about <code>rgb(153, 153, 153)</code> on white are hard to read.
+        Keyboard users lose their place when focus is not visible, and there is no skip link.
+        Several <code>h1</code> headings flatten the homepage outline.
+        The contact form's required cues are the same light grey.
+      </dd>
+      <dt>Why the agency needed this</dt>
+      <dd>
+        Meeting times and the contact form are how people reach town business.
+        A small staff keeps the Squarespace site after the semester ends.
+        They need a short list that names the page, the barrier, and a change, not a student team that stays on the account.
+      </dd>
+    </dl>
+
+    <h2 id="process">Process / approach</h2>
+    <p>Final deliverables: this written review, three screenshots, the findings list, and the prioritised remediation notes. No live deploy.</p>
+    <ol>
+      <li>Treat the semester as an assessment. No design-build role. Production edits stay with the town.</li>
+      <li>Meet Thursdays, 18:00 to 19:00. Co-leads alternate the Canvas attendance record. Task tracking for the team sits on a Microsoft Planner Kanban board.</li>
+      <li>Review the public homepage, the Calendar of Meetings and Events, and the contact form. Check keyboard focus, colour contrast, skip link, landmarks, headings, and form labels.</li>
+      <li>Save a screenshot of each of those views so a reader can see the nav, the November 2026 calendar, and the form the notes refer to.</li>
+      <li>Sort findings. P1 is focus, navigation contrast, and a skip link. P2 is headings and the form. P3 is white text on the hero photo.</li>
+      <li>Write each note as a Squarespace change the town can try. Do not push those changes from this portfolio. Send client-facing notes through Maya Marotti first.</li>
+    </ol>
+    <p>
+      Standard used: WCAG 2.1 Level AA, focused on contrast of normal text (4.5:1), focus visible, bypass blocks, info and relationships, and labels on the contact form.
+      The iteration is the priority order. A contrast failure on the main menu comes before a hero scrim, because the menu is on every page.
+    </p>
+
+    <h2 id="skills">Professional and technical skills</h2>
+    <ul>
+      <li>WCAG 2.1 Level AA review (contrast, focus, skip link, headings, form labels)</li>
+      <li>Squarespace, as the town's CMS. The team documented fixes. We did not edit production.</li>
+      <li>Microsoft Planner Kanban, for the semester's task tracking</li>
+      <li>Canvas, for the weekly attendance record the co-leads alternate</li>
+      <li>Team leadership and facilitation of the Thursday meeting</li>
+      <li>Client communication through the clinic supervisor before notes go to the town</li>
+      <li>Screenshot evidence and written remediation</li>
+      <li>GitHub, for publishing this case study</li>
+    </ul>
+
+    <h2 id="deliverables">Deliverables / artifacts</h2>
 
     <figure>
       <img src="acc-evidence/nashville/homepage.jpg" width="1200" height="800" alt="Town of Nashville homepage showing light grey top navigation, hero image of Town Hall, and contact details">
@@ -124,7 +289,7 @@
 
     <figure>
       <img src="acc-evidence/nashville/calendar.jpg" width="1200" height="800" alt="Calendar of Meetings and Events page with November 2026 grid and light grey navigation">
-      <figcaption>Calendar of Meetings and Events: monthly grid plus the same low-contrast navigation pattern.</figcaption>
+      <figcaption>Calendar of Meetings and Events, November 2026: monthly grid plus the same low-contrast navigation pattern.</figcaption>
     </figure>
 
     <figure>
@@ -132,12 +297,12 @@
       <figcaption>Homepage contact form: required fields, address block, and Submit control near the footer search.</figcaption>
     </figure>
 
-    <h2>Concrete findings</h2>
+    <h3>Findings</h3>
     <ol>
       <li>
         <strong>Colour contrast (nav).</strong> Top navigation links render at about
         <code>rgb(153, 153, 153)</code> on white at roughly 12px. That pairing is well under the
-        4.5:1 AA ratio for normal text, so menu labels are hard to read for low-vision users.
+        4.5:1 AA ratio for normal text, so menu labels are hard to read.
       </li>
       <li>
         <strong>Focus visibility.</strong> Keyboard focus on sampled links, buttons, and form controls
@@ -151,13 +316,13 @@
       </li>
       <li>
         <strong>Heading structure.</strong> The homepage exposes multiple <code>h1</code> headings
-        (for example “Town of Nashville”, “What’s Going On?”, “Project Retree”, and the SR&nbsp;46 notice).
-        Screen-reader users relying on a single page title lose a clear document outline.
+        (for example "Town of Nashville", "What's Going On?", "Project Retree", and the SR 46 notice).
+        A screen-reader user relying on one page title loses a clear document outline.
       </li>
       <li>
         <strong>Forms.</strong> The contact form exposes required name, email, subject, message, and address
-        fields. Most controls have accessible names, but required cues rely on light grey “(required)” text,
-        field borders are very light, and a generic “Click Here …” link sits above the form.
+        fields. Most controls have accessible names, but required cues rely on light grey "(required)" text,
+        field borders are very light, and a generic "Click Here ..." link sits above the form.
       </li>
       <li>
         <strong>Hero text over imagery.</strong> White page titles over photographic banners can fail
@@ -165,41 +330,82 @@
       </li>
     </ol>
 
-    <h2>Prioritised remediation notes (proposed)</h2>
+    <h3>Prioritised remediation (proposed)</h3>
     <ul>
       <li>
-        <span class="priority">P1 · Focus styles.</span> Add a global
-        <code>:focus-visible</code> style with at least a 2px solid high-contrast outline (or equivalent
-        box-shadow) on all interactive controls. Do not remove browser focus without a stronger replacement.
+        <span class="priority">P1 · Focus styles.</span>
+        Add a global <code>:focus-visible</code> style with at least a 2px solid high-contrast outline (or equivalent box-shadow) on all interactive controls.
+        Do not remove browser focus without a stronger replacement.
       </li>
       <li>
-        <span class="priority">P1 · Navigation contrast.</span> Darken inactive nav text to meet 4.5:1
-        against white (for example near <code>#595959</code> or darker). Keep the gold active state only if
-        it still meets contrast.
+        <span class="priority">P1 · Navigation contrast.</span>
+        Darken inactive nav text to meet 4.5:1 against white (for example near <code>#595959</code> or darker).
+        Keep the gold active state only if it still meets contrast.
       </li>
       <li>
-        <span class="priority">P1 · Skip link.</span> Add a visually hidden “Skip to main content” link as
-        the first focusable control, revealed on focus, targeting a single <code>main</code> landmark.
+        <span class="priority">P1 · Skip link.</span>
+        Add a visually hidden "Skip to main content" link as the first focusable control, revealed on focus, targeting a single <code>main</code> landmark.
       </li>
       <li>
-        <span class="priority">P2 · Headings.</span> Keep one <code>h1</code> per page for the page title;
-        demote section titles to <code>h2</code>/<code>h3</code> in logical order.
+        <span class="priority">P2 · Headings.</span>
+        Keep one <code>h1</code> per page for the page title. Demote section titles to <code>h2</code> and <code>h3</code> in logical order.
       </li>
       <li>
-        <span class="priority">P2 · Form clarity.</span> Strengthen label and required-indicator contrast;
-        thicken input borders; replace “Click Here …” with descriptive link text; confirm error messages
-        are programmeatically associated with fields.
+        <span class="priority">P2 · Form clarity.</span>
+        Strengthen label and required-indicator contrast. Thicken input borders.
+        Replace "Click Here ..." with descriptive link text.
+        Confirm error messages are programmatically associated with fields.
       </li>
       <li>
-        <span class="priority">P3 · Hero overlays.</span> Add a dark scrim or text shadow behind white
-        titles so contrast holds across banner frames.
+        <span class="priority">P3 · Hero overlays.</span>
+        Add a dark scrim or text shadow behind white titles so contrast holds across banner frames.
       </li>
     </ul>
+    <p>No client quotation is printed here. I do not have a cleared quote to attribute.</p>
+
+    <h2 id="reflection">Final reflection</h2>
+    <h3>What I learned</h3>
+    <p>
+      The menu is the product. It sits on the homepage, the calendar, and above the contact form.
+      A grey that looks quiet in a design still fails 4.5:1, and then every other page inherits the same barrier.
+      Fixing that one colour does more than a new layout would.
+    </p>
+    <h3>Challenges, and how I handled them</h3>
+    <p>
+      The town keeps the Squarespace site. We cannot ship the fix ourselves, and a note that says "improve accessibility" does not help staff who were not in the Thursday meeting.
+      I split the list by priority and named the computed colour, the missing skip link, and the form text so someone can find the same thing.
+      Client-facing notes go through Maya Marotti first, so the town hears one clear version rather than five.
+    </p>
+    <h3>What I would improve</h3>
+    <p>
+      I would attach the semester scope sentence and a before-and-after of the nav colour in the same week as the review, while the Squarespace settings are still fresh.
+      I would also keyboard-test the contact form error states and write those down before the semester ends.
+    </p>
+    <h3>Team communication</h3>
+    <p>
+      Co-leading means the weekly record cannot live in one person's head.
+      Aanya Arora and I alternate the Canvas attendance note, and the task list lives on the Planner board, so an intern who misses Thursday can still see the priority.
+      The same rule applies to the town: if Maddie Bond was not in the room, the written note has to stand alone.
+    </p>
+    <h3>Ethical considerations</h3>
+    <p>
+      A town website is how people reach meetings and send a message. A barrier there is a resident or a visitor locked out of public information.
+      This page stays on the public HTML. It does not publish email addresses, and it does not list anything beyond what a visitor can already see on townofnashville.org.
+      The town applies any change. We do not.
+    </p>
+    <h3>Technical growth</h3>
+    <p>
+      Leading the review meant choosing an order, not only finding issues.
+      Contrast on a 12px menu, a missing focus ring, and a missing skip link are the P1s because they block the whole site.
+      The hero scrim can wait. That ordering is the technical decision I want the handoff to show.
+    </p>
 
     <p>
       Related Serve IT work:
-      <a href="middle-way-house.html">Middle Way House accessibility case study</a>.
-      Fuller scrapbook portfolio:
+      <a href="middle-way-house.html">Middle Way House accessibility case study</a>
+      ·
+      <a href="bloomington.html">City of Bloomington accessibility case study</a>.
+      Fuller scrapbook:
       <a href="portfolio.pdf">portfolio.pdf</a>.
     </p>
 
@@ -207,6 +413,8 @@
       <a href="index.html">Home</a>
       ·
       <a href="middle-way-house.html">Middle Way House</a>
+      ·
+      <a href="bloomington.html">City of Bloomington</a>
       ·
       <a href="mailto:jlzhao@iu.edu">jlzhao@iu.edu</a>
       ·
